@@ -1,0 +1,13 @@
+{
+  "name": "todomvc-netscape2",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Marcin Szczepanski <marcins@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.14.1"
+  },
+  "scripts": {
+    "start": "node index.js"
+  }
+}
