@@ -5,7 +5,12 @@
   "author": "Marcin Szczepanski <marcins@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.14.1"
+    "cheerio": "^0.22.0",
+    "css": "^2.2.1",
+    "express": "^4.14.1",
+    "highlight.js": "^9.10.0",
+    "lodash": "^4.17.4",
+    "marked": "^0.3.6"
   },
   "scripts": {
     "start": "node index.js"
