@@ -1,6 +1,8 @@
 const express = require('express');
+const slides = require('./lib/routes/slides');
 
 const app = express();
+app.locals.pretty = true;
 
 app.use(express.static('public', {
   setHeaders: function (res, path, stat) {
@@ -9,6 +11,8 @@ app.use(express.static('public', {
     }
   }
 }));
+
+app.use('/slides', slides);
 
 app.listen(3000, function () {
   console.log('Listening on 3000');

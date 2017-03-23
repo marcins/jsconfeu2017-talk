@@ -8,11 +8,15 @@
     "cheerio": "^0.22.0",
     "css": "^2.2.1",
     "express": "^4.14.1",
+    "handlebars": "^4.0.6",
     "highlight.js": "^9.10.0",
     "lodash": "^4.17.4",
     "marked": "^0.3.6"
   },
   "scripts": {
-    "start": "node index.js"
+    "start": "nodemon -e js,hbs index.js"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
   }
 }
