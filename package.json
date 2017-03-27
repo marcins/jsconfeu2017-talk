@@ -14,7 +14,7 @@
     "marked": "^0.3.6"
   },
   "scripts": {
-    "start": "nodemon -e js,hbs index.js"
+    "start": "nodemon -e js,hbs,md index.js"
   },
   "devDependencies": {
     "nodemon": "^1.11.0"
