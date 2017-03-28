@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+  <title>TodoMVC</title>
+  <link rel="stylesheet" type="text/css" href="todomvc.css">
+</head>
+<body bgcolor="#cccccc">
+<h1>TODO List</h1>
+<script>
+function onCheck(id) {
+    document.forms[0].submit();
+}
+</script>
+<form method="POST" action="/todo/update"> 
+<input type="hidden" name="version" value="1">
+<table width="50%" cellpadding="0" cellspacing="1" bgcolor="#ffffff" border=1>
+    <tr>
+        <td>
+            What needs to be done?<br>
+            <input type="text" name="new">
+            <input type="submit" value=Add name=Add>
+        </td>
+    </tr>
+    {{#each todos}}    
+    <tr>
+        <td>
+           <input 
+                type="checkbox" 
+                name="todo-{{id}}" 
+                value="1" 
+                {{#if complete}}checked{{/if}}
+                onclick="onCheck({{id}})">
+            {{label}}
+        </td>
+    </tr>
+    {{/each}}
+</table>
+<input type=submit name=Save>
+</form>
+</body>
+</html>

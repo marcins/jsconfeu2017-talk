@@ -11,7 +11,7 @@ template: frame
 
 # Something goes here
 
-[foo](/slides/1)
+[foo](/todo1.html)
 
 ---
 template: levelset
