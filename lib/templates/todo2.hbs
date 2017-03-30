@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+  <title>TodoMVC</title>
+    <style type="text/css">
+        body {
+            background-color: #ccc;
+            font-family: Arial, sans-serif;
+        }
+
+        .newitem {
+            border: none;
+            background-color: #fff;
+            font-family: Arial, sans-serif;
+        }
+
+        #todolist {
+            background-color: #fff;
+        }
+
+        .todoitem {
+            font-family: Arial, sans-serif;
+        }
+
+        .todocontent {
+            font-family: Arial, sans-serif;
+        }
+
+        .todofooter {
+            width: 550px;
+        }
+    </style>
+</head>
+<body>
+<h1>TODO List</h1>
+<script language="JavaScript1.2">
+var currentFilter = 'all';
+var WIDTH = 550;
+
+var todos = [
+    {{#each todos}}    
+    { id: {{id}}, label: '{{label}}', complete: {{complete}} },
+    {{/each}}
+];
+
+function filter(newFilter) {
+    currentFilter = newFilter;
+    var top = renderTodos();
+    renderFooter(top, null, true);
+    return false;
+}
+
+function renderTodos(ctx, closeAfter) {
+    var closeAfter = closeAfter || false;
+    var top = 0;
+    if (!ctx) {
+        ctx = document.layers.todolist.document;
+    }
+    for (var i = 0; i < todos.length; i++) {
+        var todo = todos[i];        
+        if ( (currentFilter === 'completed' && !todo.complete) ||
+            (currentFilter === 'active' && todo.complete) ) {
+            continue;
+        }
+
+        var content = "<table width=554 class=todocontent cellpadding=4 cellspacing=0 bgcolor=#ffffff>" + 
+            "<tr><td class=todocontent>" +
+                "<form>" + 
+                    "<input type=checkbox name='todo-" + todo.id + "' " + (todo.complete ? 'checked' : '') +" onclick=check(" + todo.id + ")>" + 
+                    todo.label + 
+                    "</form></td></tr>" + 
+            "</table>";
+            {{!--alert(content);--}}
+        ctx.write("<layer class=todoitem top=" + top + " id='todo-" + todo.id + "'>" + content + "</layer>");        
+        top += 25;
+    }
+    if (closeAfter) {        
+        ctx.close();
+    }
+    return top;
+}
+
+function renderFooter(top, ctx, closeAfter) {
+    if (!ctx) {
+        ctx = document.layers.todolist.document;
+        closeAfter = true;
+    }
+    var content = "<table width=100% border=0 cellpadding=0 cellspacing=0><tr>" + 
+        "<td width=33% align=left>" + todos.length + " items</td>" +
+        "<td width=33% align=center>" +
+            "<a href='#' onclick=filter('all')>All</a>" +
+            " | <a href='#' onclick=filter('active')>Active</a>" + 
+            " | <a href='#' onclick=filter('completed')>Completed</a>" +
+        "</td>" + 
+        "<td width=33% align=right>Clear completed</td>" +
+        "</tr></table>";
+    ctx.write("<layer id=todofooter class=todofooter width=" + WIDTH + " top=" + top + " left=0>" + content + "</layer>");    
+    if (closeAfter) {
+        ctx.close();
+    }
+}
+
+function check(id) {
+    for (var i = 0; i < todos.length; i++) {
+        var todo = todos[i];
+        if (todo.id === id) {
+            todo.complete = !todo.complete;
+            break;  
+        }
+    }
+}
+
+function onSubmit() {
+    var newText = document.forms[0].todolabel.value;
+    todos.push({
+        id: todos.length,
+        label: newText,
+        complete: false
+    });
+    renderTodos();
+    renderFooter(null, true);
+    document.forms[0].todolabel.value = '';
+    return false;
+}
+
+</script>
+<form method="GET" action="/todo/v2"> 
+<input type="hidden" name="version" value="2">
+<table width=550 cellpadding=4 cellspacing=0 border=0>
+    <tr>
+        <td class="newitem">
+            What needs to be done?<br>
+            <input type="text" name="todolabel">
+            <input type="button" value=Add name=Add onClick="onSubmit()">
+        </td>
+    </tr>
+</table>
+</form>
+<layer id="todolist" top=116 left=6>
+    <script language="JavaScript1.2">
+        renderTodos(document);        
+        renderFooter(todos.length * 25, document);                
+    </script>
+</layer>
+</body>
+</html>

@@ -7,6 +7,8 @@ app.locals.pretty = true;
 
 app.use(function (req, res, next) {
   res.set("Connection", "close");
+  res.set("Cache-control", "no-cache");
+  res.set("Expires", "January 1, 1970 00:00:00 GMT");
   next();
 });
 

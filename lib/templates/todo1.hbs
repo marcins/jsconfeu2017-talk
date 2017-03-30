@@ -10,6 +10,10 @@
 function onCheck(id) {
     document.forms[0].submit();
 }
+function test() {
+    document.forms[0]['todo-3'].checked = true;
+    document.forms[0].submit();
+}
 </script>
 <form method="POST" action="/todo/update"> 
 <input type="hidden" name="version" value="1">
@@ -35,6 +39,7 @@ function onCheck(id) {
     </tr>
     {{/each}}
 </table>
+    <a href='#' onclick="test()"><img src="/avatar.gif" width="16" height="16"></a>
 <input type=submit name=Save>
 </form>
 </body>
