@@ -1,4 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+  <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
   <title>TodoMVC</title>
@@ -26,8 +27,13 @@
             font-family: Arial, sans-serif;
         }
 
-        .todofooter {
+        .todofooter {            
             width: 550px;
+            font-family: Arial, sans-serif;
+        }
+
+        .todo-footer-content {
+            font-family: Arial, sans-serif;
         }
     </style>
 </head>
@@ -48,6 +54,18 @@ function filter(newFilter) {
     var top = renderTodos();
     renderFooter(top, null, true);
     return false;
+}
+
+function clearCompleted() {
+    var newTodos = [];
+    for (var i = 0; i < todos.length; i++) {
+        if (!todos[i].complete) {
+            newTodos.push(todos[i]);
+        }
+    }
+    todos = newTodos;
+    var top = renderTodos();
+    renderFooter(top, null, true);
 }
 
 function renderTodos(ctx, closeAfter) {
@@ -85,16 +103,19 @@ function renderFooter(top, ctx, closeAfter) {
         ctx = document.layers.todolist.document;
         closeAfter = true;
     }
-    var content = "<table width=100% border=0 cellpadding=0 cellspacing=0><tr>" + 
-        "<td width=33% align=left>" + todos.length + " items</td>" +
-        "<td width=33% align=center>" +
+    var content = "<table width=100% border=0 cellpadding=0 cellspacing=0 class=todofooter><tr>" + 
+        "<td width=33% align=left class=todo-footer-content>" + todos.length + " items</td>" +
+        "<td width=33% align=center class=todo-footer-content>" +
             "<a href='#' onclick=filter('all')>All</a>" +
             " | <a href='#' onclick=filter('active')>Active</a>" + 
             " | <a href='#' onclick=filter('completed')>Completed</a>" +
         "</td>" + 
-        "<td width=33% align=right>Clear completed</td>" +
+        "<td width=33% align=right class=todo-footer-content>" +
+            //"<input type=button onclick=clearCompleted() value='Clear completed'>" +
+            "<a href='#' onclick=clearCompleted()>Clear completed</a>" +
+            "</td>" +
         "</tr></table>";
-    ctx.write("<layer id=todofooter class=todofooter width=" + WIDTH + " top=" + top + " left=0>" + content + "</layer>");    
+    ctx.write("<layer id=todofooter class=todofooter width=" + WIDTH + " top=" + (top + 5) + " left=0>" + content + "</layer>");    
     if (closeAfter) {
         ctx.close();
     }
@@ -108,6 +129,8 @@ function check(id) {
             break;  
         }
     }
+    var top = renderTodos();
+    renderFooter(top, null, true);
 }
 
 function onSubmit() {
@@ -117,8 +140,8 @@ function onSubmit() {
         label: newText,
         complete: false
     });
-    renderTodos();
-    renderFooter(null, true);
+    var top = renderTodos();
+    renderFooter(top, null, true);
     document.forms[0].todolabel.value = '';
     return false;
 }

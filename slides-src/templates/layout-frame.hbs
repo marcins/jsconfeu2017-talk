@@ -3,9 +3,9 @@
 <head>
   <title>{{slideNum}} of {{slideTotal}} | {{{presentationTitle}}}</title>
 </head>
-<frameset rows="50,*,50">
-    <frame src={{slideTitleUrl}}>
+<frameset rows="55,*,50">
+    <frame src={{slideTitleUrl}} scrolling=no marginwidth=0 marginheight=0>
     {{{slideContent}}}
-    <frame src={{slideNavigationUrl}}>
+    <frame src={{slideNavigationUrl}} scrolling=no marginwidth=0 marginheight=0>
 </frameset>
 </html>
