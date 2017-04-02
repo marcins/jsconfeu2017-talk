@@ -23,9 +23,29 @@
             font-family: Arial, sans-serif;
         }
 
-        .todocontent {
-            font-family: Arial, sans-serif;
+        .todocheck { 
+            margin-left: 25px;
         }
+
+        .todolabel {
+            font-family: Arial, sans-serif;
+            font-weight: normal;
+            font-size: 24px;
+        }
+
+        {{!--.todocontent {
+            font-family: Arial, sans-serif;
+            font-size: 24px;
+            clear: both;
+            padding-left: 50px;
+        }
+
+        .todocontent input {
+            float: left;
+            padding-bottom: 20px;
+            padding-right: 25px;
+            margin-left: 25px;
+        }--}}
 
         .todofooter {            
             width: 550px;
@@ -51,8 +71,7 @@ var todos = [
 
 function filter(newFilter) {
     currentFilter = newFilter;
-    var top = renderTodos();
-    renderFooter(top, null, true);
+    render();
     return false;
 }
 
@@ -64,16 +83,17 @@ function clearCompleted() {
         }
     }
     todos = newTodos;
-    var top = renderTodos();
-    renderFooter(top, null, true);
+    render();
+    return false;
 }
 
-function renderTodos(ctx, closeAfter) {
-    var closeAfter = closeAfter || false;
-    var top = 0;
+function render(ctx) {
     if (!ctx) {
         ctx = document.layers.todolist.document;
     }
+
+    ctx.write("<form><table width=554 class=todocontent cellpadding=0 cellspacing=0 border=0 bgcolor=#ffffff>");
+    var numCompleted = 0;
     for (var i = 0; i < todos.length; i++) {
         var todo = todos[i];        
         if ( (currentFilter === 'completed' && !todo.complete) ||
@@ -81,44 +101,44 @@ function renderTodos(ctx, closeAfter) {
             continue;
         }
 
-        var content = "<table width=554 class=todocontent cellpadding=4 cellspacing=0 bgcolor=#ffffff>" + 
-            "<tr><td class=todocontent>" +
-                "<form>" + 
-                    "<input type=checkbox name='todo-" + todo.id + "' " + (todo.complete ? 'checked' : '') +" onclick=check(" + todo.id + ")>" + 
-                    todo.label + 
-                    "</form></td></tr>" + 
-            "</table>";
-            {{!--alert(content);--}}
-        ctx.write("<layer class=todoitem top=" + top + " id='todo-" + todo.id + "'>" + content + "</layer>");        
-        top += 25;
-    }
-    if (closeAfter) {        
-        ctx.close();
-    }
-    return top;
-}
+        if (todo.complete) {
+            numCompleted++;
+        }
 
-function renderFooter(top, ctx, closeAfter) {
-    if (!ctx) {
-        ctx = document.layers.todolist.document;
-        closeAfter = true;
+        var content =
+            "<tr><td colspan=5 valign=center height=50>" +
+                "<table class=todoitem cellpadding=0 cellspacing=0 border=0><tr>" +
+                    "<td width=20>&nbsp;</td>" +
+                    "<td width=25 height=50 valign=center class=todocheck><input type=checkbox name='todo-" + todo.id + "' " + (todo.complete ? 'checked' : '') +" onclick=check(" + todo.id + ")></td>" +
+                    "<td valign=center class=todolabel>" + todo.label + "</td>" +
+                "</tr></table>" +
+            "</td></tr>" + 
+            "<tr><td height=1 bgcolor=cccccc></td></tr>";
+        ctx.write(content);
     }
-    var content = "<table width=100% border=0 cellpadding=0 cellspacing=0 class=todofooter><tr>" + 
-        "<td width=33% align=left class=todo-footer-content>" + todos.length + " items</td>" +
+
+    var footer = "<tr>" + 
+        "<td width=20>&nbsp;</td>" +
+        "<td width=33% height=50 align=left class=todo-footer-content>" + todos.length + " items</td>" +
         "<td width=33% align=center class=todo-footer-content>" +
             "<a href='#' onclick=filter('all')>All</a>" +
             " | <a href='#' onclick=filter('active')>Active</a>" + 
             " | <a href='#' onclick=filter('completed')>Completed</a>" +
         "</td>" + 
-        "<td width=33% align=right class=todo-footer-content>" +
-            //"<input type=button onclick=clearCompleted() value='Clear completed'>" +
-            "<a href='#' onclick=clearCompleted()>Clear completed</a>" +
-            "</td>" +
-        "</tr></table>";
-    ctx.write("<layer id=todofooter class=todofooter width=" + WIDTH + " top=" + (top + 5) + " left=0>" + content + "</layer>");    
-    if (closeAfter) {
-        ctx.close();
-    }
+        "<td width=33% align=right class=todo-footer-content>";
+
+        if (numCompleted > 0) {
+            footer += "<a href='#' onclick=clearCompleted()>Clear completed</a>"
+        } else {
+            footer += '&nbsp;';
+        }
+
+        footer += "</td>" +
+        "<td width=20>&nbsp;</td>" +
+        "</tr>";
+    ctx.write(footer);
+    ctx.write("</table></form>");
+    ctx.close();
 }
 
 function check(id) {
@@ -129,8 +149,7 @@ function check(id) {
             break;  
         }
     }
-    var top = renderTodos();
-    renderFooter(top, null, true);
+    render();
 }
 
 function onSubmit() {
@@ -140,8 +159,7 @@ function onSubmit() {
         label: newText,
         complete: false
     });
-    var top = renderTodos();
-    renderFooter(top, null, true);
+    render();
     document.forms[0].todolabel.value = '';
     return false;
 }
@@ -161,8 +179,7 @@ function onSubmit() {
 </form>
 <layer id="todolist" top=116 left=6>
     <script language="JavaScript1.2">
-        renderTodos(document);        
-        renderFooter(todos.length * 25, document);                
+        render(document);
     </script>
 </layer>
 </body>
