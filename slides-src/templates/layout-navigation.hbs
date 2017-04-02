@@ -1,0 +1,20 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<body bgcolor="{{#if slide.bgcolor}}{{ slide.bgcolor }}{{else}}0d56c9{{/if}}" 
+    link="#ffffff" alink="#ffffff" vlink="#ffffff">
+<table width=100% cellpadding=0 cellspacing=0 border=0>
+    <tr valign="bottom">
+        {{#if prevSlide}}
+            <td width="25%" align="left">
+                <a href="{{prevSlide}}" target=_top><font size="3">&lt; Prev</font></a>
+            </td>
+        {{/if}}
+        {{#if nextSlide}}
+            <td width="25%" align="right">
+                <a href="{{nextSlide}}" target=_top><font size="3">Next &gt;</font></a>
+            </td>
+        {{/if}}
+    </tr>
+</table>
+</body>
+</html>
