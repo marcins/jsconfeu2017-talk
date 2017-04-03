@@ -1,0 +1,20 @@
+<title>Button Bar</title>
+<form name="buttonbar">
+<center>
+<script>
+// state 1 is contents showing, state 2 is no frame, state 3 is index showing
+if (parent.state == 1) {
+   document.write('<input type="button" name="hc" value="Hide Contents" onClick="parent.state=2; parent.frames[0].location=parent.frames[0].frames[1].location; history.go(0)">')
+   document.write('<input type="button" name="si" value="Show Reference" onClick="parent.state=3; parent.frames[0].frames[0].location=\'alpha.html\'; history.go(0)">')
+}
+else if (parent.state == 2) {
+   document.write('<input type="button" name="sc" value="Show Contents"   onClick="parent.state=1; parent.frames[0].location=\'content.html\'; history.go(0)">')
+   document.write('<input type="button" name="si" value="Show Reference" onClick="parent.state=3; parent.frames[0].location=\'content.html\'; history.go(0)">')
+}
+else if (parent.state == 3) {
+   document.write('<input type="button" name="hi" value="Hide Reference" onClick="parent.state=2; parent.frames[0].location=parent.frames[0].frames[1].location; history.go(0)">')
+   document.write('<input type="button" name="sc" value="Show Contents"   onClick="parent.state=1; parent.frames[0].location=\'content.html\'; history.go(0)">')
+}
+</SCRIPT>
+</form>
+

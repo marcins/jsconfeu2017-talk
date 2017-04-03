@@ -1,0 +1,14 @@
+{
+    "default": "dark",
+    "dark": {
+        "text": "#ffffff",
+        "bgcolor": "#0d56c9",
+        "highlight": "#00B8D9"
+    },
+    "light": {
+        "title": "#0052CC",
+        "text": "#253858",
+        "bgcolor": "#ffffff",
+        "highlight": "FFAB00"
+    }
+}

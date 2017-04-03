@@ -6,17 +6,27 @@ template: title
 * Frontend Dev, Atlassian
 * @MarcinS
 ---
-layout: frame
-template: frame
-
-# Something goes here
-
-[foo](/todo1.html)
-
----
 template: levelset
 
-# What were you doing in 1996?
+# What were you doing in 1995?
+
+---
+template: image
+
+![Netscape Navigator 2.0](/images/nn2.gif)
+
+---
+template: image
+
+![JavaScript](/images/jslogo.gif)
+
+---
+template: frame
+layout: frame
+
+# What's new in Netscape Navigator 2.0
+
+[foo](/docsample/index.html)
 
 ---
 template: code
@@ -65,3 +75,69 @@ template: quote
 # Fun Fact 2
 
 There were no Arrays in JS 1.0
+---
+template: image
+
+# Errors - static
+![JS Errors](/images/jserrors-static.gif)
+
+---
+template: image
+
+# Errors - animaged
+
+![JS Errors](/images/jserrors.gif)
+
+---
+layout: frame
+template: frame
+
+# Todo List: Netscape 2 Edition
+
+[foo](/todo1.html)
+
+---
+template: body
+theme: light
+
+# Early browser version history
+
+<p>
+<table color=#000000 cellpadding=10 cellspacing=1 border=1 width=50%> 
+    <tr>
+        <th width=33%><font size=4>Year</th>
+        <th width=33%><font size=4>Netscape</tH>
+        <th width=33%><font size=4>Internet Explorer</th>
+    </tr>
+    <tr>
+        <td><font size=6>1995</td>
+        <td><font size=6>2.0</td>
+        <td><font size=6>2.0</td>        
+    </tr>
+    <tr>
+        <td><font size=6>1996</td>
+        <td><font size=6>3.0</td>
+        <td><font size=6>3.0</td>
+    </tr>
+    <tr>
+        <td><font size=6>1997</td>
+        <td><font size=6>4.0</td>
+        <td><font size=6>4.0</td>
+    </tr>
+    <tr>
+        <td><font size=6>1999</td>
+        <td>&nbsp;</td>
+        <td><font size=6>5.0</td>
+    </tr>
+    <tr>
+        <td><font size=6>2000</td>
+        <td><font size=6>6.0</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td><font size=6>2001</td>
+        <td>&nbsp;</td>
+        <td><font size=6>6.0</td>
+    </tr>
+</table>
+</p>
