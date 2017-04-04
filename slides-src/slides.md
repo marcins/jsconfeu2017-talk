@@ -97,6 +97,14 @@ template: frame
 [foo](/todo1.html)
 
 ---
+layout: frame
+template: frame
+
+# Todo List: Netscape 4 Edition
+
+[foo](/todo/todo2.html)
+
+---
 template: body
 theme: light
 
