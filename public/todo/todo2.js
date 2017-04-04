@@ -73,10 +73,19 @@
     };
 
     TODO.Footer.prototype.render = function (props) {
+        var numCompleted = 0;
+        for (i = 0; i < props.todos.length; i++) {
+            if (props.todos[i].complete) {
+                numCompleted += 1;
+            }
+        }
+
+        var numRemaining = props.todos.length - numCompleted;
+
         var content = [
             "<table width=550 bgcolor=ffffff cellpadding=0 cellspacing=0 border=0><tr>",
             "<td width=20>&nbsp;</td>",
-            "<td width=33% height=50 align=left class=todo-footer-content>" + props.todos.length + " items</td>",
+            "<td width=33% height=50 align=left class=todo-footer-content>" + numRemaining + " item" + (numRemaining === 1 ? '' : 's') + " left</td>",
             "<td width=33% align=center class=todo-footer-content>"
         ];
 
@@ -90,12 +99,6 @@
         content.push("</td>");
         content.push("<td width=33% align=right class=todo-footer-content>");        
 
-        var numCompleted = 0;
-        for (i = 0; i < props.todos.length; i++) {
-            if (props.todos[i].complete) {
-                numCompleted += 1;
-            }
-        }
 
         if (numCompleted > 0) {
             content.push("<a href='#' onclick='" + this.globalName + ".clearCompleted();return false;'>Clear completed</a>");
@@ -179,7 +182,9 @@
         target.write("<form><table width=550 cellspacing=0 cellpadding=0 border=1><tr><td>");
         target.write(this.newItem.render(this.state));
         target.write(list);
-        target.write(this.footer.render(this.state));
+        if (this.state.todos.length > 0) {
+            target.write(this.footer.render(this.state));
+        }
         target.write("</td></tr></table></form>");
         target.close(); 
     }
