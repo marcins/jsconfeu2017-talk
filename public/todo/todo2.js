@@ -177,6 +177,8 @@
 
 
     TODO.App.prototype.render = function () {
+        console.clear();
+        console.log(this.state);
         var target = document.layers[this.layerName].document;
         var list = this.todoList.render(this.state);
         target.write("<form><table width=550 cellspacing=0 cellpadding=0 border=1><tr><td>");
