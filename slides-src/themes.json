@@ -2,6 +2,11 @@
     "default": "dark",
     "dark": {
         "text": "#ffffff",
+        "bgcolor": "#091E42",
+        "highlight": "#00B8D9"
+    },
+    "blue": {
+        "text": "#333333",
         "bgcolor": "#0d56c9",
         "highlight": "#00B8D9"
     },

@@ -1,6 +1,6 @@
 <h1>Slide index</h1>
 <ul>
 {{#each slides}}
-    <li><a href="{{ link }}">{{ title }}</a></li>
+    <li><a href="{{ link }}">{{{ title }}} {{#if subtitle }}- {{{ subtitle }}}{{/if}}</a></li>
 {{/each}}
 </ul>

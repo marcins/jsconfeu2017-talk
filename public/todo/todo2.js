@@ -126,8 +126,7 @@
                 { id: 1, label: 'Prepare talk', complete: true },
                 { id: 2, label: 'Fly to Berlin', complete: true },
                 { id: 3, label: 'Present at JSConf EU!', complete: false },
-            ],
-            onChangeFilter: this.changeFilter,
+            ]
         };
         var _this = this;
         setTimeout(function () {
@@ -177,8 +176,8 @@
 
 
     TODO.App.prototype.render = function () {
-        console.clear();
-        console.log(this.state);
+        // console.clear();
+        // console.log(this.state);
         var target = document.layers[this.layerName].document;
         var list = this.todoList.render(this.state);
         target.write("<form><table width=550 cellspacing=0 cellpadding=0 border=1><tr><td>");

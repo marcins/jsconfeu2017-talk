@@ -1,0 +1,27 @@
+<tr>
+    <td width="20%" bgcolor={{ theme.bgcolor }} valign=top align=center>
+        <div class="talkingpoint-menu-container">
+            <h1 class="talkingpoint-title">{{{ title }}}</h1>
+
+            <img src=/images/00B8D9-px.gif width=50% height=5>
+ 
+            <table cellspacing=0 cellpadding=0 border=0 class="talkingpoint-menu-container">
+            {{#each menu}}
+                <tr>
+                    <td width=100% align=center><p class="talkingpoint-menuitem">{{{ title }}}</p></td>
+                    <td width=32>
+                        {{#if active}}
+                            <img src=/images/talkingpoint-active.gif>
+                        {{else}}
+                            &nbsp;
+                        {{/if}}
+                    </td>
+                </tr>
+            {{/each}}
+            </table>
+        </div>
+    </td>
+    <td width="80%" valign=top class="talkingpoint-content">
+        {{{ body }}}
+    </td>
+</tr>
