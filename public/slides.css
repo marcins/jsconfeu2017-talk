@@ -1,7 +1,8 @@
 h1 {
-    font-size: 64px;
+    font-size: 36px;
     font-family: Arial, sans-serif;
     color: #ffffff;
+    margin-top: 10px;
 }
 
 h1.talkingpoint-title {

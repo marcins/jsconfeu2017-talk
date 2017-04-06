@@ -4,5 +4,8 @@ module.exports = function($) {
         .get()
         .join('&nbsp;&nbsp;|&nbsp;&nbsp;');
 
-    return { byLine };
+    return { 
+        byLine,
+        theme: 'blue',
+    };
 }

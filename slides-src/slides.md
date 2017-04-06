@@ -23,6 +23,7 @@ template: image
 ---
 template: frame
 layout: frame
+theme: dark
 
 # What's new in Netscape Navigator 2.0
 

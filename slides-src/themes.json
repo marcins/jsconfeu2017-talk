@@ -1,19 +1,22 @@
 {
-    "default": "dark",
+    "default": "light",
     "dark": {
         "text": "#ffffff",
         "bgcolor": "#091E42",
-        "highlight": "#00B8D9"
+        "highlight": "#00B8D9",
+        "fontFace": "Arial,sans-serif"
     },
     "blue": {
-        "text": "#333333",
+        "text": "#FFFFFF",
         "bgcolor": "#0d56c9",
-        "highlight": "#00B8D9"
+        "highlight": "#00B8D9",
+        "fontFace": "Arial,sans-serif"
     },
     "light": {
         "title": "#0052CC",
         "text": "#253858",
         "bgcolor": "#ffffff",
-        "highlight": "FFAB00"
+        "highlight": "FFAB00",
+        "fontFace": "Arial,sans-serif"
     }
 }

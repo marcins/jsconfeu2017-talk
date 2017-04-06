@@ -10,6 +10,6 @@ module.exports = function($) {
     const code = highlight(lang, rawCode).replace(/&apos;/g, "'");
     return { 
         code,
-        bgcolor: '#000000'
+        theme: 'dark'
     };
 }
