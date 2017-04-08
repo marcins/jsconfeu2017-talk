@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+  <title>TodoMVC</title>
+  <script>  
+  function add() {
+    var v = document.forms[0].todo.value;
+    if (v != '') {
+        window.parent.addTodo(v);
+    }
+    return false;
+  }
+  </script>
+</head>
+<body bgcolor="#ffffff" alink="#0000ff" vlink="#0000ff">
+<form>
+<center> 
+<table width="550" cellpadding="10" cellspacing="0" bgcolor="#ffffff" border=1>
+    <tr>
+        <td>
+            What needs to be done?<br>
+            <font size=6><input type="text" name="todo" size=50></font>
+            <input type="submit" value=Add name=Add onclick="add(); return false;">
+        </td>
+    </tr>
+    <script>
+    var p = window.parent;
+    var state = p.state;
+    var incomplete = 0;    
+    for(var i = 0; i < state.numTodos; i++) {
+        var todo = state.todos[i];
+
+        if (!todo.complete) {
+            incomplete++;
+        }
+
+        if ( (state.filter == 'completed' && !todo.complete) ||
+            (state.filter == 'active' && todo.complete)) {
+                continue;
+        }
+        document.write('<tr>' + 
+            '<td>' +
+                '<input ' +
+                'type="checkbox" ' +
+                'name="todo-' + todo.id + '" ' +
+                'value="1" onclick=p.click(' + todo.id + ') ');
+        if (todo.complete) {
+            document.write('checked ');
+        }
+        document.write('>' + todo.label + '</td></tr>');
+    }
+
+    function writeFilter(name, isLast) {
+        document.write('<a href="#" onclick="parent.filter(\'' + name.toLowerCase() + '\');return false">');
+        if (state.filter == name.toLowerCase()) {
+            document.write('<strong>' + name + '</strong>');
+        } else {
+            document.write(name);
+        }
+        document.write('</a>');
+        if (!isLast) {
+            document.write(' | ');
+        }
+    }
+
+
+    if (state.numTodos > 0) {
+        document.write('<tr><td>');
+        document.write('<table width=100% border=0 cellpadding=4 cellspacing=0>');
+        document.write('<tr><td width=33%>' + incomplete + ' item' + (incomplete != 1 ? 's' : '') + '</td>');
+        document.write('<td width=33% align=center>');
+
+        writeFilter('All');
+        writeFilter('Active');
+        writeFilter('Completed', true);
+
+        document.write('</td>');
+        document.write('<td width=33% align=right><a href="#" onclick="parent.clearCompleted();return false;">Clear completed');
+        document.write('</tr></table></td></tr>');
+    }
+    </script>
+</table>
+</center>
+</form>
+</body>
+</html>

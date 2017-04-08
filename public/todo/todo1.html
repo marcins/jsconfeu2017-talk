@@ -1,0 +1,72 @@
+<html>
+<head>
+  <title>todo</title>
+</head>
+<script>
+// function onCheck(id) {
+//     document.forms[0].submit();
+// }
+// function test() {
+//     document.forms[0]['todo-3'].checked = true;
+//     document.forms[0].submit();
+// }
+
+function click(id) {
+    for (var i = 0; i < state.numTodos; i++) {
+        if (state.todos[i].id == id) {
+            state.todos[i].complete = !state.todos[i].complete;
+            frames[1].history.go(0);
+            return;
+        }
+    }
+}
+
+function addTodo(text) {
+    var nextId = state.nextId;
+    state.nextId++;
+    state.todos[state.numTodos] = makeTodo(nextId, text, false);
+    state.numTodos++;
+    frames[1].history.go(0);
+}
+
+function clearCompleted() {
+    var newTodos = new Object();
+    var newNum = 0;
+    for (var i = 0; i < state.numTodos; i++) {
+        if (!state.todos[i].complete) {
+            newTodos[newNum] = state.todos[i];
+            newNum++;
+        }
+    }
+    state.todos = newTodos;
+    state.numTodos = newNum;
+    frames[1].history.go(0);
+}
+
+function filter(newFilter) {
+    state.filter = newFilter;
+    frames[1].history.go(0);
+}
+
+function makeTodo(id, label, complete) {
+    var todo = new Object();
+    todo.id = id;
+    todo.label = label;
+    todo.complete = complete;
+    return todo;
+}
+
+var state = new Object();
+state.filter = 'all';
+state.todos = new Object();
+state.todos[0] = makeTodo(1, 'Prepare talk', true);
+state.todos[1] = makeTodo(2, 'Fly to Berlin', true);
+state.todos[2] = makeTodo(3, 'Present at JSConf EU!', false);
+state.numTodos = 3;
+state.nextId = 4;
+</script>
+<FRAMESET rows="75,*">
+    <FRAME src="todo1-title.html" scrolling=no>
+    <FRAME name=content src="todo1-content.html" scrolling=no>
+</FRAMESET>
+</html>
