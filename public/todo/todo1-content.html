@@ -47,7 +47,13 @@
         if (todo.complete) {
             document.write('checked ');
         }
-        document.write('>' + todo.label + '</td></tr>');
+        document.write('>');
+        
+        if (todo.complete) {
+            document.write('<font color=#cccccc><strike>');
+        }
+
+        document.write(todo.label + '</input></td></tr>');
     }
 
     function writeFilter(name, isLast) {

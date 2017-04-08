@@ -51,3 +51,7 @@ h1 {
 .todo-footer-content {
     font-family: Arial, sans-serif;
 }
+
+.active-filter {
+    font-weight: bold;
+}

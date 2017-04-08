@@ -93,7 +93,9 @@
             if (i > 0) {
                 content.push(" | ");
             }
-            content.push("<a href='#' onclick='" + this.globalName + ".changeFilter(\"" + props.filters[i].toLowerCase() + "\"); return false;'>" + props.filters[i] + "</a>");
+            var filter =  props.filters[i].toLowerCase();
+            var className = filter === props.currentFilter ? 'active-filter' : '';
+            content.push("<a href='#' class='" + className + "' onclick='" + this.globalName + ".changeFilter(\"" + filter + "\"); return false;'>" + props.filters[i] + "</a>");
         }        
 
         content.push("</td>");
