@@ -13,7 +13,7 @@
   </script>
 </head>
 <body bgcolor="#ffffff" alink="#0000ff" vlink="#0000ff">
-<form>
+<form onSubmit=add()>
 <center> 
 <table width="550" cellpadding="10" cellspacing="0" bgcolor="#ffffff" border=1>
     <tr>
@@ -84,6 +84,7 @@
         document.write('<td width=33% align=right><a href="#" onclick="parent.clearCompleted();return false;">Clear completed');
         document.write('</tr></table></td></tr>');
     }
+    document.forms[0].todo.focus();
     </script>
 </table>
 </center>
