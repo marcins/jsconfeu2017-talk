@@ -21,50 +21,17 @@ template: image
 ![JavaScript](/images/jslogo.gif)
 
 ---
-template: frame
-layout: frame
-theme: dark
+template: reference
+theme: light
 
-# What's new in Netscape Navigator 2.0
+# JavaScript 1.0
 
-[foo](/docsample/index.html)
+> JavaScript is a compact, object-based scripting language for developing client and server Internet applications.
+
+Netscape 2.0 JavaScript documentation
 
 ---
-template: code
-
-# Test code slide
-
-```html
-<center>
-<script>
-// state 1 is contents showing, state 2 is no frame, state 3 is index showing
-if (parent.state == 1) {
-   document.write('<input type="button" name="hc" value="Hide Contents"' +
-    ' onClick="parent.state=2; parent.frames[0].location=parent.frames[0].frames[1].location; history.go(0)">')
-   document.write('<input type="button" name="si" value="Show Reference"' +
-   ' onClick="parent.state=3; parent.frames[0].frames[0].location=\'alpha.html\'; history.go(0)">')
-}
-else if (parent.state == 2) {
-   document.write('<input type="button" name="sc" value="Show Contents"' + 
-    ' onClick="parent.state=1; parent.frames[0].location=\'content.html\'; history.go(0)">')
-   document.write('<input type="button" name="si" value="Show Reference"' + 
-    ' onClick="parent.state=3; parent.frames[0].location=\'content.html\'; history.go(0)">')
-}
-else if (parent.state == 3) {
-   document.write('<input type="button" name="hi" value="Hide Reference"' +
-    ' onClick="parent.state=2; parent.frames[0].location=parent.frames[0].frames[1].location; history.go(0)">')
-   document.write('<input type="button" name="sc" value="Show Contents"' +
-    ' onClick="parent.state=1; parent.frames[0].location=\'content.html\'; history.go(0)">')
-}
-</script>
-<input type="button" name="hc" value="Hide Contents" 
-    onclick="parent.state=2; parent.frames[0].location=parent.frames[0].frames[1].location; history.go(0)">
-<input type="button" name="si" value="Show Reference" 
-    onclick="parent.state=3; parent.frames[0].frames[0].location='alpha.html'; history.go(0)">
-</center>
-```
----
-template: quote
+template: body
 
 # Fun Fact 1
 

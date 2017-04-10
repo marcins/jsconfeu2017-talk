@@ -1,7 +1,2 @@
-module.exports = function($) {
-    const body = $('p').html();
-    return { 
-        body,
-        theme: 'dark'
-    };
-}
+const reference = require('./reference');
+module.exports = reference;
