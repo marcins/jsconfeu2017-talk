@@ -1,13 +1,15 @@
 <tr valign="top">
-    <td width="50" height="100"></td>
+    <td width="50" height="100">{{{ spacer 50 }}}</td>
     <td align="left" width=100%>
-        <font color={{ theme.title }}><h1>{{ toUpperCase title }}</h1></font>
+        <h1><font color={{ theme.title }}>{{ toUpperCase title }}</h1>
         <img src=/images/{{ theme.highlight }}-px.gif width=100 height=5 alt=''>
     </td>    
 </tr>
-<tr valign="center">
-    <td align="center" colspan=2>
-        <font color={{ theme.text }} size=4>
+<tr><td height=50>&nbsp;</td></tr>
+<tr>
+    <td>&nbsp;</td>
+    <td align="left" valign=top>
+        <font color={{ theme.text }} size=6>
         {{{ body }}}
         </font>
     </td>

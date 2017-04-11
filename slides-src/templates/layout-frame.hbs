@@ -3,7 +3,11 @@
 <head>
   <title>{{slideNum}} of {{slideTotal}} | {{{presentationTitle}}}</title>
 </head>
+{{#if slide.noTitle}}
+  <frameset rows="1,*">
+{{else}}
 <frameset rows="55,*">
+{{/if}}
     <frame src={{slideTitleUrl}} scrolling=no marginwidth=0 marginheight=0>
     {{{slideContent}}}
 </frameset>

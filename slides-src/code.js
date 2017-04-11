@@ -5,9 +5,11 @@ const entities = new Entities();
 
 module.exports = function($) {
     const className = $('code').attr('class');
-    const lang = className.substr(5); // 'lang-??'
-    const rawCode = entities.decode($('code').html());
-    const code = highlight(lang, rawCode).replace(/&apos;/g, "'");
+    const lang = className ? className.substr(5) : null; // lang-??
+    const rawCode = entities.decode($('code').html());    
+    const code = lang === 'text' ? 
+        rawCode : 
+        highlight(rawCode, lang).replace(/&apos;/g, "'");
     return { 
         code,
         theme: 'dark'

@@ -2,12 +2,14 @@
     "default": "light",
     "dark": {
         "text": "#ffffff",
+        "title": "#ffffff",
         "bgcolor": "#091E42",
-        "highlight": "#00B8D9",
+        "highlight": "00B8D9",
         "fontFace": "Arial,sans-serif"
     },
     "blue": {
         "text": "#FFFFFF",
+        "title": "#ffffff",
         "bgcolor": "#0d56c9",
         "highlight": "#00B8D9",
         "fontFace": "Arial,sans-serif"
