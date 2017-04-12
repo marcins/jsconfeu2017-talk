@@ -16,9 +16,19 @@ template: image
 ![JavaScript](/images/jslogo.gif)
 
 ---
-template: body
+template: chapter
 
-Image of old man shaking fist at cloud here
+# ???
+
+---
+template: image
+
+![Old Man Shakes Fist at Cloud](/images/old-man-cloud-animated.gif)
+
+---
+template: image
+
+![Flyout Navigation](/images/flyout.gif)
 
 ---
 template: image
@@ -67,12 +77,12 @@ template: code
 ```text
 navigator
 
-window 
+window
   |
-  +--parent, frames, self, top 
+  +--parent, frames, self, top
   |
-  +--location 
-  | 
+  +--location
+  |
   +--history
   |
   +--document
@@ -80,7 +90,7 @@ window
        +--forms
        |    |
        |  elements (text fields, textarea, checkbox, password
-       |            radio, select, button, submit, reset)   
+       |            radio, select, button, submit, reset)
        +--links
        |
        +--anchors
@@ -118,7 +128,7 @@ template: body
     <tr>
         <td valign=top align=left>
             <strong>FRAMESET</strong>
-            
+
             <p><pre><font size="5">
 ```
 var state = new Object();
@@ -170,7 +180,7 @@ template: reference
 
 # Fun Fact
 
-> There was a Java console, but no JavaScript console. 
+> There was a Java console, but no JavaScript console.
 
 ---
 template: body
@@ -389,7 +399,7 @@ theme: light
 # Early browser version history
 
 <p>
-<table color=#000000 cellpadding=10 cellspacing=1 border=1 width=50%> 
+<table color=#000000 cellpadding=10 cellspacing=1 border=1 width=50%>
     <tr>
         <th width=33%><font size=4>Year</th>
         <th width=33%><font size=4>Netscape</tH>
@@ -398,7 +408,7 @@ theme: light
     <tr>
         <td><font size=6>1995</td>
         <td><font size=6>2.0</td>
-        <td><font size=6>2.0</td>        
+        <td><font size=6>2.0</td>
     </tr>
     <tr>
         <td><font size=6>1996</td>
