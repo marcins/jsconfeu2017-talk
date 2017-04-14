@@ -12,32 +12,38 @@ template: levelset
 
 ---
 template: image
+hint: js
 
 ![JavaScript](/images/jslogo.gif)
 
 ---
 template: chapter
+hint: why?
 
 # ???
 
 ---
 template: image
+hint: fist
 
 ![Old Man Shakes Fist at Cloud](/images/old-man-cloud-animated.gif)
 
 ---
 template: image
+hint: flyout
 
 ![Flyout Navigation](/images/flyout.gif)
 
 ---
 template: image
+hint: NN2
 
 ![Netscape Navigator 2.0](/images/nn2.gif)
 
 ---
 template: reference
 theme: light
+hint: js1
 
 # JavaScript 1.0
 
@@ -48,6 +54,7 @@ Netscape 2.0 JavaScript documentation
 ---
 template: reference
 theme: light
+hint: validation
 
 # JavaScript for validation
 
@@ -57,6 +64,7 @@ Netscape 2.0 JavaScript documentation
 
 ---
 template: body
+hint: src
 
 # Fun Fact 1
 
@@ -64,6 +72,7 @@ The `src` attribute of the `script` tag was not supported in Netscape 2.0 - all 
 
 ---
 template: reference
+hint: write
 
 > JavaScript in Navigator generates its results from the top of the page down. Once something has been formatted, you can't change it without reloading the page.
 
@@ -71,6 +80,7 @@ Netscape 2.0 JavaScript documentation
 
 ---
 template: code
+hint: objects
 
 # Navigator Object Hierarchy
 
@@ -98,13 +108,15 @@ window
 
 ---
 template: body
+hint: todo
 
 # TodoMVC
 
-TODOMVC
+<center>![todomvc](/images/todomvc.gif)</center>
 
 ---
 template: reference
+hint: face
 
 # Fun Fact
 
@@ -114,6 +126,7 @@ template: reference
 layout: frame
 template: frame
 noTitle: true
+hint: todo!
 
 # Todo List: Netscape 2 Edition
 
@@ -121,10 +134,39 @@ noTitle: true
 
 ---
 template: body
+hint: pseudo
 
 # Pseudo dynamic apps
 
-<table border=1 cellpadding=10 cellspacing=1 valign=top width=800 height=400>
+<table border=1 cellpadding=5 cellspacing=1 valign=top width=800>
+    <tr>
+        <td valign=top align=left>
+            <strong>FRAMESET</strong>
+
+            <p><pre><font size="5">State lives here
+            </pre></p>
+
+            <table border=1 cellpadding=10 cellspacing=1 valign=top width=750 height=350>
+                <tr>
+                    <td valign=top><strong>TITLE</strong></td>
+                </tr>
+                <tr>
+                    <td valign=top align=left>
+                        <strong>CONTENT</strong>
+                        <p><pre><font size=5>View lives here
+                        </pre></p>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+---
+template: body
+
+# Pseudo dynamic apps
+
+<table border=1 cellpadding=5 cellspacing=1 valign=top width=800>
     <tr>
         <td valign=top align=left>
             <strong>FRAMESET</strong>
@@ -165,11 +207,13 @@ function setName(newName) {
 </table>
 ---
 template: chapter
+hint: challenges
 
 # Challenges
 
 ---
 template: body
+hint: error
 
 # Challenge 1: Debugging
 
@@ -177,6 +221,7 @@ template: body
 
 ---
 template: reference
+hint: console
 
 # Fun Fact
 
@@ -184,6 +229,7 @@ template: reference
 
 ---
 template: body
+hint: alert
 
 # Challenge 1b: Debugging
 
@@ -192,6 +238,7 @@ template: body
 ---
 template: code
 indexTitle: shorthand
+hint: shorthand
 
 # Challenge 2: Language limitations
 
@@ -205,6 +252,7 @@ state.todos.length = 1;
 ```
 ---
 template: reference
+hint: noarray
 
 # Fun Fact
 
@@ -213,6 +261,8 @@ template: reference
 ---
 template: code
 indexTitle: global functions
+hint: globfn
+
 # Challenge 2: Language limitations
 
 ```js
@@ -226,6 +276,7 @@ function foo() {
 ---
 template: code
 indexTitle: setTimeout eval
+hint: timeouteval
 # Challenge 2: Language limitations
 
 ```js
@@ -234,6 +285,7 @@ setTimeout("alert('it fired!')", 500);
 
 ---
 template: body
+hint: events
 
 # Challenge 3: Event handling
 
@@ -252,6 +304,8 @@ EXAMPLE OF EVENT HANDLER THAT DOESN'T WORK HERE
 
 ---
 template: body
+hint: quirks
+
 # Challenge 4: Other fun quirks
 
 * form elements won't render without a `form`
@@ -259,38 +313,42 @@ template: body
 * weird memory corruption bug
 
 ---
+template: body
+hint: corruption
+
+# Challenge 4b: Memory corruption bug
+
+<center>![corrupt](/images/memory-corruption.gif)</center>
+
+---
 template: reference
+hint: this
 
 # Fun fact
 
 > `this` was simpler: "In general, in a method `this` refers to the calling object."
 
 ---
-template: image
+template: chapter
+hint: NN3
 
-# Errors - static
-![JS Errors](/images/jserrors-static.gif)
-
----
-template: image
-
-# Errors - animaged
-
-![JS Errors](/images/jserrors.gif)
-
----
-layout: frame
-template: frame
-
-# Todo List: Netscape 2 Edition
-
-[foo](/todo1.html)
+# Netscape 3
 
 <!-- NETSCAPE 4 BELOW THIS POINT -->
 ---
+template: body
+hint: NN4
 
+# Netscape 4
+
+<center><pre style="font-size:128px;"><code>&lt;LAYER&gt;</code></pre></center>
+<script language="JavaScript1.2">
+// Add some confetti here :D
+</script>
+---
 layout: frame
 template: frame
+hint: todo
 
 # Todo List: Netscape 4 Edition
 
@@ -394,7 +452,16 @@ template: chapter
 
 ---
 template: body
+hint: marketshare
+
+# IE / Netscape market share
+
+<center>![graph](/images/browser-share.gif)</center>
+
+---
+template: body
 theme: light
+hint: versions
 
 # Early browser version history
 

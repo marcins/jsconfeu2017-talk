@@ -2,9 +2,12 @@
 <ul>
 {{#each slides}}
     <li><a href="{{ link }}">
-        {{{ title }}} 
+        {{{ title }}}
         {{#if subtitle }} - {{{ subtitle }}}{{/if}}
         {{#if indexTitle }} ({{ indexTitle }}){{/if}}
+        {{#unless title }}
+            {{#if hint }}{{ hint }}{{/if}}
+        {{/unless}}
     </a></li>
 {{/each}}
 </ul>
