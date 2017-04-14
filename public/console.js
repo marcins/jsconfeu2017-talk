@@ -20,15 +20,15 @@ Console.prototype.render = function () {
     this.container.hidden = false;
     this.container.left = window.innerWidth - CONSOLE_WIDTH;
 
-    this.console.document.write('<body text=FFFFFF><table bgcolor=000000 cellpadding=5><tr><td>');
+    this.console.document.write('<body text=FFFFFF><table bgcolor=000000 cellpadding=5 width=100%><tr><td>');
     for (var i = 0; i < this.msgs.length; i++) {
-        this.console.document.write("<p><font face='monospace' color=333333>" + this.msgs[i]);
+        this.console.document.write("<p><font face='monospace' color=ffffff>" + this.msgs[i]);
     }
     this.console.document.write('</td></tr></table>');
     this.console.document.close();
 }
 
-Console.prototype.log = function (msg) {    
+Console.prototype.log = function (msg) {
     if (this.msgs.length === 10) {
         this.msgs.shift();
     }
@@ -45,7 +45,7 @@ window.console = new Console('console-content');
 document.write('<layer id="console-container">' +
     '<table width=' + CONSOLE_WIDTH + ' height=100% border=0 cellpadding=0 cellspacing=0>' +
         '<tr><td valign=top align=right>' +
-        '<a href=# onclick="console.toggle(); return false;"><font color=333333>Toggle console</a><br>' + 
+        '<a href=# onclick="console.toggle(); return false;"><font color=333333>Toggle console</a><br>' +
         '<layer id="console-content">?!?</layer></td></tr>' +
     '</table>' +
 '</layer>');

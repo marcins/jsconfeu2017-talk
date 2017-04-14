@@ -10,7 +10,8 @@
         var _this = this;
         window.captureEvents(Event.KEYPRESS);
         window.onkeypress = function (event) {
-            if (event.which === 13) {
+            if (event.which === 13 &&
+                event.target.name === 'todolabel') {
                 _this.app.addItem();
                 return false;
             }
@@ -45,9 +46,9 @@
 
     TODO.TodoList.prototype.render = function (props) {
         var content = ["<table width=550 class=todocontent cellpadding=0 cellspacing=0 border=0 bgcolor=#ffffff>"];
-        
+
         for (var i = 0; i < props.todos.length; i++) {
-            var todo = props.todos[i];        
+            var todo = props.todos[i];
             if ( (props.currentFilter === 'completed' && !todo.complete) ||
                 (props.currentFilter === 'active' && todo.complete) ) {
                 continue;
@@ -61,7 +62,7 @@
                         "</td>" +
                         "<td valign=center class=" + (todo.complete ? ' todolabel-complete' : 'todolabel') +">" + todo.label + "</td>" +
                     "</tr></table>" +
-                "</td></tr>" + 
+                "</td></tr>" +
                 "<tr><td height=1 bgcolor=cccccc></td></tr>");
         }
         content.push("</table>");
@@ -96,10 +97,10 @@
             var filter =  props.filters[i].toLowerCase();
             var className = filter === props.currentFilter ? 'active-filter' : '';
             content.push("<a href='#' class='" + className + "' onclick='" + this.globalName + ".changeFilter(\"" + filter + "\"); return false;'>" + props.filters[i] + "</a>");
-        }        
+        }
 
         content.push("</td>");
-        content.push("<td width=33% align=right class=todo-footer-content>");        
+        content.push("<td width=33% align=right class=todo-footer-content>");
 
 
         if (numCompleted > 0) {
@@ -143,7 +144,7 @@
 
     TODO.App.prototype.addItem = function () {
         var field = document.layers[this.layerName].document.forms[0].todolabel;
-        var newText = field.value;                
+        var newText = field.value;
         this.state.todos.push({
             id: this.state.todos.length + 1,
             label: newText,
@@ -159,7 +160,7 @@
             var todo = this.state.todos[i];
             if (todo.id === id) {
                 todo.complete = !todo.complete;
-                break;  
+                break;
             }
         }
         this.render();
@@ -189,7 +190,7 @@
             target.write(this.footer.render(this.state));
         }
         target.write("</td></tr></table></form>");
-        target.close(); 
+        target.close();
     }
 
     // TODO.render = render;

@@ -2,13 +2,15 @@
         "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-    <script language="JavaScript1.2" src="console.js"></script>
 </head>
 <body>
+    <script language="JavaScript1.2" src="console.js"></script>
     <script language="JavaScript1.2">
-    window.console = new Console('console-content', window.document.layers['console-example'].document);
-    console.log('Hello, Berlin!');
-    // });
+    window.console = new Console('console-content',
+        window.document.layers['console-example'].document);
+    setTimeout(function () {
+        console.log('Hello, Berlin!');
+    }, 100);
     </script>
 </body>
 </html>

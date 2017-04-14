@@ -437,13 +437,34 @@ template: talkingpoint
 
 ---
 template: chapter
+hint: css
 
 # Challenge 2: CSS === "CSS"
 
 ---
 template: chapter
+hint: events
 
 # Challenge 3: Events
+
+---
+template: code
+hint: capture
+
+# Global events
+
+```js
+var _this = this;
+window.captureEvents(Event.KEYPRESS);
+window.onkeypress = function (event) {
+    if (event.which === 13 &&
+        event.target.name === 'todolabel') {
+        _this.app.addItem();
+        return false;
+    }
+    return true;
+}
+```
 
 ---
 template: chapter
@@ -451,56 +472,32 @@ template: chapter
 # Challenge 4: Layer Limitations
 
 ---
+template: image
+theme: dark
+
+![browserwars](/images/browserwars.jpg)
+
+---
+template: code
+hint: getelem
+
+# Cross-browser "DOM"
+
+```js
+function getElement(id) {
+    if (document.getElementById){
+        return document.getElementById(id);
+    } else if (document.all) {
+        return document.all[id];
+    } else if (document.layers) {
+        return document.layers[id];
+    }
+}
+```
+---
 template: body
 hint: marketshare
 
 # IE / Netscape market share
 
 <center>![graph](/images/browser-share.gif)</center>
-
----
-template: body
-theme: light
-hint: versions
-
-# Early browser version history
-
-<p>
-<table color=#000000 cellpadding=10 cellspacing=1 border=1 width=50%>
-    <tr>
-        <th width=33%><font size=4>Year</th>
-        <th width=33%><font size=4>Netscape</tH>
-        <th width=33%><font size=4>Internet Explorer</th>
-    </tr>
-    <tr>
-        <td><font size=6>1995</td>
-        <td><font size=6>2.0</td>
-        <td><font size=6>2.0</td>
-    </tr>
-    <tr>
-        <td><font size=6>1996</td>
-        <td><font size=6>3.0</td>
-        <td><font size=6>3.0</td>
-    </tr>
-    <tr>
-        <td><font size=6>1997</td>
-        <td><font size=6>4.0</td>
-        <td><font size=6>4.0</td>
-    </tr>
-    <tr>
-        <td><font size=6>1999</td>
-        <td>&nbsp;</td>
-        <td><font size=6>5.0</td>
-    </tr>
-    <tr>
-        <td><font size=6>2000</td>
-        <td><font size=6>6.0</td>
-        <td>&nbsp;</td>
-    </tr>
-    <tr>
-        <td><font size=6>2001</td>
-        <td>&nbsp;</td>
-        <td><font size=6>6.0</td>
-    </tr>
-</table>
-</p>

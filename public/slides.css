@@ -2,7 +2,7 @@ h1 {
     font-size: 36px;
     font-family: Arial, sans-serif;
     color: #ffffff;
-    margin-top: 10px;
+    margin: 0;
 }
 
 h1.talkingpoint-title {
@@ -37,4 +37,14 @@ h1.talkingpoint-title {
 
 .talkingpoint-menuitem strong {
     color: #ffffff;
+}
+
+code { font-size: 32px; }
+
+h1.content-title {
+    font-size: 36px;
+    font-family: Arial, sans-serif;
+    color: #ffffff;
+    margin: 0px;
+    padding: 0px;
 }
