@@ -2,6 +2,9 @@ template: title
 
 # What's new in Netscape Navigator 2.0
 
+<div id='content'><font size=4 color=999999>Best viewed with</font><br>
+        <img src="/images/netscape-now.gif"></div>
+
 * Marcin Szczepanski
 * Frontend Dev, Atlassian
 * @MarcinS
@@ -356,102 +359,62 @@ hint: todo
 ---
 template: chapter
 
+# Challenges: Netscape 4
+---
+template: body
+hint: debugging
+
 # Challenge 1: Debugging
----
-template: talkingpoint
-
-# Debugging
-
-* **window.alert**
-* JavaScript Console
-* console.log
-* View Source
-
-## window.alert
-
-<table width=100% height=100%><tr><td valign=center align=center height=600>
-![Image](/images/error-alert.gif)
-</td></tr></table>
----
-template: talkingpoint
-
-# Debugging
-
-* window.alert
-* **JavaScript Console**
-* console.log
-* View Source
-
-
-## Error notification
 
 <table width=100% height=100%><tr><td valign=center align=center height=600>
 ![Image](/images/error-trigger.gif)
 </td></tr></table>
 
 ---
-template: talkingpoint
+template: body
+hint: console
 
-# Debugging
-
-* window.alert
-* **JavaScript Console**
-* console.log
-* View Source
-
-
-## JavaScript console
+# JavaScript console
 
 <table width=100% height=100%><tr><td valign=center align=center height=600>
 ![Image](/images/error-console.gif)
 </td></tr></table>
 
 ---
-template: talkingpoint
+template: body
+hint: consolewindow
 
-# Debugging
+# JavaScript console
 
-* window.alert
-* JavaScript Console
-* **console.log**
-* View Source
-
-## Can we implement a console?
-
-<layer id="console-example" src=/console-example.html left=400></layer>
+<center>[Open console](javascript:)</center>
 
 ---
-template: talkingpoint
+template: body
+hint: source
 
-# Debugging
-
-* window.alert
-* JavaScript Console
-* console.log
-* **View Source**
+# View source
 
 <table width=100% height=100%><tr><td valign=center align=center height=600>
 ![Image](/images/view-source.gif)
 </td></tr></table>
 
-
 ---
-template: chapter
+template: body
 hint: css
 
 # Challenge 2: CSS === "CSS"
 
----
-template: chapter
-hint: events
-
-# Challenge 3: Events
+<ul>
+<li>one name per `class` attribute</li>
+<li>buggy / missing inheritance</li>
+<li style="padding: 20px 0">buggy styles</li>
+</ul>
 
 ---
 template: code
 hint: capture
 
-# Global events
+# Challenge 3: Events
 
 ```js
 var _this = this;
@@ -467,15 +430,50 @@ window.onkeypress = function (event) {
 ```
 
 ---
-template: chapter
+template: body
+hint: layers
 
-# Challenge 4: Layer Limitations
+# Challenge 4: Layers
+
+* each layer is a separate document
+* hard to debug positioning, other attributes
 
 ---
 template: image
 theme: dark
+hint: wars
 
 ![browserwars](/images/browserwars.jpg)
+
+---
+template: body
+hint: marketshare
+
+# IE / Netscape market share
+
+<center>![graph](/images/browser-share.gif)</center>
+
+---
+template: chapter
+hint: ie5
+
+# IE Dev Experience
+
+---
+template: body
+hint: ie5debug
+
+# Debugging
+
+<center>![ie debug](/images/ie-debugging.gif)</center>
+
+---
+template: body
+hint: ie5source
+
+# View source
+
+<center>![IE View Source](/images/ie-view-source.gif)</center>
 
 ---
 template: code
@@ -496,8 +494,20 @@ function getElement(id) {
 ```
 ---
 template: body
-hint: marketshare
+hint: wrapup
 
-# IE / Netscape market share
+# Wrap up...
 
-<center>![graph](/images/browser-share.gif)</center>
+* web development in the 90s (and early 2000s) was challenging!
+* dev tooling now is fantastic, and always getting better
+* imagine where we'll be in another 20 years!
+
+---
+template: title
+hint: thanks
+
+# Thank you!
+
+* Marcin Szczepanski
+* Frontend Dev, Atlassian
+* @MarcinS

@@ -44,3 +44,117 @@ hint: versions
     </tr>
 </table>
 </p>
+
+---
+---
+template: talkingpoint
+
+# Debugging
+
+* **window.alert**
+* JavaScript Console
+* console.log
+* View Source
+
+## window.alert
+
+<table width=100% height=100%><tr><td valign=center align=center height=600>
+![Image](/images/error-alert.gif)
+</td></tr></table>
+---
+template: talkingpoint
+
+# Debugging
+
+* window.alert
+* **JavaScript Console**
+* console.log
+* View Source
+
+
+## Error notification
+
+<table width=100% height=100%><tr><td valign=center align=center height=600>
+![Image](/images/error-trigger.gif)
+</td></tr></table>
+
+---
+template: talkingpoint
+
+# Debugging
+
+* window.alert
+* **JavaScript Console**
+* console.log
+* View Source
+
+
+## JavaScript console
+
+<table width=100% height=100%><tr><td valign=center align=center height=600>
+![Image](/images/error-console.gif)
+</td></tr></table>
+---
+template: talkingpoint
+
+# Debugging
+
+* window.alert
+* JavaScript Console
+* **console.log**
+* View Source
+
+## Can we implement a console?
+
+<layer id="console-example" src=/console-example.html left=400></layer>
+
+---
+template: talkingpoint
+
+# Debugging
+
+* window.alert
+* JavaScript Console
+* console.log
+* **View Source**
+
+<table width=100% height=100%><tr><td valign=center align=center height=600>
+![Image](/images/view-source.gif)
+</td></tr></table>
+
+
+---
+template: chapter
+hint: css
+
+# Challenge 2: CSS === "CSS"
+
+---
+template: chapter
+hint: events
+
+# Challenge 3: Events
+
+---
+template: code
+hint: capture
+
+# Global events
+
+```js
+var _this = this;
+window.captureEvents(Event.KEYPRESS);
+window.onkeypress = function (event) {
+    if (event.which === 13 &&
+        event.target.name === 'todolabel') {
+        _this.app.addItem();
+        return false;
+    }
+    return true;
+}
+```
+
+---
+template: chapter
+
+# Challenge 4: Layer Limitations

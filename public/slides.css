@@ -48,3 +48,11 @@ h1.content-title {
     margin: 0px;
     padding: 0px;
 }
+
+.slide-content {
+    font-size: 32px;
+    font-family: Arial, sans-serif;
+}
+
+.slide-content li {
+}

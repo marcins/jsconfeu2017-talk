@@ -2,7 +2,7 @@
     <td width="50">{{{ spacer 50 }}}</td>
     <td align="left" width=100%>
         {{{ spacer 1 5 }}}<br>
-        <h1><font color={{ theme.title }}>{{ toUpperCase title }}</h1>
+        <h1><font color={{ theme.title }}>{{{ toUpperCase title }}}</h1>
     </td>
     <td width="50">{{{ spacer 50 }}}</td>
 </tr>
@@ -13,9 +13,9 @@
 <tr><td height=50>&nbsp;</td></tr>
 <tr>
     <td>&nbsp;</td>
-    <td align="left" valign=top>
-        <font color={{ theme.text }} size=6>
-        {{{ body }}}
+    <td align="left" valign=top class="slide-content">
+        <font face={{ theme.fontFace }} color={{ theme.text }} size=6>
+            {{{ body }}}
         </font>
     </td>
 </tr>

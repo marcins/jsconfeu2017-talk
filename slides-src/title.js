@@ -4,8 +4,11 @@ module.exports = function($) {
         .get()
         .join('&nbsp;&nbsp;|&nbsp;&nbsp;');
 
-    return { 
+    const slideContent = $('#content').html();
+
+    return {
         byLine,
+        slideContent,
         theme: 'blue',
     };
 }
