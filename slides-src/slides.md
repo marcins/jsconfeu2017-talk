@@ -71,12 +71,12 @@ hint: JAVAscript
 ![JAVAscript](/images/javascript-coffee.gif)
 
 ---
-template: body
+template: reference
 hint: src
 
-# Fun Fact 1
+# Fun Fact
 
-The `src` attribute of the `script` tag was not supported in Netscape 2.0 - all scripts had to be inline.
+> The `src` attribute of the `script` tag was not supported in Netscape 2.0 - all scripts had to be inline.
 
 ---
 template: reference
@@ -333,12 +333,12 @@ hint: events
 
 ```
 // OK
-<input type=checkbox name=todo-1 value=1 onclick=onTodoChecked(1)>
+<input type="checkbox" name="todo-1" value="1" onclick="onTodoChecked(1)">
 ```
 
 ```
 // ignored
-EXAMPLE OF EVENT HANDLER THAT DOESN'T WORK HERE
+<img src="/my-image.jpg" onMouseOver="doSomething();">
 ```
 
 ---
