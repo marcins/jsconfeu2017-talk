@@ -1,0 +1,379 @@
+<html><head><title>Dynamic HTML in Communicator
+
+</title>
+<LINK REL=STYLESHEET 
+ TYPE="text/css"
+href="cstyle1.htm">
+
+</head>
+<body bgcolor=#FFFFFF>
+<FONT SIZE=-1>
+<a href="contents.htm">[Contents]</a> <a href="jss3.htm">[Prev page]</a> <a href="jss32.htm">[Next page]</a> <a href="dynamici.htm">[Index]</a>
+</FONT>
+
+<HR SIZE=4>
+<H3 align="right">
+<FONT FACE="Helvetica,Arial" 
+COLOR="#408080" >
+<I>Dynamic HTML in Netscape Communicator<BR>
+Part 1. Style Sheets
+</I></FONT></H3>
+
+
+
+<a name="1079833">
+<h1><I><FONT FACE="Helvetica,Arial" COLOR="#408080" SIZE=+1>
+Chapter 2</FONT></I> 
+</H1>
+</a><a name="1079828">
+<h1>Introduction To Style Sheets</H1>
+<P><IMG SRC="images/bann02.gif" HEIGHT=6 WIDTH=640>
+</P>
+</a><a name="1065637">
+<P>This chapter introduces the use of style sheets in Netscape Communicator. It gives an overview of the two different types of syntax you can use to define styles, presents an introductory example of the use of styles, and explains about style inheritance,</P>
+</a><ul><a name="1013431">
+<li><a href="jss31.htm#1028763">Style Sheets in Communicator</a>
+</a><a name="1065255">
+<li><a href="jss31.htm#1028310">Using Cascading Style Sheets to Define Styles</a>
+</a><a name="1065497">
+<li><a href="jss31.htm#1028324">Using JavaScript and the Document Object Model to Define Styles</a>
+</a><a name="1065445">
+<li><a href="jss31.htm#1013660">Introductory Example</a>
+</a><a name="1065460">
+<li><a href="jss31.htm#1068155">Inheritance of Styles</a>
+</a></ul><HR><a name="1028763">
+<h1> Style Sheets in Communicator</h1>
+</a><a name="1068846">
+<P>Prior to the introduction of style sheets for HTML documents, web page authors had limited control over the presentation of their web pages. For example, you could specify text to be displayed as headings, but you could not set margins for your pages or specify the line heights or margins for text.</P>
+</a><a name="1028708">
+<P>Style sheets give you greater control over the presentation of your web documents. Using style sheets, you can specify many stylistic attributes of your web page, such as text color, margins, element alignments, font styles, font sizes, font weights and more.</P>
+</a><a name="1068844">
+<P>Netscape Communicator supports two types of style sheet syntax. It supports style sheets written in cascading style sheet (CSS) syntax. It also supports style sheets written in JavaScript that use the document object model. In the document object model, a document is an object that has properties. Each property can in turn be an object that has further properties, and so on.</P>
+</a><a name="1066767">
+<P>When you define a style sheet, you must declare its type as either <code>"text/CSS"</code> or <code>"text/JavaScript"</code>. To try to keep things straight, this manual uses the term <I>CSS syntax</I> to refer to the syntax for style sheets whose type is <code>"text/CSS".</code> It uses the term <I>JavaScript syntax</I> to refer to the syntax for style sheets whose type is <code>"text/JavaScript".</code></P>
+</a><HR><a name="1028310">
+<h1> Using Cascading Style Sheets to Define Styles</h1>
+</a><a name="1028321">
+<P>Netscape Communicator fully supports cascading style sheets. Web pages that use cascading style sheets will be displayed appropriately in Netscape Communicator with a few minor exceptions.</P>
+</a><a name="1048998">
+<P>This document describes the style sheet functionality that is implemented in Netscape Navigator 4.0. However, if you'd like to see the original specification for style sheets as authored by the World Wide Web Consortium, you can go to:</P>
+</a><a name="1032667">
+<A HREF="http://www.w3.org/pub/WWW/TR/REC-CSS1">
+<PRE>http://www.w3.org/pub/WWW/TR/REC-CSS1</PRE></A><p>
+</a><a name="1049937">
+<P>A style sheet consists of a one or more style definitions. In CSS syntax, the property names and values of a style are listed inside curly braces following the selection criteria for that style.</P>
+</a><a name="1077841">
+<P>The selection criteria determines which elements the style is applied to, or which elements it can be applied to. If the selection criteria is an HTML element, the style is applied to all instances of that element. The selection criteria can also be a class, an ID, or it can be contextual. Each of these kinds of selection criteria are discussed in this document.</P>
+</a><a name="1077842">
+<P>Each property in the style definition is followed by a colon then by the value for that property. Each property name/value pair must be separated from the next pair by a semicolon.</P>
+</a><a name="1049935">
+<P>For example, the following cascading style sheet defines two styles definitions. One style definition specifies that the font size for all <code>&lt;P&gt;</code> elements is 18 and the left margin for all <code>&lt;P&gt;</code> elements is 20. The other style definition specifies that the color for all <code>&lt;H1&gt;</code> elements is blue.</P>
+</a><a name="1032417">
+<PRE>&lt;STYLE TYPE="text/css"&gt;
+</PRE>
+</a><a name="1078038">
+<PRE>&lt;!--
+</PRE>
+</a><a name="1032418">
+<PRE> &#32; &#32;P {font-size:18pt; margin-left:20pt;}
+</PRE>
+</a><a name="1032383">
+<PRE> &#32; &#32;H1 {color:blue;}
+</PRE>
+</a><a name="1078047">
+<PRE>--&gt;
+</PRE>
+</a><a name="1032415">
+<PRE>&lt;/STYLE&gt;
+</PRE>
+</a><a name="1078104">
+<P>You can include the contents of the style sheet inside a comment (<code>&lt;!-- ... --&gt;</code>) so that browsers that do not recognize the <code>&lt;STYLE&gt;</code> element will ignore it.</P>
+</a><a name="1034882">
+<P><B>Important</B>: When specifying values for cascading style sheet properties, do not include double quotes.</P>
+</a><a name="1049960">
+<P>Cascading style sheets require strict adherence to correct syntax. Be sure not to omit any semicolons between name/value pairs. If you miss a single semi-colon, the style definition will be ignored. Similarly if you accidentally include a single extraneous character anywhere within a style definition, that definition will be ignored.</P>
+</a><HR><a name="1028324">
+<h1> Using JavaScript and the Document Object Model to Define Styles</h1>
+</a><a name="1028422">
+<P>Using JavaScript, you can define style sheets that use the document object model. In this model, you can think of a document such as a web page as an object that has properties that can be set or accessed. Each property can in turn be an object that has further properties. For example, the following code sets the <code>color</code> property of the object in the <code>H1</code> property of the object in the <code>tags</code> property of the <code>document</code>:</P>
+</a><a name="1066942">
+<PRE>document.tags.H1.color = "red";
+</PRE>
+</a><a name="1067056">
+<P>The <code>tags</code> property always applies to the <code>document</code> object for the current document, so you can omit <code>document</code> from the expression <code>document.tags</code>. </P>
+</a><a name="1078077">
+<P>The following example uses JavaScript and the document object model to define a style sheet that has two style definitions. One style definition specifies that the font size for all <code>&lt;P&gt;</code> elements (tags) is 18 and the left margin for all <code>&lt;P&gt;</code> elements is 20. The other style definition specifies that the color for all <code>&lt;H1&gt;</code> elements is blue.</P>
+</a><a name="1057225">
+<PRE>&lt;STYLE TYPE = "text/javascript"&gt;
+</PRE>
+</a><a name="1057226">
+<PRE> &#32;tags.P.fontSize = "18pt";
+</PRE>
+</a><a name="1057227">
+<PRE> &#32;tags.P.marginLeft = "20pt";
+</PRE>
+</a><a name="1036087">
+<PRE> &#32;tags.H1.color = "blue";
+</PRE>
+</a><a name="1032733">
+<PRE>&lt;/STYLE&gt;
+</PRE>
+</a><a name="1078089">
+<P>Do not wrap the contents of the style sheet in a comment (<code>!-- ... --&gt;</code>) for style sheets that use JavaScript syntax.</P>
+</a><a name="1078087">
+<P>You can also use the <code>with (tags.element)</code> syntax to shorten the style specification for elements that have several style settings. The following example specifies that all <code>&lt;P&gt;</code> elements are displayed in green, bold, italic, Helvetica font.</P>
+</a><a name="1049981">
+<PRE>with (tags.P) {
+</PRE>
+</a><a name="1049982">
+<PRE> &#32;color="green";
+</PRE>
+</a><a name="1050011">
+<PRE> &#32;font-weight="bold";
+</PRE>
+</a><a name="1050047">
+<PRE> &#32;font-style="italic";
+</PRE>
+</a><a name="1050052">
+<PRE> &#32;font-family="helvetica";
+</PRE>
+</a><a name="1050036">
+<PRE>}
+</PRE>
+</a><HR><a name="1013660">
+<h1> Introductory Example</h1>
+</a><a name="1068075">
+<P>Using style sheets, you can specify many stylistic attributes of your web page. The stylistic characteristics you can set for font and text include text alignment, text color, font family (such as Garamond), font style (such as italic), font weight (such as bold), line height, text decoration (such as underlining), horizontal and vertical alignment of text, and text indentation (which allows indented and outdented paragraphs). You can specify background colors and images for elements. You can specify the color and style to use for the bullets and numbers in lists.</P>
+</a><a name="1068118">
+<P>You can set margins and also specify borders for block-level elements. You can set the padding for elements that have borders, to indicate the distance between the element's content and its border.</P>
+</a><a name="1017242">
+<P>The following code shows a simple style sheet in both CSS syntax and JavaScript syntax. This style sheet specifies that all <code>&lt;P&gt;</code> elements have left and right margins, and their text is centered between the margins. All<code> &lt;H4&gt;</code> elements are green and underlined. All <code>&lt;H5&gt;</code> elements are uppercase. They have a red border that is four points thick. The border is in outdented 3D style and the padding between the text and the border is four points. The text color is red and the background color is yellow. All <code>&lt;BLOCKQUOTE&gt;</code> elements are blue italic, with a line height that is 150% larger than the font size. The first line is indented by 10% of the width of the element.</P>
+</a><a name="1036185">
+<h4>CSS Syntax </h4>
+</a><a name="1067951">
+<PRE>&lt;STYLE TYPE="text/css"&gt;
+</PRE>
+</a><a name="1067952">
+<PRE>P {
+</PRE>
+</a><a name="1067953">
+<PRE> &#32; &#32;textAlign:center; margin-left:20%; margin-right:20%;} &#32; &#32;
+</PRE>
+</a><a name="1036337">
+<PRE>H4 {
+</PRE>
+</a><a name="1067916">
+<PRE> &#32; &#32;text-decoration:underline; color: green;}
+</PRE>
+</a><a name="1036340">
+<PRE>H5 {
+</PRE>
+</a><a name="1067974">
+<PRE> &#32; &#32;text-transform:uppercase; color: red;
+</PRE>
+</a><a name="1067975">
+<PRE> &#32; &#32;border-width:4pt; border-style:outset;
+</PRE>
+</a><a name="1067976">
+<PRE> &#32; &#32;background-color:yellow; padding: 4pt;
+</PRE>
+</a><a name="1067917">
+<PRE> &#32; &#32;border-color:red;}
+</PRE>
+</a><a name="1036344">
+<PRE>BLOCKQUOTE {
+</PRE>
+</a><a name="1067956">
+<PRE> &#32; &#32;color:blue; font-style:italic;
+</PRE>
+</a><a name="1067957">
+<PRE> &#32; &#32;line-height:1.5; text-indent:10%;}
+</PRE>
+</a><a name="1036350">
+<PRE>&lt;/STYLE&gt;
+</PRE>
+</a><a name="1036711">
+<h4>JavaScript Syntax </h4>
+</a><a name="1036621">
+<PRE>&lt;STYLE TYPE="text/javascript"&gt;
+</PRE>
+</a><a name="1068005">
+<PRE> &#32; &#32;with (tags.P) {
+</PRE>
+</a><a name="1068008">
+<PRE> &#32; &#32; &#32; &#32;textAlign = "center"; marginLeft="20%". margin-right="20%";}
+</PRE>
+</a><a name="1036622">
+<PRE> &#32; &#32;with (tags.H4) {
+</PRE>
+</a><a name="1068009">
+<PRE> &#32; &#32; &#32; &#32;textDecoration = "underline; color = "green"; 
+</PRE>
+</a><a name="1068052">
+<PRE> &#32; &#32; &#32; &#32;textTransform = "uppercase;}
+</PRE>
+</a><a name="1068020">
+<PRE> &#32; &#32;with (tags.H5) {
+</PRE>
+</a><a name="1036625">
+<PRE> &#32; &#32; &#32; &#32;color = "red";
+</PRE>
+</a><a name="1068025">
+<PRE> &#32; &#32; &#32; &#32;borderWidths="4pt"=; borderStyle="outset";
+</PRE>
+</a><a name="1068026">
+<PRE> &#32; &#32; &#32; &#32;backgroundColor="yellow"; paddings("4pt");
+</PRE>
+</a><a name="1068023">
+<PRE> &#32; &#32; &#32; &#32;borderColor="red";}
+</PRE>
+</a><a name="1068036">
+<PRE> &#32; &#32;with (tags.BLOCKQUOTE) {
+</PRE>
+</a><a name="1036626">
+<PRE> &#32; &#32; &#32; &#32;color="blue"; fontStyle="italic";
+</PRE>
+</a><a name="1036628">
+<PRE> &#32; &#32; &#32; &#32;lineHeight = 1.5; textIndent = "20pt";}
+</PRE>
+</a><a name="1036630">
+<PRE>
+</PRE>
+</a><a name="1036631">
+<PRE>&lt;/STYLE&gt;
+</PRE>
+</a><a name="1036351">
+<h4>Style Sheet Use </h4>
+</a><a name="1036352">
+<PRE>&lt;H4&gt;Underlined Heading 4&lt;/H4&gt;
+</PRE>
+</a><a name="1036353">
+<PRE>&lt;BLOCKQUOTE&gt;
+</PRE>
+</a><a name="1036354">
+<PRE>This is a blockquote. It is usual for blockquotes to be indented, but 
+the first line of this blockquote has an extra indent. Also the line 
+height in this blockquote is bigger than you usually see in blockquotes.
+</PRE>
+</a><a name="1036355">
+<PRE>&lt;h5&gt;uppercase heading 5 with a border&lt;/H5&gt;
+</PRE>
+</a><a name="1036356">
+<PRE>&lt;/BLOCKQUOTE&gt;
+</PRE>
+</a><a name="1036357">
+<PRE>&lt;P&gt;This paragraph has a text alignment value of center. It also has 
+large margins, so each line is not only centered but is also inset on 
+both sides from the element that contains it, which in this case is the 
+document.&lt;/P&gt;
+</PRE>
+</a><a name="1029315">
+
+<P><SPAN STYLE="align:right;">
+<I><FONT COLOR="#404040"  size=-1>This example works in 
+Netscape Navigator 4.0+. </FONT></I></SPAN><B>
+Example results:</B> 
+</p>
+</a>
+<HR><a name="1029414">
+<H4 CLASS="EXAMPLE2"> Underlined Heading 4</H4>
+</a><a name="1029416">
+<BLOCKQUOTE CLASS="EXAMPLE2"> This is a blockquote. It is usual for blockquotes to be indented, but the first line of this blockquote has an extra indent. Also the line height in this blockquote is bigger than you usually see in blockquotes.
+</BLOCKQUOTE>
+</a><a name="1034786">
+<H5 CLASS="EXAMPLE2"> uppercase heading 5 with a border</H5>
+</a><a name="1029419">
+<P CLASS="EXAMPLE2"> This paragraph has a text alignment value of center. It also has large margins, so each line is not only centered but is also inset on both sides from the element that contains it, which in this case is the document.</P>
+</a><HR><a name="1068155">
+<h1> Inheritance of Styles</h1>
+</a><a name="1068156">
+<P>An HTML element that contains another element is considered to be the parent element of the element it contains, and the element it contains is considered to be its child element. </P>
+</a><a name="1014523">
+<P>For example, in the following HTML text, the <code>&lt;BODY&gt;</code> element is the parent of the <code>&lt;H1&gt;</code> element which in turn is the parent of the <code>&lt;EM&gt;</code> element.</P>
+</a><a name="1029496">
+<PRE>&lt;BODY&gt;
+</PRE>
+</a><a name="1014526">
+<PRE>&lt;H1&gt;The headline &lt;EM&gt;is&lt;/EM&gt; important!&lt;/H1&gt;
+</PRE>
+</a><a name="1029497">
+<PRE>&lt;/BODY&gt;
+</PRE>
+</a><a name="1014472">
+<P>In many cases, child elements acquire or inherit the styles of their parent elements. For example, suppose a style has been assigned to the <code>&lt;H1&gt;</code> element as follows:</P>
+</a><a name="1014534">
+<PRE>&lt;STYLE type="text/css"&gt;
+</PRE>
+</a><a name="1068289">
+<PRE>H1 {color:blue;}
+</PRE>
+</a><a name="1068290">
+<PRE>&lt;/STYLE&gt;
+</PRE>
+</a><a name="1068293">
+<PRE>&lt;BODY&gt;
+</PRE>
+</a><a name="1068288">
+<PRE>&lt;H1&gt;The headline &lt;EM&gt;is&lt;/EM&gt; important!&lt;/H1&gt;
+</PRE>
+</a><a name="1014532">
+<P>In this case, the child <code>&lt;EM&gt;</code> element takes on the style of its parent, which is the <code>&lt;H1&gt;</code> element, so the word<I> is</I> appears in blue. However, suppose you had previously set up a style specifying that <code>&lt;EM&gt;</code> elements should be displayed in red. In that case, the word <I>is</I> would be displayed in red, because properties set on the child override properties inherited from the parent.</P>
+</a><a name="1014479">
+<P>Inheritance starts at the top-level element. In HTML, this is the <code>&lt;HTML&gt;</code> element, which is followed by the <code>&lt;BODY&gt;</code> element.</P>
+</a><a name="1014546">
+<P>To set default style properties for all elements in a document, you can specify a style for the <code>&lt;BODY&gt;</code> element. For example, the following code sets the default text color to green.</P>
+</a><a name="1037075">
+<h4>CSS Syntax </h4>
+</a><a name="1037108">
+<PRE>&lt;STYLE TYPE="text/css"&gt;
+</PRE>
+</a><a name="1037109">
+<PRE> &#32; &#32;BODY {color: green;}
+</PRE>
+</a><a name="1037110">
+<PRE>&lt;/STYLE&gt;
+</PRE>
+</a><a name="1037080">
+<h4>JavaScript Syntax </h4>
+</a><a name="1014481">
+<PRE>&lt;STYLE TYPE="text/javascript"&gt;
+</PRE>
+</a><a name="1027407">
+<PRE> &#32; &#32;tags.BODY.color="green";
+</PRE>
+</a><a name="1057331">
+<PRE>&lt;/STYLE&gt;
+</PRE>
+</a><a name="1014490">
+<P>A few style properties are not inherited by the child element from the parent element, but in most of these cases, the net result is the same as if the property was inherited. For example, consider the background color property, which is not inherited. If a child element does not specify its own background color, then the parent's background color is visible through the child element. It will look as if the child element has the same background color as its parent element.</P>
+</a>
+<HR SIZE=4>
+ 
+<FONT SIZE=-1>
+<a href="contents.htm">[Contents]</a> <a href="jss3.htm">[Prev page]</a> <a href="jss32.htm">[Next page]</a> <a href="dynamici.htm">[Index]</a>
+</FONT>
+
+
+
+
+
+<P ALIGN=right>
+<FONT SIZE=-2><I>Last Updated:  08/07/97 15:21:45
+</I></FONT>
+
+
+<HR SIZE=4>
+
+
+<P> <CENTER>Copyright © 1997
+<A HREF="cpyrt.htm"
+TARGET=_top>Netscape Communications Corporation</A></FONT>
+</CENTER>
+</P>
+</BODY>
+</HTML>
+
+
+
+</body>
+</html>

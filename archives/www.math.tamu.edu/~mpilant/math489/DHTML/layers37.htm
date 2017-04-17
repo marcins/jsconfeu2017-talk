@@ -1,0 +1,543 @@
+<html><head><title>Dynamic HTML in Communicator
+
+</title>
+<LINK REL=STYLESHEET 
+ TYPE="text/css"
+href="cstyle1.htm">
+
+</head>
+<body bgcolor=#FFFFFF>
+<FONT SIZE=-1>
+<a href="contents.htm">[Contents]</a> <a href="layers36.htm">[Prev page]</a> <a href="layers38.htm">[Next page]</a> <a href="dynamici.htm">[Index]</a>
+</FONT>
+
+<HR SIZE=4>
+<H3 align="right"><FONT FACE="Helvetica,Arial" 
+COLOR="#408080" ><I>Dynamic HTML in Netscape Communicator<BR>
+Part 2. Positioning HTML Content</I></FONT></H3>
+
+
+
+<a name="1069524">
+<h1><I><FONT FACE="Helvetica,Arial" COLOR="#408080" SIZE=+1>
+Chapter 12</FONT></I> 
+</H1>
+</a><a name="1044408">
+<h1>Expanding Colored Squares Example</H1>
+<P><IMG SRC="images/bann02.gif" HEIGHT=6 WIDTH=640>
+</P>
+</a><a name="1045891">
+<P>This example illustrates how to expand and contract the clipping region of a layer, without changing the wrapping width of the layer. (The next example, <a href="layers38.htm#1045229">Chapter &#32;13, "Changing Wrapping Width Example,"</a>, illustrates how to capture mouse events so that the user can make a layer's wrapping width wider or narrower by dragging the mouse.)</P>
+</a><a name="1045828">
+<P>This example illustrate these tasks:</P>
+</a><ul><a name="1044427">
+<li>using of <code>onLoad</code> and <code>onMouseOver</code> event handlers for layers
+</a><a name="1044425">
+<li>dynamically changing clipping regions of layers
+</a><a name="1044432">
+<li>writing to layers
+</a><a name="1044437">
+<li>changing the source of a layer
+</a><a name="1044496">
+<li>using nested layers
+</a></ul><a name="1063353">
+<P>The sections in this chapter are:</P>
+</a><ul><a name="1063354">
+<li><a href="layers37.htm#1044447">Running the Example</a>
+</a><a name="1063359">
+<li><a href="layers37.htm#1044493">Creating the Colored Squares</a>
+</a><a name="1063365">
+<li><a href="layers37.htm#1045272">The Initialization Functions</a>
+</a><a name="1063371">
+<li><a href="layers37.htm#1045295">The Last Layer</a>
+</a><a name="1063377">
+<li><a href="layers37.htm#1044872">Moving the Mouse Over a Square</a>
+</a><a name="1063386">
+<li><a href="layers37.htm#1044945">The expand() Function</a>
+</a><a name="1063393">
+<li><a href="layers37.htm#1045038">The contract() Function</a>
+</a><a name="1063405">
+<li><a href="layers37.htm#1045039">Styles in the Document</a>
+</a></ul><HR><a name="1044447">
+<h1> Running the Example</h1>
+</a><a name="1063346">
+<P>In this example, when the page initially loads, the user sees four colored squares as follows:</P>
+</a><a name="1044448">
+<P><p align="center">
+<img src="stylefig/squares.gif" border=1>
+</P>
+</P>
+</a><a name="1044426">
+<center><h4>Figure 12.1&#32; Initial appearance of the four colored squares</h4></center>
+</a><a name="1065288">
+<P>When the square is fully contracted, it displays a number. If the user moves the mouse over one of the squares, its content changes to a block of text and the square expands.The top-left square expands up and to the left, the top-right square expands to the top and to the right, and so on.</P>
+</a><a name="1044544">
+<P>The following figure shows the four squares after the top-left and top-right squares are fully expanded.</P>
+</a><a name="1044548">
+<P><p align="center">
+<img src="stylefig/squares2.gif" border=1>
+</P>
+</P>
+</a><a name="1065291">
+<center><h4>Figure 12.2&#32; Two squares are fully expanded</h4></center>
+</a><a name="1065289">
+<P>While a square is expanding, further mouse-over events are blocked on that square until it has finished expanding. When it is fully expanded, if the user moves the mouse over it, then it contracts again. While it is contracting, all mouse-over events for that square are blocked until it has finished contracting. When it finishes contracting, it changes its content back to a number.</P>
+</a><a name="1044452">
+<P>To run the example see:</P>
+</a><A HREF="squares.htm" target="lewin">
+<PRE>squares.htm</PRE></A><p>
+<a name="1064698">
+<P>This example is provided only as a <code>&lt;LAYER&gt;</code> version.</P>
+</a><a name="1044418">
+<P>To view the complete code for the example, use the <code>Page Source</code> command of the <code>View</code> menu in the Navigator browser that is displaying the example. </P>
+</a><HR><a name="1044493">
+<h1> Creating the Colored Squares</h1>
+</a><a name="1044497">
+<P>Each colored square is in its own layer. The width of each layer is 200 and the height is 200. When the page loads you only see a 50x50 region of each layer because as soon as it is loaded, it calls a function that sets its clipping region so that only a small part of the square is visible.</P>
+</a><a name="1044498">
+<P>Each square layer contains another layer that displays a number. The number needs to be in a layer so that can be placed it in the portion of the layer that is visible when the square is fully contracted.</P>
+</a><a name="1044583">
+<P>The following figure shows where the number 1 would appear in the top-left square if it were not in a layer but were allowed to fall in its natural position in the parent layer. As you can see, when the red square is fully contracted, the number would not be visible.</P>
+</a><a name="1044584">
+<P><p align="center">
+<img src="stylefig/squares3.gif" border=1>
+</P>
+</P>
+</a><a name="1065300">
+<center><h4>Figure 12.3&#32; Position where the number 1 would appear if it were not in a layer</h4></center>
+</a><a name="1065298">
+<h2> Definitions for the Layers</h2>
+</a><a name="1045269">
+<P>The following code defines the top-left layer:</P>
+</a><a name="1044645">
+<PRE>&lt;LAYER ID="topleftblock" top=50 left=50
+</PRE>
+</a><a name="1044646">
+<PRE> width=200 height=200
+</PRE>
+</a><a name="1044647">
+<PRE> BGcolor="#FF5555"
+</PRE>
+</a><a name="1044648">
+<PRE> onLoad = initializeTopLeft(0);
+</PRE>
+</a><a name="1044649">
+<PRE> onMouseOver=changeNow(0); &gt;
+</PRE>
+</a><a name="1044650">
+<PRE> &lt;LAYER TOP=160 LEFT=168&gt;
+</PRE>
+</a><a name="1044651">
+<PRE>    &lt;H1&gt;1&lt;/H1&gt;
+</PRE>
+</a><a name="1044652">
+<PRE>  &lt;/LAYER&gt;
+</PRE>
+</a><a name="1044643">
+<PRE>&lt;/LAYER&gt;
+</PRE>
+</a><a name="1044410">
+<P>This layer would be 200 pixels wide by 200 high. However, when this layer finishes loading, it calls its <code>onLoad</code> function, <code>initializeTopLeft()</code>.</P>
+</a><a name="1044723">
+<P>Before considering the <code>initializeTopLeft()</code> function, quickly look at the global variables defined in the script. There are four variables that describe the minimum and maximum clipping values. The variable <code>delta</code> specifies the distance by which the clipping values change each time the <code>expand()</code> or <code>contract()</code> functions are called. (These functions will be discussed in detail soon.) </P>
+</a><a name="1044731">
+<PRE>&lt;SCRIPT&gt;
+</PRE>
+</a><a name="1044732">
+<PRE>var maxclip = 200;
+</PRE>
+</a><a name="1044733">
+<PRE>var minclip = 0;
+</PRE>
+</a><a name="1044734">
+<PRE>var maxclipcontracted = 150;
+</PRE>
+</a><a name="1044735">
+<PRE>var minclipcontracted = 50;
+</PRE>
+</a><a name="1044728">
+<PRE>var delta = 10;
+</PRE>
+</a><HR><a name="1045272">
+<h1> The Initialization Functions</h1>
+</a><a name="1044789">
+<P>The <code>initializeTopLeft()</code> function does the following things:</P>
+</a><ul><a name="1044794">
+<li>Sets the layer's status variable to <code>"waitingToExpand"</code>. (Notice that you can create the variable simply by using it.) 
+</a><a name="1044795">
+<li>Sets the <code>clip.top</code>, <code>clip.bottom</code>, <code>clip.right</code>, and <code>clip.left</code> values so that the visible region of the layer is a square measuring 50 pixels by 50 pixels in the bottom right corner, as illustrated in the following figure:
+</a></ul><a name="1065327">
+<P><p align="center">
+<img src="stylefig/coords.gif" border=1>
+</P>
+ </P>
+</a><a name="1065331">
+<center><h4>Figure 12.4&#32; Clip values</h4></center>
+</a><ul><a name="1065329">
+<li>Sets the <code>dleft</code>, <code>dtop</code>, <code>dbottom</code>, and <code>dright</code> variables to indicate by how much the <code>clip.left</code>, <code>clip.top</code>, <code>clip.bottom</code> and <code>clip.right</code> variables need to change while the square is expanding.
+</a><a name="1044866">
+<li>Sets the <code>myposition</code> variable to <code>topLeft</code>.
+</a><a name="1044867">
+<li>Sets the <code>mysource</code> variable so that it specifies the source file to be used as the contents of the layer when it starts expanding.
+</a><a name="1044868">
+<li>Sets the <code>mytext</code> variable so it contains the text that will be written to the layer when the layer is fully contracted.
+</a></ul><a name="1044865">
+<P>The full definition for the <code>initializeTopLeft()</code> function is shown here:</P>
+</a><a name="1044860">
+<PRE>function initializeTopLeft(n)
+</PRE>
+</a><a name="1044791">
+<PRE>{
+</PRE>
+</a><a name="1044744">
+<PRE> var thislayer = document.layers[n];
+</PRE>
+</a><a name="1044745">
+<PRE> thislayer.status = "waitingToExpand";
+</PRE>
+</a><a name="1044799">
+<PRE> thislayer.clip.top = maxclipcontracted;
+</PRE>
+</a><a name="1044800">
+<PRE> thislayer.clip.left = maxclipcontracted;
+</PRE>
+</a><a name="1044801">
+<PRE> thislayer.clip.bottom = maxclip;
+</PRE>
+</a><a name="1044749">
+<PRE> thislayer.clip.right = maxclip;
+</PRE>
+</a><a name="1044750">
+<PRE> thislayer.dleft = -delta;
+</PRE>
+</a><a name="1044751">
+<PRE> thislayer.dtop = -delta;
+</PRE>
+</a><a name="1044752">
+<PRE> thislayer.dbottom = 0;
+</PRE>
+</a><a name="1044753">
+<PRE> thislayer.dright = 0;
+</PRE>
+</a><a name="1044754">
+<PRE> thislayer.myposition = "topLeft";
+</PRE>
+</a><a name="1044755">
+<PRE> thislayer.mysource="point1.htm"
+</PRE>
+</a><a name="1044756">
+<PRE> thislayer.mytext="&lt;LAYER TOP=160 LEFT=168&gt;&lt;H1&gt;1&lt;/H1&gt;&lt;/LAYER&gt;"
+</PRE>
+</a><a name="1044757">
+<PRE> return false;
+</PRE>
+</a><a name="1045291">
+<PRE>}
+</PRE>
+</a><a name="1045292">
+<P>Each of the other three layers has a similar definition, and a corresponding initialization function.</P>
+</a><HR><a name="1045295">
+<h1> The Last Layer</h1>
+</a><a name="1045296">
+<P>Since the bottom squares can be dynamically expanded beyond the height of the page, add a last layer that is positioned below the bottom of the expanded bottom squares. This last layer has nothing in it, but it forces the Web page to increase its height to be big enough to include the expanded layers. Thus you will be able to use the scrollbar to scroll down to the bottom of the expanded layers if they do not initially fit on your screen.</P>
+</a><a name="1045297">
+<P>If you we do not include this last layer, then the scrollbar will only allow you to scroll to the bottom of the contracted squares.</P>
+</a><a name="1045298">
+<P>Here is the definition for the last layer:</P>
+</a><a name="1045305">
+<PRE>&lt;LAYER TOP=500&gt;
+</PRE>
+</a><a name="1045306">
+<PRE>&lt;P&gt;&lt;/P&gt;
+</PRE>
+</a><a name="1045299">
+<PRE>&lt;/LAYER&gt;
+</PRE>
+</a><HR><a name="1044872">
+<h1> Moving the Mouse Over a Square</h1>
+</a><a name="1044873">
+<P>When you move the mouse over any of the colored squares, its <code>changeNow()</code> function is invoked. (This is because in the layer definition, the <code>onMouseOver</code> handler is set to <code>changeNow</code>().)</P>
+</a><a name="1044874">
+<P>The basic aim of the <code>changeNow()</code> function is to start expanding the layer if it is fully contracted, or start contracting the layer if it is fully expanded. If the layer is already in the process of expanding or contracting, it ignores the new mouse over event.</P>
+</a><a name="1044879">
+<P>The <code>status</code> variable indicates whether the layer is waiting to expand, waiting to contract, expanding or contracting. The status value for each layer is initialized to "<code>waitingToExpand</code>".</P>
+</a><a name="1044936">
+<P>The <code>changeNow()</code> function simply checks the status of the layer and then calls the <code>expand()</code> function, the <code>contract()</code> function, or does nothing, depending on the layer's status. If the layer needs to start expanding, it first sets the layer's source to change the content of the layer to show text instead of just a number.</P>
+</a><a name="1044888">
+<PRE>function changeNow (n)
+</PRE>
+</a><a name="1044889">
+<PRE>{
+</PRE>
+</a><a name="1044890">
+<PRE> var thislayer = document.layers[n];
+</PRE>
+</a><a name="1044891">
+<PRE> if (thislayer.status == "waitingToExpand")
+</PRE>
+</a><a name="1044892">
+<PRE> {
+</PRE>
+</a><a name="1044893">
+<PRE>  thislayer.src=thislayer.mysource;
+</PRE>
+</a><a name="1044894">
+<PRE>  expand(n);
+</PRE>
+</a><a name="1044895">
+<PRE>  }
+</PRE>
+</a><a name="1044896">
+<PRE> else if (thislayer.status == "waitingToContract")
+</PRE>
+</a><a name="1044897">
+<PRE>  {contract(n);}
+</PRE>
+</a><a name="1044900">
+<PRE> return false;
+</PRE>
+</a><a name="1044901">
+<PRE>}
+</PRE>
+</a><HR><a name="1044945">
+<h1> The expand() Function</h1>
+</a><a name="1044878">
+<P>The <code>expand()</code> function sets the layer's status to <code>expanding</code>. Then it changes each of the <code>clip.left</code>, <code>clip.right</code>, <code>clip.top</code>, and <code>clip.bottom</code> variables by the values appropriate to the particular layer to increase the layer's visible region in the appropriate direction. It then checks if the layer is fully expanded and, if not, calls the <code>setTimeout()</code> function to reinvoke the <code>expand()</code> function.</P>
+</a><a name="1044943">
+<P>If the layer has finished expanding, the <code>expand()</code> function sets the layer's status to <code>"waitingToContract"</code>.</P>
+</a><a name="1044944">
+<P>Here is the code for the <code>expand()</code> function:</P>
+</a><a name="1044948">
+<PRE>function expand (n)
+</PRE>
+</a><a name="1044949">
+<PRE>{
+</PRE>
+</a><a name="1044950">
+<PRE> var thislayer = document.layers[n];
+</PRE>
+</a><a name="1044951">
+<PRE> thislayer.status = "expanding";
+</PRE>
+</a><a name="1044952">
+<PRE> // increase or decrease each clip value as appropriate
+</PRE>
+</a><a name="1044989">
+<PRE> thislayer.clip.left=thislayer.clip.left+thislayer.dleft;
+</PRE>
+</a><a name="1044953">
+<PRE> thislayer.clip.right=thislayer.clip.right+thislayer.dright;
+</PRE>
+</a><a name="1044954">
+<PRE> thislayer.clip.bottom=thislayer.clip.bottom+thislayer.dbottom;
+</PRE>
+</a><a name="1044955">
+<PRE> thislayer.clip.top=thislayer.clip.top+thislayer.dtop;
+</PRE>
+</a><a name="1045035">
+<PRE> // is the layer fully expanded?
+</PRE>
+</a><a name="1044956">
+<PRE> if (
+</PRE>
+</a><a name="1045010">
+<PRE>  (((thislayer.myposition == "topLeft") |
+</PRE>
+</a><a name="1044958">
+<PRE>   (thislayer.myposition == "bottomLeft")) &amp;&amp;
+</PRE>
+</a><a name="1044959">
+<PRE>   (thislayer.clip.left &gt; minclip)) ||
+</PRE>
+</a><a name="1044960">
+<PRE>  (((thislayer.myposition == "topRight") |
+</PRE>
+</a><a name="1044961">
+<PRE>   (thislayer.myposition == "bottomRight")) &amp;&amp;
+</PRE>
+</a><a name="1044962">
+<PRE>   (thislayer.clip.right &lt; maxclip)))
+</PRE>
+</a><a name="1045036">
+<PRE> // if not, call expand again
+</PRE>
+</a><a name="1044964">
+<PRE> {setTimeout("expand(" + n + ")", 50);}
+</PRE>
+</a><a name="1045037">
+<PRE> // if so, change the layer's status
+</PRE>
+</a><a name="1044967">
+<PRE> else {thislayer.status = "waitingToContract";}
+</PRE>
+</a><a name="1044971">
+<PRE> return false;
+</PRE>
+</a><a name="1044946">
+<PRE>}
+</PRE>
+</a><HR><a name="1045038">
+<h1> The contract() Function</h1>
+</a><a name="1045041">
+<P>The <code>contract()</code> function is very similar to the <code>expand()</code> function. The <code>contract()</code> function sets the layer's status to <code>contracting</code>. Then it changes each of the <code>clip.left</code>, <code>clip.right</code>, <code>clip.top</code>, and <code>clip.bottom</code> by the values appropriate to the particular layer to decrease the visible region in the appropriate direction. It then checks if the layer is fully contracted, and if not, calls the <code>setTimeout()</code> function to reinvoke the <code>contract()</code> function.</P>
+</a><a name="1045042">
+<P>If the layer has finished contracting, the <code>contract()</code> function sets the layer's status to <code>"waitingToExpand"</code>. The other thing it does is to change the contents of the layer so that you can see the number of the layer. It does this by opening the layer's document, writing the data stored in the layer's <code>mytext</code> variable, and then closing the layer's document. </P>
+</a><a name="1045071">
+<P>The value of the <code>mytext</code> variable was set during the initialization process. For each layer, it contains the HTML text for an embedded layer that displays the layer's number at a place that will be visible when the layer is fully contracted. </P>
+</a><a name="1045043">
+<P>Here is the code for the <code>contract()</code> function:</P>
+</a><a name="1045083">
+<PRE>function contract (n)
+</PRE>
+</a><a name="1045084">
+<PRE>{
+</PRE>
+</a><a name="1045085">
+<PRE> var thislayer = document.layers[n];
+</PRE>
+</a><a name="1045218">
+<PRE> thislayer.status = "contracting";
+</PRE>
+</a><a name="1045213">
+<PRE> // increase or decrease each clip value as appropriate
+</PRE>
+</a><a name="1045087">
+<PRE> thislayer.clip.left=thislayer.clip.left-thislayer.dleft;
+</PRE>
+</a><a name="1045088">
+<PRE> thislayer.clip.right=thislayer.clip.right-thislayer.dright;
+</PRE>
+</a><a name="1045089">
+<PRE> thislayer.clip.bottom=thislayer.clip.bottom-thislayer.dbottom;
+</PRE>
+</a><a name="1045090">
+<PRE> thislayer.clip.top=thislayer.clip.top-thislayer.dtop;
+</PRE>
+</a><a name="1045223">
+<PRE> // is the layer fully contracted? True if
+</PRE>
+</a><a name="1049710">
+<PRE> // the square is the top OR bottom left AND its clip left 
+</PRE>
+</a><a name="1049711">
+<PRE> //  is less than or equal to the minimum clip for contracted squares
+</PRE>
+</a><a name="1049722">
+<PRE> // OR if the square is the top OR bottom right AND its clip right
+</PRE>
+</a><a name="1049743">
+<PRE> // is greater than or equal the max clip for contracted squares
+</PRE>
+</a><a name="1045091">
+<PRE> if (
+</PRE>
+</a><a name="1045092">
+<PRE>  (((thislayer.myposition == "topLeft") |
+</PRE>
+</a><a name="1045093">
+<PRE>   (thislayer.myposition == "bottomLeft")) &amp;&amp;
+</PRE>
+</a><a name="1045094">
+<PRE>   (thislayer.clip.left &lt;= minclipcontracted)) ||
+</PRE>
+</a><a name="1045095">
+<PRE>  (((thislayer.myposition == "topRight") |
+</PRE>
+</a><a name="1045096">
+<PRE>   (thislayer.myposition == "bottomRight")) &amp;&amp;
+</PRE>
+</a><a name="1045097">
+<PRE>   (thislayer.clip.right &gt;= maxclipcontracted)))
+</PRE>
+</a><a name="1045224">
+<PRE> // if not, call contract again
+</PRE>
+</a><a name="1045099">
+<PRE> {setTimeout("contract(" + n + ")", 50);}
+</PRE>
+</a><a name="1045225">
+<PRE> // if it is fully contracted
+</PRE>
+</a><a name="1045102">
+<PRE> else {
+</PRE>
+</a><a name="1045103">
+<PRE>  // change the status
+</PRE>
+</a><a name="1045226">
+<PRE>  thislayer.status = "waitingToExpand";
+</PRE>
+</a><a name="1045227">
+<PRE>  //open the document, write mytext to it, close again
+</PRE>
+</a><a name="1045104">
+<PRE>  thislayer.document.write(thislayer.mytext);
+</PRE>
+</a><a name="1045105">
+<PRE>  thislayer.document.close();
+</PRE>
+</a><a name="1045106">
+<PRE> }
+</PRE>
+</a><a name="1045107">
+<PRE> return false;
+</PRE>
+</a><a name="1045228">
+<PRE>}
+</PRE>
+</a><a name="1045250">
+<PRE>&lt;/SCRIPT&gt;
+</PRE>
+</a><HR><a name="1045039">
+<h1> Styles in the Document</h1>
+</a><a name="1045240">
+<P>Just to make the text in the squares look prettier, this file uses a style sheet to set left and right margins for paragraphs, and to center level-three headings:</P>
+</a><a name="1045241">
+<PRE>&lt;STYLE TYPE="text/css"&gt;
+</PRE>
+</a><a name="1057364">
+<PRE>&lt;!--
+</PRE>
+</a><a name="1045242">
+<PRE> P {margin-left:10%; margin-right:10%;}
+</PRE>
+</a><a name="1045243">
+<PRE> H3 {text-align:center; margin-top:4%;}
+</PRE>
+</a><a name="1057373">
+<PRE>--&gt;
+</PRE>
+</a><a name="1045244">
+<PRE>&lt;/STYLE&gt;
+</PRE>
+</a>
+<HR SIZE=4><br>
+ 
+<FONT SIZE=-1>
+<a href="contents.htm">[Contents]</a> <a href="layers36.htm">[Prev page]</a> <a href="layers38.htm">[Next page]</a> <a href="dynamici.htm">[Index]</a>
+</FONT>
+
+<br>
+
+
+
+<P ALIGN=right>
+<FONT SIZE=-2><I>Last Updated:  08/07/97 15:21:59
+</I></FONT>
+
+
+<HR SIZE=4>
+
+
+<P> <CENTER>Copyright © 1997
+<A HREF="cpyrt.htm"
+TARGET=_top>Netscape Communications Corporation</A></FONT>
+</CENTER>
+</P>
+</BODY>
+</HTML>
+
+
+
+</body>
+</html>

@@ -1,0 +1,473 @@
+<BODY BGCOLOR="#FFFFFF">
+<A NAME="1001595">
+<P>
+</A><A NAME="1001596">
+<P>
+</A><A NAME="996824">
+<H1>LiveConnect
+</H1>
+</A>
+
+<A NAME="1007683">
+
+<img src="graphics/livecona.gif">
+
+iveConnect enables communication between JavaScript and Java applets in a page and between JavaScript and plug-ins loaded on a page.<P></A>
+<ul><A NAME="1007684">
+<LI>Use JavaScript to access Java variables, methods, classes, and packages directly.
+</A><A NAME="1007685">
+<LI>Control Java applets or plug-ins with JavaScript.
+</A><A NAME="1007686">
+<LI>Use Java code to access JavaScript methods and properties.
+</A>
+</ul>
+<a name="1007687">
+<blockquote>For the Netscape 
+packages reference, 
+see <a href="packages.htm#1003191">Chapter&nbsp;12, 
+"The Netscape 
+packages."</a>
+</blockquote>
+</a>
+<A NAME="1007691">
+This chapter explains how to use LiveConnect in Netscape Navigator. It assumes you are familiar with Java programming.<P></A>
+<A NAME="1007692">
+For the HTML syntax required to add applets and plug-ins to your web page, see <a href="ref_a-c.htm#73156">"Applet"</a> and <a href="ref_m-q.htm#178075">"Plugin"</a>.<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="Enabling LiveConnect"></A>
+<A NAME="1007701">
+<H1> Enabling LiveConnect</H1>
+</A>
+<A NAME="1007702">
+LiveConnect is enabled by default in Navigator 3.0. For LiveConnect to work, both Java and JavaScript must be enabled. To confirm they are enabled, choose Network Preferences from the Options menu, then choose the Languages tab.<P></A>
+<ul><A NAME="1007703">
+<LI>Make sure Enable Java is checked.
+</A><A NAME="1007704">
+<LI>Make sure Enable JavaScript is checked.
+</A></ul><A NAME="1007705">
+To disable either Java or JavaScript, uncheck the checkboxes; if you do this, LiveConnect will not work.<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="The Java Console"></A>
+<A NAME="1007708">
+<H1> The Java Console</H1>
+</A>
+<A NAME="1007709">
+The Java Console is a Navigator window that displays Java messages. When you use the class variables <I>out</I> or <I>err</I> in <I>java.lang.System</I> to output a message, the message appears in the Console. To display the Java Console, choose Show Java Console from the Options menu.<P></A>
+<A NAME="1007710">
+You can use the Java Console to present messages to users, or to trace the values of variables at different places in a program's execution.<P></A>
+<A NAME="1007711">
+For example, the following Java code displays the message "Hello, world!" in the Java Console:<P></A>
+<A NAME="1007712">
+<PRE>public void init() {<br>&nbsp;&nbsp;&nbsp;System.out.println("Hello, world!")<br>}</PRE>
+</A>
+<A NAME="1007713">
+You can use the Java Console to present messages to users, or to trace the values of variables at different places in a program's execution. To display the Java Console, the user chooses Show Java Console from the Options menu. Note that most users probably do not display the Java Console.<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="About the Netscape packages"></A>
+<A NAME="1007716">
+<H1> About the Netscape packages</H1>
+</A>
+<A NAME="1007717">
+Navigator 3.0 contains a <code>java_30</code> file that includes the following Java packages:<P></A>
+<ul><A NAME="1007719">
+<LI><I>netscape</I> packages to enable JavaScript and Java communication.
+</A><A NAME="1007721">
+<LI><I>java</I> and <I>sun</I> packages to provide security enhancements for LiveConnect.
+</A></ul><A NAME="1007722">
+The new <I>java</I> and <I>sun</I> packages replace packages in the Sun 1.0.2 Java Development Kit (JDK) <code>classes.zip</code>. These packages have been tested by Sun, and similar security enhancements will be implemented in future releases of the Sun JDK. Use these packages until the Sun JDK provides these security enhancements.<P></A>
+<A NAME="1007724">
+The file <code>java_30</code> contains the following <I>netscape</I> packages:<P></A>
+<ul><A NAME="1007725">
+<LI><I>netscape.javascript</I> implements the <I>JSObject</I> class to allow your Java applet to access JavaScript methods and properties. It also implements <I>JSException</I> to throw an exception when JavaScript code returns an error.
+</A><A NAME="1007727">
+<LI><I>netscape.plugin</I> implements the <I>Plugin</I> class to enable JavaScript and Java plug-in communication. Compile your Java plug-in with this class to allow applets and JavaScript code to manipulate the plug-in.
+</A></ul><A NAME="1007732">
+These packages are documented in <a href="packages.htm#1003191">Chapter&nbsp;12, "The Netscape packages."</a><P></A>
+<A NAME="1007733">
+In addition, <code>java_30</code> contains some other <I>netscape</I> packages:<P></A>
+<ul><A NAME="1007735">
+<LI><I>netscape.applet</I> is a replacement for the Sun JDK package <I>sun.applet</I>.
+</A><A NAME="1007737">
+<LI><I>netscape.net</I> is a replacement for the Sun JDK package <I>sun.net</I>.
+</A></ul><A NAME="1007738">
+These packages are not documented because they are implemented in the same way as the original Sun packages.<P></A>
+
+<A NAME="Using the Netscape packages"></A>
+<A NAME="1007740">
+<H2> Using the Netscape packages</H2>
+</A>
+
+<A NAME="1007741">
+To access the packages in <code>java_30</code>, place the file in the classpath of the JDK compiler in either of the following ways:<P></A>
+<ul><A NAME="1007742">
+<LI>Create a <code>CLASSPATH</code> environment variable to specify the paths and names of <code>java_30</code> and <code>classes.zip</code>.
+</A><A NAME="1007743">
+<LI>Specify the location of <code>java_30</code> when you compile by using the <code>-classpath</code> command line parameter.
+</A></ul><A NAME="1007744">
+For example, on Windows, the <code>java_30</code> file is delivered in the <code>Program\Java\classes</code> directory beneath the Navigator directory. You can specify an environment variable in Windows NT by double-clicking the System icon in the Control Panel and creating a user environment variable called CLASSPATH with a value similar to the following:<P></A>
+<A NAME="1007745">
+<PRE>D:\JDK\java\lib\classes.zip;D:\Navigator\Program\java\classes\java_30</PRE>
+</A>
+<A NAME="1007746">
+See the Sun JDK documentation for more information about CLASSPATH.<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="JavaScript to Java communication"></A>
+<A NAME="1007749">
+<H1> JavaScript to Java communication</H1>
+</A>
+<A NAME="1007750">
+LiveConnect provides three ways for JavaScript to communicate with Java:<P></A>
+<ul><A NAME="1007751">
+<LI>Call Java methods directly.
+</A><A NAME="1007752">
+<LI>Control Java applets.
+</A><A NAME="1007753">
+<LI>Control Java plug-ins.
+</A></ul>
+<A NAME="Accessing Java directly"></A>
+<A NAME="1007755">
+<H2> Accessing Java directly</H2>
+</A>
+
+<A NAME="1007756">
+When LiveConnect is enabled, JavaScript can make direct calls to Java methods. For example, you can call <code>System.out.println</code> to display a message on the Java Console.<P></A>
+<A NAME="1007757">
+In JavaScript, Java packages and classes are properties of the <I>Packages</I> object. Use Java syntax to reference Java objects in JavaScript, with the name of the <I>Packages</I> object optionally prepended:<P></A>
+<A NAME="1007758">
+<PRE>[Packages.]<I>packageName.className.methodName</I></PRE>
+</A>
+<A NAME="1007759">
+The name <code>Packages</code> is optional for <I>java</I>, <I>sun</I>, and <I>netscape</I> packages; in code, <code>java</code>, <code>sun</code>, and <code>netscape</code> are aliases for <code>Packages.java</code>, <code>Packages.sun</code>, and <code>Packages.netscape</code>. For example, you can refer to the Java class <I>java.lang.System</I> as either <code>Packages.java.lang.System</code> or as <code>java.lang.System</code> in your code. The name <code>Packages</code> is required for other packages.<P></A>
+<A NAME="1007760">
+Access fields and methods in a class with the same syntax that you use in Java. For example, the following JavaScript code prints a message to the Java Console:<P></A>
+<A NAME="1007761">
+<PRE>var System = java.lang.System<br>System.err.println("Greetings from JavaScript")</PRE>
+</A>
+<A NAME="1007762">
+The first line in this example makes the JavaScript variable <I>System</I> refer to the class <I>java.lang.System</I>. The second line invokes the <B>println</B> method of the static variable <I>err</I> in the Java <I>System</I> class. Because <B>println</B> expects a <I>java.lang.String</I> argument, the JavaScript string is automatically converted to a <I>java.lang.String.</I><P></A>
+<A NAME="1007763">
+You can even use Java class constructors in JavaScript. For example, the following JavaScript code creates a Java <I>Date</I> object and prints it to the Java Console.<P></A>
+<A NAME="1007764">
+<PRE>var mydate = new java.util.Date()<br>System.out.println(myDate)</PRE>
+</A>
+
+<A NAME="Controlling Java applets"></A>
+<A NAME="1007766">
+<H2> Controlling Java applets</H2>
+</A>
+
+<A NAME="1007767">
+You can use JavaScript to control the behavior of a Java applet without knowing much about the internal construction of the applet. All public variables, methods, and properties of an applet are available for JavaScript access. For example, you can use buttons on an HTML form to start and stop a Java applet that appears elsewhere in the document.<P></A>
+
+<A NAME="Referencing applets"></A>
+<A NAME="1007769">
+<H3> Referencing applets</H3>
+</A>
+
+<A NAME="1007770">
+Each applet in a document is reflected in JavaScript by <code>document.appletName</code>, where <I>appletName</I> is the value of the NAME attribute of the &lt;APPLET&gt; tag. The <I>applets</I> array also contains all the applets in a page; you can reference elements of the array through the applet name (as in an associative array) or by the ordinal number of the applet on the page (starting from zero).<P></A>
+<A NAME="1007771">
+For example, consider the basic "Hello World" applet in Java:<P></A>
+<A NAME="1007772">
+<PRE>import java.applet.Applet;<br>import java.awt.Graphics;<br><br>public class HelloWorld extends Applet {<br>&nbsp;&nbsp;&nbsp;public void paint(Graphics g) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;g.drawString("Hello world!", 50, 25);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;}</PRE>
+</A>
+<A NAME="1007773">
+The following HTML runs and displays the applet, and names it "HelloWorld" (with the NAME attribute):<P></A>
+<A NAME="1007774">
+<PRE>&lt;APPLET CODE="HelloWorld.class" NAME="HelloWorld" WIDTH=150 HEIGHT=25&gt;<br>&lt;/APPLET&gt;</PRE>
+</A>
+<A NAME="1007775">
+You can reference this applet in JavaScript in either of the following ways:<P></A>
+<A NAME="1007776">
+<PRE>document.HelloWorld<br>document.applets["HelloWorld"]</PRE>
+</A>
+<A NAME="1007777">
+If this is the first applet in the document (topmost on the page), you could also reference it as:<P></A>
+<A NAME="1007778">
+<PRE>document.applets[0]</PRE>
+</A>
+<A NAME="1007779">
+The <I>applets</I> array has a <I>length</I> property, <code>document.applets.length</code>, that indicates the number of applets in the document.<P></A>
+<A NAME="1007780">
+All public variables declared in an applet, and its ancestor classes and packages are available in JavaScript. Static methods and properties declared in an applet are available to JavaScript as methods and properties of the <I>Applet</I> object. You can get and set property values, and you can call methods that return string, numeric, and boolean values.<P></A>
+
+<A NAME="Example 1: Hello World"></A>
+<A NAME="1007782">
+<H3> Example 1: Hello World</H3>
+</A>
+
+<A NAME="1007783">
+So for example, modify the HelloWorld applet shown above, and make the following changes:<P></A>
+<ul><A NAME="1007784">
+<LI>Override its <B>init</B> method so that it declares and initializes a string called <I>myString.</I>
+</A><A NAME="1007785">
+<LI>Define a <B>setString</B> method that accepts a string argument, assigns it to <I>myString</I>, and calls the <B>repaint</B> method. (The <B>paint</B> and <B>repaint</B> methods are inherited from <code>java.awt.Component</code>).
+</A></ul><A NAME="1007786">
+The Java source code then looks as follows:<P></A>
+<A NAME="1007787">
+<PRE>import java.applet.Applet;<br>import java.awt.Graphics;<br><br>public class HelloWorld extends Applet {<br>&nbsp;&nbsp;&nbsp;String myString;<br><br>&nbsp;&nbsp;&nbsp;public void init() {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;myString = new String("Hello, world!");<br>&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;public void paint(Graphics g) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;g.drawString(myString, 25, 20);<br>&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;public void setString(String aString) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;myString = aString;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;repaint();<br>&nbsp;&nbsp;&nbsp;}<br>}</PRE>
+</A>
+<A NAME="1007788">
+Making the message string a variable allows you to modify it from JavaScript. Now modify the HTML file as follows:<P></A>
+<ul><A NAME="1007789">
+<LI>Add a form with a button and a text field.
+</A><A NAME="1007790">
+<LI>Make the onClick event handler for the button call the <B>setString</B> method of HelloWorld with the string from the text field as its argument.
+</A></ul><A NAME="1007791">
+The HTML file now looks like this:<P></A>
+<A NAME="1007792">
+<PRE>&lt;APPLET CODE="HelloWorld1.class" NAME="Hello" WIDTH=150 HEIGHT=25&gt;<br>&lt;/APPLET&gt;<br><br>&lt;FORM NAME="form1"&gt;<br>&lt;INPUT TYPE="button" VALUE="Set String"<br>&nbsp;&nbsp;&nbsp;onClick="document.HelloWorld.setString(document.form1.str.value)"&gt;<br>&lt;BR&gt;<br>&lt;INPUT TYPE="text" SIZE="20" NAME="str"&gt;<br>&lt;/FORM&gt;</PRE>
+</A>
+<A NAME="1007793">
+When you compile the HelloWorld applet, and load the HTML page into Navigator, you initially see "Hello, World!" displayed in the gray applet panel. However, you can now change it by entering text in the text field and clicking on the button. This demonstrates controlling an applet from JavaScript.<P></A>
+
+<A NAME="Example 2: Flashing color text applet"></A>
+<A NAME="1007795">
+<H3> Example 2: Flashing color text applet</H3>
+</A>
+
+<A NAME="1007796">
+As another slightly more complex example, consider an applet that displays text that flashes in different colors. Two buttons start and stop this applet, and another pushbutton changes the flashing text that it displays.<p>
+
+<HR>
+<APPLET CODE="colors.class" WIDTH=500 HEIGHT=60 NAME="colorApp">
+</APPLET>
+
+<FORM NAME=colorText>
+<P>Enter new text for the flashing display:
+
+<INPUT TYPE="text"
+       NAME="textBox"
+       LENGTH=50>
+
+<P>Click the button to change the display:
+<INPUT TYPE="button"
+       VALUE="Change Text"
+       onClick="document.colorApp.setString(document.colorText.textBox.value)">
+
+</FORM>
+<HR>
+
+<P></A>
+<A NAME="1007800">
+The HTML source for this example is as follows:<P></A>
+<A NAME="1007801">
+<PRE>&lt;APPLET CODE="colors.class" WIDTH=500 HEIGHT=60 NAME="colorApp"&gt;<br>&lt;/APPLET&gt;<br><br>&lt;FORM NAME=colorText&gt;<br>&lt;P&gt;Enter new text for the flashing display:<br><br>&lt;INPUT TYPE="text"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NAME="textBox"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LENGTH=50&gt;<br><br>&lt;P&gt;Click the button to change the display:<br>&lt;INPUT TYPE="button"<br>&nbsp;&nbsp;&nbsp;VALUE="Change Text"<br>&nbsp;&nbsp;&nbsp;onClick="document.colorApp.setString(document.colorText.textBox.value)"&gt;<br><br>&lt;/FORM&gt;</PRE>
+</A>
+<A NAME="1007802">
+This applet uses the public method <B>setString</B> to specify the text for the flashing string that appears. In the HTML form, the onClick event handler of the button lets a user change the "Hello, world!" string that the applet initially displays by calling the <B>setString</B> method as follows:<P></A>
+<A NAME="1007803">
+<PRE>&lt;INPUT TYPE="button"<br>&nbsp;&nbsp;&nbsp;VALUE="Change Text"<br>&nbsp;&nbsp;&nbsp;onClick="document.colorApp.setString(document.colorText.textBox.value)"&gt;</PRE>
+</A>
+<A NAME="1007804">
+In this code, <I>colorText</I> is the name of the HTML form and <I>textBox</I> is the name of the text field. The event handler passes the value that a user enters in the text field to the <B>setString</B> method in the Java applet.<P></A>
+
+<A NAME="Controlling Java plug-ins"></A>
+<A NAME="1007942">
+<H2> Controlling Java plug-ins</H2>
+</A>
+
+<A NAME="1007943">
+Each plug-in in a document is reflected in JavaScript as an element in the <I>embeds</I> array. For example, the following HTML code includes an AVI plug-in in a document:<P></A>
+<A NAME="1007944">
+<PRE>&lt;EMBED SRC=myavi.avi NAME="myEmbed" WIDTH=320 HEIGHT=200&gt;</PRE>
+</A>
+<A NAME="1007945">
+If this HTML defines the first plug-in in a document, you can access it in any of the following ways:<P></A>
+<A NAME="1007946">
+<PRE>document.embeds[0]<br>document.embeds["myEmbed"]<br>document.myEmbed</PRE>
+</A>
+<A NAME="1007947">
+If the plug-in is associated with the Java class <I>netscape.plugin.Plugin</I>, you can access its static variables and methods the way you access an applet's variables and methods.<P></A>
+<A NAME="1007948">
+The <I>embeds</I> array has a <I>length</I> property, <code>document.embeds.length</code>, that indicates the number of plug-ins embedded in the document. See <a href="advtopic.htm#1012507">"Determining installed plug-ins"</a> for more information about plug-ins.<P></A>
+<A NAME="1007952">
+The <a href="http://home.netscape.com/eng/mozilla/3.0/handbook/plugins/index.html">Plug-in Developer's Guide</a>  contains information on:<P></A>
+<ul><A NAME="1007953">
+<LI>Calling Java methods from plug-ins
+</A><A NAME="1007954">
+<LI>Calling a plug-in's native methods from Java
+</A></ul>
+<A NAME="Data type conversion"></A>
+<A NAME="1007805">
+<H2> Data type conversion</H2>
+</A>
+
+<A NAME="1007806">
+Values passed from JavaScript to Java are converted as follows:<P></A>
+<ul><A NAME="1007807">
+<LI>Strings, numbers and booleans are converted to Java <I>String</I>, <I>Float</I>, and <I>Boolean</I> objects respectively.
+</A><A NAME="1007808">
+<LI>Objects that are wrappers around Java objects are unwrapped.
+</A><A NAME="1007809">
+<LI>Other objects are wrapped with a <I>JSObject</I>.
+</A></ul><A NAME="1007810">
+This means that all JavaScript values appear in Java as objects of class <I>java.lang.Object</I>. To use them, you generally will have to cast them to the appropriate subclass of <I>Object</I>, for example:<P></A>
+<A NAME="1007811">
+<PRE>(String) window.getMember("name"); <br>(JSObject) window.getMember("document");. </PRE>
+</A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="Java to JavaScript communication"></A>
+<A NAME="1007828">
+<H1> Java to JavaScript communication</H1>
+</A>
+<A NAME="1007829">
+To access JavaScript methods, properties, and data structures from your Java applet, import the Netscape <I>javascript</I> package:<P></A>
+<A NAME="1007831">
+<PRE>import netscape.javascript.*</PRE>
+</A>
+<A NAME="1007832">
+The package <I>netscape.javascript</I> defines the <I>JSObject</I> class and the <I>JSException</I> exception object.<P></A>
+<A NAME="1007833">
+The author of an HTML page must permit an applet to access JavaScript by specifying the MAYSCRIPT attribute of the &lt;APPLET&gt; tag. This prevents an applet from accessing JavaScript on a page without the knowledge of the page author. Attempting to access JavaScript from an applet that does not have the MAYSCRIPT attribute generates an exception. The MAYSCRIPT tag is needed only for Java to access JavaScript; it is not needed for JavaScript to access Java.<P></A>
+
+<A NAME="Getting a handle for the JavaScript window"></A>
+<A NAME="1007834">
+<H2> Getting a handle for the JavaScript window</H2>
+</A>
+
+<A NAME="1007836">
+Before you can access JavaScript, you must get a handle for the Navigator window. Use the <B>getWindow</B> method in the class <I>netscape.javascript.JSObject</I> to get a window handle, passing it the <I>Applet</I> object.<P></A>
+<A NAME="1007837">
+For example, if <I>win</I> is a previously-declared variable of type <I>JSObject</I>, the following Java code assigns a window handle to <I>win</I>:<P></A>
+<A NAME="1007838">
+<PRE>public class myApplet extends Applet {<br>&nbsp;&nbsp;&nbsp;public void init() {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;JSObject win = JSObject.getWindow(this);<br>&nbsp;&nbsp;&nbsp;}<br>}</PRE>
+</A>
+
+<A NAME="Accessing JavaScript objects and properties"></A>
+<A NAME="1007839">
+<H2> Accessing JavaScript objects and properties</H2>
+</A>
+
+<A NAME="1007841">
+The <B>getMember</B> method in the class <I>netscape.javascript.JSObject</I> lets you access JavaScript objects and properties. Call <B>getWindow</B> to get a handle for the JavaScript window, then call <B>getMember</B> to access each JavaScript object in a containership path in turn.<P></A>
+<A NAME="1007842">
+For example, the following Java code allows you to access the JavaScript object <I>document.testForm</I> through the variable <I>myForm</I>:<P></A>
+<A NAME="1007843">
+<PRE>public void init() {<br>&nbsp;&nbsp;&nbsp;win = JSObject.getWindow(this);<br>&nbsp;&nbsp;&nbsp;myForm=win.eval("document.testForm")<br>}</PRE>
+</A>
+<A NAME="1007844">
+Note that you could use the following lines in place of <code>myForm=win.eval("document.testForm")</code>:<P></A>
+<A NAME="1007845">
+<PRE>&nbsp;&nbsp;&nbsp;JSObject doc = (JSObject) win.getMember("document");<br>&nbsp;&nbsp;&nbsp;JSObject myForm = (JSObject) doc.getMember("testForm");</PRE>
+</A>
+<A NAME="1007846">
+Notice that JavaScript objects appear as instances of the class <I>netscape.javascript.JSObject</I> in Java. Values passed between Java and JavaScript are converted as described in <a href="packages.htm#1007459">"netscape.javascript.JSObject"</a>.<P></A>
+<A NAME="1007850">
+If the JavaScript object <I>document.testForm.jazz</I> is a checkbox, the following Java code allows you to access its <I>checked</I> property:<P></A>
+<A NAME="1007851">
+<PRE>public void init() {<br>&nbsp;&nbsp;&nbsp;win = JSObject.getWindow(this);<br>&nbsp;&nbsp;&nbsp;JSObject doc = (JSObject) win.getMember("document");<br>&nbsp;&nbsp;&nbsp;JSObject myForm = (JSObject) doc.getMember("testForm");<br>&nbsp;&nbsp;&nbsp;JSObject check = (JSObject) myForm.getMember("jazz");<br>&nbsp;&nbsp;&nbsp;Boolean isChecked = (Boolean) check.getMember("checked");<br>}</PRE>
+</A>
+
+<A NAME="Calling JavaScript methods"></A>
+<A NAME="1007853">
+<H2> Calling JavaScript methods</H2>
+</A>
+
+<A NAME="1007854">
+The <B>eval</B> method in the class <I>netscape.javascript.JSObject</I> let you evaluate an arbitrary JavaScript expression. Use <B>getWindow</B> to get a handle for the JavaScript window, then use <B>eval</B> to access a JavaScript method.<P></A>
+<A NAME="1007855">
+Use the following syntax to call JavaScript methods:<P></A>
+<A NAME="1007856">
+<PRE>JSObject.getWindow().eval("<I>expression</I>")</PRE>
+</A>
+<A NAME="1007857">
+<I>expression</I> is a JavaScript expression that evaluates to a JavaScript method call.<P></A>
+<A NAME="1007858">
+For example, the following Java code uses <B>eval</B> to call the JavaScript <B>alert</B> method when a mouseUp event occurs:<P></A>
+<A NAME="1007859">
+<PRE>public void init() {<br>&nbsp;&nbsp;&nbsp;JSObject win = JSObject.getWindow(this);<br>}</PRE>
+</A>
+<A NAME="1007860">
+<PRE>public boolean mouseUp(Event e, int x, int y) {<br>&nbsp;&nbsp;&nbsp;win.eval("alert(\"Hello world!\");");<br>&nbsp;&nbsp;&nbsp;return true;<br>}</PRE>
+</A>
+<A NAME="1007861">
+Another way to call JavaScript methods is with the <B>call</B> method of <I>JSObject</I>. Use the following to call a JavaScript method from Java when you want to pass Java objects as arguments:<P></A>
+<A NAME="1007862">
+<PRE>JSObject.call(<I>methodName</I>, <I>argArray</I>)</PRE>
+</A>
+<A NAME="1007863">
+where <I>argArray</I> is an Array of Java objects used to pass arguments to the JavaScript method. <P></A>
+<A NAME="1007864">
+If you want to pass primitive values to a JavaScript method, you must use the Java object wrappers (such as Integer, Float, and Boolean), and then populate an Array with such objects.<P></A>
+
+<A NAME="Example: Hello World"></A>
+<A NAME="1007866">
+<H3> Example: Hello World</H3>
+</A>
+
+<A NAME="1007867">
+Returning to the HelloWorld example, modify the <B>paint</B> method in the Java code so that it calls the JavaScript <B>alert</B> method (with the message "Painting!") as follows:<P></A>
+<A NAME="1007868">
+<PRE>public void paint(Graphics g) {<br>&nbsp;&nbsp;&nbsp;g.drawString(myString, 25, 20);<br>&nbsp;&nbsp;&nbsp;JSObject win = JSObject.getWindow(this);<br>&nbsp;&nbsp;&nbsp;String args[] = {"Painting!"};<br>&nbsp;&nbsp;&nbsp;win.call("alert", args);<br>}</PRE>
+</A>
+<A NAME="1007869">
+Then add the MAYSCRIPT attribute to the &lt;APPLET&gt; tag in the HTML page, recompile the applet, and try it. Each time the applet is painted (when it is initalized, when you enter a new text value, and when the page is reloaded) a JavaScript alert box is displayed. This is a simple illustration of calling JavaScript from Java.<P></A>
+<A NAME="1007870">
+This same effect could be achieved with the following:<P></A>
+<A NAME="1007871">
+<PRE>public void paint(Graphics g) {<br>&nbsp;&nbsp;&nbsp;g.drawString(myString, 25, 20);<br>&nbsp;&nbsp;&nbsp;JSObject win = JSObject.getWindow(this);<br>&nbsp;&nbsp;&nbsp;win.eval("alert(`Painting')");<br>}</PRE>
+</A>
+
+<a name="1007872">
+<B><blockquote>Note
+</blockquote></B>
+</a>
+
+<a name="1007873">
+<blockquote>You may have to reload the HTML page by choosing Open File from the File 
+menu instead of clicking the Reload button, to ensure that the applet is re-initialized.
+</blockquote>
+</a>
+
+<A NAME="Calling user-defined functions"></A>
+<A NAME="1007926">
+<H3> Calling user-defined functions</H3>
+</A>
+
+<A NAME="1007927">
+You can also call user-defined functions from a Java applet. For example, add the following function to the &lt;HEAD&gt; of the HTML page with the HelloWorld applet:<P></A>
+<A NAME="1007928">
+<PRE>&lt;SCRIPT&gt;<br>function test() {<br>&nbsp;&nbsp;&nbsp;alert("You are using " + navigator.appName + " " + <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;navigator.appVersion)<br>}<br>&lt;/SCRIPT&gt;</PRE>
+</A>
+<A NAME="1007929">
+This simple function displays an alert dialog box containing the name and version of the client software being used. Then modify the <B>init</B> method in your Java code similarly to the way you modified <B>paint</B>:<P></A>
+<A NAME="1007930">
+<PRE>public void init() {<br>&nbsp;&nbsp;&nbsp;myString = new String("Hello, world!")<br>&nbsp;&nbsp;&nbsp;JSObject win = JSObject.getWindow(this)<br>&nbsp;&nbsp;&nbsp;String args2[] = {""}<br>&nbsp;&nbsp;&nbsp;win.call("test", args2)<br>}</PRE>
+</A>
+<A NAME="1007931">
+Notice that <I>args2</I> is declared as an array with no elements, even though the method does not take any arguments. When you recompile the applet and reload the HTML page (and re-initialize the applet), a JavaScript alert dialog box will display the version of Navigator you are running. This is a simple illustration of calling a user-defined function from Java.<P></A>
+
+<A NAME="Data type conversion"></A>
+<A NAME="1007874">
+<H2> Data type conversion</H2>
+</A>
+
+<A NAME="1007875">
+Values passed from Java to JavaScript are converted as follows:<P></A>
+<ul><A NAME="1007876">
+<LI>Java byte, char, short, int, long, float, and double are converted to JavaScript numbers.
+</A><A NAME="1007877">
+<LI>A Java boolean is converted to a JavaScript boolean.
+</A><A NAME="1007878">
+<LI>An object of class <I>JSObject</I> is converted to the original JavaScript object.
+</A><A NAME="1007879">
+<LI>An object of any other class is converted to a JavaScript wrapper, which can be used to access methods and fields of the Java object. Converting this wrapper to a string will call the <B>toString</B> method on the original object; converting to a number will call the <B>floatValue</B> method if possible and fail otherwise. Converting to a boolean will attempt to call the <B>booleanValue</B> method in the same way.
+</A><A NAME="1007880">
+<LI>Java arrays are converted to a JavaScript pseudo-Array object; this object behaves just like a JavaScript <I>Array</I> object: you can access it with the syntax <code>arrayName[index]</code> (where <I>index</I> is an integer), and determine its length with <code>arrayName.length</code>.
+</A></ul>

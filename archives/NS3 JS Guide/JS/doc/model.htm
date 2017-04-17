@@ -1,0 +1,311 @@
+<BODY BGCOLOR="#FFFFFF">
+<A NAME="1001595">
+<P>
+</A><A NAME="1001596">
+<P>
+</A><A NAME="996824">
+<H1>Object model
+</H1>
+</A>
+
+<A NAME="1004216">
+
+<img src="graphics/modela.gif">
+
+avaScript is based on a simple object-oriented paradigm. An object is a construct with properties that are JavaScript variables or other objects. An object also has functions associated with it that are known as the object's <I>methods</I>. In addition to objects that are built into the Navigator client and the LiveWire server, you can define your own objects.<P></A>
+<A NAME="1004695">
+This chapter describes how to use objects, properties, functions, and methods, and how to create your own objects. <P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="Objects and properties"></A>
+<A NAME="1004221">
+<H1> Objects and properties</H1>
+</A>
+<A NAME="1004222">
+A JavaScript object has properties associated with it. You access the properties of an object with a simple notation:<P></A>
+<A NAME="1004223">
+<PRE>objectName.propertyName</PRE>
+</A>
+<A NAME="1004224">
+Both the object name and property name are case sensitive. You define a property by assigning it a value. For example, suppose there is an object named <I>myCar</I> (for now, just assume the object already exists). You can give it properties named <I>make</I>, <I>model</I>, and <I>year</I> as follows:<P></A>
+<A NAME="1004225">
+<PRE>myCar.make = "Ford"<br>myCar.model = "Mustang"<br>myCar.year = 69;</PRE>
+</A>
+<A NAME="1004226">
+An array is an ordered set of values associated with a single variable name. Properties and arrays in JavaScript are intimately related; in fact, they are different interfaces to the same data structure. So, for example, you could access the properties of the <I>myCar</I> object as follows:<P></A>
+<A NAME="1004227">
+<PRE>myCar["make"] = "Ford"<br>myCar["model"] = "Mustang"<br>myCar["year"] = 67</PRE>
+</A>
+<A NAME="1004230">
+This type of array is known as an <I>associative array</I>, because each index element is also associated with a string value. To illustrate how this works, the following function displays the properties of the object when you pass the object and the object's name as arguments to the function:<P></A>
+<A NAME="1004231">
+<PRE>function show_props(obj, obj_name) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var result = ""<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (var i in obj)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;result += obj_name + "." + i + " = " + obj[i] + "\n"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return result<br>}</PRE>
+</A>
+<A NAME="1004232">
+So, the function call <code>show_props(myCar, "myCar")</code> would return the following:<P></A>
+<A NAME="1004233">
+<PRE>myCar.make = Ford<br>myCar.model = Mustang<br>myCar.year = 67</PRE>
+</A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="Functions"></A>
+<A NAME="1004234">
+<H1> Functions</H1>
+</A>
+<A NAME="1005681">
+Functions are one of the fundamental building blocks in JavaScript. A function is a JavaScript procedure--a set of statements that performs a specific task. To use a function, you must first define it; then your script can call it.<P></A>
+
+<A NAME="Defining functions"></A>
+<A NAME="1005724">
+<H2> Defining functions</H2>
+</A>
+
+<A NAME="1005726">
+A function definition consists of the <B>function</B> keyword, followed by<P></A>
+<ul><A NAME="1005727">
+<LI>The name of the function.
+</A><A NAME="1004238">
+<LI>A list of arguments to the function, enclosed in parentheses and separated by commas.
+</A><A NAME="1004991">
+<LI>The JavaScript statements that define the function, enclosed in curly braces, { }. The statements in a function can include calls to other functions defined in the current application.
+</A></ul><A NAME="1005729">
+In Navigator JavaScript, it is good practice to define all your functions in the HEAD of a page so that when a user loads the page, the functions are loaded first. <P></A>
+<A NAME="1005664">
+For example, here is the definition of a simple function named <B>pretty_print</B>:<P></A>
+<A NAME="1005665">
+<PRE>function pretty_print(str) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.write("&lt;HR&gt;&lt;P&gt;" + str)<br>}</PRE>
+</A>
+<A NAME="1005671">
+This function takes a string, <I>str</I>, as its argument, adds some HTML tags to it using the concatenation operator (+), and then displays the result to the current document using the <B>write</B> method.<P></A>
+<A NAME="1006482">
+In addition to defining functions as described here, you can also define <I>Function</I> objects, as described in <a href="builtin.htm#1006873">"Function object"</a>.<P></A>
+
+<A NAME="Using functions"></A>
+<A NAME="1005675">
+<H2> Using functions</H2>
+</A>
+
+<A NAME="1005048">
+In a Navigator application, you can use (or <I>call</I>) any function defined in the current page. You can also use functions defined by other named windows or frames; for more information, see <a href="windows.htm#996824">Chapter&nbsp;3, "Using windows and frames."</a> In a LiveWire application, you can use any function compiled with the application.<P></A>
+<A NAME="1004245">
+Defining a function does not execute it. You have to call the function for it to do its work. For example, if you defined the example function <B>pretty_print</B> in the HEAD of the document, you could call it as follows:<P></A>
+<A NAME="1004246">
+<PRE>&lt;SCRIPT&gt;<br>pretty_print("This is some text to display")<br>&lt;/SCRIPT&gt;</PRE>
+</A>
+<A NAME="1004247">
+The arguments of a function are not limited to strings and numbers. You can pass whole objects to a function, too. The <B>show_props</B> function (defined in <a href="model.htm#1004221">"Objects and properties"</a>) is an example of a function that takes an object as an argument.<P></A>
+<A NAME="1004251">
+A function can even be recursive, that is, it can call itself. For example, here is a function that computes factorials:<P></A>
+<A NAME="1004252">
+<PRE>function factorial(n) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if ((n == 0) || (n == 1))<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return 1<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;result = (n * factorial(n-1) )<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return result<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>}</PRE>
+</A>
+<A NAME="1004253">
+You could then display the factorials of one through five as follows:<P></A>
+<A NAME="1004254">
+<PRE>for (x = 0; x &lt; 5; x++) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.write("&lt;BR&gt;", x, " factorial is ", factorial(x))<br>}</PRE>
+</A>
+<A NAME="1004255">
+The results are:<P></A>
+<A NAME="1005689">
+0 factorial is 1<br>1 factorial is 1<br>2 factorial is 2<br>3 factorial is 6<br>4 factorial is 24<br>5 factorial is 120<P></A>
+
+<A NAME="Using the arguments array"></A>
+<A NAME="1005692">
+<H2> Using the arguments array</H2>
+</A>
+
+<A NAME="1005693">
+The arguments of a function are maintained in an array. Within a function, you can address the parameters passed to it as follows:<P></A>
+<A NAME="1005690">
+<PRE><I>functionName</I>.arguments[<I>i</I>]</PRE>
+</A>
+<A NAME="1005691">
+where <I>functionName</I> is the name of the function and <I>i</I> is the ordinal number of the argument, starting at zero. So, the first argument passed to a function named <B>myfunc</B> would be <I>myfunc.arguments</I>[0]. The total number of arguments is indicated by the variable <I>arguments.length</I>.<P></A>
+<A NAME="1004259">
+Using the <I>arguments</I> array, you can call a function with more arguments than it is formally declared to accept using. This is often useful if you don't know in advance how many arguments will be passed to the function. You can use <I>arguments.length</I> to determine the number of arguments actually passed to the function, and then treat each argument using the <I>arguments</I> array.<P></A>
+<A NAME="1004260">
+For example, consider a function defined to create HTML lists. The only formal argument for the function is a string that is "U" for an unordered (bulleted) list or "O" for an ordered (numbered) list. The function is defined as follows:<P></A>
+<A NAME="1004261">
+<PRE>function list(type) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.write("&lt;" + type + "L&gt;") // begin list<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// iterate through arguments<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (var i = 1; i &lt; list.arguments.length; i++) <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.write("&lt;LI&gt;" + list.arguments[i])<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.write("&lt;/" + type + "L&gt;") // end list<br>}</PRE>
+</A>
+<A NAME="1004262">
+You can pass any number of arguments to this function, and it will then display each argument as an item in the indicated type of list. For example, the following call to the function<P></A>
+<A NAME="1004263">
+<PRE>list("o", "one", 1967, "three", "etc., etc...")</PRE>
+</A>
+<A NAME="1005481">
+results in this output:<P></A>
+<A NAME="1005486">
+1.one<br>2.1967<br>3.three<br>4.etc., etc...<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="Creating new objects"></A>
+<A NAME="1005202">
+<H1> Creating new objects</H1>
+</A>
+<A NAME="1004280">
+Both client and server JavaScript have a number of predefined objects. In addition, you can create your own objects. Creating your own object requires two steps:<P></A>
+<ol>
+<a name="1004281">
+<li>Define the object type by writing a constructor function.
+</a>
+
+<a name="1004282">
+<li>Create an instance of the object with <B>new</B>.
+</a>
+
+</ol>
+<A NAME="1004283">
+To define an object type, create a function for the object type that specifies its name, properties, and methods. For example, suppose you want to create an object type for cars. You want this type of object to be called <I>car</I>, and you want it to have properties for make, model, year, and color. To do this, you would write the following function:<P></A>
+<A NAME="1004284">
+<PRE>function car(make, model, year) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.make = make<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.model = model<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.year = year<br>}</PRE>
+</A>
+<A NAME="1004285">
+Notice the use of <B>this</B> to assign values to the object's properties based on the values passed to the function.<P></A>
+<A NAME="1004286">
+Now you can create an object called <I>mycar</I> as follows:<P></A>
+<A NAME="1004287">
+<PRE>mycar = new car("Eagle", "Talon TSi", 1993)</PRE>
+</A>
+<A NAME="1004288">
+This statement creates <I>mycar</I> and assigns it the specified values for its properties. Then the value of <code>mycar.make</code> is the string "Eagle," <code>mycar.year</code> is the integer 1993, and so on.<P></A>
+<A NAME="1004289">
+You can create any number of <I>car</I> objects by calls to <B>new</B>. For example,<P></A>
+<A NAME="1004290">
+<PRE>kenscar = new car("Nissan", "300ZX", 1992)</PRE>
+</A>
+<A NAME="1004291">
+An object can have a property that is itself another object. For example, suppose you define an object called <I>person</I> as follows:<P></A>
+<A NAME="1004292">
+<PRE>function person(name, age, sex) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.name = name<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.age = age<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.sex = sex<br>}</PRE>
+</A>
+<A NAME="1004293">
+and then instantiate two new <I>person</I> objects as follows:<P></A>
+<A NAME="1004294">
+<PRE>rand = new person("Rand McKinnon", 33, "M")<br>ken = new person("Ken Jones", 39, "M")</PRE>
+</A>
+<A NAME="1004815">
+Then you can rewrite the definition of <I>car</I> to include an <I>owner</I> property that takes a <I>person</I> object, as follows:<P></A>
+<A NAME="1004816">
+<PRE>function car(make, model, year, owner) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.make = make<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.model = model<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.year = year<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.owner = owner<br>}</PRE>
+</A>
+<A NAME="1004817">
+To instantiate the new objects, you then use the following:<P></A>
+<A NAME="1004818">
+<PRE>car1 = new car("Eagle", "Talon TSi", 1993, rand)<br>car2 = new car("Nissan", "300ZX", 1992, ken)</PRE>
+</A>
+<A NAME="1004819">
+Notice that instead of passing a literal string or integer value when creating the new objects, the above statements pass the objects <I>rand</I> and <I>ken</I> as the arguments for the owners. Then if you want to find out the name of the owner of car2, you can access the following property:<P></A>
+<A NAME="1004820">
+<PRE>car2.owner.name</PRE>
+</A>
+<A NAME="1004821">
+Note that you can always add a property to a previously defined object. For example, the statement<P></A>
+<A NAME="1004822">
+<PRE>car1.color = "black"</PRE>
+</A>
+<A NAME="1004823">
+adds a property <I>color</I> to car1, and assigns it a value of "black." However, this does not affect any other objects. To add the new property to all objects of the same type, you have to add the property to the definition of the <I>car</I> object type.<P></A>
+
+<A NAME="Indexing object properties"></A>
+<A NAME="1006425">
+<H2> Indexing object properties</H2>
+</A>
+
+<A NAME="1006426">
+In Navigator 2.0, you can refer to an object's properties by their property name or by their ordinal index. In Navigator 3.0, however, if you initially define a property by its name, you must always refer to it by its name, and if you initially define a property by an index, you must always refer to it by its index.<P></A>
+<A NAME="1006427">
+This applies when you create an object and its properties with a constructor function, as in the above example of the <I>Car</I> object type, and when you define individual properties explicitly (for example, <code>myCar.color = "red"</code>). So if you define object properties initially with an index, such as <code>myCar[5] = "25 mpg"</code>, you can subsequently refer to the property as <code>myCar[5]</code>.<P></A>
+<A NAME="1006428">
+The exception to this rule is objects reflected from HTML, such as the <I>forms, </I>array. You can always refer objects in these arrays by either their ordinal number (based on where they appear in the document) or their name (if defined). For example, if the second &lt;FORM&gt; tag in a document has a NAME attribute of "myForm", you can refer to the form as <code>document.forms[1]</code> or <code>document.forms["myForm"]</code> or <code>document.myForm</code>.<P></A>
+
+<A NAME="Defining properties for an object type"></A>
+<A NAME="1004296">
+<H2> Defining properties for an object type</H2>
+</A>
+
+<A NAME="1006492">
+You can add a property to a previously defined object type by using the <I>prototype</I> property. This defines a property that is shared by all objects of the specified type, rather than by just one instance of the object. The following code adds a <I>color</I> property to all objects of type <I>car</I>, and then assigns a value to the <I>color</I> property of the object <I>car1. </I>For more information, see <a href="ref_m-q.htm#178711">"prototype"</a>.<P></A>
+<A NAME="1006504">
+<PRE>Car.prototype.color=null<br>car1.color="black"<br>birthday.description="The day you were born"</PRE>
+</A>
+
+<A NAME="Defining methods"></A>
+<A NAME="1006491">
+<H2> Defining methods</H2>
+</A>
+
+<A NAME="1005640">
+A <I>method</I> is a function associated with an object. You define a method the same way you define a standard function. Then you use the following syntax to associate the function with an existing object:<P></A>
+<A NAME="1005641">
+<PRE><I>object.methodname = function_name</I></PRE>
+</A>
+<A NAME="1005642">
+where <I>object</I> is an existing object, <I>methodname</I> is the name you are assigning to the method, and <I>function_name</I> is the name of the function.<P></A>
+<A NAME="1005643">
+You can then call the method in the context of the object as follows:<P></A>
+<A NAME="1005644">
+<PRE>object.methodname(params);</PRE>
+</A>
+<A NAME="1004297">
+You can define methods for an object type by including a method definition in the object constructor function. For example, you could define a function that would format and display the properties of the previously-defined <I>car</I> objects; for example,<P></A>
+<A NAME="1004298">
+<PRE>function displayCar() {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var result = "A Beautiful " + this.year + " " + this.make <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+ " " + this.model<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pretty_print(result)<br>}</PRE>
+</A>
+<A NAME="1004299">
+where <B>pretty_print</B> is the function (defined in <a href="model.htm#1004234">"Functions"</a>) to display a horizontal rule and a string. Notice the use of <B>this</B> to refer to the object to which the method belongs.<P></A>
+<A NAME="1004300">
+You can make this function a method of <I>car</I> by adding the statement<P></A>
+<A NAME="1004301">
+<PRE>this.displayCar = displayCar;</PRE>
+</A>
+<A NAME="1004302">
+to the object definition. So, the full definition of <I>car</I> would now look like<P></A>
+<A NAME="1004303">
+<PRE>function car(make, model, year, owner) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.make = make<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.model = model<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.year = year<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.owner = owner<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.displayCar = displayCar<br>}</PRE>
+</A>
+<A NAME="1004304">
+Then you can call the <B>displayCar</B> method for each of the objects as follows:<P></A>
+<A NAME="1004305">
+<PRE>car1.displayCar()<br>car2.displayCar()</PRE>
+</A>
+<A NAME="1004306">
+This will produce output like:<p><img src="graphics/obj.gif">
+<P></A>
+
+<A NAME="Using this for object references"></A>
+<A NAME="1005652">
+<H2> Using this for object references</H2>
+</A>
+
+<A NAME="1005654">
+JavaScript has a special keyword, <B>this</B>, that you can use within a method to refer to the current object. For example, suppose you have a function called <B>validate</B> that validates an object's <I>value</I> property, given the object and the high and low values:<P></A>
+<A NAME="1005655">
+<PRE>function validate(obj, lowval, hival) {<br>&nbsp;&nbsp;&nbsp;if ((obj.value &lt; lowval) || (obj.value &gt; hival))<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert("Invalid Value!")<br>}</PRE>
+</A>
+<A NAME="1005656">
+Then, you could call <B>validate</B> in each form element's onChange event handler, using <B>this</B> to pass it the form element, as in the following example:<P></A>
+<A NAME="1005657">
+<PRE>&lt;INPUT TYPE = "text" NAME = "age" SIZE = 3 <br>onChange="validate(this, 18, 99)"&gt;</PRE>
+</A>
+<A NAME="1005658">
+In general, <B>this</B> refers to the calling object in a method.<P></A>
+<A NAME="1006550">
+When combined with the <I>form</I> property, <B>this</B> can refer to the current object's parent form. In the following example, the form <I>myForm</I> contains a <I>Text</I> object and a button. When the user clicks the button, the value of the <I>Text</I> object is set to the form's name. The button's onClick event handler uses <code>this.form</code> to refer to the parent form, <I>myForm</I>.<P></A>
+<A NAME="1006551">
+<PRE>&lt;FORM NAME="myForm"&gt;<br>Form name:&lt;INPUT TYPE="text" NAME="text1" VALUE="Beluga"&gt;<br>&lt;P&gt;<br>&lt;INPUT NAME="button1" TYPE="button" VALUE="Show Form Name"<br>&nbsp;&nbsp;&nbsp;onClick="this.form.text1.value=this.form.name"&gt;<br>&lt;/FORM&gt;</PRE>
+</A>
+
+<A NAME="Object deletion"></A>
+<A NAME="1006374">
+<H2> Object deletion</H2>
+</A>
+
+<A NAME="1006375">
+In JavaScript for Navigator 2.0, you cannot remove objects--they exist until you leave the page containing the object. In JavaScript for Navigator 3.0, you can remove an object by setting its object reference to null (if that is the last reference to the object). JavaScript finalizes the object immediately, as part of the assignment expression.<P></A>

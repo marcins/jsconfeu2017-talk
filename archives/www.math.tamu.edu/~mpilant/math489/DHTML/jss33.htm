@@ -1,0 +1,405 @@
+<html><head><title>Dynamic HTML in Communicator
+
+</title>
+<LINK REL=STYLESHEET 
+ TYPE="text/css"
+href="cstyle1.htm">
+
+</head>
+<body bgcolor=#FFFFFF>
+<FONT SIZE=-1>
+<a href="contents.htm">[Contents]</a> <a href="jss32.htm">[Prev page]</a> <a href="jss34.htm">[Next page]</a> <a href="dynamici.htm">[Index]</a>
+</FONT>
+
+<HR SIZE=4>
+<H3 align="right">
+<FONT FACE="Helvetica,Arial" 
+COLOR="#408080" >
+<I>Dynamic HTML in Netscape Communicator<BR>
+Part 1. Style Sheets
+</I></FONT></H3>
+
+
+
+<a name="1080370">
+<h1><I><FONT FACE="Helvetica,Arial" COLOR="#408080" SIZE=+1>
+Chapter 4</FONT></I> 
+</H1>
+</a><a name="1017637">
+<h1>Format Properties for Block-Level Elements </H1>
+<P><IMG SRC="images/bann02.gif" HEIGHT=6 WIDTH=640>
+</P>
+</a><a name="1017642">
+<P>This chapter discusses the formatting options for block-level elements. Block-level elements start on a new line, for example, <code>&lt;H1&gt;</code> and <code>&lt;P&gt;</code> are block-level elements, but <code>&lt;EM&gt;</code> is not.</P>
+</a><a name="1072779">
+<P>This chapter starts off by presenting an example that illustrates the various ways of formatting block-level elements. After that comes a section discussing each kind of formatting option in detail. The chapter and ends with a brief overview of the inheritance behavior of properties that are used for formatting block-level elements.</P>
+</a><ul><a name="1072727">
+<li><a href="jss33.htm#1042942">Block-level Formatting Overview and Example</a>
+</a><a name="1072736">
+<li><a href="jss33.htm#1041908">Setting Margins or Width</a>
+</a><a name="1072743">
+<li><a href="jss33.htm#1018702">Setting Border Widths, Color, and Style</a>
+</a><a name="1072754">
+<li><a href="jss33.htm#1030334">Setting Paddings</a>
+</a><a name="1072765">
+<li><a href="jss33.htm#1073723">Inheritance of Block-Level Formatting Properties</a>
+</a></ul><HR><a name="1042942">
+<h1> Block-level Formatting Overview and Example</h1>
+</a><a name="1072904">
+<P>Style sheets treat each block-level element as if it were surrounded by a box. Each box can have style characteristics in the form of margins, borders, and padding. Each box can have a background image or color.</P>
+</a><a name="1072875">
+<P>The margins indicate the inset of the edge of the box from the edges of the document (or parent element). Each box can have a border that has a flat or three dimensional appearance. The padding indicates the distance between the element's border and the element's content. </P>
+</a><a name="1072854">
+<P>You can also set the width of a block-level element, either to a specific value or to a percentage of the width of the document (or parent element). As you can imagine, it is redundant to set the left and right margin and to also set the width. </P>
+</a><a name="1074138">
+<P>If values are specified for the width and for both margins, the left margin setting has the highest precedence. In this case, the value for the right margin indicates the absolute maximum distance from the right edge of the containing element at which the content wraps. If the value given for the width would cause the element to run past the right margin, the width value is ignored. If the width value would cause the element to stop short of the right edge, the width value is used.</P>
+</a><a name="1041189">
+<P>You can set the horizontal alignment of an element to left, right, or center. You do this by setting the <code>float</code> property in CSS syntax or setting the <code>align</code> property in JavaScript syntax. It is also redundant to set the left and/or right margin and then also set the element's alignment.</P>
+</a><a name="1073015">
+<P>The following example illustrates the use of margins, paddings, border widths, background color, width, and alignment properties.</P>
+</a><a name="1041383">
+<h4>CSS Syntax </h4>
+</a><a name="1041407">
+<PRE>&lt;STYLE TYPE="text/css"&gt;
+</PRE>
+</a><a name="1041498">
+<PRE>P {
+</PRE>
+</a><a name="1042049">
+<PRE> &#32;background-color:#CCCCFF;
+</PRE>
+</a><a name="1042050">
+<PRE> &#32;/* margins */
+</PRE>
+</a><a name="1042051">
+<PRE> &#32;margin-left:20%; margin-right:20%;
+</PRE>
+</a><a name="1041621">
+<PRE> &#32;/* border widths
+</PRE>
+</a><a name="1041548">
+<PRE> &#32;border-top-width: 10pt; border-bottom-width:10pt; 
+</PRE>
+</a><a name="1041408">
+<PRE> &#32;border-right-width:5pt; border-left-width:5pt;
+</PRE>
+</a><a name="1041410">
+<PRE> &#32;/* border style and color
+</PRE>
+</a><a name="1041546">
+<PRE> &#32;border-style:outset; border-color:blue;
+</PRE>
+</a><a name="1041412">
+<PRE> &#32;/* paddings */
+</PRE>
+</a><a name="1041566">
+<PRE> &#32;padding-top:10pt; padding-bottom:10pt;
+</PRE>
+</a><a name="1041414">
+<PRE> &#32;padding-right:20pt; padding-left:20pt;
+</PRE>
+</a><a name="1041420">
+<PRE>}
+</PRE>
+</a><a name="1041421">
+<PRE>H3 {
+</PRE>
+</a><a name="1041859">
+<PRE> &#32;/* font size and weight */
+</PRE>
+</a><a name="1041832">
+<PRE> &#32;font-size: 14pt;
+</PRE>
+</a><a name="1041833">
+<PRE> &#32;font-weight:bold;
+</PRE>
+</a><a name="1041856">
+<PRE> &#32;background-image:URL("images/grenlite.gif");
+</PRE>
+</a><a name="1041848">
+<PRE> &#32;/* center the heading with a 90% width */
+</PRE>
+</a><a name="1041849">
+<PRE> &#32;width:90%;
+</PRE>
+</a><a name="1042034">
+<PRE> &#32;float:center;
+</PRE>
+</a><a name="1041827">
+<PRE> &#32;border-color:green;
+</PRE>
+</a><a name="1041803">
+<PRE> &#32;border-style:solid;
+</PRE>
+</a><a name="1041774">
+<PRE> &#32;/* all sides of the border have the same thickness */
+</PRE>
+</a><a name="1041731">
+<PRE> &#32;border-width:10pt; 
+</PRE>
+</a><a name="1041788">
+<PRE> &#32;/* all sides have the same padding */
+</PRE>
+</a><a name="1041426">
+<PRE> &#32;padding:20pt;
+</PRE>
+</a><a name="1041397">
+<PRE>}
+</PRE>
+</a><a name="1041499">
+<PRE>&lt;/STYLE&gt;
+</PRE>
+</a><a name="1040992">
+<h4>JavaScript Syntax </h4>
+</a><a name="1030143">
+<PRE>&lt;STYLE TYPE="text/javascript"&gt;
+</PRE>
+</a><a name="1041367">
+<PRE>with (tags.P) {
+</PRE>
+</a><a name="1041368">
+<PRE> &#32;backgroundColor="#CCCCFF";
+</PRE>
+</a><a name="1041365">
+<PRE> &#32;/* P border style and color */
+</PRE>
+</a><a name="1030173">
+<PRE> &#32;borderStyle="outset"; borderColor="blue";
+</PRE>
+</a><a name="1030167">
+<PRE> &#32;/* P border widths */
+</PRE>
+</a><a name="1030278">
+<PRE> &#32;borderTopWidth="10pt"; borderBottomWidth="10pt";
+</PRE>
+</a><a name="1030280">
+<PRE> &#32;borderLeftWidth="5pt"; borderRightWidth="5pt";
+</PRE>
+</a><a name="1030161">
+<PRE> &#32;/* P paddings */
+</PRE>
+</a><a name="1030175">
+<PRE> &#32;paddingTop="10pt"; paddingBottom="10pt";
+</PRE>
+</a><a name="1030163">
+<PRE> &#32;paddingLeft="20pt"; paddingRight="20pt";
+</PRE>
+</a><a name="1030253">
+<PRE> &#32;/* P margins */
+</PRE>
+</a><a name="1030251">
+<PRE> &#32;marginLeft= "20%"; marginRight="20%";
+</PRE>
+</a><a name="1042258">
+<PRE>}
+</PRE>
+</a><a name="1042260">
+<PRE>with (tags.H3) {
+</PRE>
+</a><a name="1042107">
+<PRE> &#32;backgroundImage ="images/grenlite.gif";
+</PRE>
+</a><a name="1042326">
+<PRE> &#32;/* font size and weight */
+</PRE>
+</a><a name="1042339">
+<PRE> &#32;fontSize="14pt"; fontWeight="bold";
+</PRE>
+</a><a name="1042328">
+<PRE> &#32;/* H3 border style and color */
+</PRE>
+</a><a name="1030180">
+<PRE> &#32;borderStyle="solid"; borderColor="green";
+</PRE>
+</a><a name="1042143">
+<PRE>/* center the heading with a 90% width */
+</PRE>
+</a><a name="1042133">
+<PRE> &#32;width="90%"; align="center";
+</PRE>
+</a><a name="1042112">
+<PRE> &#32;/* all sides of the border have the same thickness */
+</PRE>
+</a><a name="1030282">
+<PRE> &#32;borderWidths("10pt");
+</PRE>
+</a><a name="1042114">
+<PRE> &#32;/* all sides have the same padding */
+</PRE>
+</a><a name="1030187">
+<PRE> &#32;paddings("20pt");
+</PRE>
+</a><a name="1042374">
+<PRE>}
+</PRE>
+</a><a name="1030200">
+<PRE>&lt;/STYLE&gt;
+</PRE>
+</a><a name="1041382">
+<h4>Style Sheet Use </h4>
+</a><a name="1030205">
+<PRE>&lt;H3&gt;H3 with a Solid Border&lt;/H3&gt;
+</PRE>
+</a><a name="1030206">
+<PRE>&lt;P&gt;Borders have their uses in everyday life. For example, borders round 
+a paragraph make the paragraph stand out more than it otherwise would.
+</PRE>
+</a><a name="1055356">
+<PRE>&lt;/P&gt;
+</PRE>
+</a><a name="1030220">
+<PRE>&lt;P&gt;This is another paragraph with a border. You have to be careful not 
+to make the borders too wide, or else they start to take over the page.
+</PRE>
+</a><a name="1055357">
+<PRE>&lt;/P&gt;
+</PRE>
+</a><a name="1030222">
+
+<P><SPAN STYLE="align:right;">
+<I><FONT COLOR="#404040"  size=-1>This example works in 
+Netscape Navigator 4.0+. </FONT></I></SPAN><B>
+Example results:</B> 
+</p>
+</a>
+<HR><a name="1030223">
+<H3 CLASS="EXAMPLE9"> H3 with a Solid Border</H3>
+</a><a name="1030229">
+<P CLASS="EXAMPLE9"> Borders have their uses in everyday life. For example, borders round a paragraph make the paragraph stand out more than it otherwise would.</P>
+</a><a name="1030226">
+<P CLASS="EXAMPLE9"> This is another paragraph with a border. You have to be careful not to make the borders too wide, or else they start to take over the page.</P>
+</a><HR><a name="1041908">
+<h1> Setting Margins or Width</h1>
+</a><a name="1041208">
+<P>The margins indicate the inset of the element from the edges of the document (or parent element.) You can set right, left, top, and bottom margins. The "edge" of the parent is the theoretical rectangle that would be drawn round the inside of the padding, border, or margins of the parent element, if it has any of these properties.</P>
+</a><a name="1043208">
+<P>You can set the values of the margins for a block-level element by specifying the following properties (shown as CSS syntax/JavaScript syntax property names):</P>
+</a><ul><a name="1043209">
+<li><code>margin-top/marginTop</code>
+</a><a name="1043210">
+<li><code>margin-bottom/marginBottom</code> 
+</a><a name="1043211">
+<li><code>margin-left/marginLeft </code>
+</a><a name="1043212">
+<li><code>margin-right/marginRight</code>
+</a><a name="1043213">
+<li>You can set all four properties at once to the same value, either by setting the <code>margin</code> property in CSS syntax or by using the <code>margins()</code> function in JavaScript syntax.
+</a></ul><a name="1073055">
+<P>You can set the horizontal alignment of an element to left, right, or center. You do this by setting the <code>float</code> property in CSS syntax or setting the <code>align</code> property in JavaScript syntax. It is redundant to set the left and/or right margin and then also set the element's alignment.</P>
+</a><a name="1073043">
+<P>Instead of setting specific margin values, you can also set the <code>width</code> property. You can set this to either a specific value (for example, <code>200pt</code>) or to a percentage of the width of the containing element or document (for example, <code>60%</code>). If desired, you can set the width and either the left or right margin, so long as the total does not exceed 100% of the width of the parent. It is not useful, however, to set the width and also to set both margins, since two of the values imply the third. (For example, if the left margin is 25% and the width is 60%, then the right margin must be 15%.)</P>
+</a><a name="1059683">
+<P>Two or more adjoining margins (that is, with no border, padding or content between them) are collapsed to use the maximum of the margin values. In the case of negative margins, the absolute maximum of the negative adjoining margins is deducted from the maximum of the positive adjoining margins.</P>
+</a><a name="1018991">
+<P>To set the default margins for everything in a document, you can specify the margin properties for the <code>&lt;BODY&gt;</code> tag. For example, the following code sets the left and right margins to 20 points. </P>
+</a><a name="1042661">
+<h4>CSS Syntax </h4>
+</a><a name="1018998">
+<PRE>&lt;STYLE TYPE="text/css"&gt;
+</PRE>
+</a><a name="1042692">
+<PRE>BODY {margin-left:20pt; margin-right:20pt;} 
+</PRE>
+</a><a name="1042736">
+<PRE>&lt;/STYLE&gt;
+</PRE>
+</a><a name="1042682">
+<h4>JavaScript Syntax </h4>
+</a><a name="1042681">
+<PRE>&lt;STYLE TYPE="text/javascript"&gt;
+</PRE>
+</a><a name="1042745">
+<PRE>with (tags.BODY) {
+</PRE>
+</a><a name="1042690">
+<PRE> &#32;marginLeft="20pt"; marginRight="20pt";
+</PRE>
+</a><a name="1042691">
+<PRE>}
+</PRE>
+</a><a name="1042754">
+<PRE>&lt;/STYLE&gt;
+</PRE>
+</a><a name="1042991">
+<P>See <a href="jss33.htm#1042942">Block-level Formatting Overview and Example</a> for an example of setting margins and width.</P>
+</a><HR><a name="1018702">
+<h1> Setting Border Widths, Color, and Style</h1>
+</a><a name="1030331">
+<P>You can set the width of the border surrounding a block-level element by specifying the following properties (shown as CSS syntax/JavaScript syntax values):</P>
+</a><ul><a name="1042780">
+<li><code>border-top-width/borderTopWidth</code>
+</a><a name="1043287">
+<li><code>border-bottom-width/borderBottomWidth </code>
+</a><a name="1042840">
+<li><code>border-left-width/borderLeftWidth</code> 
+</a><a name="1042785">
+<li><code>border-right-width/borderRightWidth</code>
+</a><a name="1042837">
+<li>You can set all four properties at once to the same value, either by setting the <code>border-width</code> property in CSS syntax or by using the <code>borderWidths()</code> function in JavaScript syntax.
+</a></ul><a name="1057946">
+<P>You can set the style of the border by specifying the <code>border-style</code> (CSS syntax) or <code>borderStyle</code> (JavaScript syntax) property. You can give the border a flat appearance by setting the border-style to <code>solid</code> or <code>double</code>, or you can give it a 3D appearance, by setting the border-style to <code>groove</code>, <code>ridge</code>, <code>inset</code>, or <code>outset</code>.</P>
+</a><a name="1057947">
+<P>You can set the color of the border by specifying the <code>border-color</code> (CSS syntax) or <code>borderColor</code> (JavaScript syntax) property.</P>
+</a><a name="1042959">
+<P>For an example of each of the border styles, see:</P>
+</a><A HREF="borders.htm" target="StyleSheetExample">
+<PRE>borders.htm</PRE></A><p>
+<a name="1073186">
+<P>For another example of setting border widths, border style, and border color, see <a href="jss33.htm#1042942">Block-level Formatting Overview and Example</a>.</P>
+</a><HR><a name="1030334">
+<h1> Setting Paddings</h1>
+</a><a name="1041277">
+<P>The padding indicates the distance between the border of the element and its content. The padding is displayed even if the element's border is not displayed.</P>
+</a><a name="1043318">
+<P>You can set the size of the padding surrounding a block-level element by specifying the following properties (shown as CSS syntax/JavaScript syntax values):</P>
+</a><ul><a name="1043319">
+<li><code>padding-top/paddingTop</code>
+</a><a name="1043320">
+<li><code>padding-bottom/paddingBottom </code>
+</a><a name="1043321">
+<li><code>padding-left/paddingLeft</code> 
+</a><a name="1043322">
+<li><code>padding-right/paddingRight</code>
+</a><a name="1043323">
+<li>You can set all four properties at once to the same value, either by setting the <code>padding</code> property in CSS syntax or by using the <code>paddings()</code> function in JavaScript syntax.
+</a></ul><a name="1057973">
+<P>See <a href="jss33.htm#1042942">Block-level Formatting Overview and Example</a> for an example of setting paddings.</P>
+</a><HR><a name="1073723">
+<h1> Inheritance of Block-Level Formatting Properties</h1>
+</a><a name="1073724">
+<P>The width, margins, border characteristics, and padding values of a parent element are not inherited by its child elements. However, at first glance it might seem that these values are inherited, since the values of the parent elements affect the child elements.</P>
+</a><a name="1073725">
+<P>For example, suppose you set the left margin of a <code>DIV</code> element to 10 points. You can think of this <code>DIV</code> element as a big box that gets inset by 10 points on the left. Assume that the <code>DIV</code> element has no border width and no padding. If all the elements inside the <code>DIV</code> have a margin of 0, they are smack up against the edge of that box. Since the box is inset by 10 points, all the elements end up being inset by 10 points. </P>
+</a><a name="1079272">
+<P>Now consider what would happen if the child elements did inherit the margin value from their parent element. If that were the case, then the DIV block would have a left margin of 10 points, and child elements would also each have a left margin of 10 points, so they would be indented on the left by 20 points.</P>
+</a>
+<HR SIZE=4>
+ 
+<FONT SIZE=-1>
+<a href="contents.htm">[Contents]</a> <a href="jss32.htm">[Prev page]</a> <a href="jss34.htm">[Next page]</a> <a href="dynamici.htm">[Index]</a>
+</FONT>
+
+
+
+
+
+<P ALIGN=right>
+<FONT SIZE=-2><I>Last Updated:  08/07/97 15:21:45
+</I></FONT>
+
+
+<HR SIZE=4>
+
+
+<P> <CENTER>Copyright © 1997
+<A HREF="cpyrt.htm"
+TARGET=_top>Netscape Communications Corporation</A></FONT>
+</CENTER>
+</P>
+</BODY>
+</HTML>
+
+
+
+</body>
+</html>

@@ -1,0 +1,87 @@
+<HTML>
+
+<HEAD><TITLE>Background color examples</TITLE>
+</HEAD>
+
+
+<STYLE TYPE="text/css">
+<!--
+
+#layer1 {position:absolute;
+ top:250px;
+ left:20px;
+ width:400px;
+ height:200px;
+ background-color:#55CC77;
+}
+
+
+#layer2 {
+ position:absolute;
+ top:480px;
+ left:20px;
+ width:400px;
+ height:200px;
+ background-color:#55CC77;
+ border-width:1;
+
+}
+
+#layer3 {
+ position:absolute;
+ top:710px;
+ left:20px;
+ width:400px;
+ height:200px;
+ layer-background-color:#55CC77;
+
+}
+
+-->
+</STYLE>
+
+<BODY BGCOLOR=white>
+
+<LAYER id=LAYER0 top=20 left=20 width=400  height=200
+bgcolor=#55CC77>
+<H4>Layer 0</H4>
+<P>This layer is defined with a &lt;LAYER&gt; tag.</P>
+<P>You see that the background color is applied
+to the rectangular region occupied by the layer.
+The height of the colored area is determined by the height value.
+</P>
+</LAYER>
+
+<DIV id=layer1>
+<H4>Layer 1</H4>
+
+<P>This layer is defined in CSS syntax.</P>
+<P>
+The style definition sets the position and background
+color, but doesn't set any values for border characteristics.
+
+</P>
+</DIV>
+
+<DIV id=layer2>
+<H4>Layer 2</H4>
+
+<P>This layer is defined in CSS syntax.
+The style definition includes a value
+for border-width.
+The height of the colored area is determined by the actual content.
+</P>
+
+</DIV>
+
+<DIV id=layer3>
+<H4>Layer 3</H4>
+
+<P>This layer is defined in CSS syntax.
+The style definition includes a value
+for layer-background-color. The height of the colored area is determined by the height value.
+</P>
+
+</DIV>
+
+</BODY>

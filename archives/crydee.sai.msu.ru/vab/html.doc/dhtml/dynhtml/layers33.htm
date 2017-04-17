@@ -1,0 +1,777 @@
+<html><head><title>Dynamic HTML in Communicator
+
+</title>
+<LINK REL=STYLESHEET 
+ TYPE="text/css"
+href="cstyle1.htm">
+
+</head>
+<body bgcolor=#FFFFFF>
+<FONT SIZE=-1>
+<a href="contents.htm">[Contents]</a> <a href="layers32.htm">[Prev page]</a> <a href="layers34.htm">[Next page]</a> <a href="dynamici.htm">[Index]</a>
+</FONT>
+
+<HR SIZE=4>
+<H3 align="right"><FONT FACE="Helvetica,Arial" 
+COLOR="#408080" ><I>Dynamic HTML in Netscape Communicator<BR>
+Part 2. Positioning HTML Content</I></FONT></H3>
+
+
+
+<a name="1069424">
+<h1><I><FONT FACE="Helvetica,Arial" COLOR="#408080" SIZE=+1>
+Chapter 9</FONT></I> 
+</H1>
+</a><a name="1067600">
+<h1>Using JavaScript With Positioned Content</H1>
+<P><IMG SRC="images/bann02.gif" HEIGHT=6 WIDTH=640>
+</P>
+</a><a name="1060706">
+<P>This chapter discusses how to use JavaScript to modify and animate positioned blocks of HTML content. First the chapter gives an overview of why you might want to use JavaScript to modify blocks of content, then it discusses the Layer object, which represents a block of content. It shows how to use JavaScript to create new blocks of content, and how to write content dynamically. It discusses how you can make distinct blocks of HTML respond to events. It discusses how each block of content can contain its own localized script, and finishes up by addressing some of the issues involved in animating HTML content.</P>
+</a><ul><a name="1061165">
+<li><a href="layers33.htm#1062126">Using JavaScript to Bring Your Web Pages to Life</a>
+</a><a name="1062269">
+<li><a href="layers33.htm#1008650">The Layer Object</a>
+</a><a name="1060711">
+<li><a href="layers33.htm#1070570">Creating Positioned Blocks of Content Dynamically</a>
+</a><a name="1060717">
+<li><a href="layers33.htm#1022405">Writing Content in Positioned Blocks</a>
+</a><a name="1060723">
+<li><a href="layers33.htm#1018891">Handling Events</a>
+</a><a name="1060730">
+<li><a href="layers33.htm#1019402">Using Localized Scripts</a>
+</a><a name="1060750">
+<li><a href="layers33.htm#1020169">Animating Positioned Content</a>
+</a></ul><a name="1061947">
+<P>This chapter does not teach the basics of using the JavaScript language, although it does provide several examples that should help you get started. For more information about JavaScript see:</P>
+</a><ul><a name="1065151">
+<li>JavaScript 3.0 Guide:
+</a><A HREF="http://home.netscape.com/eng/mozilla/3.0/handbook/javascript/index.html" target="lewin">
+<PRE>http://home.netscape.com/eng/mozilla/3.0/handbook/javascript/index.html</PRE></A><p>
+<a name="1065154">
+<li>What's New in JavaScript for Navigator 4.0:
+</a><A HREF="/library/documentation/communicator/jsguide/js1_2.htm" target="lewin">
+<PRE>/library/documentation/communicator/jsguide/js1_2.htm</PRE></A><p>
+</ul><a name="1062541">
+<P>The remaining chapters in this part of the book each present a separate complete example of using JavaScript to work with positioned content.</P>
+</a><HR><a name="1062126">
+<h1> Using JavaScript to Bring Your Web Pages to Life</h1>
+</a><a name="1062169">
+<P>Regardless of how you define your positioned blocks of HTML content, you can write scripts in JavaScript that move them, change their color and size, change their content, make them visible or invisible, and generally modify them in a variety of ways. Furthermore, you can use JavaScript to change the contents of a positioned block or create new ones on-the-fly.</P>
+</a><a name="1062167">
+<P>Using JavaScript to work with positioned blocks of HTML content allows you to define animations directly in a web page. For example, you could create an animation that dynamically peels away a series of layers of content to reveal the one underneath. You can make blocks of content move across, over, and under other blocks of content. You can make them appear and disappear. You can make them dynamically expand and contract in response to mouse events. You can generally bring your web page alive with animated content.</P>
+</a><a name="1062137">
+<P>You can use JavaScript to modify positioned blocks of HTML content regarless of how the blocks are defined. You can manipulate positioned blocks of HTML content with JavaScript, even if they are defined as styles.</P>
+</a><HR><a name="1008650">
+<h1> The Layer Object</h1>
+</a><a name="1054270">
+<P>Regardless of how you define a positioned block of HTML content, it can be treated as a modifiable object in JavaScript. </P>
+</a><a name="1062322">
+<P>For each layer in an HTML page (whether it is defined with the <code>&lt;LAYER&gt;</code> tag or as a style whose <code>position</code> property is either <code>absolute</code> or <code>relative</code>) there is a corresponding JavaScript <code>layer</code> object. You can write JavaScript scripts that modify layers either by directly accessing and modifying property values on the layer objects, or by calling methods on the <code>layer</code> objects.</P>
+</a><a name="1054579">
+<h2> The Document Property of Layers and the Layers Property of Documents </h2>
+</a><a name="1054583">
+<P>Each document object has a <code>layers</code> property that contains an array of all the top-level layers in the document. Each layer in turn has a <code>document</code> property. </P>
+</a><a name="1054586">
+<P>This <code>document</code> property has a <code>layers</code> array that contains all the top-level layers inside this layer. The document of a layer also has all the usual properties of a document object, such as the <code>images</code> property, which is an array of all the images in the layer, as well as properties that are arrays for all the applets, embeds, links, and named anchors in that layer. </P>
+</a><a name="1054970">
+<h3> How Do You Refer to a Positioned Block of Content from JavaScript?</h3>
+</a><a name="1055291">
+<P>There are several ways you can access a layer from JavaScript. If you know the layer's id (or name) you can access it in the following ways:</P>
+</a><ul><a name="1055365">
+<li> <code>document</code>.<I>layername</I>
+</a><a name="1055369">
+<P>For example, the following expression returns the layer named <code>"flowerlayer"</code>.</p>
+</a><a name="1055370">
+<P><code>document.flowerlayer</code></p>
+</a><a name="1055366">
+<li><code>document</code>.<code>layers</code>[<I>layername</I>]
+</a><a name="1055390">
+<P>For example, the following expression returns the layer named <code>"flowerlayer"</code>.</p>
+</a><a name="1055374">
+<P><code>document.layers["flowerlayer"]</code></p>
+</a></ul><a name="1055367">
+<P>If you know the index for the layer you can access it as follows:</P>
+</a><ul><a name="1055368">
+<li><code>document</code>.<code>layers</code>[<I>index</I>]
+</a><a name="1055379">
+<P>Note that the first layer has an index of 0, the second layer has an index of 1, and so on. The following expression returns the fourth layer in the document.</p>
+</a><a name="1055380">
+<P><code>document.layers[3]</code></p>
+</a></ul><a name="1055636">
+<P>When accessed by integer index, array elements appear in z-order from back to front, where zero is the bottom-most layer and higher layers are indexed by consecutive integers. The index of a layer is not the same as its <code>zIndex </code>property, as the latter does not necessarily enumerate layers with consecutive integers. Also, adjacent layers can have the same <code>zIndex</code> property values, but two layers can never occupy the same index in the array.</P>
+</a><a name="1054626">
+<P>You can find the number of layers in a<code> </code>document or another layer array by obtaining its <code>length</code> property. For example, the following expression returns the number of top level layers in the document:</P>
+</a><a name="1054627">
+<PRE>document.layers.length
+</PRE>
+</a><a name="1055641">
+<P>The following expression returns the number of layers nested at the top level inside the layer named <code>"houses"</code>.</P>
+</a><a name="1054628">
+<PRE>document.layers["houses"].document.layers.length
+</PRE>
+</a><a name="1012254">
+<h2> The Layer Object Properties </h2>
+</a><a name="1042221">
+<P>As with any JavaScript object, you can access the properties of a layer object using the following syntax:</P>
+</a><a name="1055644">
+<PRE><I>layerObject.propertyName
+</I></PRE>
+</a><a name="1055645">
+<P>where <I>layerObject</I> is an expression that evaluates to a layer object, and <I>propertyName</I> is the name of the property to be accessed. For example, the following expression returns the value of the <code>visibility</code> property of the layer named <code>"flowerlayer"</code>:</P>
+</a><a name="1055647">
+<PRE>document.flowerlayer.visibility;
+</PRE>
+</a><a name="1055646">
+<P>The following expression sets the <code>left</code> property of the layer named <code>"flowerlayer"</code> to 300 pixels.</P>
+</a><a name="1055650">
+<PRE>document.flowerlayer.left=300;
+</PRE>
+</a><a name="1055643">
+<P>The following table lists all the properties that you can use to access or modify a layer in JavaScript. Notice that there is only one set of property names. No matter whether a layer was created with the <code>&lt;LAYER&gt;</code> tag or was defined as a style, you can use the property names listed in the following table to access it or modify it after it has been created.</P>
+</a><a name="1042222">
+<P>These property names are case-sensitive. 
+<Table Border="3">
+<caption><a name="1014863">
+<BR>
+<h4 align="left">Table 9.1&#32; Layer Object Properties</h4>
+</a></caption>
+<tr><th><a name="1013577">
+<P> Property Name </P>
+</a></th><th><a name="1013579">
+<P>Modifiable by user?</P>
+</a></th><th><a name="1013581">
+<P> Description</P>
+</a></th></tr>
+<tr><td><a name="1055776">
+ <code>document</code><p>
+</a></td><td><a name="1055778">
+ No<p>
+</a></td><td><a name="1055780">
+ Each layer object contains its own document object. This object can be used to access the images, applets, embeds, links, anchors and layers that are contained within the layer. Methods of the document object can only also be invoked to change the contents of the layer.<p>
+</a></td></tr>
+<tr><td><a name="1013583">
+ <code>name</code><p>
+</a></td><td><a name="1013585">
+  No<p>
+</a></td><td><a name="1013587">
+ The name assigned to the layer through the <code>NAME</code> or <code>ID</code> attribute.<p>
+</a></td></tr>
+<tr><td><a name="1013601">
+ <code>left </code><p>
+</a></td><td><a name="1013603">
+  Yes<p>
+</a></td><td><a name="1013605">
+ The horizontal position of the layer's left edge, relative to the origin of its parent layer (for layers with absolute positions) or relative to the natural flow position (for layers with relative positions).<p>
+</a><a name="1055756">
+ The value can be an integer such as <code>12</code>, or a percentage, such as <code>" 25%"</code>.<p>
+</a><a name="1049576">
+ The default unit of measurement is pixels.<p>
+</a></td></tr>
+<tr><td><a name="1013607">
+ <code>top</code><p>
+</a></td><td><a name="1013609">
+  Yes<p>
+</a></td><td><a name="1013611">
+ The vertical position of the layer's top edge relative to the origin of its parent layer.<p>
+</a><a name="1040568">
+ The value can be an integer, an integer such as <code>12</code>, or a percentage, such as <code>" 25%"</code>.<p>
+</a><a name="1049580">
+ The default unit of measurement is pixels.<p>
+</a></td></tr>
+<tr><td><a name="1019783">
+ <code>pageX </code><p>
+</a></td><td><a name="1019785">
+  Yes<p>
+</a></td><td><a name="1019787">
+ The horizontal position of the layer relative to the page.<p>
+</a><a name="1049585">
+ The default unit of measurement is pixels.<p>
+</a></td></tr>
+<tr><td><a name="1019777">
+ <code>pageY</code><p>
+</a></td><td><a name="1019779">
+  Yes<p>
+</a></td><td><a name="1019781">
+ The vertical position of the layer relative to the page.<p>
+</a><a name="1049592">
+ The default unit of measurement is pixels.<p>
+</a></td></tr>
+<tr><td><a name="1013613">
+ <code>zIndex</code><p>
+</a></td><td><a name="1013615">
+  Yes<p>
+</a></td><td><a name="1013617">
+ The relative z-order of this layer with respect to siblings. Sibling layers with lower numbered z-index's are stacked underneath this layer. <p>
+</a><a name="1040804">
+ The value must be <code>0</code> or a positive integer.<p>
+</a></td></tr>
+<tr><td><a name="1013619">
+ <code>visibility</code><p>
+</a></td><td><a name="1013621">
+  Yes<p>
+</a></td><td><a name="1013623">
+  Determines whether or not the layer is visible. A value of <code>"show"</code> means show the layer; <code>"hide"</code> means hide the layer; <code>"inherit"</code> means inherit the visibility of the parent layer.<p>
+</a></td></tr>
+<tr><td><a name="1013625">
+ <code>clip.top </code><p>
+</a><a name="1014760">
+ <code>clip.left </code><p>
+</a><a name="1014761">
+ <code>clip.right </code><p>
+</a><a name="1070002">
+ <code>clip.bottom clip.width clip.height</code><p>
+</a></td><td><a name="1013627">
+  Yes<p>
+</a></td><td><a name="1040625">
+ These properties define the clipping rectangle, which specifies the part of the layer that is visible. Any part of a layer that is outside the clipping rectangle is not displayed.<p>
+</a><a name="1040626">
+ The clipping region can extend beyond the area of the layer that contains content. Clipping values can be negative, 0, or positive integers.<p>
+</a><a name="1040732">
+ For example, to clip 10 pixels from the left edge, you would increase clip.left by 10. To reduce the clipping region by 20 pixels at the right edge, you would reduce clip.right by 20.<p>
+</a><a name="1040680">
+ The values for clip.top, clip.left, clip.bottom, and clip.right, are in the layer's coordinate system.<p>
+</a><a name="1040747">
+ Setting the clip.width value to w is the same as:<p>
+</a><a name="1040760">
+ <code>clip.right = clip.left + w;</code><p>
+</a><a name="1040765">
+ Setting the clip.height to h is the same as:<p>
+</a><a name="1040779">
+ <code>clip.height = clip.top + h;</code><p>
+</a></td></tr>
+<tr><td><a name="1013631">
+ <code> background</code><p>
+</a></td><td><a name="1013633">
+  Yes<p>
+</a></td><td><a name="1013635">
+ The image to use as the background for the layer.<p>
+</a><a name="1041018">
+ The image is tiled across the background of the layer. For example:<p>
+</a><a name="1041212">
+<PRE>layer.background.src = "fishbg.gif";
+</PRE>
+</a><a name="1016727">
+ The value is null if the layer has no backdrop.<p>
+</a></td></tr>
+<tr><td><a name="1013637">
+ <code>bgColor</code><p>
+</a></td><td><a name="1013639">
+  Yes<p>
+</a></td><td><a name="1013641">
+ The color to use as a solid background color for the layer. The value can be an encoded RGB value, a string that indicates a pre-defined color, or <code>null</code> for a transparent layer<p>
+</a><a name="1014772">
+ For example:<p>
+</a><a name="1016795">
+<PRE><code>//blue background
+</code></PRE>
+</a><a name="1016808">
+<PRE><code>layer.bgColor = "#0000FF"; 
+</code></PRE>
+</a><a name="1016811">
+<PRE><code>// red background
+</code></PRE>
+</a><a name="1016805">
+<PRE><code>layer.bgColor = "red";
+</code></PRE>
+</a><a name="1021604">
+<PRE><code>// transparent layer
+</code></PRE>
+</a><a name="1021605">
+<PRE><code>layer.bgColor = null;
+</code></PRE>
+</a></td></tr>
+<tr><td><a name="1013643">
+ <code>siblingAbove</code><p>
+</a></td><td><a name="1013645">
+  No<p>
+</a></td><td><a name="1014778">
+  The <code>layer</code> object above this one in the stacking order, among all layers that share the same parent layer or null if the layer has no sibling above.<p>
+</a></td></tr>
+<tr><td><a name="1013649">
+ <code> siblingBelow</code><p>
+</a></td><td><a name="1013651">
+  No<p>
+</a></td><td><a name="1013653">
+ The <code>layer</code> object below this one in z-order, among all layers that share the same parent layer or null if layer is bottommost.<p>
+</a></td></tr>
+<tr><td><a name="1013655">
+ <code>above</code><p>
+</a></td><td><a name="1013657">
+  No<p>
+</a></td><td><a name="1013659">
+ The <code>layer</code> object above this one in z-order, among all layers in the document or the enclosing window object if this layer is topmost.<p>
+</a></td></tr>
+<tr><td><a name="1013661">
+ <code>below</code><p>
+</a></td><td><a name="1013663">
+  No<p>
+</a></td><td><a name="1013665">
+  The <code>layer</code> object below this one in z-order, among all layers in the document or null if this layer is bottommost. <p>
+</a></td></tr>
+<tr><td><a name="1013667">
+ <code>parentLayer</code><p>
+</a></td><td><a name="1013669">
+  No<p>
+</a></td><td><a name="1013671">
+  The <code>layer</code> object that contains this layer, or the enclosing window object if this layer is not nested in another layer.<p>
+</a></td></tr>
+<tr><td><a name="1013679">
+ <code>src</code><p>
+</a></td><td><a name="1013681">
+  Yes<p>
+</a></td><td><a name="1013683">
+ Source of the content for the layer, specified as a URL. <p>
+</a></td></tr>
+
+</Table>
+
+<Table>
+<tr><td>
+</Table>
+</P>
+</a><a name="1008738">
+<h2> The Layer Object Methods</h2>
+</a><a name="1055671">
+<P>There are several methods that you can use on a <code>layer</code> object to modify a layer. As with any JavaScript object, you can invoke a method on a <code>layer</code> object using the following syntax:</P>
+</a><a name="1055672">
+<PRE><I>layerObject.methodName(args)
+</I></PRE>
+</a><a name="1055673">
+<P>where <I>layerObject</I> is an expression that evaluates to a layer object, <I>methodName</I> is the method to be invoked, and <I>args</I> are the arguments to the method. </P>
+</a><a name="1055747">
+<P>For example, the following expression invokes the method <code>moveBy()</code> on the layer named <code>flowerlayer</code>, to move the layer 10 pixels to the right and 10 pixels down from its current position.</P>
+</a><a name="1055674">
+<PRE>document.flowerlayer.moveBy(10, 10);
+</PRE>
+</a><a name="1055669">
+<P>The following table lists all the methods that you can use to access or modify a layer in JavaScript. You will notice that there is only one set of method names. It does not matter whether a layer was created with the <code>&lt;LAYER&gt;</code> tag or was defined as a style, you can use the methods listed in the following table to access it or modify it after it has been created.</P>
+</a><a name="1041439">
+<P>These method names are <B>case-sensitive</B></P>
+</a><a name="1042191">
+<P> 
+<Table Border="3">
+<caption><a name="1008741">
+<BR>
+<h4 align="left">Table 9.2&#32; Layer Object Methods</h4>
+</a></caption>
+<tr><th><a name="1008745">
+<h2>  Method Name</h2>
+</a></th><th><a name="1008747">
+<h2>                           Description</h2>
+</a></th></tr>
+<tr><td><a name="1008749">
+ <code> moveBy(dx, dy)</code><p>
+</a></td><td><a name="1042375">
+ Moves this layer by <code>dx</code> pixels to the left, and <code>dy</code> pixels down, from its current position.<p>
+</a></td></tr>
+<tr><td><a name="1008753">
+ <code>moveTo(x, y) </code><p>
+</a></td><td><a name="1008755">
+ For layers with absolute positions, this method changes the layer's position to the specified pixel coordinates within the containing layer or document. For layers with relative positions, this method moves the layer relative to the natural position in the containing layer or document.<p>
+</a><a name="1055827">
+ This method is equivalent to setting both the <code>top</code> and <code>left</code> properties of the layer object.<p>
+</a></td></tr>
+<tr><td><a name="1018545">
+ <code>moveToAbsolute(x, y) </code><p>
+</a></td><td><a name="1018547">
+ Changes the layer position to the specified pixel coordinates within the page (instead of the containing layer.)<p>
+</a><a name="1055843">
+ This method is equivalent to setting both the <code>pageX</code> and <code>pageY</code> properties of the layer object.<p>
+</a></td></tr>
+<tr><td><a name="1008757">
+ <code>resizeBy(dwidth, dheight)</code><p>
+</a></td><td><a name="1008759">
+ Resizes the layer by the specified height and width values (in pixels). Note that this does not relayout any HTML contained in the layer. Instead, the layer contents may be clipped by the new boundaries of the layer.<p>
+</a><a name="1055855">
+ This method has the same effect as adding <code>dwidth</code> and <code>dheight</code> to the <code>clip.width</code> and <code>clip.height</code>.<p>
+</a></td></tr>
+<tr><td><a name="1021341">
+ <code>resizeTo(width, height)</code><p>
+</a></td><td><a name="1021343">
+ Resizes the layer to have the specified height and width values (in pixels). Note that this does not relayout any HTML contained in the layer. Instead, the layer contents may be clipped by the new boundaries of the layer.<p>
+</a><a name="1055859">
+ This method has the same effect as setting the <code>clip.width</code> and <code>clip.height</code>. <p>
+</a></td></tr>
+<tr><td><a name="1008762">
+ <code>moveAbove(layer)</code><p>
+</a></td><td><a name="1014881">
+ Stacks this layer (in z-order) above the layer specified in the argument, without changing either layer's horizontal or vertical position. After re-stacking, both layers will share the same parent layer. <p>
+</a><a name="1042424">
+ The value must be a valid layer object.<p>
+</a></td></tr>
+<tr><td><a name="1020141">
+ <code>moveBelow(layer)</code><p>
+</a></td><td><a name="1020143">
+ Stacks this layer (in z-order) below the specified layer, without changing the layer's horizontal or vertical position. After re-stacking, both layers will share the same parent layer. <p>
+</a><a name="1055879">
+ The value must be a valid layer object.<p>
+</a></td></tr>
+<tr><td><a name="1021325">
+ <code>load(sourcestring, width)</code><p>
+</a></td><td><a name="1021327">
+ Changes the source of a layer to the contents of the file indicated by sourcestring, and simultaneously changes the width at which the layer's HTML contents will be wrapped. <p>
+</a><a name="1021328">
+ This method takes two arguments. The first argument is a string indicating the external file name, and the second is the width of the layer in pixels. <p>
+</a></td></tr>
+
+</Table>
+
+<Table>
+<tr><td>
+</Table>
+</P>
+</a><HR><a name="1070570">
+<h1> Creating Positioned Blocks of Content Dynamically</h1>
+</a><a name="1022406">
+<P>You can use JavaScript to create new <code>layer</code> objects by calling the <code>new</code> operator on a <code>Layer</code> object, for example:</P>
+</a><a name="1022407">
+<PRE>bluelayer = document.bluelayer;
+</PRE>
+</a><a name="1022408">
+<PRE>newbluelayer = new Layer(300, bluelayer);
+</PRE>
+</a><a name="1022413">
+<P>The first argument is the width of the new layer, and the second argument, which is optional, is its parent layer. The parent can also be a window, in which case the new layer is created as a top-level layer within the corresponding window. If you do not supply a parent layer, the new layer will be a top-level layer in the current document.</P>
+</a><a name="1022417">
+<P>After creating a new layer, you can set its source either by setting a value for its <code>src</code> property, or by calling the <code>load</code> method. Alternatively, you can open the layer's document and write to it (as discussed in the next section.)</P>
+</a><a name="1022418">
+<P>There are a few important things to know about creating layers and modifying their contents dynamically. You can create a new <code>layer</code> object by using the <code>new</code> operator <I>only after the page has completely finished loading</I>. You cannot open a layer's document and write to it until the page has finished loading. You can have only one layer open for writing at a time.</P>
+</a><HR><a name="1022405">
+<h1> Writing Content in Positioned Blocks</h1>
+</a><a name="1019094">
+<P>While initially defining a layer, you can write to the layer's document using the document's <code>write</code> method. </P>
+</a><a name="1019095">
+<PRE>&lt;LAYER ID="layer1" BGcolor="green"&gt; 
+</PRE>
+</a><a name="1019084">
+<PRE>  &lt;HR&gt;
+</PRE>
+</a><a name="1019070">
+<PRE>  &lt;H1&gt;First Heading&lt;/H1&gt; 
+</PRE>
+</a><a name="1019073">
+<PRE>  &lt;SCRIPT&gt;
+</PRE>
+</a><a name="1019071">
+<PRE>     document.write("&lt;P&gt;Here is some content&lt;P&gt;")
+</PRE>
+</a><a name="1019072">
+<PRE>  &lt;/SCRIPT&gt;
+</PRE>
+</a><a name="1019085">
+<PRE>  &lt;HR&gt;
+</PRE>
+</a><a name="1019074">
+<PRE>&lt;/LAYER&gt;
+</PRE>
+</a><a name="1019142">
+<P>After a layer has been initially created and the page has fully finished loading, you can modify the contents of the layer by using the <code>write</code>() method of the layer's document. If you use the <code>write()</code> method to write content to a layer after the layer has been created, the original content of the layer is wiped out, and replaced by the new content.</P>
+</a><a name="1022447">
+<P>After writing to a layer's document, you need to close the document.</P>
+</a><a name="1019147">
+<P>For example:</P>
+</a><a name="1055906">
+<PRE>&lt;LAYER ID="layer1" BGCOLOR="blue"&gt; 
+</PRE>
+</a><a name="1022464">
+<PRE> &lt;HR&gt;
+</PRE>
+</a><a name="1022465">
+<PRE> &lt;H1&gt;First Heading&lt;/H1&gt; 
+</PRE>
+</a><a name="1022466">
+<PRE> &lt;P&gt;Here is the original content&lt;P&gt;
+</PRE>
+</a><a name="1022467">
+<PRE> &lt;HR&gt;
+</PRE>
+</a><a name="1022468">
+<PRE>&lt;/LAYER&gt;
+</PRE>
+</a><a name="1022469">
+<PRE>&lt;/BODY&gt;
+</PRE>
+</a><a name="1022470">
+<PRE>&lt;/HTML&gt;
+</PRE>
+</a><a name="1021401">
+<PRE>&lt;SCRIPT&gt;
+</PRE>
+</a><a name="1021402">
+<PRE>function changeLayerContent() {
+</PRE>
+</a><a name="1021403">
+<PRE> &#32;document.layer1.document.write("&lt;HR&gt;&lt;P&gt;New content.&lt;/P&gt;&lt;HR&gt;");
+</PRE>
+</a><a name="1021404">
+<PRE> &#32;document.layer1.document.close();
+</PRE>
+</a><a name="1021405">
+<PRE>}
+</PRE>
+</a><a name="1021406">
+<PRE>&lt;/SCRIPT&gt;
+</PRE>
+</a><a name="1021399">
+<PRE>
+</PRE>
+</a><a name="1021386">
+<PRE>&lt;FORM NAME="form"&gt;
+</PRE>
+</a><a name="1021387">
+<PRE>&lt;INPUT TYPE=button VALUE="CHANGE CONTENT" 
+</PRE>
+</a><a name="1021388">
+<PRE>ONCLICK='changeLayerContent();return false;'&gt;
+</PRE>
+</a><a name="1021389">
+<PRE>&lt;/FORM&gt;
+</PRE>
+</a><a name="1019167">
+<P>For a further example of writing to a layer, see <a href="layers37.htm#1044408">Chapter &#32;12, "Expanding Colored Squares Example."</a></P>
+</a><HR><a name="1018891">
+<h1> Handling Events</h1>
+</a><a name="1018892">
+<P>Each layer can be thought of as a separate document. It has the same event-handling capabilities as a top-level window. You can capture events for a layer.</P>
+</a><a name="1065219">
+<P>For an overview of event handling, see the section "Scripting Event Handlers" in the JavaScript guide for in JavaScript. The following link takes you to the JavaScript guide:</P>
+</a><A HREF="http://home.netscape.com/eng/mozilla/3.0/handbook/javascript/index.html" target="lewin">
+<PRE>http://home.netscape.com/eng/mozilla/3.0/handbook/javascript/index.html</PRE></A><p>
+<a name="1055989">
+<P>When defining a layer with the <code>&lt;LAYER&gt;</code> tag, you can also supply the following attributes that specify event handlers:</P>
+</a><a name="1018893">
+<PRE>onMouseOver
+</PRE>
+</a><a name="1019335">
+<PRE>onMouseOut
+</PRE>
+</a><a name="1018919">
+<PRE>onLoad
+</PRE>
+</a><a name="1018928">
+<PRE>onFocus
+</PRE>
+</a><a name="1018933">
+<PRE>onBlur
+</PRE>
+</a><a name="1018991">
+<P>The <code>onMouseOver</code> event handler is invoked when the mouse cursor moves into a layer.</P>
+</a><a name="1021468">
+<P>The <code>onMouseOut</code> event handler is invoked when the mouse cursor moves out of the area of a layer.</P>
+</a><a name="1021456">
+<P>The <code>onLoad</code> event handler gets invoked when a layer is loaded, that is, the document that ultimately contains the layer is displayed. This is true regardless of whether a layer is visible or not. </P>
+</a><a name="1018990">
+<P>The <code>onFocus</code> handler is invoked when the layer gets keyboard focus, and the <code>onBlur</code> handler is invoked when the layer loses keyboard focus. </P>
+</a><a name="1019351">
+<P>Just as in the case of a document, if you want to define the mouse click response for a layer, you must capture <code>onMouseDown</code> and <code>onMouseUp</code> events at the level of the layer and process them as you want. </P>
+</a><a name="1019857">
+<P>If an event occurs in a place where multiple layers overlap, the top-most layer gets the event, even if it is transparent. However, if a layer is hidden, it does not get events.</P>
+</a><a name="1046934">
+<P>For an example of capturing events for a layer, see <a href="layers38.htm#1045229">Chapter &#32;13, "Changing Wrapping Width Example."</a></P>
+</a><HR><a name="1019402">
+<h1> Using Localized Scripts</h1>
+</a><a name="1019403">
+<P>You can use the <code>&lt;SCRIPT&gt;</code> and <code>&lt;/SCRIPT&gt;</code> tags within blocks of positioned content. The functions defined in the script will be scoped to the block that contains them, and they cannot be used outside that block.</P>
+</a><a name="1019406">
+<P>This functionality is handy, for example, for defining event handlers for a layer.</P>
+</a><a name="1064126">
+<h4>&lt;LAYER&gt; Tag Syntax </h4>
+</a><a name="1019407">
+<PRE>&lt;LAYER ID="layer1" BGCOLOR="red"
+</PRE>
+</a><a name="1019408">
+<PRE> &#32; &#32;onMouseOver='changeColor("blue");'
+</PRE>
+</a><a name="1019409">
+<PRE> &#32; &#32;onMouseOut='changeColor("red");'&gt;
+</PRE>
+</a><a name="1019410">
+<PRE> &#32;&lt;P&gt;Layer content...&lt;/P&gt;
+</PRE>
+</a><a name="1019411">
+<PRE> &#32;&lt;SCRIPT&gt;
+</PRE>
+</a><a name="1019412">
+<PRE> &#32; &#32;function changeColor(newcol) {
+</PRE>
+</a><a name="1019413">
+<PRE> &#32; &#32; &#32;bgColor=newcol; // Modifies the layer object's bgColor property
+</PRE>
+</a><a name="1042532">
+<PRE> &#32; &#32; &#32;return false;
+</PRE>
+</a><a name="1019414">
+<PRE> &#32; &#32; &#32;}
+</PRE>
+</a><a name="1019415">
+<PRE> &#32; &#32;&lt;/SCRIPT&gt;
+</PRE>
+</a><a name="1019416">
+<PRE>&lt;/LAYER&gt;
+</PRE>
+</a><a name="1064130">
+<h4>CSS Syntax </h4>
+</a><a name="1064155">
+<PRE>&lt;DIV STYLE="position:absolute; layer-background-color:red; 
+</PRE>
+</a><a name="1064176">
+<PRE> &#32; &#32;width:200px; height:100px"&gt;
+</PRE>
+</a><a name="1064157">
+<PRE> &#32;&lt;P&gt;Layer content...&lt;/P&gt;
+</PRE>
+</a><a name="1064158">
+<PRE> &#32;&lt;SCRIPT&gt;
+</PRE>
+</a><a name="1064159">
+<PRE> &#32;function onMouseOver() {changeColor("blue");}
+</PRE>
+</a><a name="1064160">
+<PRE> &#32;function onMouseOut() {changeColor("red");}
+</PRE>
+</a><a name="1064161">
+<PRE> &#32;function changeColor(newcol) {
+</PRE>
+</a><a name="1064162">
+<PRE>    bgColor=newcol;
+</PRE>
+</a><a name="1064163">
+<PRE>    return false;
+</PRE>
+</a><a name="1064164">
+<PRE> &#32;}
+</PRE>
+</a><a name="1064165">
+<PRE> &#32;&lt;/SCRIPT&gt;
+</PRE>
+</a><a name="1064166">
+<PRE>&lt;/DIV&gt;
+</PRE>
+</a><a name="1064131">
+<PRE>
+</PRE>
+</a><a name="1019417">
+<P>When the mouse moves into the layer, the layer turns blue. When the mouse moves out of the layer, it turns red. To see the example in action, select:</P>
+</a><A HREF="chgcolor.htm" target="lewin">
+<PRE>chgcolor.htm</PRE></A><p>
+<HR><a name="1020169">
+<h1> Animating Positioned Content</h1>
+</a><a name="1056290">
+<P>You can use JavaScript to modify layers to produce the effects of animation. Frequently, animation revolves around repeating actions over and over again, particularly for looping animations. You can use the JavaScript function <code>setInterval()</code> function to repeatedly call a function at a given interval.</P>
+</a><a name="1056291">
+<P>For example, the following statement calls the <code>keepExpanding()</code> function every 25 milliseconds, with arguments of 20, 30, 40 and 50. </P>
+</a><a name="1056024">
+<PRE>setInterval(keepExpanding, 25, 20, 30, 40, 50); 
+</PRE>
+</a><a name="1056016">
+<P>JavaScript also provides the <code>setTimeout()</code> function, which calls another function after a given amount of time. </P>
+</a><a name="1020204">
+<P>The <code>setTimeOut()</code> function has two different forms:</P>
+</a><a name="1020209">
+<PRE>setTimeout("code to be executed", delay)
+</PRE>
+</a><a name="1020218">
+<PRE>setTimeout(function, delay, args...)
+</PRE>
+</a><a name="1020223">
+<P>For example, to invoke <code>doItAgain("Sam", "piano")</code> after 3 milliseconds, you can use either of the following statements:</P>
+</a><a name="1020227">
+<PRE>setTimeout("doItAgain('Sam', 'piano')", 3)
+</PRE>
+</a><a name="1020232">
+<PRE>setTimeout(doItAgain, 3, "Sam", "piano");
+</PRE>
+</a><a name="1056472">
+<P>The <code>setTimeout()</code> function is useful for conditionally re-invoking a function, whereas the <code>setInterval()</code> function is useful for kicking off the repeated, unconditional invocation of a function.</P>
+</a><a name="1020235">
+<P>The following function uses <code>setTimeout()</code> to keep making the clipping area of a layer 5 pixels wider and 5 pixels higher until the layer is 450 pixels wide.</P>
+</a><a name="1020254">
+<PRE>function expand(layer) 
+</PRE>
+</a><a name="1020263">
+<PRE>{
+</PRE>
+</a><a name="1020267">
+<PRE>    if (layer.clip.right &lt; 450) {
+</PRE>
+</a><a name="1020274">
+<PRE>    layer.resizeBy(5, 5);
+</PRE>
+</a><a name="1020275">
+<PRE>    setTimeout(expand, 5, layer);
+</PRE>
+</a><a name="1020276">
+<PRE>  }
+</PRE>
+</a><a name="1020277">
+<PRE> return false;
+</PRE>
+</a><a name="1020278">
+<PRE>}
+</PRE>
+</a><a name="1042837">
+<h2> Animating Images</h2>
+</a><a name="1020309">
+<P>You can achieve many interesting animations by changing the source of an image in conjunction with moving the image. To move an image, you can change the position of the layer that contains the image. To change the source of the image, you can assign a new value to the <code>src</code> property of the <code>image</code> object.</P>
+</a><a name="1020304">
+<P>If the source of the image is changed too quickly or too often, the actual image may not download across the net quickly enough to keep up with the animation. Therefore if you have a script that changes the source of an image in a moving layer, it is best to make sure that the image has fully loaded before you try to do anything with it.</P>
+</a><a name="1042804">
+<h3> Using OnLoad Handlers</h3>
+</a><a name="1042634">
+<P>When a document has completely finished loading, it invokes its <code>onLoad</code> handler if it has one. You could define an <code>onLoad</code> handler for the <code>BODY</code> element of a document that initiates any animations in the document. The <code>onLoad</code> handler for a <code>BODY</code> element may be invoked before all frames in all animated GIF images have finished loading, but it will not be invoked until at least one frame of every animated GIF image has finished loading.</P>
+</a><a name="1056722">
+<P>Layers can also have <code>onLoad</code> handlers. However, if a layer contains images, the images may load asynchronously from the rest of the layer's content, and the layer may think it has finished loading and thus fire its <code>onLoad</code> handler (if it has one) before all its images have finished loading.</P>
+</a><a name="1042794">
+<P>Images can have <code>onLoad</code> handlers also. However, if the image is an animated GIF, its <code>onLoad</code> handler is invoked every time a frame in the image finishes loading. Therefore if your image is an animated GIF, it is better to define an <code>onLoad</code> handler that initiates any animations that use that image in the <code>BODY</code> element rather than directly on the image.However, it the image is a static GIF or JPEG, by all means define the <code>onLoad</code> handler directly on the image.</P>
+</a><a name="1042791">
+<P><a href="layers35.htm#1008791">Chapter &#32;11, "Swimming Fish Example,"</a> discusses an example, <a href="layers35.htm#1046344">Positioning and Moving the Fish and Poles</a>, that has a layer containing a fish that swims back and forth. The fish starts swimming when someone clicks on a button. To ensure that nobody can click the button before the fish image has finished loading, the layer containing the button is initially hidden. When the document has finished loading, its <code>onLoad</code> handler makes the form layer visible.</P>
+</a><a name="1042805">
+<h3> Pre-fetching Images</h3>
+</a><a name="1020354">
+<P>One way to reduce the time required to start an animation is to ensure that the images used in the animation are downloaded to the browser's cache before the animation starts. This approach is known as prefetching the images.</P>
+</a><a name="1056753">
+<P>You can prefetch an image by embedding it in a layer. When a layer loads, it loads all its content, including all images, regardless of whether the layer is visible or not. If a page has a hidden layer that contains all the images needed in the animation then when the page opens, the source for the images is downloaded into the browser's cache, even though they are not visible.</P>
+</a><a name="1020355">
+<P><a href="layers35.htm#1008791">Chapter &#32;11, "Swimming Fish Example,"</a> discusses an example, <a href="layers35.htm#1008876">Changing the Stacking Order of Fish and Poles</a>, that illustrates the use of a hidden layer to contain images that are not needed when the page opens but are used in the course of animating the contents of the page. </P>
+</a><a name="1057663">
+<h3> Suppressing the Icon for Images that Have Not Yet Loaded</h3>
+</a><a name="1057725">
+<P> By default, when a page opens, it shows a placeholder icon for every image in the page that has not finished loading. Animation sequences may sometimes require multiple images. While the images are loading, the user could see lots of placeholder icons that you would prefer they did not see.</P>
+</a><a name="1057957">
+<P>A new attribute has been introduced for the <code>IMG</code> tag to allow you to suppress the display of placeholder icons.</P>
+</a><a name="1057810">
+<P>The <code>SUPPRESS</code> attribute for the <code>IMG</code> tag can be set to either true or false. The default value is <code>false</code>. If <code>SUPPRESS</code> is set to <code>true</code>, neither the place-holder icon or frame that appear during image loading will be displayed and tool-tips will be disabled for that image. </P>
+</a><a name="1057769">
+<P>If <code>SUPPRESS</code> is set to <code>false</code>, the place-holder icon and frame will always be displayed during loading even if the images are transparent images that would not otherwise be displayed. Tool tips will be active. </P>
+</a>
+<HR SIZE=4><br>
+ 
+<FONT SIZE=-1>
+<a href="contents.htm">[Contents]</a> <a href="layers32.htm">[Prev page]</a> <a href="layers34.htm">[Next page]</a> <a href="dynamici.htm">[Index]</a>
+</FONT>
+
+<br>
+
+
+
+<P ALIGN=right>
+<FONT SIZE=-2><I>Last Updated:  08/07/97 15:21:59
+</I></FONT>
+
+
+<HR SIZE=4>
+
+
+<P> <CENTER>Copyright © 1997
+<A HREF="cpyrt.htm"
+TARGET=_top>Netscape Communications Corporation</A></FONT>
+</CENTER>
+</P>
+</BODY>
+</HTML>
+
+
+
+</body>
+</html>

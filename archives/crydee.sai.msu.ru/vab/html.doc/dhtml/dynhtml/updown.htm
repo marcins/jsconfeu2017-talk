@@ -1,0 +1,39 @@
+<HTML>
+<HEAD> <TITLE>Up and Down </TITLE> </HEAD>
+
+<STYLE TYPE="text/css">
+
+all.UP {position:relative; top:-10pt; }
+all.DOWN {position:relative; top:10pt; }
+</STYLE>
+
+
+<BODY>
+
+<LAYER BGCOLOR = "yellow" TOP=300 LEFT =70
+WIDTH=400 HEIGHT=200>
+<P>Paragraph in layer with absolute position.</P>
+<LAYER BGCOLOR=teal TOP=50 LEFT=20
+WIDTH=200 HEIGHT=100>
+<P>Paragraph in embedded layer with absolute position</P>
+</LAYER>
+</LAYER>
+
+
+
+
+<P>Paragraph above inflow layer</P>
+    <P><ILAYER LEFT=100>
+        This inflow paragraph is displaced 100 pixels to the right of
+        its normal position.
+        </ILAYER></P>
+<P>Paragraph below inflow layer</P>
+<P>This <ILAYER TOP=3>word</ILAYER> is nudged down 3 pixels.</P>
+
+<P>This <SPAN CLASS=DOWN>text </SPAN>goes <SPAN CLASS=UP>up</SPAN>
+and <SPAN CLASS=DOWN>down, </SPAN>up
+<SPAN CLASS=DOWN>and <SPAN CLASS=DOWN>down.</SPAN></SPAN></P>
+
+
+
+</BODY>

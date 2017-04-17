@@ -1,0 +1,1048 @@
+<HTML>
+<BODY>
+
+<A NAME="hash_property"><H2>hash property</H2></A>
+<P>
+A string beginning with a hash mark (#) that specifies an anchor name in the URL.
+
+<H3>Syntax</H3>
+<PRE>
+1. links[<I>index</I>].hash
+2. location.hash
+</PRE>
+<P><I>index</I> is an integer representing a link object.
+
+<H3>Property of</H3>
+<P><A HREF=ref_h-l.html#link_object>link</A>, <A HREF=ref_h-l.html#location_object>location</A>
+
+<H3>Description</H3>
+<P>The hash property specifies a portion of the URL.
+
+<P>You can set the hash property at any time, although it is safer to set the href property to change a location. If the hash that you specify cannot be found in the current location, you will get an error.
+
+<P>See <A HREF="http://www.cis.ohio-state.edu/htbin/rfc/rfc1738.html" TARGET="_top">RFC 1738</A> for complete information about the hash.
+
+<H3>Examples</H3>
+<P>See the examples for the <A HREF=ref_a-c.html#anchor_object>anchor</A> object and the <A HREF=ref_h-l.html#href_property>href</A> property.
+
+<H3>See also</H3>
+<LI><A HREF=ref_h-l.html#host_property>host</A>, <A HREF=ref_h-l.html#hostname_property>hostname</A>, <A HREF=ref_h-l.html#href_property>href</A>, <A HREF=ref_m-q.html#pathname_property>pathname</A>, <A HREF=ref_m-q.html#port_property>port</A>, <A HREF=ref_m-q.html#protocol_property>protocol</A>, <A HREF=ref_s-s.html#search_property>search</A> properties
+<!------------------------------------------------------------------------------------------------->
+<HR>
+<A NAME="hidden_object"><H2>hidden object</H2></A>
+<P>A text object that is suppressed from form display on an HTML form. A hidden object is used for passing name/value pairs when a form submits.
+
+
+<H3>Syntax</H3>
+<P>To define a hidden object:
+<PRE>
+&LTINPUT
+   TYPE="hidden"
+   NAME="<I>hiddenName</I>"
+   [VALUE="<I>textValue</I>"]&GT
+</PRE>
+<I>NAME="hiddenName"</I> specifies the name of the hidden object. You can access this value using the name property.
+<BR><I>VALUE="textValue"</I> specifies the initial value of the hidden object.
+
+<P>To use a hidden object's properties:
+<PRE>
+1. <I>hiddenName</I>.<I>propertyName</I>
+2. <I>formName</I>.elements[<I>index</I>].<I>propertyName</I>
+</PRE>
+<I>hiddenName</I> is the value of the NAME attribute of a hidden object.
+<BR><I>formName</I> is either the value of the NAME attribute of a form object or an element in the <I>forms</I> array.
+<BR><I>index</I> is an integer representing a hidden object on a form.
+<BR><I>propertyName</I> is one of the properties listed below.
+
+
+<H3>Property of</H3>
+<LI><A HREF=ref_f-g.html#form_object>form</A>
+
+
+<H3>Description</H3>
+<P>A hidden object is a form element and must be defined within a &LTFORM&GT tag.
+
+<P>A hidden object cannot be seen or modified by a user, but you can programatically change the value of the object by changing its value property. You can use hidden objects for client/server communication.
+
+
+<H3>Properties</H3>
+<LI><A HREF=ref_m-q.html#name_property>name</A> reflects the NAME attribute
+<LI><A HREF=ref_t-z.html#value_property>value</A> reflects the current value of the hidden object
+
+
+<H3>Methods</H3>
+<LI>None.
+
+
+<H3>Event handlers</H3>
+<LI>None.
+
+
+<H3>Examples</H3>
+The following example uses a hidden object to store the value of the last object the user clicked. The form contains a "Display hidden value" button that the user can click to display the value of the hidden object in an Alert dialog box.
+<XMP>
+<HTML>
+<HEAD>
+<TITLE>Hidden object example</TITLE>
+</HEAD>
+<BODY>
+<B>Click some of these objects, then click the "Display value" button
+<BR>to see the value of the last object clicked.</B>
+<FORM NAME="form1">
+<INPUT TYPE="hidden" NAME="hiddenObject" VALUE="None">
+<P>
+<INPUT TYPE="button" VALUE="Click me" NAME="button1" 
+   onClick="document.form1.hiddenObject.value=this.value">
+<P>
+<INPUT TYPE="radio" NAME="musicChoice" VALUE="soul-and-r&b"
+   onClick="document.form1.hiddenObject.value=this.value"> Soul and R&B
+<INPUT TYPE="radio" NAME="musicChoice" VALUE="jazz"
+   onClick="document.form1.hiddenObject.value=this.value"> Jazz
+<INPUT TYPE="radio" NAME="musicChoice" VALUE="classical"
+   onClick="document.form1.hiddenObject.value=this.value"> Classical
+<P>
+<SELECT NAME="music_type_single"
+   onFocus="document.form1.hiddenObject.value=this.options[this.selectedIndex].text">
+   <OPTION SELECTED> Red <OPTION> Orange <OPTION> Yellow
+</SELECT>
+<P><INPUT TYPE="button" VALUE="Display hidden value" NAME="button2"
+   onClick="alert('Last object clicked: ' + document.form1.hiddenObject.value)">
+</FORM>
+</BODY>
+</HTML>
+</XMP>
+
+
+<H3>See also</H3>
+<LI><A HREF=ref_a-c.html#cookie_property>cookie</A> property
+
+
+<!------------------------------------------------------------------------------------------------->
+<HR>
+<A NAME="history_object"><H2>history object</H2> </A>
+<P>Contains information on the URLs that the client has visited within a window. This information is stored in a history list, and is accessible through the Navigator's Go menu.
+
+<H3>Syntax</H3>
+<P>To use a history object:
+<PRE>
+1. history.<I>propertyName</I>
+2. history.<I>methodName</I>(<I>parameters</I>)
+</PRE>
+<I>propertyName</I> is one of the properties listed below.
+<BR><I>methodName</I> is one of the methods listed below.
+
+
+<H3>Property of</H3>
+<LI><A HREF=ref_d-e.html#document_object>document</A>
+
+
+<H3>Description</H3>
+<P>The history object is a linked list of URLs the user has visited, as shown in the Navigator's Go menu.
+
+
+<H3>Properties</H3>
+<LI><A HREF=ref_h-l.html#length_property>length</A> reflects the number of entries in the history object
+
+
+<H3>Methods</H3>
+<LI><A HREF=ref_a-c.html#back_method>back</A>
+<LI><A HREF=ref_f-g.html#forward_method>forward</A>
+<LI><A HREF=ref_f-g.html#go_method>go</A>
+
+
+<H3>Event handlers</H3>
+<LI>None.
+
+
+<H3>Examples</H3>
+<P><B>Example 1.</B> The following example goes to the URL the user visited three clicks ago in the current window.
+<XMP>history.go(-3)</XMP>
+
+<P><B>Example 2.</B> You can use the history object with a specific window or frame. The following example causes <I>window2</I> to go back one item in its window (or session) history:
+<XMP>window2.history.back()</XMP>
+
+<P><B>Example 3.</B> The following example causes the second frame in a frameset to go back one item:
+<XMP>parent.frames[1].history.back()</XMP>
+
+<P><B>Example 4.</B> The following example causes the frame named <I>frame1</I> in a frameset to go back one item:
+<XMP>parent.frame1.history.back()</XMP>
+
+<P><B>Example 5.</B> The following example causes the frame named <I>frame2</I> in <I>window2</I> to go back one item:
+<XMP>window2.frame2.history.back()</XMP>
+
+<H3>See also</H3>
+<LI><A HREF=ref_h-l.html#location_object>location</A> object
+
+
+<!------------------------------------------------------------------------------------------------->
+<HR>
+<A NAME="host_property"><H2>host property</H2></A>
+<P>
+A string specifying the hostname:port portion of the URL.
+
+<H3>Syntax</H3>
+<PRE>
+1. links[<I>index</I>].host
+2. location.host
+</PRE>
+<P><I>index</I> is an integer representing a link object.
+
+<H3>Property of</H3>
+<P><A HREF=ref_h-l.html#link_object>link</A>, <A HREF=ref_h-l.html#location_object>location</A>
+
+<H3>Description</H3>
+<P>The host property specifies a portion of the URL. The host property is the concatenation of the hostname and port properties, separated by a colon. When the port property is null, the host property is the same as the hostname property.
+
+<P>You can set the host property at any time, although it is safer to set the href property to change a location. If the host that you specify cannot be found in the current location, you will get an error.
+
+<P>See Section 3.1 of <A HREF="http://www.cis.ohio-state.edu/htbin/rfc/rfc1738.html" TARGET="_top">RFC 1738</A> for complete information about the hostname and port.
+
+<H3>Examples</H3>
+<P>See the examples for the <A HREF=ref_h-l.html#href_property>href</A> property.
+
+<H3>See also</H3>
+<LI><A HREF=ref_h-l.html#hash_property>hash</A>, <A HREF=ref_h-l.html#hostname_property>hostname</A>, <A HREF=ref_h-l.html#href_property>href</A>, <A HREF=ref_m-q.html#pathname_property>pathname</A>, <A HREF=ref_m-q.html#port_property>port</A>, <A HREF=ref_m-q.html#protocol_property>protocol</A>, <A HREF=ref_s-s.html#search_property>search</A> properties
+<!------------------------------------------------------------------------------------------------->
+<HR>
+<A NAME="hostname_property"><H2>hostname property</H2></A>
+<P>
+A string specifying the host and domain name, or IP address, of a network host.
+
+<H3>Syntax</H3>
+<PRE>
+1. links[<I>index</I>].hostname
+2. location.hostname
+</PRE>
+<P><I>index</I> is an integer representing a link object.
+
+<H3>Property of</H3>
+<P><A HREF=ref_h-l.html#link_object>link</A>, <A HREF=ref_h-l.html#location_object>location</A>
+
+<H3>Description</H3>
+<P>The hostname property specifies a portion of the URL. The hostname property is a substring of the host property. The host property is the concatenation of the hostname and port properties, separated by a colon. When the port property is null, the host property is the same as the hostname property.
+
+<P>You can set the hostname property at any time, although it is safer to set the href property to change a location. If the hostname that you specify cannot be found in the current location, you will get an error.
+
+<P>See Section 3.1 of <A HREF="http://www.cis.ohio-state.edu/htbin/rfc/rfc1738.html" TARGET="_top">RFC 1738</A> for complete information about the hostname.
+
+<H3>Examples</H3>
+<P>See the examples for the <A HREF=ref_h-l.html#href_property>href</A> property.
+
+<H3>See also</H3>
+<LI><A HREF=ref_h-l.html#hash_property>hash</A>, <A HREF=ref_h-l.html#host_property>host</A>, <A HREF=ref_h-l.html#href_property>href</A>, <A HREF=ref_m-q.html#pathname_property>pathname</A>, <A HREF=ref_m-q.html#port_property>port</A>, <A HREF=ref_m-q.html#protocol_property>protocol</A>, <A HREF=ref_s-s.html#search_property>search</A> properties
+<!------------------------------------------------------------------------------------------------->
+<HR>
+<A NAME="href_property"><H2>href property</H2></A>
+<P>
+A string specifying the entire URL.
+
+<H3>Syntax</H3>
+<PRE>
+1. links[<I>index</I>].href
+2. location.href
+</PRE>
+<P><I>index</I> is an integer representing a link object.
+
+<H3>Property of</H3>
+<P><A HREF=ref_h-l.html#link_object>link</A>, <A HREF=ref_h-l.html#location_object>location</A>
+
+<H3>Description</H3>
+<P>The href property specifies the entire URL. Other location object properties are substrings of the href property. You can set the href property at any time.
+
+<P>Omitting a property name from the location object is equivalent to specifying <TT>location.href</TT>. For example, the following two statements are equivalent and set the URL of the current window to the Netscape home page:
+<XMP>
+window.location.href="http://www.netscape.com/"
+window.location="http://www.netscape.com/"
+</XMP>
+
+<P>See <A HREF="http://www.cis.ohio-state.edu/htbin/rfc/rfc1738.html" TARGET="_top">RFC 1738</A> for complete information about the URL.
+
+<H3>Examples</H3>
+<P>In the following example, the <TT>window.open</TT> statement creates a window called <I>newWindow</I> and loads the specified URL into it. The <TT>document.write</TT> statements display all the properties of <TT>newWindow.location</TT> in a window called <I>msgWindow</I>.
+<PRE>
+newWindow=window.open
+   ("http://home.netscape.com/comprod/products/navigator/
+   version_2.0/script/script_info/objects.html#checkbox_object")
+
+msgWindow.document.write("newWindow.location.href = " +
+   newWindow.location.href + "&ltP&gt")
+msgWindow.document.write("newWindow.location.protocol = " +
+   newWindow.location.protocol + "&ltP&gt")
+msgWindow.document.write("newWindow.location.host = " +
+   newWindow.location.host + "&ltP&gt")
+msgWindow.document.write("newWindow.location.hostName = " +
+   newWindow.location.hostName + "&ltP&gt")
+msgWindow.document.write("newWindow.location.port = " +
+   newWindow.location.port + "&ltP&gt")
+msgWindow.document.write("newWindow.location.pathname = " +
+   newWindow.location.pathname + "&ltP&gt")
+msgWindow.document.write("newWindow.location.search = " +
+   newWindow.location.search + "&ltP&gt")
+msgWindow.document.write("newWindow.location.hash = " +
+   newWindow.location.hash + "&ltP&gt")
+msgWindow.document.close()
+</PRE>
+
+<P>The previous example displays output such as the following:
+<PRE>
+newWindow.location.href =
+   http://home.netscape.com/comprod/products/navigator/
+   version_2.0/script/script_info/objects.html#checkbox_object
+newWindow.location.protocol = http:
+newWindow.location.host = home.netscape.com
+newWindow.location.hostName = home.netscape.com
+newWindow.location.port = 
+newWindow.location.pathname =
+   /comprod/products/navigator/version_2.0/script/
+   script_info/objects.html
+newWindow.location.search = 
+newWindow.location.hash = #checkbox_object
+</PRE>
+
+<H3>See also</H3>
+<LI><A HREF=ref_h-l.html#hash_property>hash</A>, <A HREF=ref_h-l.html#host_property>host</A>, <A HREF=ref_h-l.html#hostname_property>hostname</A>, <A HREF=ref_m-q.html#pathname_property>pathname</A>, <A HREF=ref_m-q.html#port_property>port</A>, <A HREF=ref_m-q.html#protocol_property>protocol</A>, <A HREF=ref_s-s.html#search_property>search</A> properties
+<!------------------------------------------------------------------------------------------------->
+<HR>
+
+<A NAME="index_property"><H2>index property</H2></A>
+<P>
+An integer representing the index of an option in a select object.
+
+<H3>Syntax</H3>
+<PRE>
+<I>selectName</I>.options[<I>indexValue</I>].index
+</PRE>
+<P><I>selectName</I> is either the value of the NAME attribute of a select object or an element in the <I>elements</I> array.
+<BR><I>indexValue</I> is an integer representing an option in a select object.
+
+<H3>Property of</H3>
+<P><A HREF=ref_s-s.html#select_object>options</A> array
+
+<H3>Description</H3>
+<P>The number identifying the position of the option in the selection, starting from zero.
+
+<H3>See also</H3>
+<LI><A HREF=ref_d-e.html#defaultSelected_property>defaultSelected</A>, <A HREF=ref_s-s.html#selected_property>selected</A>, <A HREF=ref_s-s.html#selectedIndex_property>selectedIndex</A> properties
+<!------------------------------------------------------------------------------------------------->
+<HR>
+<A NAME="indexOf_method"><H2>indexOf method</H2></A>
+<P>
+Returns the index within the calling string object of the first occurrence of the specified value, starting the search at <I>fromIndex</I>.
+
+<H3>Syntax</H3>
+<PRE><I>stringName</I>.indexOf(<I>searchValue</I>, [<I>fromIndex</I>])</PRE>
+<P><I>stringName</I> is any string or a property of an existing object.
+<BR><I>searchValue</I> is a string or a property of an existing object, representing the value to search for.
+<BR><I>fromIndex</I> is the location within the calling string to start the search from. It can be any integer from 0 to <I>stringName</I>.length - 1 or a property of an existing object.
+
+<H3>Method of</H3>
+<P><A HREF=ref_s-s.html#string_object>string</A>
+
+<H3>Description</H3>
+<P>Characters in a string are indexed from left to right. The index of the first character is 0, and the index of the last character is <I>stringName</I>.length - 1.
+<P>If you do not specify a value for <I>fromIndex</I>, JavaScript assumes 0 by default. If <I>searchValue</I> is not found, JavaScript returns -1.
+
+<H3>Examples</H3>
+The following example uses indexOf and lastIndexOf to locate values in the string "Brave new world".
+<PRE>
+var anyString="Brave new world"
+
+//Displays 8
+document.write("&ltP&gtThe index of the first w from the beginning is " +
+   anyString.indexOf("w"))
+//Displays 10
+document.write("&ltP&gtThe index of the first w from the end is " +
+   anyString.lastIndexOf("w"))
+//Displays 6
+document.write("&ltP&gtThe index of 'new' from the beginning is " +
+   anyString.indexOf("new"))
+//Displays 6
+document.write("&ltP&gtThe index of 'new' from the end is " +
+   anyString.lastIndexOf("new"))
+</PRE>
+
+<H3>See also</H3>
+<LI><A HREF=ref_a-c.html#charAt_method>charAt</A>, <A HREF=ref_h-l.html#lastIndexOf_method>lastIndexOf</A> methods
+<!------------------------------------------------------------------------------------------------>
+<HR>
+<A NAME="isNaN_method"><H2>isNaN function</H2></A>
+<P>
+On Unix platforms, evaluates an argument to determine if it is "NaN" (not a number).
+
+<H3>Syntax</H3>
+<PRE>isNaN(<I>testValue</I>)</PRE>
+<P><I>testValue</I> is the value you want to evaluate.
+
+<H3>Description</H3>
+<P>The isNaN function is a built-in JavaScript function. It is not a method associated with any object, but is part of the language itself. isNaN is available on Unix platforms only.
+
+<P>On all platforms except Windows, the parseFloat and parseInt functions return "NaN" when they evaluate a value that is not a number. The "NaN" value is not a number in any radix. You can call the isNaN function to determine if the result of parseFloat or parseInt is "NaN". If "NaN" is passed on to arithmetic operations, the operation results will also be "NaN".
+
+<P>The isNaN function returns true or false.
+
+<H3>Examples</H3>
+<P>
+The following example evaluates <I>floatValue</I> to determine if it is a number, then calls a procedure accordingly.
+<PRE>
+floatValue=parseFloat(toFloat)
+
+if isNaN(floatValue) {
+   notFloat()
+} else {
+   isFloat()
+}
+</PRE>
+
+<H3>See also</H3>
+<LI><A HREF=ref_m-q.html#parseFloat_method>parseFloat</A>, <A HREF=ref_m-q.html#parseInt_method>parseInt</A> functions
+<!------------------------------------------------------------------------------------------------>
+<HR>
+<A NAME="italics_method"><H2>italics method</H2></A>
+<P>
+Causes a string to be italicized as if it were in an &ltI&gt tag.
+
+<H3>Syntax</H3>
+<PRE><I>stringName</I>.italics()</PRE>
+<P><I>stringName</I> is any string or a property of an existing object.
+
+
+<H3>Method of</H3>
+<P><A HREF=ref_s-s.html#string_object>string</A>
+
+<H3>Description</H3>
+<P>Use the italics method with the write or writeln methods to format and display a string in a document.
+
+<H3>Examples</H3>
+The following example uses string methods to change the formatting of a string:
+<PRE>
+var worldString="Hello, world"
+
+document.write(worldString.blink())
+document.write("&ltP&gt" + worldString.bold())
+document.write("&ltP&gt" + worldString.italics())
+document.write("&ltP&gt" + worldString.strike())
+</PRE>
+
+<P>The previous example produces the same output as the following HTML:
+<PRE>
+<TT>&ltBLINK&gtHello, world&lt/BLINK&gt</TT>
+<TT>&ltP&gt&ltB&gtHello, world&lt/B&gt</TT>
+<TT>&ltP&gt&ltI&gtHello, world&lt/I&gt</TT>
+<TT>&ltP&gt&ltSTRIKE&gtHello, world&lt/STRIKE&gt</TT>
+</PRE>
+
+<H3>See also</H3>
+<LI><A HREF=ref_a-c.html#blink_method>blink</A>, <A HREF=ref_a-c.html#bold_method>bold</A>, <A HREF=ref_s-s.html#strike_method>strike</A> methods
+<!------------------------------------------------------------------------------------------------>
+<HR>
+<A NAME="lastIndexOf_method"><H2>lastIndexOf method</H2></A>
+<P>
+Returns the index within the calling string object of the last occurrence of the specified value. The calling string is searched backwards, starting at <I>fromIndex</I>.
+
+
+<H3>Syntax</H3>
+<PRE><I>stringName</I>.lastIndexOf(<I>searchValue</I>, [<I>fromIndex</I>])</PRE>
+<P><I>stringName</I> is any string or a property of an existing object.
+<BR><I>searchValue</I> is a string or a property of an existing object, representing the value to search for.
+<BR><I>fromIndex</I> is the location within the calling string to start the search from. It can be any integer from 0 to <I>stringName</I>.length - 1 or a property of an existing object.
+
+<H3>Method of</H3>
+<P><A HREF=ref_s-s.html#string_object>string</A>
+
+<H3>Description</H3>
+<P>Characters in a string are indexed from left to right. The index of the first character is 0, and the index of the last character is <I>stringName</I>.length - 1.
+<P>If you do not specify a value for <I>fromIndex</I>, JavaScript assumes <I>stringName</I>.length - 1 (the end of the string) by default. If <I>searchValue</I> is not found, JavaScript returns -1.
+
+<H3>Examples</H3>
+The following example uses indexOf and lastIndexOf to locate values in the string "Brave new world".
+<PRE>
+var anyString="Brave new world"
+
+//Displays 8
+document.write("&ltP&gtThe index of the first w from the beginning is " +
+   anyString.indexOf("w"))
+//Displays 10
+document.write("&ltP&gtThe index of the first w from the end is " +
+   anyString.lastIndexOf("w"))
+//Displays 6
+document.write("&ltP&gtThe index of 'new' from the beginning is " +
+   anyString.indexOf("new"))
+//Displays 6
+document.write("&ltP&gtThe index of 'new' from the end is " +
+   anyString.lastIndexOf("new"))
+</PRE>
+
+<H3>See also</H3>
+<LI><A HREF=ref_a-c.html#charAt_method>charAt</A>, <A HREF=ref_h-l.html#indexOf_method>indexOf</A> methods
+<!------------------------------------------------------------------------------------------------>
+<HR>
+<A NAME="lastModified_property"><H2>lastModified property</H2></A>
+<P>
+A string representing the date that a document was last modified.
+
+<H3>Syntax</H3>
+<PRE>document.lastModified</PRE>
+
+<H3>Property of</H3>
+<P><A HREF=ref_d-e.html#document_object>document</A>
+
+<H3>Description</H3>
+<P>lastModified is a read-only property.
+
+<H3>Examples</H3>
+<P>In the following example, the lastModified property is used in a &ltSCRIPT&gt tag at the end of an HTML file to display the modification date of the page:
+<PRE>
+document.write("This page updated on " + document.lastModified)
+</PRE>
+
+<!------------------------------------------------------------------------------------------------->
+<HR>
+<A NAME="length_property"><H2>length property</H2></A>
+<P>
+An integer that specifies a length-related feature of the calling object or array.
+
+<H3>Syntax</H3>
+<P>When used with objects:
+<PRE>
+1. <I>formName</I>.length
+2. <I>frameReference</I>.length
+3. history.length
+4. <I>radioName</I>.length
+5. <I>selectName</I>.length
+6. <I>stringName</I>.length
+7. <I>windowReference</I>.length
+</PRE>
+
+<P>When used with array properties:
+<PRE>
+8. anchors.length
+9. elements.length
+10. forms.length
+11. <I>frameReference</I>.frames.length
+12. <I>windowReference</I>.frames.length
+13. links.length
+14. <I>selectName</I>.options.length
+</PRE>
+
+<P><I>formName</I> is either the name of a form or an element in the forms array.
+<BR><I>frameReference</I> is either the value of the NAME attribute of a frame or an element in the <I>frames</I> array.
+<BR><I>radioName</I> is either the value of the NAME attribute of a radio object or an element in the <I>elements</I> array.
+<BR><I>selectName</I> is either the value of the NAME attribute of a select object or an element in the <I>elements</I> array.
+<BR><I>stringName</I> is any string or a property of an existing object.
+<BR><I>windowReference</I> is a valid way of referring to a window, as described in the <A HREF=ref_t-z.html#window_object>window</A> object.
+
+<H3>Property of</H3>
+<LI><A HREF=ref_f-g.html#frame_object>frame</A>, <A HREF=ref_h-l.html#history_object>history</A>, <A HREF=ref_r-r.html#radio_object>radio</A>, <A HREF=ref_s-s.html#select_object>select</A>, <A HREF=ref_s-s.html#string_object>string</A>, <A HREF=ref_t-z.html#window_object>window</A> objects
+<LI><A HREF=ref_a-c.html#anchor_object>anchors</A>, <A HREF=ref_d-e.html#elements_object>elements</A>, <A HREF=ref_f-g.html#form_object>forms</A>, <A HREF=ref_f-g.html#frame_object>frames</A>, <A HREF=ref_h-l.html#link_object>links</A>, <A HREF=ref_s-s.html#select_object>options</A> arrays
+
+<H3>Description</H3>
+<P>The length property is an integer that specifies one of the following:
+<LI>The number of elements on a form (form 1 of the syntax).
+<LI>The number of frames within a frame (form 2 of the syntax). A frame that does not load a document containing a &ltFRAMESET&gt tag always has a length of 0.
+<LI>The number of entries in a history object (form 3 of the syntax).
+<LI>The number of radio buttons in a radio object (form 4 of the syntax).
+<LI>The number of options in a select object (form 5 of the syntax).
+<LI>The length of a string object (form 6 of the syntax).
+<LI>The number of frames in a parent window (form 7 of the syntax).
+<LI>The number of entries in one of the array properties (all other syntax forms).
+
+<P>length is always a read-only property.
+
+<P>For a null string, length is zero. For a select object, the values returned by form 5 and form 14 of the syntax are the same. For a window containing frames, the values returned by form 7 and form 12 of the syntax are the same. For a form object, the values returned by form 1 and form 9 of the syntax are the same. For a frame containing frames, the values returned by form 2 and form 11 of the syntax are the same. 
+
+<H3>Examples</H3>
+<P>In the following example, the <I>getChoice()</I> function uses the length property to iterate over every element in the <I>musicType</I> array. <I>musicType</I> is a select element on the <I>musicForm</I> form.
+<PRE>
+function getChoice() {
+   for (var i = 0; i < document.musicForm.musicType.length; i++) {
+      if (document.musicForm.musicType.options[i].selected == true) {
+         return document.musicForm.musicType.options[i].text
+      }
+   }
+}
+</PRE>
+
+<P>The following example displays 8 in an alert dialog box:
+<PRE>var x="Netscape"
+alert("The string length is " + x.length)
+</PRE>
+<!------------------------------------------------------------------------------------------------->
+<HR>
+<A NAME="link_method"><H2>link method</H2></A>
+<P>
+Creates an HTML hypertext link that jumps to another URL.
+
+<H3>Syntax</H3>
+<PRE><I>linkText</I>.link(<I>hrefAttribute</I>)</PRE>
+<P><I>linkText</I> is any string or a property of an existing object.
+<BR><I>hrefAttribute</I> is any string or a property of an existing object.
+
+<H3>Method of</H3>
+<P><A HREF=ref_s-s.html#string_object>string</A>
+
+<H3>Description</H3>
+<P>Use the link method with the write or writeln methods to programatically create and display a hypertext link in a document. Create the link with the link method, then call write or writeln to display the link in a document.
+
+<P>In the syntax, the <I>linkText</I> string represents the literal text that you want the user to see. The <I>hrefAttribute</I> string represents the HREF attribute of the &ltA&gt tag, and it should be a valid URL. Each section of a URL contains different information. See the <A HREF=ref_h-l.html#location_object>location</A> object for a description of the URL components.
+
+<P>Links created with the link method become elements in the links array. See the <A HREF=ref_h-l.html#link_object>link</A> object for information about the links array.
+
+<H3>Examples</H3>
+<P>The following example displays the word "Netscape" as a hypertext link that returns the user to the Netscape home page:
+<PRE>
+var hotText="Netscape"
+var URL="http://www.netscape.com"
+
+document.open()
+document.write("Click to return to " + hotText.link(URL))
+document.close()
+</PRE>
+<P>The previous example produces the same output as the following HTML:
+<P><TT>Click to return to &ltA HREF="http://www.netscape.com"&gtNetscape&lt/A&gt</TT>
+
+<H3>See also</H3>
+<LI><A HREF=ref_a-c.html#anchor_method>anchor</A> method
+<!------------------------------------------------------------------------------------------------>
+<HR>
+<A NAME="link_object"><H2>link object (<I>links</I> array)</H2></A>
+<P>A piece of text or an image identified as a hypertext link. When the user clicks the link text, the link hypertext reference is loaded into its target window.
+
+
+<H3>Syntax</H3>
+<P>To define a link, use standard HTML syntax with the addition of the onClick and onMouseOver event handlers:
+<PRE>
+&LTA HREF=<I>locationOrURL</I>
+   [NAME="<I>anchorName</I>"]
+   [TARGET="<I>windowName</I>"]
+   [onClick="<I>handlerText</I>"]
+   [onMouseOver="<I>handlerText</I>"]&GT
+   <I>linkText</I>
+&LT/A&GT
+</PRE>
+<I>HREF=locationOrURL</I> identifies a destination anchor or URL. See the <A HREF=ref_h-l.html#location_object>location</A> object for a description of the URL components.
+<BR><I>NAME="anchorName"</I> specifies a tag that becomes an available hypertext target within the current document. If this attribute is present, the link object is also an anchor object. See <A HREF=ref_a-c.html#anchor_object>anchor</A> for details.
+<BR><I>TARGET="windowName"</I> specifies the window that the link is loaded into. <I>windowName</I> can be an existing window; it can be a frame name specified in a &LTFRAMESET&GT tag; or it can be one of the literal frame names _top, _parent, _self, or _blank; it cannot be a JavaScript expression (for example, it cannot be parent<I>.frameName</I> or <I>windowName.frameName</I>).
+<BR><I>linkText</I> is rendered as a hypertext link to the URL.
+
+<P>You can also define a link using the <A HREF=ref_h-l.html#link_method>link</A> method.
+
+<P>To use a link object's properties:
+<PRE>
+document.links[<I>index</I>].<I>propertyName</I>
+</PRE>
+<I>index</I> is an integer representing a link object.
+<BR><I>propertyName</I> is one of the properties listed below.
+
+
+<H3>Property of</H3>
+<LI><A HREF=ref_d-e.html#document_object>document</A>
+
+
+<H3>Description</H3>
+<P>Each link object is a location object and has the same properties as a location object.
+
+<P>If a link object is also an anchor object, the object has entries in both the <I>anchors</I> and <I>links</I> arrays.
+
+<P>When a user clicks a link object and navigates to the destination document (specified by <I>HREF=locationOrURL</I>), the destination document's referrer property contains the URL of the source document. Evaluate the referrer property from the destination document.
+
+
+<H4>The <I>links</I> array</H4>
+<P>You can reference the link objects in your code by using the <I>links</I> array. This array contains an entry for each link object (&LTA HREF=""&GT tag) in a document in source order. For example, if a document contains three link objects, these links are reflected as <TT>document.links[0]</TT>, <TT>document.links[1]</TT>, and <TT>document.links[2]</TT>.
+
+<P>To use the <I>links</I> array:
+<PRE>
+1. document.links[<I>index</I>]
+2. document.links.length
+</PRE>
+<P><I>index</I> is an integer representing a link in a document.
+
+<P>To obtain the number of links in a document, use the length property: <TT>document.links.length</TT>.
+
+<P>Elements in the <I>links</I> array are read-only. For example, the statement <TT>document.links[0]="link1"</TT> has no effect.
+
+
+<H3>Properties</H3>
+<P>The link object has the following properties:
+<LI><A HREF=ref_h-l.html#hash_property>hash</A> specifies an anchor name in the URL
+<LI><A HREF=ref_h-l.html#host_property>host</A> specifies the hostname:port portion of the URL
+<LI><A HREF=ref_h-l.html#hostname_property>hostname</A> specifies the host and domain name, or IP address, of a network host
+<LI><A HREF=ref_h-l.html#href_property>href</A> specifies the entire URL
+<LI><A HREF=ref_m-q.html#pathname_property>pathname</A> specifies the url-path portion of the URL
+<LI><A HREF=ref_m-q.html#port_property>port</A> specifies the communications port that the server uses for communications
+<LI><A HREF=ref_m-q.html#protocol_property>protocol</A> specifies the beginning of the URL, including the colon
+<LI><A HREF=ref_s-s.html#search_property>search</A> specifies a query
+<LI><A HREF=ref_t-z.html#target_property>target</A> reflects the TARGET attribute
+
+<P>The <I>links</I> array has the following properties:
+<LI><A HREF=ref_h-l.html#length_property>length</A> reflects the number of links in a document
+
+
+<H3>Methods</H3>
+<LI>None.
+
+
+<H3>Event handlers</H3>
+<LI><A HREF=ref_m-q.html#onClick_event>onClick</A>
+<LI><A HREF=ref_m-q.html#onMouseOver_event>onMouseOver</A>
+
+
+<H3>Examples</H3>
+<P><B>Example 1.</B> The following example creates a hypertext link to an anchor named <I>javascript_intro</I>.
+<XMP>
+<A HREF="#javascript_intro">Introduction to JavaScript</A>
+</XMP>
+
+<P><B>Example 2.</B> The following example creates a hypertext link to an anchor named <I>numbers</I> in the file DOC3.HTML in the window <I>window2</I>. If <I>window2</I> does not exist, it is created.
+<XMP>
+<LI><A HREF=doc3.html#numbers TARGET="window2">Numbers</A>
+</XMP>
+
+<P><B>Example 3.</B> The following example takes the user back <I>x</I> entries in the history list:
+<XMP>
+<A HREF="javascript:history.go(-1 * x)">Click here</A>
+</XMP>
+
+<P><B>Example 4.</B> The following example creates a hypertext link to a URL. A set of radio buttons lets the user choose between three URLs. The link's onClick event handler sets the URL (the link's href property) based on the selected radio button. The link also has an onMouseOver event handler that changes the window's status property. As the example shows, you must return true to set the window.status property in the onMouseOver event handler.
+<XMP>
+<SCRIPT>
+var destHREF="'http://www.netscape.com/"
+</SCRIPT>
+<FORM NAME="form1">
+<B>Choose a destination from the following list, then click "Click me" below.</B>
+<BR><INPUT TYPE="radio" NAME="destination" VALUE="netscape"
+   onClick="destHREF='http://www.netscape.com/'"> Netscape home page
+<BR><INPUT TYPE="radio" NAME="destination" VALUE="sun"
+   onClick="destHREF='http://www.sun.com/'"> Sun home page
+<BR><INPUT TYPE="radio" NAME="destination" VALUE="rfc1867"
+   onClick="destHREF='http://www.ics.uci.edu/pub/ietf/html/rfc1867.txt'"> RFC 1867
+<P><A HREF=""
+   onMouseOver="window.status='Click this if you dare!'; return true"
+   onClick="this.href=destHREF">
+   <B>Click me</B></A>
+</FORM>
+</XMP>
+
+<P><B>Example 5: <I>links</I> array.</B> The following example opens the Netscape home page in the <I>newWindow</I> window. The <I>linkGetter()</I> function uses the links array to display the value of each of its links.
+<XMP>
+   newWindow=window.open("http://www.netscape.com")
+
+function linkGetter() {
+   msgWindow=window.open("")
+   for (var i = 0; i < newWindow.document.links.length; i++) {
+      msgWindow.document.write(newWindow.document.links[i] + "<BR>")
+   }
+}
+</XMP>
+
+
+<H3>See also</H3>
+<LI><A HREF=ref_a-c.html#anchor_object>anchor</A> object
+<LI><A HREF=ref_h-l.html#link_method>link</A> method
+
+
+<!------------------------------------------------------------------------------------------------->
+<HR>
+<A NAME="linkColor_property"><H2>linkColor property</H2></A>
+<P>
+A string specifying the color of the document hyperlinks.
+
+<H3>Syntax</H3>
+<PRE>document.linkColor</PRE>
+
+<H3>Property of</H3>
+<P><A HREF=ref_d-e.html#document_object>document</A>
+
+<H3>Description</H3>
+<P>The linkColor property is expressed as a hexadecimal RGB triplet or as one of the string literals listed in <A HREF=colors.html>Color Values</A>. This property is the JavaScript reflection of the LINK attribute of the &ltBODY&gt tag. The default value of this property is set by the user on the Colors tab of the Preferences dialog box, which is displayed by choosing General Preferences from the Options menu. You cannot set this property after the HTML source has been through layout.
+
+<P>If you express the color as a hexadecimal RGB triplet, you must use the format rrggbb. For example, the hexadecimal RGB values for salmon are red=FA, green=80, and blue=72, so the RGB triplet for salmon is "FA8072".
+
+<H3>Examples</H3>
+<P>The following example sets the color of document links to aqua using a string literal:
+<PRE>
+document.linkColor="aqua"
+</PRE>
+<P>The following example sets the color of document links to aqua using a hexadecimal triplet:
+<PRE>
+document.linkColor="00FFFF"
+</PRE>
+
+<H3>See also</H3>
+<LI><A HREF=ref_a-c.html#alinkColor_property>alinkColor</A>, <A HREF=ref_a-c.html#bgColor_property>bgColor</A>, <A HREF=ref_f-g.html#fgColor_property>fgColor</A>, and <A HREF=ref_t-z.html#vlinkColor_property>vlinkColor</A> properties
+<!------------------------------------------------------------------------------------------------->
+<HR>
+<A NAME="links_property"><H2>links property</H2></A>
+<P>An array of objects corresponding to link objects in source order. See <A HREF=ref_h-l.html#link_object>link</A> object.
+
+<!------------------------------------------------------------------------------------------------->
+<HR>
+<A NAME="LN2_property"><H2>LN2 property</H2></A>
+<P>
+The natural logarithm of two, approximately 0.693.
+
+<H3>Syntax</H3>
+<PRE>Math.LN2</PRE>
+
+<H3>Property of</H3>
+<P><A HREF=ref_m-q.html#Math_object>Math</A>
+
+<H3>Description</H3>
+<P>Because LN2 is a constant, it is a read-only property of Math.
+
+<H3>Examples</H3>
+<P>The following example displays the natural log of 2:
+<PRE>document.write("The natural log of 2 is " + Math.LN2)</PRE>
+
+<H3>See also</H3>
+<LI><A HREF=ref_d-e.html#E_property>E</A>, <A HREF=ref_h-l.html#LN10_property>LN10</A>, <A HREF=ref_h-l.html#LOG2E_property>LOG2E</A>, <A HREF=ref_h-l.html#LOG10E_property>LOG10E</A>, <A HREF=ref_m-q.html#PI_property>PI</A>, <A HREF=ref_s-s.html#SQRT1_2_property>SQRT1_2</A>, <A HREF=ref_s-s.html#SQRT2_property>SQRT2</A> properties
+<!------------------------------------------------------------------------------------------------->
+<HR>
+<A NAME="LN10_property"><H2>LN10 property</H2></A>
+<P>
+The natural logarithm of ten, approximately 2.302.
+
+<H3>Syntax</H3>
+<PRE>Math.LN10</PRE>
+
+<H3>Property of</H3>
+<P><A HREF=ref_m-q.html#Math_object>Math</A>
+
+<H3>Description</H3>
+<P>Because LN10 is a constant, it is a read-only property of Math.
+
+<H3>Examples</H3>
+<P>The following example displays the natural log of 10:
+<PRE>document.write("The natural log of 10 is " + Math.LN10)</PRE>
+
+<H3>See also</H3>
+<LI><A HREF=ref_d-e.html#E_property>E</A>, <A HREF=ref_h-l.html#LN2_property>LN2</A>, <A HREF=ref_h-l.html#LOG2E_property>LOG2E</A>, <A HREF=ref_h-l.html#LOG10E_property>LOG10E</A>, <A HREF=ref_m-q.html#PI_property>PI</A>, <A HREF=ref_s-s.html#SQRT1_2_property>SQRT1_2</A>, <A HREF=ref_s-s.html#SQRT2_property>SQRT2</A> properties
+<!------------------------------------------------------------------------------------------------->
+<HR>
+<A NAME="location_object"><H2>location object</H2> </A>
+<P>Contains information on the current URL.
+
+
+<H3>Syntax</H3>
+<P>To use a location object:
+<PRE>
+[<I>windowReference</I>.]location[.<I>propertyName</I>]
+</PRE>
+<I>windowReference</I> is a variable <I>windowVar</I> from a window definition (see <A HREF=ref_t-z.html#window_object>window</A> object), or one of the synonyms top or parent.
+<BR><I>propertyName</I> is one of the properties listed below. Omitting the property name is equivalent to specifying the href property (the complete URL).
+
+
+<H3>Property of</H3>
+<LI><A HREF=ref_t-z.html#window_object>window</A>
+
+
+<H3>Description</H3>
+<P>The location object represents a complete URL. Each property of the location object represents a different portion of the URL.
+
+<P>The following diagram of a URL shows the relationships between the location properties:
+
+<PRE><I>protocol</I>//<I>hostname</I>:<I>port</I> <I>pathname</I> <I>search</I> <I>hash</I></PRE>
+<P><I>protocol</I> represents the beginning of the URL, up to and including the first colon.
+<BR><I>hostname</I> represents the host and domain name, or IP address, of a network host.
+<BR><I>port</I> represents the communications port that the server uses for communications.
+<BR><I>pathname</I> represents the url-path portion of the URL.
+<BR><I>search</I> represents any query information in the URL, beginning with a question mark.
+<BR><I>hash</I> represents an anchor name fragment in the URL, beginning with a hash mark (#).
+
+<P>See the properties (listed below) for details about the different parts of the URL, or the <A HREF=ref_h-l.html#href_property>href</A> property for examples.
+
+<P>The location object has two other properties not shown in the diagram above:
+<P><I>href</I> represents a complete URL.
+<BR><I>host</I> represents the concatenation <I>hostname</I>:<I>port</I>.
+
+<P>The location object is contained by the window object and is within its scope. If you reference a location object without specifying a window, the location object represents the current location. If you reference a location object and specify a window name, for example, <TT><I>windowReference</I>.location.<I>propertyName</I></TT>, the location object represents the location of the specified window.
+
+<P>Do not confuse the location object with the location property of the document object. You cannot change the value of the location property (<TT>document.location</TT>), but you can change the value of the location object's properties (<TT>window.location.<I>propertyName</I></TT>). <TT>document.location</TT> is a string-valued property that usually matches what <TT>window.location.href</TT> is set to when you load the document, but redirection may change it.
+
+<H3>Syntax for common URL types</H3>
+<P>When you specify a URL, you can use standard URL formats and JavaScript statements. The following list shows the syntax for specifying some of the most common types of URLs.
+<TABLE WIDTH=100% CELLSPACING=1>
+<TR ALIGN=LEFT VALIGN=TOP>
+<TH>URL&nbsptype</TH><TH>Protocol</TH><TH>Example</TH>
+</TR>
+<TR ALIGN=LEFT VALIGN=TOP>
+<TD>JavaScript&nbspcode</TD><TD>javascript:</TD><TD>javascript:history.go(-1)</TD>
+</TR>
+<TR ALIGN=LEFT VALIGN=TOP>
+<TD>Navigator&nbspinfo</TD><TD>about:</TD><TD>about:cache</TD>
+</TR>
+<TR ALIGN=LEFT VALIGN=TOP>
+<TD>World&nbspWide&nbspWeb</TD><TD>http:</TD><TD>http://www.netscape.com/</TD>
+</TR>
+<TR ALIGN=LEFT VALIGN=TOP>
+<TD>File</TD><TD>file:</TD><TD>file:///javascript/methods.html</TD>
+</TR>
+<TR ALIGN=LEFT VALIGN=TOP>
+<TD>FTP</TD><TD>ftp:</TD><TD>ftp://ftp.mine.com/home/mine</TD>
+</TR>
+<TR ALIGN=LEFT VALIGN=TOP>
+<TD>MailTo</TD><TD>mailto:</TD><TD>mailto:info@netscape.com</TD>
+</TR>
+<TR ALIGN=LEFT VALIGN=TOP>
+<TD>Usenet</TD><TD>news:</TD><TD>news://news.scruznet.com/comp.lang.javascript</TD>
+</TR>
+<TR ALIGN=LEFT VALIGN=TOP>
+<TD>Gopher</TD><TD>gopher:</TD><TD>gopher.myhost.com</TD>
+</TR>
+</TABLE>
+
+<P>The javascript: protocol evaluates the expression after the colon (:), if there is one, and loads a page containing the string value of the expression, unless it is undefined. If the expression evaluates to undefined, no new page loads.
+
+<P>The about: protocol provides information on Navigator and has the following syntax:
+<PRE>
+about:[cache|plugins]
+</PRE>
+<I>about:</I> by itself is the same as choosing About Netscape from the Navigator's Help menu.
+<BR><I>about:cache</I> displays disk cache statistics.
+<BR><I>about:plug-ins</I> displays information about plug-ins you have configured. This is the same as choosing About Plug-ins from the Navigator's Help menu.
+
+
+<H3>Properties</H3>
+<LI><A HREF=ref_h-l.html#hash_property>hash</A> specifies an anchor name in the URL
+<LI><A HREF=ref_h-l.html#host_property>host</A> specifies the hostname:port portion of the URL
+<LI><A HREF=ref_h-l.html#hostname_property>hostname</A> specifies the host and domain name, or IP address, of a network host
+<LI><A HREF=ref_h-l.html#href_property>href</A> specifies the entire URL
+<LI><A HREF=ref_m-q.html#pathname_property>pathname</A> specifies the url-path portion of the URL
+<LI><A HREF=ref_m-q.html#port_property>port</A> specifies the communications port that the server uses for communications
+<LI><A HREF=ref_m-q.html#protocol_property>protocol</A> specifies the beginning of the URL, including the colon
+<LI><A HREF=ref_s-s.html#search_property>search</A> specifies a query
+
+
+<H3>Methods</H3>
+<LI>None.
+
+
+<H3>Event handlers</H3>
+<LI>None.
+
+
+<H3>Examples</H3>
+<P><B>Example 1.</B> The following two statements are equivalent and set the URL of the current window to the Netscape home page:
+<XMP>
+window.location.href="http://www.netscape.com/"
+window.location="http://www.netscape.com/"
+</XMP>
+
+<P><B>Example 2.</B> The following statement sets the URL of a frame named <I>frame2</I> to the Sun home page:
+<XMP>
+parent.frame2.location.href="http://www.sun.com/"
+</XMP>
+
+<P>See also the example for the <A HREF=ref_a-c.html#anchor_object>anchor</A> object.
+
+<H3>See also</H3>
+<LI><A HREF=ref_h-l.html#history_object>history</A> object
+<LI><A HREF=ref_h-l.html#location_property>location</A> property
+
+<!------------------------------------------------------------------------------------------------->
+<HR>
+<A NAME="location_property"><H2>location property</H2></A>
+<P>
+A string specifying the complete URL of the document.
+
+<H3>Syntax</H3>
+<PRE>document.location</PRE>
+
+<H3>Property of</H3>
+<P><A HREF=ref_d-e.html#document_object>document</A>
+
+<H3>Description</H3>
+<P>Do not confuse the location property of the document object with the location object. You cannot change the value of the location property (<TT>document.location</TT>), but you can change the value of the location object's properties (<TT>window.location.<I>propertyName</I></TT>). <TT>document.location</TT> is a string-valued property that usually matches what <TT>window.location.href</TT> is set to when you load the document, but redirection may change it.
+
+<P>location is a read-only property of document.
+
+<H3>Examples</H3>
+<P>The following example displays the URL of the current document:
+<PRE>
+document.write("The current URL is " + document.location)
+</PRE>
+
+<H3>See also</H3>
+<LI><A HREF=ref_h-l.html#location_object>location</A> object
+<!------------------------------------------------------------------------------------------------->
+<HR>
+<A NAME="log_method"><H2>log method</H2></A>
+<P>
+Returns the natural logarithm (base <I>e</I>) of a number.
+
+<H3>Syntax</H3>
+<PRE>Math.log(<I>number</I>)</PRE>
+<I>number</I> is any positive numeric expression or a property of an existing object.
+
+<H3>Method of</H3>
+<P><A HREF=ref_m-q.html#Math_object>Math</A>
+
+<H3>Description</H3>
+<P>If the value of <I>number</I> is outside the suggested range, the return value is always -1.797693134862316e+308.
+
+<H3>Examples</H3>
+<PRE>
+//Displays the value 2.302585092994046
+document.write("The natural log of 10 is " + Math.log(10))
+
+//Displays the value 0
+document.write("&ltP&gtThe natural log of 1 is " + Math.log(1))
+
+//Displays the value -1.797693134862316e+308
+//because the argument is out of range
+document.write("&ltP&gtThe natural log of 0 is " + Math.log(0))
+</PRE>
+
+<H3>See also</H3>
+<LI><A HREF=ref_d-e.html#exp_method>exp</A>, <A HREF=ref_m-q.html#pow_method>pow</A> methods
+<!------------------------------------------------------------------------------------------------->
+<HR>
+<A NAME="LOG2E_property"><H2>LOG2E property</H2></A>
+<P>
+The base 2 logarithm of e (approximately 1.442).
+
+<H3>Syntax</H3>
+<PRE>Math.LOG2E</PRE>
+
+<H3>Property of</H3>
+<P><A HREF=ref_m-q.html#Math_object>Math</A>
+
+<H3>Description</H3>
+<P>Because LOG2E is a constant, it is a read-only property of Math.
+
+<H3>Examples</H3>
+<P>The following example displays the base 2 logarithm of E:
+<PRE>document.write("The base 2 logarithm of E is " + Math.LOG2E)</PRE>
+
+<H3>See also</H3>
+<LI><A HREF=ref_d-e.html#E_property>E</A>, <A HREF=ref_h-l.html#LN2_property>LN2</A>, <A HREF=ref_h-l.html#LN10_property>LN10</A>, <A HREF=ref_h-l.html#LOG10E_property>LOG10E</A>,  <A HREF=ref_m-q.html#PI_property>PI</A>, <A HREF=ref_s-s.html#SQRT1_2_property>SQRT1_2</A>, <A HREF=ref_s-s.html#SQRT2_property>SQRT2</A> properties
+<!------------------------------------------------------------------------------------------------>
+<HR>
+<A NAME="LOG10E_property"><H2>LOG10E property</H2></A>
+<P>
+The base 10 logarithm of e (approximately 0.434).
+
+<H3>Syntax</H3>
+<PRE>Math.LOG10E</PRE>
+
+<H3>Property of</H3>
+<P><A HREF=ref_m-q.html#Math_object>Math</A>
+
+<H3>Description</H3>
+<P>Because LOG10E is a constant, it is a read-only property of Math.
+
+<H3>Examples</H3>
+<P>The following example displays the base 10 logarithm of E:
+<PRE>document.write("The base 10 logarithm of E is " + Math.LOG10E)</PRE>
+
+<H3>See also</H3>
+<LI><A HREF=ref_d-e.html#E_property>E</A>, <A HREF=ref_h-l.html#LN2_property>LN2</A>, <A HREF=ref_h-l.html#LN10_property>LN10</A>, <A HREF=ref_h-l.html#LOG2E_property>LOG2E</A>, <A HREF=ref_m-q.html#PI_property>PI</A>, <A HREF=ref_s-s.html#SQRT1_2_property>SQRT1_2</A>, <A HREF=ref_s-s.html#SQRT2_property>SQRT2</A> properties
+<!------------------------------------------------------------------------------------------------->
+<HR>
+
+<SCRIPT>
+document.write("<FONT SIZE=-2>Last modified " + document.lastModified)
+</SCRIPT>
+<P>
+</BODY>
+<HTML>
+

@@ -1,0 +1,62 @@
+<HTML>
+	<HEAD>
+	<TITLE>Swimming Fish</TITLE>
+	</HEAD>
+
+	<SCRIPT>
+
+	function showForm() {
+	    document.waiting.visibility="hide";
+	    document.formlayer.visibility="show";
+	    return false;
+	}
+	<!-- Simple move function -->
+	function movefish() {
+
+		var fish = document.fish;
+		if (fish.left < 400) {
+			fish.offset(5, 0);}
+		else {fish.left = 10;}
+		setTimeout("movefish()", 10);
+   		return;
+	}
+
+
+</SCRIPT>
+
+	<BODY BGCOLOR="#FFFFFF" ONLOAD="showForm();">
+
+	<LAYER NAME="bluepole" LEFT=160 TOP=150>
+	<IMG SRC=images/bluepole.gif>
+	</LAYER>
+
+	<LAYER NAME="greenpole" LEFT=360 TOP=150>
+	<IMG SRC=images/greenpol.gif>
+	</LAYER>
+
+	<LAYER NAME="redpole" LEFT=260 TOP=150>
+	<IMG SRC=images/redpole.gif>
+	</LAYER>
+
+	<LAYER NAME="fish" LEFT=40 TOP=170  ABOVE="redpole">
+	<IMG SRC=images/fish1.gif >
+	</LAYER>
+
+    <H1>Fish Example 1</H1>
+    <ILAYER ID=formlayer VISIBILITY=HIDE>
+	<FORM>
+	<INPUT type=button value="Move the fish"
+	OnClick="movefish(); return false;">
+	</FORM>
+	</LAYER>
+
+	<LAYER ID=waiting TOP=100 LEFT=50>
+	<H3>Please wait while the fish loads...</H3>
+	</LAYER>
+
+
+
+	</BODY>
+	</HTML>
+
+

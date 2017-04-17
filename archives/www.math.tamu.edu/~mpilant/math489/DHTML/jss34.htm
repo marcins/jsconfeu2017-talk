@@ -1,0 +1,2931 @@
+<html><head><title>Dynamic HTML in Communicator
+
+</title>
+<LINK REL=STYLESHEET 
+ TYPE="text/css"
+href="cstyle1.htm">
+
+</head>
+<body bgcolor=#FFFFFF>
+<FONT SIZE=-1>
+<a href="contents.htm">[Contents]</a> <a href="jss33.htm">[Prev page]</a> <a href="jss35.htm">[Next page]</a> <a href="dynamici.htm">[Index]</a>
+</FONT>
+
+<HR SIZE=4>
+<H3 align="right">
+<FONT FACE="Helvetica,Arial" 
+COLOR="#408080" >
+<I>Dynamic HTML in Netscape Communicator<BR>
+Part 1. Style Sheets
+</I></FONT></H3>
+
+
+
+<a name="1080398">
+<h1><I><FONT FACE="Helvetica,Arial" COLOR="#408080" SIZE=+1>
+Chapter 5</FONT></I> 
+</H1>
+</a><a name="1079276">
+<h1>Style Sheet Reference</H1>
+<P><IMG SRC="images/bann02.gif" HEIGHT=6 WIDTH=640>
+</P>
+</a><a name="1049341">
+<P>This section includes reference information for both CSS syntax and JavaScript syntax. It covers style sheet functionality that is implemented in Netscape Navigator 4.0.</P>
+</a><a name="1074475">
+<P>This reference does not include style sheet properties that can be used to specify positions for blocks of HTML content. These properties are discussed in <a href="layers3.htm#1022831">Part 2. Positioning HTML Content</a>.</P>
+</a><a name="1081321">
+<P>This chapter is organized in the following sections:</P>
+</a><a name="1023974">
+<h3> <a href="jss34.htm#1021040">Comments in Style Sheets</a></h3>
+</a><a name="1023960">
+<h3> <a href="jss34.htm#1021034">New HTML Tags</a></h3>
+</a><ul><a name="1024066">
+<li><a href="jss34.htm#1015576">&lt;STYLE&gt;</a>
+</a><a name="1030360">
+<li><a href="jss34.htm#1015577">&lt;LINK&gt;</a>
+</a><a name="1064718">
+<li><a href="jss34.htm#1019290">&lt;SPAN&gt;</a>
+</a></ul><a name="1064722">
+<h3> <a href="jss34.htm#1030646">New Attributes for Existing HTML Tags</a></h3>
+</a><ul><a name="1064726">
+<li><a href="jss34.htm#1030648">STYLE</a>
+</a><a name="1030624">
+<li><a href="jss34.htm#1030653">CLASS</a>
+</a><a name="1030628">
+<li><a href="jss34.htm#1030670">ID</a>
+</a></ul><a name="1025368">
+<h3> <a href="jss34.htm#1019334">New JavaScript Object Properties</a></h3>
+</a><ul><a name="1025376">
+<li><a href="jss34.htm#1019339">tags</a>
+</a><a name="1025381">
+<li><a href="jss34.htm#1019360">classes</a>
+</a><a name="1025386">
+<li><a href="jss34.htm#1021380">ids</a>
+</a></ul><a name="1077917">
+<h3> Style Sheet Properties</h3>
+</a><a name="1077920">
+<h4> <a href="jss34.htm#1008981">Font Properties</a></h4>
+</a><ul><a name="1025416">
+<li><a href="jss34.htm#1009523">Font Size</a>
+</a><a name="1025421">
+<li><a href="jss34.htm#1009565">Font Style</a>
+</a><a name="1025426">
+<li><a href="jss34.htm#1030402">Font Family</a>
+</a><a name="1030511">
+<li><a href="jss34.htm#1061794">Font Weight</a>
+</a></ul><a name="1023915">
+<h4> <a href="jss34.htm#1010106">Text Properties</a></h4>
+</a><ul><a name="1025488">
+<li><a href="jss34.htm#1010330">Line Height</a>
+</a><a name="1025518">
+<li><a href="jss34.htm#1044813">Text Decoration</a>
+</a><a name="1025493">
+<li><a href="jss34.htm#1010200">Text Transform</a>
+</a><a name="1025508">
+<li><a href="jss34.htm#1010223">Text Alignment</a>
+</a><a name="1060647">
+<li><a href="jss34.htm#1010241">Text Indent</a>
+</a></ul><a name="1022236">
+<h4> <a href="jss34.htm#1010668">Block-Level Formatting Properties</a></h4>
+</a><ul><a name="1025529">
+<li><a href="jss34.htm#1045554">Margins</a>
+</a><a name="1030555">
+<li><a href="jss34.htm#1062100">Padding</a>
+</a><a name="1030561">
+<li><a href="jss34.htm#1010745">Border Widths</a>
+</a><a name="1025545">
+<li><a href="jss34.htm#1021206">Border Style</a>
+</a><a name="1030565">
+<li><a href="jss34.htm#1030727">Border Color</a>
+</a><a name="1025550">
+<li><a href="jss34.htm#1010756">Width</a>
+</a><a name="1030573">
+<li><a href="jss34.htm#1010792">Alignment</a>
+</a><a name="1025565">
+<li><a href="jss34.htm#1062815">Clear</a>
+</a></ul><a name="1024461">
+<h4> <a href="jss34.htm#1011244">Color and Background Properties</a></h4>
+</a><ul><a name="1025578">
+<li><a href="jss34.htm#1062859">Color</a>
+</a><a name="1025583">
+<li><a href="jss34.htm#1011262">Background Image</a>
+</a><a name="1025588">
+<li><a href="jss34.htm#1011277">Background Color</a>
+</a></ul><a name="1024694">
+<h4> <a href="jss34.htm#1048121">Classification Properties</a></h4>
+</a><ul><a name="1025596">
+<li><a href="jss34.htm#1063137">Display</a>
+</a><a name="1025601">
+<li><a href="jss34.htm#1026113">List Style Type</a>
+</a><a name="1025606">
+<li><a href="jss34.htm#1011424">White Space</a>
+</a></ul><a name="1025031">
+<h3> <a href="jss34.htm#1019778">Units</a></h3>
+</a><ul><a name="1025100">
+<li><a href="jss34.htm#1019780">Length Units</a>
+</a><a name="1025105">
+<li><a href="jss34.htm#1019827">Color Units</a>
+</a></ul><HR><a name="1021040">
+<h1> Comments in Style Sheets</h1>
+</a><a name="1021041">
+<P>Comments in style sheets are similar to those in the C programming language. For example:</P>
+</a><a name="1021042">
+<PRE>B {color:blue;} /* bold text will be blue */
+</PRE>
+</a><a name="1027770">
+<PRE>tags.B.color = "blue"; /* bold text will be blue */
+</PRE>
+</a><a name="1021044">
+<P>JavaScript style sheet syntax also supports comments in the C++ style, for example:</P>
+</a><a name="1061259">
+<PRE>tags.B.color = "blue"; // bold text will be blue
+</PRE>
+</a><a name="1061200">
+<P>Comments cannot be nested.</P>
+</a><HR><a name="1021034">
+<h1> New HTML Tags</h1>
+</a><a name="1043779">
+<P>This section lists the HTML tags that are useful for working with styles.</P>
+</a><a name="1015576">
+<HR>
+<h3 > &lt;STYLE&gt;</h3>
+</a><a name="1028526">
+<P>The <code>&lt;STYLE&gt;</code> and <code>&lt;/STYLE&gt;</code> tags indicate a style sheet. Inside <code>&lt;STYLE&gt;</code> and <code>&lt;/STYLE&gt;</code> you can specify styles for elements, define classes and IDs, and generally establish styles for use within the document.</P>
+</a><a name="1028528">
+<P>To specify that the style sheet uses JavaScript syntax, set the <code>TYPE</code> attribute to <code>"text/javascript".</code> To specify that the style sheet uses CSS syntax, set the <code>TYPE</code> attribute to <code>"text/css". </code>The default value for <code>TYPE</code> is <code>"text/CSS"</code>.</P>
+</a><a name="1019053">
+<P>For example: </P>
+</a><a name="1027771">
+<PRE>&lt;STYLE TYPE="text/css"&gt;
+</PRE>
+</a><a name="1027772">
+<PRE> &#32;BODY {margin-right: 20%; margin-left:20%;}
+</PRE>
+</a><a name="1027774">
+<PRE> &#32;PRE {color:green;}
+</PRE>
+</a><a name="1027775">
+<PRE> &#32;all.CLASS1 {float:right; font-weight: bold;} 
+</PRE>
+</a><a name="1043558">
+<PRE>&lt;/STYLE&gt;
+</PRE>
+</a><a name="1015577">
+<HR>
+<h3 > &lt;LINK&gt;</h3>
+</a><a name="1017144">
+<P>Use the <code>&lt;LINK&gt;</code> element to link to an external style sheet for use in a document. For example: </P>
+</a><a name="1048965">
+<h4>CSS Syntax </h4>
+</a><a name="1019190">
+<PRE>&lt;HTML&gt;
+</PRE>
+</a><a name="1027779">
+<PRE>&lt;HEAD&gt;
+</PRE>
+</a><a name="1027780">
+<PRE>&lt;TITLE&gt;A Good Title&lt;/TITLE&gt;
+</PRE>
+</a><a name="1044578">
+<PRE>&lt;LINK REL=STYLESHEET TYPE="text/css" 
+</PRE>
+</a><a name="1044579">
+<PRE> &#32;HREF="http://style.com/mystyles1.htm"&gt;
+</PRE>
+</a><a name="1044580">
+<PRE>&lt;/HEAD&gt;
+</PRE>
+</a><a name="1048969">
+<h4>JavaScript Syntax </h4>
+</a><a name="1048972">
+<PRE>&lt;HTML&gt;
+</PRE>
+</a><a name="1048973">
+<PRE>&lt;HEAD&gt;
+</PRE>
+</a><a name="1048974">
+<PRE>&lt;TITLE&gt;A Good Title&lt;/TITLE&gt;
+</PRE>
+</a><a name="1048975">
+<PRE>&lt;LINK REL=STYLESHEET TYPE="text/javascript" 
+</PRE>
+</a><a name="1048976">
+<PRE> &#32;HREF="http://style.com/mystyles1.htm"&gt;
+</PRE>
+</a><a name="1048977">
+<PRE>&lt;/HEAD&gt;
+</PRE>
+</a><a name="1019290">
+<HR>
+<h3 > &lt;SPAN&gt;</h3>
+</a><a name="1019291">
+<P>Use the inline <code>&lt;SPAN&gt;</code> and <code>&lt;/SPAN&gt;</code> elements to indicate the beginning and end of a piece of text to which a style is to be applied.</P>
+</a><a name="1019294">
+<P>The following example applies an individual style to a piece of text.</P>
+</a><a name="1019298">
+<PRE>&lt;P&gt;Here is some normal paragraph text. It looks OK, but would be much 
+better if it was&lt;SPAN style="color:blue; font-weight:bold; font-
+style:italic"&gt; in bright, bold, italic blue. &lt;/SPAN&gt;The blue text stands 
+out much more.&lt;/P&gt;
+</PRE>
+</a><a name="1043569">
+
+<P><SPAN STYLE="align:right;">
+<I><FONT COLOR="#404040"  size=-1>This example works in 
+Netscape Navigator 4.0+. </FONT></I></SPAN><B>
+Example results:</B> 
+</p>
+</a>
+<HR><a name="1064741">
+<P>Here is some normal paragraph text. It looks OK, but would be much better if it was in<SPAN style="color:blue; font-weight:bold; font-style:italic;"> bright, bold, italic blue.</SPAN> The blue text stands out much more.</P>
+</a><HR><a name="1043591">
+<P>You can use the <code>&lt;SPAN&gt;</code> element to achieve effects such as a large initial letter, for example:</P>
+</a><a name="1043592">
+<PRE>&lt;STYLE TYPE="text/css"&gt;
+</PRE>
+</a><a name="1043593">
+<PRE> &#32;init-letter.all {font-size:400%; font-weight:bold;}
+</PRE>
+</a><a name="1027792">
+<PRE>&lt;/STYLE&gt;
+</PRE>
+</a><a name="1027793">
+<PRE>&lt;P&gt;&lt;SPAN class="init-letter"&gt;T&lt;/SPAN&gt;his is...&lt;/P&gt;
+</PRE>
+</a><a name="1043616">
+
+<P><SPAN STYLE="align:right;">
+<I><FONT COLOR="#404040"  size=-1>This example works in 
+Netscape Navigator 4.0+. </FONT></I></SPAN><B>
+Example results:</B> 
+</p>
+</a>
+<HR><a name="1043617">
+<P><SPAN style="font-size:400%; font-weight:bold;">T</SPAN>his is...</P>
+</a><HR><a name="1030646">
+<h1> New Attributes for Existing HTML Tags</h1>
+</a><a name="1043851">
+<P>This section lists the new attributes for existing HTML tags that are useful for working with styles. These attributes can be used with any HTML tag to specify the style for that tag.</P>
+</a><a name="1030648">
+<HR>
+<h3 > STYLE</h3>
+</a><a name="1030650">
+<P>The <code>STYLE</code> attribute determines the style of a specific element. For example:</P>
+</a><a name="1044586">
+<h4>CSS Syntax </h4>
+</a><a name="1043956">
+<PRE>&lt;H3 STYLE="line-height:24pt; font-weight:bold; color:cyan;"&gt;
+</PRE>
+</a><a name="1044630">
+<PRE>Cyan Heading&lt;/H3&gt;
+</PRE>
+</a><a name="1044632">
+<h4>JavaScript Syntax </h4>
+</a><a name="1030651">
+<PRE>&lt;H3 STYLE="lineHeight='24pt'; fontWeight='bold'; color='cyan'"&gt; 
+</PRE>
+</a><a name="1044693">
+<PRE>Cyan Heading&lt;/H3&gt;
+</PRE>
+</a><a name="1044663">
+
+<P><SPAN STYLE="align:right;">
+<I><FONT COLOR="#404040"  size=-1>This example works in 
+Netscape Navigator 4.0+. </FONT></I></SPAN><B>
+Example results:</B> 
+</p>
+</a>
+<HR><a name="1044688">
+<H3 CLASS="EXAMPLE11"> Cyan Heading</H3>
+</a><a name="1030653">
+<HR>
+<h3 > CLASS</h3>
+</a><a name="1030654">
+<P>The <code>CLASSES</code> JavaScript property allows you to define classes of styles in a style sheet. The <code>CLASS</code> attribute specifies a style class to apply to an element.</P>
+</a><a name="1043994">
+<P>Although CSS syntax and JavaScript syntax use slightly different syntax to define classes of styles, the use of the <code>CLASS</code> attribute is the same in both syntaxes. For example:</P>
+</a><a name="1050372">
+<h4>CSS Syntax Example</h4>
+</a><a name="1030656">
+<PRE>&lt;STYLE TYPE="text/css"&gt;
+</PRE>
+</a><a name="1030657">
+<PRE> &#32;H3.class1 {font-style:italic; color:red;}
+</PRE>
+</a><a name="1030658">
+<PRE>&lt;/STYLE&gt;
+</PRE>
+</a><a name="1050391">
+<h4>JavaScript Syntax  &#32;Example</h4>
+</a><a name="1050400">
+<PRE>&lt;STYLE TYPE="text/javascript"&gt;
+</PRE>
+</a><a name="1050404">
+<PRE>classes.class1.H3.fontStyle="italic";
+</PRE>
+</a><a name="1050407">
+<PRE>classes.class1.H3.color="red";
+</PRE>
+</a><a name="1050405">
+<PRE>&lt;/STYLE&gt;
+</PRE>
+</a><a name="1050412">
+<h4>Style Sheet Use </h4>
+</a><a name="1050417">
+<PRE>&lt;H3 CLASS="class1"&gt;This H3 is in red italic letters.&lt;/H3&gt;
+</PRE>
+</a><a name="1030661">
+<P>Class names are case-sensitive.</P>
+</a><a name="1044247">
+<P>Each HTML element can use only one style class. </P>
+</a><a name="1044039">
+<P>To specify that a class can apply to all elements, use the element selector <code>all </code>when you set the properties for the class. For example, the code sample below specifies that the class <code>LEMON</code> can be applied to any element, and all elements that use the style class <code>LEMON</code> are yellow.</P>
+</a><a name="1050420">
+<h4>CSS Syntax </h4>
+</a><a name="1030663">
+<PRE>&lt;STYLE TYPE="text/css"&gt;
+</PRE>
+</a><a name="1030664">
+<PRE> &#32;all.LEMON {color:yellow;}
+</PRE>
+</a><a name="1030665">
+<PRE>&lt;/STYLE&gt;
+</PRE>
+</a><a name="1050421">
+<h4>JavaScript Syntax </h4>
+</a><a name="1050425">
+<PRE>&lt;STYLE TYPE="text/javascript"&gt;
+</PRE>
+</a><a name="1050426">
+<PRE> &#32;classes.LEMON.all.color="yellow"; 
+</PRE>
+</a><a name="1050427">
+<PRE>&lt;/STYLE&gt;
+</PRE>
+</a><a name="1050422">
+<h4>Style Sheet Use </h4>
+</a><a name="1030667">
+<PRE>&lt;H1 class="LEMON"&gt;A Nice Yellow Heading&lt;/P&gt;
+</PRE>
+</a><a name="1030668">
+<PRE>&lt;P CLASS="LEMON"&gt;What a nice shade of yellow this paragraph is.&lt;/P&gt;
+</PRE>
+</a><a name="1044017">
+<P>For more information about creating classes of style and for more examples, see the section <a href="jss32.htm#1072052">Defining Classes of Styles</a> in <a href="jss32.htm#1008573">Chapter &#32;3, "Creating Style Sheets and Assigning Styles."</a></P>
+</a><a name="1030670">
+<HR>
+<h3 > ID</h3>
+</a><a name="1030671">
+<P>When defining style sheets, you can create individual named styles.</P>
+</a><a name="1064760">
+<P>An element can use a style class and also use a named style. This allows you to use named styles to express individual stylistic exceptions to a style class. </P>
+</a><a name="1064779">
+<P>To define an individual names style in CSS syntax, you use the # sign to indicate a name for an individual style, while In JavaScript syntax, you use the ID selector.</P>
+</a><a name="1044225">
+<P>In both CSS syntax and JavaScript syntax, you use the ID attribute in an HTML element to specify the style for that element.</P>
+</a><a name="1044186">
+<P>ID names are case-sensitive.</P>
+</a><a name="1044248">
+<P>ID styles are particularly useful for working with layers of precisely positioned HTML content, as discussed in <a href="layers3.htm#1022831">Part 2. Positioning HTML Content</a>.</P>
+</a><a name="1044231">
+<P>The following code shows an example of the use of individual named styles. In this example, the STYLE1 class defines a style with several characteristics. The named style A1 specifies that the color is blue. This style can be used to specify that a paragraph has all the style characteristics of STYLE1, except that its color is blue instead of red.</P>
+</a><a name="1044043">
+<h4>CSS Syntax </h4>
+</a><a name="1044234">
+<PRE>&lt;STYLE TYPE="text/css"&gt;
+</PRE>
+</a><a name="1044235">
+<PRE> &#32;P.STYLE1 {
+</PRE>
+</a><a name="1044236">
+<PRE> &#32;color:red; font-size:24pt; line-height:26pt;
+</PRE>
+</a><a name="1044237">
+<PRE> &#32;font-style:italic; font-weight:bold;
+</PRE>
+</a><a name="1044238">
+<PRE> &#32;}
+</PRE>
+</a><a name="1030676">
+<PRE> &#32;#A1 {color: blue;}
+</PRE>
+</a><a name="1030677">
+<PRE>&lt;/STYLE&gt;
+</PRE>
+</a><a name="1044044">
+<h4>JavaScript Syntax </h4>
+</a><a name="1030678">
+<PRE>&lt;STYLE TYPE="text/javascript"&gt;
+</PRE>
+</a><a name="1044046">
+<PRE> &#32;with (classes.STYLE1.P) {
+</PRE>
+</a><a name="1061264">
+<PRE> &#32; &#32;color="red";
+</PRE>
+</a><a name="1044338">
+<PRE> &#32; &#32;fontSize="24pt";
+</PRE>
+</a><a name="1044361">
+<PRE> &#32; &#32;lineHeight="26pt"; 
+</PRE>
+</a><a name="1044144">
+<PRE> &#32; &#32;fontStyle="italic"; 
+</PRE>
+</a><a name="1044362">
+<PRE> &#32; &#32;fontWeight="bold";
+</PRE>
+</a><a name="1061267">
+<PRE> &#32;}
+</PRE>
+</a><a name="1044055">
+<PRE> &#32;ids.A1.color= "blue";
+</PRE>
+</a><a name="1044072">
+<PRE>&lt;/STYLE&gt;
+</PRE>
+</a><a name="1044085">
+<h4>Style Sheet Use </h4>
+</a><a name="1074540">
+<PRE>&lt;P CLASS="STYLE1"&gt;Big red text&lt;/P&gt;
+</PRE>
+</a><a name="1074541">
+<PRE>&lt;P CLASS="STYLE1" ID="A1"&gt;Big blue text&lt;/P&gt;
+</PRE>
+</a><a name="1074542">
+
+<P><SPAN STYLE="align:right;">
+<I><FONT COLOR="#404040"  size=-1>This example works in 
+Netscape Navigator 4.0+. </FONT></I></SPAN><B>
+Example results:</B> 
+</p>
+</a>
+<HR><a name="1044372">
+<P CLASS="EXAMPLE10"> Big red text</P>
+</a><a name="1044373">
+<P CLASS="EXAMPLE10B"> Big blue text</P>
+</a><HR><a name="1019334">
+<h1> New JavaScript Object Properties</h1>
+</a><a name="1044732">
+<P>This section discusses the new JavaScript object properties that are useful for defining style sheets using JavaScript syntax.</P>
+</a><a name="1019339">
+<HR>
+<h3 > tags</h3>
+</a><a name="1019340">
+<P>When using JavaScript syntax within the <code>&lt;STYLE&gt;</code> element, you can set styles by using the <code>tags</code> property of the JavaScript object <code>document</code>. </P>
+</a><a name="1019351">
+<P>The following example uses JavaScript syntax to specify that all paragraphs appear in red:</P>
+</a><a name="1019352">
+<PRE>&lt;STYLE TYPE="text/javascript"&gt;
+</PRE>
+</a><a name="1027794">
+<PRE> &#32;tags.P.color = red;
+</PRE>
+</a><a name="1027795">
+<PRE>&lt;/STYLE&gt;
+</PRE>
+</a><a name="1061270">
+<P>In CSS syntax, this would be:</P>
+</a><a name="1061271">
+<PRE>&lt;STYLE TYPE="text/css"&gt;
+</PRE>
+</a><a name="1061272">
+<PRE> &#32;P {color:red;}
+</PRE>
+</a><a name="1061273">
+<PRE>&lt;/STYLE&gt;
+</PRE>
+</a><a name="1028533">
+<P>The <code>tags</code> property always applies to the <code>document</code> object for the current document, so you can omit <code>document</code> from the expression <code>document.tags</code>. For example, the following two statements both say the same thing:</P>
+</a><a name="1028539">
+<PRE>document.tags.P.color = "red";
+</PRE>
+</a><a name="1028544">
+<PRE>tags.P.color = "red";
+</PRE>
+</a><a name="1064809">
+<P>To set default styles for all elements in a document, you can set the desired style on the &lt;<code>BODY&gt;</code> element, since all other elements inherit from &lt;<code>BODY&gt;</code>. For example, to set a universal right margin for the document:</P>
+</a><a name="1019357">
+<PRE>tags.body.marginRight="20pt"; /*JavaScript syntax */
+</PRE>
+</a><a name="1061274">
+<PRE>BODY {margin-right:20pt;} /* CSS syntax */
+</PRE>
+</a><a name="1019360">
+<HR>
+<h3 > classes</h3>
+</a><a name="1021378">
+<P>See the <a href="jss34.htm#1030653">CLASS</a> section for a discussion of the <code>classes</code> JavaScript property. </P>
+</a><a name="1021380">
+<HR>
+<h3 > ids</h3>
+</a><a name="1021384">
+<P>See the <a href="jss34.htm#1030670">ID</a> section for a discussion of the <code>ids</code> JavaScript property. </P>
+</a><HR><a name="1077921">
+<h1> Style Sheet Properties</h1>
+</a><a name="1008981">
+<h2> Font Properties</h2>
+</a><a name="1009515">
+<P>Using styles, you can specify font size, font family, font style, and font weight for any element.</P>
+</a><a name="1009523">
+<HR>
+<h3 > Font Size</h3>
+</a><a name="1061338">
+<P>CSS syntax name: <code>font-size</code></P>
+</a><a name="1061342">
+<P>JavaScript syntax name:<code> fontSize</code></P>
+</a><a name="1043895">
+<P> 
+<Table Border="1" >
+<caption></caption>
+<tr><td><a name="1028941">
+ <p>
+</a></td><td><a name="1028943">
+ <p>
+</a></td></tr>
+<tr><td><a name="1011700">
+ Possible values: <p>
+</a></td><td><a name="1061433">
+ <I>absolute-size</I>, <I>relative-size</I>, <I>length, percentage</I><p>
+</a></td></tr>
+<tr><td><a name="1011704">
+ Initial value: <p>
+</a></td><td><a name="1011706">
+ <code>medium</code><p>
+</a></td></tr>
+<tr><td><a name="1011708">
+ Applies to: <p>
+</a></td><td><a name="1011710">
+ all elements<p>
+</a></td></tr>
+<tr><td><a name="1011712">
+ Inherited: <p>
+</a></td><td><a name="1011714">
+ yes<p>
+</a></td></tr>
+<tr><td><a name="1011716">
+ Percentage values: <p>
+</a></td><td><a name="1011718">
+ relative to parent element's font size<p>
+</a></td></tr>
+
+</Table>
+
+<Table>
+<tr><td>
+</Table>
+</P>
+</a><a name="1009792">
+<P><I>absolute-size</I><P>
+</a><a name="1011823">
+<UL><P>An <I>absolute-size</I> is a keyword such as:</p></UL>
+</a><a name="1012039">
+<UL><P><code>xx-small</code></p></UL>
+</a><a name="1060686">
+<UL><P><code>x-small</code></p></UL>
+</a><a name="1012040">
+<UL><P><code>small</code></p></UL>
+</a><a name="1012041">
+<UL><P><code>medium</code> </p></UL>
+</a><a name="1011890">
+<UL><P><code>large</code></p></UL>
+</a><a name="1011891">
+<UL><P><code>x-large</code></p></UL>
+</a><a name="1011892">
+<UL><P><code>xx-large</code> </p></UL>
+</a><a name="1009800">
+<P><I>relative-size</I> <P>
+</a><a name="1009802">
+<UL><P>A <I>relative-size</I> keyword is interpreted relative to the font size of the parent element. Note that relative values only equate to actual values when the element whose font size is a relative value has a parent element that has a font size. (A relative size has to have something to be relative to.)</p></UL>
+</a><a name="1044397">
+<UL><P>Possible values are:</p></UL>
+</a><a name="1009804">
+<UL><P><code>larger</code></p></UL>
+</a><a name="1011905">
+<UL><P><code>smaller</code> </p></UL>
+</a><a name="1009806">
+<UL><P>For example, if the parent element has a font size of <code>medium</code>, a value of <code>larger </code>will make the font size of the current element be <code>large</code>. </p></UL>
+</a><a name="1031800">
+<P><I>length</I> <P>
+</a><a name="1031801">
+<UL><P>A length is a number followed by a unit of measurement, such as <code>24pt</code>. </p></UL>
+</a><a name="1044409">
+<P><I>percentage</I> <P>
+</a><a name="1044410">
+<UL><P>A <I>percentage</I> keyword sets the font size to a percentage of the parent element's font size. </p></UL>
+</a><a name="1009555">
+<h4>CSS Syntax </h4>
+</a><a name="1044421">
+<PRE>P {font-size:12pt;}
+</PRE>
+</a><a name="1044435">
+<PRE>EM {font-size:120%};
+</PRE>
+</a><a name="1044436">
+<PRE>BLOCKQUOTE {font-size:medium;}
+</PRE>
+</a><a name="1044439">
+<PRE>B {font-size:larger;}
+</PRE>
+</a><a name="1044406">
+<h4>JavaScript Syntax </h4>
+</a><a name="1009557">
+<PRE>tags.P.fontSize = "12pt";
+</PRE>
+</a><a name="1027816">
+<PRE>tags.EM.fontSize = 120%; 
+</PRE>
+</a><a name="1044430">
+<PRE>tags.BLOCKQUOTE.fontSize = "medium";
+</PRE>
+</a><a name="1044450">
+<PRE>tags.B.fontSize="larger";
+</PRE>
+</a><a name="1030402">
+<HR>
+<h3 > Font Family</h3>
+</a><a name="1061792">
+<P>CSS syntax name: <code>font-family</code></P>
+</a><a name="1061793">
+<P>JavaScript syntax name: <code>fontFamily</code></P>
+</a><a name="1043879">
+<P> 
+<Table Border="1" >
+<caption></caption>
+<tr><td><a name="1030376">
+ <p>
+</a></td><td><a name="1030378">
+ <p>
+</a></td></tr>
+<tr><td><a name="1030380">
+ Possible values: <p>
+</a></td><td><a name="1030382">
+ <I>fontFamily</I><p>
+</a></td></tr>
+<tr><td><a name="1030387">
+ Initial value: <p>
+</a></td><td><a name="1030389">
+ the default font, which comes from user preferences.<p>
+</a></td></tr>
+<tr><td><a name="1030391">
+ Applies to: <p>
+</a></td><td><a name="1030393">
+ all elements<p>
+</a></td></tr>
+<tr><td><a name="1030395">
+ Inherited: <p>
+</a></td><td><a name="1030397">
+ yes<p>
+</a></td></tr>
+<tr><td><a name="1030399">
+ Percentage values: <p>
+</a></td><td><a name="1030401">
+ NA<p>
+</a></td></tr>
+
+</Table>
+
+<Table>
+<tr><td>
+</Table>
+</P>
+</a><a name="1030403">
+<P><I>fontFamily</I><P>
+</a><a name="1030404">
+<UL><P>The <I>fontFamily </I>indicates the font family to use, such as Helvetica or Arial. If a list of font names is given, the browser tries each named font in turn until it finds one that exists on the user's system. If none of the specified font families are available on the user's system, the default font is used instead. </p></UL>
+</a><a name="1074573">
+<UL><P>If you link a font definition file to your web page, the font definition file will be downloaded with the page, thus guaranteeing that all the fonts in the definition file are available on the user's system while the user is viewing that page. For more information about linking fonts to a document, see <a href="webfont3.htm#1032357">Part 3. Downloadable Fonts</a>.</p></UL>
+</a><a name="1074565">
+<UL><P>There is a set of generic family names that are guaranteed to indicate a font on every system, but that exact font is system-dependent. The five generic font families are:</p></UL>
+</a><ul><ul>
+<a name="1031591">
+<li>serif
+</a><a name="1031592">
+<li>sans-serif
+</a><a name="1031593">
+<li>cursive
+</a><a name="1031594">
+<li>monospace
+</a><a name="1044465">
+<li>fantasy
+</a></ul>
+</ul><a name="1044466">
+<h4>CSS Syntax  &#32;Example</h4>
+</a><a name="1044471">
+<PRE>&lt;STYLE TYPE="text/css"&gt;
+</PRE>
+</a><a name="1044480">
+<PRE> &#32;H1 {fontFamily:Helvetica, Arial, sans-serif;}
+</PRE>
+</a><a name="1044479">
+<PRE>&lt;/STYLE&gt;
+</PRE>
+</a><a name="1044468">
+<h4>JavaScript Syntax  &#32;Example</h4>
+</a><a name="1044467">
+<PRE>&lt;STYLE TYPE="text/javascript"&gt;
+</PRE>
+</a><a name="1030435">
+<PRE> &#32;tags.H1.fontFamily="Helvetica, Arial, sans-serif";
+</PRE>
+</a><a name="1030436">
+<PRE>&lt;/STYLE&gt;
+</PRE>
+</a><a name="1061794">
+<HR>
+<h3 > Font Weight</h3>
+</a><a name="1061797">
+<P>CSS syntax name: <code>font-weight</code></P>
+</a><a name="1061798">
+<P>JavaScript syntax name: <code>fontWeight</code></P>
+</a><a name="1044491">
+<P> 
+<Table Border="1" >
+<caption></caption>
+<tr><th><a name="1030458">
+ <p>
+</a></th><th><a name="1030460">
+ <p>
+</a></th></tr>
+<tr><th><a name="1030462">
+ Possible values: <p>
+</a></th><th><a name="1030464">
+ <code>normal, bold, bolder, lighter, 100 - 900</code><p>
+</a></th></tr>
+<tr><td><a name="1030471">
+ Initial value: <p>
+</a></td><td><a name="1030473">
+ <code>normal</code><p>
+</a></td></tr>
+<tr><td><a name="1030475">
+ Applies to: <p>
+</a></td><td><a name="1030477">
+ all elements<p>
+</a></td></tr>
+<tr><td><a name="1030479">
+ Inherited: <p>
+</a></td><td><a name="1030481">
+ yes<p>
+</a></td></tr>
+<tr><td><a name="1030483">
+ Percentage values: <p>
+</a></td><td><a name="1030485">
+ N/A<p>
+</a></td></tr>
+
+</Table>
+
+<Table>
+<tr><td>
+</Table>
+</P>
+</a><a name="1030507">
+<P>The font weight indicates the weight of the font. For example:</P>
+</a><a name="1044495">
+<h4>CSS Syntax  &#32;Example</h4>
+</a><a name="1044496">
+<PRE>&lt;STYLE&gt;
+</PRE>
+</a><a name="1044523">
+<PRE>BLOCKQUOTE {font-weight: bold;}
+</PRE>
+</a><a name="1044526">
+<PRE>&lt;/STYLE&gt;
+</PRE>
+</a><a name="1044528">
+<h4>JavaScript Syntax  &#32;Example</h4>
+</a><a name="1044527">
+<PRE>&lt;STYLE&gt;
+</PRE>
+</a><a name="1030509">
+<PRE>tags.BLOCKQUOTE.fontWeight="bold";
+</PRE>
+</a><a name="1030510">
+<PRE>&lt;/STYLE&gt;
+</PRE>
+</a><a name="1031615">
+<P>The possible values are <code>normal</code>, <code>bold</code>, <code>bolder</code>, and <code>lighter</code>. You can also specify weight as a numerical value from 100 to 900, where 100 is the lightest and 900 is the heaviest.</P>
+</a><a name="1009565">
+<HR>
+<h3 > Font Style</h3>
+</a><a name="1061807">
+<P>CSS syntax name: <code>font-style</code></P>
+</a><a name="1061808">
+<P>JavaScript syntax name: <code>fontStyle</code></P>
+</a><a name="1044529">
+<P> 
+<Table Border="1" >
+<caption></caption>
+<tr><th><a name="1028945">
+ <p>
+</a></th><th><a name="1028947">
+ <p>
+</a></th></tr>
+<tr><th><a name="1011919">
+ Possible values: <p>
+</a></th><th><a name="1011921">
+ <code>normal, italic</code><p>
+</a></th></tr>
+<tr><td><a name="1011923">
+ Initial value: <p>
+</a></td><td><a name="1011925">
+ <code>normal</code><p>
+</a></td></tr>
+<tr><td><a name="1011927">
+ Applies to: <p>
+</a></td><td><a name="1011929">
+ all elements<p>
+</a></td></tr>
+<tr><td><a name="1011931">
+ Inherited: <p>
+</a></td><td><a name="1011933">
+ yes<p>
+</a></td></tr>
+<tr><td><a name="1011935">
+ Percentage values: <p>
+</a></td><td><a name="1011937">
+ N/A<p>
+</a></td></tr>
+
+</Table>
+
+<Table>
+<tr><td>
+</Table>
+</P>
+</a><a name="1011958">
+<P>This property determines the style of the font.</P>
+</a><a name="1044544">
+<P>The following example specifies that emphasized text within <code>&lt;H1&gt;</code> elements appears in italic.</P>
+</a><a name="1010023">
+<h4>CSS Syntax  &#32;Example</h4>
+</a><a name="1044549">
+<PRE>&lt;STYLE&gt;
+</PRE>
+</a><a name="1044550">
+<PRE>H1 EM {font-style: italic;}
+</PRE>
+</a><a name="1044551">
+<PRE>&lt;/STYLE&gt;
+</PRE>
+</a><a name="1044539">
+<h4>JavaScript Syntax  &#32;Example</h4>
+</a><a name="1009582">
+<PRE>&lt;STYLE&gt;
+</PRE>
+</a><a name="1027819">
+<PRE>contextual(tags.H1, tags.EM).fontStyle = "italic";
+</PRE>
+</a><a name="1044559">
+<PRE>&lt;/STYLE&gt;
+</PRE>
+</a><HR><a name="1010106">
+<h2> Text Properties</h2>
+</a><a name="1012774">
+<P>The use of style sheets allows you to set text properties such as line height and text decoration.</P>
+</a><a name="1010330">
+<HR>
+<h3 > Line Height</h3>
+</a><a name="1061819">
+<P>CSS syntax name:<code> line-height</code></P>
+</a><a name="1061820">
+<P>JavaScript syntax name: <code>lineHeight</code></P>
+</a><a name="1044891">
+<P> 
+<Table Border="1" >
+<caption></caption>
+<tr><th><a name="1012149">
+ <p>
+</a></th><th><a name="1012169">
+ <I></I><p>
+</a></th></tr>
+<tr><td><a name="1028162">
+ Possible values<p>
+</a></td><td><a name="1028173">
+ <I>number, length, percentage, </I><code>normal</code><p>
+</a></td></tr>
+<tr><td><a name="1012153">
+ Initial value: <p>
+</a></td><td><a name="1012155">
+ normal for the font<p>
+</a></td></tr>
+<tr><td><a name="1012157">
+ Applies to: <p>
+</a></td><td><a name="1012159">
+ block-level elements<p>
+</a></td></tr>
+<tr><td><a name="1012161">
+ Inherited: <p>
+</a></td><td><a name="1012163">
+ yes<p>
+</a></td></tr>
+<tr><td><a name="1012165">
+ Percentage values: <p>
+</a></td><td><a name="1012167">
+ refers to the font size of the element itself<p>
+</a></td></tr>
+
+</Table>
+
+<Table>
+<tr><td>
+</Table>
+</P>
+</a><a name="1010336">
+<P>This property sets the distance between the baselines of two adjacent lines. It applies only to block-level elements.</P>
+</a><a name="1010338">
+<P><I>number</I>:<P>
+</a><a name="1012171">
+<UL><P>If you specify a numerical value without a unit of measurement, the line height is the font size of the current element multiplied by the numerical value. This differs from a percentage value in the way it inherits: when a numerical value is specified, child elements inherit the factor itself, not the resultant value (as is the case with percentage and other units). </p></UL>
+</a><a name="1027824">
+<UL><P>For example:</p></UL>
+</a><BLOCKQUOTE><a name="1027825">
+<PRE>fontSize:10pt; 
+</PRE>
+</a><a name="1027826">
+<PRE>line-height:1.2; /* line height is now 120%, ie 12pt */
+</PRE>
+</a><a name="1027821">
+<PRE>font-size:20pt; &#32;/* line height is now 24 pt, */
+</PRE>
+</a></BLOCKQUOTE><a name="1012172">
+<P><I>length</I>:<P>
+</a><a name="1012173">
+<UL><P>An expression of line height as a measurement, for example:</p></UL>
+</a><BLOCKQUOTE><a name="1012197">
+<PRE>line-height:0.4in;
+</PRE>
+</a><a name="1044762">
+<PRE>line-height:18pt;
+</PRE>
+</a></BLOCKQUOTE><a name="1012188">
+<P><I>percentage</I><P>
+</a><a name="1012189">
+<UL><P>Percentage of the element's font size, for example:</p></UL>
+</a><BLOCKQUOTE><a name="1044819">
+<PRE>line-height:150%;
+</PRE>
+</a></BLOCKQUOTE><a name="1012190">
+<P>Negative values are not allowed.</P>
+</a><a name="1044813">
+<HR>
+<h3 > Text Decoration</h3>
+</a><a name="1061827">
+<P>CSS syntax name: <code>text-decoration</code></P>
+</a><a name="1061828">
+<P>JavaScript syntax name: <code>textDecoration</code></P>
+</a><a name="1045486">
+<P> 
+<Table Border="3">
+<caption></caption>
+<tr><th><a name="1044786">
+ <p>
+</a></th><th><a name="1044788">
+ <code></code><p>
+</a></th></tr>
+<tr><td><a name="1044790">
+ Possible values: <p>
+</a></td><td><a name="1044792">
+ <code>none, underline, line-through, blink</code><p>
+</a></td></tr>
+<tr><td><a name="1044798">
+ Initial value: <p>
+</a></td><td><a name="1044800">
+ <code>none</code><p>
+</a></td></tr>
+<tr><td><a name="1044802">
+ Applies to: <p>
+</a></td><td><a name="1044804">
+ all elements<p>
+</a></td></tr>
+<tr><td><a name="1044806">
+ Inherited: <p>
+</a></td><td><a name="1044808">
+ no, but see clarification below<p>
+</a></td></tr>
+<tr><td><a name="1044810">
+ Percentage values: <p>
+</a></td><td><a name="1044812">
+ N/A<p>
+</a></td></tr>
+
+</Table>
+
+<Table>
+<tr><td>
+</Table>
+</P>
+</a><a name="1010151">
+<P>This property describes decorations that are added to the text of an element. If the element has no text (for example, the <code>&lt;IMG&gt;</code> element in HTML) or is an empty element (for example, "<code>&lt;EM&gt;&lt;/EM&gt;</code>"), this property has no effect.</P>
+</a><a name="1010156">
+<P>This property is not inherited, but children elements will match their parent. For example, if an element is underlined, the line should span the child elements. The color of the underlining will remain the same even if child elements have different <code>color</code> values. </P>
+</a><a name="1012294">
+<P>For example:</P>
+</a><a name="1010160">
+<PRE>BLOCKQUOTE {text-decoration: underline;}
+</PRE>
+</a><a name="1012304">
+<P>The text decoration options do not include color options, since the color of text is derived from the <code>color</code> property value.</P>
+</a><a name="1049474">
+<P>.</P>
+</a><a name="1010200">
+<HR>
+<h3 > Text Transform</h3>
+</a><a name="1061835">
+<P>CSS syntax name: <code>text-transform</code></P>
+</a><a name="1061844">
+<P>JavaScript syntax name: <code>textTransform</code></P>
+</a><a name="1044976">
+<P> 
+<Table Border="1" >
+<caption></caption>
+<tr><th><a name="1012396">
+ <p>
+</a></th><th><a name="1012417">
+ <code></code><p>
+</a></th></tr>
+<tr><td><a name="1029024">
+ Possible values:, <p>
+</a></td><td><a name="1028239">
+ <code>capitalize</code>, <code>uppercase</code>, <code>lowercase</code>, none<p>
+</a></td></tr>
+<tr><td><a name="1012400">
+ Initial value: <p>
+</a></td><td><a name="1012402">
+ <code>none</code><p>
+</a></td></tr>
+<tr><td><a name="1012404">
+ Applies to: <p>
+</a></td><td><a name="1012406">
+ all elements<p>
+</a></td></tr>
+<tr><td><a name="1012408">
+ Inherited: <p>
+</a></td><td><a name="1012410">
+ yes<p>
+</a></td></tr>
+<tr><td><a name="1012412">
+ Percentage values: <p>
+</a></td><td><a name="1012414">
+ N/A<p>
+</a></td></tr>
+
+</Table>
+
+<Table>
+<tr><td>
+</Table>
+</P>
+</a><a name="1010207">
+<P>This property indicates text case.</P>
+</a><a name="1010208">
+<P><code>capitalize</code> <code></code><P>
+</a><a name="1010209">
+<UL><P>Display the first character of each word in uppercase.</p></UL>
+</a><a name="1010210">
+<P><code>uppercase</code> <P>
+</a><a name="1010211">
+<UL><P>Display all letters of the element in uppercase. </p></UL>
+</a><a name="1010212">
+<P><code>lowercase</code> <P>
+</a><a name="1010213">
+<UL><P>Display all letters of the element in lowercase.</p></UL>
+</a><a name="1010214">
+<P><code>none</code> <P>
+</a><a name="1010215">
+<UL><P>Neutralizes inherited value. </p></UL>
+</a><a name="1012450">
+<P>For example:</P>
+</a><a name="1044978">
+<h4>CSS Syntax  &#32;Example</h4>
+</a><a name="1044980">
+<PRE>&lt;STYLE TYPE="text/css"&gt;
+</PRE>
+</a><a name="1044981">
+<PRE>H1 {text-transform:capitalize;}
+</PRE>
+</a><a name="1044987">
+<PRE>H1.CAPH1 {text-transform: uppercase;}
+</PRE>
+</a><a name="1044996">
+<PRE>&lt;/STYLE&gt;
+</PRE>
+</a><a name="1044979">
+<h4>JavaScript Syntax  &#32;Example</h4>
+</a><a name="1045051">
+<PRE>&lt;STYLE&gt;
+</PRE>
+</a><a name="1045049">
+<PRE>tags.H1.textTransform = "capitalize";
+</PRE>
+</a><a name="1044997">
+<PRE>classes.CAPH1.H1.textTransform = "uppercase";
+</PRE>
+</a><a name="1045058">
+<PRE>&lt;/STYLE&gt;
+</PRE>
+</a><a name="1045010">
+<h4>Style Sheet Use </h4>
+</a><a name="1045045">
+<PRE>&lt;H1&gt;This is a regular level-one heading&lt;/H1&gt;
+</PRE>
+</a><a name="1045015">
+<PRE>&lt;H1 CLASS=CAPH1&gt;important heading&lt;/H1&gt;
+</PRE>
+</a><a name="1045016">
+
+<P><SPAN STYLE="align:right;">
+<I><FONT COLOR="#404040"  size=-1>This example works in 
+Netscape Navigator 4.0+. </FONT></I></SPAN><B>
+Example results:</B> 
+</p>
+</a>
+<HR><a name="1045035">
+<h1> This Is A Regular Level-One Heading</h1>
+</a><a name="1045040">
+<h1> IMPORTANT HEADING</h1>
+</a><a name="1010223">
+<HR>
+<h3 > Text Alignment</h3>
+</a><a name="1061904">
+<P>CSS syntax name:<code> text-align</code></P>
+</a><a name="1061905">
+<P>JavaScript syntax name: <code>textAlign</code></P>
+</a><a name="1044977">
+<P> 
+<Table Border="1" >
+<caption></caption>
+<tr><th><a name="1012458">
+ <p>
+</a></th><th><a name="1012479">
+ <code></code><p>
+</a></th></tr>
+<tr><td><a name="1029035">
+ Possible values: <p>
+</a></td><td><a name="1029040">
+ <code>left, right, center, justify</code><p>
+</a></td></tr>
+<tr><td><a name="1012462">
+ Initial value: <p>
+</a></td><td><a name="1012464">
+ <code>left</code><p>
+</a></td></tr>
+<tr><td><a name="1012466">
+ Applies to: <p>
+</a></td><td><a name="1012468">
+ block-level elements<p>
+</a></td></tr>
+<tr><td><a name="1012470">
+ Inherited: <p>
+</a></td><td><a name="1012472">
+ yes<p>
+</a></td></tr>
+<tr><td><a name="1012474">
+ Percentage values: <p>
+</a></td><td><a name="1012476">
+ N/A<p>
+</a></td></tr>
+
+</Table>
+
+<Table>
+<tr><td>
+</Table>
+</P>
+</a><a name="1010231">
+<P>This property describes how text is aligned within the element. </P>
+</a><a name="1010234">
+<P>Example:</P>
+</a><a name="1010236">
+<PRE>tags.P.textAlign = "center" 
+</PRE>
+</a><a name="1045069">
+<h4>CSS Syntax  &#32;Example</h4>
+</a><a name="1045070">
+<PRE>&lt;STYLE TYPE="text/css"&gt;
+</PRE>
+</a><a name="1045071">
+<PRE>all.RIGHTHEAD {text-align:right; color:blue;}
+</PRE>
+</a><a name="1045074">
+<PRE>P.LEFTP {text-align:left; color:red;}
+</PRE>
+</a><a name="1045075">
+<PRE>&lt;/STYLE&gt;
+</PRE>
+</a><a name="1045076">
+<h4>JavaScript Syntax </h4>
+</a><a name="1045077">
+<PRE>&lt;STYLE TYPE="text/javascript"&gt;
+</PRE>
+</a><a name="1045078">
+<PRE>classes.RIGHTHEAD.all.textAlign="right";
+</PRE>
+</a><a name="1045079">
+<PRE>classes.LEFTP.P.textAlign="left";
+</PRE>
+</a><a name="1045362">
+<PRE>classes.RIGHTHEAD.all.color="blue";
+</PRE>
+</a><a name="1045360">
+<PRE>classes.JUSTP.P.color="red";
+</PRE>
+</a><a name="1045185">
+<PRE>&lt;/STYLE&gt;
+</PRE>
+</a><a name="1045186">
+<h4>Style Sheet Use </h4>
+</a><a name="1045187">
+<PRE>&lt;H3&gt;A Normal Heading&lt;/H3&gt;
+</PRE>
+</a><a name="1045083">
+<PRE>&lt;H3 CLASS=RIGHTHEAD&gt;A Right-Aligned Heading&lt;/H3&gt;
+</PRE>
+</a><a name="1045084">
+<PRE>&lt;P&gt;This is a normal paragraph. This is what paragraphs usually look 
+like, when they are left to their own devices, and you do not use style 
+sheets to control their text alignment.&lt;/P&gt;
+</PRE>
+</a><a name="1045091">
+<PRE>&lt;P CLASS = LEFTP&gt;This paragraph is left-justified, which means it has a 
+ragged right edge. Whenever paragraphs contain excessively, perhaps 
+unnecessarily, long words, the raggedness of the justification becomes 
+more manifestly apparent than in the case where all the words in the 
+sentence are short.&lt;/P&gt;
+</PRE>
+</a><a name="1045158">
+
+<P><SPAN STYLE="align:right;">
+<I><FONT COLOR="#404040"  size=-1>This example works in 
+Netscape Navigator 4.0+. </FONT></I></SPAN><B>
+Example results:</B> 
+</p>
+</a>
+<HR><a name="1045194">
+<h3> A Normal Heading</h3>
+</a><a name="1045200">
+<H3 CLASS="EXAMPLE14"> A Right-Aligned Heading</H3>
+</a><a name="1045203">
+<P>This is a normal paragraph. This is what paragraphs usually look like, when they are left to their own devices, and you do not use style sheets to control their text alignment.</P>
+</a><a name="1045207">
+<P CLASS="EXAMPLE13"> This paragraph is left-justified, which means it has a ragged right edge. Whenever paragraphs contain excessively, perhaps unnecessarily, long words, the raggedness of the justification becomes more manifestly apparent than in the case where all the words in the sentence are short.</P>
+</a><a name="1010241">
+<HR>
+<h3 > Text Indent</h3>
+</a><a name="1061912">
+<P>CSS syntax name: <code>text-indent</code></P>
+</a><a name="1061913">
+<P>JavaScript syntax name: <code>textIndent</code></P>
+</a><a name="1045365">
+<P> 
+<Table Border="1" >
+<caption></caption>
+<tr><th><a name="1028953">
+ <p>
+</a></th><th><a name="1028955">
+ <p>
+</a></th></tr>
+<tr><td><a name="1078162">
+ Possible values: <p>
+</a></td><td><a name="1029055">
+ <I>length, percentage</I><p>
+</a></td></tr>
+<tr><td><a name="1012490">
+ Initial value: <p>
+</a></td><td><a name="1012492">
+ 0<p>
+</a></td></tr>
+<tr><td><a name="1012494">
+ Applies to: <p>
+</a></td><td><a name="1012496">
+ block-level elements<p>
+</a></td></tr>
+<tr><td><a name="1012498">
+ Inherited: <p>
+</a></td><td><a name="1012500">
+ yes<p>
+</a></td></tr>
+<tr><td><a name="1012502">
+ Percentage values: <p>
+</a></td><td><a name="1012504">
+ refer to parent element's width<p>
+</a></td></tr>
+
+</Table>
+
+<Table>
+<tr><td>
+</Table>
+</P>
+</a><a name="1010249">
+<P>The property specifies indentation that appears before the first formatted line. The <code>text-indent</code> value may be negative. An indent is not inserted in the middle of an element that was broken by another element (such as <code>&lt;BR&gt;</code> in HTML). </P>
+</a><a name="1012514">
+<P><I>length</I><P>
+</a><a name="1012522">
+<UL><P>Length of the indent as a numerical value with units, for example:</p></UL>
+</a><BLOCKQUOTE><a name="1010109">
+<PRE>P {text-indent:3em;}
+</PRE>
+</a></BLOCKQUOTE><a name="1012526">
+<P><I>percentage</I><P>
+</a><a name="1012527">
+<UL><P>Length of the indent as a percentage of the parent element's width, for example:</p></UL>
+</a><BLOCKQUOTE><a name="1012531">
+<PRE>P {text-indent:25%;}
+</PRE>
+</a></BLOCKQUOTE><a name="1045370">
+<h4>CSS Syntax  &#32;Example</h4>
+</a><a name="1045373">
+<PRE>&lt;STYLE TYPE="text/css"&gt;
+</PRE>
+</a><a name="1045374">
+<PRE>P.INDENTED {text-indent:25%;}
+</PRE>
+</a><a name="1045375">
+<PRE>&lt;/STYLE&gt;
+</PRE>
+</a><a name="1045371">
+<h4>JavaScript Syntax  &#32;Example</h4>
+</a><a name="1045377">
+<PRE>&lt;STYLE TYPE="text/css"&gt;
+</PRE>
+</a><a name="1045378">
+<PRE>classes.INDENTED.P.textIndent="25%";
+</PRE>
+</a><a name="1045379">
+<PRE>&lt;/STYLE&gt;
+</PRE>
+</a><a name="1045372">
+<h4>Style Sheet Use </h4>
+</a><a name="1045393">
+<PRE>&lt;P CLASS=INDENTED&gt;
+</PRE>
+</a><a name="1045410">
+<PRE>The first line is indented 25 percent of the width of the parent 
+element, which in this case happens to be the BODY tag, since this 
+element is not embedded in anything else.&lt;/P&gt;
+</PRE>
+</a><a name="1045423">
+<PRE>&lt;BLOCKQUOTE&gt;
+</PRE>
+</a><a name="1045435">
+<PRE>&lt;P CLASS=INDENTED&gt;
+</PRE>
+</a><a name="1045428">
+<PRE>This time the first line is indented 25 percent from the blockquote that 
+surrounds this element. A blockquote automatically indents its contents.
+</PRE>
+</a><a name="1045433">
+<PRE>&lt;/P&gt;
+</PRE>
+</a><a name="1045434">
+<PRE>&lt;/BLOCKQUOTE&gt;
+</PRE>
+</a><a name="1045438">
+
+<P><SPAN STYLE="align:right;">
+<I><FONT COLOR="#404040"  size=-1>This example works in 
+Netscape Navigator 4.0+. </FONT></I></SPAN><B>
+Example results:</B> 
+</p>
+</a>
+<HR><a name="1045439">
+<P CLASS="EXAMPLE15"> The first line is indented 25 percent of the width of the parent element, which in this case happens to be the BODY tag, since this element is not embedded in anything else.</P>
+</a><BLOCKQUOTE><a name="1045467">
+<P CLASS="EXAMPLE15"> This time the first line is indented 25 percent from the blockquote that surrounds this element. A blockquote automatically indents its contents.</P>
+</a></BLOCKQUOTE><HR><a name="1010668">
+<h2> Block-Level Formatting Properties</h2>
+</a><a name="1045497">
+<P>Style sheets treat each block-level element as if it is surrounded by a box. Block-level elements start on a new line, for example, <code>&lt;H1&gt;</code> and <code>&lt;P&gt;</code> are block-level elements, but <code>&lt;EM&gt;</code> is not.</P>
+</a><a name="1045498">
+<P>Each box can have padding, border, and margins.You can set values for top, bottom, left and right paddings, border widths, and margins.</P>
+</a><a name="1045549">
+<P>For a more detailed overview discussion of block-level formatting, see <a href="jss33.htm#1017637">Chapter &#32;4, "Format Properties for Block-Level Elements."</a></P>
+</a><a name="1045554">
+<HR>
+<h3 > Margins</h3>
+</a><a name="1061916">
+<P>CSS syntax names:<code> margin-left</code>, <code>margin-right</code>, <code>margin-top</code>, <code>margin-bottom</code>, <code>margin</code></P>
+</a><a name="1061917">
+<P>JavaScript syntax names: <code>marginLeft</code>, <code>marginRight</code>, <code>marginTop</code>, <code>marginBottom</code> and <code>margins</code>() </P>
+</a><a name="1045547">
+<P> 
+<Table Border="3">
+<caption></caption>
+<tr><th><a name="1045522">
+ <p>
+</a></th><th><a name="1045524">
+ <p>
+</a></th></tr>
+<tr><td><a name="1045526">
+ Possible values<p>
+</a></td><td><a name="1045528">
+ <I>length, percentage, </I><code>auto</code><p>
+</a></td></tr>
+<tr><td><a name="1045532">
+ Initial value: <p>
+</a></td><td><a name="1045534">
+ 0<p>
+</a></td></tr>
+<tr><td><a name="1045536">
+ Applies to: <p>
+</a></td><td><a name="1045538">
+ all elements<p>
+</a></td></tr>
+<tr><td><a name="1045540">
+ Inherited: <p>
+</a></td><td><a name="1045542">
+ no<p>
+</a></td></tr>
+<tr><td><a name="1045544">
+ Percentage values: <p>
+</a></td><td><a name="1045546">
+ refer to parent element's width<p>
+</a></td></tr>
+
+</Table>
+
+<Table>
+<tr><td>
+</Table>
+</P>
+</a><a name="1045612">
+<P>These properties set the margin of an element. The margins express the minimal distance between the borders of two adjacent elements. </P>
+</a><a name="1045610">
+<P>You can set each margin individually by specifying values for <code>margin-left</code>/<code>marginLeft</code>, <code>margin-right</code>/<code>marginRight</code>, <code>margin-top</code>/<code>marginTop</code> and <code>margin-bottom</code>/<code>marginBottom.</code> </P>
+</a><a name="1045580">
+<P>In CSS syntax you can set all margins to the same value at one time by setting the <code>margin</code> property (note that the property name is singular). In JavaScript syntax you can use the <code>margins()</code> method sets the margins for all four sides at once. (Note that the function name is plural.)</P>
+</a><a name="1045575">
+<P>The arguments to the <code>margin</code> property and <code>margins()</code> method are top, right, bottom and left margins respectively. For example:</P>
+</a><a name="1049486">
+<h4>CSS Syntax </h4>
+</a><a name="1045605">
+<PRE>/* top=10pt, right=20pt, bottom=30pt, left=40pt */
+</PRE>
+</a><a name="1045603">
+<PRE>P {margin:10pt 20pt 30pt 40pt;} 
+</PRE>
+</a><a name="1049500">
+<PRE>/* set all P margins to 40 pt */
+</PRE>
+</a><a name="1049501">
+<PRE>P {margin:40pt;} 
+</PRE>
+</a><a name="1049487">
+<h4>JavaScript Syntax </h4>
+</a><a name="1049493">
+<PRE>/* top=10pt, right=20pt, bottom=30pt, left=40pt */
+</PRE>
+</a><a name="1049491">
+<PRE>tags.BODY.margins("10pt", "20pt", "30pt", "40pt"); 
+</PRE>
+</a><a name="1045710">
+<PRE>/* set all P margins to 40 pt */
+</PRE>
+</a><a name="1045701">
+<PRE>tags.P.margins("40pt"); 
+</PRE>
+</a><a name="1060920">
+<P>Adjoining margins of adjacent elements are added together, unless one of the elements has no content, in which case its margins are ignored. For example, if an <code>&lt;H1&gt;</code> element with a bottom margin of 40 points, is followed by a <code>&lt;P&gt;</code> element with a top margin of 30 points, then the separation between the two elements is 70 points. However, if the<code> &lt;H1&gt;</code> element has content, but the <code>&lt;P&gt;</code> element is empty, then the margin between them is 40 points.</P>
+</a><a name="1010700">
+<P>When margin properties are applied to replaced elements (such as an <code>&lt;IMG&gt;</code> tag), they express the minimal distance from the replaced element to any of the content of the parent element.</P>
+</a><a name="1010703">
+<P>The use of negative margins is not recommended because it may have unpredictable results.</P>
+</a><a name="1062097">
+<P>For a working example of setting margins, see the section <a href="jss33.htm#1042942">Block-level Formatting Overview and Example</a>.</P>
+</a><a name="1062100">
+<HR>
+<h3 > Padding</h3>
+</a><a name="1062130">
+<P>CSS syntax names: <code>padding-top</code>, <code>padding-right</code>, <code>padding-bottom</code>, <code>padding-left</code>, <code>paddings</code></P>
+</a><a name="1062303">
+<P>JavaScript syntax names: <code>paddingTop</code>, <code>paddingRight</code>, <code>paddingBottom</code>, <code>paddingLeft</code>, and <code>paddings</code>() 
+<Table Border="3">
+<caption></caption>
+<tr><th><a name="1062103">
+ <p>
+</a></th><th><a name="1062105">
+ <p>
+</a></th></tr>
+<tr><td><a name="1062107">
+ Possible values:<p>
+</a></td><td><a name="1062109">
+ <I>length, percentage</I><p>
+</a></td></tr>
+<tr><td><a name="1062112">
+ Initial value: <p>
+</a></td><td><a name="1062114">
+ 0<p>
+</a></td></tr>
+<tr><td><a name="1062116">
+ Applies to: <p>
+</a></td><td><a name="1062118">
+ all elements<p>
+</a></td></tr>
+<tr><td><a name="1062120">
+ Inherited: <p>
+</a></td><td><a name="1062122">
+ no<p>
+</a></td></tr>
+<tr><td><a name="1062124">
+ Percentage values: <p>
+</a></td><td><a name="1062126">
+ refer to parent element's width<p>
+</a></td></tr>
+
+</Table>
+
+<Table>
+<tr><td>
+</Table>
+</P>
+</a><a name="1010713">
+<P>These properties describe how much space to insert between the border of an element and the content (such as text or image). You can set the padding on each side individually by specifying values for <code>padding-top</code>/<code>paddingTop</code>, <code>padding-right</code>/<code>paddingRight</code>, <code>padding-left</code>/<code>paddingLeft</code> and <code>padding-bottom</code>/<code>paddingBottom.</code></P>
+</a><a name="1045620">
+<P>In CSS syntax you can use the <code>padding</code> property (note that it is padding singular) to set the padding for all four sides at once. In JavaScript syntax you can use the <code>paddings()</code> method to set the margins for all four sides at once.</P>
+</a><a name="1021605">
+<P>The arguments to the <code>padding</code> property (CSS syntax) and the <code>paddings()</code> method (JavaScript syntax) are the top, right, bottom and left padding values respectively.</P>
+</a><a name="1049525">
+<h4>CSS Syntax </h4>
+</a><a name="1045648">
+<PRE>/* top=10pt, right=20pt, bottom=30pt, left=40pt */
+</PRE>
+</a><a name="1045795">
+<PRE>P {padding:10pt 20pt 30pt 40pt;} 
+</PRE>
+</a><a name="1049555">
+<PRE>/* set the padding on all sides of P to 40 pt */
+</PRE>
+</a><a name="1049556">
+<PRE>P {padding:40pt;} 
+</PRE>
+</a><a name="1049532">
+<h4>JavaScript Syntax </h4>
+</a><a name="1049565">
+<PRE>/* top=10pt, right=20pt, bottom=30pt, left=40pt */
+</PRE>
+</a><a name="1049549">
+<PRE>tags.P.paddings("10pt", "20pt", "30pt", "40pt")
+</PRE>
+</a><a name="1049550">
+<PRE>/* set the padding on all sides of P to 40 pt */
+</PRE>
+</a><a name="1049552">
+<PRE>tags.P.paddings("40pt"); 
+</PRE>
+</a><a name="1045807">
+<P>Padding values cannot be negative. </P>
+</a><a name="1010716">
+<P>To specify the color or image that appears in the padding area, you can set the background color or background image of the element. For information about setting background color, see the section <a href="jss34.htm#1011277">Background Color</a>. For information about setting a background image, see the section <a href="jss34.htm#1011262">Background Image</a>.</P>
+</a><a name="1045989">
+<P>For a working example of setting paddings, see the section <a href="jss33.htm#1042942">Block-level Formatting Overview and Example</a>.</P>
+</a><a name="1010745">
+<HR>
+<h3 > Border Widths</h3>
+</a><a name="1062309">
+<P>CSS syntax names: <code>border-top-width</code>, <code>border-bottom-width</code>, <code>border-left-width</code>, <code>border-right-width</code>, <code>border-width</code></P>
+</a><a name="1062310">
+<P>JavaScript syntax names: <code>borderTopWidth</code>, <code>borderBottomWidth</code>, <code>borderLeftWidth</code>, <code>borderRightWidth</code>, and <code>borderWidths</code>()</P>
+</a><a name="1046097">
+<P> 
+<Table Border="1" >
+<caption></caption>
+<tr><th><a name="1028970">
+ <p>
+</a></th><th><a name="1028972">
+ <p>
+</a></th></tr>
+<tr><td><a name="1029069">
+ Possible values: <p>
+</a></td><td><a name="1029071">
+ <I>length</I><p>
+</a></td></tr>
+<tr><td><a name="1012941">
+ Initial value: <p>
+</a></td><td><a name="1012943">
+ none<p>
+</a></td></tr>
+<tr><td><a name="1012945">
+ Applies to: <p>
+</a></td><td><a name="1012947">
+ all elements<p>
+</a></td></tr>
+<tr><td><a name="1012949">
+ Inherited: <p>
+</a></td><td><a name="1012951">
+ no<p>
+</a></td></tr>
+<tr><td><a name="1012953">
+ Percentage values: <p>
+</a></td><td><a name="1012955">
+ N/A<p>
+</a></td></tr>
+
+</Table>
+
+<Table>
+<tr><td>
+</Table>
+</P>
+</a><a name="1010754">
+<P>These properties set the width of a border around an element.</P>
+</a><a name="1021653">
+<P>You can set the width of the top border by specifying a value for <code>border-top-width</code>/<code>borderTopWidth.</code> You can set the width of the right border by specifying a value for <code>border-right-width</code>/<code>borderRightWidth.</code> You can set the width of the bottom border by specifying a value for <code>border-bottom-width</code>/<code>borderBottomWidth</code>. You can set the width of the bottom border by specifying a value for <code>border-left-width</code>/ <code>borderLeftWidth.</code></P>
+</a><a name="1046082">
+<P>In CSS syntax, you can set all four borders at once by setting the <code>border-width</code> property. In JavaScript syntax you can set all four borders at once by using the <code>borderWidths()</code> function.</P>
+</a><a name="1021654">
+<P>The arguments to the <code>border-width</code> property (CSS syntax) and the <code>borderWidths()</code> function (JavaScript syntax) are the top, right, bottom and left border widths respectively.<B> </B></P>
+</a><a name="1046136">
+<PRE>/* top=1pt, right=2pt, bottom=3pt, left=4pt */
+</PRE>
+</a><a name="1046155">
+<PRE>P {border-width:1pt 2pt 3pt 4pt;} /* CSS */
+</PRE>
+</a><a name="1046134">
+<PRE>tags.P.borderWidths("1pt", "2pt", "3pt", "4pt"); /* JavaScript syntax */
+</PRE>
+</a><a name="1046105">
+<PRE>/* set the border width to 2 pt on all sides */
+</PRE>
+</a><a name="1046106">
+<PRE>P {border-width:40pt;} /* CSS */
+</PRE>
+</a><a name="1046107">
+<PRE>tags.P.borderWidths("40pt"); /* JavaScript syntax */
+</PRE>
+</a><a name="1046021">
+<P>For a working example of setting border widths, see the section <a href="jss33.htm#1042942">Block-level Formatting Overview and Example</a>.</P>
+</a><a name="1021206">
+<HR>
+<h3 > Border Style</h3>
+</a><a name="1062334">
+<P>CSS syntax name: <code>border-style</code></P>
+</a><a name="1062335">
+<P>JavaScript syntax name: <code>borderStyle</code></P>
+</a><a name="1046223">
+<P> 
+<Table Border="1" >
+<caption></caption>
+<tr><th><a name="1028974">
+ <p>
+</a></th><th><a name="1028976">
+ <p>
+</a></th></tr>
+<tr><td><a name="1029073">
+ Possible values:, <p>
+</a></td><td><a name="1029075">
+ <code>none, solid</code>, double<code>, inset, </code>outset, groove, ridge<p>
+</a></td></tr>
+<tr><td><a name="1021191">
+ Initial value: <p>
+</a></td><td><a name="1021193">
+ none<p>
+</a></td></tr>
+<tr><td><a name="1021195">
+ Applies to: <p>
+</a></td><td><a name="1021197">
+ all elements<p>
+</a></td></tr>
+<tr><td><a name="1021199">
+ Inherited: <p>
+</a></td><td><a name="1021201">
+ no<p>
+</a></td></tr>
+<tr><td><a name="1021203">
+ Percentage values: <p>
+</a></td><td><a name="1021205">
+ N/A<p>
+</a></td></tr>
+
+</Table>
+
+<Table>
+<tr><td>
+</Table>
+</P>
+</a><a name="1021207">
+<P>This property sets the style of a border around a block-level element. </P>
+</a><a name="1046226">
+<P>For the border to be visible however, you must also specify the border width. For details of setting the border width see the section <a href="jss33.htm#1018702">Setting Border Widths, Color, and Style</a> or the section <a href="jss34.htm#1010745">Border Widths</a>.</P>
+</a><a name="1046031">
+<P>For an example of each of the border values, see:</P>
+</a><A HREF="borders.htm" target="StyleSheetExample">
+<PRE>borders.htm</PRE></A><p>
+<a name="1030727">
+<HR>
+<h3 > Border Color</h3>
+</a><a name="1062336">
+<P>CSS name:<code> border-color</code></P>
+</a><a name="1062337">
+<P>JavaScript syntax name:<code>borderColor</code></P>
+</a><a name="1043886">
+<P CLASS=TABLE1> 
+<Table Border="1" >
+<caption></caption>
+<tr><th><a name="1030702">
+ <p>
+</a></th><th><a name="1030704">
+ <p>
+</a></th></tr>
+<tr><td><a name="1030706">
+ Possible values: <p>
+</a></td><td><a name="1030708">
+ <code>none, </code><I>colorvalue</I><p>
+</a></td></tr>
+<tr><td><a name="1030712">
+ Initial value: <p>
+</a></td><td><a name="1030714">
+ none<p>
+</a></td></tr>
+<tr><td><a name="1030716">
+ Applies to: <p>
+</a></td><td><a name="1030718">
+ all elements<p>
+</a></td></tr>
+<tr><td><a name="1030720">
+ Inherited: <p>
+</a></td><td><a name="1030722">
+ no<p>
+</a></td></tr>
+<tr><td><a name="1030724">
+ Percentage values: <p>
+</a></td><td><a name="1030726">
+ N/A<p>
+</a></td></tr>
+
+</Table>
+
+<Table>
+<tr><td>
+</Table>
+</p>
+</a><a name="1030728">
+<P>This property sets the color of the border. The color can either be a named color or a 6-digit hexadecimal value indicating a color or an rgb color value.</P>
+</a><a name="1046347">
+<P>For a list of the named colors, see the section <a href="jss34.htm#1019827">Color Units</a>.</P>
+</a><a name="1030747">
+<P>For example:</P>
+</a><a name="1046236">
+<h4>CSS Syntax </h4>
+</a><a name="1046237">
+<PRE>P {border-color:blue;}
+</PRE>
+</a><a name="1046238">
+<PRE>BLOCKQUOTE {border-color:#0000FF;} 
+</PRE>
+</a><a name="1046243">
+<PRE>H1 {border-color:rgb(0%, 0%, 100%);}
+</PRE>
+</a><a name="1046252">
+<h4>JavaScript Syntax </h4>
+</a><a name="1030749">
+<PRE>tags.P.borderColor="blue";
+</PRE>
+</a><a name="1061279">
+<PRE>tags.BLOCKQUOTE.borderColor="#0000FF";
+</PRE>
+</a><a name="1061280">
+<PRE>tags.H1.borderColor="rgb(0%, 0%, 100%);
+</PRE>
+</a><a name="1061283">
+<P>For a working example of setting border color, see the section <a href="jss33.htm#1042942">Block-level Formatting Overview and Example</a>. </P>
+</a><a name="1010756">
+<HR>
+<h3 > Width</h3>
+</a><a name="1062712">
+<P>CSS syntax name: width</P>
+</a><a name="1062718">
+<P>JavaScript syntax name: width</P>
+</a><a name="1046422">
+<P> 
+<Table Border="1" >
+<caption></caption>
+<tr><th><a name="1028982">
+ <p>
+</a></th><th><a name="1028984">
+ <p>
+</a></th></tr>
+<tr><td><a name="1029079">
+ Possible values: <p>
+</a></td><td><a name="1029081">
+ <I>length, percentage, </I><code>auto</code><p>
+</a></td></tr>
+<tr><td><a name="1012965">
+ Initial value: <p>
+</a></td><td><a name="1012967">
+ <code>auto</code><p>
+</a></td></tr>
+<tr><td><a name="1012969">
+ Applies to: <p>
+</a></td><td><a name="1012971">
+ block-level and replaced elements<p>
+</a></td></tr>
+<tr><td><a name="1012973">
+ Inherited: <p>
+</a></td><td><a name="1012975">
+ no<p>
+</a></td></tr>
+<tr><td><a name="1012977">
+ Percentage values:<p>
+</a></td><td><a name="1012979">
+ refer to parent element's width<p>
+</a></td></tr>
+
+</Table>
+
+<Table>
+<tr><td>
+</Table>
+</P>
+</a><a name="1010764">
+<P>This property determines the width of an element.</P>
+</a><a name="1046556">
+<P>Note that if you set the left and right margins, and also the width of a property, the margin settings take precedence over the width setting. For example, if the left margin setting is 25%, the right margin setting is 10%, and the width setting is 100%, the width setting is ignored. (The width will end up being 65% total.)</P>
+</a><a name="1046583">
+<h4>CSS Syntax  &#32;Example</h4>
+</a><a name="1010770">
+<PRE>all.NARROW {width:50%;}
+</PRE>
+</a><a name="1046582">
+<PRE>all.INDENTEDNARROW {margin-left:20%; width:60%;}
+</PRE>
+</a><a name="1046588">
+<h4>JavaScript Syntax  &#32;Example</h4>
+</a><a name="1046581">
+<PRE>classes.NARROW.all.width = "50%";
+</PRE>
+</a><a name="1046591">
+<PRE>classes.INDENTEDNARROW.all.width = "60%";
+</PRE>
+</a><a name="1046594">
+<PRE>classes.INDENTEDNARROW.all.marginLeft = "20%";
+</PRE>
+</a><a name="1046051">
+<P>For a working example of setting the width of an element, see the section <a href="jss33.htm#1042942">Block-level Formatting Overview and Example</a>.</P>
+</a><a name="1010788">
+<PRE><B></B>
+</PRE>
+</a><a name="1010792">
+<HR>
+<h3 > Alignment</h3>
+</a><a name="1062719">
+<P>CSS syntax name: float</P>
+</a><a name="1062736">
+<P>JavaScript syntax name: align</P>
+</a><a name="1064959">
+<P> 
+<Table Border="3">
+<caption></caption>
+<tr><th><a name="1064936">
+ <p>
+</a></th><th><a name="1064938">
+ <p>
+</a></th></tr>
+<tr><td><a name="1064940">
+ Possible values: <p>
+</a></td><td><a name="1064942">
+ <code>left, right, none</code><p>
+</a></td></tr>
+<tr><td><a name="1064944">
+ Initial values: <p>
+</a></td><td><a name="1064946">
+ <code>none</code> <p>
+</a></td></tr>
+<tr><td><a name="1064948">
+ Applies to: <p>
+</a></td><td><a name="1064950">
+ all elements<p>
+</a></td></tr>
+<tr><td><a name="1064952">
+ Inherited: <p>
+</a></td><td><a name="1064954">
+ no<p>
+</a></td></tr>
+<tr><td><a name="1064956">
+ Percentage values: <p>
+</a></td><td><a name="1064958">
+ N/A<p>
+</a></td></tr>
+
+</Table>
+
+<Table>
+<tr><td>
+</Table>
+</P>
+</a><a name="1064960">
+<P>The <code>float</code> property (CSS syntax) and <code>align</code> property (JavaScript syntax) determine the alignment of an element within its parent. (Note that the<code> text-align</code>/<code>textAlign</code> property determines the alignment of the content of text elements.) </P>
+</a><a name="1061287">
+<P>The term <code>float</code> is a reserved word in JavaScript, which is why the JavaScript syntax uses the name <code>align</code> instead of <code>float </code>for this property.</P>
+</a><a name="1013086">
+<P>Using the <code>float</code>/<code>align</code> property, you can make an element float to the left or the right and indicate how other content wraps around it. </P>
+</a><a name="1011135">
+<P>If no value is specified, the default value is <code>none</code>. If the value is <code>none</code>, the element is displayed where it appears in the text. </P>
+</a><a name="1013064">
+<P>If the value is <code>left</code> or <code>right</code>, the element is displayed on the left or the right (after taking margin properties into account). Other content appears on the right or left side of the floating element. If the value is <code>left</code> or <code>right</code>, the element is treated as a block-level element.</P>
+</a><a name="1028593">
+<P>Using the <code>float</code>/<code>align</code> property, you can declare elements to be outside the normal flow of elements. For example, if the <code>float</code>/<code>align</code> property of an element is <code>left</code>, the normal flow wraps around on the right side. </P>
+</a><a name="1055449">
+<P>If you set an element's <code>float</code>/<code>align</code> property set, do not also specify margins for it. If you do, the wrapping effect will not work properly. However, if you want a floating element to have a left or right margin, you can put it inside another element, such as a <code>&lt;DIV&gt;</code> block, that has the desired margins.</P>
+</a><a name="1046817">
+<h4>CSS Syntax  &#32;Example</h4>
+</a><a name="1046870">
+<PRE>&lt;STYLE TYPE="text/css"&gt;
+</PRE>
+</a><a name="1046871">
+<PRE>H4 {
+</PRE>
+</a><a name="1046872">
+<PRE> &#32;width:70%;
+</PRE>
+</a><a name="1046873">
+<PRE> &#32;border-style:outset; 
+</PRE>
+</a><a name="1046966">
+<PRE> &#32;border-width:2pt;
+</PRE>
+</a><a name="1046875">
+<PRE> &#32;border-color:green; 
+</PRE>
+</a><a name="1046977">
+<PRE> &#32;background-color:rgb(70%, 90%, 80%);
+</PRE>
+</a><a name="1046876">
+<PRE> &#32;padding:5%;
+</PRE>
+</a><a name="1046877">
+<PRE> &#32;font-weight:bold;
+</PRE>
+</a><a name="1046878">
+<PRE>}
+</PRE>
+</a><a name="1046879">
+<PRE>H4.TEXTRIGHT {text-align:right; margin-right:30%;}
+</PRE>
+</a><a name="1046880">
+<PRE>H4.TEXTRIGHT_FLOATLEFT {text-align:right; float:left;}
+</PRE>
+</a><a name="1046881">
+<PRE>H4.FLOATRIGHT {float:right;}
+</PRE>
+</a><a name="1046882">
+<PRE>H4.FIXED_RIGHT_MARGIN {float:right; margin-right:30%;}
+</PRE>
+</a><a name="1046883">
+<PRE>&lt;/STYLE&gt;
+</PRE>
+</a><a name="1046986">
+<h4>JavaScript Syntax  &#32;Example</h4>
+</a><a name="1046995">
+<PRE>&lt;STYLE TYPE="text/javascript"&gt;
+</PRE>
+</a><a name="1047644">
+<PRE>with (tags.H4) {
+</PRE>
+</a><a name="1047645">
+<PRE> &#32;width="70%";
+</PRE>
+</a><a name="1047646">
+<PRE> &#32;borderStyle="outset";
+</PRE>
+</a><a name="1047664">
+<PRE> &#32;borderWidth="2pt";
+</PRE>
+</a><a name="1047665">
+<PRE> &#32;borderColor="green";
+</PRE>
+</a><a name="1047700">
+<PRE> &#32;backgroundColor = "rgb(70%, 90%, 80%)";
+</PRE>
+</a><a name="1047703">
+<PRE> &#32;paddings("5%");
+</PRE>
+</a><a name="1047704">
+<PRE> &#32;fontWeight="bold";
+</PRE>
+</a><a name="1047705">
+<PRE>}
+</PRE>
+</a><a name="1047708">
+<PRE>classes.TEXTRIGHT.H4.textAlign="right";
+</PRE>
+</a><a name="1047715">
+<PRE>classes.TEXTRIGHT.H4.marginRight="30%;"
+</PRE>
+</a><a name="1047709">
+<PRE>classes.TEXTRIGHT_FLOATLEFT.H4.textAlign="right";
+</PRE>
+</a><a name="1047723">
+<PRE>classes.TEXTRIGHT_FLOATLEFT.H4.align="left";}
+</PRE>
+</a><a name="1047710">
+<PRE>classes.FLOATRIGHT.H4.align="right"; 
+</PRE>
+</a><a name="1047711">
+<PRE>classes.FIXED_RIGHT_MARGIN.H4.align="right";
+</PRE>
+</a><a name="1047735">
+<PRE>classes.FIXED_RIGHT_MARGIN.H4.marginRight="30%";
+</PRE>
+</a><a name="1047712">
+<PRE>&lt;/STYLE&gt;
+</PRE>
+</a><a name="1046931">
+<h4>Style Sheet Use </h4>
+</a><a name="1046884">
+<PRE>&lt;BODY&gt;
+</PRE>
+</a><a name="1046885">
+<PRE>&lt;H4&gt;Level-Four Heading&lt;/H4&gt;
+</PRE>
+</a><a name="1046886">
+<PRE>&lt;P&gt;I am a plain paragraph, positioned below a non-floating level-four 
+heading.
+</PRE>
+</a><a name="1046887">
+<PRE>&lt;/P&gt;
+</PRE>
+</a><a name="1046888">
+<PRE>&lt;H4 CLASS=TEXTRIGHT&gt;H4 - My Text On Right, No Float&lt;/H4&gt;
+</PRE>
+</a><a name="1046889">
+<PRE>&lt;P&gt;I am also a plain paragraph, positioned below a non-floating level-
+four heading. It just happens that the heading above me has its text 
+alignment set to right.
+</PRE>
+</a><a name="1046892">
+<PRE>&lt;/P&gt;
+</PRE>
+</a><a name="1046893">
+<PRE>&lt;H4 CLASS = FLOATRIGHT&gt;H4 - Float = Right&lt;/H4&gt;
+</PRE>
+</a><a name="1046894">
+<PRE>&lt;P&gt;I am a regular paragraph. There's not much more you can say about me. 
+I am positioned after a level-four heading that is floating to the 
+right, so I come out positioned to the left of it.&lt;/P&gt;
+</PRE>
+</a><a name="1046898">
+<PRE>&lt;BR CLEAR&gt;
+</PRE>
+</a><a name="1046899">
+<PRE>&lt;H4 CLASS=TEXTRIGHT_FLOATLEFT&gt;H4 - My Text on Right, Float = Left &lt;/H4&gt;
+</PRE>
+</a><a name="1046900">
+<PRE>&lt;P&gt;I'm also just a plain old paragraph going wherever the flow takes me.
+</PRE>
+</a><a name="1046901">
+<PRE>&lt;/P&gt;
+</PRE>
+</a><a name="1046902">
+<PRE>&lt;BR CLEAR&gt;
+</PRE>
+</a><a name="1046903">
+<PRE>&lt;H4 CLASS=FIXED_RIGHT_MARGIN&gt;H4 - Float = Right, Fixed Right Margin&lt;/H4&gt;
+</PRE>
+</a><a name="1046904">
+<PRE>&lt;P&gt;Hello? Hello!! I am wrapping round an H4 that is floating to the right 
+and has a fixed right margin. When I try to satisfy all these requirements, 
+you see what happens! For best results, do not set the left and/or right 
+margin when you set the float (CSS syntax) or align (JavaScript syntax) 
+property. Use an enclosing element with margins instead.
+</PRE>
+</a><a name="1046909">
+<PRE>&lt;/P&gt;
+</PRE>
+</a><a name="1046910">
+<PRE>&lt;BR CLEAR&gt;
+</PRE>
+</a><a name="1055458">
+<PRE>&lt;DIV STYLE="margin-left:30%;"&gt;
+</PRE>
+</a><a name="1055494">
+<PRE>&lt;H4 CLASS = FLOATRIGHT&gt;H4 - Float = Right&lt;/H4&gt;
+</PRE>
+</a><a name="1055495">
+<PRE>&lt;P&gt;Notice how the heading next to me seems to have a right margin. 
+That's because we are both inside a DIV block that has a right margin.&lt;/
+P&gt;
+</PRE>
+</a><a name="1055496">
+<PRE>&lt;BR CLEAR&gt;
+</PRE>
+</a><a name="1055456">
+<PRE>&lt;/DIV&gt;
+</PRE>
+</a><a name="1046828">
+<PRE>&lt;/BODY&gt;
+</PRE>
+</a><a name="1047102">
+
+<P><SPAN STYLE="align:right;">
+<I><FONT COLOR="#404040"  size=-1>This example works in 
+Netscape Navigator 4.0+. </FONT></I></SPAN><B>
+Example results:</B> 
+</p>
+</a>
+<HR><a name="1047118">
+<H4 CLASS="EXAMPLE16"> Level-Four Heading</H4>
+</a><a name="1047119">
+<P>I am a plain paragraph, positioned below a non-floating level-four heading.</P>
+</a><a name="1047121">
+<H4 CLASS="EXAMPLE16A"> H4 - My Text On Right, No Float</H4>
+</a><a name="1047122">
+<P>I am also a plain paragraph, positioned below a non-floating level-four heading. It just happens that the heading above me has its text alignment set to right.</P>
+</a><a name="1047124">
+<H4 CLASS="EXAMPLE16B"> H4 - Float = Right</H4>
+</a><a name="1047125">
+<P>I am a regular paragraph. There's not much more you can say about me. I am positioned after a level-four heading that is floating to the right, so I come out positioned to the left of it.</P>
+</a><BR CLEAR><a name="1047127">
+<H4 CLASS="EXAMPLE16C"> H4 - My Text on Right, Float = Left</H4>
+</a><a name="1047128">
+<P>I'm also just a plain old paragraph going wherever the flow takes me.</P>
+</a><BR CLEAR><a name="1055428">
+<H4 CLASS="EXAMPLE16D"> H4 - Float = Right, Fixed Right Margin</H4>
+</a><a name="1047132">
+<P>Hello? Hello!! I am wrapping round an H4 that is floating to the right and has a fixed right margin. When I try to satisfy all these requirements, you see what happens! For best results, do not set the left and/or right margin when you set the float (CSS syntax) or align (JavaScript syntax) property. Use an enclosing element with margins instead.</P>
+</a><BR CLEAR><DIV CLASS="Example16"><a name="1055553">
+<H4 CLASS="EXAMPLE16B"> H4 - Float = Right</H4>
+</a><a name="1055554">
+<P>Notice how the heading next to me seems to have a right margin. That's because we are both inside a DIV block that has a right margin.</P>
+</a><BR CLEAR></DIV><a name="1062815">
+<HR>
+<h3 > Clear</h3>
+</a><a name="1062804">
+<P>CSS syntax name: <code>clear</code></P>
+</a><a name="1062826">
+<P>JavaScript syntax name: <code>clear</code></P>
+</a><a name="1062788">
+<P> 
+<Table Border="3">
+<caption></caption>
+<tr><th><a name="1062762">
+ <p>
+</a></th><th><a name="1062764">
+ <p>
+</a></th></tr>
+<tr><td><a name="1062766">
+ Possible values: <p>
+</a></td><td><a name="1062768">
+ <code>none, left, right, both</code><p>
+</a></td></tr>
+<tr><td><a name="1062773">
+ Initial value:<p>
+</a></td><td><a name="1062775">
+ <code>none</code><p>
+</a></td></tr>
+<tr><td><a name="1062777">
+ Applies to: <p>
+</a></td><td><a name="1062779">
+ all elements<p>
+</a></td></tr>
+<tr><td><a name="1062781">
+ Inherited: <p>
+</a></td><td><a name="1062783">
+ no<p>
+</a></td></tr>
+<tr><td><a name="1062785">
+ Percentage values: <p>
+</a></td><td><a name="1062787">
+ N/A<p>
+</a></td></tr>
+
+</Table>
+
+<Table>
+<tr><td>
+</Table>
+</P>
+</a><a name="1010820">
+<P>This property specifies whether an element allows floating elements on its sides. More specifically, the value of this property lists the sides where floating elements are not accepted. With <code>clear</code> set to <code>left</code>, an element will be moved below any floating element on the left side. With <code>clear</code> set to <code>none</code>, floating elements are allowed on all sides. </P>
+</a><a name="1013117">
+<P>Example:</P>
+</a><a name="1010666">
+<PRE>P {clear:left;}
+</PRE>
+</a><a name="1078179">
+<PRE>tags.H1.clear = "left";
+</PRE>
+</a><HR><a name="1011244">
+<h2> Color and Background Properties</h2>
+</a><a name="1013120">
+<P>Just as you can set color and background properties for a document as a whole, you can set them for block-level elements too. These properties are applied to the "box" that contains the element.</P>
+</a><a name="1062859">
+<HR>
+<h3 > Color</h3>
+</a><a name="1062889">
+<P>CSS syntax name: <code>color</code></P>
+</a><a name="1062899">
+<P>JavaScript syntax name: <code>color</code></P>
+</a><a name="1062898">
+<P> 
+<Table Border="3">
+<caption></caption>
+<tr><th><a name="1062862">
+ <p>
+</a></th><th><a name="1062864">
+ <p>
+</a></th></tr>
+<tr><td><a name="1062866">
+ Possible values: <p>
+</a></td><td><a name="1062868">
+ <I>color</I><p>
+</a></td></tr>
+<tr><td><a name="1062870">
+ Initial value: <p>
+</a></td><td><a name="1062872">
+ black<p>
+</a></td></tr>
+<tr><td><a name="1062874">
+ Applies to: <p>
+</a></td><td><a name="1062876">
+ all elements<p>
+</a></td></tr>
+<tr><td><a name="1062878">
+ Inherited: <p>
+</a></td><td><a name="1062880">
+ yes<p>
+</a></td></tr>
+<tr><td><a name="1062882">
+ Percentage values: <p>
+</a></td><td><a name="1062884">
+ N/A<p>
+</a></td></tr>
+
+</Table>
+
+<Table>
+<tr><td>
+</Table>
+</P>
+</a><a name="1062890">
+<P>This property describes the text color of an element, that is, the "foreground" color. </P>
+</a><a name="1013145">
+<P>See the section <a href="jss34.htm#1019827">Color Units</a> for information about how to specify colors.</P>
+</a><a name="1047781">
+<P>The following examples illustrate the ways to set the color to red.</P>
+</a><a name="1047753">
+<h4>CSS Syntax  &#32;Example</h4>
+</a><a name="1047770">
+<PRE>&lt;STYLE TYPE="text/css"&gt;
+</PRE>
+</a><a name="1047776">
+<PRE>EM {color:red;}
+</PRE>
+</a><a name="1047777">
+<PRE>B {color:rgb(255, 0, 0);}
+</PRE>
+</a><a name="1047778">
+<PRE>I {color:rgb(100%, 0%, 0%);}
+</PRE>
+</a><a name="1047779">
+<PRE>CODE {color:#FF0000;}
+</PRE>
+</a><a name="1047780">
+<PRE>&lt;/STYLE&gt;
+</PRE>
+</a><a name="1047752">
+<h4>JavaScript Syntax  &#32;Example</h4>
+</a><a name="1047798">
+<PRE>&lt;STYLE TYPE="text/javascript"&gt;
+</PRE>
+</a><a name="1047796">
+<PRE>tags.EM.color="red";
+</PRE>
+</a><a name="1047786">
+<PRE>tags.B.color="rgb(255, 0, 0)";
+</PRE>
+</a><a name="1047793">
+<PRE>tags.I.color="rgb(100%, 0%, 0%)";
+</PRE>
+</a><a name="1047794">
+<PRE>tags.CODE.color="#FF0000";
+</PRE>
+</a><a name="1047795">
+<PRE>&lt;/STYLE&gt;
+</PRE>
+</a><a name="1027897">
+<PRE>
+</PRE>
+</a><a name="1011262">
+<HR>
+<h3 > Background Image</h3>
+</a><a name="1062900">
+<P>CSS syntax name:<code> background-image</code></P>
+</a><a name="1062901">
+<P>JavaScript syntax name: <code>backgroundImage</code></P>
+</a><a name="1047801">
+<P> 
+<Table Border="1" >
+<caption></caption>
+<tr><th><a name="1028998">
+ <p>
+</a></th><th><a name="1029000">
+ <p>
+</a></th></tr>
+<tr><td><a name="1029107">
+ Possible values: <p>
+</a></td><td><a name="1029109">
+ <I>url</I><p>
+</a></td></tr>
+<tr><td><a name="1013157">
+ Initial value: <p>
+</a></td><td><a name="1013159">
+ empty<p>
+</a></td></tr>
+<tr><td><a name="1013161">
+ Applies to: <p>
+</a></td><td><a name="1013163">
+ all elements<p>
+</a></td></tr>
+<tr><td><a name="1013165">
+ Inherited: <p>
+</a></td><td><a name="1013167">
+ no<p>
+</a></td></tr>
+<tr><td><a name="1013169">
+ Percentage values: <p>
+</a></td><td><a name="1013171">
+ N/A<p>
+</a></td></tr>
+
+</Table>
+
+<Table>
+<tr><td>
+</Table>
+</P>
+</a><a name="1011270">
+<P>This property specifies the background image of an element. </P>
+</a><a name="1048548">
+<P>Partial URLs are interpreted relative to the source of the style sheet, not relative to the document.</P>
+</a><a name="1047818">
+<h4>CSS Syntax  &#32;Example</h4>
+</a><a name="1047858">
+<PRE>&lt;STYLE TYPE="text/css"&gt;
+</PRE>
+</a><a name="1047859">
+<PRE> &#32;H1.SPECIAL {
+</PRE>
+</a><a name="1047860">
+<PRE> &#32;background-image:url(images/glass2.gif);
+</PRE>
+</a><a name="1047861">
+<PRE> &#32;padding:20pt;
+</PRE>
+</a><a name="1047862">
+<PRE> &#32;color:yellow;
+</PRE>
+</a><a name="1047863">
+<PRE>}
+</PRE>
+</a><a name="1047864">
+<PRE>H2.SPECIAL {
+</PRE>
+</a><a name="1047865">
+<PRE> &#32;padding:20pt;
+</PRE>
+</a><a name="1047866">
+<PRE> &#32;background-color:#FFFF33;
+</PRE>
+</a><a name="1047867">
+<PRE> &#32;border-style:solid;
+</PRE>
+</a><a name="1047868">
+<PRE> &#32;border-width:1pt;
+</PRE>
+</a><a name="1047869">
+<PRE> &#32;border-color:black;
+</PRE>
+</a><a name="1047870">
+<PRE>}
+</PRE>
+</a><a name="1047871">
+<PRE>P.SPECIAL B {background-image:url(images/tile1a.gif); }
+</PRE>
+</a><a name="1047872">
+<PRE>P.SPECIAL I {background-color:cyan;}
+</PRE>
+</a><a name="1047827">
+<PRE>&lt;/STYLE&gt;
+</PRE>
+</a><a name="1047855">
+<h4>JavaScript Syntax  &#32;Example</h4>
+</a><a name="1048012">
+<PRE>&lt;STYLE TYPE="text/javascript"&gt;
+</PRE>
+</a><a name="1048013">
+<PRE>classes.SPECIAL.H1.backgroundImage = "images/glass2.gif";
+</PRE>
+</a><a name="1048015">
+<PRE>classes.SPECIAL.H1.paddings("20pt");
+</PRE>
+</a><a name="1048016">
+<PRE>classes.SPECIAL.H1.color="yellow";
+</PRE>
+</a><a name="1048054">
+<PRE>classes.SPECIAL.H2.paddings("20pt");
+</PRE>
+</a><a name="1048020">
+<PRE>classes.SPECIAL.H2.backgroundColor="FFFF33";
+</PRE>
+</a><a name="1048021">
+<PRE>classes.SPECIAL.H2.borderStyle="solid";
+</PRE>
+</a><a name="1048022">
+<PRE>classes.SPECIAL.H2.borderWidth="1pt";
+</PRE>
+</a><a name="1048023">
+<PRE>classes.SPECIAL.H2.borderColor="black";
+</PRE>
+</a><a name="1048076">
+<PRE>contextual(classes.SPECIAL.P, tags.B).backgroundImage=
+</PRE>
+</a><a name="1048088">
+<PRE> &#32; &#32;"images/tile1a.gif";
+</PRE>
+</a><a name="1048077">
+<PRE>contextual(classes.SPECIAL.P, tags.I).backgroundColor="cyan";
+</PRE>
+</a><a name="1048027">
+<PRE>&lt;/STYLE&gt;
+</PRE>
+</a><a name="1047890">
+<h4>Style Sheet Use </h4>
+</a><a name="1047893">
+<PRE>&lt;H1 CLASS=SPECIAL&gt;Heading One with Image Background&lt;/H1&gt;
+</PRE>
+</a><a name="1047894">
+<PRE>&lt;P CLASS=SPECIAL&gt;
+</PRE>
+</a><a name="1047895">
+<PRE>Hello. Notice how the portion of this paragraph that has an &lt;B&gt;image 
+background&lt;/B&gt; is promoted to being a block-level element on its own 
+line.&lt;/P&gt;
+</PRE>
+</a><a name="1047897">
+<PRE>&lt;H2 CLASS=SPECIAL&gt;Heading Two with Solid Color Background&lt;/H2&gt;
+</PRE>
+</a><a name="1047898">
+<PRE>&lt;P CLASS=SPECIAL&gt;Hello, here is some &lt;I&gt;very interesting&lt;/I&gt; 
+information. Notice that each &lt;I&gt;colored portion&lt;/I&gt; of this paragraph 
+just continues right along in its normal place.
+</PRE>
+</a><a name="1047891">
+<PRE>&lt;/P&gt;
+</PRE>
+</a><a name="1047946">
+
+<P><SPAN STYLE="align:right;">
+<I><FONT COLOR="#404040"  size=-1>This example works in 
+Netscape Navigator 4.0+. </FONT></I></SPAN><B>
+Example results:</B> 
+</p>
+</a>
+<HR><a name="1047948">
+<H1 CLASS="EXAMPLE17"> Heading One with Image Background</H1>
+</a><a name="1047925">
+<P CLASS="EXAMPLE17"> Hello. Notice how the portion of this paragraph that has an <B>image background</B> is promoted to being a block-level element on its own line.</P>
+</a><a name="1047927">
+<H2 CLASS="EXAMPLE17"> Heading Two with Solid Color Background</H2>
+</a><a name="1047928">
+<P CLASS="EXAMPLE17"> Hello, here is some <I>very interesting</I> information. Notice that each <I>colored portion</I> of this paragraph just continues right along in its normal place.</P>
+</a><a name="1011277">
+<HR>
+<h3 > Background Color</h3>
+</a><a name="1062907">
+<P>CSS syntax name:<code> background-color</code></P>
+</a><a name="1063084">
+<P>JavaScript syntax name: <code>backgroundColor</code></P>
+</a><a name="1063129">
+<P> 
+<Table Border="1" >
+<caption></caption>
+<tr><th><a name="1029002">
+ <p>
+</a></th><th><a name="1029004">
+ <p>
+</a></th></tr>
+<tr><td><a name="1029111">
+ Possible Values:<p>
+</a></td><td><a name="1029113">
+ <I>color</I><p>
+</a></td></tr>
+<tr><td><a name="1013196">
+ Initial value: <p>
+</a></td><td><a name="1013198">
+ empty<p>
+</a></td></tr>
+<tr><td><a name="1013200">
+ Applies to: <p>
+</a></td><td><a name="1013202">
+ all elements<p>
+</a></td></tr>
+<tr><td><a name="1013204">
+ Inherited: <p>
+</a></td><td><a name="1013206">
+ no<p>
+</a></td></tr>
+<tr><td><a name="1013208">
+ Percentage values: <p>
+</a></td><td><a name="1013210">
+ N/A<p>
+</a></td></tr>
+
+</Table>
+
+<Table>
+<tr><td>
+</Table>
+</P>
+</a><a name="1011285">
+<P>This property specifies a solid background color for an element.</P>
+</a><a name="1048119">
+<P>See the previous section, <a href="jss34.htm#1011262">Background Image</a>, for a working example.</P>
+</a><HR><a name="1048121">
+<h2> Classification Properties</h2>
+</a><a name="1048122">
+<P>These properties classify elements into categories more than they set specific visual parameters.</P>
+</a><a name="1063137">
+<HR>
+<h3 > Display</h3>
+</a><a name="1063144">
+<P>CSS syntax name: <code>display</code></P>
+</a><a name="1063145">
+<P>JavaScript syntax name: <code>display</code></P>
+</a><a name="1048270">
+<P> 
+<Table Border="1" >
+<caption></caption>
+<tr><th><a name="1029006">
+ <p>
+</a></th><th><a name="1029008">
+ <p>
+</a></th></tr>
+<tr><td><a name="1029115">
+ Possible values:, <p>
+</a></td><td><a name="1029117">
+ <code>block, inline, list-item</code><p>
+</a><a name="1029120">
+ <code>none</code><p>
+</a></td></tr>
+<tr><td><a name="1013221">
+ Initial value: <p>
+</a></td><td><a name="1013223">
+ according to HTML<p>
+</a></td></tr>
+<tr><td><a name="1013225">
+ Applies to: <p>
+</a></td><td><a name="1013227">
+ all elements<p>
+</a></td></tr>
+<tr><td><a name="1013229">
+ Inherited: <p>
+</a></td><td><a name="1013231">
+ no<p>
+</a></td></tr>
+<tr><td><a name="1013233">
+ Percentage values: <p>
+</a></td><td><a name="1013235">
+ N/A<p>
+</a></td></tr>
+
+</Table>
+
+<Table>
+<tr><td>
+</Table>
+</P>
+</a><a name="1011383">
+<P>This property indicates whether an element is inline (for example, <code>&lt;EM&gt;</code> in HTML), block-level element (for example. <code>&lt;H1&gt;</code> in HTML), or a block-level list item (for example, <code>&lt;LI&gt;</code> in HTML). For HTML documents, the initial value is taken from the HTML specification.</P>
+</a><a name="1011386">
+<P>A value of <code>none</code> turns off the display of the element, including children elements and the surrounding box. (Thus if the value is set to <code>none</code>, the element is not be displayed.)</P>
+</a><a name="1048133">
+<P>Note that block-level elements do not seem to respond to having their display property set to <code>inline</code>.</P>
+</a><a name="1048129">
+<h4>CSS Syntax  &#32;Example</h4>
+</a><a name="1048130">
+<PRE>EM.LISTEM {display:list-item;}
+</PRE>
+</a><a name="1048132">
+<h4>JavaScript Syntax  &#32;Example</h4>
+</a><a name="1048140">
+<PRE>classes.LISTEM.EM.display="list-item";
+</PRE>
+</a><a name="1026113">
+<HR>
+<h3 > List Style Type</h3>
+</a><a name="1063298">
+<P>CSS syntax name:<code> list-style-type</code></P>
+</a><a name="1063340">
+<P>JavaScript syntax name: <code>listStyleType</code></P>
+</a><a name="1048271">
+<P> 
+<Table Border="1" >
+<caption></caption>
+<tr><th><a name="1029010">
+ <p>
+</a></th><th><a name="1029012">
+ <p>
+</a></th></tr>
+<tr><td><a name="1029122">
+ Possible values: <p>
+</a></td><td><a name="1029124">
+ <code>disc, circle, square, decimal, lower-roman, upper-roman, lower-alpha, upper-alpha, none</code><p>
+</a></td></tr>
+<tr><td><a name="1026098">
+ Initial value: <p>
+</a></td><td><a name="1026100">
+ <code>disc</code> <p>
+</a></td></tr>
+<tr><td><a name="1026102">
+ Applies to: <p>
+</a></td><td><a name="1026104">
+ elements with <code>display</code> property value of <code>list-item</code><p>
+</a></td></tr>
+<tr><td><a name="1026106">
+ Inherited: <p>
+</a></td><td><a name="1026108">
+ yes<p>
+</a></td></tr>
+<tr><td><a name="1026110">
+ Percentage values: <p>
+</a></td><td><a name="1026112">
+ N/A<p>
+</a></td></tr>
+
+</Table>
+
+<Table>
+<tr><td>
+</Table>
+</P>
+</a><a name="1026114">
+<P>This property describes how list items (that is, elements with a <code>display</code> value of <code>list-item</code>) are formatted.</P>
+</a><a name="1026115">
+<P>This property can be set on any element, and its children will inherit the value. However, the list style is only displayed on elements that have a <code>display</code> value of <code>list-item</code>. In HTML this is typically the case for the <code>&lt;LI&gt;</code> element.</P>
+</a><a name="1048277">
+<h4>CSS Syntax  &#32;Example</h4>
+</a><a name="1048393">
+<PRE>&lt;STYLE TYPE="text/css"&gt;
+</PRE>
+</a><a name="1048394">
+<PRE>UL.BLUELIST {color:blue;}
+</PRE>
+</a><a name="1048395">
+<PRE>UL.BLUELIST LI {color:aqua;list-style-type:square;}
+</PRE>
+</a><a name="1048396">
+<PRE>OL.REDLIST {color:red;}
+</PRE>
+</a><a name="1048397">
+<PRE>OL.REDLIST LI {color:magenta; list-style-type:upper-roman;}
+</PRE>
+</a><a name="1048374">
+<PRE>&lt;/STYLE&gt;
+</PRE>
+</a><a name="1048500">
+<h4>JavaScript Syntax  &#32;Example</h4>
+</a><a name="1048501">
+<PRE>&lt;STYLE TYPE="text/javascript"&gt;
+</PRE>
+</a><a name="1048502">
+<PRE>classes.BLUELIST.UL.color="blue";
+</PRE>
+</a><a name="1048503">
+<PRE>contextual(classes.BLUELIST.UL, tags.LI).color="aqua";
+</PRE>
+</a><a name="1048509">
+<PRE>contextual(classes.BLUELIST.UL, tags.LI).listStyleType="square";
+</PRE>
+</a><a name="1048514">
+<PRE>classes.REDLIST.OL.color="red";
+</PRE>
+</a><a name="1048515">
+<PRE>contextual(classes.REDLIST.OL, tags.LI).color="magenta";
+</PRE>
+</a><a name="1048516">
+<PRE>contextual(classes.REDLIST.OL, tags.LI).listStyleType="upper-roman";
+</PRE>
+</a><a name="1048523">
+<PRE>&lt;/STYLE&gt;
+</PRE>
+</a><a name="1048507">
+<PRE>
+</PRE>
+</a><a name="1048416">
+<h4>Style Sheet Use </h4>
+</a><a name="1048436">
+<PRE>&lt;UL CLASS=BLUELIST&gt; &lt;!-- LI elements inherit from UL --&gt;
+</PRE>
+</a><a name="1048437">
+<PRE>&lt;LI&gt;Consulting
+</PRE>
+</a><a name="1048438">
+<PRE>&lt;LI&gt;Development
+</PRE>
+</a><a name="1048439">
+<PRE>&lt;LI&gt;Technology integration
+</PRE>
+</a><a name="1048440">
+<PRE>&lt;/UL&gt;
+</PRE>
+</a><a name="1048441">
+<PRE>&lt;OL CLASS=REDLIST&gt; &lt;!-- LI elements inherit from OL --&gt;
+</PRE>
+</a><a name="1048442">
+<PRE>&lt;LI&gt;Start the program.
+</PRE>
+</a><a name="1048443">
+<PRE>&lt;LI&gt;Enter your user name and password.
+</PRE>
+</a><a name="1048444">
+<PRE>&lt;LI&gt;From the File menu, choose the Magic command.
+</PRE>
+</a><a name="1048430">
+<PRE>&lt;/OL&gt;
+</PRE>
+</a><a name="1048454">
+
+<P><SPAN STYLE="align:right;">
+<I><FONT COLOR="#404040"  size=-1>This example works in 
+Netscape Navigator 4.0+. </FONT></I></SPAN><B>
+Example results:</B> 
+</p>
+</a>
+<HR><UL CLASS="EXAMPLE18"> 
+<li>Consulting
+<li>Development
+<li>Technology integration
+</UL><OL CLASS="EXAMPLE18"> 
+<li>Start the program.
+<li>Enter your user name and password.
+<li>From the File menu, choose the Magic command.
+</OL><a name="1011424">
+<HR>
+<h3 > White Space</h3>
+</a><a name="1063351">
+<P>CSS syntax name: <code>white-space</code></P>
+</a><a name="1063408">
+<P>JavaScript syntax name: <code>whiteSpace</code></P>
+</a><a name="1063412">
+<P> 
+<Table Border="1" >
+<caption></caption>
+<tr><th><a name="1029014">
+ <p>
+</a></th><th><a name="1029016">
+ <p>
+</a></th></tr>
+<tr><td><a name="1029134">
+ Possible values: <p>
+</a></td><td><a name="1029136">
+ <code>normal, pre</code><p>
+</a></td></tr>
+<tr><td><a name="1013341">
+ Initial value: <p>
+</a></td><td><a name="1013343">
+ according to HTML<p>
+</a></td></tr>
+<tr><td><a name="1013345">
+ Applies to: <p>
+</a></td><td><a name="1013347">
+ block-level elements<p>
+</a></td></tr>
+<tr><td><a name="1013349">
+ Inherited: <p>
+</a></td><td><a name="1013351">
+ yes<p>
+</a></td></tr>
+<tr><td><a name="1013353">
+ Percentage values: <p>
+</a></td><td><a name="1013355">
+ N/A<p>
+</a></td></tr>
+
+</Table>
+
+<Table>
+<tr><td>
+</Table>
+</P>
+</a><a name="1011432">
+<P>This property declares how white space inside the element should be handled. The choices are:</P>
+</a><ul><a name="1013367">
+<li><code>normal</code> (white space is collapsed), 
+</a><a name="1013368">
+<li><code>pre </code>(behaves like the <code>&lt;PRE&gt;</code> element in HTML) .
+</a></ul><a name="1011369">
+<P>For example:</P>
+</a><a name="1013372">
+<PRE> &#32;P.KEEPSPACES {white-space:pre;} /* CSS syntax */
+</PRE>
+</a><a name="1048524">
+<PRE> &#32;classes.KEEPSPACES.P.whiteSpace = "pre"; /* JavaScript syntax */
+</PRE>
+</a><HR><a name="1019778">
+<h1> Units</h1>
+</a><a name="1048593">
+<P>This section discusses units of measurement.</P>
+</a><a name="1019780">
+<h2> Length Units</h2>
+</a><a name="1019782">
+<P>The format of a length value is an optional sign character ('+' or '-', with '+' being the default) immediately followed by a number followed by a unit of measurement. For example, <code>12pt</code>, <code>2em</code>, <code>3mm</code>.</P>
+</a><a name="1019789">
+<P>There are three types of length units: relative, pixel and absolute. Relative units specify a length relative to another length property. Style sheets that use relative units will scale more easily from one medium to another (for example, from a computer display to a laser printer). Percentage units and keyword values (such as <code>x-large</code>) offer similar advantages.</P>
+</a><a name="1019793">
+<P>Child elements inherit the computed value, not the relative value, for example:</P>
+</a><a name="1027970">
+<PRE>BODY {font-size:12pt; text-indent:3em;}
+</PRE>
+</a><a name="1027973">
+<PRE>H1 {font-size:15pt;}
+</PRE>
+</a><a name="1048623">
+<P>In the example above, the text indent value of <code>H1</code> elements will be 36pt, not 45pt.</P>
+</a><a name="1048624">
+<P>The following relative units are supported:</P>
+</a><ul><a name="1048625">
+<li><code>em</code> -- the height of the element's font, typically the width or height of the capital letter M
+</a><a name="1048626">
+<li><code>ex</code> -- half the height of the element's font, which is typically the height of the letter 'x'
+</a><a name="1027976">
+<li><code>px</code> -- pixels, relative to rendering surface
+</a></ul><a name="1019816">
+<P>The following absolute units are supported:</P>
+</a><ul><a name="1048645">
+<li><code>pt</code> -- points
+</a><a name="1048646">
+<li><code>pc</code> -- picas
+</a><a name="1061193">
+<li><code>px</code> -- pixels
+</a><a name="1061194">
+<li><code>in</code> -- inches
+</a><a name="1061195">
+<li><code>mm</code> -- millimeters
+</a><a name="1061196">
+<li><code>cm</code> -- centimeters
+</a></ul><a name="1019827">
+<h2> Color Units</h2>
+</a><a name="1019829">
+<P>A color value is a either a color name or a numerical RGB specification.</P>
+</a><a name="1019831">
+<P>The suggested list of color names is: aqua, black, blue, fuchsia, gray, green, lime, maroon, navy, olive, purple, red, silver, teal, white, and yellow. These 16 colors are taken from the Windows VGA palette and will also be used in HTML 3.2.</P>
+</a><a name="1027986">
+<PRE>tags.BODY.color = "black";
+</PRE>
+</a><a name="1027987">
+<PRE>tags.backgroundColor = "white";
+</PRE>
+</a><a name="1027988">
+<PRE>tags.H1.color = "maroon";
+</PRE>
+</a><a name="1027989">
+<PRE>tags.H2.color = "olive";
+</PRE>
+</a><a name="1019842">
+<P>You can specify an RGB color by a six digit hexadecimal number where the first two digits indicate the red value, the second two digits indicate the green value, and the last two digits indicate the blue value. For example:</P>
+</a><a name="1020051">
+<PRE>BODY {color: #FF0000}; /* red */
+</PRE>
+</a><a name="1027991">
+<PRE>BODY {background-color:#333333";} /* gray */
+</PRE>
+</a><a name="1048659">
+<P>You can also specify an RGB color by using the<code> rgb</code>() function which takes three arguments, for the red, green, and blue values. Each color value can either be an integer from 0 to 255 inclusive, or a percentage, as in this example:</P>
+</a><a name="1048664">
+<PRE>P {color: rgb(200, 20, 240);) /* bright purple */
+</PRE>
+</a><a name="1048661">
+<PRE>BLOCKQUOTE {background-color: rgb(100%, 100%, 20%); /* bright yellow */
+</PRE>
+</a>
+<HR SIZE=4>
+ 
+<FONT SIZE=-1>
+<a href="contents.htm">[Contents]</a> <a href="jss33.htm">[Prev page]</a> <a href="jss35.htm">[Next page]</a> <a href="dynamici.htm">[Index]</a>
+</FONT>
+
+
+
+
+
+<P ALIGN=right>
+<FONT SIZE=-2><I>Last Updated:  08/07/97 15:21:45
+</I></FONT>
+
+
+<HR SIZE=4>
+
+
+<P> <CENTER>Copyright © 1997
+<A HREF="cpyrt.htm"
+TARGET=_top>Netscape Communications Corporation</A></FONT>
+</CENTER>
+</P>
+</BODY>
+</HTML>
+
+
+
+</body>
+</html>

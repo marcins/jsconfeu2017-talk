@@ -1,0 +1,253 @@
+<HTML>
+<HEAD>
+<TITLE>Expanding Layer Example</TITLE>
+
+
+</HEAD>
+<BODY>
+
+
+
+<STYLE TYPE="text/css">
+ P {margin-left:10%; margin-right:10%;}
+ H3 {text-align:center; margin-top:4%;}
+</STYLE>
+
+
+<SCRIPT>
+
+var maxclip = 200;
+var minclip = 0;
+
+var maxclipcontracted = 150;
+var minclipcontracted = 50;
+
+var delta = 10;
+
+function initializeTopLeft(n)
+{
+    var thislayer = document.layers[n];
+
+    thislayer.status = "waitingToExpand";
+    thislayer.clip.top = maxclipcontracted;
+    thislayer.clip.left = maxclipcontracted;
+    thislayer.clip.bottom = maxclip;
+    thislayer.clip.right = maxclip;
+
+    thislayer.dleft = -delta;
+    thislayer.dtop = -delta;
+    thislayer.dbottom = 0;
+    thislayer.dright = 0;
+
+    thislayer.myposition = "topLeft";
+    thislayer.mysource="point1.htm"
+    thislayer.mytext="<LAYER TOP=160 LEFT=168><H1>1</H1></LAYER>"
+
+    return false;
+}
+
+function initializeTopRight(n)
+{
+    var thislayer = document.layers[n];
+
+    thislayer.status = "waitingToExpand";
+    thislayer.clip.top = maxclipcontracted;
+    thislayer.clip.right = minclipcontracted;
+    thislayer.clip.bottom = maxclip;
+    thislayer.clip.left = minclip;
+    thislayer.dleft = 0;
+    thislayer.dtop = -delta;
+    thislayer.dbottom = 0;
+    thislayer.dright = delta;
+
+    thislayer.myposition = "topRight";
+
+    thislayer.mysource="point2.htm"
+    thislayer.mytext="<LAYER TOP=160 LEFT=18><H1>2</H1></LAYER>"
+
+
+    return false;
+}
+
+function initializeBottomLeft(n)
+{
+    var thislayer = document.layers[n];
+
+    thislayer.status = "waitingToExpand";
+    thislayer.clip.bottom = minclipcontracted;
+    thislayer.clip.left = maxclipcontracted;
+    thislayer.clip.top = minclip;
+    thislayer.clip.right = maxclip;
+    thislayer.dleft = -delta;
+    thislayer.dtop = 0;
+    thislayer.dbottom = delta;
+    thislayer.dright = 0;
+
+    thislayer.myposition = "bottomLeft";
+
+    thislayer.mysource="point3.htm"
+    thislayer.mytext="<LAYER TOP=6 LEFT=168><H1>3</H1></LAYER>"
+
+    return false;
+}
+
+function initializeBottomRight(n)
+{
+    var thislayer = document.layers[n];
+
+    thislayer.status = "waitingToExpand";
+    thislayer.clip.bottom = minclipcontracted;
+    thislayer.clip.right = minclipcontracted;
+    thislayer.clip.top = minclip;
+    thislayer.clip.left = minclip;
+    thislayer.dleft = 0;
+    thislayer.dtop = 0;
+    thislayer.dbottom = delta;
+    thislayer.dright = delta;
+
+    thislayer.myposition = "bottomRight";
+   thislayer.mysource="point4.htm"
+   thislayer.mytext="<LAYER TOP=6 LEFT=18><H1>4</H1></LAYER>"
+    return false;
+}
+
+function changeNow (n)
+{
+    var thislayer = document.layers[n];
+
+    if (thislayer.status == "waitingToExpand")
+    {
+        thislayer.src=thislayer.mysource;
+        expand(n);
+        }
+        else if (thislayer.status == "waitingToContract")
+        {
+             contract(n);
+        }
+    return false;
+}
+
+
+
+
+
+function expand (n)
+{
+    var thislayer = document.layers[n];
+    thislayer.status = "expanding";
+
+    thislayer.clip.left=thislayer.clip.left+thislayer.dleft;
+    thislayer.clip.right=thislayer.clip.right+thislayer.dright;
+    thislayer.clip.bottom=thislayer.clip.bottom+thislayer.dbottom;
+    thislayer.clip.top=thislayer.clip.top+thislayer.dtop;
+
+    // is the layer fully contracted? True if:
+    // the square is the top OR bottom left AND its clip left
+    //  is less than or equal the minimum clip for contracted squares
+    // OR the square is the top OR bottom right AND its clip right
+    // is greater than or equal the max clip for contracted squares
+
+
+    if (
+        (((thislayer.myposition == "topLeft") |
+            (thislayer.myposition == "bottomLeft")) &&
+            (thislayer.clip.left >= minclip)) ||
+        (((thislayer.myposition == "topRight") |
+          (thislayer.myposition == "bottomRight")) &&
+            (thislayer.clip.right <= maxclip))
+            )
+        {
+        setTimeout("expand(" + n + ")", 50);
+    }
+    else
+    {
+
+    thislayer.status = "waitingToContract";
+    }
+return false;
+}
+
+
+function contract (n)
+{
+    var thislayer = document.layers[n];
+    thislayer.status = "contracting";
+
+    thislayer.clip.left=thislayer.clip.left-thislayer.dleft;
+    thislayer.clip.right=thislayer.clip.right-thislayer.dright;
+    thislayer.clip.bottom=thislayer.clip.bottom-thislayer.dbottom;
+    thislayer.clip.top=thislayer.clip.top-thislayer.dtop;
+
+    if (
+        (((thislayer.myposition == "topLeft") |
+            (thislayer.myposition == "bottomLeft")) &&
+            (thislayer.clip.left < minclipcontracted)) ||
+        (((thislayer.myposition == "topRight") |
+          (thislayer.myposition == "bottomRight")) &&
+            (thislayer.clip.right > maxclipcontracted))
+            )
+            {
+        setTimeout("contract(" + n + ")", 50);
+    }
+    else {
+        thislayer.status = "waitingToExpand";
+    thislayer.document.write(thislayer.mytext);
+    thislayer.document.close();
+}
+return false;
+}
+
+
+</SCRIPT>
+
+
+<BODY>
+<LAYER ID="topleftblock" top=50 left=50
+  width=200 height=200
+  BGcolor="#FF5555"
+  onLoad = initializeTopLeft(0);
+  onMouseOver=changeNow(0); >
+  <LAYER TOP=160 LEFT=168>
+    <H1>1</H1>
+  </LAYER>
+</LAYER>
+
+<LAYER ID="toprightblock" top=50 left=250
+  width=200 height=200
+  BGcolor="#5555FF"
+  onLoad = initializeTopRight(1);
+  onMouseOver="changeNow(1);"
+  >
+  <LAYER TOP=160 LEFT=18>
+    <H1>2</H1>
+  </LAYER>
+</LAYER>
+
+<LAYER ID="bottomleftblock" top=250 left=50
+  width=200 height=200
+  BGcolor="#55FF55"
+  onLoad = initializeBottomLeft(2);
+  onMouseOver="changeNow(2);"
+  >
+  <LAYER TOP=6 LEFT=168>
+    <H1>3</H1>
+  </LAYER>
+</LAYER>
+
+<LAYER ID="bottomrightblock" top=250 left=250
+  width=200 height=200
+  BGcolor="#FFFF55"
+  onLoad = initializeBottomRight(3);
+  onMouseOver=changeNow(3);
+  >
+  <LAYER TOP=6 LEFT=18>
+      <H1>4</H1>
+  </LAYER>
+</LAYER>
+
+<LAYER TOP=500>
+<P></P>
+</LAYER>
+
+</BODY>
+</HTML>

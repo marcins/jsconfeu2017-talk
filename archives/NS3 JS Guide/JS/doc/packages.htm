@@ -1,0 +1,749 @@
+<BODY BGCOLOR="#FFFFFF">
+<A NAME="1005814">
+<P>
+</A><A NAME="1005816">
+<P>
+</A><A NAME="1003191">
+<H1>The Netscape packages
+</H1>
+</A>
+
+<A NAME="1008943">
+
+<img src="graphics/packagea.gif">
+
+iveConnect has two applet API packages: <I>netscape.javascript</I> and <I>netscape.plugin.</I><P></A>
+<A NAME="1007443">
+The <I>netscape.javascript</I><B> </B>applet API package has the following classes:<P></A>
+<ul><A NAME="1007447">
+<LI><I><a href="packages.htm#1007459">netscape.javascript.JSObject</a></I>
+</A><A NAME="1007451">
+<LI><I><a href="packages.htm#1007527">netscape.javascript.JSException</a></I>
+</A></ul><A NAME="1007452">
+The <I>netscape.plugin</I><B> </B>applet API package has the following classes:<P></A>
+<ul><A NAME="1007456">
+<LI><I><a href="packages.htm#1007555">netscape.plugin.Plugin</a></I>
+</A></ul><A NAME="1007457">
+The following sections describe these classes and list their constructors and methods.<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="netscape.javascript.JSObject"></A>
+<A NAME="1007459">
+<H1> netscape.javascript.JSObject</H1>
+</A>
+<A NAME="1007460">
+The public final class <I>JSObject</I> extends <I>Object.</I><P></A>
+<A NAME="1007461">
+<PRE>java.lang.Object<br>&nbsp;&nbsp;&nbsp;|<br>&nbsp;&nbsp;&nbsp;+----netscape.javascript.JSObject</PRE>
+</A>
+<A NAME="1007462">
+<I>JSObject</I> allows Java to manipulate objects that are defined in JavaScript. Values passed from Java to JavaScript are converted as follows:<P></A>
+<ul><A NAME="1007463">
+<LI><I>JSObject</I> is converted to the original JavaScript object.
+</A><A NAME="1007464">
+<LI>Any other Java object is converted to a JavaScript wrapper, which can be used to access methods and fields of the Java object. Converting this wrapper to a string will call the <B>toString</B> method on the original object, converting to a number will call the <B>floatValue</B> method if possible and fail otherwise. Converting to a boolean will try to call the <B>booleanValue</B> method in the same way.
+</A><A NAME="1007465">
+<LI>Java arrays are wrapped with a JavaScript object that understands <I>array.length</I> and <I>array[index].</I>
+</A><A NAME="1007466">
+<LI>A Java boolean is converted to a JavaScript boolean.
+</A><A NAME="1007467">
+<LI>Java byte, char, short, int, long, float, and double are converted to JavaScript numbers.
+</A></ul><A NAME="1007468">
+Values passed from JavaScript to Java are converted as follows:<P></A>
+<ul><A NAME="1007469">
+<LI>Objects that are wrappers around Java objects are unwrapped.
+</A><A NAME="1007470">
+<LI>Other objects are wrapped with a <I>JSObject.</I>
+</A><A NAME="1007471">
+<LI>Strings, numbers, and booleans are converted to String, Float, and Boolean objects respectively.
+</A></ul><A NAME="1007472">
+This means that all JavaScript values show up as some kind of <I>java.lang.Object</I> in Java. In order to make much use of them, you will have to cast them to the appropriate subclass of <I>Object,</I> as shown in the following examples:<P></A>
+<A NAME="1009420">
+<PRE>(String) window.getMember("name")<br>(JSObject) window.getMember("document")</PRE>
+</A>
+
+<a name="1010706">
+<B><blockquote>Note
+</blockquote></B>
+</a>
+
+<a name="1010711">
+<blockquote>If you call a Java method from JavaScript, this conversion happens automatically--you can pass in "int" argument and it works.
+</blockquote>
+</a>
+
+<A NAME="Methods and static methods"></A>
+<A NAME="1007473">
+<H2> Methods and static methods</H2>
+</A>
+
+<A NAME="1007474">
+The <I>netscape.javascript.JSObject</I> class has the following methods:
+
+<P><TABLE BORDER="2">
+<CAPTION></CAPTION>
+<tr align=left valign=bottom><th><b><A NAME="1007482">
+Method</A><B><th><b><A NAME="1007484">
+Description</A><B>
+<tr align=left valign=top><td><A NAME="1007486">
+<B><a href="packages.htm#1013126">call</a>
+</B></A><BR>
+
+<td><A NAME="1007488">
+Calls a JavaScript method
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1007490">
+<B><a href="packages.htm#1013136">eval</a>
+</B></A><BR>
+
+<td><A NAME="1007492">
+Evaluates a JavaScript expression
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1007498">
+<B><a href="packages.htm#1013146">getMember</a>
+</B></A><BR>
+
+<td><A NAME="1007500">
+Retrieves a named member of a JavaScript object
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1007502">
+<B><a href="packages.htm#1013156">getSlot</a>
+</B></A><BR>
+
+<td><A NAME="1007504">
+Retrieves an indexed member of a JavaScript object
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1007510">
+<B><a href="packages.htm#1014298">removeMember</a>
+</B></A><BR>
+
+<td><A NAME="1007512">
+Removes a named member of a JavaScript object
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1007514">
+<B><a href="packages.htm#1014308">setMember</a>
+</B></A><BR>
+
+<td><A NAME="1007516">
+Sets a named member of a JavaScript object
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1007518">
+<B><a href="packages.htm#1014318">setSlot</a>
+</B></A><BR>
+
+<td><A NAME="1007520">
+Sets an indexed member of a JavaScript object
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1007522">
+<B><a href="packages.htm#1014328">toString</a>
+</B></A><BR>
+
+<td><A NAME="1007524">
+Converts a <I>JSObject</I> to a string
+</A><BR>
+
+
+
+
+</TABLE>
+
+<TABLE>
+<TR><TD>
+</TABLE>
+
+
+<P></A>
+<A NAME="1010790">
+The <I>netscape.javascript.JSObject</I> class has the following static methods:
+
+<P><TABLE BORDER="2">
+<CAPTION></CAPTION>
+<tr align=left valign=bottom><th><b><A NAME="1010724">
+Method</A><B><th><b><A NAME="1010726">
+Description</A><B>
+<tr align=left valign=top><td><A NAME="1010759">
+<B><a href="packages.htm#1013512">getWindow</a>
+</B></A><BR>
+
+<td><A NAME="1010761">
+Gets a <I>JSObject</I> for the window containing the given applet
+</A><BR>
+
+
+
+
+</TABLE>
+
+<TABLE>
+<TR><TD>
+</TABLE>
+
+
+<P></A>
+<A NAME="1014694">
+The following sections show the declaration and usage of these methods.<P></A>
+
+<A NAME="call"></A>
+<A NAME="1013126">
+<H2> call</H2>
+</A>
+
+<A NAME="1013127">
+Method. Calls a JavaScript method. Equivalent to "this.<I>methodName</I>(<I>args</I>[0], <I>args</I>[1], ...)" in JavaScript.<P></A>
+
+</UL><A NAME="Declaration
+"></A>
+<A NAME="1013128">
+<H4> Declaration
+</H4>
+</A>
+
+<A NAME="1013129">
+<PRE>public Object call(String methodName,<br>&nbsp;&nbsp;&nbsp;Object args[])</PRE>
+</A>
+
+<A NAME="eval"></A>
+<A NAME="1013136">
+<H2> eval</H2>
+</A>
+
+<A NAME="1013137">
+Method. Evaluates a JavaScript expression. The expression is a string of JavaScript source code which will be evaluated in the context given by "this".<P></A>
+
+</UL><A NAME="Declaration
+"></A>
+<A NAME="1013138">
+<H4> Declaration
+</H4>
+</A>
+
+<A NAME="1013139">
+<PRE>public Object eval(String s)</PRE>
+</A>
+
+<A NAME="getMember"></A>
+<A NAME="1013146">
+<H2> getMember</H2>
+</A>
+
+<A NAME="1013147">
+Method. Retrieves a named member of a JavaScript object. Equivalent to "this.<I>name</I>" in JavaScript.<P></A>
+
+</UL><A NAME="Declaration
+"></A>
+<A NAME="1013148">
+<H4> Declaration
+</H4>
+</A>
+
+<A NAME="1013149">
+<PRE>public Object getMember(String name)</PRE>
+</A>
+
+<A NAME="getSlot"></A>
+<A NAME="1013156">
+<H2> getSlot</H2>
+</A>
+
+<A NAME="1013157">
+Method. Retrieves an indexed member of a JavaScript object. Equivalent to "this[<I>index</I>]" in JavaScript.<P></A>
+
+</UL><A NAME="Declaration
+"></A>
+<A NAME="1013158">
+<H4> Declaration
+</H4>
+</A>
+
+<A NAME="1013159">
+<PRE>public Object getSlot(int index)</PRE>
+</A>
+
+<A NAME="getWindow"></A>
+<A NAME="1013512">
+<H2> getWindow</H2>
+</A>
+
+<A NAME="1013513">
+Static method. Returns a <I>JSObject</I> for the window containing the given applet.<P></A>
+
+</UL><A NAME="Declaration
+"></A>
+<A NAME="1013514">
+<H4> Declaration
+</H4>
+</A>
+
+<A NAME="1013516">
+<PRE>public static JSObject getWindow(Applet applet)</PRE>
+</A>
+
+<A NAME="removeMember"></A>
+<A NAME="1014298">
+<H2> removeMember</H2>
+</A>
+
+<A NAME="1014299">
+Method. Removes a named member of a JavaScript object.<P></A>
+
+</UL><A NAME="Declaration
+"></A>
+<A NAME="1014300">
+<H4> Declaration
+</H4>
+</A>
+
+<A NAME="1014301">
+<PRE>public void removeMember(String name)</PRE>
+</A>
+
+<A NAME="setMember"></A>
+<A NAME="1014308">
+<H2> setMember</H2>
+</A>
+
+<A NAME="1014309">
+Method. Sets a named member of a JavaScript object. Equivalent to "this.<I>name</I> = <I>value</I>" in JavaScript.<P></A>
+
+</UL><A NAME="Declaration
+"></A>
+<A NAME="1014310">
+<H4> Declaration
+</H4>
+</A>
+
+<A NAME="1014311">
+<PRE>public void setMember(String name,<br>&nbsp;&nbsp;&nbsp;Object value)</PRE>
+</A>
+
+<A NAME="setSlot"></A>
+<A NAME="1014318">
+<H2> setSlot</H2>
+</A>
+
+<A NAME="1014319">
+Method. Sets an indexed member of a JavaScript object. Equivalent to "this[<I>index</I>] = <I>value</I>" in JavaScript.<P></A>
+
+</UL><A NAME="Declaration
+"></A>
+<A NAME="1014320">
+<H4> Declaration
+</H4>
+</A>
+
+<A NAME="1014321">
+<PRE>public void setSlot(int index,<br>&nbsp;&nbsp;&nbsp;Object value)</PRE>
+</A>
+
+<A NAME="toString"></A>
+<A NAME="1014328">
+<H2> toString</H2>
+</A>
+
+<A NAME="1014329">
+Method. Converts a <I>JSObject</I> to a <I>String</I>.<P></A>
+<A NAME="1014330">
+Overrides: <B>toString</B> in class <I>Object</I><P></A>
+
+</UL><A NAME="Declaration
+"></A>
+<A NAME="1014331">
+<H4> Declaration
+</H4>
+</A>
+
+<A NAME="1014332">
+<PRE>public String toString()</PRE>
+</A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="netscape.javascript.JSException"></A>
+<A NAME="1007527">
+<H1> netscape.javascript.JSException</H1>
+</A>
+<A NAME="1007528">
+The public class <I>JSException</I> extends <I>Exception.</I><P></A>
+<A NAME="1007529">
+<PRE>java.lang.Object<br>&nbsp;&nbsp;&nbsp;|<br>&nbsp;&nbsp;&nbsp;+----java.lang.Throwable<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+----java.lang.Exception<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+----netscape.javascript.JSException</PRE>
+</A>
+<A NAME="1007530">
+<I>JSException</I> is an exception that is thrown when JavaScript code returns an error.<P></A>
+
+<A NAME="Constructors"></A>
+<A NAME="1007531">
+<H2> Constructors</H2>
+</A>
+
+<A NAME="1007553">
+The <I>netscape.javascript.JSException</I> class has the following constructors:
+
+<P><TABLE BORDER="2">
+<CAPTION></CAPTION>
+<tr align=left valign=bottom><th><b><A NAME="1007538">
+Constructor</A><B><th><b><A NAME="1007540">
+Description</A><B>
+<tr align=left valign=top><td><A NAME="1007542">
+<B><a href="packages.htm#1014128">JSException</a>
+</B></A><BR>
+
+<td><A NAME="1007544">
+Constructs a <I>JSException.</I> You specify whether the 
+<I>JSException</I> has a detail message and other information.
+</A><BR>
+
+
+
+
+</TABLE>
+
+<TABLE>
+<TR><TD>
+</TABLE>
+
+
+<P></A>
+<A NAME="1014717">
+The following sections show the declaration and usage of these constructors.<P></A>
+
+<A NAME="JSException"></A>
+<A NAME="1014128">
+<H2> JSException</H2>
+</A>
+
+<A NAME="1014129">
+Constructor. Constructs a <I>JSException</I>. You specify whether the <I>JSException</I> has a detail message and other information.<P></A>
+
+</UL><A NAME="Declaration
+"></A>
+<A NAME="1014130">
+<H4> Declaration
+</H4>
+</A>
+
+<A NAME="1014131">
+<PRE>1. public JSException()</PRE>
+</A>
+<A NAME="1014132">
+<PRE>2. public JSException(String s)</PRE>
+</A>
+<A NAME="1014133">
+<PRE>3. public JSException(String s,<br>&nbsp;&nbsp;&nbsp;String filename,<br>&nbsp;&nbsp;&nbsp;int lineno,<br>&nbsp;&nbsp;&nbsp;String source,<br>&nbsp;&nbsp;&nbsp;int tokenIndex)</PRE>
+</A>
+
+</UL><A NAME="Arguments
+"></A>
+<A NAME="1014134">
+<H4> Arguments
+</H4>
+</A>
+
+<A NAME="1014135">
+<I>s</I> is the detail message.<P></A>
+<A NAME="1014136">
+<I>filename</I> is the URL of the file where the error occurred, if possible.<P></A>
+<A NAME="1014137">
+<I>lineno</I> is the line number if the file, if possible.<P></A>
+<A NAME="1014138">
+<I>source</I> is the string containing the JavaScript code being evaluated.<P></A>
+<A NAME="1014139">
+<I>tokenIndex</I> is the index into the source string where the error occurred.<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="1014145">
+<H4> Description
+</H4>
+</A>
+
+<A NAME="1014146">
+A detail message is a string that describes this particular exception.<P></A>
+<A NAME="1014147">
+Each form constructs a <I>JSException</I> with different information:<P></A>
+<ul><A NAME="1014148">
+<LI>Form 1 of the declaration constructs a <I>JSException</I> without a detail message.
+</A><A NAME="1014149">
+<LI>Form 2 of the declaration constructs a <I>JSException</I> with a detail message.
+</A><A NAME="1014150">
+<LI>Form 3 of the declaration constructs a <I>JSException</I> with a detail message and all the other information that usually comes with a JavaScript error.
+</A></ul>
+
+<!------------------------------>
+<HR>
+<A NAME="netscape.plugin.Plugin"></A>
+<A NAME="1007555">
+<H1> netscape.plugin.Plugin</H1>
+</A>
+<A NAME="1007556">
+The public class <I>Plugin</I> extends <I>Object.</I><P></A>
+<A NAME="1007557">
+<PRE>java.lang.Object<br>&nbsp;&nbsp;&nbsp;|<br>&nbsp;&nbsp;&nbsp;+----netscape.plugin.Plugin</PRE>
+</A>
+<A NAME="1007558">
+This class represents the Java reflection of a plug-in. Plug-ins that need to have Java methods associated with them should subclass this class and add new (possibly native) methods to it. This allows other Java entities (such as applets and JavaScript code) to manipulate the plug-in.<P></A>
+
+<A NAME="Constructors and methods"></A>
+<A NAME="1007559">
+<H2> Constructors and methods</H2>
+</A>
+
+<A NAME="1007573">
+The <I>netscape.plugin.Plugin</I> class has the following constructors:
+
+<P><TABLE BORDER="2">
+<CAPTION></CAPTION>
+<tr align=left valign=bottom><th><b><A NAME="1007566">
+Constructor</A><B><th><b><A NAME="1007568">
+Description</A><B>
+<tr align=left valign=top><td><A NAME="1007570">
+<B><a href="packages.htm#1014256">Plugin</a>
+</B></A><BR>
+
+<td><A NAME="1011416">
+Constructs a Plugin.
+</A><BR>
+
+
+
+
+</TABLE>
+
+<TABLE>
+<TR><TD>
+</TABLE>
+
+
+<P></A>
+<A NAME="1011717">
+The <I>netscape.plugin.Plugin</I> class has the following methods:
+
+<P><TABLE BORDER="2">
+<CAPTION></CAPTION>
+<tr align=left valign=bottom><th><b><A NAME="1011679">
+Method</A><B><th><b><A NAME="1011681">
+Description</A><B>
+<tr align=left valign=top><td><A NAME="1011686">
+<B><a href="packages.htm#1013366">destroy</a>
+</B></A><BR>
+
+<td><A NAME="1011688">
+Called when the plug-in is destroyed
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1011693">
+<B><a href="packages.htm#1013381">getPeer</a>
+</B></A><BR>
+
+<td><A NAME="1011695">
+Returns the native NPP object--the plug-in instance that is the 
+native part of a Java <I>Plugin</I> object
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1011700">
+<B><a href="packages.htm#1013512">getWindow</a>
+</B></A><BR>
+
+<td><A NAME="1011702">
+Returns the JavaScript window on which the plug-in is 
+embedded
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1011707">
+<B><a href="packages.htm#1013972">init</a>
+</B></A><BR>
+
+<td><A NAME="1011709">
+Called when the plug-in is initialized
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1011714">
+<B><a href="packages.htm#1013987">isActive</a>
+</B></A><BR>
+
+<td><A NAME="1011716">
+Determines whether the Java reflection of a plug-in still refers 
+to an active plug-in
+</A><BR>
+
+
+
+
+</TABLE>
+
+<TABLE>
+<TR><TD>
+</TABLE>
+
+
+<P></A>
+<A NAME="1014724">
+The following sections show the declaration and usage of these constructors and methods.<P></A>
+
+<A NAME="destroy"></A>
+<A NAME="1013366">
+<H2> destroy</H2>
+</A>
+
+<A NAME="1013367">
+Method. Called when the plug-in is destroyed. You never need to call this method directly, it is called when the plug-in is destroyed. At the point this method is called, the plug-in will still be active.<P></A>
+
+</UL><A NAME="Declaration
+"></A>
+<A NAME="1013368">
+<H4> Declaration
+</H4>
+</A>
+
+<A NAME="1013369">
+<PRE>public void destroy()</PRE>
+</A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="1013375">
+<H4> See also
+</H4>
+</A>
+
+<A NAME="1013379">
+<a href="packages.htm#1013972">init</a><P></A>
+
+<A NAME="getPeer"></A>
+<A NAME="1013381">
+<H2> getPeer</H2>
+</A>
+
+<A NAME="1013382">
+Method. Returns the native NPP object--the plug-in instance that is the native part of a Java <I>Plugin</I> object. This field is set by the system, but can be read from plug-in native methods by calling:<P></A>
+<A NAME="1013383">
+<PRE>NPP npp = (NPP)netscape_plugin_Plugin_getPeer(env, thisPlugin);</PRE>
+</A>
+
+</UL><A NAME="Declaration
+"></A>
+<A NAME="1013384">
+<H4> Declaration
+</H4>
+</A>
+
+<A NAME="1013385">
+<PRE>public int getPeer()</PRE>
+</A>
+
+<A NAME="getWindow"></A>
+<A NAME="1013564">
+<H2> getWindow</H2>
+</A>
+
+<A NAME="1013565">
+Method method. Returns the JavaScript window on which the plug-in is embedded.<P></A>
+
+</UL><A NAME="Declaration
+"></A>
+<A NAME="1013649">
+<H4> Declaration
+</H4>
+</A>
+
+<A NAME="1013653">
+<PRE>public JSObject getWindow()</PRE>
+</A>
+
+<A NAME="init"></A>
+<A NAME="1013972">
+<H2> init</H2>
+</A>
+
+<A NAME="1013973">
+Method. Called when the plug-in is initialized. You never need to call this method directly, it is called when the plug-in is created.<P></A>
+
+</UL><A NAME="Declaration
+"></A>
+<A NAME="1013974">
+<H4> Declaration
+</H4>
+</A>
+
+<A NAME="1013975">
+<PRE>public void init()</PRE>
+</A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="1013981">
+<H4> See also
+</H4>
+</A>
+
+<A NAME="1013985">
+<a href="packages.htm#1013366">destroy</a><P></A>
+
+<A NAME="isActive"></A>
+<A NAME="1013987">
+<H2> isActive</H2>
+</A>
+
+<A NAME="1013988">
+Method. Determines whether the Java reflection of a plug-in still refers to an active plug-in. Plug-in instances are destroyed whenever the page containing the plug-in is left, thereby causing the plug-in to no longer be active.<P></A>
+
+</UL><A NAME="Declaration
+"></A>
+<A NAME="1013989">
+<H4> Declaration
+</H4>
+</A>
+
+<A NAME="1013990">
+<PRE>public boolean isActive()</PRE>
+</A>
+
+<A NAME="Plugin"></A>
+<A NAME="1014256">
+<H2> Plugin</H2>
+</A>
+
+<A NAME="1014257">
+Constructor. Constructs a <I>Plugin.</I><P></A>
+
+</UL><A NAME="Declaration
+"></A>
+<A NAME="1014258">
+<H4> Declaration
+</H4>
+</A>
+
+<A NAME="1014259">
+<PRE>public Plugin()</PRE>
+</A>

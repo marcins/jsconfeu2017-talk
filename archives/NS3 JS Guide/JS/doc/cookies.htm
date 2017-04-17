@@ -1,0 +1,227 @@
+<BODY BGCOLOR="#FFFFFF">
+<A NAME="996822">
+<P>
+</A><A NAME="997293">
+<P>
+</A><A NAME="1002170">
+<H1>Netscape cookies
+</H1>
+</A>
+
+<A NAME="1003726">
+
+<img src="graphics/cookiesa.gif">
+
+ cookie is a small piece of information stored on the client machine in the <code>cookies.txt</code> file. This appendix discusses the implementation of cookies in the Navigator client; it is not a formal specification or standard.<P></A>
+<A NAME="1003686">
+You can manipulate cookies<P></A>
+<ul><A NAME="1003180">
+<LI>Explicitly, with a CGI program.
+</A><A NAME="1003181">
+<LI>Programmatically, with client-side JavaScript using the <I>cookie</I> property of the <I>document</I> object.
+</A>
+<A NAME="1003794">
+<LI>Transparently, with the LiveWire the <I>client</I> object, when using client-cookie maintenance.
+</A></ul>
+
+<a name="1003182">
+<blockquote>For information 
+about using cookies 
+in LiveWire, see the 
+<I>LiveWire Developer's 
+Guide</I>.
+</blockquote>
+</a>
+
+
+<A NAME="1003183">
+This appendix describes the format of cookie information in the HTTP header, and discusses using CGI programs and JavaScript to manipulate cookies. <P></A>
+
+
+<A NAME="Syntax
+"></A>
+<A NAME="1002560">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="1002807">
+A CGI program uses the following syntax to add cookie information to the HTTP header:<P></A>
+<A NAME="1002561">
+<PRE>Set-Cookie:<br>&nbsp;&nbsp;&nbsp;<I>name</I>=<I>value<br></I>&nbsp;&nbsp;&nbsp;[;EXPIRES=<I>dateValue</I>]<br>&nbsp;&nbsp;&nbsp;[;DOMAIN=<I>domainName</I>]<br>&nbsp;&nbsp;&nbsp;[;PATH=<I>pathName</I>]<br>&nbsp;&nbsp;&nbsp;[;SECURE]</PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="1002554">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="1002610">
+<I>name</I>=<I>value</I> is a sequence of characters excluding semi-colon, comma and white space. To place restricted characters in the <I>name </I>or <I>value</I>, use an encoding method such as URL-style %XX encoding.<P></A>
+<A NAME="1002630">
+EXPIRES=<I>dateValue</I> specifies a date string that defines the valid life time of that cookie. Once the expiration date has been reached, the cookie will no longer be stored or given out. If you do not specify <I>dateValue</I>, the cookie expires when the user's session ends.<P></A>
+<A NAME="1002631">
+The date string is formatted as:<P></A>
+<A NAME="1002632">
+<PRE>Wdy, DD-Mon-YY HH:MM:SS GMT</PRE>
+</A>
+<A NAME="1002893">
+where Wdy is the day of the week (for example, Mon or Tues); DD is a two-digit representation of the day of the month; Mon is a three-letter abbreviation for the month (for example, Jan or Feb); YY is the last two digits of the year; HH:MM:SS are hours, minutes, and seconds, respectively.<P></A>
+<A NAME="1003765">
+DOMAIN=<I>domainName</I> specifies the domain attributes for a valid cookie. See <a href="cookies.htm#1003254">"Determining a valid cookie"</a>. If you do not specify a value for <I>domainName</I>, Navigator uses the host name of the server which generated the cookie response.<P></A>
+<A NAME="1002599">
+PATH=<I>pathName</I> specifies the path attributes for a valid cookie. See <a href="cookies.htm#1003254">"Determining a valid cookie"</a>. If you do not specify a value for <I>pathName</I>, Navigator uses the path of the document that created the cookie property (or the path of the document described by the HTTP header, for CGI programming).<P></A>
+<A NAME="1003073">
+SECURE specifies that the cookie is transmitted only if the communications channel with the host is a secure. Only HTTPS (HTTP over SSL) servers are currently secure. If SECURE is not specified, the cookie is considered sent over any channel.<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="1003077">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="1003219">
+A server sends cookie information to the client in the HTTP header when the server responds to a request. Included in that information is a description of the range of URLs for which it is valid. Any future HTTP requests made by the client which fall in that range will include a transmittal of the current value of the state object from the client back to the server.<P></A>
+<A NAME="1003252">
+Many different application types can take advantage of cookies. For example, a shopping application can store information about the currently selected items for use in the current session or a future session, and other applications can store individual user preferences on the client machine.<P></A>
+
+<A NAME="Determining a valid cookie"></A>
+<A NAME="1003254">
+<H4> Determining a valid cookie</H4>
+</A>
+
+<A NAME="1003271">
+When searching the cookie list for valid cookies, a comparison of the domain attributes of the cookie is made with the domain name of the host from which the URL is retrieved.<P></A>
+<A NAME="1003278">
+If the domain attribute matches the end of the fully qualified domain name of the host, then path matching is performed to determine if the cookie should be sent. For example, a domain attribute of "acme.com" would match host names "anvil.acme.com" as well as "shipping.crate.acme.com".<P></A>
+<A NAME="1002939">
+Only hosts within the specified domain can set a cookie for a domain. In addition, domain names must use at least two or periods. Any domain in the "COM", "EDU", "NET", "ORG", "GOV", "MIL", and "INT" categories requires only two periods; all other domains require at least three periods.<P></A>
+<A NAME="1003352">
+PATH=<I>pathName</I> specifies the URLs in a domain for which the cookie is valid. If a cookie has already passed domain matching, then the pathname component of the URL is compared with the path attribute, and if there is a match, the cookie is considered valid and is sent along with the URL request. For example, PATH=/foo matches "/foobar" and "/foo/bar.html". The path "/" is the most general path.<P></A>
+
+<A NAME="Syntax of the cookie HTTP request header"></A>
+<A NAME="1003355">
+<H4> Syntax of the cookie HTTP request header</H4>
+</A>
+
+<A NAME="1003356">
+When requesting a URL from an HTTP server, the browser matches the URL against all existing cookies. When a cookie matches the URL request, a line containing the name/value pairs of all matching cookies is included in the HTTP request in the following format:<P></A>
+<A NAME="1002740">
+<PRE>Cookie: NAME1=OPAQUE_STRING1; NAME2=OPAQUE_STRING2 ...</PRE>
+</A>
+
+<A NAME="Saving cookies"></A>
+<A NAME="1003385">
+<H4> Saving cookies</H4>
+</A>
+
+<A NAME="1002747">
+A single server response can issue multiple Set-Cookie headers. Saving a cookie with the same PATH and NAME values as an existing cookie overwrites the existing cookie. Saving a cookie with the same PATH value but a different NAME value adds an additional cookie.<P></A>
+<A NAME="1003455">
+The EXPIRES value indicates when to purge the mapping. Navigator will also delete a cookie before its expiration date arrives if the number of cookies exceeds its internal limits.<P></A>
+<A NAME="1003463">
+A cookie with a higher-level PATH value does not override a more specific PATH value. If there are multiple matches with separate paths, all the matching cookies are sent, as shown in the examples below.<P></A>
+<A NAME="1003503">
+A CGI script can delete a cookie by returning a cookie with the same PATH and NAME values, and an EXPIRES value which is in the past. Because the PATH and NAME must match exactly, it is difficult for scripts other than the originator of a cookie to delete a cookie.<P></A>
+
+<A NAME="Specifications for the client"></A>
+<A NAME="1002749">
+<H4> Specifications for the client</H4>
+</A>
+
+<A NAME="1002751">
+When sending cookies to a server, all cookies with a more specific path mapping are sent before cookies with less specific path mappings. For example, a cookie "name1=foo" with a path mapping of "/" should be sent after a cookie "name1=foo2" with a path mapping of "/bar" if they are both to be sent.<P></A>
+<A NAME="1002752">
+The Navigator can receive and store the following:<P></A>
+<ul><A NAME="1002753">
+<LI>300 total cookies
+</A><A NAME="1002754">
+<LI>4 kilobytes per cookie, where the name and the OPAQUE_STRING combine to form the 4 kilobyte limit.
+</A><A NAME="1002755">
+<LI>20 cookies per server or domain. Completely specified hosts and domains are considered separate entities, and each has a 20 cookie limitation.
+</A></ul><A NAME="1002756">
+When the 300 cookie limit or the 20 cookie per server limit is exceeded, Navigator deletes the least recently used cookie. When a cookie larger than 4 kilobytes is encountered the cookie should be trimmed to fit, but the name should remain intact as long as it is less than 4 kilobytes.<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="1002570">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="1002774">
+The following examples illustrate the transaction sequence in typical CGI programs. For an example of using cookies with JavaScript, see <a href="ref_a-c.htm#64400">"cookie"</a>.<P></A>
+
+<A NAME="Example 1"></A>
+<A NAME="1002775">
+<H4> Example 1</H4>
+</A>
+
+<A NAME="1002776">
+Client requests a document, and receives in the response:<P></A>
+<A NAME="1002777">
+<PRE>Set-Cookie: CUSTOMER=WILE_E_COYOTE; path=/; expires=Wednesday,<br>&nbsp;&nbsp;&nbsp;09-Nov-99 23:12:40 GMT</PRE>
+</A>
+<A NAME="1002778">
+When client requests a URL in path "/" on this server, it sends:<P></A>
+<A NAME="1002779">
+<PRE>Cookie: CUSTOMER=WILE_E_COYOTE</PRE>
+</A>
+<A NAME="1002780">
+Client requests a document, and receives in the response:<P></A>
+<A NAME="1002781">
+<PRE>Set-Cookie: PART_NUMBER=ROCKET_LAUNCHER_0001; path=/</PRE>
+</A>
+<A NAME="1002782">
+When client requests a URL in path "/" on this server, it sends:<P></A>
+<A NAME="1002783">
+<PRE>Cookie: CUSTOMER=WILE_E_COYOTE; PART_NUMBER=ROCKET_LAUNCHER_0001</PRE>
+</A>
+<A NAME="1002784">
+Client receives:<P></A>
+<A NAME="1002785">
+<PRE>Set-Cookie: SHIPPING=FEDEX; path=/foo</PRE>
+</A>
+<A NAME="1002786">
+When client requests a URL in path "/" on this server, it sends:<P></A>
+<A NAME="1002787">
+<PRE>Cookie: CUSTOMER=WILE_E_COYOTE; PART_NUMBER=ROCKET_LAUNCHER_0001</PRE>
+</A>
+<A NAME="1002788">
+When client requests a URL in path "/foo" on this server, it sends:<P></A>
+<A NAME="1002789">
+<PRE>Cookie: CUSTOMER=WILE_E_COYOTE; PART_NUMBER=ROCKET_LAUNCHER_0001;<br>&nbsp;&nbsp;&nbsp;SHIPPING=FEDEX</PRE>
+</A>
+
+<A NAME="Example 2"></A>
+<A NAME="1002790">
+<H4> Example 2</H4>
+</A>
+
+<A NAME="1002791">
+This example assumes all mappings from Example 1 have been cleared.<P></A>
+<A NAME="1002792">
+Client receives:<P></A>
+<A NAME="1002793">
+<PRE>Set-Cookie: PART_NUMBER=ROCKET_LAUNCHER_0001; path=/</PRE>
+</A>
+<A NAME="1002794">
+When client requests a URL in path "/" on this server, it sends:<P></A>
+<A NAME="1002795">
+<PRE>Cookie: PART_NUMBER=ROCKET_LAUNCHER_0001</PRE>
+</A>
+<A NAME="1002796">
+Client receives:<P></A>
+<A NAME="1002797">
+<PRE>Set-Cookie: PART_NUMBER=RIDING_ROCKET_0023; path=/ammo</PRE>
+</A>
+<A NAME="1003131">
+When client requests a URL in path "/ammo" on this server, it sends:<P></A>
+<A NAME="1003132">
+<PRE>Cookie: PART_NUMBER=RIDING_ROCKET_0023;<br>&nbsp;&nbsp;&nbsp;PART_NUMBER=ROCKET_LAUNCHER_0001</PRE>
+</A>
+<A NAME="1002800">
+There are two name/value pairs named "PART_NUMBER" due to the inheritance of the "/" mapping in addition to the "/ammo" mapping.<P></A>

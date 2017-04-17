@@ -1,0 +1,221 @@
+/* 
+ * Excerpt from https://developers.google.com/fonts/faq.
+ * 06/28/2013
+ *
+ * Can I download the fonts on Google Fonts to my own computer?
+ * Yes. To download the fonts, simply add fonts to your collection and click the "Download your Collection" link. You can download the fonts to use them for your mockups, in your documents or to host them on your own server.
+ *
+ * Can I use the Fonts API on any page?
+ * Yes. All the fonts on Google Fonts are licensed under open source licenses that let you use them on any website, from a private blog to a big commercial site.
+ *
+ * */
+
+@font-face {font-family: 'Source Sans Pro';font-style: normal;  font-weight: 400;src: local('Source Sans Pro'), local('SourceSansPro-Regular'), url(/includes/fonts/SourceSansPro-Regular.ttf) format('truetype');}
+@font-face {font-family: 'Source Sans Pro';font-style: normal;font-weight: 700;src: local('Source Sans Pro Bold'), local('SourceSansPro-Bold'), url(/includes/fonts/SourceSansPro-Bold.ttf) format('truetype');}
+@font-face {font-family: 'Hemi Head 426';font-weight: 700; src: local('Hemi Head 426'), url('/includes/fonts/hemihead426.ttf') format('truetype');}
+@font-face {font-family: 'Hemi Head 426 Bold';font-weight: 400; src: local('Hemi Head 426'), url('/includes/fonts/hemihead426.ttf') format('truetype');}
+
+/*
+ * MATH CSS
+ * */#skipNav{display:none;position:absolute;font-size:1%;left:-2000px;}
+.header{display:none}
+a img{border:none;outline:none;text-decoration:none;}
+.columnWrapper{min-height:420px;margin-top:20px;margin-bottom:20px;}
+.column1_2{width:450px;border:1px;display:table-cell;margin-right:20px;vertical-align:top;}
+.column2_2{width:450px;border:1px;display:table-cell;vertical-align:top;}
+.quickLinkTitle{font-weight:700;}
+.quickLinkLinks{margin-left:10px;}
+.hspace{margin-top:30px;}
+#featured{display:none}
+.featuredWrapper{text-align:right;font-weight:400;font-size:95%;color:#fff;width:230px;background-color:#fff;position:absolute;left:670px;top:95px;opacity:1;line-height:135%;border:0 solid #fff;padding:0;}
+.featuredTitle{font-weight:700;color:#505050;}
+.featuredContent{display:none;text-align:right;font-weight:400;font-size:95%;color:#505050;width:450px;background-color:#fff;position:absolute;left:450px;top:95px;opacity:1;border:0 solid #ccc;z-index:1;padding:0;}
+.contactsearch{position:absolute;right:0;float:right;top:14px;width:30%;font-size:12px;color:#303030;text-align:right;}
+#search{display:none}
+#query{font-size:12px;width:150px;padding-bottom:1px;border:1px solid #aaa;height:18px;padding-right:2px;}
+#searchSubmit{margin-left:4px;color:#404040;background-color:#f4f4f4;font-size:10px;border:1px solid #aaa;padding:4px 2px 2px;}
+a.archivelink{font-family:inherit;text-decoration:none;font-weight:400;font-size:inherit;color:#757575;}
+p{line-height:140%;margin-top:0;margin-bottom:14px;}
+#contentContainer{margin-bottom:40px;margin-top:10px;}
+#content{display:table-cell;min-height:650px;}
+.bullet{margin-left:10px;margin-right:5px;}
+.mobilemenu{display:none;}
+.footerlogoWrap{float:left;padding-right:17px;padding-top:1px;}
+.footerlogo{width:134px;}
+a[href $='.pdf']{padding-right:18px;background:transparent url(/images/webaccess/pdfIcon.gif) no-repeat center right;}
+a[href $='.doc']{padding-right:18px;background:transparent url(/images/webaccess/docIcon.gif) no-repeat center right;}
+a[href $='.xls']{padding-right:18px;background:transparent url(/images/webaccess/xlsIcon.gif) no-repeat center right;}
+a[href $='.ppt']{padding-right:18px;background:transparent url(/images/webaccess/pptIcon.png) no-repeat center right;}
+body{background-color:#fff;}
+.wrapper{width:900px;margin:0 auto;}
+.outerframe{width:900px;font-weight:400;font-size:14px;font-family:source sans pro,jaf-bernina-sans,arial,sans-serif;}
+.input{font-family:source sans pro,jaf-bernina-sans,arial,sans-serif;}
+.mainbody{clear:both;margin-top:30px;left:0;width:900px;padding-bottom:50px;}
+.department{padding-top:0;width:900px;height:57px;}
+a.deptnamelink{text-decoration:none;font-weight:700;font-size:34px;color:maroon;margin-left:-2px;}
+.tamu-old{padding-top:4px;padding-bottom:12px;height:22px;width:900px;font-weight:400;font-size:15px;color:#303030;}
+.tamu{padding-top:10px;padding-bottom:0;height:16px;width:900px;font-weight:700;font-size:15px;color:#a9a9a9;}
+.bar{width:900px;height:12px;background-color:gray;margin:0;}
+a.featuredprograms{text-decoration:none;font-weight:700;color:#5a5a5a;}
+.featuredprogram{margin-bottom:6px;}
+a.featuredprogramlink{text-decoration:none;font-size:95%;font-weight:400;color:#3a3a3a;}
+.contactsearchframe{padding-top:13px;left:0;height:20px;width:900px;top:15px;font-size:12px;color:#303030;}
+.menu{display:none;margin-top:7px;left:0;line-height:125%;font-weight:700;font-size:95%;color:#069;}
+.menubox{border-left:1px #999 dotted;padding-left:5px;margin-bottom:10px;}
+.current{color:#997000;}
+a.menulink{text-decoration:none;font-size:95%;font-weight:400;color:#067;}
+.menu3{float:left;margin-right:38px;}
+.menu4{float:left;margin-right:14px;}
+.menu5{float:left;margin-right:29px;}
+.menu6{float:left;margin-right:26px;}
+.menu7{float:left;margin-right:0;}
+.eventsrightheader{float:right;font-weight:400;font-size:95%;color:#757575;}
+a{text-decoration:none;color:#997010;}
+li{line-height:130%;list-style-type:inherit;padding-bottom:3px;}
+.ulmenu{margin-top:0;margin-bottom:5px;margin-left:-25px;}
+.limenu{line-height:inherit;list-style-type:none;padding-bottom:0;}
+li.limenu:before{content:"\2023  ";}
+.divlist{line-height:140%;padding-left:12px;padding-top:6px;padding-bottom:3px;}
+.friends{padding-top:8px;}
+.lowerlatin{list-style-type:lower-latin;}
+.coursepagemenu{margin-top:0;margin-bottom:15px;font-size:90%;line-height:135%;}
+.image{float:left;width:448px;height:450px;}
+.newsitem{margin-bottom:9px;line-height:16px;}
+.event{margin-bottom:11px;line-height:16px;}
+.caption{clear:both;font-size:85%;line-height:125%;font-weight:400;color:#909090;padding-top:0;}
+.caption2{font-size:95%;clear:both;line-height:125%;font-weight:400;color:#606060;padding-top:0;}
+.caption3{font-size:11px;clear:both;font-weight:400;color:#606060;padding-top:4px;}
+.footertext{float:left;font-size:70%;font-weight:400;color:#606060;}
+a.footerlink{display:none;}
+.screenMe{display:none}
+.leftmenu{display:none}
+.leftmenunarrow{display:none}
+.leftmenuboxwithsubmenu{line-height:120%;padding-bottom:10px;}
+.leftmenubox{line-height:120%;padding-bottom:3px;}
+.leftmenufaculty{line-height:120%;padding-bottom:5px;}
+.leftmenuinnerbox{line-height:135%;color:#707070;margin-top:5px;}
+.leftmenuinnerboxwithoutheader{line-height:135%;color:#707070;margin-top:8px;margin-bottom:10px;}
+.leftmenuinnerboxwithoutheader2{line-height:135%;color:#707070;padding-top:4px;padding-bottom:4px;background-color:#eee;width:200px;border:0 dotted #bbb;}
+.leftmenuinnerboxwithoutheader3{line-height:135%;color:#707070;padding-bottom:30px;width:200px;border:0 dotted #bbb;}
+.leftmenuinnerheader{margin-left:0;margin-bottom:1px;font-style:inherit;font-weight:700;color:#252525;}
+.leftmenuinner{line-height:140%;padding-left:10px;}
+.leftmenuinnerwithoutheader{padding-left:5px;}
+a.menulinkemph{text-decoration:none;font-weight:700;font-size:108%;color:#252525;line-height:130%;}
+a.menulinkemphsmall{text-decoration:none;font-weight:700;font-size:95%;color:#252525;}
+.leftmenuimage{margin-bottom:0;margin-top:10px;width:225px;}
+.leftmenuimagesmall{margin-bottom:0;margin-top:10px;width:165px;}
+.buildingimagesblock{margin-top:0;}
+.multilinemenuitem{float:left;width:170px;}
+.menuseparator{width:200px;border-top:0 dotted #bbb;margin-top:10px;margin-bottom:10px;}
+h1{font-weight:700;font-size:140%;padding-bottom:5px;margin-top:0;}
+h2{font-weight:700;font-size:115%;padding-top:12px;margin-top:0;margin-bottom:10px;}
+h3{font-weight:700;font-size:110%;padding-top:0;padding-bottom:0;margin-top:0;margin-bottom:0;}
+h4{font-weight:700;font-size:105%;padding-top:0;padding-bottom:0;margin-top:0;margin-bottom:0;}
+hr{padding-top:0;padding-bottom:0;margin-top:25px;margin-bottom:12px;height:0;border-top:0;border-bottom:1px dotted #999;}
+.text{float:left;width:600px;margin-left:40px;padding-bottom:10px;font-weight:400;font-size:100%;line-height:135%;color:#393939;}
+.textfullwidth{width:900px;margin-left:0;padding-bottom:10px;font-weight:400;font-size:100%;line-height:135%;color:#393939;}
+a.textlink{text-decoration:none;color:#a06500;}
+.column{float:left;width:185px;padding-right:10px;padding-bottom:25px;}
+.contact{float:left;width:700px;margin-left:0;padding-bottom:5px;font-weight:400;font-size:100%;line-height:135%;color:#303030;}
+.update{font-style:italic;font-size:90%;padding-top:10px;margin-bottom:14px;}
+.textheaderareas{font-weight:700;font-size:115%;padding-top:5px;padding-bottom:0;}
+a.arealink{color:#303030;text-decoration:none;}
+a.arealink:hover{text-decoration:inherit;color:#909090;}
+.box{margin-bottom:13px;font-size:95%;line-height:125%;width:178px;}
+.box2{float:left;width:210px;margin-right:10px;margin-bottom:12px;font-size:95%;line-height:125%;}
+.box3{float:left;width:220px;margin-right:0;margin-bottom:12px;font-size:95%;line-height:125%;}
+.assistant{font-size:12px;margin-top:3px;}
+.directory{float:left;width:610px;font-weight:400;font-size:100%;color:#303030;}
+.directoryheader{font-weight:700;font-size:140%;padding-bottom:25px;width:670px;}
+.subdirectoryheader{font-weight:400;font-style:italic;font-size:110%;padding-bottom:10px;width:640px;}
+.indframe{float:left;margin-left:0;width:700px;font-weight:400;font-size:13px;color:#303030;line-height:130%;padding-bottom:20px;}
+.ind{float:left;padding-left:30px;padding-bottom:20px;width:300px;}
+.indlandscape{float:left;width:50%;padding-bottom:10px;}
+.indportrait{float:left;width:30%;padding-bottom:10px;}
+.indsquare{float:left;width:40%;padding-bottom:10px;}
+.indname{padding-left:inherit;padding-bottom:10px;font-size:15px;font-weight:700;}
+.indtitle{font-weight:400;}
+.indarea{font-style:italic;padding-bottom:8px;}
+.indeducation{font-style:inherit;padding-bottom:22px;}
+.indcontact{padding-top:0;}
+a.indhomepage{text-decoration:none;color:#a06500;border-bottom:0 dotted #ccc;}
+a.indhomepage:hover{color:inherit;text-decoration:underline;}
+table{font-size:inherit;border-spacing:0 3px;}
+.tableframe{padding-bottom:28px;}
+.table{empty-cells:show;padding-top:0;border-collapse:separate;border-spacing:0 0;width:670px;font-size:95%;line-height:120%;font-weight:400;color:#282828;}
+.coursetable{empty-cells:show;padding-top:0;border-collapse:separate;border-spacing:0 5px;width:670px;font-size:95%;line-height:130%;font-weight:400;color:#282828;}
+.coursetablewide{empty-cells:show;padding-top:0;border-collapse:separate;border-spacing:0 0;width:900px;font-size:95%;line-height:130%;font-weight:400;color:#282828;}
+.directorytop{font-style:inherit;font-weight:700;text-decoration:inherit;font-size:100%;}
+.directoryTable tr{vertical-align:top;}
+.directoryTable td{border-top:1px solid #ccc;padding-top:2px;padding-bottom:4px;margin-left:0;margin-right:0;border-left:0 solid #ccc;empty-cells:show;padding-right:20px;}
+.directoryTable th{text-align:left;padding-bottom:4px;padding-top:5px;vertical-align:bottom;}
+.name{width:155px;padding-right:15px;border-top:1px solid #bbb;padding-top:4px;}
+.facname{width:155px;padding-right:15px;border-top:1px solid #bbb;height:33px;padding-top:4px;}
+a.namelink{text-decoration:none;font-weight:400;color:#900000;}
+.directoryheading{padding-bottom:0;vertical-align:top;}
+.title{width:280px;padding-right:15px;border-top:1px solid #bbb;padding-top:4px;}
+.office{width:70px;padding-right:10px;border-top:1px solid #bbb;padding-top:4px;white-space:nowrap;}
+.mail{width:75px;padding-right:10px;border-top:1px solid #bbb;padding-top:4px;}
+.phone{width:60px;height:5px;border-top:1px solid #bbb;padding-top:4px;white-space:nowrap;}
+.area{color:#909090;}
+.areacode{font-size:10px;font-style:inherit;font-weight:400;}
+.byinstructor{padding-right:3px;}
+.coursesections{font-size:90%;border-collapse:collapse;width:100%;}
+.sectiontextbooks{font-size:90%;border-collapse:collapse;padding-bottom:35px;width:100%;}
+.tabletitle{padding-bottom:8px;padding-top:3px;}
+.gl{border-left:0 solid #ccc;}
+.ggl{border-left:2px solid #e1e1e1;padding-left:4px;}
+.gg{margin-bottom:0;}
+.note{padding-left:0;padding-right:0;width:0;}
+.gray{background-color:#f5f5f5;}
+.grey2{color:#303030;font-weight:700;}
+.resourceframe{padding-bottom:12px;padding-top:5px;line-height:135%;}
+.resourceheader{font-weight:700;font-size:14px;padding-top:0;}
+.menutitle{padding-bottom:1px;font-weight:700;font-size:12px;color:#555;}
+.eventtitle{padding-bottom:15px;}
+.printericon{width:20px;}
+.calendaricon{width:19px;}
+.add{font-size:70%;color:#686868;font-weight:400;padding-left:4px;}
+.tb{padding-right:10px;}
+.tb1{padding-right:10px;font-weight:700;}
+a.courselisting{display:inline-block;background-color:#fff;padding-top:3px;padding-bottom:3px;width:290px;border-top:1px solid #ccc;color:#303030;font-size:95%;}
+a.courselisting:hover{background-color:#eee;text-decoration:none;}
+table.frontiers{margin-bottom:30px;clear:both;font-size:95%;line-height:130%;}
+.frontiersentry{clear:both;padding-top:4px;}
+.frontiersdate{float:left;width:112px;padding:0;}
+.frontiersspeaker{float:left;padding:0;}
+.seminar{padding-bottom:6px;padding-top:0;line-height:130%;}
+.seminarlist{padding-bottom:0;line-height:130%;list-style-type:none;}
+.normaldays{font-size:120%;text-align:center;}
+.univ{font-style:italic;color:#999;font-size:100%;}
+a.conference{text-decoration:none;color:#303030;border-bottom:1px dotted #bbb;}
+a.conference:hover{color:#999;}
+dd{padding-left:0;margin-left:0;}
+a.contactlink,a.maps{text-decoration:none;color:#303030;}
+a.contactlink:hover,a.archivelink:hover,a.archivelinktop:hover,a.eventslinktop:hover,a.featuredprogramlink:hover{text-decoration:underline;color:#000;}
+a.archivelinktop,a.eventslinktop{text-decoration:none;font-family:inherit;font-size:inherit;color:inherit;}
+a.deptnamelink:hover,a.featuredprograms:hover,a.resourcelink{text-decoration:none;}
+a.menulink:hover,a:hover,a.newslink:hover,a.eventlink:hover,a.footerlink:hover,a.menulinkemph:hover,a.menulinkemphsmall:hover,a.maps:hover,a.textlink:hover,a.namelink:hover,a.resourcelink:hover{text-decoration:underline;}
+.menu1,.menu2{float:left;margin-right:30px;}
+img,.normalBlankCells{border:0;}
+ul,ol{margin-top:10px;margin-bottom:10px;padding-top:0;position:relative;left:-3px;}
+.news,.events{float:left;width:390px;font-size:95%;font-weight:400;color:#202020;margin-bottom:20px;}
+.newsheader,.eventsheader{font-weight:700;color:#303030;font-size:105%;margin-bottom:15px;padding-bottom:2px;border-bottom:1px solid #aaa;}
+a.newslink,a.eventlink{text-decoration:none;color:#997010;font-weight:400;}
+.address,.head{font-weight:700;font-size:13px;}
+.grey,.middle{color:#303030;}
+.eventparagraph,.listing{margin-bottom:8px;}
+.footer{margin-top:20px;}
+#subquery{display:none;}
+
+table { page-break-inside:auto }
+tr    { page-break-inside:avoid; page-break-after:auto }
+thead { display:table-header-group }
+tfoot { display:table-footer-group }
+.noprint{display:none}
+.hemihead426 {
+  font-family: 'Hemi Head 426',Verdana,sans-serif;
+}
+.hemihead426bold {
+  font-family: 'Hemi Head 426 Bold',Verdana,sans-serif;
+}

@@ -1,0 +1,788 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+   <TITLE>Layers Glossary</TITLE>
+   <META NAME="GENERATOR" CONTENT="Mozilla/3.01Gold (Win95; I) [Netscape]">
+</HEAD>
+<BODY TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#0000FF" VLINK="#FF0000" ALINK="#FF0000">
+
+<CENTER><P><A HREF="/index.html" TARGET="_top"><IMG SRC="netscape_products_ban.gif" BORDER=0 HEIGHT=32 WIDTH=468></A>
+</P></CENTER>
+
+<H2 ALIGN=CENTER><FONT SIZE=+3>L</FONT>AYERS AND <FONT SIZE=+3>J</FONT>AVA<FONT SIZE=+3>S</FONT>CRIPT
+<FONT SIZE=+3>E</FONT>XTENSIONS FOR <FONT SIZE=+3>L</FONT>AYERS <FONT SIZE=+3>G</FONT>LOSSARY
+</H2>
+
+<P>This glossary describes elements of HTML and JavaScript syntax needed
+to implement a Web page using the new layers feature in the Navigator 4.0
+component of Netscape Communicator Preview Release. In addition, several
+simple ideas for ways to enhance Web pages are presented. </P>
+
+<P>The functionality of the new <TT>&lt;LAYER&gt;</TT> tag allows you to
+define precisely positioned, overlapping layers of transparent or opaque
+content in a Web page. With a little JavaScript code, you can move layers,
+hide them, and change the order in which they overlap. With layers you
+can use HTML and JavaScript to create dynamic animations on a Web page.
+</P>
+
+<P>The Navigator 4.0 component in the Preview Release extends the objects
+and methods available in JavaScript to contain a <I>Layer object</I> and
+a <I>Layers array</I> that enumerates all the layers in a document. This
+allows dynamic control of the position, visibility, and z-order (stacking
+order) of layers. </P>
+
+<P>As future versions of Netscape Communicator are released, additonal
+tags and functionalities will be added to this glossary. Check back here
+for updates. For <A HREF="http://developer.netscape.com/library/documentation/communicator/index.html">more
+information</A>, visit DevEdge Online. </P>
+
+<P><B>L<FONT SIZE=-1>AYERS</FONT> S<FONT SIZE=-1>YNTAX </FONT>G<FONT SIZE=-1>LOSSARY</FONT>
+<BR>
+<A HREF="#layertag">LAYER<BR>
+</A><A HREF="#nametag">NAME<BR>
+</A><A HREF="#lefttag">LEFT<BR>
+</A><A HREF="#toptag">TOP<BR>
+</A><A HREF="#zindextag">Z-INDEX<BR>
+</A><A HREF="#widthtag">WIDTH<BR>
+</A><A HREF="#heighttag">HEIGHT<BR>
+</A><A HREF="#cliptag">CLIP<BR>
+</A><A HREF="#abovetag">ABOVE<BR>
+</A><A HREF="#belowtag">BELOW<BR>
+</A><A HREF="#vistag">VISIBILITY=SHOW | HIDE | INHERIT</A> <BR>
+<A HREF="#bgcolortag">BGCOLOR<BR>
+</A><A HREF="#backtag">BACKGROUND<BR>
+</A><A HREF="#srctag">SRC<BR>
+</A><A HREF="#nolayertag">NOLAYER</A></B><BR>
+</P>
+
+<P><B>L<FONT SIZE=-1>AYERS</FONT> I<FONT SIZE=-1>DEA </FONT>G<FONT SIZE=-1>LOSSARY</FONT>
+<BR>
+<A HREF="#layoutcontrol">Layout Control<BR>
+</A><A HREF="#background">Background Images and Colors<BR>
+</A><A HREF="#nested">Nested Layers<BR>
+</A><A HREF="#hidden">Hidden Layers</A></B> </P>
+
+<P><B>J<FONT SIZE=-1>AVASCRIPT</FONT> E<FONT SIZE=-1>XTENSIONS FOR</FONT>
+L<FONT SIZE=-1>AYERS</FONT> S<FONT SIZE=-1>YNTAX </FONT>G<FONT SIZE=-1>LOSSARY</FONT>
+<BR>
+<A HREF="#layerobj">Layer Object<BR>
+</A><A HREF="#layerobjprop">Layer Object Properties<BR>
+</A><A HREF="#layerobjmeth">Layer Object Methods<BR>
+</A><A HREF="#layers">Layers Array</A></B> </P>
+
+<P><B>J<FONT SIZE=-1>AVASCRIPT</FONT> E<FONT SIZE=-1>XTENSIONS FOR</FONT>
+L<FONT SIZE=-1>AYERS</FONT> I<FONT SIZE=-1>DEA </FONT>G<FONT SIZE=-1>LOSSARY</FONT>
+<BR>
+<A HREF="#hideandshow">Hiding and Showing Layers<BR>
+</A><A HREF="#moving">Moving Layers<BR>
+</A><A HREF="#reclipping">Reclipping Layers<BR>
+</A><A HREF="#animation">Animation</A></B> </P>
+
+<P>
+<HR SIZE=4></P>
+
+<H3 ALIGN=CENTER><FONT SIZE=+2>L</FONT>AYERS IN <FONT SIZE=+2>HTML: S</FONT>YNTAX
+<FONT SIZE=+2>G</FONT>LOSSARY </H3>
+
+<P><A NAME="layertag"></A><B>&lt;LAYER<BR>
+NAME</B>=&quot;<I>layerName</I>&quot;<BR>
+<B>LEFT</B>=<I>xPosition (number of pixels or percentage of window/parent
+layer)<BR>
+</I><B>TOP</B>=<I>yPosition (number of pixels or percentage of window/parent
+layer)</I> <BR>
+<B>Z-INDEX</B>=<I>layerZ (positive integer)<BR>
+</I><B>WIDTH</B>=<I>layerWidth (number of pixels or percentage of window/parent
+layer)<BR>
+</I><B>HEIGHT</B>=<I>layerHeight (number of pixels or percentage of window/parent
+layer)<BR>
+</I><B>CLIP</B>=&quot;<I>x1_offset, y1_offset, x2_offset, y2_offset </I>&quot;<I>(number
+of pixels or percentage of window/parent layer)</I> <BR>
+<B>ABOVE</B>=&quot;<I>layerName</I>&quot;<BR>
+<B>BELOW</B>=&quot;<I>layerName</I>&quot;<BR>
+<B>VISIBILITY= SHOW | HIDE | INHERIT <BR>
+BGCOLOR</B>=&quot;<I>rgbColor</I>&quot; <I>(name of a standard color or
+a hexidecimal RGB value)</I> <BR>
+<B>BACKGROUND</B>=&quot;<I>imageURL</I>&quot; <I>(URL of a background image)</I>&gt;
+<B>SRC</B>=&quot;<I>URL</I>&quot; </P>
+
+<DL>
+<DT><B>LAYER</B></DT>
+
+<DD>The <TT>&lt;LAYER&gt;</TT> tag starts a layer, and the <TT>&lt;/LAYER&gt;</TT>
+tag ends the layer. All the content between the opening and closing layer
+tag can be treated as a single layer of content that can be moved, clipped,
+and altered in various ways. For example, you could have many overlapping
+layers that can be dynamically peeled away to reveal the layers underneath.</DD>
+
+<P> Layers have a stacking order that determine which layer appears on
+top of another for overlapping layers. Using JavaScript you can dynamically
+change whether a layer is visible or not, which means you can hide a layer
+and make it reappear again if you want. </P>
+
+<P>Each pixel in a layer can be transparent or solid. If a pixel is transparent,
+the content of underlying layers shows through it. You can specify background
+images and background colors for layers just as you do for body page. Specifying
+a background color causes the entire layer to become opaque. Tiled background
+images can contain transparent pixels.</P>
+
+<P> If you resize a browser while it is showing a page containing layers
+that have been dynamically changed by JavaScript, the layers reset to their
+initial state. That is, they reset to the state they were in when the page
+was first loaded.</P>
+
+<P> </P>
+
+<P><A NAME="nametag"></A></P>
+
+<DT><B>NAME=</B><I>&quot;layerName&quot;</I></DT>
+
+<DD>This is an identification tag for the layer. Layer names must begin
+with an alphabetic character. The name is used for referring to the layer
+from within HTML and external scripting languages such as JavaScript. Each
+layer name within a document must be unique. This attribute is optional;
+by default all layers are unnamed.</DD>
+
+<P><A NAME="lefttag"></A></P>
+
+<DT><B>LEFT=</B><I>xPosition</I></DT>
+
+<P><A NAME="toptag"></A></P>
+
+<DT><B>TOP=</B><I>yPosition</I></DT>
+
+<DD>The LEFT and TOP attributes specify the pixel position or relative
+position (in percent) of the layer in terms of the horizontal and vertical
+position of the top left corner of the layer. The origin is the upper left
+corner of the parent layer or document, with coordinates increasing downwards
+and to the right. The values must be integer values in the range [-2147483648,
+2147483647]; these are the limits of a 32-bit, signed integer. The default
+values for both LEFT and TOP correspond to the position of the content
+of the tag if the tag did not exist. That is, the current layout position
+when the tag is encountered.<BR>
+</DD>
+
+<PRE>   &lt;LAYER LEFT=20 TOP=100&gt;
+</PRE>
+
+<PRE>   This layer appears 20 pixels in from the left and 100 pixels down from the top of the parent layer.
+</PRE>
+
+<PRE>   &lt;/LAYER&gt;
+</PRE>
+
+<DL>
+<P>Both attributes are optional. After the <TT>&lt;LAYER&gt;</TT> tag is
+encountered, subsequent HTML layout will resume at the XY location of layout
+before the <TT>&lt;LAYER&gt;</TT> tag was encountered. </P>
+</DL>
+
+<P><A NAME="widthtag"></A></P>
+
+<DT><B>WIDTH=</B><I>layerWidth</I></DT>
+
+<DD>The WIDTH attribute controls how the contents of the <TT>&lt;LAYER&gt;</TT>
+tag will be wrapped. It is specified in terms of pixels and must be an
+integer in the range [-2147483648, 2147483647]; these are the limits of
+a 32-bit, signed integer, or as a percentage. If elements that cannot be
+wrapped, such as images, extend beyond the width specified, the actual
+width of the contents of the layer will be larger than the specified value.
+This behavior is analogous to the way in which the width of a window sets
+the default wrapping for any HTML it contains. The attribute is optional;
+in the absence of a WIDTH specification, the layer contents wrap at the
+right boundary of the enclosing block. </DD>
+
+<P><A NAME="heighttag"></A></P>
+
+<DT><B>HEIGHT=</B><I>layerHeight</I></DT>
+
+<DD>HEIGHT acts as a reference length for attribute values in child layers
+that are specified using percentages.</DD>
+
+<P><A NAME="cliptag"></A></P>
+
+<DT><B>CLIP=</B>&quot;<I>x1_offset, y1_offset, x2_offset, y2_offset</I>&quot;
+or <B>CLIP=</B>&quot;<I>x2_offset, y2_offset</I>&quot; </DT>
+
+<DD>The CLIP attribute specifies a rectangle containing the portion of
+the contents to be drawn. Everything outside this rectangle is drawn as
+transparent and so is invisible. This clip is expressed in a coordinate
+system where the LEFT and TOP of the layer space is the origin. </DD>
+
+<P>The CLIP attribute is specified with four numbers, in pixels, and must
+be an integer in the range [-2147483648, 2147483647]; these are the limits
+of a 32-bit, signed integer, or as a percentage. These are the x1_offset,
+y1_offset, x2_offset, and y2_offset, where the x1 and y1 offsets specify
+the upper left corner of the displayed region relative to the layer's LEFT
+and TOP position values, and the x2 and y2 offsets specify the lower right
+corner. So, the numbers specified in the attribute from left to right should
+be the horizontal left value, the vertical top value, the horizontal right
+value, and the vertical bottom value. </P>
+
+<P>If x1_offset and y1_offset are omitted, they default to (0,0) (that
+is, the coordinates specified by the layer's LEFT and TOP attributes).
+In this case, the x2 and y2 offsets still represent the lower right corner.
+If CLIP is omitted entirely, x2_offset and y2_offset are chosen such that
+everything within the layer is unclipped - that is, visible. </P>
+
+<P><A NAME="zindextag"></A></P>
+
+<DT><B>Z-INDEX=</B><I>layerZ</I></DT>
+
+<P><A NAME="abovetag"></A></P>
+
+<DT><B>ABOVE=</B>&quot;<I>layerName</I>&quot;</DT>
+
+<P><A NAME="belowtag"></A></P>
+
+<DT><B>BELOW=</B>&quot;<I>layerName</I>&quot;</DT>
+
+<DD>The Z-INDEX, ABOVE, and BELOW attributes specify the z-order (stacking
+order) of layers, overriding the default behavior of placing new layers
+on top of all existing layers. Only one of the Z-INDEX, ABOVE, or BELOW
+attributes may be used for a given layer. </DD>
+
+<DD>The Z-INDEX attribute allows a layer's z-order to be specified in terms
+of a positive integer. Layers with higher-numbered <I>layerZ </I>values
+are stacked above those with lower ones. </DD>
+
+<DD>The ABOVE attribute specifies the NAME attribute of the layer immediately
+on top of a newly created layer. In other words the new layer is created
+just <I>below </I>the layer specified by the ABOVE attribute. Similarly,
+the BELOW attribute identifies the NAME attribute of the layer that will
+be immediately underneath the newly created layer. For either attribute,
+the specified layer must already have been created. Forward references
+to other layers are not permitted and will result in the default layer-creation
+behavior (as if the ABOVE or BELOW attribute had not appeared). </DD>
+
+<P><A NAME="vistag"></A></P>
+
+<DT><B>VISIBILITY=</B>SHOW | HIDE | INHERIT</DT>
+
+<DD>The VISIBILITY attribute is used to determine whether the layer is
+initially displayed. SHOW, which is not implemented in the preview release,
+indicates that the layer should be drawn, HIDE indicates that the layer
+should be hidden, and INHERIT indicates that the layer's visibility should
+always be the same as its parent layer's visibility. The attribute is optional;
+by default, VISIBILITY=INHERIT. The hidden state of a layer can be changed
+dynamically by using a scripting language.</DD>
+
+<P><A NAME="bgcolortag"></A></P>
+
+<DT><B>BGCOLOR=</B><I>&quot;rgbColor&quot;</I></DT>
+
+<P><A NAME="backtag"></A></P>
+
+<DT><B>BACKGROUND=</B><I>&quot;imageURL&quot;</I></DT>
+
+<DD>These attributes control the solid background color or tiled image
+backdrop of a layer. They are similar to the BGCOLOR and BACKGROUND attributes
+of the &lt;BODY&gt; tag. BGCOLOR is either the name of a standard color
+or an RGB value. BACKGROUND is the URL of a backdrop image. Backdrop images
+may contain transparent pixels. Both of these attributes are optional.
+By default, a layer is transparent - layers below a layer with neither
+attribute show through in the areas in which a background color or pattern
+would have been visible.</DD>
+
+<P><A NAME="srctag"></A></P>
+
+<DT><B>SRC=</B><I>URL</I></DT>
+
+<DD>All the content in the page referenced by URL is placed in the layer.</DD>
+
+<P><A NAME="nolayertag"></A></P>
+
+<DT><B>NOLAYER</B></DT>
+
+<DD>All HTML between the &lt;NOLAYER&gt; and &lt;/NOLAYER&gt; is ignored
+in Communicator.</DD>
+</DL>
+
+<P><BR>
+<BR>
+<BR>
+<!----------------------------------------------------->
+<HR></P>
+
+<H3 ALIGN=CENTER><FONT SIZE=+2>L</FONT>AYERS IN <FONT SIZE=+2>HTML: I</FONT>DEA
+<FONT SIZE=+2>G</FONT>LOSSARY </H3>
+
+<P>This section illustrates several simple ways in which Web page layout
+has been enhanced by the addition of the <TT>&lt;LAYER&gt;</TT> tag. This
+section is by no means comprehensive; rather, it contains enough ideas
+to start working with layers. </P>
+
+<P><A NAME="layoutcontrol"></A><B>Layout Control</B> </P>
+
+<BLOCKQUOTE>
+<P>The inability to control the positions of HTML elements has become an
+issue for media-rich content. Before the advent of layers, Navigator laid
+out HTML objects in a sequential, planar fashion. Now, by specifying the
+upper left corner of a layer using the LEFT and TOP attributes, HTML blocks
+can be precisely positioned inside Navigator's window. For example, a layer
+containing an image and &lt;H1&gt; formatted text can be specified to appear
+at coordinates 0,20. Subsequent HTML layers can be positioned precisely
+relative to this layer. Additionally, layers can be made to appear above
+or below other HTML elements on the page. </P>
+</BLOCKQUOTE>
+
+<P><BR>
+<A NAME="background"></A><B>Background Images and Colors</B> </P>
+
+<BLOCKQUOTE>
+<P>In previous versions of Navigator, background images and colors were
+restricted to the background of the entire document or to tables within
+a document. With layers, multiple parts of a page can have different background
+colors and background patterns. Transparency and the overlapping of multiple
+layers can be used to achieve even more interesting visual effects. </P>
+</BLOCKQUOTE>
+
+<P><BR>
+<A NAME="nested"></A><B>Nested Layers</B> </P>
+
+<BLOCKQUOTE>
+<P>Nested layers without JavaScript could be used as a layout method for
+hierarchical documents in the same way that entire HTML tables are often
+placed within table cells. For example, to make something that looked like
+an aquarium, you would need a solid-colored rectangle to serve as a fish
+tank and some fish images. It might look like this: </P>
+
+<PRE>     &lt;!-- Define a layer with a background to serve as the &quot;fish tank&quot;--&gt;
+     &lt;LAYER NAME=&quot;FISHTANK&quot; BACKGROUND=&quot;LIGHT BLUE&quot; CLIP=500,200&gt;
+       &lt;LAYER TOP=100 LEFT=100&gt;
+           &lt;IMG SRC=&quot;grouper.gif&quot;&gt;
+       &lt;/LAYER&gt;
+       &lt;LAYER TOP=200 LEFT=200&gt;
+           &lt;IMG SRC=&quot;grouper.gif&quot;&gt;
+       &lt;/LAYER&gt;
+       &lt;LAYER TOP=200 LEFT=200&gt;=&gt;
+           &lt;IMG SRC=&quot;lionfish.gif&quot;&gt;
+       &lt;/LAYER&gt;
+     &lt;/LAYER&gt;
+</PRE>
+
+<P>The positions of all the fish images are defined relative to the parent
+&quot;FISHTANK&quot; layer, so if you decided to change the placement of
+the fish tank on the page, you wouldn't have to change the coordinates
+of each individual fish image - they would all move with the fish tank
+layer. </P>
+
+<P>Note that hiding a parent hides the children if their VISIBILITY attribute
+is INHERIT. </P>
+</BLOCKQUOTE>
+
+<P><BR>
+<A NAME="hidden"></A><B>Hidden Layers</B> </P>
+
+<BLOCKQUOTE>
+<P>The hidden property of the <TT>&lt;LAYER&gt;</TT> tag allows certain
+layers to be displayed or hidden initially. By adding simple JavaScript
+statements, one can produce dynamic hiding effects with layers. However,
+hidden layers can be useful even without JavaScript. Consider, for example,
+a developer who wishes to hide HTML form elements without using the HIDDEN
+form input type. By using hidden layers, the developer could hide entire
+form elements (for example, text and selection entries) from view. </P>
+</BLOCKQUOTE>
+
+<P><BR>
+</P>
+
+<CENTER><P>
+<HR SIZE=4></P></CENTER>
+
+<H2 ALIGN=CENTER><FONT SIZE=+3>J</FONT>AVA<FONT SIZE=+3>S</FONT>CRIPT <FONT SIZE=+3>E</FONT>XTENSIONS
+FOR <FONT SIZE=+3>L</FONT>AYERING </H2>
+
+<H3 ALIGN=CENTER><FONT SIZE=+2>S</FONT>YNTAX <FONT SIZE=+2>G</FONT>LOSSARY</H3>
+
+<P><A NAME="layerobj"></A><B>L<FONT SIZE=-1>AYER </FONT>O<FONT SIZE=-1>BJECT</FONT>
+</B></P>
+
+<P>Layer objects, which are created automatically, are associated with
+sections of an HTML document that are contained within <TT>&lt;LAYER&gt;</TT>
+<!--and <TT><ILAYER></TT>-->tags. A Layer object has <I>properties</I>
+that reflect the corresponding HTML layer's properties. Some layer properties
+can be directly modified by assignment. For example, <TT>mylayer.visibility
+= &quot;hide&quot;</TT> causes a visible layer to become hidden. In addition,
+a Layer object has <I>methods</I> that can affect these properties. </P>
+
+<P>As with all JavaScript objects, a Layer object's properties and methods
+can be accessed in the following manner:</P>
+
+<P> </P>
+
+<OL>
+<LI><TT><I>layerName</I>.<I>propertyName</I></TT> </LI>
+
+<LI><TT><I>layerName</I>.<I>methodName</I>(<I>parameters</I>)</TT> </LI>
+</OL>
+
+<P><I><TT>layerName</TT></I> refers to a Layer object, <I><TT>propertyName</TT></I>
+is one of the properties described below, <I><TT>methodName</TT></I> is
+one of the methods described below, and <I><TT>parameters</TT></I> are
+the parameters associated with a given method.</P>
+
+<P> <A NAME="layerobjprop"></A><B>L<FONT SIZE=-1>AYER </FONT>O<FONT SIZE=-1>BJECT
+</FONT>P<FONT SIZE=-1>ROPERTIES</FONT> </B></P>
+
+<TABLE CELLPADDING=2 >
+<TR>
+<TH ALIGN=LEFT>Property Name</TH>
+
+<TH ALIGN=LEFT>Modifiable</TH>
+
+<TH ALIGN=LEFT>Short Description</TH>
+</TR>
+
+<TR>
+<TD ALIGN=LEFT>name</TD>
+
+<TD ALIGN=CENTER>no</TD>
+
+<TD ALIGN=LEFT>The name assigned to a layer through the <TT>NAME</TT> attribute.</TD>
+</TR>
+
+<TR>
+<TD ALIGN=LEFT>left</TD>
+
+<TD ALIGN=CENTER>yes</TD>
+
+<TD ALIGN=LEFT>The horizontal position of the left edge of a layer, in
+pixels, relative to the origin of the enclosing layer.</TD>
+</TR>
+
+<TR>
+<TD ALIGN=LEFT>top</TD>
+
+<TD ALIGN=CENTER>yes</TD>
+
+<TD ALIGN=LEFT>The vertical position of the top edge of a layer, in pixels,
+relative to the origin of the enclosing layer.</TD>
+</TR>
+
+<TR>
+<TD ALIGN=LEFT>visibility</TD>
+
+<TD ALIGN=CENTER>yes</TD>
+
+<TD ALIGN=LEFT><TT>&quot;hide&quot;</TT> or <TT>&quot;inherit&quot;</TT>
+(these are strings, not reserved words).</TD>
+</TR>
+
+<TR>
+<TD ALIGN=LEFT>clip.left<BR>
+clip.top<BR>
+clip.right<BR>
+clip.bottom<BR>
+clip.width<BR>
+clip.height</TD>
+
+<TD ALIGN=CENTER>yes</TD>
+
+<TD ALIGN=LEFT>Defines the clipping rectangle, which specifies the part
+of a layer that is visible.</TD>
+</TR>
+
+<TR>
+<TD ALIGN=LEFT>siblingAbove</TD>
+
+<TD ALIGN=CENTER>no</TD>
+
+<TD ALIGN=LEFT>The sibling layer above the one being referenced, in z-order,
+or null if the layer is topmost.</TD>
+</TR>
+
+<TR>
+<TD ALIGN=LEFT>siblingBelow</TD>
+
+<TD ALIGN=CENTER>no</TD>
+
+<TD ALIGN=LEFT>The sibling layer below the one being referenced, in z-order,
+or null if the layer is bottommost.</TD>
+</TR>
+
+<TR>
+<TD ALIGN=LEFT>parentLayer</TD>
+
+<TD ALIGN=CENTER>no</TD>
+
+<TD ALIGN=LEFT>The Layer object that corresponds to the enclosing layer
+environment, or null if root layer.</TD>
+</TR>
+
+<TR>
+<TD ALIGN=LEFT>layers</TD>
+
+<TD ALIGN=CENTER>no</TD>
+
+<TD ALIGN=LEFT>Associative array, enumerating all child Layer objects by
+both name and index, or null if no child layers exist.</TD>
+</TR>
+</TABLE>
+
+<P><A NAME="layerobjmeth"></A><B>L<FONT SIZE=-1>AYER </FONT>O<FONT SIZE=-1>BJECT
+</FONT>M<FONT SIZE=-1>ETHODS</FONT> </B></P>
+
+<TABLE CELLPADDING=2 >
+<TR>
+<TH ALIGN=LEFT>Method</TH>
+
+<TH ALIGN=LEFT>Short Description</TH>
+</TR>
+
+<TR>
+<TD ALIGN=LEFT>moveBy(<I>x</I>, <I>y</I>)</TD>
+
+<TD ALIGN=LEFT>Changes a layer's position by applying the specified deltas,
+measured in pixels.</TD>
+</TR>
+
+<TR>
+<TD ALIGN=LEFT>moveTo(<I>x</I>, <I>y</I>)</TD>
+
+<TD ALIGN=LEFT>Translates a layer such that its upper left corner is (x,y).</TD>
+</TR>
+
+<TR>
+<TD ALIGN=LEFT>resizeTo(<I>width</I>, <I>height</I>)<BR>
+resizeBy(<I>delta width</I>, <I>delta height</I>)</TD>
+
+<TD ALIGN=LEFT>Changes the coordinates of the lower right corner of a layer's
+clipping rectangle.</TD>
+</TR>
+
+<TR>
+<TD ALIGN=LEFT>moveAbove(<I>layer</I>)</TD>
+
+<TD ALIGN=LEFT>Stacks a layer above the specified layer.</TD>
+</TR>
+
+<TR>
+<TD ALIGN=LEFT>moveBelow(<I>layer</I>)</TD>
+
+<TD ALIGN=LEFT>Stacks a layer below the specified layer.</TD>
+</TR>
+</TABLE>
+
+<P><A NAME="layers"></A><B>L<FONT SIZE=-1>AYERS </FONT>A<FONT SIZE=-1>RRAY</FONT>
+</B></P>
+
+<P>A layer can be referenced in JavaScript using the Layers array, which
+contains an entry for each object that has been created. Objects in the
+Layers array can be accessed using either a non-negative integer index
+or by using the name of the layer specified by its <TT>NAME</TT> attribute.
+When accessed using an integer index, the array elements appear in z-order
+from back to front, with zero being the bottommost layer and higher layers
+indexed by consecutive integers. Note that the array index of a layer is
+not the same as its <TT>z</TT> property, because the latter does not necessarily
+enumerate layers with unique consecutive integers.</P>
+
+<P> </P>
+
+<DL>
+<DT>The following represent valid ways of accessing Layer objects:</DT>
+
+<DD><TT>document.<I>layerName<BR>
+</I>document.layers[<I>index</I>]<BR>
+document.layers[&quot;<I>layerName</I>&quot;]</TT></DD>
+</DL>
+
+<P>Elements of the Layers array are JavaScript objects that cannot be set
+by assignment, though their properties can be set. For example, the statement</P>
+
+<P> </P>
+
+<DD><TT>document.layers[0]=&quot;music&quot;</TT></DD>
+
+<P>is invalid and will be ignored because it attempts to alter the Layers
+array. However, some properties of the objects in the array are both readable
+and writable. Thus, for example, the statement</P>
+
+<P> </P>
+
+<DD><TT>document.layers[&quot;somelayer&quot;].left = 100</TT></DD>
+
+<P>is perfectly valid; it represents the intended use of the Layers array.</P>
+
+<P> The number of layers in a document can be obtained from the length
+property of the Layers array:</P>
+
+<P> </P>
+
+<DD><TT>document.layers.length</TT></DD>
+
+<P>Note: in PR3 and later, each layer has its own document property, similar
+to the document property of a window. Therefore, to access an image in
+a layer, a script outside the layer would use:</P>
+
+<P> </P>
+
+<DD><TT>window.document.layers[&quot;layerName&quot;].document.image[m]</TT></DD>
+
+<P>See also the <A HREF="../JavaScript Guide/atlas.htm#array_object">Array
+object</A> in the JavaScript Authoring Guide.</P>
+
+<P> 
+<HR SIZE=4></P>
+
+<H3 ALIGN=CENTER><FONT SIZE=+2>I</FONT>DEA <FONT SIZE=+2>G</FONT>LOSSARY
+</H3>
+
+<P><A NAME="hideandshow"></A><B>H<FONT SIZE=-1>IDING AND </FONT>S<FONT SIZE=-1>HOWING
+</FONT>L<FONT SIZE=-1>AYERS</FONT> </B></P>
+
+<P>A broad spectrum of interesting and useful visual effects can be achieved
+by hiding and showing layers using the <TT><A HREF="#visiblity">visibility</A></TT>
+property. Layers that have been defined in HTML with the attribute <TT>VISIBILITY</TT>
+set to <TT>HIDE</TT> are initially hidden when a page is loaded. By setting
+the <TT>VISIBILITY</TT> attribute of a hidden layer to <TT>SHOW</TT>, you
+can make layers (containing arbitrary HTML) appear suddenly via the use
+of JavaScript events. Similarly, visible layers can go away, either temporarily
+or permanently.</P>
+
+<P> A simple example of this might be a form containing a checkbox labeled
+&quot;Add me to your mailing list.&quot; Initially this checkbox appears
+all by itself. When the user checks the checkbox, a text entry field for
+the user's email address appears - it isn't necessary to reload the page.</P>
+
+<P> By using several hidden layers, you can achieve even more effects.
+For example, you can create a movie with variable frame rates by hiding
+and showing several layers containing static images in a sequence (use
+of this animation effect is described below). Another example might be
+a page containing a paragraph of text that changes when the user's mouse
+passes over various menu items.</P>
+
+<P> <A NAME="moving"></A><B>M<FONT SIZE=-1>OVING </FONT>L<FONT SIZE=-1>AYERS</FONT>
+</B></P>
+
+<P>Using the Layer object's <TT><A HREF="#left">left</A></TT> and <TT><A HREF="#right">right</A></TT>
+properties, the <TT>offset()</TT> method, or the <TT>moveTo()</TT> method,
+layers can be dynamically moved after a page has been drawn. Visible layers
+can be made to jump across the page, and hidden layers can be moved into
+position before they are displayed.</P>
+
+<P> Consider, for example, a puzzle consisting of a three-by-three grid
+containing eight tiles, each of which is a piece of a larger picture. Because
+there are nine squares and only eight tiles, there will always be one empty
+square. When the user clicks on a tile adjacent to the empty square, the
+tile changes places with the empty square. In this way a &quot;shuffled&quot;
+image can be repeatedly rearranged until the correctly configured image
+is constructed. To implement this, you would make each tile an image within
+a layer. When the user clicks on a tile (we can tell this by using the
+<TT><A HREF="../JavaScript Guide/ref_m-q.htm#onClick_event">onClick()</A></TT>
+event handler), its layer is repositioned so that the tile appears over
+the empty square.</P>
+
+<P> As another example, consider how balloon help might be implemented.
+A layer is drawn containing a large, empty &quot;balloon,&quot; much like
+the ones used in cartoons. Additionally, for each area on a page, several
+layers are defined using chunks of HTML that describe the area. All these
+layers are initially hidden. When the user moves the mouse over one of
+the page areas (we can tell this by using the <TT><A HREF="../JavaScript Guide/ref_m-q.htm#onMouseOver_event">onMouseOver()</A></TT>
+and <TT><A HREF="../JavaScript Guide/ref_m-q.htm#onMouseOut_event">onMouseOut()</A></TT>
+event handlers in conjunction with a layer containing a totally transparent
+image), the balloon layer is repositioned over that area of the page. Then,
+the layer with the info for that area of the page is repositioned over
+the balloon layer. Finally, both the balloon layer and the info layer are
+made visible.</P>
+
+<P> Please note that in Preview Release 1, these event handlers only apply
+to imagemaps. In future releases, they could be event handlers for layers.
+</P>
+
+<P><A NAME="reclipping"></A><B>R<FONT SIZE=-1>ECLIPPING</FONT> L<FONT SIZE=-1>AYERS</FONT>
+</B></P>
+
+<P>The Layer object's <TT><A HREF="#clip">clip</A></TT> property and <TT><A HREF="#resize">resize()</A></TT>
+method allow the portion of a layer that is displayed to be changed.</P>
+
+<P> A pull-down menu is an example of this. To create a pull-down menu,
+a layer is defined that shows a complete menu, including its title. The
+<TT>CLIP</TT> attribute of this layer is defined in such a way that only
+the title of the menu is visible when the page is initially loaded. Subsequently,
+when the user clicks the title of the menu, the layer's clipping is changed
+so that the entire menu is visible. When the user then clicks one of the
+menu items, the menu layer's <TT>clip</TT> property is reset to its original
+value.</P>
+
+<P> By combining the reclipping method described in the above example with
+a layer's <TT>left</TT> and <TT>right</TT> properties, you can create &quot;scrollable&quot;
+layers. As an example, consider a layer containing a very large amount
+of HTML. To fit into a page's layout, only a small part of this HTML is
+made visible by clipping the layer. Next to the clipped layer is a down
+arrow image. When the user clicks the arrow, the layer is reclipped so
+that the visible portion of the layer is 10 pixels lower within the layer.
+To compensate for the movement of the visible part of the layer, the entire
+layer moves up 10 pixels. The net effect of these changes is that the content
+of the layer seems to scroll whenever the down arrow is clicked.</P>
+
+<P> <A NAME="animation"></A><B>A<FONT SIZE=-1>NIMATION</FONT> </B></P>
+
+<P>Under the right circumstances, repeatedly performing any of the functions
+described above results in layer animation. For example, layers need not
+jump across the page when they are moved. If a layer is moved from its
+original position to its final position in increments, it seems to slide
+across the page. You can control the sliding speed by adjusting how far
+the layer moves in each increment and how much time passes between increments.</P>
+
+<P> To animate a layer, you use the <TT><A HREF="../JavaScript Guide/ref_s-s.htm#setTimeout_method">setTimeout()</A></TT>
+method within a recursive function to separate each modification to the
+layer's properties. Consider the following example code: </P>
+
+<P><TT>function moveSomeLayer()<BR>
+&nbsp;&nbsp;&nbsp;<I>code which performs one movement of your layer(s)
+goes here</I> </TT></P>
+
+<P><TT>function layer_timeout()<BR>
+&nbsp;&nbsp;&nbsp;moveSomeLayer();<BR>
+&nbsp;&nbsp;&nbsp;set Timeout(&quot;layer_timeout()&quot;,100); </TT></P>
+
+<P><TT>layer_timout();</TT> </P>
+
+<P>Each of the following examples illustrates animation in conjunction
+with hiding and showing layers, moving layers, and reclipping layers. Imagine
+that a whole section of HTML needs to fade away gradually until it disappears.
+This HTML content appears on top of a solid white background. To achieve
+this effect, nine GIF images are created. Each image has a certain percentage
+of opaque white pixels; the remaining pixels are transparent. The opaque
+pixels are distributed within the image in a pattern. The images contain
+10, 20, 30, 40, 50, 60, 70, 80, 90, and 100 percent opaque pixels. Each
+image is used as the background pattern in a hidden layer. Each hidden
+layer has the same dimensions and position as the section of HTML that
+needs to be faded. By rapidly hiding and showing these layers in succession
+until the 100 percent layer is visible, the HTML content appears to fade
+into white.</P>
+
+<P> For the next example, imagine that a GIF image of a ball needs to be
+made to bounce around a certain region of a Web page. First, a layer containing
+the ball image is created. Next, the <TT>LEFT</TT> and <TT>TOP</TT> attributes
+of the layer are stored in global variables. Then, four functions are written
+to move the layer a small number of pixels diagonally up and to the right,
+down and to the right, down and to the left, and up and to the left using
+the <TT>offset()</TT> method. Finally, these functions are called in succession
+to create the desired bouncing ball action.</P>
+
+<P> Finally, consider the pull-down menu example described in the <A HREF="#reclipping">Reclipping
+Layers</A> section above. Rather than having the menu pop up instantly,
+the menu can be made to scroll open. This effect can be achieved by repeatedly
+resetting the layer's <TT>clip.bottom</TT> property. </P>
+
+<P>
+<HR SIZE=4></P>
+
+<CENTER><P><A HREF="/misc/bottom.map"><IMG ISMAP USEMAP="#barmap" SRC="navigation_bar.gif" ALT="Navigation bar" BORDER=0 HEIGHT=32 WIDTH=468></A>
+</P></CENTER>
+
+<CENTER><P><MAP NAME="barmap"><AREA COORDS="0,7,70,31" HREF="/index.html" TARGET="_top"><AREA COORDS="71,7,150,31" HREF="/comprod/mirror/index.html" TARGET="_top"><AREA COORDS="151,7,225,31" HREF="/assist/index.html" TARGET="_top"><AREA COORDS="226,7,300,31" HREF="http://help.netscape.com/" TARGET="_top"><AREA COORDS="301,7,371,31" HREF="/search/index.html" TARGET="_top"><AREA COORDS="372,7,467,31" HREF="/ads/index.html" TARGET="_top"><AREA COORDS="0,0,467,31" HREF="/index.html" TARGET="_top"></MAP><FONT SIZE=-1>Corporate
+Sales: 415/937-2555; Personal Sales: 415/937-3777; Government Sales: 415/937-3678<BR>
+If you have any questions, please visit <A HREF="/assist/index.html" TARGET="_top">Customer
+Service</A>, or contact your nearest <A HREF="/misc/contact_info.html">sales
+office</A>.</FONT></P></CENTER>
+
+<CENTER><P><FONT SIZE=-1> <A HREF="/misc/trademarks.html">Copyright</A>
+&copy; 1997 Netscape Communications Corporation</FONT></P></CENTER>
+
+<CENTER><P><FONT SIZE=-1> This site powered by <A HREF="/comprod/server_central/index.html">Netscape
+SuiteSpot</A> servers.</FONT> </P></CENTER>
+
+</BODY>
+</HTML>

@@ -1,0 +1,396 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<!-- ==================== DEFINE DOCUMENT VARS HERE ==================== -->
+
+
+<head>
+<title>Math Awareness Month, Department of Mathematics, Texas A&amp;M University</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="title" content="Math Awareness Month, Department of Mathematics, Texas A&amp;M University" />
+<meta name="DC.Title" content="Math Awareness Month, Department of Mathematics, Texas A&amp;M University" />
+<meta name="description" content="Math Awareness Month, Department of Mathematics, Texas A&amp;M University" />
+<meta name="DC.Description" content="Math Awareness Month, Department of Mathematics, Texas A&amp;M University" />
+<meta name="keywords" content="Texas A&amp;M, Mathematics, Education, Research, Awareness" />
+<meta name="DC.Subject.Keyword" content="Texas A&amp;M, Mathematics, Education, Research, Awareness" />
+<meta name="author" content="Webmaster, Department of Mathematics, Texas A&amp;M University" />
+<meta name="DC.Author" content="Webmaster, Department of Mathematics, Texas A&amp;M University" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<!--  <link href='/includes/fonts/font.css' rel='stylesheet' type='text/css' /> -->
+  <link rel="stylesheet" media="print" href="/includes/css/print.css" type="text/css" />
+  <link rel="stylesheet" media="screen and (min-width: 900px)" href="/includes/css/screen.1382.css" type="text/css" />
+  <link rel="stylesheet" media="screen and (max-width: 900px)"  href="/includes/css/screen.480.css" type="text/css" />
+<!--[if lt IE 9]>
+  <link rel="stylesheet" media="screen" href="/includes/css/screen.1382.css" type="text/css" />
+<![endif]-->
+
+
+
+</head>
+
+<body>
+
+<div class="wrapper">
+<div class="outerframe">
+ <a id="skipNav" href="#content">Skip to content</a>
+
+ <div class="header">
+   <!--<div class="tamu"><a class="tamu" href="http://www.tamu.edu">Texas A&amp;M University</a></div>
+   <div class="deptname"><a href="/index.html" class="deptnamelink">Mathematics</a></div>-->
+   <div class="tamuIMG"><a href="http://www.tamu.edu"><img src="/images/tamu1.gif" alt="Texas A&amp;M University" height="27"/></a></div>
+   <div class="deptnameIMG"><a href="/index.html"><img src="/images/mathematics.gif" alt="Mathematics" height="35"/></a></div>
+   <div class="contactsearch">
+
+    <div id="search">
+ <form method="get" action="http://search.tamu.edu/search">
+  <div>
+   <label for="query" style="display:none">Search:</label>
+   <input type="text" name="q" id="query" size="21" maxlength="255" value="" />
+   <input id="searchSubmit" type="submit" name="btnG" value="Search" />
+   <input type="hidden" name="site" value="default_collection" />
+   <input type="hidden" name="client" value="TAMU_frontend" />
+   <input type="hidden" name="proxystylesheet" value="TAMU_frontend" />
+   <input type="hidden" name="output" value="xml_no_dtd" />
+   <input type="hidden" name="sitesearch" value="math.tamu.edu" />
+  </div>
+ </form>
+</div>
+
+
+   </div><!-- contactsearch -->
+<div class="nomobile">
+<div id="featured" >                                                         
+	<div class="featuredTitle featuredShow" ><a class="featuredprograms featureShow" href="/featuredprograms/" style="padding-top:20px">Featured programs<span class="nomobile"> &#x25BE;</span></a></div>
+	 <div class="featuredShow featuredContent" style="">
+		<div class="featuredprogram"><a class="featuredprogramlink" href="/undergraduate/research/REU/">REU: Research Experience for Undergraduates</a></div>
+		<div class="featuredprogram"><a class="featuredprogramlink" href="http://mathcircle.tamu.edu/">Math Circle</a></div>
+		<div class="featuredprogram"><a class="featuredprogramlink" href="/ubm/">UBM: Undergraduate Program in Biology and Mathematical Sciences</a></div>
+		<div class="featuredprogram"><a class="featuredprogramlink" href="https://iamcs.tamu.edu/">IAMCS: Institute for Applied Mathematics and Computational Science</a></div>
+		<div class="featuredprogram"><a class="featuredprogramlink" href="http://igert.tamu.edu/">IGERT: Integrative Graduate Education and Research Traineeship</a></div>
+		<div class="featuredprogram"><a class="featuredprogramlink" href="/outreach/highschoolcontest/">High School Math Contest</a></div>
+		<div class="featuredprogram"><a class="featuredprogramlink" href="/outreach/mam/">Math Awareness Month</a></div>
+		<div class="featuredprogram"><a class="featuredprogramlink" href="/outreach/SMaRT/">SMaRT Camp</a></div>
+		<div class="featuredprogram"><a class="featuredprogramlink" href="http://nsfstep.math.tamu.edu/">Personalized Precalculus</a></div>
+	 </div>
+</div>
+
+<!-- Breaking out of frames [dh] -->
+<script type="text/javascript">
+  if(top != self) top.location.replace(location);
+</script>
+<noscript><div style="display:none">Javascript is turned off or not available.</div></noscript>
+
+
+</div>
+ </div><!-- header -->
+<div style="clear:both"> </div>
+<div class="bar"></div>
+<div class="menuWrap">
+   
+	<h1 class="mobilemenu mobilemenutitle"><a class="mobilemenuicon" href="/mobilemenu.html">  <img src="/images/menu.png" alt="3 horizontal lines" width="20" style="vertical-align:middle;margin:10px;margin-right:2px;width:20px;height:20px"/> Menu</a></h1>
+   
+   
+	<h1 class="mobilemenu featuredprograms"><a href="/featuredprograms/"><img src="/images/menu.png" alt="3 horizontal lines" width="20" style="vertical-align:middle;margin:10px;margin-right:2px;width:20px;height:20px"/>Featured programs</a></h1>
+   
+ <div class="nomobile menu">
+
+   <div class="menu1 menubox">
+    <div class="menutitle">ABOUT</div>
+    <a href="/welcome/" class="menulink">welcome</a><br />
+    <a href="/hiring/" class="menulink">employment</a><br />
+    <a href="/contact/" class="menulink">contact</a>
+   </div>
+
+   <div class="menu2 menubox">
+    <div class="menutitle">PEOPLE</div>
+    <a href="/directory/faculty.html" class="menulink">faculty</a> &middot;
+    <a href="/directory/staff.html" class="menulink">staff</a><br />   
+    <a href="/directory/faculty.html#VF" class="menulink">visitors</a><br />
+    <a href="/directory/graduate.html" class="menulink">grad students</a>
+   </div>
+
+   <div class="menu3 menubox">
+    <div class="menutitle">RESEARCH</div>
+    <a href="/research/" class="menulink">areas</a><br />
+    <a href="/seminars/" class="menulink">seminars</a><br />
+    <a href="/seminars/lectureseries.html" class="menulink">lecture series</a>
+   </div> 
+
+   <div class="menu4 menubox">
+    <div class="menutitle">ACADEMICS</div>
+    <a href="/courses/" class="menulink">courses &amp; general info</a><br />
+    <a href="/undergraduate/" class="menulink">undergraduate</a><br />
+    <a href="/graduate/" class="menulink">graduate</a><br />
+   </div>
+
+   <div class="menu5 menubox">
+    <div class="menutitle">SERVICES</div>
+    <a href="/admin/" rel="nofollow" class="menulink">administration</a><br />
+    <a href="/computing/" class="menulink">computing</a><br />
+    <a href="/resources/" class="menulink">resources</a>
+   </div>
+
+   <div class="menu6 menubox">
+    <div class="menutitle">OUTREACH</div>
+    <a href="/outreach/programs/" class="menulink">programs</a><br />
+    <a href="/outreach/friendsalumni/" class="menulink">friends &amp; alumni</a><br />
+   </div>
+
+   <div class="menu7 menubox">
+    <div class="menutitle">NEWS &amp; EVENTS</div>
+    <a href="/news/" class="menulink">news</a><br />
+    <a href="/Calendar/" class="menulink">calendar</a><br />
+    <a href="/conferences/" class="menulink">conferences</a>
+   </div>
+</div>
+</div>
+<div style="clear:both"> </div>
+
+ <div id="contentContainer">
+<div id="content">
+
+
+
+
+<!-- ==================== BEGIN YOUR CONTENT HERE ==================== -->
+
+<h1 class="pageTitle">Math Awareness Month</h1>
+<img src="MAM_2014.jpg"  alt="Math Awareness 2014 Poster" height="400"  style="padding-left: 8px; padding-top: 5px;float:right" />
+
+<p>Each year, the month of April is designated the Mathematics Awareness Month by</p>
+
+<ul>
+<li> The <a href="http://www.ams.org">American Mathematical Society</a></li>
+<li> The <a href="http://www.amstat.org">American Statistical Association</a></li>
+<li>The <a href="http://www.maa.org">Mathematical Association of America</a></li>
+<li>The <a href="http://www.siam.org">Society for Industrial and Applied Mathematics</a></li>
+</ul>
+
+<p>to recognize the importance of mathematics.</p>
+
+<p>In 2014 the theme of Math Awareness Month is  <strong>Mathematics, Magic, and Mystery</strong>.</p>
+
+<h2>Activities at Texas A&amp;M University</h2>
+
+<ul>
+<li> The Freshman/Sophomore Math Contest.
+
+<br/>
+<!--<a href=http://www.math.tamu.edu/undergraduate/fscontest
+target="_blank"><img src=http://www.math.tamu.edu/undergraduate/fscontest/poster_2012_webedit.jpg
+  width=212 height=320 style="padding-left: 8px; padding-top: 5px;"></a>
+  <li> 6th annual TAMU
+  <a href="/outreach/mam/IntegralBee/">Integral Bee</a>,
+   Thursday, April 26, 2012, 6:00 - 8:00pm
+  <a href="/contact/blocker.html">BLOC 166</a>.
+  </li>
+-->
+   <strong>Math Mini Fair</strong>: Saturday, April 12, 2014, <a href="/contact/blocker.html">Blocker Building</a>. <!--<strong> <a href="registration/" target="_blank">Register now.</a></strong> --></li>
+</ul>
+
+<h1 style="margin-top:70px">Math Fair &mdash; Saturday April 12, 2014 <br/> 9:00 am - 2:00 pm</h1>
+<!--<h3><a href="registration/">Register now!</a></h3>-->
+<h3>Free Parking in unmarked, unnumbered spaces in
+  <a href="http://transport.tamu.edu/parking/maps/visitor.pdf" target="_blank">lots 50 and 51</a>.  If you park in Northside Garage
+  across from Blocker, you will have to pay the parking fee.</h3>
+
+<br/>
+<strong>Planned Activities</strong>
+<!--<ul>
+<li> 9:00 am - 9:15 am Registration (Blocker Lobby)
+<li> 9:30 am - 9:45 am Welcome and Overview: Dr. Jean Marie Linhart 
+<li> 9:45 am - 11:00 am Problem Solving Contests
+<li> 9:45 am - 12:30 pm Mathematical Art Room; Art
+    Competition. <b>Contest art
+    must be complete by 11 am.</b>
+<li> 9:45 - 12:30 am Mathematical Games and Activities
+<li> 12:00 pm Pizza Lunch
+<li>Movies:  <a href=http://www.youtube.com/watch?v=C8oiwnNlyE4
+		target="_blank">Flatland (YouTube Trailer)</a> and
+		<a href=http://www.youtube.com/watch?v=6BHQPxf7_Fs
+		target="_blank">Sphereland (YouTube Trailer)</a>
+<li>Pizza lunch
+</ul>-->
+<table border="0" cellpadding="5" summary="schedule">
+  <tr>
+    <td class="time">9:00-9:15</td>
+    <td>Registration (Blocker lobby)</td>
+  </tr>
+  <tr>
+    <td class="time">9:15-9:30</td>
+    <td>Welcome and Overview: Dr. Paulo Lima-Filho (BLOC 166)</td>
+  </tr>
+  <tr>
+<td class="time">9:30-10:30</td>
+    <td>Talk by Distinguished Professor Peter Kuchment (BLOC 166)</td>
+  </tr>
+  <tr>
+    <td class="time">10:30&ndash;12:00</td>
+    <td>Problem Solving Contests (BLOC 166)</td>
+  </tr>
+  <tr>
+    <td class="time">10:30&ndash;12:00 </td>
+    <td>Mathematical Games and Activities (BLOC 163 and BLOC 148)
+    </td>
+  </tr>
+  <tr>
+    <td class="time">10:30&ndash;11:25</td>
+    <td>Movie: <a href="http://www.youtube.com/watch?v=EGKRN4ogMWw" target="_blank">Between the folds</a> (link is to the movie trailer on
+    YouTube). (BLOC 164)<br/>
+    </td>
+  </tr>
+<tr>
+<td class="time">11:25&ndash;12:10</td>
+    <td>Movie: <a href="http://www.youtube.com/watch?v=m8KCx1DFnQI" target="_blank">Hard Problems</a> (link is to the movie trailer on
+    YouTube). (BLOC 164)<br/>
+    </td>
+  </tr>
+  <tr>
+    <td class="time">12:00&ndash;12:30</td>
+    <td>Pizza Lunch (BLOC 148)
+    </td>
+  </tr>
+<tr>
+    <td class="time">12:30-1:30</td>
+    <td>"Some simple card tricks and universal cycles" : Talk by Dr. Jacob White (BLOC 166)</td>
+  </tr>
+  <tr>
+    <td class="time">1:30&ndash;2:00</td>
+    <td>Contest Awards (BLOC 166) </td>
+  </tr>
+<tr>
+    <td class="time">2:00&ndash;5:00 </td>
+    <td>After Hours: Eleusis Competition (BLOC 148) for those interested, both kids and adults. <a href="http://see-math.math.tamu.edu/SEE-ProgDescAct/activities/Eleusis%20-%20Gardner.pdf"
+    target="_blank">Eleusis Rules</a></td>
+  </tr>
+</table>
+   
+
+
+
+
+
+
+ 
+
+<h2>Here are the problems and solutions from the 2011/2012 Problem Solving Contests:</h2>
+
+<ul>
+<li>2013 Grades K-2:<a href="2013-12.pdf" target="_blank">problems</a>,<a href="2013-12_soln.pdf" target="_blank">solutions</a></li>
+<li>2013 Grades 3-4:<a href="2013-34.pdf" target="_blank">problems</a>,<a href="2013-34_soln.pdf" target="_blank">solutions</a></li>
+<li>2013 Grades 5-6:<a href="2013-56.pdf" target="_blank">problems</a>,<a href="2013-56_soln.pdf" target="_blank">solutions</a></li>
+<li>2013 Grades 7-9:<a href="2013-79.pdf" target="_blank">problems</a>,<a href="2013-79_soln.pdf" target="_blank">solutions</a></li>
+<li> 2012 Grades K-4: <a href="2012/2012k4.pdf" target="_blank">problems</a>, <a 
+href="2012/2012k4_soln.pdf" target="_blank">solutions</a>.</li>
+<li> 2012 Grades 5-7: <a href="2012/2012middle.pdf" target="_blank">problems</a>, <a 
+href="2012/2012middle_soln.pdf" target="_blank">solutions</a>.</li>
+<li> 2012 Grades 8-12: <a href="2012/2012high.pdf" target="_blank">problems</a>, <a
+href="2012/2012high_soln.pdf" target="_blank">solutions</a>.</li>
+<li> 2011 Grades K-4: <a href="2011/k4.pdf">problems</a>, <a 
+href="k4key.pdf">solutions</a>.</li>
+<li> 2011 Grades 5-7: <a href="2011/middle.pdf">problems</a>, <a 
+href="middlesols.pdf">solutions</a>.</li>
+<li> 2011 Grades 8-12: <a href="2011/high.pdf">problems</a>, <a
+href="highsols.pdf">solutions</a>.</li>
+</ul>
+<!--
+<p>Please visit our 
+  <a href="http://www.facebook.com/posted.php?id=58851157724&amp;success#/event.php?eid=58851157724">Facebook
+  page</a> and RSVP there too!</p>
+-->
+
+<p>Support provided by:<br/>
+<a href="http://www.maplesoft.com" target="_blank"><img src="MaplesoftLogo.jpeg" height="80" alt="Maplesoft Logo"/></a>
+</p>
+
+
+<h2>Recommended links (internal)</h2>
+
+<ul>
+  <li> <a href="/">Department of Mathematics</a>
+  at Texas A&amp;M University</li>
+  <li>TAMU <a href="/outreach/k-12.html">Math programs 
+  for public schools</a></li>
+  <li>A list of <a href="/outreach/Mathbooks.html">Enjoyable 
+  Books on Math and Science</a> </li>
+  <li> Entertain yourself with optical <a href="illusions/">illusions</a> </li>
+
+</ul>
+
+<h2>Recommended links (external)</h2>
+
+<ul>
+  <li> <a href="http://www.mathaware.org/">Math Awareness Month</a> 
+  national website</li>
+  <li><a href="http://www.mathunion.org/general/prizes">World's 
+  leading math prizes</a></li>
+  <li>The <a href="http://www.unl.edu/amc/">American Math 
+  Competitions</a> page</li>
+
+  <li><a href="http://www.pbs.org/wgbh/nova/proof/resources.html">PBS NOVA 
+  Math resources page</a></li>
+  <li><a href="http://world.std.com/~reinhold/mathmovies.html">Math in the Movies</a></li>
+  <li><a href="http://www.magicofmath.org/book_advanced.html">Magic of Math: 
+  Books on Math and Science for Students</a> </li>
+  <li><a href="http://www.mathpuzzle.com/Links.html">Math Puzzles 
+    and Fun links</a></li>
+  <li><a href="http://planetmath.org/encyclopedia/">Encyclopedia of 
+  Mathematical Terms</a></li>
+</ul>
+
+<h2>Previous Years</h2>
+<ul>
+<li><a href="2013">April 2013</a></li>
+<li><a href="2012">April 2012</a></li>
+<li><a href="2011">April 2011</a></li>
+<li><a href="2009/">April 2009</a></li>
+<li><a href="2008/">April 2008</a></li>
+<li><a href="2007/">April 2007</a></li>
+<li><a href="2006">April 2006</a></li>
+<li><a href="2005">April 2005</a></li>
+<li><a href="2004">April 2004</a></li>
+</ul>
+
+<hr/>
+<address>
+Last modified on Tuesday, 08-Dec-2015 15:09:28 CST.
+</address>
+
+
+<!-- ===================== END YOUR CONTENT HERE ===================== -->
+
+  </div>
+</div>  <!-- contentContainer -->
+
+<div style="clear:both"></div>
+
+  <div class="footer">
+  <div class="footertext">
+   <div style="float:left;padding-right:17px;padding-top:1px">
+   <a href="http://www.tamu.edu"><img src="/images/tamu.gif" style="width:120px" alt="TAMU" /></a>
+   </div>
+    <span class="screenMe">
+<a href="http://www.science.tamu.edu/" class="footerlink">College&nbsp;of&nbsp;Science</a>&nbsp;|&nbsp;
+<a href="http://itaccessibility.tamu.edu/" class="footerlink">Accessibility</a>&nbsp;|&nbsp;
+<a href="http://www.math.tamu.edu/site-policy/" class="footerlink">Site&nbsp;Policy</a>&nbsp;|&nbsp;
+<a href="mailto:webmaster@math.tamu.edu" class="footerlink">Webmaster</a>
+</span>
+  </div> <!-- footertext -->
+
+<br/><br/> 
+ </div> <!--Footer -->
+</div>
+</div>  <!-- wrapper -->
+<!--
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({tex2jax: {inlineMath: [['$$','$$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+-->
+
+
+</body>
+</html>

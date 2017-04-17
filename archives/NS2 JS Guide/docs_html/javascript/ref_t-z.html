@@ -1,0 +1,1025 @@
+<HTML>
+<BODY>
+
+<A NAME="tan_method"><H2>tan method</H2></A>
+<P>
+Returns the tangent of a number.
+
+<H3>Syntax</H3>
+<PRE>Math.tan(<I>number</I>)</PRE>
+<P><I>number</I> is a numeric expression representing the size of an angle in radians, or a property of an existing object.
+
+<H3>Method of</H3>
+<P><A HREF=ref_m-q.html#Math_object>Math</A>
+
+<H3>Description</H3>
+<P>The tan method returns a numeric value which represents the tangent of the angle.
+
+<H3>Examples</H3>
+<PRE>
+//Displays the value 0.9999999999999999
+document.write("The tangent of pi/4 radians is " +
+   Math.tan(Math.PI/4))
+
+//Displays the value 0
+document.write("&ltP&gtThe tangent of 0 radians is " +
+   Math.tan(0))
+</PRE>
+
+<H3>See also</H3>
+<LI><A HREF=ref_a-c.html#acos_method>acos</A>, <A HREF=ref_a-c.html#asin_method>asin</A>, <A HREF=ref_a-c.html#atan_method>atan</A>, <A HREF=ref_a-c.html#cos_method>cos</A>, <A HREF=ref_s-s.html#sin_method>sin</A> methods
+
+<!----------------------------------------------------------------->
+<HR>
+<A NAME="target_property"><H2>target property</H2></A>
+<P>
+For form, a string specifying the name of the window that responses go to after a form has been submitted. For link, a string specifying the name of the window that displays the content of a clicked hypertext link.
+
+<H3>Syntax</H3>
+<PRE>
+1. <I>formName</I>.target
+2. links[<I>index</I>].target
+</PRE>
+<P><I>formName</I> is either the name of a form or an element in the <I>forms</I> array.
+<BR><I>index</I> is an integer representing a link object.
+
+<H3>Property of</H3>
+<P><A HREF=ref_f-g.html#form_object>form</A>, <A HREF=ref_h-l.html#link_object>link</A>
+
+<H3>Description</H3>
+<P>The target property initially reflects the TARGET attribute of the &ltFORM&gt and &ltA&gt tags; however, setting target overrides these attributes.
+
+<P>The target property cannot be assigned the value of a JavaScript expression or variable.
+
+<P>You can set the target property at any time.
+
+<P>Certain values of the target property may require specific values for other form properties. See <A HREF="http://www.ics.uci.edu/pub/ietf/html/rfc1867.txt" TARGET="_top">RFC 1867</A> for more information.
+
+<H3>Examples</H3>
+<P>The following example specifies that responses to the <I>musicInfo</I> form are displayed in the "msgWindow" window:
+<PRE>document.musicInfo.target="msgWindow"</PRE>
+
+<H3>See also</H3>
+<P>For form:
+<LI><A HREF=ref_a-c.html#action_property>action</A>, <A HREF=ref_d-e.html#encoding_property>encoding</A>, <A HREF=ref_m-q.html#method_property>method</A> properties
+<!------------------------------------------------------------------------------------------------->
+<HR>
+<A NAME="text_object"><H2>text object</H2></A>
+<P>A text input field on an HTML form. A text field lets the user enter a word, phrase, or series of numbers.
+
+
+<H3>Syntax</H3>
+<P>To define a text object, use standard HTML syntax with the addition of the onBlur, on Change, onFocus, and onSelect event handlers:
+<PRE>
+&LTINPUT
+   TYPE="text"
+   NAME="<I>textName</I>"
+   VALUE="<I>textValue</I>"
+   SIZE=<I>integer</I>
+   [onBlur="<I>handlerText</I>"]
+   [onChange="<I>handlerText</I>"]
+   [onFocus="<I>handlerText</I>"]
+   [onSelect="<I>handlerText</I>"]&GT
+</PRE>
+<I>NAME="textName"</I> specifies the name of the text object. You can access this value using the name property.
+<BR><I>VALUE="textValue"</I> specifies the initial value of the text object. You can access this value using the defaultValue property.
+<BR><I>SIZE=integer</I> specifies the number of characters the text object can accommodate without scrolling.
+
+<P>To use a text object's properties and methods:
+<PRE>
+1. <I>textName</I>.<I>propertyName</I>
+2. <I>textName</I>.<I>methodName</I>(<I>parameters</I>)
+3. <I>formName</I>.elements[<I>index</I>].<I>propertyName</I>
+4. <I>formName</I>.elements[<I>index</I>].<I>methodName</I>(<I>parameters</I>)
+</PRE>
+<I>textName</I> is the value of the NAME attribute of a text object.
+<BR><I>formName</I> is either the value of the NAME attribute of a form object or an element in the <I>forms</I> array.
+<BR><I>index</I> is an integer representing a text object on a form.
+<BR><I>propertyName</I> is one of the properties listed below.
+<BR><I>methodName</I> is one of the methods listed below.
+
+
+<H3>Property of</H3>
+<LI><A HREF=ref_f-g.html#form_object>form</A>
+
+
+<H3>Description</H3>
+<P>A text object on a form looks as follows:
+<FORM>
+<P><B>Last name:</B> <INPUT TYPE="text" VALUE="Salamone" SIZE=25>
+</FORM>
+<P>A text object is a form element and must be defined within a &LTFORM&GT tag.
+
+<P>text objects can be updated (redrawn) dynamically by setting the value property (this.value).
+
+
+<H3>Properties</H3>
+<LI><A HREF=ref_d-e.html#defaultValue_property>defaultValue</A> reflects the VALUE attribute
+<LI><A HREF=ref_m-q.html#name_property>name</A> reflects the NAME attribute
+<LI><A HREF=ref_t-z.html#value_property>value</A> reflects the current value of the text object's field
+
+
+<H3>Methods</H3>
+<LI><A HREF=ref_f-g.html#focus_method>focus</A>
+<LI><A HREF=ref_a-c.html#blur_method>blur</A>
+<LI><A HREF=ref_s-s.html#select_method>select</A>
+
+
+<H3>Event handlers</H3>
+<LI><A HREF=ref_m-q.html#onBlur_event>onBlur</A>
+<LI><A HREF=ref_m-q.html#onChange_event>onChange</A>
+<LI><A HREF=ref_m-q.html#onFocus_event>onFocus</A>
+<LI><A HREF=ref_m-q.html#onSelect_event>onSelect</A>
+
+
+<H3>Examples</H3>
+<P><B>Example 1.</B> The following example creates a text object that is 25 characters long. The text field appears immediately to the right of the words "Last name:". The text field is blank when the form loads.
+<XMP>
+<B>Last name:</B> <INPUT TYPE="text" NAME="last_name" VALUE="" SIZE=25>
+</XMP>
+
+<P><B>Example 2.</B> The following example creates two text objects on a form. Each object has a default value. The <I>city</I> object has an onFocus event handler that selects all the text in the field when the user tabs to that field. The <I>state</I> object has an onChange event handler that forces the value to upper case.
+<XMP>
+<FORM NAME="form1">
+<BR><B>City: </B><INPUT TYPE="text" NAME="city" VALUE="Anchorage"
+   SIZE="20" onFocus="this.select()">
+<B>State: </B><INPUT TYPE="text" NAME="state" VALUE="AK" SIZE="2"
+   onChange="this.value=this.value.toUpperCase()">
+</FORM>
+</XMP>
+<P>See also the examples for the <A HREF=ref_m-q.html#onBlur_event>onBlur</A>, <A HREF=ref_m-q.html#onChange_event>onChange</A>, <A HREF=ref_m-q.html#onFocus_event>onFocus</A>, and <A HREF=ref_m-q.html#onSelect_event>onSelect</A> event handlers.
+
+
+<H3>See also</H3>
+<LI><A HREF=ref_f-g.html#form_object>form</A>, <A HREF=ref_m-q.html#password_object>password</A>, <A HREF=ref_s-s.html#string_object>string</A>, and <A HREF=ref_t-z.html#textarea_object>textarea</A> objects
+
+
+<!------------------------------------------------------------------------------------------------->
+<HR>
+<A NAME="text_property"><H2>text property</H2></A>
+<P>
+A string specifying the text that follows an &ltOPTION&gt tag in a select object.
+
+<H3>Syntax</H3>
+<PRE><I>selectName</I>.options[<I>index</I>].text</PRE>
+<P><I>selectName</I> is either the value of the NAME attribute of a select object or an element in the <I>elements</I> array.
+<BR><I>index</I> is an integer representing an option in a select object.
+
+<H3>Property of</H3>
+<P><A HREF=ref_s-s.html#select_object>options</A> array
+
+<H3>Description</H3>
+<P>The text property initially reflects the text that follows an &ltOPTION&gt tag in a select object.
+
+<P>You can set the text property at any time; however, the following effects result:
+<LI>The value of the property changes.
+<LI>The text displayed by the option in the select object does not change.
+
+<P>Be careful if you change the text property. If you evaluate the property after you change it, the property contains the new value, not the value that is displayed onscreen.
+
+<H3>Examples</H3>
+<P>In the following example, the <I>getChoice()</I> function returns the value of the text property for the selected option. The <B>for</B> loop evaluates every option in the <I>musicType</I> select object. The <B>if</B> statement finds the option that is selected.
+<PRE>
+function getChoice() {
+   for (var i = 0; i < document.musicForm.musicType.length; i++) {
+      if (document.musicForm.musicType.options[i].selected == true) {
+         return document.musicForm.musicType.options[i].text
+      }
+   }
+   return null
+}
+</PRE>
+The previous example assumes that the select object is similar to the following:
+<PRE>
+&ltSELECT NAME="musicType"&gt
+   &ltOPTION SELECTED&gt R&B
+   &ltOPTION&gt Jazz
+   &ltOPTION&gt Blues
+   &ltOPTION&gt New Age
+&lt/SELECT&gt
+</PRE>
+
+<!------------------------------------------------------------------------------------------------->
+<HR>
+<A NAME="textarea_object"><H2>textarea object</H2></A>
+<P>A multiline input field on an HTML form. A textarea field lets the user enter words, phrases, or numbers.
+
+
+<H3>Syntax</H3>
+<P>To define a text area, use standard HTML syntax with the addition of the onBlur, onChange, onFocus, and onSelect event handlers:
+<PRE>
+&LTTEXTAREA
+   NAME="<I>textareaName</I>"
+   ROWS="<I>integer</I>"
+   COLS="<I>integer</I>"
+   WRAP="off|virtual|physical"
+   [onBlur="<I>handlerText</I>"]
+   [onChange="<I>handlerText</I>"]
+   [onFocus="<I>handlerText</I>"]
+   [onSelect="<I>handlerText</I>"]&GT
+   <I>textToDisplay</I>
+&LT/TEXTAREA&GT
+</PRE>
+<I>NAME="textareaName"</I> specifies the name of the textarea object. You can access this value using the name property.
+<BR><I>ROWS="integer"</I> and <I>COLS="integer"</I> define the physical size of the displayed input field in numbers of characters.
+<BR><I>textToDisplay</I> specifies the initial value of the textarea object. A textarea allows only ASCII text, and new lines are respected. You can access this value using the defaultValue property.
+<P>
+The WRAP attribute controls word wrapping inside the TEXTAREA. The value "off" is default
+and lines are sent exactly as typed. The value "virtual" wraps in the display but are sent exactly as typed.
+The value "physical" wraps in the display and sends new-lines at the wrap points as if new-lines had been
+entered. 
+
+<P>To use a textarea object's properties and methods:
+<PRE>
+1. <I>textareaName</I>.<I>propertyName</I>
+2. <I>textareaName</I>.<I>methodName</I>(<I>parameters</I>)
+3. <I>formName</I>.elements[<I>index</I>].<I>propertyName</I>
+4. <I>formName</I>.elements[<I>index</I>].<I>methodName</I>(<I>parameters</I>)
+</PRE>
+<I>textareaName</I> is the value of the NAME attribute of a textarea object.
+<BR><I>formName</I> is either the value of the NAME attribute of a form object or an element in the <I>forms</I> array.
+<BR><I>index</I> is an integer representing a textarea object on a form.
+<BR><I>propertyName</I> is one of the properties listed below.
+<BR><I>methodName</I> is one of the methods listed below.
+
+
+<H3>Property of</H3>
+<LI><A HREF=ref_f-g.html#form_object>form</A>
+
+
+<H3>Description</H3>
+<P>A textarea object on a form looks as follows:
+<FORM>
+<P><TEXTAREA NAME="item_description" ROWS=5 COLS=45>
+Our storage ottoman provides an attractive way to
+store lots of CDs and videos--and it's versatile
+enough to store other things as well.
+
+It can hold up to 72 CDs under the lid and 20 videos
+in the drawer below.
+</TEXTAREA>
+</FORM>
+<P>A textarea object is a form element and must be defined within a &LTFORM&GT tag.
+
+<P>textarea objects can be updated (redrawn) dynamically by setting the value property (this.value).
+
+<P>To begin a new line in a textarea object, you can use a newline character. 
+This character varies from platform to platform: Unix is \n, Windows is \r\n, and Macintosh is \n. 
+One way to enter a newline character programatically is to test the appVersion property to determine the 
+current platform and set the newline character accordingly. 
+See the <A HREF=ref_a-c.html#appVersion_property>appVersion</A> property for an example.
+
+
+<H3>Properties</H3>
+<LI><A HREF=ref_d-e.html#defaultValue_property>defaultValue</A> reflects the VALUE attribute
+<LI><A HREF=ref_m-q.html#name_property>name</A> reflects the NAME attribute
+<LI><A HREF=ref_t-z.html#value_property>value</A> reflects the current value of the textarea object
+
+
+<H3>Methods</H3>
+<LI><A HREF=ref_f-g.html#focus_method>focus</A>
+<LI><A HREF=ref_a-c.html#blur_method>blur</A>
+<LI><A HREF=ref_s-s.html#select_method>select</A>
+
+
+<H3>Event handlers</H3>
+<LI><A HREF=ref_m-q.html#onBlur_event>onBlur</A>
+<LI><A HREF=ref_m-q.html#onChange_event>onChange</A>
+<LI><A HREF=ref_m-q.html#onFocus_event>onFocus</A>
+<LI><A HREF=ref_m-q.html#onSelect_event>onSelect</A>
+
+
+<H3>Examples</H3>
+<P>The following example creates a textarea object that is 6 rows long and 55 columns wide. The textarea field appears immediately below the word "Description:". When the form loads, the textarea object contains several lines of data, including one blank line.
+<XMP>
+<B>Description:</B>
+<BR><TEXTAREA NAME="item_description" ROWS=6 COLS=55>
+Our storage ottoman provides an attractive way to
+store lots of CDs and videos--and it's versatile
+enough to store other things as well.
+
+It can hold up to 72 CDs under the lid and 20 videos
+in the drawer below.
+</TEXTAREA>
+</XMP>
+
+<P>See also the examples for the <A HREF=ref_m-q.html#onBlur_event>onBlur</A>, <A HREF=ref_m-q.html#onChange_event>onChange</A>, <A HREF=ref_m-q.html#onFocus_event>onFocus</A>, and <A HREF=ref_m-q.html#onSelect_event>onSelect</A> event handlers.
+
+
+<H3>See also</H3>
+<LI><A HREF=ref_f-g.html#form_object>form</A>, <A HREF=ref_m-q.html#password_object>password</A>, <A HREF=ref_s-s.html#string_object>string</A>, and <A HREF=ref_t-z.html#text_object>text</A> objects
+
+
+<!------------------------------------------------------------------------------------------------->
+<HR>
+<A NAME="title_property"><H2>title property</H2></A>
+<P>
+A string representing the title of a document.
+
+<H3>Syntax</H3>
+<PRE>document.title</PRE>
+
+<H3>Property of</H3>
+<P><A HREF=ref_d-e.html#document_object>document</A>
+
+<H3>Description</H3>
+<P>The title property is a reflection of the value specified within the &ltTITLE&gt and &lt/TITLE&gt tags. If a document does not have a title, the title property is null.
+
+<P>title is a read-only property.
+
+<H3>Examples</H3>
+<P>In the following example, the value of the title property is assigned to a variable called <I>docTitle</I>:
+<PRE>
+var newWindow = window.open("http://www.netscape.com")
+var docTitle = newWindow.document.title
+</PRE>
+<!------------------------------------------------------------------------------------------------->
+<HR>
+<A NAME="toGMTString_method"><H2>toGMTString method</H2></A>
+<P>
+Converts a date to a string, using the Internet GMT conventions.
+
+<H3>Syntax</H3>
+<PRE><I>dateObjectName</I>.toGMTString()</PRE>
+<P><I>dateObjectName</I> is either the name of a date object or a property of an existing object.
+
+<H3>Method of</H3>
+<P><A HREF=ref_d-e.html#Date_object>Date</A>
+
+<H3>Description</H3>
+<P>The exact format of the value returned by toGMTString varies according to the platform.
+
+<H3>Examples</H3>
+In the following example, <I>today</I> is a date object:
+<PRE>
+today.toGMTString()
+</PRE>
+<P>
+In this example, the toGMTString method converts the date to GMT (UTC) using the operating system's time zone offset and returns a string value that is similar to the following form. The exact format depends on the platform.
+<P>
+Mon, 18 Dec 1995 17:28:35 GMT
+
+<H3>See also</H3>
+<LI><A HREF=ref_t-z.html#toLocaleString_method>toLocaleString</A> method
+
+<!----------------------------------------------------------------->
+<HR>
+<A NAME="toLocaleString_method"><H2>toLocaleString method</H2></A>
+<P>
+Converts a date to a string, using the current locale's conventions.
+
+<H3>Syntax</H3>
+<PRE><I>dateObjectName</I>.toLocaleString()</PRE>
+<P><I>dateObjectName</I> is either the name of a date object or a property of an existing object.
+
+<H3>Method of</H3>
+<P><A HREF=ref_d-e.html#Date_object>Date</A>
+
+<H3>Description</H3>
+If you are trying to pass a date using toLocaleString, be aware that different locales assemble the string in different ways. Using methods such as getHours, getMinutes, and getSeconds will give more portable results.
+
+<H3>Examples</H3>
+In the following example, <I>today</I> is a date object:
+<PRE>
+today.toLocaleString()
+</PRE>
+<P>
+In this example, toLocaleString returns a string value that is similar to the following form. The exact format depends on the platform.
+<P>
+12/18/95 17:28:35
+
+<H3>See also</H3>
+<LI><A HREF=ref_t-z.html#toGMTString_method>toGMTString</A> method
+
+<!------------------------------------------------------------------------------------------------>
+<HR>
+<A NAME="toLowerCase_method"><H2>toLowerCase method</H2></A>
+<P>
+Returns the calling string value converted to lower case.
+
+<H3>Syntax</H3>
+<PRE><I>stringName</I>.toLowerCase()</PRE>
+<P><I>stringName</I> is any string or a property of an existing object.
+
+<H3>Method of</H3>
+<P><A HREF=ref_s-s.html#string_object>string</A>
+
+<H3>Description</H3>
+<P>The toLowerCase method returns the value of <I>stringName</I> converted to lower case. toLowerCase does not affect the value of <I>stringName</I> itself.
+
+<H3>Examples</H3>
+<P>The following examples both yield "alphabet".
+<PRE>
+var upperText="ALPHABET"
+document.write(upperText.toLowerCase())
+
+"ALPHABET".toLowerCase()
+</PRE>
+
+<H3>See also</H3>
+<LI><A HREF=ref_t-z.html#toUpperCase_method>toUpperCase</A> method
+<!------------------------------------------------------------------------------------------------>
+<HR>
+<A NAME="top_property"><H2>top property</H2></A>
+<P>
+The top property is a synonym for the top-most Navigator window, which is a "document window" or "Web Browser window."
+
+<H3>Syntax</H3>
+<PRE>
+1. top.<I>propertyName</I>
+2. top.<I>methodName</I>
+3. top.<I>frameName</I>
+4. top.frames[<I>index</I>]
+</PRE>
+<P><I>propertyName</I> is defaultStatus, status, or length.
+<BR><I>methodName</I> is any method associated with the window object.
+<BR><I>frameName</I> and frames[<I>index</I>] are ways to refer to frames.
+
+<H3>Property of</H3>
+<P><A HREF=ref_t-z.html#window_object>window</A>
+
+<H3>Description</H3>
+<P>The top property refers to the top-most window that contains frames or nested framesets. Use the top property to refer to this ancestor window.
+
+<P>The top property is read-only. The value of the top property is
+<PRE>     &ltobject <I>objectReference</I>&gt</PRE>
+where <I>objectReference</I> is an internal reference.
+
+<H3>Examples</H3>
+<P>The statement <TT>top.close()</TT> closes the top-most ancestor window.
+
+<P>The statement <TT>top.length</TT> specifies the number of frames contained within the top-most ancestor window. When the top-most ancestor is defined as follows, <TT>top.length</TT> returns 3:
+<PRE>
+&ltFRAMESET COLS="30%,40%,30%"&gt
+&ltFRAME SRC=child1.htm NAME="childFrame1"&gt
+&ltFRAME SRC=child2.htm NAME="childFrame2"&gt
+&ltFRAME SRC=child3.htm NAME="childFrame3"&gt
+&lt/FRAMESET&gt
+</PRE>
+
+<P>The following example sets the background color of a frame called <I>myFrame</I> to red. <I>myFrame</I> is a child of the top-most ancestor window.
+<PRE>
+top.myFrame.document.bgColor="red"
+</PRE>
+
+<!------------------------------------------------------------------------------------------------->
+<HR>
+<A NAME="toUpperCase_method"><H2>toUpperCase method</H2></A>
+<P>
+Returns the calling string value converted to upper case.
+
+<H3>Syntax</H3>
+<PRE><I>stringName</I>.toUpperCase()</PRE>
+<P><I>stringName</I> is any string or a property of an existing object.
+
+<H3>Method of</H3>
+<P><A HREF=ref_s-s.html#string_object>string</A>
+
+<H3>Description</H3>
+<P>The toUpperCase method returns the value of <I>stringName</I> converted to upper case. toUpperCase does not affect the value of <I>stringName</I> itself.
+
+<H3>Examples</H3>
+<P>The following examples both yield "ALPHABET".
+<PRE>
+var lowerText="alphabet"
+document.write(lowerText.toUpperCase())
+
+"alphabet".toUpperCase()
+</PRE>
+
+<H3>See also</H3>
+<LI><A HREF=ref_t-z.html#toLowerCase_method>toLowerCase</A> method
+
+<!------------------------------------------------------------------------------------------------>
+<HR>
+<A NAME="unescape_method"><H2>unescape function</H2></A>
+<P>Returns the ASCII string for the specified value.
+
+<H3>Syntax</H3>
+<PRE>unescape("<i>string</i>")</PRE>
+<P><I>string</I> is a string or a property of an existing object, containing characters in either of the following forms:
+<LI>"%<I>integer</I>", where <I>integer</I> is a number between 0 and 255 (decimal)
+<LI>"<I>hex</I>", where <I>hex</I> is a number between 0x0 and 0xFF (hexadecimal)
+
+<H3>Description</H3>
+<P>The unescape function is not a method associated with any object, but is part of the language itself.
+
+<P>The string returned by the unescape function is a series of characters in the ISO Latin-1 character set.
+
+
+<H3>Examples</H3>
+<P>The following example returns "&"
+<PRE>
+unescape("%26")
+</PRE>
+
+<P>The following example returns "!#"
+<PRE>
+unescape("%21%23")
+</PRE>
+
+<H3>See also</H3>
+<LI><A HREF=ref_d-e.html#escape_method>escape</A> function
+
+<!----------------------------------------------------------------->
+<HR>
+<A NAME="userAgent_property"><H2>userAgent property</H2></A>
+<P>
+A string representing the value of the user-agent header sent in the HTTP protocol from client to server.
+
+<H3>Syntax</H3>
+<PRE>navigator.userAgent</PRE>
+
+<H3>Property of</H3>
+<P><A HREF=ref_m-q.html#navigator_object>navigator</A>
+
+<H3>Description</H3>
+<P>Servers use the value sent in the user-agent header to identify the client.
+
+<P>userAgent is a read-only property.
+
+
+<H3>Examples</H3>
+<P>The following example displays userAgent information for the Navigator:
+<PRE>document.write("The value of navigator.userAgent is " +
+   navigator.userAgent)</PRE>
+<P>For Navigator 2.0, this displays the following:
+<PRE>The value of navigator.userAgent is Mozilla/2.0 (Win16; I)</PRE>
+
+<H3>See also</H3>
+<LI><A HREF=ref_a-c.html#appName_property>appName</A>, <A HREF=ref_a-c.html#appVersion_property>appVersion</A>, <A HREF=ref_a-c.html#appCodeName_property>appCodeName</A> properties
+<!------------------------------------------------------------------------------------------------->
+<HR>
+<A NAME="UTC_method"><H2>UTC method</H2></A>
+<P>
+Returns the number of milliseconds in a date object since January 1, 1970 00:00:00, Universal Coordinated Time (GMT).
+
+<H3>Syntax</H3>
+<PRE>Date.UTC(<I>year, month, day [, hrs] [, min] [, sec]</I>)</PRE>
+<P><I>year</I> is a year after 1900.
+<BR><I>month</I> is a month between 0-11.
+<BR><I>date</I> is a day of the month between 1-31.
+<BR><I>hrs</I> is hours between 0-23.
+<BR><I>min</I> is minutes between 0-59.
+<BR><I>sec</I> is seconds between 0-59.
+
+<H3>Method of</H3>
+<P><A HREF=ref_d-e.html#Date_object>Date</A>
+
+<H3>Description</H3>
+<P>
+UTC takes comma-delimited date parameters and returns the number of milliseconds since January 1, 1970 00:00:00, Universal Coordinated Time (GMT).
+
+<P>
+Because UTC is a static method of Date, you always use it as <TT>Date.UTC()</TT>, rather than as a method of a date object you created.
+
+<H3>Examples</H3>
+<P>
+The following statement creates a date object using GMT instead of local time:
+
+<PRE>
+gmtDate = new Date(Date.UTC(96, 11, 1, 0, 0, 0))
+</PRE>
+
+<H3>See also</H3>
+<LI><A HREF=ref_m-q.html#parse_method>parse</A> method
+
+<!------------------------------------------------------------------------------------------------>
+<HR>
+<A NAME="value_property"><H2>value property</H2></A>
+<P>
+A string that is related to the VALUE attribute of its object.
+
+<H3>Syntax</H3>
+<PRE>
+1. <I>objectName</I>.value
+2. <I>radioName</I>[<I>index</I>].value
+3. <I>selectName</I>.options.[<I>index</I>].value
+</PRE>
+<P><I>objectName</I> is either the value of the NAME attribute of a hidden, password, text, textarea, button, reset, submit or checkbox object or an element in the <I>elements</I> array.
+<BR><I>radioName</I> is the value of the NAME attribute of a radio object.
+<BR><I>selectName</I> is either the value of the NAME attribute of a select object or an element in the <I>elements</I> array.
+<BR><I>index</I> is an integer representing a radio button in a radio object or an option in a select object.
+
+<H3>Property of</H3>
+<LI><A HREF=ref_a-c.html#button_object>button</A>, <A HREF=ref_a-c.html#checkbox_object>checkbox</A>, <A HREF=ref_h-l.html#hidden_object>hidden</A>, <A HREF=ref_m-q.html#password_object>password</A>, <A HREF=ref_r-r.html#radio_object>radio</A>, <A HREF=ref_r-r.html#reset_object>reset</A>, <A HREF=ref_s-s.html#submit_object>submit</A>, <A HREF=ref_t-z.html#text_object>text</A>, <A HREF=ref_t-z.html#textarea_object>textarea</A> objects <LI><A HREF=ref_s-s.html#select_object>options</A> array
+
+<H3>Description</H3>
+<P>The value property differs for every object.
+
+<H4>hidden, text, and textarea objects</H4>
+The value property is a string that initially reflects the VALUE attribute. This string is displayed in the text and textarea fields. The value of this property changes when a user or a program modifies the field.
+
+<P>You can set the value property at any time. The display of the text and textarea objects updates immediately when you set the value property.
+
+<H4>password object</H4>
+<P>The value property is a string that initially reflects the VALUE attribute. This string is represented by asterisks in the password object field. The value of this property changes when a user or a program modifies the field, but the value is always displayed as asterisks.
+
+<P>If you programatically set the value property and then evaluate it, JavaScript returns the current value. If a user interactively modifies the value in the password field, you cannot evaluate it accurately for security reasons.
+
+<H4>button, reset, and submit objects</H4>
+<P>When a VALUE attribute is specified in HTML, the value property is a string that reflects it. This string is displayed on the face of the button.
+
+<P>When a VALUE attribute is not specified in HTML, the value property differs for each object:
+<LI>For button, it is an empty string
+<LI>For reset, it is the string "Reset"
+<LI>For submit, it is the string "Submit Query"
+
+<P>These strings are displayed on the faces of the buttons.
+
+<P>value is a read-only property.
+
+<P>Do not confuse the value property with the name property. The name property is not displayed onscreen; it is used to reference the objects programatically.
+
+<H4>options array</H4>
+<P>The value property is a string that initially reflects the VALUE attribute. The value of this property can change when a program modifies it. The value property is not displayed onscreen, but is returned to the server if the option is selected.
+
+<P>You can set the value property at any time.
+
+<P>Do not confuse the value property with the selection state of the select object or the text that is displayed as an option. The selected and selectedIndex properties determine which options are selected, and the defaultSelected property determines the default selection state. The text that is displayed in each option is specified by its text property.
+
+<H4>checkbox and radio objects</H4>
+<P>When a VALUE attribute is specified in HTML, the value property is a string that reflects it. When a VALUE attribute is not specified in HTML, the value property is a string that evaluates to "on". The value property is not displayed onscreen, but is returned to the server if the radio button or checkbox is selected.
+
+<P>You can set the value property at any time.
+
+<P>Do not confuse the value property with the selection state of the object or the text that is displayed next to each checkbox and radio button. The checked property determines the selection state of the object, and the defaultChecked property determines the default selection state. The text that is displayed is specified following the &ltINPUT TYPE="checkbox"&gt or the &ltINPUT TYPE="radio"&gt tag.
+
+<H3>Examples</H3>
+<P>The following function evaluates the value property of a group of buttons and displays it in the <I>msgWindow</I> window:
+<PRE>
+function valueGetter() {
+   var msgWindow=window.open("")
+   msgWindow.document.write("submitButton.value is " +
+      document.valueTest.submitButton.value + "&ltBR&gt")
+   msgWindow.document.write("resetButton.value is " +
+      document.valueTest.resetButton.value + "&ltBR&gt")
+   msgWindow.document.write("helpButton.value is " +
+      document.valueTest.helpButton.value + "&ltBR&gt")
+   msgWindow.document.close()
+}
+</PRE>
+
+<P>This example displays the following values:
+<PRE>
+Query Submit
+Reset
+Help
+</PRE>
+
+<P>The previous example assumes the buttons have been defined as follows
+<PRE>
+&ltINPUT TYPE="submit" NAME="submitButton"&gt
+&ltINPUT TYPE="reset" NAME="resetButton"&gt
+&ltINPUT TYPE="button" NAME="helpButton" VALUE="Help"&gt
+</PRE>
+
+<P>The following function evaluates the value property of a group of radio buttons and displays it in the <I>msgWindow</I> window:
+<PRE>
+function valueGetter() {
+   var msgWindow=window.open("")
+   for (var i = 0; i < document.valueTest.radioObj.length; i++) {
+       msgWindow.document.write
+          ("The value of radioObj[" + i + "] is " +
+          document.valueTest.radioObj[i].value +"&ltBR&gt")
+   }
+   msgWindow.document.close()
+}
+</PRE>
+
+<P>This example displays the following values:
+<PRE>
+on
+on
+on
+on
+</PRE>
+
+<P>The previous example assumes the buttons have been defined as follows
+<PRE>
+&ltBR&gt&ltINPUT TYPE="radio" NAME="radioObj"&gtR&B
+&ltBR&gt&ltINPUT TYPE="radio" NAME="radioObj" CHECKED&gtSoul
+&ltBR&gt&ltINPUT TYPE="radio" NAME="radioObj"&gtRock and Roll
+&ltBR&gt&ltINPUT TYPE="radio" NAME="radioObj"&gtBlues
+</PRE>
+
+<H3>See also</H3>
+<P>For hidden, password, text, and textarea:
+<LI><A HREF=ref_d-e.html#defaultValue_property>defaultValue</A> property
+
+<P>For button, reset, and submit:
+<LI><A HREF=ref_m-q.html#name_property>name</A> property
+
+<P>For options array:
+<LI><A HREF=ref_d-e.html#defaultSelected_property>defaultSelected</A>, <A HREF=ref_s-s.html#selected_property>selected</A>, <A HREF=ref_s-s.html#selectedIndex_property>selectedIndex</A>, <A HREF=ref_t-z.html#text_property>text</A> properties
+
+<P>For checkbox and radio:
+<LI><A HREF=ref_a-c.html#checked_property>checked</A>, <A HREF=ref_d-e.html#defaultChecked_property>defaultChecked</A> properties
+<!------------------------------------------------------------------------------------------------->
+<HR>
+<A NAME="vlinkColor_property"><H2>vlinkColor property</H2></A>
+<P>
+A string specifying the color of visited links.
+
+<H3>Syntax</H3>
+<PRE>document.vlinkColor</PRE>
+
+<H3>Property of</H3>
+<P><A HREF=ref_d-e.html#document_object>document</A>
+
+<H3>Description</H3>
+<P>The vlinkColor property is expressed as a hexadecimal RGB triplet or as one of the string literals listed in <A HREF=colors.html>Color Values</A>. This property is the JavaScript reflection of the VLINK attribute of the &ltBODY&gt tag. The default value of this property is set by the user on the Colors tab of the Preferences dialog box, which is displayed by choosing General Preferences from the Options menu. You cannot set this property after the HTML source has been through layout.
+
+<P>If you express the color as a hexadecimal RGB triplet, you must use the format rrggbb. For example, the hexadecimal RGB values for salmon are red=FA, green=80, and blue=72, so the RGB triplet for salmon is "FA8072".
+
+<H3>Examples</H3>
+<P>The following example sets the color of visited links to aqua using a string literal:
+<PRE>
+document.vlinkColor="aqua"
+</PRE>
+<P>The following example sets the color of active links to aqua using a hexadecimal triplet:
+<PRE>
+document.vlinkColor="00FFFF"
+</PRE>
+
+
+<H3>See also</H3>
+<LI><A HREF=ref_a-c.html#alinkColor_property>alinkColor</A>, <A HREF=ref_a-c.html#bgColor_property>bgColor</A>, <A HREF=ref_f-g.html#fgColor_property>fgColor</A>, and <A HREF=ref_h-l.html#linkColor_property>linkColor</A> properties
+<!------------------------------------------------------------------------------------------------->
+<HR>
+<A NAME="window_object"><H2>window object</H2></A>
+<P>The top-level object for each document, location, and history object group.
+
+
+<H3>Syntax</H3>
+<P>To define a window, use the open method:
+<PRE>
+<I>windowVar</I> = window.open("<I>URL</I>", "<I>windowName</I>" [,"<I>windowFeatures</I>"])
+</PRE>
+<I>windowVar</I> is the name of a new window. Use this variable when referring to a window's properties, methods, and containership.
+<BR><I>windowName</I> is the window name to use in the TARGET attribute of a &LTFORM&GT or &LTA&GT tag.
+
+<P>For details on defining a window, see the <A HREF=ref_m-q.html#open_window_method>open</A> method.
+
+<P>To use a window object's properties and methods:
+<PRE>
+ 1. window.<I>propertyName</I>
+ 2. window.<I>methodName</I>(<I>parameters</I>)
+ 3. self.<I>propertyName</I>
+ 4. self.<I>methodName</I>(<I>parameters</I>)
+ 5. top.<I>propertyName</I>
+ 6. top.<I>methodName</I>(<I>parameters</I>)
+ 7. parent.<I>propertyName</I>
+ 8. parent.<I>methodName</I>(<I>parameters</I>)
+ 9. <I>windowVar</I>.<I>propertyName</I>
+10. <I>windowVar</I>.<I>methodName</I>(<I>parameters</I>)
+11. <I>propertyName</I>
+12. <I>methodName</I>(<I>parameters</I>)
+</PRE>
+<I>windowVar</I> is a variable referring to a window object. See the preceding syntax for defining a window.
+<BR><I>propertyName</I> is one of the properties listed below.
+<BR><I>methodName</I> is one of the methods listed below.
+
+<P>To define an onLoad or onUnload event handler for a window object, use the &LTBODY&GT or &LTFRAMESET&GT tags:
+<PRE>
+&LTBODY
+   ...
+   [onLoad="<I>handlerText</I>"]
+   [onUnload="<I>handlerText</I>"]&GT
+&LT/BODY&GT
+
+&LTFRAMESET
+   ROWS="<I>rowHeightList</I>"
+   COLS="<I>columnWidthList</I>"
+   [onLoad="<I>handlerText</I>"]
+   [onUnload="<I>handlerText</I>"]&GT
+   [&LTFRAME SRC="<I>locationOrURL</I>" NAME="<I>frameName</I>"&GT]
+&LT/FRAMESET&GT
+</PRE>
+
+<P>For information on the &LTBODY&GT and &LTFRAMESET&GT tags, see the <A HREF=ref_d-e.html#document_object>document</A> and <A HREF=ref_f-g.html#frame_object>frame</A> objects.
+
+
+<H3>Property of</H3>
+<LI>None.
+
+
+<H3>Description</H3>
+<P>The window object is the top-level object in the JavaScript client hierarchy. Frame objects are also windows.
+
+<P>The self and window properties are synonyms for the current window, and you can optionally use them to refer to the current window. For example, you can close the current window by calling either <TT>window.close()</TT> or <TT>self.close()</TT>. You can use these properties to make your code more readable, or to disambiguate the property reference <TT>self.status</TT> from a form called <TT>status</TT>. See the properties and methods listed below for more examples.
+
+<P>The top and parent properties are also synonyms that can be used in place of the window name. top refers to the top-most Navigator window, and parent refers to a window containing a frameset. See the <A HREF=ref_t-z.html#top_property>top</A> and <A HREF=ref_m-q.html#parent_property>parent</A> properties.
+
+<P>Because the existence of the current window is assumed, you do not have to reference the name of the window when you call its methods and assign its properties. For example, <TT>status="Jump to a new location"</TT> is a valid property assignment, and <TT>close()</TT> is a valid method call. However, when you open or close a window within an event handler, you must specify window.open() or window.close() instead of simply using open() or close(). Due to the scoping of static objects in JavaScript, a call to close() without specifying an object name is equivalent to document.close().
+
+<P>You can reference a window's frame objects in your code by using the frames array. The frames array contains an entry for each frame in a window with a &LTFRAMESET&GT tag.
+
+<P>Windows lack event handlers until some HTML is loaded into them containing a &LTBODY&GT or &LTFRAMESET&GT tag.
+
+
+<H3>Properties</H3>
+<LI><A HREF=ref_d-e.html#defaultStatus_property>defaultStatus</A> reflects the default message displayed in the window's status bar
+<LI><A HREF=ref_f-g.html#frame_object>frames</A> is an array reflecting all the frames in a window
+<LI><A HREF=ref_h-l.html#length_property>length</A> reflects the number of frames in a parent window
+<LI><A HREF=ref_m-q.html#name_property>name</A> reflects the <I>windowName</I> argument
+<LI><A HREF=ref_m-q.html#parent_property>parent</A> is a synonym for the <I>windowName</I> argument and refers to a window containing a frameset
+<LI><A HREF=ref_s-s.html#self_property>self</A> is a synonym for the <I>windowName</I> argument and refers to the current window
+<LI><A HREF=ref_s-s.html#status_property>status</A> specifies a priority or transient message in the window's status bar
+<LI><A HREF=ref_t-z.html#top_property>top</A> is a synonym for the <I>windowName</I> argument and refers to the top-most Navigator window
+<LI><A HREF=ref_t-z.html#window_property>window</A> is a synonym for the <I>windowName</I> argument and refers to the current window
+
+<P>The following objects are also properties of the window object:
+<LI><A HREF=ref_d-e.html#document_object>document</A>
+<LI><A HREF=ref_f-g.html#frame_object>frame</A>
+<LI><A HREF=ref_h-l.html#location_object>location</A>
+
+
+<H3>Methods</H3>
+<LI><A HREF=ref_a-c.html#alert_method>alert</A>
+<LI><A HREF=ref_a-c.html#close_window_method>close</A>
+<LI><A HREF=ref_a-c.html#confirm_method>confirm</A>
+<LI><A HREF=ref_m-q.html#open_window_method>open</A>
+<LI><A HREF=ref_m-q.html#prompt_method>prompt</A>
+<LI><A HREF=ref_s-s.html#setTimeout_method>setTimeout</A>
+<LI><A HREF=ref_a-c.html#clearTimeout_method>clearTimeout</A>
+
+
+<H3>Event handlers</H3>
+<LI><A HREF=ref_m-q.html#onLoad_event>onLoad</A>
+<LI><A HREF=ref_m-q.html#onUnload_event>onUnload</A>
+
+
+<H3>Examples</H3>
+<P>In the following example, the document in the top window opens a second window, <I>window2,</I> and defines pushbuttons that open a message window, write to the message window, close the message window, and close <I>window2.</I> The onLoad and onUnload event handlers of the document loaded into <I>window2</I> display alerts when the window opens and closes.
+
+<P>WIN1.HTML, which defines the frames for the first window, contains the following code:
+<XMP>
+<HTML>
+<HEAD>
+<TITLE>Window object example: Window 1</TITLE>
+</HEAD>
+<BODY BGCOLOR="antiquewhite">
+<SCRIPT>
+window2=open("win2.html","secondWindow","scrollbars=yes,width=250, height=400")
+document.writeln("<B>The first window has no name: " + window.name + "</B>")
+document.writeln("<BR><B>The second window is named: " + window2.name + "</B>")
+</SCRIPT>
+<FORM NAME="form1">
+<P><INPUT TYPE="button" VALUE="Open a message window"
+   onClick="window3=window.open('','messageWindow','scrollbars=yes,width=175, height=300')">
+<P><INPUT TYPE="button" VALUE="Write to the message window"
+   onClick="window3.document.writeln('Hey there');window3.document.close()">
+<P><INPUT TYPE="button" VALUE="Close the message window"
+   onClick="window3.close()">
+<P><INPUT TYPE="button" VALUE="Close window2"
+   onClick="window2.close()">
+</FORM>
+</BODY>
+</HTML>
+</XMP>
+
+<P>WIN2.HTML, which defines the content for <I>window2</I>, contains the following code:
+<XMP>
+<HTML>
+<HEAD>
+<TITLE>Window object example: Window 2</TITLE>
+</HEAD>
+<BODY BGCOLOR="oldlace"
+   onLoad="alert('Message from ' + window.name + ': Hello, World.')"
+   onUnload="alert('Message from ' + window.name + ': I\'m closing')">
+<B>Some numbers</B>
+<LI>one
+<LI>two
+<LI>three
+<LI>four
+<LI>five
+<LI>six
+<LI>seven
+<LI>eight
+<LI>nine
+</BODY>
+</HTML>
+</XMP>
+
+<P>See also the example for the <A HREF=ref_f-g.html#frame_object>frame</A> object.
+
+
+<H3>See also</H3>
+<LI><A HREF=ref_d-e.html#document_object>document</A> and <A HREF=ref_f-g.html#frame_object>frame</A> objects
+
+<!------------------------------------------------------------------------------------------------->
+<HR>
+<A NAME="window_property"><H2>window property</H2></A>
+<P>
+The window property is a synonym for the current window or frame.
+
+<H3>Syntax</H3>
+<PRE>
+1. window.<I>propertyName</I>
+2. window.<I>methodName</I>
+</PRE>
+<P><I>propertyName</I> is the defaultStatus, status, length, or name property when the calling window refers to a window object.
+<BR><I>propertyName</I> is the length or name property when the calling window refers to a frame object.
+<BR><I>methodName</I> is any method associated with the window object.
+
+<H3>Property of</H3>
+<P><A HREF=ref_f-g.html#frame_object>frame</A>, <A HREF=ref_t-z.html#window_object>window</A>
+
+<H3>Description</H3>
+<P>The window property refers to the current window or frame.
+
+<P> Although you can use the window property as a synonym for the current frame, your code is more readable if you use the self property. For example, <TT>window.name</TT> and <TT>self.name</TT> both specify the name of the current frame, but <TT>self.name</TT> is easier to understand.
+
+<P>Use the window property to disambiguate a property of the window object from a form or form element of the same name. You can also use the window property to make your code more readable.
+
+<P>The window property is read-only. The value of the window property is
+<PRE>     &ltobject <I>nameAttribute</I>&gt</PRE>
+where <I>nameAttribute</I> is the NAME attribute if window refers to a frame, or an internal reference if window refers to a window.
+
+<H3>Examples</H3>
+<P>In the following example, <TT>window.status</TT> is used to set the status property of the current window. This usage disambiguates the status property of the current window from a form called "status" within the current window.
+<XMP><A HREF=""
+   onClick="this.href=pickRandomURL()"
+   onMouseOver="window.status='Pick a random URL' ; return true">
+Go!</A></XMP>
+
+
+<H3>See also</H3>
+<LI><A HREF=ref_s-s.html#self_property>self</A> property
+<!------------------------------------------------------------------------------------------------->
+<HR>
+<A NAME="write_method"><H2>write method</H2></A>
+<P>
+Writes one or more HTML expressions to a document in the specified window.
+
+<H3>Syntax</H3>
+<PRE>document.write(<I>expression1</I> [,<I>expression2</I>], ...[,<I>expressionN</I>])</PRE>
+<I>expression1</I> through <I>expressionN</I> are any JavaScript expressions or the properties of existing objects.
+
+<H3>Method of</H3>
+<P><A HREF=ref_d-e.html#document_object>document</A>
+
+<H3>Description</H3>
+<P>The write method displays any number of expressions in a document window. You can specify any JavaScript expression with the write method, including numerics, strings, or logicals.
+
+<P>The write method is the same as the writeln method, except the write method does not append a newline character to the end of the output.
+
+<P>Use the write method within any &ltSCRIPT&gt tag or within an event handler. Event handlers execute after the original document closes, so the write method will implicitly open a new document of <I>mimeType</I> <TT>text/html</TT> if you do not explicitly issue a document.open() method in the event handler.
+
+<H3>Examples</H3>
+In the following example, the write method takes several arguments, including strings, a numeric, and a variable:
+<PRE>
+var mystery = "world"
+// Displays Hello world testing 123
+msgWindow.document.write("Hello ", mystery, " testing ", 123)
+</PRE>
+
+In the following example, the write method takes two arguments. The first argument is an assignment expression, and the second argument is a string literal.
+<PRE>
+//Displays Hello world...
+msgWindow.document.write(mystr = "Hello "+ "world...")
+</PRE>
+
+In the following example, the write method takes a single argument that is a conditional expression. If the value of the variable <I>age</I> is less than 18, the method displays "Minor". If the value of <I>age</I> is greater than or equal to 18, the method displays "Adult".
+<PRE>
+msgWindow.document.write(status = (age >= 18) ? "Adult" : "Minor")
+</PRE>
+
+<H3>See also</H3>
+<LI><A HREF=ref_a-c.html#close_document_method>close</A>, <A HREF=ref_a-c.html#clear_method>clear</A>, <A HREF=ref_m-q.html#open_document_method>open</A>, <A HREF=ref_t-z.html#writeln_method>writeln</A> methods
+<!------------------------------------------------------------------------------------------------>
+<HR>
+<A NAME="writeln_method"><H2>writeln method</H2></A>
+<P>
+Writes one or more HTML expressions to a document in the specified window and follows them with a newline character.
+
+<H3>Syntax</H3>
+<PRE>document.writeln(<I>expression1</I> [,<I>expression2</I>], ...[,<I>expressionN</I>])</PRE>
+<I>expression1</I> through <I>expressionN</I> are any JavaScript expressions or the properties of existing objects.
+
+<H3>Method of</H3>
+<P><A HREF=ref_d-e.html#document_object>document</A>
+
+<H3>Description</H3>
+<P>The writeln method displays any number of expressions in a document window. You can specify any JavaScript expression, including numerics, strings, or logicals.
+
+<P>The writeln method is the same as the write method, except the writeln method appends a newline character to the end of the output. HTML ignores the newline character, except within certain tags such as &ltPRE&gt.
+
+<P>Use the writeln method within any &ltSCRIPT&gt tag or within an event handler. Event handlers execute after the original document closes, so the writeln method will implicitly open a new document of <I>mimeType</I> <TT>text/html</TT> if you do not explicitly issue a document.open() method in the event handler.
+
+<H3>Examples</H3>
+<P>All the examples used for the <A HREF=ref_t-z.html#write_method>write</A> method are also valid with the writeln method.
+
+<H3>See also</H3>
+<LI><A HREF=ref_a-c.html#close_document_method>close</A>, <A HREF=ref_a-c.html#clear_method>clear</A>, <A HREF=ref_m-q.html#open_document_method>open</A>, <A HREF=ref_t-z.html#write_method>write</A> methods
+<!------------------------------------------------------------------------------------------------->
+<HR>
+
+<SCRIPT>
+document.write("<FONT SIZE=-2>Last modified " + document.lastModified)
+</SCRIPT>
+<P>
+</BODY>
+<HTML>
+

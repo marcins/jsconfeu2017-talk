@@ -1,0 +1,72 @@
+<HTML>
+<HEAD><TITLE>
+Resizing Wrapping Width Example (CSS)
+</TITLE> </HEAD>
+
+
+<STYLE type="text/css">
+P {padding:10%;}
+#layer1 {position:absolute; include-source:url("mytext.htm");
+left:100pts; width:300;
+background-color:#99BBFF; border-color:white; border-width:1;}
+</STYLE>
+
+
+
+
+<BODY color="white">
+<H1>Resizing a layer and its contents using the load() function</H1>
+
+<DIV ID="layer1">
+
+</DIV>
+
+</BODY>
+
+<SCRIPT>
+var layerWidth = 300;
+var oldX;
+var layer1 = document.layers['layer1'];
+
+layer1.document.captureEvents(
+       Event.MOUSEUP|Event.MOUSEDOWN|Event.MOUSEDRAG);
+
+layer1.document.onmousedown=begindrag;
+layer1.document.onmouseup=enddrag;
+layer1.onload=resetcapture;
+
+function resetcapture() {
+	layer1.document.captureEvents(
+	   Event.MOUSEUP|Event.MOUSEDOWN|Event.MOUSEDRAG|Event.MOUSEMOVE);
+}
+
+
+function begindrag(e) {
+ layer1.document.captureEvents(Event.MOUSEMOVE);
+ layer1.document.onmousemove=drag;
+ oldX=e.pageX;
+ return false;
+}
+
+function drag(e) {
+ changeWidth(layer1, e.pageX - oldX);
+ oldX = e.pageX;
+ return false;
+}
+
+function changeWidth(layer, delta)
+{
+ layer.bgColor = "#99BBFF";
+ layerWidth = layerWidth + delta;
+ if (delta != 0)
+ layer.load("mytext.htm", layerWidth);
+}
+
+function enddrag(e) {
+ layer1.document.onmousemove=0;
+ layer1.document.releaseEvents(Event.MOUSEMOVE);
+ return false;
+}
+</SCRIPT>
+
+

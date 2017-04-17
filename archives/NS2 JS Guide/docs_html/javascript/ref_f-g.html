@@ -1,0 +1,927 @@
+<HTML>
+<BODY>
+
+<A NAME="fgColor_property"><H2>fgColor property</H2></A>
+<P>
+A string specifying the color of the document text.
+
+<H3>Syntax</H3>
+<PRE>document.fgColor</PRE>
+
+<H3>Property of</H3>
+<P><A HREF=ref_d-e.html#document_object>document</A>
+
+<H3>Description</H3>
+<P>The fgColor property is expressed as a hexadecimal RGB triplet or as one of the string literals listed in <A HREF=colors.html>Color Values</A>. This property is the JavaScript reflection of the TEXT attribute of the &ltBODY&gt tag. The default value of this property is set by the user on the Colors tab of the Preferences dialog box, which is displayed by choosing General Preferences from the Options menu. You cannot set this property after the HTML source has been through layout.
+
+<P>If you express the color as a hexadecimal RGB triplet, you must use the format rrggbb. For example, the hexadecimal RGB values for salmon are red=FA, green=80, and blue=72, so the RGB triplet for salmon is "FA8072".
+
+<P>You can override the value set in the fgColor property in either of the following ways:
+<LI>Setting the COLOR attribute of the &ltFONT&gt tag.
+<LI>Using the fontcolor method.
+
+<H3>Examples</H3>
+<P>The following example sets the color of the foreground text to aqua using a string literal:
+<PRE>
+document.fgColor="aqua"
+</PRE>
+<P>The following example sets the color of the foreground text to aqua using a hexadecimal triplet:
+<PRE>
+document.fgColor="00FFFF"
+</PRE>
+
+<H3>See also</H3>
+<LI><A HREF=ref_a-c.html#alinkColor_property>alinkColor</A>, <A HREF=ref_a-c.html#bgColor_property>bgColor</A>, <A HREF=ref_h-l.html#linkColor_property>linkColor</A>, and <A HREF=ref_t-z.html#vlinkColor_property>vlinkColor</A> properties
+<LI><A HREF=ref_f-g.html#fontcolor_method>fontcolor</A>
+<!------------------------------------------------------------------------------------------------->
+<HR>
+<A NAME="fixed_method"><H2>fixed method</H2></A>
+<P>
+Causes a string to be displayed in fixed-pitch font as if it were in a &ltTT&gt tag.
+
+<H3>Syntax</H3>
+<PRE><I>stringName</I>.fixed()</PRE>
+<P><I>stringName</I> is any string or a property of an existing object.
+
+<H3>Method of</H3>
+<P><A HREF=ref_s-s.html#string_object>string</A>
+
+<H3>Description</H3>
+<P>Use the fixed method with the write or writeln methods to format and display a string in a document.
+
+<H3>Examples</H3>
+The following example uses the fixed method to change the formatting of a string:
+<PRE>
+var worldString="Hello, world"
+
+document.write(worldString.fixed())
+</PRE>
+
+<P>The previous example produces the same output as the following HTML:
+<PRE>
+<TT>&ltTT&gtHello, world&lt/TT&gt</TT>
+</PRE>
+
+<!------------------------------------------------------------------------------------------------>
+<HR>
+<A NAME="floor_method"><H2>floor method</H2></A>
+<P>
+Returns the greatest integer less than or equal to a number.
+
+<H3>Syntax</H3>
+<PRE>Math.floor(<I>number</I>)</PRE>
+<P><I>number</I> is any numeric expression or a property of an existing object.
+
+<H3>Method of</H3>
+<P><A HREF=ref_m-q.html#Math_object>Math</A>
+
+<H3>Examples</H3>
+<PRE>
+//Displays the value 45
+document.write("&ltP&gtThe floor of 45.95 is " + Math.floor(45.95))
+
+//Displays the value -46
+document.write("&ltP&gtThe floor of -45.95 is " + Math.floor(-45.95))
+</PRE>
+
+<H3>See also</H3>
+<LI><A HREF=ref_a-c.html#ceil_method>ceil</A> method
+<!------------------------------------------------------------------------------------------------>
+<HR>
+<A NAME="focus_method"><H2>focus method</H2></A>
+<P>
+Gives focus to the specified object.
+
+<H3>Syntax</H3>
+<PRE>
+1. <I>passwordName</I>.focus()
+2. <I>selectName</I>.focus()
+3. <I>textName</I>.focus()
+4. <I>textareaName</I>.focus()
+</PRE>
+<P><I>passwordName</I> is either the value of the NAME attribute of a password object or an element in the <I>elements</I> array.
+<BR><I>selectName</I> is either the value of the NAME attribute of a select object or an element in the <I>elements</I> array.
+<BR><I>textName</I> is either the value of the NAME attribute of a text object or an element in the <I>elements</I> array.
+<BR><I>textareaName</I> is either the value of the NAME attribute of a textarea object or an element in the <I>elements</I> array.
+
+<H3>Method of</H3>
+<P><A HREF=ref_m-q.html#password_object>password</A>, <A HREF=ref_s-s.html#select_object>select</A>, <A HREF=ref_t-z.html#text_object>text</A>, <A HREF=ref_t-z.html#textarea_object>textarea</A>
+
+<H3>Description</H3>
+<P>Use the focus method to navigate to a specific form element and give it focus. You can then either programatically enter a value in the element or let the user enter a value.
+
+<H3>Examples</H3>
+<P>In the following example, the <I>checkPassword</I> function confirms that a user has entered a valid password. If the password is not valid, the focus method returns focus to the password object and the select method highlights it so the user can re-enter the password.
+<PRE>
+function checkPassword(userPass) {
+   if (badPassword) {
+      alert("Please enter your password again.")
+      userPass.focus()
+      userPass.select()
+   }
+}</PRE>
+This example assumes that the password is defined as:
+<PRE>&ltINPUT TYPE="password" NAME="userPass"&gt</PRE>
+
+<H3>See also</H3>
+<LI><A HREF=ref_a-c.html#blur_method>blur</A>, <A HREF=ref_s-s.html#select_method>select</A> methods
+<!------------------------------------------------------------------------------------------------>
+<HR>
+<A NAME="fontcolor_method"><H2>fontcolor method</H2></A>
+<P>
+Causes a string to be displayed in the specified color as if it were in a &ltFONT COLOR=<I>color</I>&gt tag.
+
+<H3>Syntax</H3>
+<PRE><I>stringName</I>.fontcolor(<I>color</I>)</PRE>
+<P><I>stringName</I> is any string or a property of an existing object.
+<BR><I>color</I> is a string or a property of an existing object, expressing the color as a hexadecimal RGB triplet or as one of the string literals listed in <A HREF=colors.html>Color Values</A>.
+
+<H3>Method of</H3>
+<P><A HREF=ref_s-s.html#string_object>string</A>
+
+<H3>Description</H3>
+<P>Use the fontcolor method with the write or writeln methods to format and display a string in a document.
+<P>If you express <I>color</I> as a hexadecimal RGB triplet, you must use the format rrggbb. For example, the hexadecimal RGB values for salmon are red=FA, green=80, and blue=72, so the RGB triplet for salmon is "FA8072".
+
+<P>The fontcolor method overrides a value set in the fgColor property.
+
+<H3>Examples</H3>
+The following example uses the fontcolor method to change the color of a string
+<PRE>
+var worldString="Hello, world"
+
+document.write(worldString.fontcolor("maroon") +
+   " is maroon in this line")
+document.write("&ltP&gt" + worldString.fontcolor("salmon") +
+   " is salmon in this line")
+document.write("&ltP&gt" + worldString.fontcolor("red") +
+   " is red in this line")
+
+document.write("&ltP&gt" + worldString.fontcolor("8000") +
+   " is maroon in hexadecimal in this line")
+document.write("&ltP&gt" + worldString.fontcolor("FA8072") +
+   " is salmon in hexadecimal in this line")
+document.write("&ltP&gt" + worldString.fontcolor("FF00") +
+   " is red in hexadecimal in this line")
+</PRE>
+
+<P>The previous example produces the same output as the following HTML:
+<PRE>
+<TT>&ltFONT COLOR="maroon"&gtHello, world&lt/FONT&gt is maroon in this line</TT>
+<TT>&ltP&gt&ltFONT COLOR="salmon"&gtHello, world&lt/FONT&gt is salmon in this line</TT>
+<TT>&ltP&gt&ltFONT COLOR="red"&gtHello, world&lt/FONT&gt is red in this line</TT>
+
+<TT>&ltFONT COLOR="8000"&gtHello, world&lt/FONT&gt is maroon in hexadecimal in this line</TT>
+<TT>&ltP&gt&ltFONT COLOR="FA8072"&gtHello, world&lt/FONT&gt is salmon in hexadecimal in this line</TT>
+<TT>&ltP&gt&ltFONT COLOR="FF00"&gtHello, world&lt/FONT&gt is red in hexadecimal in this line</TT>
+</PRE>
+
+<!------------------------------------------------------------------------------------------------>
+<HR>
+<A NAME="fontsize_method"><H2>fontsize method</H2></A>
+<P>
+Causes a string to be displayed in the specified font size as if it were in a &ltFONTSIZE=<I>size</I>&gt tag.
+
+<H3>Syntax</H3>
+<PRE><I>stringName</I>.fontsize(<I>size</I>)</PRE>
+<P><I>stringName</I> is any string or a property of an existing object.
+<BR><I>size</I> is an integer between one and seven, or a string representing a signed integer between 1 and 7, or a property of an existing object.
+
+<H3>Method of</H3>
+<P><A HREF=ref_s-s.html#string_object>string</A>
+
+<H3>Description</H3>
+<P>Use the fontsize method with the write or writeln methods to format and display a string in a document. When you specify <I>size</I> as an integer, you set the size of <I>stringName</I> to one of the seven defined sizes. When you specify <I>size</I> as a string such as "-2", you adjust the font size of <I>stringName</I> relative to the size set in the &ltBASEFONT&gt tag.
+
+<H3>Examples</H3>
+The following example uses string methods to change the size of a string:
+<PRE>
+var worldString="Hello, world"
+
+document.write(worldString.small())
+document.write("&ltP&gt" + worldString.big())
+document.write("&ltP&gt" + worldString.fontsize(7))
+</PRE>
+
+<P>The previous example produces the same output as the following HTML:
+<PRE>
+<TT>&ltSMALL&gtHello, world&lt/SMALL&gt</TT>
+<TT>&ltP&gt&ltBIG&gtHello, world&lt/BIG&gt</TT>
+<TT>&ltP&gt&ltFONTSIZE=7&gtHello, world&lt/FONTSIZE&gt</TT>
+</PRE>
+
+<H3>See also</H3>
+<LI><A HREF=ref_a-c.html#big_method>big</A>, <A HREF=ref_s-s.html#small_method>small</A> methods
+<!------------------------------------------------------------------------------------------------>
+<HR>
+<A NAME="form_object"><H2>form object (<I>forms</I> array)</H2> </A>
+<P>Lets users input text and make choices from form objects such as checkboxes, radio buttons, and selection lists. You can also use a form to post data to a server.
+
+
+<H3>Syntax</H3>
+<P>To define a form, use standard HTML syntax with the addition of the onSubmit event handler:
+<PRE>
+&LTFORM
+   NAME="<I>formName</I>"
+   TARGET="<I>windowName</I>"
+   ACTION="<I>serverURL</I>"
+   METHOD=GET | POST
+   ENCTYPE="<I>encodingType</I>"
+   [onSubmit="<I>handlerText</I>"]&GT
+&LT/FORM&GT
+</PRE>
+
+<P><I>NAME="formName"</I> specifies the name of the form object.
+
+<P><I>TARGET="windowName"</I> specifies the window that form responses go to. When you submit a form with a TARGET attribute, server responses are displayed in the specified window instead of the window that contains the form. <I>windowName</I> can be an existing window; it can be a frame name specified in a &LTFRAMESET&GT tag; or it can be one of the literal frame names _top, _parent, _self, or _blank; it cannot be a JavaScript expression (for example, it cannot be parent<I>.frameName</I> or <I>windowName.frameName</I>). Some values for this attribute may require specific values for other attributes. See <A HREF="http://www.ics.uci.edu/pub/ietf/html/rfc1867.txt" TARGET="_top">RFC 1867</A> for details. You can access this value using the target property.
+
+<P><I>ACTION="serverURL"</I> specifies the URL of the server to which form field input information is sent. This attribute can specify a CGI or LiveWire application on the server; it can also be a mailto: URL if the form is to be mailed. See the <A HREF=ref_h-l.html#location_object>location</A> object for a description of the URL components. Some values for this attribute may require specific values for other attributes. See <A HREF="http://www.ics.uci.edu/pub/ietf/html/rfc1867.txt" TARGET="_top">RFC 1867</A> for details. You can access this value using the action property.
+
+<P><I>METHOD=GET | POST</I> specifies how information is sent to the server specified by <I>ACTION</I>. GET (the default) appends the input information to the URL which on most receiving systems becomes the value of the environment variable <I>QUERY_STRING</I>. POST sends the input information in a data body which is available on <I>stdin</I> with the data length set in the environment variable <I>CONTENT_LENGTH</I>. Some values for this attribute may require specific values for other attributes. See <A HREF="http://www.ics.uci.edu/pub/ietf/html/rfc1867.txt" TARGET="_top">RFC 1867</A> for details. You can access this value using the method property.
+
+<P><I>ENCTYPE="encodingType"</I> specifies the MIME encoding of the data sent: "application/x-www-form-urlencoded" (the default) or "multipart/form-data". Some values for this attribute may require specific values for other attributes. See <A HREF="http://www.ics.uci.edu/pub/ietf/html/rfc1867.txt" TARGET="_top">RFC 1867</A> for details. You can access this value using the encoding property.
+
+<P>To use a form object's properties and methods:
+<PRE>
+1. <I>formName</I>.<I>propertyName</I>
+2. <I>formName</I>.<I>methodName</I>(<I>parameters</I>)
+3. forms[<I>index</I>].<I>propertyName</I>
+4. forms[<I>index</I>].<I>methodName</I>(<I>parameters</I>)
+</PRE>
+<I>formName</I> is the value of the NAME attribute of a form object.
+<BR><I>propertyName</I> is one of the properties listed below.
+<BR><I>methodName</I> is one of the methods listed below.
+<BR><I>index</I> is an integer representing a form object.
+
+
+<H3>Property of</H3>
+<LI><A HREF=ref_d-e.html#document_object>document</A>
+
+
+<H3>Description</H3>
+<P>Each form in a document is a distinct object.
+
+<P>You can reference a form's elements in your code by using the element's name (from the NAME attribute) or the <A HREF=ref_d-e.html#elements_object><I>elements</I></A> array. The <I>elements</I> array contains an entry for each element (such as a checkbox, radio, or text object) in a form.
+
+
+<H4>The <I>forms</I> array</H4>
+<P>You can reference the forms in your code by using the <I>forms</I> array (you can also use the form name). This array contains an entry for each form object (&ltFORM&gt tag) in a document in source order. For example, if a document contains three forms, these forms are reflected as <TT>document.forms[0]</TT>, <TT>document.forms[1]</TT>, and <TT>document.forms[2]</TT>.
+
+<P>To use the <I>forms</I> array:
+<PRE>
+1. document.forms[<I>index</I>]
+2. document.forms.length
+</PRE>
+<P><I>index</I> is an integer representing a form in a document.
+
+<P>To obtain the number of forms in a document, use the length property: <TT>document.forms.length</TT>.
+
+<P>You can also refer to a form's elements by using the <I>forms</I> array. For example, you would refer to a text object named <I>quantity</I> in the second form as <TT>document.forms[1].quantity</TT>. You would refer to the value property of this text object as <TT>document.forms[1].quantity.value</TT>.
+
+<P>Elements in the <I>forms</I> array are read-only. For example, the statement <TT>document.forms[0]="music"</TT> has no effect.
+
+<P>The value of each element in the <I>forms</I> array is <TT>&ltobject <I>nameAttribute</I>&gt</TT>, where <I>nameAttribute</I> is the NAME attribute of the form.
+
+
+<H3>Properties</H3>
+<P>The form object has the following properties:
+<LI><A HREF=ref_a-c.html#action_property>action</A> reflects the ACTION attribute
+<LI><A HREF=ref_d-e.html#elements_object>elements</A> is an array reflecting all the elements in a form
+<LI><A HREF=ref_d-e.html#encoding_property>encoding</A> reflects the ENCTYPE attribute
+<LI><A HREF=ref_h-l.html#length_property>length</A> reflects the number of elements on a form
+<LI><A HREF=ref_m-q.html#method_property>method</A> reflects the METHOD attribute
+<LI><A HREF=ref_t-z.html#target_property>target</A> reflects the TARGET attribute
+
+<P>The following objects are also properties of the form object:
+<LI><A HREF=ref_a-c.html#button_object>button</A>
+<LI><A HREF=ref_a-c.html#checkbox_object>checkbox</A>
+<LI><A HREF=ref_h-l.html#hidden_object>hidden</A>
+<LI><A HREF=ref_m-q.html#password_object>password</A>
+<LI><A HREF=ref_r-r.html#radio_object>radio</A>
+<LI><A HREF=ref_r-r.html#reset_object>reset</A>
+<LI><A HREF=ref_s-s.html#select_object>select</A>
+<LI><A HREF=ref_s-s.html#submit_object>submit</A>
+<LI><A HREF=ref_t-z.html#text_object>text</A>
+<LI><A HREF=ref_t-z.html#textarea_object>textarea</A>
+
+<P>The <I>forms</I> array has the following properties:
+<LI><A HREF=ref_h-l.html#length_property>length</A> reflects the number of forms in a document
+
+
+<H3>Methods</H3>
+<LI><A HREF=ref_s-s.html#submit_method>submit</A>
+
+
+<H3>Event handlers</H3>
+<LI><A HREF=ref_m-q.html#onSubmit_event>onSubmit</A>
+
+
+<H3>Examples</H3>
+<P><B>Example 1: named form.</B> The following example creates a form called <I>form1</I> that contains text fields for first name and last name. The form also contains two buttons that change the names to all upper case or all lower case. The function <I>setCase</I> shows how to refer to the form by its name.
+<XMP>
+<HTML>
+<HEAD>
+<TITLE>Form object example</TITLE>
+</HEAD>
+<SCRIPT>
+function setCase (caseSpec){
+if (caseSpec == "upper") {
+   document.form1.firstName.value=document.form1.firstName.value.toUpperCase()
+   document.form1.lastName.value=document.form1.lastName.value.toUpperCase()}
+   else {
+   document.form1.firstName.value=document.form1.firstName.value.toLowerCase()
+   document.form1.lastName.value=document.form1.lastName.value.toLowerCase()}
+}
+</SCRIPT>
+<BODY>
+<FORM NAME="form1">
+<B>First name:</B>
+<INPUT TYPE="text" NAME="firstName" SIZE=20>
+<BR><B>Last name:</B>
+<INPUT TYPE="text" NAME="lastName" SIZE=20>
+<P><INPUT TYPE="button" VALUE="Names to uppercase" NAME="upperButton"
+   onClick="setCase('upper')">
+<INPUT TYPE="button" VALUE="Names to lowercase" NAME="lowerButton"
+   onClick="setCase('lower')">
+</FORM>
+</BODY>
+</HTML>
+</XMP>
+
+<B>Example 2: <I>forms</I> array.</B> The onLoad event handler in the following example displays the name of the first form in an alert dialog box.
+<XMP>
+<BODY onLoad="alert('You are looking at the ' + document.forms[0] + ' form!')">
+</XMP>
+
+<P>If the form name is <I>musicType</I>, the alert displays the following message:
+<XMP>
+You are looking at the <object musicType> form!
+</XMP>
+
+<P><B>Example 3: onSubmit event handler.</B> The following example shows an onSubmit event handler that determines whether to submit a form. The form contains one text object where the user enters three characters. The onSubmit event handler calls a function, <I>checkData</I>, that returns true if the number of characters is three; otherwise, it returns false. Notice that the form's onSubmit event handler, not the submit button's onClick event handler, calls the <I>checkData</I> function. Also, the onSubmit event handler contains a <B>return</B> statement that returns the value obtained with the function call.
+<XMP>
+<HTML>
+<HEAD>
+<TITLE>Form object/onSubmit event handler example</TITLE>
+<TITLE>Form object example</TITLE>
+</HEAD>
+<SCRIPT>
+var dataOK=false
+function checkData (){
+if (document.form1.threeChar.value.length == 3) {
+   return true}
+   else {
+      alert("Enter exactly three characters. " + document.form1.threeChar.value + " is not valid.")
+      return false}
+}
+</SCRIPT>
+<BODY>
+<FORM NAME="form1" onSubmit="return checkData()">
+<B>Enter 3 characters:</B>
+<INPUT TYPE="text" NAME="threeChar" SIZE=3>
+<P><INPUT TYPE="submit" VALUE="Done" NAME="submit1"
+   onClick="document.form1.threeChar.value=document.form1.threeChar.value.toUpperCase()">
+</FORM>
+</BODY>
+</HTML>
+</XMP>
+
+<P><B>Example 4: submit method.</B> The following example is similar to the previous one, except it submits the form using the submit method instead of a submit object. The form's onSubmit event handler does not prevent the form from being submitted. The form uses a button's onClick event handler to call the <I>checkData</I> function. If the value is valid, the <I>checkData</I> function submits the form by calling the form's submit method.
+<XMP>
+<HTML>
+<HEAD>
+<TITLE>Form object/submit method example</TITLE>
+</HEAD>
+<SCRIPT>
+var dataOK=false
+function checkData (){
+if (document.form1.threeChar.value.length == 3) {
+   document.form1.submit()}
+   else {
+      alert("Enter exactly three characters. " + document.form1.threeChar.value + " is not valid.")
+      return false}
+}
+</SCRIPT>
+<BODY>
+<FORM NAME="form1" onSubmit="alert('Form is being submitted.')">
+<B>Enter 3 characters:</B>
+<INPUT TYPE="text" NAME="threeChar" SIZE=3>
+<P><INPUT TYPE="button" VALUE="Done" NAME="button1"
+   onClick="checkData()">
+</FORM>
+</BODY>
+</HTML>
+</XMP>
+
+
+<H3>See also</H3>
+<LI><A HREF=ref_a-c.html#button_object>button</A>, <A HREF=ref_a-c.html#checkbox_object>checkbox</A>, <A HREF=ref_h-l.html#hidden_object>hidden</A>, <A HREF=ref_m-q.html#password_object>password</A>, <A HREF=ref_r-r.html#radio_object>radio</A>, <A HREF=ref_r-r.html#reset_object>reset</A>, <A HREF=ref_s-s.html#select_object>select</A>, <A HREF=ref_s-s.html#submit_object>submit</A>, <A HREF=ref_t-z.html#text_object>text</A>, <A HREF=ref_t-z.html#textarea_object>textarea </A> objects
+
+
+<!------------------------------------------------------------------------------------------------->
+<HR>
+<A NAME="forms_property"><H2>forms property</H2></A>
+<P>An array of objects corresponding to the forms (&ltFORM&gt tags) in a document in source order. See <A HREF=ref_f-g.html#form_object>form</A> object.
+
+<!------------------------------------------------------------------------------------------------->
+<HR>
+<A NAME="forward_method"><H2>forward method</H2></A>
+<P>
+Loads the next URL in the history list.
+
+<H3>Syntax</H3>
+<PRE>history.forward()</PRE>
+
+<H3>Method of</H3>
+<P><A HREF=ref_h-l.html#history_object>history</A>
+
+<H3>Description</H3>
+<P>This method performs the same action as a user choosing the Forward button in the Navigator. The forward method is the same as <TT>history.go(1)</TT>.
+
+<H3>Examples</H3>
+The following custom buttons perform the same operations as the Navigator Back and Forward buttons:
+<PRE>
+&ltP&gt&ltINPUT TYPE="button" VALUE="< Back"
+   onClick="history.back()"&gt
+&ltP&gt&ltINPUT TYPE="button" VALUE="> Forward"
+   onClick="history.forward()"&gt
+</PRE>
+
+<H3>See also</H3>
+<LI><A HREF=ref_a-c.html#back_method>back</A>, <A HREF=ref_f-g.html#go_method>go</A> methods
+<!------------------------------------------------------------------------------------------------>
+<HR>
+<A NAME="frame_object"><H2>frame object (<I>frames</I> array)</H2></A>
+<P>A window that can display multiple, independently scrollable frames on a single screen, each with its own distinct URL. Frames can point to different URLs and be targeted by other URLs, all within the same screen. A series of frames makes up a page.
+
+<H3>Syntax</H3>
+<P>To define a frame object, use standard HTML syntax. The onLoad and onUnload event handlers are specified in the &LTFRAMESET&GT tag but are actually event handlers for the window object:
+<PRE>
+&LTFRAMESET
+   ROWS="<I>rowHeightList</I>"
+   COLS="<I>columnWidthList</I>"
+   [onLoad="<I>handlerText</I>"]
+   [onUnload="<I>handlerText</I>"]&GT
+   [&LTFRAME SRC="<I>locationOrURL</I>" NAME="<I>frameName</I>"&GT]
+&LT/FRAMESET&GT
+</PRE>
+<I>ROWS="rowHeightList"</I> is a comma-separated list of values specifying the row-height of the frame. An optional suffix defines the units. Default units are pixels.
+<BR><I>COLS="columnWidthList"</I> is a comma-separated list of values specifying the column-width of the frame. An optional suffix defines the units. Default units are pixels.
+<BR><I>&LTFRAME&GT</I> defines a frame.
+<BR><I>SRC="locationOrURL"</I> specifies the URL of the document to be displayed in the frame. The URL cannot include an anchor name; for example <TT>&LTFRAME SRC="doc2.html#colors" NAME="frame2"&GT</TT> is invalid. See the <A HREF=ref_h-l.html#location_object>location</A> object for a description of the URL components.
+<BR><I>NAME="frameName"</I> specifies a name to be used as a target of hyperlink jumps.
+
+<P>To use a frame object's properties:
+<PRE>
+1. [<I>windowReference</I>.]<I>frameName</I>.<I>propertyName</I>
+2. [<I>windowReference</I>.]frames[<I>index</I>].<I>propertyName</I>
+3. window.<I>propertyName</I>
+4. self.<I>propertyName</I>
+5. parent.<I>propertyName</I>
+</PRE>
+<I>windowReference</I> is a variable <I>windowVar</I> from a window definition (see <A HREF=ref_t-z.html#window_object>window</A> object), or one of the synonyms top or parent.
+<BR><I>frameName</I> is the value of the NAME attribute in the &LTFRAME&GT tag of a frame object.
+<BR><I>index</I> is an integer representing a frame object.
+<BR><I>propertyName</I> is one of the properties listed below.
+
+
+<H3>Property of</H3>
+<LI>The frame object is a property of <A HREF=ref_t-z.html#window_object>window</A>
+<LI>The frames array is a property of both <A HREF=ref_f-g.html#frame_object>frame</A> and <A HREF=ref_t-z.html#window_object>window</A>
+
+
+<H3>Description</H3>
+<P>The &LTFRAMESET&GT tag is used in an HTML document whose sole purpose is to define the layout of frames that make up a page. Each frame is a window object.
+
+<P>If a &LTFRAME&GT tag contains SRC and NAME attributes, you can refer to that frame from a sibling frame by using <TT>parent.<I>frameName</I></TT> or <TT>parent.frames[<I>index</I>]</TT>. For example, if the fourth frame in a set has NAME="homeFrame", sibling frames can refer to that frame using <TT>parent.homeFrame</TT> or <TT>parent.frames[3]</TT>.
+
+<P>The self and window properties are synonyms for the current frame, and you can optionally use them to refer to the current frame. You can use these properties to make your code more readable. See the properties listed below for examples.
+
+<P>The top and parent properties are also synonyms that can be used in place of the frame name. top refers to the top-most window that contains frames or nested framesets, and parent refers to the window containing the current frameset. See the <A HREF=ref_t-z.html#top_property>top</A> and <A HREF=ref_m-q.html#parent_property>parent</A> properties.
+
+<H4>The <I>frames</I> array</H4>
+<P>You can reference the frame objects in your code by using the <I>frames</I> array. This array contains an entry for each child frame (&ltFRAME&gt tag) in a window containing a &LTFRAMESET&GT tag in source order. For example, if a window contains three child frames, these frames are reflected as <TT>parent.frames[0]</TT>, <TT>parent.frames[1]</TT>, and <TT>parent.frames[2]</TT>.
+
+<P>To use the <I>frames</I> array:
+<PRE>
+1. [<I>frameReference</I>.]frames[<I>index</I>]
+2. [<I>frameReference</I>.]frames.length
+3. [<I>windowReference</I>.]frames[<I>index</I>]
+4. [<I>windowReference</I>.]frames.length
+</PRE>
+<P><I>frameReference</I> is a valid way of referring to a frame, as described in the <A HREF=ref_f-g.html#frame_object>frame</A> object.
+<BR><I>windowReference</I> is a variable <I>windowVar</I> from a window definition (see <A HREF=ref_t-z.html#window_object>window</A> object), or one of the synonyms top or parent.
+<BR><I>index</I> is an integer representing a frame in a parent window.
+
+<P>To obtain the number of child frames in a window or frame, use the length property:
+<PRE>
+[<I>windowReference</I>.].frames.length
+[<I>frameReference</I>.].frames.length
+</PRE>
+
+<P>Elements in the <I>frames</I> array are read-only. For example, the statement <TT><I>windowReference</I>.frames[0]="frame1"</TT> has no effect.
+
+<P>The value of each element in the <I>frames</I> array is <TT>&ltobject <I>nameAttribute</I>&gt</TT>, where <I>nameAttribute</I> is the NAME attribute of the frame.
+
+
+<H3>Properties</H3>
+<P>The frame object has the following properties:
+<LI><A HREF=ref_f-g.html#frame_object>frames</A> is an array reflecting all the frames in a window
+<LI><A HREF=ref_m-q.html#name_property>name</A> reflects the NAME attribute of the &LTFRAME&GT tag
+<LI><A HREF=ref_h-l.html#length_property>length</A> reflects the number of child frames within a frame
+<LI><A HREF=ref_m-q.html#parent_property>parent</A> is a synonym for the window or frame containing the current frameset
+<LI><A HREF=ref_s-s.html#self_property>self</A> is a synonym for the current frame
+<LI><A HREF=ref_t-z.html#window_property>window</A> is a synonym for the current frame
+
+<P>The <I>frames</I> array has the following properties:
+<LI><A HREF=ref_h-l.html#length_property>length</A> reflects the number of child frames within a frame
+
+
+<H3>Methods</H3>
+<LI><A HREF=ref_a-c.html#clearTimeout_method>clearTimeout</A>
+<LI><A HREF=ref_s-s.html#setTimeout_method>setTimeout</A>
+
+
+<H3>Event handlers</H3>
+<LI>None. The onLoad and onUnload event handlers are specified in the &LTFRAMESET&GT tag but are actually event handlers for the window object.
+
+
+<H3>Examples</H3>
+<P>The following example creates two windows, each with four frames. In the first window, the first frame contains pushbuttons that change the background colors of the frames in both windows.
+
+<P>FRAMSET1.HTML, which defines the frames for the first window, contains the following code:
+<XMP>
+<HTML>
+<HEAD>
+<TITLE>Frames and Framesets: Window 1</TITLE>
+</HEAD>
+<FRAMESET ROWS="50%,50%" COLS="40%,60%" onLoad="alert('Hello, World.')">
+<FRAME SRC=framcon1.html NAME="frame1">
+<FRAME SRC=framcon2.html NAME="frame2">
+<FRAME SRC=framcon2.html NAME="frame3">
+<FRAME SRC=framcon2.html NAME="frame4">
+</FRAMESET>
+</HTML>
+</XMP>
+
+<P>FRAMSET2.HTML, which defines the frames for the second window, contains the following code:
+<XMP>
+<HTML>
+<HEAD>
+<TITLE>Frames and Framesets: Window 2</TITLE>
+</HEAD>
+<FRAMESET ROWS="50%,50%" COLS="40%,60%">
+<FRAME SRC=framcon2.html NAME="frame1">
+<FRAME SRC=framcon2.html NAME="frame2">
+<FRAME SRC=framcon2.html NAME="frame3">
+<FRAME SRC=framcon2.html NAME="frame4">
+</FRAMESET>
+</HTML>
+</XMP>
+
+<P>FRAMCON1.HTML, which defines the content for the first frame in the first window, contains the following code:
+<XMP>
+<HTML>
+<BODY>
+<A NAME="frame1"><H1>Frame1</H1></A>
+<P><A HREF="framcon3.htm" target=frame2>Click here</A> to load a different file into frame 2.
+<SCRIPT>
+window2=open("framset2.htm","secondFrameset")
+</SCRIPT>
+<FORM>
+<P><INPUT TYPE="button" VALUE="Change frame2 to teal"
+   onClick="parent.frame2.document.bgColor='teal'">
+<P><INPUT TYPE="button" VALUE="Change frame3 to slateblue"
+   onClick="parent.frames[2].document.bgColor='slateblue'">
+<P><INPUT TYPE="button" VALUE="Change frame4 to darkturquoise"
+   onClick="top.frames[3].document.bgColor='darkturquoise'">
+
+<P><INPUT TYPE="button" VALUE="window2.frame2 to violet"
+   onClick="window2.frame2.document.bgColor='violet'">
+<P><INPUT TYPE="button" VALUE="window2.frame3 to fuchsia"
+   onClick="window2.frames[2].document.bgColor='fuchsia'">
+<P><INPUT TYPE="button" VALUE="window2.frame4 to deeppink"
+   onClick="window2.frames[3].document.bgColor='deeppink'">
+</FORM>
+</BODY>
+</HTML>
+</XMP>
+
+<P>FRAMCON2.HTML, which defines the content for the remaining frames, contains the following code:
+<XMP>
+<HTML>
+<BODY>
+<P>This is a frame.
+</BODY>
+</HTML>
+</XMP>
+
+<P>FRAMCON3.HTML, which is referenced in a link object in FRAMCON1.HTML, contains the following code:
+<XMP>
+<HTML>
+<BODY>
+<P>This is a frame. What do you think?
+</BODY>
+</HTML>
+</XMP>
+
+
+<H3>See also</H3>
+<LI><A HREF=ref_d-e.html#document_object>document</A> and <A HREF=ref_t-z.html#window_object>window</A> objects
+
+
+<!------------------------------------------------------------------------------------------------->
+<HR>
+<A NAME="frames_property"><H2>frames property</H2></A>
+<P>An array of objects corresponding to child frames (&ltFRAME&gt tag) in source order. See <A HREF=ref_f-g.html#frame_object>frame</A> object.
+
+<!------------------------------------------------------------------------------------------------->
+<HR>
+<A NAME="getDate_method"><H2>getDate method</H2></A>
+<P>
+Returns the day of the month for the specified date.
+
+<H3>Syntax</H3>
+<PRE><I>dateObjectName</I>.getDate()</PRE>
+<P><I>dateObjectName</I> is either the name of a date object or a property of an existing object.
+
+<H3>Method of</H3>
+<P><A HREF=ref_d-e.html#Date_object>Date</A>
+
+<H3>Description</H3>
+<P>The value returned by getDate is an integer between 1 and 31.
+
+<H3>Examples</H3>
+<P>
+The second statement below assigns the value 25 to the variable <I>day</I>, based on the value of the date object <I>Xmas95</I>.
+<PRE>
+Xmas95 = new Date("December 25, 1995 23:15:00")
+day = Xmas95.getDate()
+</PRE>
+
+<H3>See also</H3>
+<LI><A HREF=ref_s-s.html#setDate_method>setDate</A> method
+<!------------------------------------------------------------------------------------------------>
+<HR>
+<A NAME="getDay_method"><H2>getDay method</H2></A>
+<P>
+Returns the day of the week for the specified date.
+
+<H3>Syntax</H3>
+<PRE><I>dateObjectName</I>.getDay()</PRE>
+<P><I>dateObjectName</I> is either the name of a date object or a property of an existing object.
+
+<H3>Method of</H3>
+<P><A HREF=ref_d-e.html#Date_object>Date</A>
+
+<H3>Description</H3>
+<P>
+The value returned by getDay is an integer corresponding to the day of the week: zero for Sunday, one for Monday, two for Tuesday, and so on.
+
+<H3>Examples</H3>
+<P>
+The second statement below assigns the value 1 to <I>weekday</I>, based on the value of the date object <I>Xmas95</I>. This is because December 25, 1995 is a Monday.
+<PRE>
+Xmas95 = new Date("December 25, 1995 23:15:00")
+weekday = Xmas95.getDay()
+</PRE>
+
+<!------------------------------------------------------------------------------------------------>
+<HR>
+<A NAME="getHours_method"><H2>getHours method</H2></A>
+<P>
+Returns the hour for the specified date.
+
+<H3>Syntax</H3>
+<PRE><I>dateObjectName</I>.getHours()</PRE>
+<P><I>dateObjectName</I> is either the name of a date object or a property of an existing object.
+
+<H3>Method of</H3>
+<P><A HREF=ref_d-e.html#Date_object>Date</A>
+
+<H3>Description</H3>
+<P>
+The value returned by getHours is an integer between 0 and 23.
+
+<H3>Examples</H3>
+<P>
+The second statement below assigns the value 23 to the variable <I>hours</I>, based on the value of the date object <I>Xmas95</I>.
+<PRE>
+Xmas95 = new Date("December 25, 1995 23:15:00")
+hours = Xmas95.getHours()
+</PRE>
+
+
+<H3>See also</H3>
+<LI><A HREF=ref_s-s.html#setHours_method>setHours</A> method
+<!------------------------------------------------------------------------------------------------>
+<HR>
+<A NAME="getMinutes_method"><H2>getMinutes method</H2></A>
+<P>
+Returns the minutes in the specified date.
+
+<H3>Syntax</H3>
+<PRE><I>dateObjectName</I>.getMinutes()</PRE>
+<P><I>dateObjectName</I> is either the name of a date object or a property of an existing object.
+
+
+<H3>Method of</H3>
+<P><A HREF=ref_d-e.html#Date_object>Date</A>
+
+<H3>Description</H3>
+<P>
+The value returned by getMinutes is an integer between 0 and 59.
+
+<H3>Examples</H3>
+<P>
+The second statement below assigns the value 15 to the variable <I>minutes</I>, based on the value of the date object <I>Xmas95</I>.
+<PRE>
+Xmas95 = new Date("December 25, 1995 23:15:00")
+minutes = Xmas95.getMinutes()
+</PRE>
+
+<H3>See also</H3>
+<LI><A HREF=ref_s-s.html#setMinutes_method>setMinutes</A> method
+<!------------------------------------------------------------------------------------------------>
+<HR>
+<A NAME="getMonth_method"><H2>getMonth method</H2></A>
+<P>
+Returns the month in the specified date.
+
+<H3>Syntax</H3>
+<PRE><I>dateObjectName</I>.getMonth()</PRE>
+<P><I>dateObjectName</I> is either the name of a date object or a property of an existing object.
+
+
+<H3>Method of</H3>
+<P><A HREF=ref_d-e.html#Date_object>Date</A>
+
+<H3>Description</H3>
+<P>
+The value returned by getMonth is an integer between zero and eleven. Zero corresponds to January, one to February, and so on.
+
+<H3>Examples</H3>
+<P>
+The second statement below assigns the value 11 to the variable <I>month</I>, based on the value of the date object <I>Xmas95</I>.
+<PRE>
+Xmas95 = new Date("December 25, 1995 23:15:00")
+month = Xmas95.getDate()
+</PRE>
+
+
+<H3>See also</H3>
+<LI><A HREF=ref_s-s.html#setMonth_method>setMonth</A> method
+<!------------------------------------------------------------------------------------------------>
+<HR>
+<A NAME="getSeconds_method"><H2>getSeconds method</H2></A>
+<P>
+Returns the seconds in the current time.
+
+<H3>Syntax</H3>
+<PRE><I>dateObjectName</I>.getSeconds()</PRE>
+<P><I>dateObjectName</I> is either the name of a date object or a property of an existing object.
+
+<H3>Method of</H3>
+<P><A HREF=ref_d-e.html#Date_object>Date</A>
+
+<H3>Description</H3>
+<P>
+The value returned by getSeconds is an integer between 0 and 59.
+
+<H3>Examples</H3>
+<P>
+The second statement below assigns the value 30 to the variable <I>secs</I>, based on the value of the date object <I>Xmas95</I>.
+<PRE>
+Xmas95 = new Date("December 25, 1995 23:15:30")
+secs = Xmas95.getSeconds()
+</PRE>
+
+<H3>See also</H3>
+<LI><A HREF=ref_s-s.html#setSeconds_method>setSeconds</A> method
+<!------------------------------------------------------------------------------------------------>
+<HR>
+<A NAME="getTime_method"><H2>getTime method</H2></A>
+<P>
+Returns the numeric value corresponding to the time for the specified date.
+
+<H3>Syntax</H3>
+<PRE><I>dateObjectName</I>.getTime()</PRE>
+<P><I>dateObjectName</I> is either the name of a date object or a property of an existing object.
+
+
+<H3>Method of</H3>
+<P><A HREF=ref_d-e.html#Date_object>Date</A>
+
+<H3>Description</H3>
+<P>
+The value returned by the getTime method is the number of milliseconds since 1 January 1970 00:00:00. You can use this method to help assign a date and time to another date object.
+
+<H3>Examples</H3>
+<P>
+The following example assigns the date value of <I>theBigDay</I> to <I>sameAsBigDay</I>.
+
+<PRE>
+theBigDay = new Date("July 1, 1999")
+sameAsBigDay = new Date()
+sameAsBigDay.setTime(theBigDay.getTime())
+</PRE>
+
+<H3>See also</H3>
+<LI><A HREF=ref_s-s.html#setTime_method>setTime</A> method
+<!----------------------------------------------------------------->
+<HR>
+<A NAME="getTimezoneOffset_method"><H2>getTimezoneOffset method</H2></A>
+<P>
+Returns the time zone offset in minutes for the current locale.
+
+<H3>Syntax</H3>
+<PRE><I>dateObjectName</I>.getTimezoneOffset()</PRE>
+<P><I>dateObjectName</I> is either the name of a date object or a property of an existing object.
+
+<H3>Method of</H3>
+<P><A HREF=ref_d-e.html#Date_object>Date</A>
+
+<H3>Description</H3>
+<P>
+The time zone offset is the difference between local time and GMT. Daylight savings time prevents this value from being a constant.
+
+<H3>Examples</H3>
+
+<PRE>
+x = new Date()
+currentTimeZoneOffsetInHours = x.getTimezoneOffset()/60
+</PRE>
+
+<!------------------------------------------------------------------------------------------------>
+<HR>
+<A NAME="getYear_method"><H2>getYear method</H2></A>
+<P>
+Returns the year in the specified date.
+
+<H3>Syntax</H3>
+<PRE><I>dateObjectName</I>.getYear()</PRE>
+<P><I>dateObjectName</I> is either the name of a date object or a property of an existing object.
+
+<H3>Method of</H3>
+<P><A HREF=ref_d-e.html#Date_object>Date</A>
+
+<H3>Description</H3>
+<P>
+The value returned by getYear is the year less 1900. For example, if the year is 1976, the value returned is 76.
+
+<H3>Examples</H3>
+<P>
+The second statement below assigns the value 95 to the variable <I>year</I>, based on the value of the date object <I>Xmas95</I>.
+<PRE>
+Xmas95 = new Date("December 25, 1995 23:15:00")
+year = Xmas95.getYear()
+</PRE>
+
+
+<H3>See also</H3>
+<LI><A HREF=ref_s-s.html#setYear_method>setYear</A> method
+<!------------------------------------------------------------------------------------------------>
+<HR>
+<A NAME="go_method"><H2>go method</H2></A>
+<P>
+Loads a URL from the history list.
+
+<H3>Syntax</H3>
+<PRE>history.go(<I>delta</I> | "<I>location</I>")</PRE>
+<I>delta</I> is an integer or a property of an existing object, representing a relative position in the history list.
+<BR><I>location</I> is a string or a property of an existing object, representing all or part of a URL in the history list.
+
+<H3>Method of</H3>
+<P><A HREF=ref_h-l.html#history_object>history</A>
+
+<H3>Description</H3>
+<P>The go method navigates to the location in the history list determined by the argument that you specify. You can interactively display the history list by choosing History from the Window menu. Up to 10 items in the history list are also displayed on the Go menu.
+
+<P>The <I>delta</I> argument is a positive or negative integer. If <I>delta</I> is greater than zero, the go method loads the URL that is that number of entries forward in the history list; otherwise, it loads the URL that is that number of entries backward in the history list. If delta is 0, Navigator reloads the current page.
+
+<P>The <I>location</I> argument is a string. Use <I>location</I> to load the nearest history entry whose URL contains <I>location</I> as a substring. The <I>location</I> to URL matching is case-insensitive. Each section of a URL contains different information. See the <A HREF=ref_h-l.html#location_object>location</A> object for a description of the URL components.
+
+<H3>Examples</H3>
+<P>The following button navigates to the nearest history entry that contains the string "home.netscape.com":
+<PRE>
+&ltP&gt&ltINPUT TYPE="button" VALUE="Go"
+   onClick="history.go('home.netscape.com')"&gt
+</PRE>
+<P>The following button navigates to the URL that is three entries backward in the history list:
+<PRE>
+&ltP&gt&ltINPUT TYPE="button" VALUE="Go"
+   onClick="history.go(-3)"&gt
+</PRE>
+
+<H3>See also</H3>
+<LI><A HREF=ref_a-c.html#back_method>back</A>, <A HREF=ref_f-g.html#forward_method>forward</A> methods
+<!------------------------------------------------------------------------------------------------>
+<HR>
+
+<SCRIPT>
+document.write("<FONT SIZE=-2>Last modified " + document.lastModified)
+</SCRIPT>
+<P>
+</BODY>
+<HTML>
+

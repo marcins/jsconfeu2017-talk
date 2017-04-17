@@ -1,0 +1,63 @@
+
+
+<HTML>
+	<HEAD>
+	<TITLE>Swimming Fish Example 1</TITLE>
+
+    </HEAD>
+
+	<STYLE TYPE="text/css">
+    <!--
+
+    #bluepole {position:absolute; top: 150px; left:160px;}
+    #greenpole {position:absolute; top: 150px; left:360px;}
+    #redpole {position:absolute; top: 150px; left:260px;}
+    #fish {position:absolute; top: 170px; left:40px;}
+
+	-->
+
+</STYLE>
+
+
+	<BODY BGCOLOR="#FFFFFF">
+
+
+	<SPAN id=bluepole>
+	<IMG SRC=images/bluepole.gif>
+	</SPAN>
+
+	<SPAN id=greenpole>
+	<IMG SRC=images/greenpol.gif>
+	</SPAN>
+
+
+	<SPAN id=fish>
+	<IMG SRC=images/fish1.gif >
+	</LAYER>
+
+	<SPAN id=redpole>
+	<IMG SRC=images/redpole.gif>
+	</SPAN>
+
+
+
+	<H1>Fish Example 1</H1>
+	<FORM>
+	<INPUT type=button value="Move the fish" OnClick="movefish(); return false;">
+	</FORM>
+
+<SCRIPT>
+	<!-- Simple move function -->
+	function movefish() {
+		var fish = document.layers["fish"];
+		if (fish.left < 400) {
+			fish.offset(5, 0);}
+		else {fish.left = 10;}
+		setTimeout("movefish()", 10);
+   		return;
+	}
+</SCRIPT>
+	</BODY>
+	</HTML>
+
+

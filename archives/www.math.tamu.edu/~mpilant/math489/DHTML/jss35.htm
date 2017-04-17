@@ -1,0 +1,595 @@
+<html><head><title>Dynamic HTML in Communicator
+
+</title>
+<LINK REL=STYLESHEET 
+ TYPE="text/css"
+href="cstyle1.htm">
+
+</head>
+<body bgcolor=#FFFFFF>
+<FONT SIZE=-1>
+<a href="contents.htm">[Contents]</a> <a href="jss34.htm">[Prev page]</a> <a href="layers3.htm">[Next page]</a> <a href="dynamici.htm">[Index]</a>
+</FONT>
+
+<HR SIZE=4>
+<H3 align="right">
+<FONT FACE="Helvetica,Arial" 
+COLOR="#408080" >
+<I>Dynamic HTML in Netscape Communicator<BR>
+Part 1. Style Sheets
+</I></FONT></H3>
+
+
+
+<a name="1080461">
+<h1><I><FONT FACE="Helvetica,Arial" COLOR="#408080" SIZE=+1>
+Chapter 6</FONT></I> 
+</H1>
+</a><a name="1051064">
+<h1>Advanced Style Sheet Example</H1>
+<P><IMG SRC="images/bann02.gif" HEIGHT=6 WIDTH=640>
+</P>
+</a><a name="1051147">
+<P>This chapter presents an advanced example that uses style sheets. The example web page discussed in this chapter is the home page for a fictional company called Style Sheets Ink. </P>
+</a><a name="1051830">
+<P>You can view this page at:</P>
+</a><A HREF="styleink/index.htm" target="StyleSheetExample">
+<PRE>styleink/index.htm</PRE></A><p>
+<a name="1081587">
+<P>The page opens in a separate browser window. If you do not see the page after selecting the link, check your desktop in case the second browser window is hidden under this one.</P>
+</a><a name="1081481">
+<P>This chapter discusses how the <code>index.htm</code> page uses style sheets. </P>
+</a><a name="1053353">
+<P>However, Style Sheets Ink has also developed several alternative home pages, that each display the same content but use slightly different style sheets. To view the alternative home pages, select the following links:</P>
+</a><A HREF="styleink/version1.htm" target="StyleSheetExample">
+<PRE>styleink/version1.htm</PRE></A><p>
+<A HREF="styleink/version2.htm" target="StyleSheetExample">
+<PRE>styleink/version2.htm</PRE></A><p>
+<A HREF="styleink/version3.htm" target="StyleSheetExample">
+<PRE>styleink/version3.htm</PRE></A><p>
+<a name="1051174">
+<P>Feel free to copy any of these examples and modify them to suit your needs.</P>
+</a><HR><a name="1051150">
+<h1> Style Sheets Ink Home Page</h1>
+</a><a name="1051813">
+<P>To view the web page that is discussed in this chapter, select:</P>
+</a><A HREF="styleink/index.htm" target="StyleSheetExample">
+<PRE>styleink/index.htm</PRE></A><p>
+<a name="1051931">
+<P>The example page opens in a separate browser window, so if you do not see it immediately, check if it is hidden under another window on your desktop. Be sure to view the sample page in a web browser that supports style sheets, such as Navigator 4.0, so you can see the full effects of the styles.</P>
+</a><a name="1053358">
+<P>The rest of this chapter discusses how style sheets are used in Style Sheets Ink's home page. The discussions include extracts of source code. However, to see the entire source code, view the page source in your web browser.</P>
+</a><a name="1051932">
+<P>The style sheet for the page uses CSS syntax. The style sheet is included at the top of the page. </P>
+</a><a name="1051193">
+<P>The Style Sheets Ink home page has several sections, including an introductory section, a training section, a web sites section, and a consultation section, which are all contained within a main block. There is also a background section which is in the back, outside the main block.</P>
+</a><a name="1053432">
+<P>The introductory section is centered in the main block, but the sections after it alternate between being on the left and the right.</P>
+</a><a name="1053496">
+<P>The example page makes extensive use of <code>&lt;DIV&gt;</code> tags to contain elements that share styles. It also illustrates how you can use a <code>&lt;DIV&gt;</code> block to draw a single border around multiple elements.</P>
+</a><HR><a name="1051243">
+<h1> Overview of the Style Sheet</h1>
+</a><a name="1051290">
+<P>At the very top of the style sheet file, there's a link to a font definition file:</P>
+</a><a name="1077123">
+<PRE>&lt;LINK HXBURNED REL="fontdef" SRC="index.pfr"&gt;
+</PRE>
+</a><a name="1077126">
+<P>This font definition file contains the definition for the Impact BT downloadable font, which is used in the page. (For more information about downloadable fonts, see <a href="webfont3.htm#1032357">Part 3. Downloadable Fonts</a>.)</P>
+</a><a name="1077117">
+<P>The style sheet defines several styles that are used in different parts of the page. For instance, the <code>INTROBLOCK</code> style is used for the introductory material, the <code>TRAININGHEAD</code> style is used for the heading in the training section, and the <code>TRAINING</code> style is used for the text in the training section.</P>
+</a><a name="1053056">
+<P>However, the style sheet also defines a couple of styles that are used throughout the whole document. These include styles for the <code>&lt;BODY&gt;</code> element and for the <code>&lt;H1&gt;</code> element.</P>
+</a><a name="1053047">
+<P>The body of the Style Sheets Ink home page has a medium blue background. This could be specified using the <code>bgColor</code> attribute in the <code>&lt;BODY&gt;</code> element, but Style Sheets Ink has instead specified a style for the <code>&lt;BODY&gt;</code> element:</P>
+</a><a name="1052013">
+<PRE>&lt;STYLE type="text/css"&gt;
+</PRE>
+</a><a name="1052011">
+<PRE>BODY {background-color:#CCDDFF;}
+</PRE>
+</a><a name="1053083">
+<P>Nearly all <code>&lt;H1&gt;</code> elements in the document use the same customized style, so the style sheet defines the style for first-level headings as follows:</P>
+</a><a name="1053086">
+<PRE>H1 {
+</PRE>
+</a><a name="1053089">
+<PRE> &#32;font-size:18pt; 
+</PRE>
+</a><a name="1053090">
+<PRE> &#32;font-weight:bold; 
+</PRE>
+</a><a name="1053091">
+<PRE> &#32;font-style:italic;
+</PRE>
+</a><a name="1077003">
+<PRE> &#32;font-family:"Impress BT", "Helvetica", sans-serif;
+</PRE>
+</a><a name="1053092">
+<PRE>}
+</PRE>
+</a><a name="1053109">
+<P>The <code>font-family</code> property lists three fonts. The font Impress B" is defined in the font definition file <code>index.pfr</code>, which is automatically downloaded to the user's system when a user views the page. However, just in case the font definition file is not available for any reason, Helvetica is specified as a backup font. Many computers include Helvetica as a system font, so it is likely to be available for most users. But just in case the font definition file is not available and the user does not have Helvetica font on their system, the style specifies the generic sans-serif font family as a last resort. </P>
+</a><a name="1077034">
+<P>Th style defines the default font size, the font weight, font style, and font family for all <code>&lt;H1&gt;</code> element in the page. It does not define the font color. Throughout the document, each <code>&lt;H1&gt;</code> element gets its color from other inherited styles. For example, the training heading is inside a <code>&lt;DIV&gt;</code> block that uses the <code>TRAINING</code> style. This style sets the <code>color</code> property to <code>#111100</code> (a dark gold color). Thus the training heading gets some of its characteristics from the <code>H1</code> style, and other characteristics from the <code>TRAINING</code> style.</P>
+</a><HR><a name="1052031">
+<h1> Main Block</h1>
+</a><a name="1052470">
+<P>The very first thing in the body of the page is a <code>&lt;DIV&gt;</code> block that contains the main content for the page. </P>
+</a><a name="1052061">
+<P>This <code>DIV</code> block has a gray border and a white background. It uses the <code>MAIN</code> style to define its border and background: The definition of the <code>MAIN</code> style is:</P>
+</a><a name="1052035">
+<PRE>all.MAIN {
+</PRE>
+</a><a name="1052036">
+<PRE> &#32;background-color: white;
+</PRE>
+</a><a name="1052037">
+<PRE> &#32;margin-left:5%; margin-right:5%;
+</PRE>
+</a><a name="1052038">
+<PRE> &#32;border-color:gray; border-style:outset; border-width:6pt;
+</PRE>
+</a><a name="1052039">
+<PRE> &#32;padding:20 pt;
+</PRE>
+</a><a name="1052032">
+<PRE>}
+</PRE>
+</a><HR><a name="1053260">
+<h1> The Introductory Section</h1>
+</a><a name="1053285">
+<P>The <code>MAIN</code> <code>&lt;DIV&gt;</code> block contains another <code>&lt;DIV&gt;</code> block. This block is the intro block, which contains the introductory information for the page. The intro block uses the style <code>INTROBLOCK</code>.</P>
+</a><a name="1052106">
+<P>This style defines a flat blue border and a blue background for the intro block. The color of the border is the same as the color of the background. The style also defines the text and font characteristics to be used by all elements inside the intro block. </P>
+</a><a name="1052076">
+<P>Here's the definition of the style class <code>INTROBLOCK</code>:</P>
+</a><a name="1052079">
+<PRE>all.INTROBLOCK {
+</PRE>
+</a><a name="1052146">
+<PRE> &#32;font-family: "new century schoolbook", serif;
+</PRE>
+</a><a name="1052147">
+<PRE> &#32;font-style:italic;
+</PRE>
+</a><a name="1052148">
+<PRE> &#32;font-size:12pt;
+</PRE>
+</a><a name="1052175">
+<PRE> &#32;color:#000055;
+</PRE>
+</a><a name="1052102">
+<PRE> &#32;background-color: #CCDDFF;
+</PRE>
+</a><a name="1052080">
+<PRE> &#32;margin-left:5%; margin-right:5%;
+</PRE>
+</a><a name="1052081">
+<PRE> &#32;border-color:#CCDDFF; border-style:solid;
+</PRE>
+</a><a name="1052082">
+<PRE> &#32;border-width:2pt;
+</PRE>
+</a><a name="1052083">
+<PRE> &#32;padding:10pt;
+</PRE>
+</a><a name="1052077">
+<PRE>}
+</PRE>
+</a><a name="1053208">
+<PRE><p align="center">
+<img src="stylefig/fig1.gif" border=1>
+</P>
+
+</PRE>
+</a><a name="1052485">
+<center><h4>Figure 6.1&#32; Blocks used in the Style Sheets Ink Home Page</h4></center>
+</a><a name="1077997">
+<h2> Intro Head</h2>
+</a><a name="1051296">
+<P>The main heading for the page is inside the intro block. It has a wide outset 3D blue border. It uses the style <code>INTROHEAD</code>. Here's the definition of the style class <code>INTROHEAD</code>:</P>
+</a><a name="1052121">
+<PRE>all.INTROHEAD{
+</PRE>
+</a><a name="1052134">
+<PRE> &#32;font-size:24pt;
+</PRE>
+</a><a name="1052122">
+<PRE> &#32;text-align:center;
+</PRE>
+</a><a name="1052123">
+<PRE> &#32;color:#000055;
+</PRE>
+</a><a name="1052124">
+<PRE> &#32;background-color:#CCDDFF;
+</PRE>
+</a><a name="1052125">
+<PRE> &#32;margin-left:2%; margin-right:2%;
+</PRE>
+</a><a name="1052126">
+<PRE> &#32;border-color:#0055FF; border-style:outset; border-width:20pt;
+</PRE>
+</a><a name="1052127">
+<PRE> &#32;padding:5pt;
+</PRE>
+</a><a name="1052129">
+<PRE>}
+</PRE>
+</a><a name="1052119">
+<h2> Text in the Intro Block</h2>
+</a><a name="1052491">
+<P>The following code shows the first few lines in the body of the document:</P>
+</a><a name="1052226">
+<PRE>&lt;BODY &gt;
+</PRE>
+</a><a name="1052227">
+<PRE>&lt;DIV CLASS=MAIN&gt;
+</PRE>
+</a><a name="1052228">
+<PRE>&lt;DIV CLASS=INTROBLOCK&gt;
+</PRE>
+</a><a name="1052219">
+<PRE>&lt;H1 CLASS=INTROHEAD&gt;Style Sheets Ink.&lt;/H1&gt;
+</PRE>
+</a><a name="1052981">
+<P>The first letter of the first paragraph in the intro block needs to be extra large, so Style Sheets Ink uses a <code>&lt;SPAN&gt;</code> tag to apply the <code>INITCAP</code> style class to the first letter, as shown here:</P>
+</a><a name="1052982">
+<PRE>&lt;P STYLE="text-indent:0%;"&gt;&lt;SPAN CLASS=INITCAP&gt;W&lt;/SPAN&gt;elcome to the 
+home page for our company, Style Sheets Ink,...
+</PRE>
+</a><a name="1052983">
+<P>The following code shows the definition of the style <code>INITCAP</code>:</P>
+</a><a name="1052984">
+<PRE>all.INITCAP {font-size:36pt;}
+</PRE>
+</a><a name="1052966">
+<P>All the paragraphs in the intro block inherit their styles (font styles and so on, not margins or paddings) from the enclosing element, which is the <code>DIV</code> block that uses the <code>INTROBLOCK</code> style. </P>
+</a><a name="1052872">
+<P>The<code> text-indent</code> property is not inherited. The first line of each paragraph in the intro block (except for the first one) needs to be indented by ten percent. This could be achieved by specifying a local style for each paragraph as follows:</P>
+</a><a name="1052876">
+<PRE>&lt;P STYLE="text-indent:10%;&gt;content...
+</PRE>
+</a><a name="1052915">
+<P>However, several paragraphs need to be indented. Their best plan is to define a class of style, and use that style in each paragraph as appropriate. Although the amount of typing needed ends up being about the same, it is better to use a style class. That way, you can make changes to the style definition in one place, and those changes will be automatically reflected everywhere the style is used.</P>
+</a><a name="1052931">
+<P>Thus you can define a simple style called <code>INTROTEXT</code> as follows:</P>
+</a><a name="1052932">
+<PRE>all.INTROTEXT{text-indent:10%;}
+</PRE>
+</a><a name="1052987">
+<P>Each paragraph that needs to be indented uses this style, for example:</P>
+</a><a name="1052992">
+<PRE>&lt;P CLASS=INTROTEXT&gt;
+</PRE>
+</a><a name="1052993">
+<PRE>At Style Sheets Ink we believe in the power of style sheets. We are 
+jazzed and excited at the myriad of ways that style sheets can liven up 
+a web site. We provide many services to help your company come up to 
+speed with using style sheets, including:
+</PRE>
+</a><a name="1052990">
+<PRE>&lt;/P&gt;
+</PRE>
+</a><a name="1052381">
+<h2> List of Services</h2>
+</a><a name="1051308">
+<P>The intro block includes a list of services offered by Style Sheets Ink. These services are presented in an unordered list.</P>
+</a><a name="1052429">
+<P><p align="center">
+<img src="stylefig/fig2.gif" border=1>
+</P>
+</P>
+</a><a name="1078000">
+<center><h4>Figure 6.2&#32; List of services</h4></center>
+</a><a name="1077998">
+<P>Style Sheets Ink specified the <code>SQUAREDISCS</code> class of style for the <code>&lt;UL&gt;</code> element so it is inherited by the <code>&lt;LI&gt;</code> element inside the <code>&lt;UL&gt;</code> element. (An alternative approach would be to specify the <code>SQUAREDISCS</code> style class for each <code>&lt;LI&gt;</code> element.)</P>
+</a><a name="1051311">
+<P>The following code shows the definition of the <code>SQUAREDISCS</code> style:</P>
+</a><a name="1052426">
+<PRE>all.SQUAREDISCS {list-style-type:square; color:green;}
+</PRE>
+</a><a name="1052425">
+<P>The following code shows the body text that lists the services:</P>
+</a><a name="1052419">
+<PRE>&lt;UL CLASS=SQUAREDISCS&gt;
+</PRE>
+</a><a name="1052420">
+<PRE>&lt;LI&gt;&lt;A HREF="#TRAINING"&gt;Training&lt;/A&gt;
+</PRE>
+</a><a name="1052421">
+<PRE>&lt;LI&gt;&lt;A HREF="#SEMINAR"&gt;Seminars&lt;/A&gt;
+</PRE>
+</a><a name="1052422">
+<PRE>&lt;LI&gt;&lt;A HREF="#WEBDEV"&gt;Web site development&lt;/A&gt;
+</PRE>
+</a><a name="1052423">
+<PRE>&lt;LI&gt;&lt;A HREF="#CONSULTATION"&gt;Consultation&lt;/A&gt;
+</PRE>
+</a><a name="1052405">
+<PRE>&lt;/UL&gt;
+</PRE>
+</a><a name="1052500">
+<h2> End of the Intro Block</h2>
+</a><a name="1052516">
+<P>At the end the intro block, there is a <code>&lt;/DIV&gt;</code> tag that matches the <code>&lt;DIV CLASS=INTROBLOCK&gt;</code> tag. Notice that the border characteristics specified by the <code>INTROBLOCK</code> style apply to the <code>DIV</code> block as a whole, not to each individual element within the <code>DIV</code> block. Thus the entire <code>DIV</code> block is enclosed in a box with a blue background and a thin, flat, blue border.</P>
+</a><HR><a name="1051312">
+<h1> The Training Section</h1>
+</a><a name="1051333">
+<P>Following the intro block is the training section, which displays the training heading on the left. The information about training wraps around the heading on the right.</P>
+</a><a name="1051352">
+<P><p align="center">
+<img src="stylefig/fig3.gif" border=1>
+</P>
+</P>
+</a><a name="1078010">
+<center><h4>Figure 6.3&#32; The Training Section</h4></center>
+</a><a name="1078005">
+<P>The entire training section is contained within a <code>DIV</code> block that uses the <code>TRAINING</code> style. This style sets the text color, the left margin, and the right margin.</P>
+</a><a name="1052531">
+<P>The definition of the <code>TRAINING</code> style is:</P>
+</a><a name="1051543">
+<PRE>all.TRAINING{
+</PRE>
+</a><a name="1051544">
+<PRE> color:#111100;
+</PRE>
+</a><a name="1051545">
+<PRE> margin-right:30%;
+</PRE>
+</a><a name="1051546">
+<PRE> margin-left:5%;
+</PRE>
+</a><a name="1051525">
+<PRE>}
+</PRE>
+</a><a name="1052791">
+<P>The reason for setting the margins is to offset the contents of the training section from the edge of the surrounding block. The training section uses a floating element for the heading, and it's not wise to specify the <code>margin-left</code> property on an element if you also specify its <code>float</code> property. Therefore we put the floating heading inside a <code>DIV</code> block that has a left margin.</P>
+</a><a name="1051425">
+<P>The heading for the training section floats to the left. It uses the <code>TRAININGHEAD</code> style, which specifies the color, the background image, the border and padding characteristics, and the float property. There's no need to specify the font size, font weight (bold) and font style (italic) since they are inherited from the style assigned to all <code>H1</code> tags. There's also no need to specify the color, because it is inherited from the <code>TRAINING</code> style. (However, if you wanted the heading to have a different color from the body text, you would need to specify the color here.)</P>
+</a><a name="1052790">
+<P>The following code shows the definition of the <code>TRAININGHEAD</code> style:</P>
+</a><a name="1051432">
+<PRE>H1.TRAININGHEAD {
+</PRE>
+</a><a name="1051433">
+<PRE> background-image:url(trainbg.gif);
+</PRE>
+</a><a name="1051435">
+<PRE> &#32;border-color:#666600; 
+</PRE>
+</a><a name="1051436">
+<PRE> border-width:5pt; 
+</PRE>
+</a><a name="1051437">
+<PRE> border-style:outset;
+</PRE>
+</a><a name="1051438">
+<PRE> padding:10pt;
+</PRE>
+</a><a name="1051439">
+<PRE> float:left;
+</PRE>
+</a><a name="1051426">
+<PRE>}
+</PRE>
+</a><a name="1051442">
+<P>The vertical effect in the heading is achieved simply by putting a <code>&lt;BR&gt;</code> tag after each letter, as shown here:</P>
+</a><a name="1051445">
+<PRE>&lt;DIV CLASS=TRAINING&gt;
+</PRE>
+</a><a name="1052792">
+<PRE>&lt;H1 CLASS=TRAININGHEAD&gt;
+</PRE>
+</a><a name="1051446">
+<PRE>T&lt;BR&gt;
+</PRE>
+</a><a name="1051447">
+<PRE>R&lt;BR&gt;
+</PRE>
+</a><a name="1051448">
+<PRE>A&lt;BR&gt;
+</PRE>
+</a><a name="1051449">
+<PRE>I&lt;BR&gt;
+</PRE>
+</a><a name="1051450">
+<PRE>N&lt;BR&gt;
+</PRE>
+</a><a name="1051451">
+<PRE>I&lt;BR&gt;
+</PRE>
+</a><a name="1051452">
+<PRE>N&lt;BR&gt;
+</PRE>
+</a><a name="1051453">
+<PRE>G
+</PRE>
+</a><a name="1051443">
+<PRE>&lt;/H1&gt;
+</PRE>
+</a><a name="1051462">
+<P>All the paragraphs within the training section inherit their characteristics from the enclosing <code>DIV</code> block which uses the <code>TRAINING</code> style. So there's no need to specify which style these paragraphs need to use.</P>
+</a><a name="1051567">
+<P>The training text wraps around the training heading. It doesn't reach all the way to the right since the <code>margin-right</code> property on the <code>TRAINING</code> style is set to 30%.</P>
+</a><a name="1051506">
+<P>Just before the final <code>&lt;/P&gt;</code> in this section, include a <code>&lt;BR CLEAR&gt;</code> tag, to ensure that the next element will not continue wrapping around the training heading.</P>
+</a><a name="1052813">
+<P>The following code shows the paragraphs in the training section. Note the use of the <code>&lt;SPAN&gt;</code> tag to apply the <code>INITCAP</code> style to the first letter in the first paragraph.</P>
+</a><a name="1051471">
+<PRE>&lt;P &gt;&lt;SPAN CLASS=INITCAP&gt;W&lt;/SPAN&gt;e can build customized training courses 
+for you, to show you how useful style sheets can be.
+</PRE>
+</a><a name="1051474">
+<PRE>&lt;/P&gt;
+</PRE>
+</a><a name="1051475">
+<PRE>&lt;P &gt;We also run regularly scheduled training courses at our offices that 
+are just jam-packed with information about style sheets. The training 
+course is very hands-on. Each participant has their own computer, and we 
+accept no more than ten students per class. The training courses usually 
+run for one full day, or two half days.
+</PRE>
+</a><a name="1051483">
+<PRE>&lt;BR CLEAR&gt;
+</PRE>
+</a><a name="1051484">
+<PRE>&lt;/P&gt;
+</PRE>
+</a><a name="1051486">
+<PRE>&lt;!-- this ends the training section --&gt; 
+</PRE>
+</a><a name="1051468">
+<PRE>&lt;/DIV&gt;
+</PRE>
+</a><HR><a name="1052821">
+<h1> The Seminars Section</h1>
+</a><a name="1052822">
+<P>Next comes the seminars section, which is very similar in style and structure to the training section. However, since the seminars section appears on the right, the <code>SEMINARHEAD</code> style sets the <code>float</code> property to <code>right</code>. Also, the <code>SEMINAR</code> style sets the <code>margin-left</code> property to <code>30%</code> and the <code>margin-right</code> property to <code>10%</code>, so that the seminars section appears on the right of the main block.</P>
+</a><a name="1051596">
+<P><p align="center">
+<img src="stylefig/fig5.gif" border=1>
+</P>
+</P>
+</a><a name="1078017">
+<center><h4>Figure 6.4&#32; The Seminars Section</h4></center>
+</a><a name="1078015">
+<P>The seminar section includes a list of seminars:</P>
+</a><a name="1051591">
+<P><p align="center">
+<img src="stylefig/fig6.gif" border=1>
+</P>
+</P>
+</a><a name="1078024">
+<center><h4>Figure 6.5&#32; Outdented Items in the List of Seminars</h4></center>
+</a><a name="1078022">
+<P>The first line of each item in this list is outdented. This effect is achieved by using the <code>SEMINARLIST</code> style. This style sets the <code>margin-left</code> property and sets a <code>text-indent</code> value equal to minus the left margin, as shown here:</P>
+</a><a name="1051607">
+<PRE>all.SEMINARLIST{margin-left:40pt; text-indent:-40pt;}
+</PRE>
+</a><a name="1051613">
+<P>In the body text, each paragraph in the list of seminars uses the <code>SEMINARLIST</code> style, as shown below:</P>
+</a><a name="1051616">
+<PRE>&lt;P&gt;Here is a list of available seminars:&lt;/P&gt;
+</PRE>
+</a><a name="1051617">
+<PRE>&lt;P CLASS=SEMINARLIST&gt; &lt;B&gt;Using Colors in Style Sheets: &lt;/B&gt;
+</PRE>
+</a><a name="1051618">
+<PRE>&lt;I&gt;<I>discussion of this seminar...</I>&lt;/I&gt;&lt;/P&gt;
+</PRE>
+</a><a name="1051621">
+<PRE>&lt;P CLASS=SEMINARLIST&gt; &lt;B&gt;Using Boxes For Headings:&lt;/B&gt;
+</PRE>
+</a><a name="1051622">
+<PRE>&lt;I&gt;<I>discussion of this seminar...</I>&lt;/I&gt;&lt;/P&gt;
+</PRE>
+</a><a name="1051624">
+<PRE>&lt;P CLASS=SEMINARLIST&gt; &lt;B&gt;Using Text Properties of Style Sheets: &lt;/B&gt;
+</PRE>
+</a><a name="1051625">
+<PRE>&lt;I&gt;<I>discussion of this seminar...</I>&lt;/I&gt;&lt;/P&gt;
+</PRE>
+</a><a name="1051636">
+<P>Note, however that you could achieve the same result by enclosing the paragraphs in a <code>DIV</code> block that uses the <code>SEMINARLIST</code> style, and then there would be no need to individually specify the <code>SEMINARLIST</code> class for each paragraph.</P>
+</a><HR><a name="1051639">
+<h1> Web Sites and Consultation Sections</h1>
+</a><a name="1051641">
+<P>These two sections use the same layout and style structure as the training and seminars section.</P>
+</a><HR><a name="1051643">
+<h1> The Background Block</h1>
+</a><a name="1051645">
+<P>At the bottom of the page, you see an explanatory paragraph that's in the main body of the page. This paragraph is at the top level (that is, it's directly in the <code>BODY</code> element.) It uses the <code>INBACK</code> style. </P>
+</a><a name="1051711">
+<P>Although this paragraph is technically at the top level, it appears to live in the background, since it follows a big block with an outset 3D border.</P>
+</a><HR><a name="1052746">
+<h1> Trouble-shooting Hints</h1>
+</a><a name="1052854">
+<P>In general, when you're working with style sheets, be sure to match opening and closing tags correctly. While web browsers are often fairly forgiving of HTML syntax mistakes, the browsers become very much stricter when style sheets are involved. </P>
+</a><a name="1052855">
+<P>In particular, extraneous closing tags may end up closing other tags that you would not expect them to close. For example, in the code below, the extraneous <code>&lt;/H3&gt;</code> tag may close the opening <code>&lt;DIV STYLE=INNERBLOCK&gt;</code> tag, and the second paragraph will thus be outside the inner block.</P>
+</a><a name="1052856">
+<PRE>&lt;DIV STYLE=INNERBLOCK&gt;
+</PRE>
+</a><a name="1052857">
+<PRE>&lt;P&gt;Here is some text. &lt;/P&gt;
+</PRE>
+</a><a name="1052858">
+<PRE>&lt;/H3&gt;
+</PRE>
+</a><a name="1052859">
+<PRE>&lt;P&gt;Here is some more text which is supposed to be in the innerblock.&lt;/P&gt;
+</PRE>
+</a><a name="1052860">
+<PRE>&lt;/DIV&gt;
+</PRE>
+</a><a name="1052852">
+<P>Be careful when using<code>&lt;A&gt;</code> and <code>&lt;/A&gt;</code> tags in documents that use style sheets. For example, when you use <code>DIV</code> blocks with style sheets, don't start an <code>&lt;A HREF&gt;</code> tag before the start of the <code>DIV</code> block and then close it inside the <code>DIV</code> block, or you will get unpredictable results. </P>
+</a><a name="1052748">
+<P>For example, the following code behaves as you would expect:</P>
+</a><a name="1052749">
+<PRE>&lt;DIV STYLE="margin-left:5%"&gt;
+</PRE>
+</a><a name="1052750">
+<PRE>&lt;A NAME="TRAINING"&gt;
+</PRE>
+</a><a name="1052751">
+<PRE>&lt;H1 CLASS=TRAININGHEAD&gt;
+</PRE>
+</a><a name="1052752">
+<PRE>content...&lt;/H1&gt;
+</PRE>
+</a><a name="1052753">
+<PRE>&lt;/A&gt;
+</PRE>
+</a><a name="1052754">
+<P>However, the code below has unpredictable results, because the <code>&lt;A HREF&gt;</code> and <code>&lt;/A&gt;</code> tags are not in the correct places. (For example, the <code>&lt;/A&gt;</code> tag may be used to close the <code>&lt;DIV&gt;</code> tag.)</P>
+</a><a name="1052755">
+<PRE>&lt;A NAME="TRAINING"&gt;
+</PRE>
+</a><a name="1052756">
+<PRE>&lt;DIV STYLE="margin-left:5%"&gt;
+</PRE>
+</a><a name="1052757">
+<PRE>&lt;H1 CLASS=TRAININGHEAD&gt;
+</PRE>
+</a><a name="1052758">
+<PRE>content...&lt;/H1&gt;
+</PRE>
+</a><a name="1052759">
+<PRE>&lt;/A&gt;
+</PRE>
+</a><a name="1078031">
+<PRE>
+</PRE>
+</a>
+<HR SIZE=4>
+ 
+<FONT SIZE=-1>
+<a href="contents.htm">[Contents]</a> <a href="jss34.htm">[Prev page]</a> <a href="layers3.htm">[Next page]</a> <a href="dynamici.htm">[Index]</a>
+</FONT>
+
+
+
+
+
+<P ALIGN=right>
+<FONT SIZE=-2><I>Last Updated:  08/07/97 15:21:45
+</I></FONT>
+
+
+<HR SIZE=4>
+
+
+<P> <CENTER>Copyright © 1997
+<A HREF="cpyrt.htm"
+TARGET=_top>Netscape Communications Corporation</A></FONT>
+</CENTER>
+</P>
+</BODY>
+</HTML>
+
+
+
+</body>
+</html>

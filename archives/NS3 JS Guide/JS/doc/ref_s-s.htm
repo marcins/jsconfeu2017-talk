@@ -1,0 +1,3890 @@
+<BODY BGCOLOR="#FFFFFF">
+<A HREF="ref_r-r.htm">[Previous reference file]</A>
+<!------------------------------>
+<HR>
+<A NAME="scroll
+"></A>
+<A NAME="78791">
+<H1> scroll
+</H1>
+</A>
+
+<A NAME="78795">
+Method. Scrolls a window to a specified coordinate.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="78796">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="78797">
+<PRE><I>windowReference</I>.scroll(<I>x-coordinate</I>,<I>y-coordinate</I>)</PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="78798">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="78799">
+<I>windowReference</I> is a valid way of referring to a window, as described in the <a href="ref_t-z.htm#67013">window object</a>.<P></A>
+<A NAME="78800">
+<I>x-coordinate</I> is an integer representing the x-coordinate in pixels.<P></A>
+<A NAME="78801">
+<I>y-coordinate</I> is an integer representing the y-coordinate in pixels.<P></A>
+
+</UL><A NAME="Method of
+"></A>
+<A NAME="78802">
+<H3> Method of
+</H3>
+</A>
+
+<A NAME="78803">
+<a href="ref_t-z.htm#67013">window object</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="78804">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="78805">
+Navigator 3.0<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="78806">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="78807">
+JavaScript does not reflect document dimensions in pixels, so when using the <B>scroll</B> method, you must hardcode the x and y coordinates. A document's upper left coordinates are 0,0.<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="78808">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="78809">
+<B>Example 1: Scroll the current window.</B> The following example scrolls the current window to the coordinates 50,100.<P></A>
+<A NAME="78810">
+<PRE>window.scroll(50,100)</PRE>
+</A>
+<A NAME="78811">
+<B>Example 2: Scroll a different window.</B> The following code, which exists in one frame, scrolls a second frame. Two <I>Text</I> objects let the user specify the x and y coordinates. When the user clicks the Go button, the document in <I>frame2</I> scrolls to the specified coordinates.<P></A>
+<A NAME="78812">
+<PRE>&lt;SCRIPT&gt;<br>function scrollIt(form) {<br>&nbsp;&nbsp;&nbsp;var x = parseInt(form.x.value)<br>&nbsp;&nbsp;&nbsp;var y = parseInt(form.y.value)<br>&nbsp;&nbsp;&nbsp;parent.frame2.scroll(x, y)<br>}<br>&lt;/SCRIPT&gt;<br>&lt;BODY&gt;<br><br>&lt;FORM NAME="myForm"&gt;<br>&lt;P&gt;&lt;B&gt;Specify the coordinates to scroll to:&lt;/B&gt;<br>&lt;BR&gt;Horizontal:<br>&lt;INPUT TYPE="text" NAME=x VALUE="0" SIZE=4&gt;<br>&lt;BR&gt;Vertical:<br>&lt;INPUT TYPE="text" NAME=y VALUE="0" SIZE=4&gt;<br>&lt;BR&gt;&lt;INPUT TYPE="button" VALUE="Go"<br>&nbsp;&nbsp;&nbsp;onClick="scrollIt(document.myForm)"&gt;<br>&lt;/FORM&gt;</PRE>
+</A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="search
+"></A>
+<A NAME="72497">
+<H1> search
+</H1>
+</A>
+
+<A NAME="72499">
+Property. A string beginning with a question mark that specifies any query information in the URL.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="72500">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="72501">
+<PRE>1. links[<I>index</I>].search<br>2. location.search<br>3. <I>areaName</I>.search</PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="72502">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="72503">
+<I>index</I> is an integer representing a <I>Link</I> object or the name of a <I>Link</I> object as specified by the NAME attribute.<P></A>
+<A NAME="88566">
+<I>areaName</I> is the value of the NAME attribute of an <I>Area</I> object.<P></A>
+
+</UL><A NAME="Property of
+"></A>
+<A NAME="72504">
+<H3> Property of
+</H3>
+</A>
+
+<A NAME="72511">
+Area object (see <a href="ref_h-l.htm#84501">Link object</a>), <a href="ref_h-l.htm#84501">Link object</a>, <a href="ref_h-l.htm#84722">location</a> object<P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="81468">
+<H3> Implemented in
+</H3>
+</A>
+
+<ul><A NAME="81469">
+<LI>Navigator 2.0
+</A><A NAME="89184">
+<LI>Navigator 3.0: property of <I>Area</I>
+</A>
+</UL><A NAME="Tainted?
+"></A>
+<A NAME="110225">
+<H3> Tainted?
+</H3>
+</A>
+
+</ul><A NAME="110226">
+Yes<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="72512">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="72513">
+The <I>search</I> property specifies a portion of the URL. This property applies to http URLs only.<P></A>
+<A NAME="72514">
+The <I>search</I> property contains variable and value pairs; each pair is separated by an ampersand. For example, two pairs in a search string could look like the following:<P></A>
+<A NAME="72515">
+<PRE>?x=7&amp;y=5</PRE>
+</A>
+<A NAME="72516">
+You can set the <I>search</I> property at any time, although it is safer to set the <I>href</I> property to change a location. If the search that you specify cannot be found in the current location, you will get an error.<P></A>
+<A NAME="98638">
+In event handlers, you must specify <code>window.location.search</code> instead of simply using <code>location.search</code>. Due to the scoping of static objects in JavaScript, a call to <code>location</code> without specifying an object name is equivalent to <code>document.location</code>, which is a synonym for <code>document.URL</code>.<P></A>
+<A NAME="72517">
+See Section 3.3 of <A HREF="http://www.cis.ohio-state.edu/htbin/rfc/rfc1738.html" TARGET="_top">RFC 1738</A> for complete information about the search.<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="72518">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="72519">
+In the following example, the <code>window.open</code> statement creates a window called <I>newWindow</I> and loads the specified URL into it. The <code>document.write</code> statements display all the properties of <code>newWindow.location</code> in a window called <I>msgWindow</I>.<P></A>
+<A NAME="72520">
+<PRE>newWindow=window.open<br>&nbsp;&nbsp;&nbsp;("http://guide-p.infoseek.com/WW/NS/Titles?qt=RFC+1738+&amp;col=WW")<br><br>msgWindow.document.write("newWindow.location.href = " +<br>&nbsp;&nbsp;&nbsp;newWindow.location.href + "&lt;P&gt;")<br>msgWindow.document.write("newWindow.location.protocol = " +<br>&nbsp;&nbsp;&nbsp;newWindow.location.protocol + "&lt;P&gt;")<br>msgWindow.document.write("newWindow.location.host = " +<br>&nbsp;&nbsp;&nbsp;newWindow.location.host + "&lt;P&gt;")<br>msgWindow.document.write("newWindow.location.hostName = " +<br>&nbsp;&nbsp;&nbsp;newWindow.location.hostName + "&lt;P&gt;")<br>msgWindow.document.write("newWindow.location.port = " +<br>&nbsp;&nbsp;&nbsp;newWindow.location.port + "&lt;P&gt;")<br>msgWindow.document.write("newWindow.location.pathname = " +<br>&nbsp;&nbsp;&nbsp;newWindow.location.pathname + "&lt;P&gt;")<br>msgWindow.document.write("newWindow.location.hash = " +<br>&nbsp;&nbsp;&nbsp;newWindow.location.hash + "&lt;P&gt;")<br>msgWindow.document.write("newWindow.location.search = " +<br>&nbsp;&nbsp;&nbsp;newWindow.location.search + "&lt;P&gt;")<br>msgWindow.document.close()</PRE>
+</A>
+<A NAME="72521">
+The previous example displays the following output:<P></A>
+<A NAME="72522">
+<PRE>newWindow.location.href =<br>&nbsp;&nbsp;&nbsp;http://guide-p.infoseek.com/WW/NS/Titles?qt=RFC+1738+&amp;col=WW<br>newWindow.location.protocol = http:<br>newWindow.location.host = guide-p.infoseek.com<br>newWindow.location.hostName = guide-p.infoseek.com<br>newWindow.location.port = <br>newWindow.location.pathname = /WW/NS/Titles<br>newWindow.location.hash = <br>newWindow.location.search = ?qt=RFC+1738+&amp;col=WW</PRE>
+</A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="72523">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="72545">
+<a href="ref_h-l.htm#146128">hash</a>, <a href="ref_h-l.htm#83977">host</a>, <a href="ref_h-l.htm#84270">hostname</a>, <a href="ref_h-l.htm#84322">href</a>, <a href="ref_m-q.htm#177973">pathname</a>, <a href="ref_m-q.htm#178355">port</a>, <a href="ref_m-q.htm#178588">protocol</a> properties<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="select method
+"></A>
+<A NAME="72548">
+<H1> select method
+</H1>
+</A>
+
+<A NAME="72550">
+Method. Selects the input area of the specified <I>Password</I>, <I>Text</I>, or <I>Textarea</I> object.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="72551">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="72552">
+<PRE>1. <I>passwordName</I>.select()<br>2. <I>textName</I>.select()<br>3. <I>textareaName</I>.select()</PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="72553">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="72554">
+<I>passwordName</I> is either the value of the NAME attribute of a <I>Password</I> object or an element in the <I>elements</I> array.<P></A>
+<A NAME="72555">
+<I>textName</I> is either the value of the NAME attribute of a <I>Text</I> object or an element in the <I>elements</I> array.<P></A>
+<A NAME="72556">
+<I>textareaName</I> is either the value of the NAME attribute of a <I>Textarea</I> object or an element in the <I>elements</I> array.<P></A>
+
+</UL><A NAME="Method of
+"></A>
+<A NAME="72557">
+<H3> Method of
+</H3>
+</A>
+
+<A NAME="72567">
+<a href="ref_m-q.htm#177857">Password</a> object, <a href="ref_t-z.htm#65229">Text object</a>, <a href="ref_t-z.htm#65386">Textarea</a> object<P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="83126">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="83127">
+Navigator 2.0<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="72568">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="72569">
+Use the <B>select</B> method to highlight the input area of a form element. You can use the <B>select</B> method with the <B>focus</B> method to highlight a field and position the cursor for a user response.<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="72570">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="72571">
+In the following example, the <B>checkPassword</B> function confirms that a user has entered a valid password. If the password is not valid, the <B>select</B> method highlights the password field and the <B>focus</B> method returns focus to it so the user can re-enter the password.<P></A>
+<A NAME="72572">
+<PRE>function checkPassword(userPass) {<br>&nbsp;&nbsp;&nbsp;if (badPassword) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert("Please enter your password again.")<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;userPass.focus()<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;userPass.select()<br>&nbsp;&nbsp;&nbsp;}<br>}</PRE>
+</A>
+<A NAME="72573">
+This example assumes that the password is defined as<P></A>
+<A NAME="72574">
+<PRE>&lt;INPUT TYPE="password" NAME="userPass"&gt;</PRE>
+</A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="72575">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="72582">
+<a href="ref_a-c.htm#62474">blur</a>, <a href="ref_f-g.htm#59872">focus</a> methods<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="Select object
+"></A>
+<A NAME="72585">
+<H1> Select object
+</H1>
+</A>
+
+<A NAME="72587">
+Object. A selection list on an HTML form. The user can choose one or more items from a selection list.<P></A>
+
+</UL><A NAME="HTML syntax
+"></A>
+<A NAME="72588">
+<H3> HTML syntax
+</H3>
+</A>
+
+<A NAME="72589">
+To define a <I>Select</I> object, use standard HTML syntax with the addition of JavaScript event handlers:<P></A>
+<A NAME="72590">
+<PRE>&lt;SELECT<br>&nbsp;&nbsp;&nbsp;NAME="<I>selectName</I>"<br>&nbsp;&nbsp;&nbsp;[SIZE="<I>integer</I>"]<br>&nbsp;&nbsp;&nbsp;[MULTIPLE]<br>&nbsp;&nbsp;&nbsp;[onBlur="<I>handlerText</I>"]<br>&nbsp;&nbsp;&nbsp;[onChange="<I>handlerText</I>"]<br>&nbsp;&nbsp;&nbsp;[onFocus="<I>handlerText</I>"]&gt;<br>&nbsp;&nbsp;&nbsp;&lt;OPTION VALUE="<I>optionValue</I>" [SELECTED]&gt; <I>textToDisplay<br></I>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ ... &lt;OPTION&gt; <I>textToDisplay</I>]<br>&lt;/SELECT&gt;</PRE>
+</A>
+
+</UL><A NAME="HTML attributes
+"></A>
+<A NAME="72591">
+<H3> HTML attributes
+</H3>
+</A>
+
+<A NAME="72592">
+<I>NAME="selectName"</I> specifies the name of the <I>Select</I> object. You can access this value using the <I>name</I> property, and you can use this name when indexing the <I>elements</I> array.<P></A>
+<A NAME="72593">
+<I>SIZE="integer"</I> specifies the number of options visible when the form is displayed.<P></A>
+<A NAME="72594">
+<I>MULTIPLE</I> specifies that multiple items can be selected. If omitted, only one item can be selected from the list.<P></A>
+<A NAME="72595">
+<I>OPTION</I> specifies a selection element in the list. You can access the options using the <I>options</I> array.<P></A>
+<A NAME="72596">
+<I>VALUE="optionValue"</I> specifies a value that is returned to the server when the option is selected and the form is submitted. You can access this value using the <I>value</I> property.<P></A>
+<A NAME="72597">
+<I>SELECTED</I> specifies that the option is selected by default. You can access this value using the <I>defaultSelected</I> property.<P></A>
+<A NAME="72598">
+<I>textToDisplay</I> specifies the text to display in the list. You can access this value using the <I>text</I> property.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="72599">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="92477">
+To create an option to add to an existing <I>Select</I> object:<P></A>
+<A NAME="92478">
+<PRE><I>optionName</I> = new Option([<I>text</I>, <I>value</I>, <I>defaultSelected</I>, <I>selected</I>])</PRE>
+</A>
+<A NAME="92479">
+To add the new option to an existing <I>Select</I> object:<P></A>
+<A NAME="92480">
+<PRE><I>selectName</I>.options[<I>index1</I>]=<I>optionName</I></PRE>
+</A>
+<A NAME="93349">
+To delete an option from a <I>Select</I> object:<P></A>
+<A NAME="93350">
+<PRE><I>selectName</I>.options[<I>index1</I>] = null</PRE>
+</A>
+<A NAME="93370">
+To use a <I>Select</I> object's properties and methods:<P></A>
+<A NAME="93371">
+<PRE>1. <I>selectName</I>.<I>propertyName<br></I>2. <I>selectName</I>.<I>methodName</I>(<I>parameters</I>)<br>3. <I>formName</I>.elements[<I>index</I>].<I>propertyName<br></I>4. <I>formName</I>.elements[<I>index</I>].<I>methodName</I>(<I>parameters</I>)</PRE>
+</A>
+<A NAME="93372">
+To use an option's properties:<P></A>
+<A NAME="93373">
+<PRE>1. <I>selectName</I>.options[<I>index1</I>].<I>propertyName<br></I>2. <I>formName</I>.elements[<I>index2</I>].options[<I>index1</I>].<I>propertyName<br></I>3. <I>optionName.propertyName</I></PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="72604">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="92670">
+<I>optionName</I> is either the name of a new object or a property of an existing object. When using <I>Option</I> properties and methods, <I>optionName</I> is either the name of an existing <I>Option</I> object or a property of an existing object.<P></A>
+<A NAME="92671">
+<I>text</I> specifies the text to display in the select list. You can access this value using the <I>text</I> property.<P></A>
+<A NAME="92672">
+<I>value</I> specifies a value that is returned to the server when the option is selected and the form is submitted. You can access this value using the <I>value</I> property.<P></A>
+<A NAME="92673">
+<I>defaultSelected</I> specifies whether the option is initially selected (true or false). You can access this value using the <I>defaultSelected</I> property.<P></A>
+<A NAME="92674">
+<I>selected</I> specifies the current selection state of the option (true or false). You can access this value using the <I>selected</I> property.<P></A>
+<A NAME="94159">
+<I>selectName</I> is the value of the NAME attribute of a <I>Select</I> object.<P></A>
+<A NAME="94160">
+<I>formName</I> is either the value of the NAME attribute of a <I>Form</I> object or an element in the <I>forms</I> array.<P></A>
+<A NAME="94161">
+<I>index</I> is an integer representing a <I>Select</I> object on a form or the name of a <I>Select</I> object as specified by the NAME attribute.<P></A>
+<A NAME="94162">
+<I>index1</I> is an integer representing an option in a <I>Select</I> object.<P></A>
+<A NAME="94163">
+<I>index2</I> is an integer representing a <I>Select</I> object on a form.<P></A>
+<A NAME="94164">
+<I>propertyName</I> is one of the properties listed below.<P></A>
+<A NAME="94165">
+<I>methodName</I> is one of the methods listed below.<P></A>
+
+</UL><A NAME="Property of
+"></A>
+<A NAME="72612">
+<H3> Property of
+</H3>
+</A>
+
+<ul><A NAME="72616">
+<LI>The <I>Select</I> object is a property of the <a href="ref_f-g.htm#60597">Form object</a>.
+</A><A NAME="72620">
+<LI>The <I>options</I> array is a property of the <a href="ref_s-s.htm#72585">Select object</a>.
+</A>
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="83177">
+<H3> Implemented in
+</H3>
+</A>
+
+<UL><A NAME="99073">
+<LI>Navigator 2.0
+</A><A NAME="99074">
+<LI>Navigator 3.0: <I>text</I> property can be changed to change the text of an option; added <I>type</I> property; added Option() constructor and all its properties; added the ability to add and delete options
+</A>
+</UL><A NAME="Description
+"></A>
+<A NAME="72621">
+<H3> Description
+</H3>
+</A>
+
+</ul><A NAME="72622">
+A <I>Select</I> object on a form looks as follows. The user can choose one item from the list on the left; the user can choose multiple items from the list on the right:<p>
+
+<FORM>
+<SELECT NAME="music_type_single">
+   <OPTION SELECTED> R&B
+   <OPTION> Jazz
+   <OPTION> Blues
+   <OPTION> New Age
+</SELECT>
+<SELECT NAME="music_type_multi" MULTIPLE>
+   <OPTION SELECTED> R&B
+   <OPTION> Jazz
+   <OPTION> Blues
+   <OPTION> New Age
+</SELECT>
+</FORM>
+
+<P></A>
+<A NAME="90231">
+A <I>Select</I> object is a form element and must be defined within a &lt;FORM&gt; tag.<P></A>
+
+<A NAME="The <I>options</I> array
+"></A>
+<A NAME="90233">
+<H4> The <I>options</I> array
+</H4>
+</A>
+
+<A NAME="90234">
+You can reference the options of a <I>Select</I> object in your code by using the <I>options</I> array. This array contains an entry for each option in a <I>Select</I> object (&lt;OPTION&gt; tag) in source order. For example, if a <I>Select</I> object named <I>musicStyle</I> contains three options, these options are reflected as <code>musicStyle.options[0]</code>, <code>musicStyle.options[1]</code>, and <code>musicStyle.options[2]</code>.<P></A>
+<A NAME="72638">
+To use the <I>options</I> array:<P></A>
+<A NAME="72639">
+<PRE>1. <I>selectName</I>.options<br>2. <I>selectName</I>.options[<I>index</I>]<br>3. <I>selectName</I>.options.length</PRE>
+</A>
+<A NAME="72640">
+<I>selectName</I> is either the value of the NAME attribute of a <I>Select</I> object or an element in the <I>elements</I> array.<P></A>
+<A NAME="72641">
+<I>index</I> is an integer representing an option in a <I>Select</I> object.<P></A>
+<A NAME="72642">
+To obtain the number of options in a <I>Select</I> object, use the <I>length</I> property of either the <I>options</I> array or the <I>Select</I> object:<P></A>
+<A NAME="72643">
+<PRE>1. <I>selectName</I>.length<br>2. <I>selectName</I>.options.length</PRE>
+</A>
+<A NAME="72644">
+The <I>Select</I> object has properties that you can access only through the <I>options</I> array. These properties are listed below.<P></A>
+<A NAME="72645">
+Each element in the <I>options</I> array represents a <I>Select</I> option; the value returned by <I>selectName</I>.options represents the full HTML statement for the <I>selectName</I> object.<P></A>
+<A NAME="99304">
+Elements in the <I>options</I> array are read-only. For example, the statement <code>selectName.options[0]="guitar"</code> has no effect.<P></A>
+<A NAME="99305">
+For <I>Select</I> objects that can have multiple selections (the &lt;SELECT&gt; tag has the MULTIPLE attribute), you have to loop and test each option individually:<P></A>
+<A NAME="72648">
+<PRE>for (var i = 0; i &lt; select.options.length; i++) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (select.options[i].selected)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Statements to perform if option is selected<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...<br>}</PRE>
+</A>
+
+<A NAME="Changing the selection state
+"></A>
+<A NAME="94774">
+<H4> Changing the selection state
+</H4>
+</A>
+
+<A NAME="94775">
+You can use the <I>selected</I> and <I>selectedIndex</I> properties to change the selection state of options in a <I>Select</I> object.<P></A>
+<ul><A NAME="94776">
+<LI>The <I>selectedIndex</I> property for a <I>Select</I> object is an integer specifying the index of the selected option. This is most useful for <I>Select</I> objects that are created without the MULTIPLE attribute. The following statement sets a <I>Select</I> object's <I>selectedIndex</I> property:
+</A><A NAME="94777">
+<code>document.myForm.musicTypes.selectedIndex = i
+</code><P>
+</A>
+
+<A NAME="94778">
+<LI>The <I>selected</I> property for an option is a Boolean value specifying the current selection state of the option in a <I>Select</I> object. If an option is selected, its <I>selected</I> property is true; otherwise it is false. This is more useful for <I>Select</I> objects that are created with the MULTIPLE attribute. The following statement sets an option's <I>selected</I> property to true:
+</A><A NAME="94779">
+<code>document.myForm.musicTypes.options[i].selected = true
+</code><P>
+</A>
+
+
+</UL><A NAME="Changing option text
+"></A>
+<A NAME="92078">
+<H4> Changing option text
+</H4>
+</A>
+
+<A NAME="92082">
+To change an option's text, use the <I>text</I> property of the <I>options</I> array. For example, suppose a form has the following <I>Select</I> object:<P></A>
+<A NAME="92083">
+<PRE>&lt;SELECT name="userChoice"&gt;<br>&lt;OPTION&gt;Choice 1<br>&lt;OPTION&gt;Choice 2<br>&lt;OPTION&gt;Choice 3<br>&lt;/SELECT&gt;</PRE>
+</A>
+<A NAME="92084">
+You can set the text of the <I>i</I><SUP>th</SUP> item in the selection based on text entered in a text field named <I>whatsNew</I> as follows:<P></A>
+<A NAME="92085">
+<PRE>myform.userChoice.options[i].text = myform.whatsNew.value</PRE>
+</A>
+<A NAME="116348">
+You do not need to reload or refresh after changing an option's text.<P></A>
+<A NAME="92086">
+For example, in the following form, the user can enter some text in the first text field and then enter a number between 0 and 2 (inclusive) in the second text field. When the user clicks the button, the text will be substituted for the indicated option number and that option is selected.<p>
+
+<SCRIPT>
+function updateList(theForm, i) {
+   theForm.userChoice.options[i].text = theForm.whatsNew.value
+   theForm.userChoice.options[i].selected = true
+}
+</SCRIPT>
+<FORM>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<SELECT name="userChoice">
+   <OPTION>Choice 1
+   <OPTION>Choice 2
+   <OPTION>Choice 3
+</SELECT>
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;New text for the option: <INPUT TYPE="text" NAME="whatsNew">
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Option to change (0, 1, or 2): <INPUT TYPE="text" NAME="idx">
+<P>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<INPUT TYPE="button" VALUE="Change Selection"
+onClick="updateList(this.form, this.form.idx.value)">
+</FORM>
+
+<P></A>
+<A NAME="92104">
+The code for this example looks as follows:<P></A>
+<A NAME="121432">
+<PRE>&lt;SCRIPT&gt;<br>function updateList(theForm, i) {<br>&nbsp;&nbsp;&nbsp;theForm.userChoice.options[i].text = theForm.whatsNew.value<br>&nbsp;&nbsp;&nbsp;theForm.userChoice.options[i].selected = true<br>}<br>&lt;/SCRIPT&gt;<br>&lt;FORM&gt;<br>&lt;SELECT name="userChoice"&gt;<br>&nbsp;&nbsp;&nbsp;&lt;OPTION&gt;Choice 1<br>&nbsp;&nbsp;&nbsp;&lt;OPTION&gt;Choice 2<br>&nbsp;&nbsp;&nbsp;&lt;OPTION&gt;Choice 3<br>&lt;/SELECT&gt;<br>&lt;BR&gt;<br>New text for the option: &lt;INPUT TYPE="text" NAME="whatsNew"&gt;<br>&lt;BR&gt;<br>Option to change (0, 1, or 2): &lt;INPUT TYPE="text" NAME="idx"&gt;<br>&lt;BR&gt;<br>&lt;INPUT TYPE="button" VALUE="Change Selection"<br>onClick="updateList(this.form, this.form.idx.value)"&gt;<br>&lt;/FORM&gt;</PRE>
+</A>
+
+<A NAME="Adding options using the Option() constructor
+"></A>
+<A NAME="121433">
+<H4> Adding options using the Option() constructor
+</H4>
+</A>
+
+<A NAME="121437">
+Each option created using the Option() constructor is an object and has the same properties as elements of the <I>options</I> array.<P></A>
+<A NAME="92856">
+After you create the options and add them to the <I>Select</I> object, you must refresh the document by using <code>history.go(0)</code>. This statement must be last. When the document reloads, variables are lost if not saved in cookies or form element values.<P></A>
+
+<A NAME="Deleting options
+"></A>
+<A NAME="94582">
+<H4> Deleting options
+</H4>
+</A>
+
+<A NAME="94586">
+Deletion compresses the <I>options</I> array. For example, if you delete options[0], the existing options[1] becomes options[0]. It's a good idea to delete options at the end of the array first.<P></A>
+<A NAME="116000">
+After you delete an option, you must refresh the document by using <code>history.go(0)</code>. This statement must be last. When the document reloads, variables are lost if not saved in cookies or form element values.<P></A>
+
+</UL><A NAME="Properties
+"></A>
+<A NAME="72649">
+<H3> Properties
+</H3>
+</A>
+
+<A NAME="95624">
+The <I>Select</I> object has the following properties:
+
+<P><TABLE BORDER="2">
+<CAPTION></CAPTION>
+<tr align=left valign=bottom><th><b><A NAME="95585">
+Property</A><B><th><b><A NAME="95587">
+Description</A><B>
+<tr align=left valign=top><td><A NAME="118899">
+<a href="ref_f-g.htm#97350">form property</a>
+</A><BR>
+
+<td><A NAME="118901">
+Specifies the form containing the <I>Select</I> object
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="95592">
+<a href="ref_h-l.htm#84418">length</a>
+</A><BR>
+
+<td><A NAME="95594">
+Reflects the number of options in a <I>Select</I> object
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="95599">
+<a href="ref_m-q.htm#176636">name</a>
+</A><BR>
+
+<td><A NAME="95601">
+Reflects the NAME attribute
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="95606">
+<a href="ref_m-q.htm#177716">options</a>
+</A><BR>
+
+<td><A NAME="95608">
+Reflects the &lt;OPTION&gt; tags
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="95613">
+<a href="ref_s-s.htm#72830">selectedIndex</a>
+</A><BR>
+
+<td><A NAME="95615">
+Reflects the index of the selected option (or the first selected 
+option, if multiple options are selected)
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="95621">
+<a href="ref_t-z.htm#71171">type</a>
+</A><BR>
+
+<td><A NAME="95623">
+Specifies that the object is a <I>Select</I> object and indicates 
+whether MULTIPLE is specified
+</A><BR>
+
+
+
+
+</TABLE>
+
+<TABLE>
+<TR><TD>
+</TABLE>
+
+
+<P></A>
+<A NAME="95690">
+The <I>options</I> array has the following properties:
+
+<P><TABLE BORDER="2">
+<CAPTION></CAPTION>
+<tr align=left valign=bottom><th><b><A NAME="123562">
+Property</A><B><th><b><A NAME="123564">
+Description</A><B>
+<tr align=left valign=top><td><A NAME="123583">
+<a href="ref_h-l.htm#84418">length</a>
+</A><BR>
+
+<td><A NAME="123585">
+Reflects the number of options in a <I>Select</I> object
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="125163">
+<a href="ref_s-s.htm#72830">selectedIndex</a>
+</A><BR>
+
+<td><A NAME="125165">
+Reflects the index of the selected option
+</A><BR>
+
+
+
+
+</TABLE>
+
+<TABLE>
+<TR><TD>
+</TABLE>
+
+
+<P></A>
+<A NAME="123558">
+Each element of the <I>options</I> array has the following properties:
+
+<P><TABLE BORDER="2">
+<CAPTION></CAPTION>
+<tr align=left valign=bottom><th><b><A NAME="95631">
+Property</A><B><th><b><A NAME="95633">
+Description</A><B>
+<tr align=left valign=top><td><A NAME="95638">
+<a href="ref_d-e.htm#46856">defaultSelected</a>
+</A><BR>
+
+<td><A NAME="95640">
+Reflects the SELECTED attribute
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="95645">
+<a href="ref_h-l.htm#84372">index</a>
+</A><BR>
+
+<td><A NAME="95647">
+Reflects the index of an option
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="95666">
+<a href="ref_s-s.htm#72795">selected</a>
+</A><BR>
+
+<td><A NAME="95668">
+Lets you programmatically select an option
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="95680">
+<a href="ref_t-z.htm#65360">text property</a>
+</A><BR>
+
+<td><A NAME="95682">
+Reflects the <I>textToDisplay</I> that follows an &lt;OPTION&gt; tag
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="95687">
+<a href="ref_t-z.htm#66860">value</a>
+</A><BR>
+
+<td><A NAME="95689">
+Reflects the VALUE attribute
+</A><BR>
+
+
+
+
+</TABLE>
+
+<TABLE>
+<TR><TD>
+</TABLE>
+
+
+<P></A>
+<A NAME="97604">
+Objects created with the Option() constructor have the following properties:
+
+<P><TABLE BORDER="2">
+<CAPTION></CAPTION>
+<tr align=left valign=bottom><th><b><A NAME="97577">
+Property</A><B><th><b><A NAME="97579">
+Description</A><B>
+<tr align=left valign=top><td><A NAME="97581">
+<a href="ref_d-e.htm#46856">defaultSelected</a>
+</A><BR>
+
+<td><A NAME="97583">
+Specifies the initial selection state of the option
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="97585">
+<a href="ref_h-l.htm#84372">index</a>
+</A><BR>
+
+<td><A NAME="97587">
+Specifies the index of the option in a <I>Select</I> object
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="97589">
+<a href="ref_m-q.htm#178711">prototype</a>
+</A><BR>
+
+<td><A NAME="97591">
+Lets you add a properties to an option.
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="97593">
+<a href="ref_s-s.htm#72795">selected</a>
+</A><BR>
+
+<td><A NAME="97595">
+Specifies the current selection state of the option
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="97597">
+<a href="ref_t-z.htm#65360">text property</a>
+</A><BR>
+
+<td><A NAME="97599">
+Specifies the text for the option
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="97601">
+<a href="ref_t-z.htm#66860">value</a>
+</A><BR>
+
+<td><A NAME="97603">
+Specifies the value that is returned to the server when 
+the option is selected and the form is submitted
+</A><BR>
+
+
+
+
+</TABLE>
+
+<TABLE>
+<TR><TD>
+</TABLE>
+
+
+<P></A>
+
+</UL><A NAME="Methods
+"></A>
+<A NAME="95691">
+<H3> Methods
+</H3>
+</A>
+
+<A NAME="112259">
+The <I>Select</I> object has the following methods:
+
+<P><TABLE BORDER="2">
+<CAPTION></CAPTION>
+<tr align=left valign=top><td><A NAME="113725">
+<LI><a href="ref_a-c.htm#62474">blur</a>
+</A><A NAME="123185">
+<LI><a href="ref_d-e.htm#573">eval</a>
+</A><A NAME="112249">
+<LI><a href="ref_f-g.htm#59872">focus</a>
+</A>
+<td><A NAME="112254">
+<LI><a href="ref_t-z.htm#70978">toString</a>
+</A><A NAME="112258">
+<LI><a href="ref_t-z.htm#91188">valueOf</a>
+</A>
+
+
+
+</TABLE>
+
+<TABLE>
+<TR><TD>
+</TABLE>
+
+
+<P></A>
+
+</UL><A NAME="Event handlers
+"></A>
+<A NAME="72763">
+<H3> Event handlers
+</H3>
+</A>
+
+<ul><A NAME="72767">
+<LI><a href="ref_m-q.htm#177100">onBlur</a>
+</A><A NAME="72771">
+<LI><a href="ref_m-q.htm#177149">onChange</a>
+</A><A NAME="72775">
+<LI><a href="ref_m-q.htm#177278">onFocus</a>
+</A>
+</UL><A NAME="Examples
+"></A>
+<A NAME="72776">
+<H3> Examples
+</H3>
+</A>
+
+</ul><A NAME="72777">
+<B>Example 1.</B> The following example displays two selection lists. In the first list, the user can select only one item; in the second list, the user can select multiple items.<P></A>
+<A NAME="72778">
+<PRE>Choose the music type for your free CD:<br>&lt;SELECT NAME="music_type_single"&gt;<br>&nbsp;&nbsp;&nbsp;&lt;OPTION SELECTED&gt; R&amp;B<br>&nbsp;&nbsp;&nbsp;&lt;OPTION&gt; Jazz<br>&nbsp;&nbsp;&nbsp;&lt;OPTION&gt; Blues<br>&nbsp;&nbsp;&nbsp;&lt;OPTION&gt; New Age<br>&lt;/SELECT&gt;<br>&lt;P&gt;Choose the music types for your free CDs:<br>&lt;BR&gt;&lt;SELECT NAME="music_type_multi" MULTIPLE&gt;<br>&nbsp;&nbsp;&nbsp;&lt;OPTION SELECTED&gt; R&amp;B<br>&nbsp;&nbsp;&nbsp;&lt;OPTION&gt; Jazz<br>&nbsp;&nbsp;&nbsp;&lt;OPTION&gt; Blues<br>&nbsp;&nbsp;&nbsp;&lt;OPTION&gt; New Age<br>&lt;/SELECT&gt;</PRE>
+</A>
+<A NAME="72779">
+<B>Example 2.</B> The following example displays two selection lists that let the user choose a month and day. These selection lists are initialized to the current date. The user can change the month and day by using the selection lists or by choosing preset dates from radio buttons. Text fields on the form display the values of the <I>Select</I> object's properties and indicate the date chosen and whether it is Cinco de Mayo.<P></A>
+<A NAME="72780">
+<PRE>&lt;HTML&gt;<br>&lt;HEAD&gt;<br>&lt;TITLE&gt;Select object example&lt;/TITLE&gt;<br>&lt;/HEAD&gt;<br>&lt;BODY&gt;<br>&lt;SCRIPT&gt;<br>var today = new Date()<br>//---------------<br>function updatePropertyDisplay(monthObj,dayObj) {<br>&nbsp;&nbsp;&nbsp;// Get date strings<br>&nbsp;&nbsp;&nbsp;var monthInteger, dayInteger, monthString, dayString<br>&nbsp;&nbsp;&nbsp;monthInteger=monthObj.selectedIndex<br>&nbsp;&nbsp;&nbsp;dayInteger=dayObj.selectedIndex<br>&nbsp;&nbsp;&nbsp;monthString=monthObj.options[monthInteger].text<br>&nbsp;&nbsp;&nbsp;dayString=dayObj.options[dayInteger].text<br>&nbsp;&nbsp;&nbsp;// Display property values<br>&nbsp;&nbsp;&nbsp;document.selectForm.textFullDate.value=monthString + " " + dayString<br>&nbsp;&nbsp;&nbsp;document.selectForm.textMonthLength.value=monthObj.length<br>&nbsp;&nbsp;&nbsp;document.selectForm.textDayLength.value=dayObj.length<br>&nbsp;&nbsp;&nbsp;document.selectForm.textMonthName.value=monthObj.name<br>&nbsp;&nbsp;&nbsp;document.selectForm.textDayName.value=dayObj.name<br>&nbsp;&nbsp;&nbsp;document.selectForm.textMonthIndex.value=monthObj.selectedIndex<br>&nbsp;&nbsp;&nbsp;document.selectForm.textDayIndex.value=dayObj.selectedIndex<br>&nbsp;&nbsp;&nbsp;// Is it Cinco de Mayo?<br>&nbsp;&nbsp;&nbsp;if (monthObj.options[4].selected &amp;&amp; dayObj.options[4].selected)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.selectForm.textCinco.value="Yes!"<br>&nbsp;&nbsp;&nbsp;else<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.selectForm.textCinco.value="No"<br>}<br>&lt;/SCRIPT&gt;<br>&lt;!---------------&gt;<br>&lt;FORM NAME="selectForm"&gt;<br>&lt;P&gt;&lt;B&gt;Choose a month and day:&lt;/B&gt; <br>Month: &lt;SELECT NAME="monthSelection"<br>&nbsp;&nbsp;&nbsp;onChange="updatePropertyDisplay(this,document.selectForm.daySelection)"&gt;<br>&nbsp;&nbsp;&nbsp;&lt;OPTION&gt; January &lt;OPTION&gt; February &lt;OPTION&gt; March<br>&nbsp;&nbsp;&nbsp;&lt;OPTION&gt; April &lt;OPTION&gt; May &lt;OPTION&gt; June<br>&nbsp;&nbsp;&nbsp;&lt;OPTION&gt; July &lt;OPTION&gt; August &lt;OPTION&gt; September<br>&nbsp;&nbsp;&nbsp;&lt;OPTION&gt; October &lt;OPTION&gt; November &lt;OPTION&gt; December<br>&lt;/SELECT&gt;<br>Day: &lt;SELECT NAME="daySelection"<br>&nbsp;&nbsp;&nbsp;onChange="updatePropertyDisplay(document.selectForm.monthSelection,this)"&gt;<br>&nbsp;&nbsp;&nbsp;&lt;OPTION&gt; 1 &lt;OPTION&gt; 2 &lt;OPTION&gt; 3 &lt;OPTION&gt; 4 &lt;OPTION&gt; 5<br>&nbsp;&nbsp;&nbsp;&lt;OPTION&gt; 6 &lt;OPTION&gt; 7 &lt;OPTION&gt; 8 &lt;OPTION&gt; 9 &lt;OPTION&gt; 10<br>&nbsp;&nbsp;&nbsp;&lt;OPTION&gt; 11 &lt;OPTION&gt; 12 &lt;OPTION&gt; 13 &lt;OPTION&gt; 14 &lt;OPTION&gt; 15<br>&nbsp;&nbsp;&nbsp;&lt;OPTION&gt; 16 &lt;OPTION&gt; 17 &lt;OPTION&gt; 18 &lt;OPTION&gt; 19 &lt;OPTION&gt; 20<br>&nbsp;&nbsp;&nbsp;&lt;OPTION&gt; 21 &lt;OPTION&gt; 22 &lt;OPTION&gt; 23 &lt;OPTION&gt; 24 &lt;OPTION&gt; 25<br>&nbsp;&nbsp;&nbsp;&lt;OPTION&gt; 26 &lt;OPTION&gt; 27 &lt;OPTION&gt; 28 &lt;OPTION&gt; 29 &lt;OPTION&gt; 30<br>&nbsp;&nbsp;&nbsp;&lt;OPTION&gt; 31<br>&lt;/SELECT&gt;<br>&lt;P&gt;&lt;B&gt;Set the date to: &lt;/B&gt;<br>&lt;INPUT TYPE="radio" NAME="dateChoice"<br>&nbsp;&nbsp;&nbsp;onClick="<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;monthSelection.selectedIndex=0;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;daySelection.selectedIndex=0;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;updatePropertyDisplay<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.selectForm.monthSelection,document.selectForm.daySelection)"&gt;<br>&nbsp;&nbsp;&nbsp;New Year's Day<br>&lt;INPUT TYPE="radio" NAME="dateChoice"<br>&nbsp;&nbsp;&nbsp;onClick="<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;monthSelection.selectedIndex=4;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;daySelection.selectedIndex=4;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;updatePropertyDisplay<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(document.selectForm.monthSelection,document.selectForm.daySelection)"&gt;<br>&nbsp;&nbsp;&nbsp;Cinco de Mayo<br>&lt;INPUT TYPE="radio" NAME="dateChoice"<br>&nbsp;&nbsp;&nbsp;onClick="<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;monthSelection.selectedIndex=5;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;daySelection.selectedIndex=20;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;updatePropertyDisplay<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(document.selectForm.monthSelection,document.selectForm.daySelection)"&gt;<br>&nbsp;&nbsp;&nbsp;Summer Solstice<br>&lt;P&gt;&lt;B&gt;Property values:&lt;/B&gt;<br>&lt;BR&gt;Date chosen: &lt;INPUT TYPE="text" NAME="textFullDate" VALUE="" SIZE=20"&gt;<br>&lt;BR&gt;monthSelection.length&lt;INPUT TYPE="text" NAME="textMonthLength" VALUE="" SIZE=20"&gt;<br>&lt;BR&gt;daySelection.length&lt;INPUT TYPE="text" NAME="textDayLength" VALUE="" SIZE=20"&gt;<br>&lt;BR&gt;monthSelection.name&lt;INPUT TYPE="text" NAME="textMonthName" VALUE="" SIZE=20"&gt;<br>&lt;BR&gt;daySelection.name&lt;INPUT TYPE="text" NAME="textDayName" VALUE="" SIZE=20"&gt;<br>&lt;BR&gt;monthSelection.selectedIndex<br>&nbsp;&nbsp;&nbsp;&lt;INPUT TYPE="text" NAME="textMonthIndex" VALUE="" SIZE=20"&gt;<br>&lt;BR&gt;daySelection.selectedIndex&lt;INPUT TYPE="text" NAME="textDayIndex" VALUE="" SIZE=20"&gt;<br>&lt;BR&gt;Is it Cinco de Mayo? &lt;INPUT TYPE="text" NAME="textCinco" VALUE="" SIZE=20"&gt;<br>&lt;SCRIPT&gt;<br>document.selectForm.monthSelection.selectedIndex=today.getMonth()<br>document.selectForm.daySelection.selectedIndex=today.getDate()-1<br>updatePropertyDisplay(document.selectForm.monthSelection,document.selectForm.daySelection)<br>&lt;/SCRIPT&gt;<br>&lt;/FORM&gt;<br>&lt;/BODY&gt;<br>&lt;/HTML&gt;</PRE>
+</A>
+<A NAME="93023">
+<B>Example 3. Add an option using the Option() constructor.</B> The following example creates two <I>Select</I> objects, one without the MULTIPLE attribute and one with. No options are initially defined for either object. When the user clicks a button associated with the <I>Select</I> object, the <I>populate</I> function creates four options for the <I>Select</I> object and selects the first option.<P></A>
+<A NAME="93024">
+<PRE>&lt;SCRIPT&gt;<br>function populate(inForm) {<br>&nbsp;&nbsp;&nbsp;colorArray = new Array("Red", "Blue", "Yellow", "Green")<br><br>&nbsp;&nbsp;&nbsp;var option0 = new Option("Red", "color_red")<br>&nbsp;&nbsp;&nbsp;var option1 = new Option("Blue", "color_blue")<br>&nbsp;&nbsp;&nbsp;var option2 = new Option("Yellow", "color_yellow")<br>&nbsp;&nbsp;&nbsp;var option3 = new Option("Green", "color_green")<br><br>&nbsp;&nbsp;&nbsp;for (var i=0; i &lt; 4; i++) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eval("inForm.selectTest.options[i]=option" + i)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (i==0) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;inForm.selectTest.options[i].selected=true<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;}<br><br>&nbsp;&nbsp;&nbsp;history.go(0)<br>}<br>&lt;/SCRIPT&gt;<br><br><br>&lt;H3&gt;Select Option() constructor&lt;/H3&gt;<br>&lt;FORM&gt;<br>&lt;SELECT NAME="selectTest"&gt;&lt;/SELECT&gt;&lt;P&gt;<br>&lt;INPUT TYPE="button" VALUE="Populate Select List" onClick="populate(this.form)"&gt;<br>&lt;P&gt;<br>&lt;/FORM&gt;<br><br>&lt;HR&gt;<br>&lt;H3&gt;Select-Multiple Option() constructor&lt;/H3&gt;<br>&lt;FORM&gt;<br>&lt;SELECT NAME="selectTest" multiple&gt;&lt;/SELECT&gt;&lt;P&gt;<br>&lt;INPUT TYPE="button" VALUE="Populate Select List" onClick="populate(this.form)"&gt;<br>&lt;/FORM&gt;</PRE>
+</A>
+<A NAME="94650">
+<B>Example 4. Delete an option.</B> The following function removes an option from a <I>Select</I> object.<P></A>
+<A NAME="94651">
+<PRE>function deleteAnItem(theList,itemNo) {<br>&nbsp;&nbsp;&nbsp;theList.options[itemNo]=null<br>&nbsp;&nbsp;&nbsp;history.go(0)<br>}</PRE>
+</A>
+<A NAME="72784">
+See also the examples for the <I><a href="ref_d-e.htm#46856">defaultSelected</a></I> property.<P></A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="72785">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="72792">
+<a href="ref_f-g.htm#60597">Form object</a>, <a href="ref_r-r.htm#26345">Radio</a> object<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="selected
+"></A>
+<A NAME="72795">
+<H1> selected
+</H1>
+</A>
+
+<A NAME="72797">
+Property. A Boolean value indicating whether an option in a <I>Select</I> object is selected.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="72798">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="72799">
+<PRE>1. <I>selectName</I>.options[<I>index</I>].selected<br>2. <I>optionName</I>.selected</PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="72800">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="72801">
+<I>selectName</I> is either the value of the NAME attribute of a <I>Select</I> object or an element in the <I>elements</I> array.<P></A>
+<A NAME="119193">
+<I>index</I> is an integer representing an option in a <I>Select</I> object.<P></A>
+<A NAME="119194">
+<I>optionName</I> is the name of a <I>Select</I> object option created using the Option() constructor.<P></A>
+
+</UL><A NAME="Property of
+"></A>
+<A NAME="72803">
+<H3> Property of
+</H3>
+</A>
+
+<A NAME="72807">
+Option object (see <a href="ref_s-s.htm#72585">Select object</a>)<I>, options</I> array (see <a href="ref_s-s.htm#72585">Select object</a>)<P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="83791">
+<H3> Implemented in
+</H3>
+</A>
+
+<ul><A NAME="83792">
+<LI>Navigator 2.0
+</A><A NAME="97849">
+<LI>Navigator 3.0: property of <I>Option</I>
+</A>
+</UL><A NAME="Tainted?
+"></A>
+<A NAME="110249">
+<H3> Tainted?
+</H3>
+</A>
+
+</ul><A NAME="110250">
+Yes<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="72808">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="72809">
+If an option in a <I>Select</I> object is selected, the value of its <I>selected</I> property is true; otherwise, it is false.<P></A>
+<A NAME="72810">
+You can set the <I>selected</I> property at any time. The display of the <I>Select</I> object updates immediately when you set the <I>selected</I> property.<P></A>
+<A NAME="72811">
+In general, the <I>selected</I> property is more useful than the <I>selectedIndex</I> property for <I>Select</I> objects that are created with the MULTIPLE attribute. With the <I>selected</I> property, you can evaluate every option in the <I>options</I> array to determine multiple selections, and you can select individual options without clearing the selection of other options.<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="72812">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="72816">
+See the examples for the <a href="ref_d-e.htm#46856">defaultSelected</a> property.<P></A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="72817">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="72827">
+<a href="ref_d-e.htm#46856">defaultSelected</a>, <a href="ref_h-l.htm#84372">index</a>, <a href="ref_s-s.htm#72830">selectedIndex</a> properties<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="selectedIndex
+"></A>
+<A NAME="72830">
+<H1> selectedIndex
+</H1>
+</A>
+
+<A NAME="72832">
+Property. An integer specifying the index of the selected option in a <I>Select</I> object.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="72833">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="72834">
+<PRE>1. <I>selectName</I>.selectedIndex<br>2. <I>selectName</I>.options.selectedIndex</PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="72835">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="72836">
+<I>selectName</I> is either the value of the NAME attribute of a <I>Select</I> object or an element in the <I>elements</I> array.<P></A>
+
+</UL><A NAME="Property of
+"></A>
+<A NAME="72837">
+<H3> Property of
+</H3>
+</A>
+
+<A NAME="72844">
+<a href="ref_s-s.htm#72585">Select object</a>; <I>options</I> array (see <a href="ref_s-s.htm#72585">Select object</a>)<P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="84379">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="84380">
+Navigator 2.0<P></A>
+
+</UL><A NAME="Tainted?
+"></A>
+<A NAME="110255">
+<H3> Tainted?
+</H3>
+</A>
+
+<A NAME="110256">
+Yes<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="72845">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="72846">
+Options in a <I>Select</I> object are indexed in the order in which they are defined, starting with an index of zero. You can set the <I>selectedIndex</I> property at any time. The display of the <I>Select</I> object updates immediately when you set the <I>selectedIndex</I> property. Both forms of the syntax specify the same value. If no option is selected, <I>selectedIndex</I> has a value of -1.<P></A>
+<A NAME="72847">
+In general, the <I>selectedIndex</I> property is more useful for <I>Select</I> objects that are created without the MULTIPLE attribute. If you evaluate <I>selectedIndex</I> when multiple options are selected, the <I>selectedIndex</I> property specifies the index of the first option only. Setting <I>selectedIndex</I> clears any other options that are selected in the <I>Select</I> object.<P></A>
+<A NAME="72848">
+The <I>selected</I> property of the <I>Select</I> object's <I>options</I> array is more useful for <I>Select</I> objects that are created with the MULTIPLE attribute. With the <I>selected</I> property, you can evaluate every option in the <I>options</I> array to determine multiple selections, and you can select individual options without clearing the selection of other options.<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="72849">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="72850">
+In the following example, the <B>getSelectedIndex</B> function returns the selected index in the <I>musicType</I> <I>Select</I> object:<P></A>
+<A NAME="72851">
+<PRE>function getSelectedIndex() {<br>&nbsp;&nbsp;&nbsp;return document.musicForm.musicType.selectedIndex<br>}</PRE>
+</A>
+<A NAME="72852">
+The previous example assumes that the <I>Select</I> object is similar to the following:<P></A>
+<A NAME="72853">
+<PRE>&lt;SELECT NAME="musicType"&gt; <br>&nbsp;&nbsp;&nbsp;&lt;OPTION SELECTED&gt; R&amp;B<br>&nbsp;&nbsp;&nbsp;&lt;OPTION&gt; Jazz<br>&nbsp;&nbsp;&nbsp;&lt;OPTION&gt; Blues<br>&nbsp;&nbsp;&nbsp;&lt;OPTION&gt; New Age<br>&lt;/SELECT&gt;</PRE>
+</A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="72854">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="72864">
+<a href="ref_d-e.htm#46856">defaultSelected</a>, <a href="ref_h-l.htm#84372">index</a>, <a href="ref_s-s.htm#72795">selected</a> properties<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="self
+"></A>
+<A NAME="72867">
+<H1> self
+</H1>
+</A>
+
+<A NAME="72868">
+Property. The <I>self</I> property is a synonym for the current window or frame.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="72869">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="72870">
+<PRE>1. self.<I>propertyName<br></I>2. self.<I>methodName</I></PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="72871">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="72872">
+<I>propertyName</I> is the <I>defaultStatus</I>, <I>status</I>, <I>length</I>, or <I>name</I> property when <I>self</I> refers to a <I>window</I> object.<P></A>
+<A NAME="72873">
+<I>propertyName</I> is the <I>length</I> or <I>name</I> property when <I>self</I> refers to a <I>Frame</I> object.<P></A>
+<A NAME="72874">
+<I>methodName</I> is any method associated with the <I>window</I> object.<P></A>
+
+</UL><A NAME="Property of
+"></A>
+<A NAME="72875">
+<H3> Property of
+</H3>
+</A>
+
+<A NAME="72882">
+<a href="ref_f-g.htm#60829">Frame</a> object, <a href="ref_t-z.htm#67013">window object</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="84548">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="84549">
+Navigator 2.0<P></A>
+
+</UL><A NAME="Tainted?
+"></A>
+<A NAME="111629">
+<H3> Tainted?
+</H3>
+</A>
+
+<A NAME="111630">
+No<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="72883">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="72884">
+The <I>self</I> property refers to the current window or frame.<P></A>
+<A NAME="72885">
+Use the <I>self</I> property to disambiguate a <I>window</I> property from a form or form element of the same name. You can also use the <I>self</I> property to make your code more readable.<P></A>
+<A NAME="72886">
+The <I>self</I> property is read-only. The value of the <I>self</I> property is <P></A>
+<A NAME="72887">
+<PRE>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;object <I>nameAttribute&gt;</I></PRE>
+</A>
+<A NAME="72888">
+where <I>nameAttribute</I> is the NAME attribute if <I>self</I> refers to a frame, or an internal reference if <I>self</I> refers to a window.<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="72889">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="72890">
+In the following example, <code>self.status</code> is used to set the <I>status</I> property of the current window. This usage disambiguates the <I>status</I> property of the current window from a form or form element called "status" within the current window.<P></A>
+<A NAME="72891">
+<PRE>&lt;A HREF=""<br>&nbsp;&nbsp;&nbsp;onClick="this.href=pickRandomURL()"<br>&nbsp;&nbsp;&nbsp;onMouseOver="self.status='Pick a random URL' ; return true"&gt;<br>Go!&lt;/A&gt;</PRE>
+</A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="72892">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="72896">
+<a href="ref_t-z.htm#67207">window property</a><P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="setDate
+"></A>
+<A NAME="464">
+<H1> setDate
+</H1>
+</A>
+
+<A NAME="466">
+Method. Sets the day of the month for a specified date.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="468">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="470">
+<PRE><I>dateObjectName</I>.setDate(<I>dayValue</I>)</PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="5558">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="472">
+<I>dateObjectName</I> is either the name of a <I>Date</I> object or a property of an existing object.<P></A>
+<A NAME="474">
+<I>dayValue</I> is an integer from one to 31 or a property of an existing object, representing the day of the month.<P></A>
+
+</UL><A NAME="Method of
+"></A>
+<A NAME="476">
+<H3> Method of
+</H3>
+</A>
+
+<A NAME="478">
+<a href="ref_d-e.htm#8153">Date</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="84813">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="84814">
+Navigator 2.0<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="480">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="482">
+The second statement below changes the day for <I>theBigDay</I> to July 24 from its original value.<P></A>
+<A NAME="484">
+<PRE>theBigDay = new Date("July 27, 1962 23:30:00")<br>theBigDay.setDate(24)</PRE>
+</A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="486">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="488">
+<a href="ref_f-g.htm#590">getDate</a> method<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="setHours
+"></A>
+<A NAME="490">
+<H1> setHours
+</H1>
+</A>
+
+<A NAME="492">
+Method. Sets the hours for a specified date.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="494">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="496">
+<PRE><I>dateObjectName</I>.setHours(<I>hoursValue</I>)</PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="5563">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="498">
+<I>dateObjectName</I> is either the name of a <I>Date</I> object or a property of an existing object.<P></A>
+<A NAME="500">
+<I>hoursValue</I> is an integer between zero and 23 or a property of an existing object, representing the hour.<P></A>
+
+</UL><A NAME="Method of
+"></A>
+<A NAME="502">
+<H3> Method of
+</H3>
+</A>
+
+<A NAME="504">
+<a href="ref_d-e.htm#8153">Date</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="84858">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="84859">
+Navigator 2.0<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="506">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="508">
+<PRE>theBigDay.setHours(7)</PRE>
+</A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="510">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="512">
+<a href="ref_f-g.htm#642">getHours</a> method<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="setMinutes
+"></A>
+<A NAME="514">
+<H1> setMinutes
+</H1>
+</A>
+
+<A NAME="516">
+Method. Sets the minutes for a specified date.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="518">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="520">
+<PRE><I>dateObjectName</I>.setMinutes(<I>minutesValue</I>)</PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="5568">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="522">
+<I>dateObjectName</I> is either the name of a <I>Date</I> object or a property of an existing object.<P></A>
+<A NAME="524">
+<I>minutesValue</I> is an integer between zero and 59 or a property of an existing object, representing the minutes.<P></A>
+
+</UL><A NAME="Method of
+"></A>
+<A NAME="526">
+<H3> Method of
+</H3>
+</A>
+
+<A NAME="528">
+<a href="ref_d-e.htm#8153">Date</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="84916">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="84917">
+Navigator 2.0<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="530">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="532">
+<PRE>theBigDay.setMinutes(45)</PRE>
+</A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="534">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="536">
+<a href="ref_f-g.htm#670">getMinutes</a> method<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="setMonth
+"></A>
+<A NAME="538">
+<H1> setMonth
+</H1>
+</A>
+
+<A NAME="540">
+Method. Sets the month for a specified date.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="5588">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="5589">
+<PRE><I>dateObjectName</I>.setMonth(<I>monthValue</I>)</PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="5624">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="5590">
+<I>dateObjectName</I> is either the name of a <I>Date</I> object or a property of an existing object.<P></A>
+<A NAME="548">
+<I>monthValue</I> is an integer between zero and 11 (representing the months January through December) or a property of an existing object.<P></A>
+
+</UL><A NAME="Method of
+"></A>
+<A NAME="550">
+<H3> Method of
+</H3>
+</A>
+
+<A NAME="552">
+<a href="ref_d-e.htm#8153">Date</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="85339">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="85340">
+Navigator 2.0<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="554">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="556">
+<PRE>theBigDay.setMonth(6)</PRE>
+</A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="558">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="560">
+<a href="ref_f-g.htm#698">getMonth</a> method<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="setSeconds
+"></A>
+<A NAME="562">
+<H1> setSeconds
+</H1>
+</A>
+
+<A NAME="564">
+Method. Sets the seconds for a specified date.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="566">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="568">
+<PRE><I>dateObjectName</I>.setSeconds(<I>secondsValue</I>)</PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="5636">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="570">
+<I>dateObjectName</I> is either the name of a <I>Date</I> object or a property of an existing object.<P></A>
+<A NAME="572">
+<I>secondsValue</I> is an integer between zero and 59 or a property of an existing object.<P></A>
+
+</UL><A NAME="Method of
+"></A>
+<A NAME="574">
+<H3> Method of
+</H3>
+</A>
+
+<A NAME="576">
+<a href="ref_d-e.htm#8153">Date</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="86101">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="86102">
+Navigator 2.0<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="578">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="580">
+<PRE>theBigDay.setSeconds(30)</PRE>
+</A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="582">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="584">
+<a href="ref_f-g.htm#726">getSeconds</a> method<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="setTime
+"></A>
+<A NAME="586">
+<H1> setTime
+</H1>
+</A>
+
+<A NAME="588">
+Method. Sets the value of a <I>Date</I> object.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="590">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="592">
+<PRE><I>dateObjectName</I>.setTime(<I>timevalue</I>) </PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="5645">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="594">
+<I>dateObjectName</I> is either the name of a <I>Date</I> object or a property of an existing object.<P></A>
+<A NAME="596">
+<I>timevalue</I> is an integer or a property of an existing object, representing the number of milliseconds since the epoch (1 January 1970 00:00:00).<P></A>
+
+</UL><A NAME="Method of
+"></A>
+<A NAME="598">
+<H3> Method of
+</H3>
+</A>
+
+<A NAME="600">
+<a href="ref_d-e.htm#8153">Date</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="86226">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="86227">
+Navigator 2.0<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="602">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="604">
+Use the <B>setTime</B> method to help assign a date and time to another <I>Date</I> object.<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="606">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="608">
+<PRE>theBigDay = new Date("July 1, 1999")<br>sameAsBigDay = new Date()<br>sameAsBigDay.setTime(theBigDay.getTime())</PRE>
+</A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="610">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="612">
+<a href="ref_f-g.htm#754">getTime</a> method<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="setTimeout
+"></A>
+<A NAME="73328">
+<H1> setTimeout
+</H1>
+</A>
+
+<A NAME="73330">
+Method. Evaluates an expression after a specified number of milliseconds has elapsed.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="73331">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="73332">
+<PRE><I>timeoutID</I>=setTimeout(<I>expression</I>, <I>msec</I>)</PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="73333">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="73334">
+<I>timeoutID</I> is an identifier that is used only to cancel the evaluation with the <B>clearTimeout</B> method.<P></A>
+<A NAME="73335">
+<I>expression</I> is a string expression or a property of an existing object.<P></A>
+<A NAME="73336">
+<I>msec</I> is a numeric value, numeric string, or a property of an existing object in millisecond units.<P></A>
+
+</UL><A NAME="Method of
+"></A>
+<A NAME="73337">
+<H3> Method of
+</H3>
+</A>
+
+<A NAME="73344">
+<a href="ref_f-g.htm#60829">Frame</a> object, <a href="ref_t-z.htm#67013">window object</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="86260">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="86261">
+Navigator 2.0<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="73345">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="73346">
+The <B>setTimeout</B> method evaluates an expression after a specified amount of time. It does not evaluate the expression repeatedly. For example, if a <B>setTimeout</B> method specifies five seconds, the expression is evaluated after five seconds, not every five seconds.<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="73347">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="73348">
+<B>Example 1.</B> The following example displays an alert message five seconds (5,000 milliseconds) after the user clicks a button. If the user clicks the second button before the alert message is displayed, the timeout is canceled and the alert does not display.<P></A>
+<A NAME="73349">
+<PRE>&lt;SCRIPT LANGUAGE="JavaScript"&gt;<br>function displayAlert() {<br>&nbsp;&nbsp;&nbsp;alert("5 seconds have elapsed since the button was clicked.")<br>}<br>&lt;/SCRIPT&gt;<br>&lt;BODY&gt;<br>&lt;FORM&gt;<br>Click the button on the left for a reminder in 5 seconds; <br>click the button on the right to cancel the reminder before <br>it is displayed.<br>&lt;P&gt;<br>&lt;INPUT TYPE="button" VALUE="5-second reminder"<br>&nbsp;&nbsp;&nbsp;NAME="remind_button"<br>&nbsp;&nbsp;&nbsp;onClick="timerID=setTimeout('displayAlert()',5000)"&gt;<br>&lt;INPUT TYPE="button" VALUE="Clear the 5-second reminder"<br>&nbsp;&nbsp;&nbsp;NAME="remind_disable_button"<br>&nbsp;&nbsp;&nbsp;onClick="clearTimeout(timerID)"&gt;<br>&lt;/FORM&gt;<br>&lt;/BODY&gt;</PRE>
+</A>
+<A NAME="73350">
+<B>Example 2.</B> The following example displays the current time in a <I>Text</I> object. The <B>showtime</B> function, which is called recursively, uses the <B>setTimeout</B> method to update the time every second.<P></A>
+<A NAME="73351">
+<PRE>&lt;HEAD&gt;<br>&lt;SCRIPT LANGUAGE="JavaScript"&gt;<br>&lt;!--<br>var timerID = null<br>var timerRunning = false<br>function stopclock(){<br>&nbsp;&nbsp;&nbsp;if(timerRunning)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;clearTimeout(timerID)<br>&nbsp;&nbsp;&nbsp;timerRunning = false<br>}<br>function startclock(){<br>&nbsp;&nbsp;&nbsp;// Make sure the clock is stopped<br>&nbsp;&nbsp;&nbsp;stopclock()<br>&nbsp;&nbsp;&nbsp;showtime()<br>}<br>function showtime(){<br>&nbsp;&nbsp;&nbsp;var now = new Date()<br>&nbsp;&nbsp;&nbsp;var hours = now.getHours()<br>&nbsp;&nbsp;&nbsp;var minutes = now.getMinutes()<br>&nbsp;&nbsp;&nbsp;var seconds = now.getSeconds()<br>&nbsp;&nbsp;&nbsp;var timeValue = "" + ((hours &gt; 12) ? hours - 12 : hours)<br>&nbsp;&nbsp;&nbsp;timeValue += ((minutes &lt; 10) ? ":0" : ":") + minutes<br>&nbsp;&nbsp;&nbsp;timeValue += ((seconds &lt; 10) ? ":0" : ":") + seconds<br>&nbsp;&nbsp;&nbsp;timeValue += (hours &gt;= 12) ? " P.M." : " A.M."<br>&nbsp;&nbsp;&nbsp;document.clock.face.value = timeValue <br>&nbsp;&nbsp;&nbsp;timerID = setTimeout("showtime()",1000)<br>&nbsp;&nbsp;&nbsp;timerRunning = true<br>}<br>//--&gt;<br>&lt;/SCRIPT&gt;<br>&lt;/HEAD&gt;<br><br>&lt;BODY onLoad="startclock()"&gt;<br>&lt;FORM NAME="clock" onSubmit="0"&gt;<br>&nbsp;&nbsp;&nbsp;&lt;INPUT TYPE="text" NAME="face" SIZE=12 VALUE =""&gt;<br>&lt;/FORM&gt;<br>&lt;/BODY&gt;</PRE>
+</A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="73352">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="73356">
+<a href="ref_a-c.htm#63827">clearTimeout</a> method<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="setYear
+"></A>
+<A NAME="650">
+<H1> setYear
+</H1>
+</A>
+
+<A NAME="652">
+Method. Sets the year for a specified date.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="654">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="656">
+<PRE><I>dateObjectName</I>.setYear(<I>yearValue</I>)</PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="5659">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="658">
+<I>dateObjectName</I> is either the name of a <I>Date</I> object or a property of an existing object.<P></A>
+<A NAME="660">
+<I>yearValue</I> is an integer greater than 1900 or a property of an existing object.<P></A>
+
+</UL><A NAME="Method of
+"></A>
+<A NAME="662">
+<H3> Method of
+</H3>
+</A>
+
+<A NAME="664">
+<a href="ref_d-e.htm#8153">Date</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="86446">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="86447">
+Navigator 2.0<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="666">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="668">
+<PRE>theBigDay.setYear(96)</PRE>
+</A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="670">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="672">
+<a href="ref_f-g.htm#804">getYear</a> method<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="sin
+"></A>
+<A NAME="674">
+<H1> sin
+</H1>
+</A>
+
+<A NAME="676">
+Method. Returns the sine of a number.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="678">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="680">
+<PRE>Math.sin(<I>number</I>)</PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="5664">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="682">
+<I>number</I> is a numeric expression or a property of an existing object, representing the size of an angle in radians.<P></A>
+
+</UL><A NAME="Method of
+"></A>
+<A NAME="684">
+<H3> Method of
+</H3>
+</A>
+
+<A NAME="686">
+<a href="ref_m-q.htm#175987">Math</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="86588">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="86589">
+Navigator 2.0<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="688">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="690">
+The <B>sin</B> method returns a numeric value between -1 and one, which represents the sine of the argument.<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="692">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="28925">
+The following function returns the sine of the variable <I>x:</I><P></A>
+<A NAME="28926">
+<PRE>function getSine(x) {<br>&nbsp;&nbsp;&nbsp;return Math.sin(x)<br>}</PRE>
+</A>
+<A NAME="28927">
+If you pass <B>getSine</B> the value <code>Math.PI/2</code>, it returns 1.<P></A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="696">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="698">
+<a href="ref_a-c.htm#42437">acos</a>, <a href="ref_a-c.htm#42868">asin</a>, <a href="ref_a-c.htm#42905">atan</a>, <a href="ref_a-c.htm#76855">atan2</a>, <a href="ref_a-c.htm#44122">cos</a>, <a href="ref_t-z.htm#94180">tan</a> methods<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="small
+"></A>
+<A NAME="700">
+<H1> small
+</H1>
+</A>
+
+<A NAME="702">
+Method. Causes a string to be displayed in a small font, as if it were in a &lt;SMALL&gt; tag.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="704">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="706">
+<PRE><I>stringName</I>.small()</PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="5669">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="708">
+<I>stringName</I> is any string or a property of an existing object.<P></A>
+
+</UL><A NAME="Method of
+"></A>
+<A NAME="710">
+<H3> Method of
+</H3>
+</A>
+
+<A NAME="712">
+<a href="ref_s-s.htm#870">String</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="86798">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="86799">
+Navigator 2.0<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="714">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="716">
+Use the <B>small</B> method with the <B>write</B> or <B>writeln</B> methods to format and display a string in a document.<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="718">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="720">
+The following example uses <I>string</I> methods to change the size of a string:<P></A>
+<A NAME="722">
+<PRE>var worldString="Hello, world"<br><br>document.write(worldString.small())<br>document.write("&lt;P&gt;" + worldString.big())<br>document.write("&lt;P&gt;" + worldString.fontsize(7))</PRE>
+</A>
+<A NAME="724">
+The previous example produces the same output as the following HTML:<P></A>
+<A NAME="28487">
+<PRE>&lt;SMALL&gt;Hello, world&lt;/SMALL&gt;<br>&lt;P&gt;&lt;BIG&gt;Hello, world&lt;/BIG&gt;<br>&lt;P&gt;&lt;FONTSIZE=7&gt;Hello, world&lt;/FONTSIZE&gt;</PRE>
+</A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="28488">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="28495">
+<a href="ref_a-c.htm#43045">big</a>, <a href="ref_f-g.htm#258">fontsize</a> methods<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="sort
+"></A>
+<A NAME="79162">
+<H1> sort
+</H1>
+</A>
+
+<A NAME="79166">
+Method. Sorts the elements of an array.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="79167">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="79168">
+<PRE><I>arrayName</I>.sort(<I>compareFunction</I>)</PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="79169">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="79170">
+<I>arrayName</I> is the name of an <I>Array</I> object or a property of an existing object.<P></A>
+<A NAME="79171">
+<I>compareFunction</I> specifies a function that defines the sort order. If omitted, the array is sorted lexicographically (in dictionary order) according to the string conversion of each element.<P></A>
+
+</UL><A NAME="Method of
+"></A>
+<A NAME="79172">
+<H3> Method of
+</H3>
+</A>
+
+<A NAME="79173">
+<a href="ref_a-c.htm#74072">Array</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="79174">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="79175">
+Navigator 3.0<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="79176">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="79177">
+If <I>compareFunction</I> is not supplied, elements are sorted by converting them to strings and comparing strings in lexicographic ("dictionary" or "telephone book," <I>not</I> numerical) order. For example, "80" comes before "9" in lexicographic order, but if you are comparing numbers 9 needs to come before 80.<P></A>
+<A NAME="79178">
+If <I>compareFunction</I> is supplied, the array elements are sorted according to the return value of the compare function. If a and b are two elements being compared, then:<P></A>
+<ul><A NAME="79179">
+<LI>If <I>compareFunction(a, b)</I> is less than zero, sort b to a lower index than a.
+</A><A NAME="79180">
+<LI>If <I>compareFunction(a, b)</I> returns zero, leave a and b unchanged with respect to each other, but sorted with respect to all different elements.
+</A><A NAME="79181">
+<LI>If <I>compareFunction(a, b)</I> is greater than zero, sort b to a higher index than a.
+</A></ul><A NAME="79182">
+So the compare function has the following form:<P></A>
+<A NAME="79183">
+<PRE>function compare(a, b) {<br>&nbsp;&nbsp;&nbsp;if (a is less than b by some ordering criterion)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return -1<br>&nbsp;&nbsp;&nbsp;if (a is greater than b by the ordering criterion)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return 1<br>&nbsp;&nbsp;&nbsp;// a must be equal to b<br>&nbsp;&nbsp;&nbsp;return 0<br>}</PRE>
+</A>
+<A NAME="79184">
+To compare numbers instead of strings, the compare function can simply subtract b from a:<P></A>
+<A NAME="79185">
+<PRE>function compareNumbers(a, b) {<br>&nbsp;&nbsp;&nbsp;return a - b<br>}</PRE>
+</A>
+<A NAME="79186">
+JavaScript uses a stable sort: the index partial order of a and b does not change if a and b are equal. If a's index was less than b's before sorting, it will be after sorting, no matter how a and b move due to sorting.<P></A>
+
+<a name="123017">
+<B><blockquote>Note
+</blockquote></B>
+</a>
+
+<a name="123018">
+<blockquote>On some platforms, the <B>sort</B> method does not work. Please see the release 
+notes (after starting Netscape, choose Release Notes from the Help menu).
+</blockquote>
+</a>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="79187">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="79188">
+The following example creates four arrays and displays the original array, then the sorted arrays. The numeric arrays are sorted without, then with, a compare function.<P></A>
+<A NAME="79189">
+<PRE>&lt;SCRIPT&gt;<br>stringArray = new Array("Blue","Humpback","Beluga")<br>numericStringArray = new Array("80","9","700")<br>numberArray = new Array(40,1,5,200)<br>mixedNumericArray = new Array("80","9","700",40,1,5,200)<br><br>function compareNumbers(a, b) {<br>&nbsp;&nbsp;&nbsp;return a - b<br>}<br><br>document.write("&lt;B&gt;stringArray:&lt;/B&gt; " + stringArray.join() +"&lt;BR&gt;")<br>document.write("&lt;B&gt;Sorted:&lt;/B&gt; " + stringArray.sort() +"&lt;P&gt;")<br><br>document.write("&lt;B&gt;numberArray:&lt;/B&gt; " + numberArray.join() +"&lt;BR&gt;")<br>document.write("&lt;B&gt;Sorted without a compare function:&lt;/B&gt; " + numberArray.sort() +"&lt;BR&gt;")<br>document.write("&lt;B&gt;Sorted with compareNumbers:&lt;/B&gt; " + numberArray.sort(compareNumbers) +"&lt;P&gt;")<br><br>document.write("&lt;B&gt;numericStringArray:&lt;/B&gt; " + numericStringArray.join() +"&lt;BR&gt;")<br>document.write("&lt;B&gt;Sorted without a compare function:&lt;/B&gt; " + numericStringArray.sort() +"&lt;BR&gt;")<br>document.write("&lt;B&gt;Sorted with compareNumbers:&lt;/B&gt; " + numericStringArray.sort(compareNumbers) +"&lt;P&gt;")<br><br>document.write("&lt;B&gt;mixedNumericArray:&lt;/B&gt; " + mixedNumericArray.join() +"&lt;BR&gt;")<br>document.write("&lt;B&gt;Sorted without a compare function:&lt;/B&gt; " + mixedNumericArray.sort() +"&lt;BR&gt;")<br>document.write("&lt;B&gt;Sorted with compareNumbers:&lt;/B&gt; " + mixedNumericArray.sort(compareNumbers) +"&lt;BR&gt;")<br>&lt;/SCRIPT&gt;</PRE>
+</A>
+<A NAME="79190">
+This example produces the following output. As the output shows, when a compare function is used, numbers sort correctly whether they are numbers or numeric strings.<P></A>
+<A NAME="79191">
+<PRE><B>stringArray:</B> Blue,Humpback,Beluga<br><B>Sorted:</B> Beluga,Blue,Humpback</PRE>
+</A>
+<A NAME="79192">
+<PRE><B>numberArray:</B> 40,1,5,200<br><B>Sorted without a compare function:</B> 1,200,40,5<br><B>Sorted with compareNumbers:</B> 1,5,40,200</PRE>
+</A>
+<A NAME="79193">
+<PRE><B>numericStringArray:</B> 80,9,700<br><B>Sorted without a compare function:</B> 700,80,9<br><B>Sorted with compareNumbers:</B> 9,80,700</PRE>
+</A>
+<A NAME="79194">
+<PRE><B>mixedNumericArray:</B> 80,9,700,40,1,5,200<br><B>Sorted without a compare function:</B> 1,200,40,5,700,80,9<br><B>Sorted with compareNumbers:</B> 1,5,9,40,80,200,700</PRE>
+</A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="79195">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="79196">
+<a href="ref_h-l.htm#91531">join</a>, <a href="ref_r-r.htm#29187">reverse</a> methods<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="split
+"></A>
+<A NAME="79330">
+<H1> split
+</H1>
+</A>
+
+<A NAME="79334">
+Method. Splits a <I>String</I> object into an array of strings by separating the string into substrings.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="79335">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="79336">
+<PRE><I>stringName</I>.split([<I>separator</I>])</PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="79337">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="79338">
+<I>stringName</I> is any string or a property of an existing object.<P></A>
+<A NAME="79339">
+<I>separator</I> specifies the character to use for separating the string. The <I>separator</I> is treated as a string. If <I>separator</I> is omitted, the array returned contains one element consisting of the entire string.<P></A>
+
+</UL><A NAME="Method of
+"></A>
+<A NAME="79340">
+<H3> Method of
+</H3>
+</A>
+
+<A NAME="79341">
+<a href="ref_s-s.htm#870">String</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="79342">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="79343">
+Navigator 3.0<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="79344">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="79345">
+The <B>split</B> method returns the new array.<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="79346">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="79347">
+The following example defines a function that splits a string into an array of strings using the specified separator. After splitting the string, the function displays messages indicating the original string (before the split), the separator used, the number of elements in the array, and the individual array elements.<P></A>
+<A NAME="79348">
+<PRE>function splitString (stringToSplit,separator) {<br>&nbsp;&nbsp;&nbsp;arrayOfStrings = stringToSplit.split(separator)<br>&nbsp;&nbsp;&nbsp;document.write ('&lt;P&gt;The original string is: "' + stringToSplit + '"')<br>&nbsp;&nbsp;&nbsp;document.write ('&lt;BR&gt;The separator is: "' + separator + '"')<br>&nbsp;&nbsp;&nbsp;document.write ("&lt;BR&gt;The array has " + arrayOfStrings.length + " elements: ")<br><br>&nbsp;&nbsp;&nbsp;for (var i=0; i &lt; arrayOfStrings.length; i++) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.write (arrayOfStrings[i] + " / ")<br>&nbsp;&nbsp;&nbsp;}<br>}<br><br>var tempestString="Oh brave new world that has such people in it."<br>var monthString="Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec"<br><br>var space=" "<br>var comma=","<br><br>splitString(tempestString,space)<br>splitString(tempestString)<br>splitString(monthString,comma)</PRE>
+</A>
+<A NAME="79349">
+This example produces the following output:<P></A>
+<A NAME="79350">
+<PRE>The original string is: "Oh brave new world that has such people in it."<br>The separator is: " "<br>The array has 10 elements: Oh / brave / new / world / that / has / such / people / in / it. /<br><br>The original string is: "Oh brave new world that has such people in it."<br>The separator is: "undefined"<br>The array has 1 elements: Oh brave new world that has such people in it. /<br><br>The original string is: "Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec"<br>The separator is: ","<br>The array has 12 elements: Jan / Feb / Mar / Apr / May / Jun / Jul / Aug / Sep / Oct / Nov / Dec /</PRE>
+</A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="79351">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="79352">
+<a href="ref_a-c.htm#43448">charAt</a>, <a href="ref_h-l.htm#360">indexOf</a>, <a href="ref_h-l.htm#454">lastIndexOf</a> methods<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="sqrt
+"></A>
+<A NAME="16857">
+<H1> sqrt
+</H1>
+</A>
+
+<A NAME="16859">
+Method. Returns the square root of a number.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="736">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="738">
+<PRE>Math.sqrt(<I>number</I>)</PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="5674">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="740">
+<I>number</I> is any non-negative numeric expression or a property of an existing object.<P></A>
+
+</UL><A NAME="Method of
+"></A>
+<A NAME="742">
+<H3> Method of
+</H3>
+</A>
+
+<A NAME="744">
+<a href="ref_m-q.htm#175987">Math</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="87077">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="87078">
+Navigator 2.0<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="746">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="748">
+If the value of <I>number</I> is outside the required range, <B>sqrt</B> returns zero.<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="750">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="29335">
+The following function returns the square root of the variable <I>x:</I><P></A>
+<A NAME="29336">
+<PRE>function getRoot(x) {<br>&nbsp;&nbsp;&nbsp;return Math.sqrt(x)<br>}</PRE>
+</A>
+<A NAME="29337">
+If you pass <B>getRoot</B> the value nine, it returns three; if you pass it the value two, it returns 1.414213562373095.<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="SQRT1_2
+"></A>
+<A NAME="754">
+<H1> SQRT1_2
+</H1>
+</A>
+
+<A NAME="756">
+Property. The square root of one-half; equivalently, one over the square root of two, approximately 0.707.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="758">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="760">
+<PRE>Math.SQRT1_2</PRE>
+</A>
+
+</UL><A NAME="Property of
+"></A>
+<A NAME="762">
+<H3> Property of
+</H3>
+</A>
+
+<A NAME="764">
+<a href="ref_m-q.htm#175987">Math</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="87118">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="87119">
+Navigator 2.0<P></A>
+
+</UL><A NAME="Tainted?
+"></A>
+<A NAME="111845">
+<H3> Tainted?
+</H3>
+</A>
+
+<A NAME="111846">
+No<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="766">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="768">
+Because <I>SQRT1_2</I> is a constant, it is a read-only property of <I>Math</I>.<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="770">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="28596">
+The following function returns one over the square root of two:<P></A>
+<A NAME="28597">
+<PRE>function getRoot1_2() {<br>&nbsp;&nbsp;&nbsp;return Math.SQRT1_2<br>}</PRE>
+</A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="776">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="778">
+<a href="ref_d-e.htm#48461">E</a>, <a href="ref_h-l.htm#768">LN2</a>, <a href="ref_h-l.htm#794">LN10</a>, <a href="ref_h-l.htm#1042">LOG2E</a>, <a href="ref_h-l.htm#1042">LOG2E</a>, <a href="ref_m-q.htm#178032">PI</a>, <a href="ref_s-s.htm#780">SQRT2</a> properties<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="SQRT2
+"></A>
+<A NAME="780">
+<H1> SQRT2
+</H1>
+</A>
+
+<A NAME="782">
+Property. The square root of two, approximately 1.414.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="784">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="786">
+<PRE>Math.SQRT2</PRE>
+</A>
+
+</UL><A NAME="Property of
+"></A>
+<A NAME="788">
+<H3> Property of
+</H3>
+</A>
+
+<A NAME="790">
+<a href="ref_m-q.htm#175987">Math</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="87188">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="87189">
+Navigator 2.0<P></A>
+
+</UL><A NAME="Tainted?
+"></A>
+<A NAME="111853">
+<H3> Tainted?
+</H3>
+</A>
+
+<A NAME="111854">
+No<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="792">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="794">
+Because <I>SQRT2</I> is a constant, it is a read-only property of <I>Math</I>.<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="796">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="28826">
+The following function returns the square root of two:<P></A>
+<A NAME="28827">
+<PRE>function getRoot2() {<br>&nbsp;&nbsp;&nbsp;return Math.SQRT2<br>}</PRE>
+</A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="802">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="804">
+<a href="ref_d-e.htm#48461">E</a>, <a href="ref_h-l.htm#768">LN2</a>, <a href="ref_h-l.htm#794">LN10</a>, <a href="ref_h-l.htm#1042">LOG2E</a>, <a href="ref_h-l.htm#1042">LOG2E</a>, <a href="ref_m-q.htm#178032">PI</a>, <a href="ref_s-s.htm#754">SQRT1_2</a> properties<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="src
+"></A>
+<A NAME="79472">
+<H1> src
+</H1>
+</A>
+
+<A NAME="79476">
+Property. A string specifying the URL of an image to be displayed in a document.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="79477">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="79478">
+<PRE><I>imageName</I>.src</PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="79479">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="79480">
+<I>imageName</I> is either the name of an <I>Image</I> object or an element in the <I>images</I> array.<P></A>
+
+</UL><A NAME="Property of
+"></A>
+<A NAME="79481">
+<H3> Property of
+</H3>
+</A>
+
+<A NAME="79482">
+<a href="ref_h-l.htm#90746">Image</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="79483">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="79484">
+Navigator 3.0<P></A>
+
+</UL><A NAME="Tainted?
+"></A>
+<A NAME="111738">
+<H3> Tainted?
+</H3>
+</A>
+
+<A NAME="111739">
+No<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="79485">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="79486">
+The <I>src</I> property initially reflects the SRC attribute of the &lt;IMG&gt; tag. Setting the <I>src</I> property begins loading the new URL into the image area (and aborts the transfer of any image data that is already loading into the same area). Therefore, if you plan to alter the <I>lowsrc</I> property, you should do so before setting the <I>src</I> property. If the URL in the <I>src</I> property references an image that is not the same size as the image cell it is loaded into, the source image is scaled to fit.<P></A>
+<A NAME="79487">
+When you change the <I>src</I> property of a displayed image, the new image you specify is displayed in the area defined for the original image. For example, suppose an <I>Image</I> object originally displays the file <code>beluga.gif</code>:<P></A>
+<A NAME="79488">
+<PRE>&lt;IMG NAME="myImage" SRC="beluga.gif" ALIGN="left"&gt;</PRE>
+</A>
+<A NAME="79489">
+If you set <code>myImage.src='seaotter.gif'</code>, the image <code>seaotter.gif</code> is scaled to fit in the same space originally used by <code>beluga.gif</code>, even if <code>seaotter.gif</code> is not the same size as <code>beluga.gif</code>.<P></A>
+<A NAME="79490">
+You can change the <I>src</I> property at any time.<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="79491">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="79492">
+The following example displays an image and three radio buttons. The user can click the radio buttons to choose which image is displayed. Each image also uses the <I>lowsrc</I> property to display a low-resolution image.<P></A>
+<A NAME="79493">
+<PRE>&lt;SCRIPT&gt;<br>function displayImage(lowRes,highRes) {<br>&nbsp;&nbsp;&nbsp;document.images[0].lowsrc=lowRes<br>&nbsp;&nbsp;&nbsp;document.images[0].src=highRes<br>}<br>&lt;/SCRIPT&gt;<br><br>&lt;FORM NAME="imageForm"&gt;<br>&lt;B&gt;Choose an image:&lt;/B&gt;<br>&lt;BR&gt;&lt;INPUT TYPE="radio" NAME="imageChoice" VALUE="image1" CHECKED<br>&nbsp;&nbsp;&nbsp;onClick="displayImage('f15el.gif','f15e.gif')"&gt;F-15 Eagle<br>&lt;BR&gt;&lt;INPUT TYPE="radio" NAME="imageChoice" VALUE="image2"<br>&nbsp;&nbsp;&nbsp;onClick="displayImage('f15e2l.gif','f15e2.gif')"&gt;F-15 Eagle 2<br>&lt;BR&gt;&lt;INPUT TYPE="radio" NAME="imageChoice" VALUE="image3"<br>&nbsp;&nbsp;&nbsp;onClick="displayImage('ah64l.gif','ah64.gif')"&gt;AH-64 Apache<br><br>&lt;BR&gt;<br>&lt;IMG NAME="aircraft" SRC="f15e.gif" LOWSRC="f15el.gif" ALIGN="left" VSPACE="10"&gt;&lt;BR&gt;<br>&lt;/FORM&gt;</PRE>
+</A>
+<A NAME="79494">
+See also the examples for the <I><a href="ref_h-l.htm#90746">Image</a></I> object.<P></A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="79495">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="79496">
+<a href="ref_a-c.htm#77216">complete</a>, <a href="ref_h-l.htm#91598">lowsrc</a> properties<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="status
+"></A>
+<A NAME="73380">
+<H1> status
+</H1>
+</A>
+
+<A NAME="73382">
+Property. Specifies a priority or transient message in the status bar at the bottom of the window, such as the message that appears when a mouseOver event occurs over an anchor.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="73383">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="73384">
+<PRE><I>windowReference</I>.status</PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="73385">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="73386">
+<I>windowReference</I> is a valid way of referring to a window, as described in the <I>window</I> object.<P></A>
+
+</UL><A NAME="Property of
+"></A>
+<A NAME="73387">
+<H3> Property of
+</H3>
+</A>
+
+<A NAME="73391">
+<a href="ref_t-z.htm#67013">window object</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="87457">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="87458">
+Navigator 2.0<P></A>
+
+</UL><A NAME="Tainted?
+"></A>
+<A NAME="111754">
+<H3> Tainted?
+</H3>
+</A>
+
+<A NAME="111755">
+Yes<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="73392">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="73393">
+Do not confuse the <I>status</I> property with the <I>defaultStatus</I> property. The <I>defaultStatus</I> property reflects the default message displayed in the status bar.<P></A>
+<A NAME="73394">
+You can set the <I>status</I> property at any time. You must return true if you want to set the <I>status</I> property in the onMouseOver event handler.<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="73395">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="73396">
+Suppose you have created a JavaScript function called <B>pickRandomURL</B> that lets you select a URL at random. You can use the onClick event handler of an anchor to specify a value for the HREF attribute of the anchor dynamically, and the onMouseOver event handler to specify a custom message for the window in the <I>status</I> property:<P></A>
+<A NAME="73397">
+<PRE>&lt;A HREF=""<br>&nbsp;&nbsp;&nbsp;onClick="this.href=pickRandomURL()"<br>&nbsp;&nbsp;&nbsp;onMouseOver="self.status='Pick a random URL'; return true"&gt;<br>Go!&lt;/A&gt;</PRE>
+</A>
+<A NAME="73398">
+In the preceding example, the <I>status</I> property of the window is assigned to the window's <I>self</I> property, as <code>self.status</code>. As this example shows, you must return true to set the <I>status</I> property in the onMouseOver event handler.<P></A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="73399">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="73403">
+<a href="ref_d-e.htm#46891">defaultStatus</a> property<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="strike
+"></A>
+<A NAME="838">
+<H1> strike
+</H1>
+</A>
+
+<A NAME="840">
+Method. Causes a string to be displayed as struck-out text, as if it were in a &lt;STRIKE&gt; tag.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="842">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="844">
+<PRE><I>stringName</I>.strike()</PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="5691">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="846">
+<I>stringName</I> is any string or a property of an existing object.<P></A>
+
+</UL><A NAME="Method of
+"></A>
+<A NAME="848">
+<H3> Method of
+</H3>
+</A>
+
+<A NAME="850">
+<a href="ref_s-s.htm#870">String</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="87564">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="87565">
+Navigator 2.0<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="852">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="854">
+Use the <B>strike</B> method with the <B>write</B> or <B>writeln</B> methods to format and display a string in a document.<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="856">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="858">
+The following example uses <I>string</I> methods to change the formatting of a string:<P></A>
+<A NAME="860">
+<PRE>var worldString="Hello, world"<br><br>document.write(worldString.blink())<br>document.write("&lt;P&gt;" + worldString.bold())<br>document.write("&lt;P&gt;" + worldString.italics())<br>document.write("&lt;P&gt;" + worldString.strike())</PRE>
+</A>
+<A NAME="862">
+The previous example produces the same output as the following HTML:<P></A>
+<A NAME="864">
+<PRE>&lt;BLINK&gt;Hello, world&lt;/BLINK&gt;<br>&lt;P&gt;&lt;B&gt;Hello, world&lt;/B&gt;<br>&lt;P&gt;&lt;I&gt;Hello, world&lt;/I&gt;<br>&lt;P&gt;&lt;STRIKE&gt;Hello, world&lt;/STRIKE&gt;</PRE>
+</A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="866">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="868">
+<a href="ref_a-c.htm#43075">blink</a>, <a href="ref_a-c.htm#43258">bold</a>, <a href="ref_h-l.htm#422">italics</a> methods<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="String
+"></A>
+<A NAME="870">
+<H1> String
+</H1>
+</A>
+
+<A NAME="872">
+Object. A series of characters.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="874">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="98050">
+To create a <I>String</I> object:<P></A>
+<A NAME="98051">
+<PRE><I>stringObjectName</I> = new String(<I>string</I>)</PRE>
+</A>
+<A NAME="876">
+To use a <I>String</I> object:<P></A>
+<A NAME="878">
+<PRE>1. <I>stringName</I>.<I>propertyName<br></I>2. <I>stringName</I>.<I>methodName</I>(<I>parameters</I>)</PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="5696">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="98125">
+<I>stringObjectName</I> is the name of a new <I>String</I> object.<P></A>
+<A NAME="98216">
+<I>string</I> is any string.<P></A>
+<A NAME="880">
+<I>stringName</I> is the name of a <I>String</I> object or string variable.<P></A>
+<A NAME="882">
+<I>propertyName</I> is one of the properties listed below.<P></A>
+<A NAME="884">
+<I>methodName</I> is one of the methods listed below.<P></A>
+
+</UL><A NAME="Property of
+"></A>
+<A NAME="886">
+<H3> Property of
+</H3>
+</A>
+
+<A NAME="888">
+None<P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="87660">
+<H3> Implemented in
+</H3>
+</A>
+
+<ul><A NAME="87661">
+<LI>Navigator 2.0
+</A><A NAME="98218">
+<LI>Navigator 3.0: added String() constructor (in previous releases, you construct strings by quoting characters); added <I>prototype</I> property; added <B>split</B> method; added ability to pass strings among scripts in different windows or frames (in previous releases, you had to add an empty string to another window's string to reference it)
+</A>
+</UL><A NAME="Description
+"></A>
+<A NAME="890">
+<H3> Description
+</H3>
+</A>
+
+</ul><A NAME="892">
+The <I>String</I> object is a built-in JavaScript object.<P></A>
+<A NAME="894">
+A string can be represented as a literal enclosed by single or double quotation marks; for example, "Netscape" or 'Netscape'.<P></A>
+
+</UL><A NAME="Properties
+"></A>
+<A NAME="896">
+<H3> Properties
+</H3>
+</A>
+
+<A NAME="99012">
+The <I>String</I> object has the following properties:
+
+<P><TABLE BORDER="2">
+<CAPTION></CAPTION>
+<tr align=left valign=bottom><th><b><A NAME="98256">
+Property</A><B><th><b><A NAME="98258">
+Description</A><B>
+<tr align=left valign=top><td><A NAME="98353">
+<a href="ref_h-l.htm#84418">length</a>
+</A><BR>
+
+<td><A NAME="98355">
+Reflects the length of the string
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="98260">
+<a href="ref_m-q.htm#178711">prototype</a>
+</A><BR>
+
+<td><A NAME="98262">
+Lets you add properties to a <I>String</I> object.
+</A><BR>
+
+
+
+
+</TABLE>
+
+<TABLE>
+<TR><TD>
+</TABLE>
+
+
+<P></A>
+
+</UL><A NAME="Methods
+"></A>
+<A NAME="31828">
+<H3> Methods
+</H3>
+</A>
+
+<A NAME="39234">
+The <I>String</I> object has the following methods:
+
+<P><TABLE BORDER="2">
+<CAPTION></CAPTION>
+<tr align=left valign=top><td><A NAME="39321">
+<LI><a href="ref_a-c.htm#42644">anchor method</a>
+</A><A NAME="39325">
+<LI><a href="ref_a-c.htm#43045">big</a>
+</A><A NAME="39329">
+<LI><a href="ref_a-c.htm#43075">blink</a>
+</A><A NAME="39333">
+<LI><a href="ref_a-c.htm#43258">bold</a>
+</A><A NAME="39337">
+<LI><a href="ref_a-c.htm#43448">charAt</a>
+</A><A NAME="123197">
+<LI><a href="ref_d-e.htm#573">eval</a>
+</A><A NAME="39341">
+<LI><a href="ref_f-g.htm#136">fixed</a>
+</A><A NAME="115841">
+<LI><a href="ref_f-g.htm#224">fontcolor</a>
+</A>
+<td><A NAME="123393">
+<LI><a href="ref_f-g.htm#258">fontsize</a>
+</A><A NAME="123397">
+<LI><a href="ref_h-l.htm#360">indexOf</a>
+</A><A NAME="123401">
+<LI><a href="ref_h-l.htm#422">italics</a>
+</A><A NAME="39446">
+<LI><a href="ref_h-l.htm#454">lastIndexOf</a><a href="ref_h-l.htm#576">link method</a>
+</A><A NAME="39450">
+<LI><a href="ref_s-s.htm#700">small</a>
+</A><A NAME="98497">
+<LI><a href="ref_s-s.htm#79330">split</a>
+</A><A NAME="39454">
+<LI><a href="ref_s-s.htm#838">strike</a>
+</A>
+<td><A NAME="123257">
+<LI><a href="ref_s-s.htm#958">sub</a>
+</A><A NAME="123261">
+<LI><a href="ref_s-s.htm#1106">substring</a>
+</A><A NAME="123265">
+<LI><a href="ref_s-s.htm#1136">sup</a>
+</A><A NAME="123269">
+<LI><a href="ref_t-z.htm#491">toLowerCase</a>
+</A><A NAME="123273">
+<LI><a href="ref_t-z.htm#82391">toUpperCase</a>
+</A><A NAME="123277">
+<LI><a href="ref_t-z.htm#70978">toString</a>
+</A><A NAME="123250">
+<LI><a href="ref_t-z.htm#91188">valueOf</a>
+</A>
+
+
+
+</TABLE>
+
+<TABLE>
+<TR><TD>
+</TABLE>
+
+
+<P></A>
+
+</UL><A NAME="Event handlers
+"></A>
+<A NAME="940">
+<H3> Event handlers
+</H3>
+</A>
+
+<A NAME="942">
+None.<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="944">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="946">
+<B>Example 1: String variable.</B> The following statement creates a string variable:<P></A>
+<A NAME="59501">
+<PRE>var last_name = "Schaefer"</PRE>
+</A>
+<A NAME="59502">
+<B>Example 2: String object properties.</B> The following statements evaluate to eight, "SCHAEFER," and "schaefer":<P></A>
+<A NAME="59503">
+<PRE>last_name.length<br>last_name.toUpperCase()<br>last_name.toLowerCase()</PRE>
+</A>
+<A NAME="98500">
+<B>Example 3: Pass a string among scripts in different windows or frames.</B> The following code creates two string variables and opens a second window:<P></A>
+<A NAME="98538">
+<PRE>var lastName = new String("Schaefer")<br>var firstName = new String ("Jesse")<br>empWindow=window.open('string2.html','window1','width=300,height=300')</PRE>
+</A>
+<A NAME="98539">
+If the HTML source for the second window (<code>string2.html</code>) creates two string variables, <I>empLastName</I> and <I>empFirstName</I>, the following code in the first window assigns values to the second window's variables:<P></A>
+<A NAME="98540">
+<PRE>empWindow.empFirstName=firstName<br>empWindow.empLastName=lastName</PRE>
+</A>
+<A NAME="98541">
+The following code in the first window displays the values of the second window's variables:<P></A>
+<A NAME="98542">
+<PRE>alert('empFirstName in empWindow is ' + empWindow.empFirstName)<br>alert('empLastName in empWindow is ' + empWindow.empLastName)</PRE>
+</A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="70641">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="70648">
+<a href="ref_t-z.htm#65229">Text object</a>, <a href="ref_t-z.htm#65386">Textarea</a> object<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="sub
+"></A>
+<A NAME="958">
+<H1> sub
+</H1>
+</A>
+
+<A NAME="960">
+Method. Causes a string to be displayed as a subscript, as if it were in a &lt;SUB&gt; tag.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="962">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="964">
+<PRE><I>stringName</I>.sub()</PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="5701">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="966">
+<I>stringName</I> is any string or a property of an existing object.<P></A>
+
+</UL><A NAME="Method of
+"></A>
+<A NAME="968">
+<H3> Method of
+</H3>
+</A>
+
+<A NAME="970">
+<a href="ref_s-s.htm#870">String</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="88033">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="88034">
+Navigator 2.0<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="972">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="974">
+Use the <B>sub</B> method with the <B>write</B> or <B>writeln</B> methods to format and display a string in a document.<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="976">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="978">
+The following example uses the <B>sub</B> and <B>sup</B> methods to format a string:<P></A>
+<A NAME="980">
+<PRE>var superText="superscript"<br>var subText="subscript"<br><br>document.write("This is what a " + superText.sup() + " looks like.")<br>document.write("&lt;P&gt;This is what a " + subText.sub() + " looks like.")</PRE>
+</A>
+<A NAME="982">
+The previous example produces the same output as the following HTML:<P></A>
+<A NAME="984">
+<PRE>This is what a &lt;SUP&gt;superscript&lt;/SUP&gt; looks like.<br>&lt;P&gt;This is what a &lt;SUB&gt;subscript&lt;/SUB&gt; looks like.</PRE>
+</A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="986">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="988">
+<a href="ref_s-s.htm#1136">sup</a> method<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="submit method
+"></A>
+<A NAME="73411">
+<H1> submit method
+</H1>
+</A>
+
+<A NAME="73413">
+Method. Submits a form.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="73414">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="73415">
+<PRE><I>formName</I>.submit()</PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="73416">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="73417">
+<I>formName</I> is the name of any form or an element in the <I>forms</I> array.<P></A>
+
+</UL><A NAME="Method of
+"></A>
+<A NAME="73418">
+<H3> Method of
+</H3>
+</A>
+
+<A NAME="73422">
+<a href="ref_f-g.htm#60597">Form object</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="88125">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="88126">
+Navigator 2.0<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="73423">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="73424">
+The <B>submit</B> method submits the specified form. It performs the same action as a submit button.<P></A>
+<A NAME="73425">
+Use the submit method to send data back to an HTTP server. The <B>submit</B> method returns the data using either "get" or "post," as specified in the <a href="ref_m-q.htm#176192">method</a> property.<P></A>
+<A NAME="116420">
+The <B>submit</B> method fails without notice, if the form's <I>action</I> is a mailto:, news:, or snews: URL. This is for security purposes. Users can submit forms with such URLs by clicking a submit button, but a confirming dialog will tell them that they are about to give away private or sensitive information.<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="116380">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="73430">
+The following example submits a form called <I>musicChoice:</I><P></A>
+<A NAME="73431">
+<PRE>document.musicChoice.submit()</PRE>
+</A>
+<A NAME="73432">
+If <I>musicChoice</I> is the first form created, you also can submit it as follows:<P></A>
+<A NAME="73433">
+<PRE>document.forms[0].submit()</PRE>
+</A>
+<A NAME="73437">
+See also the example for the <a href="ref_f-g.htm#60597">Form object</a>.<P></A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="73438">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="73445">
+<a href="ref_s-s.htm#73448">Submit object</a>, <a href="ref_m-q.htm#177477">onSubmit</a> event handler<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="Submit object
+"></A>
+<A NAME="73448">
+<H1> Submit object
+</H1>
+</A>
+
+<A NAME="73450">
+Object. A submit button on an HTML form. A submit button causes a form to be submitted.<P></A>
+
+</UL><A NAME="HTML syntax
+"></A>
+<A NAME="73451">
+<H3> HTML syntax
+</H3>
+</A>
+
+<A NAME="73452">
+To define a submit button, use standard HTML syntax with the addition of JavaScript event handlers:<P></A>
+<A NAME="73453">
+<PRE>&lt;INPUT<br>&nbsp;&nbsp;&nbsp;TYPE="submit"<br>&nbsp;&nbsp;&nbsp;NAME="<I>submitName</I>"<br>&nbsp;&nbsp;&nbsp;VALUE="<I>buttonText</I>"<br>&nbsp;&nbsp;&nbsp;[onBlur="<I>handlerText</I>"]<br>&nbsp;&nbsp;&nbsp;[onClick="<I>handlerText</I>"]<br>&nbsp;&nbsp;&nbsp;[onFocus="<I>handlerText</I>"]&gt;</PRE>
+</A>
+
+</UL><A NAME="HTML attributes
+"></A>
+<A NAME="73454">
+<H3> HTML attributes
+</H3>
+</A>
+
+<A NAME="73455">
+<I>NAME="submitName"</I> specifies the name of the <I>Submit</I> object. You can access this value using the <I>name</I> property, and you can use this name when indexing the <I>elements</I> array.<P></A>
+<A NAME="73456">
+<I>VALUE="buttonText"</I> specifies the label to display on the button face. You can access this value using the <I>value</I> property.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="73457">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="73458">
+To use a <I>Submit</I> object's properties and methods:<P></A>
+<A NAME="73459">
+<PRE>1. <I>submitName</I>.<I>propertyName<br></I>2. <I>submitName</I>.<I>methodName</I>(<I>parameters</I>)<br>3. <I>formName</I>.elements[<I>index</I>].<I>propertyName<br></I>4. <I>formName</I>.elements[<I>index</I>].<I>methodName</I>(<I>parameters</I>)</PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="73460">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="73461">
+<I>submitName</I> is the value of the NAME attribute of a <I>Submit</I> object.<P></A>
+<A NAME="73462">
+<I>formName</I> is either the value of the NAME attribute of a <I>Form</I> object or an element in the <I>forms</I> array.<P></A>
+<A NAME="73463">
+<I>index</I> is an integer representing a <I>Submit</I> object on a form or the name of a <I>Submit</I> object as specified by the NAME attribute.<P></A>
+<A NAME="73464">
+<I>propertyName</I> is one of the properties listed below.<P></A>
+<A NAME="73465">
+<I>methodName</I> is one of the methods listed below.<P></A>
+
+</UL><A NAME="Property of
+"></A>
+<A NAME="73466">
+<H3> Property of
+</H3>
+</A>
+
+<A NAME="73470">
+<a href="ref_f-g.htm#60597">Form object</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="88197">
+<H3> Implemented in
+</H3>
+</A>
+
+<ul><A NAME="88198">
+<LI>Navigator 2.0
+</A><A NAME="98002">
+<LI>Navigator 3.0: added <I>type</I> property; added onBlur and onFocus event handlers; added <B>blur</B> and <B>focus</B> methods
+</A>
+</UL><A NAME="Description
+"></A>
+<A NAME="73471">
+<H3> Description
+</H3>
+</A>
+
+</ul><A NAME="73479">
+A <I>Submit</I> object on a form looks as follows:<p>
+
+<FORM>
+<P><INPUT TYPE="submit" VALUE="Done">
+</FORM>
+
+<P></A>
+<A NAME="73480">
+A <I>Submit</I> object is a form element and must be defined within a &lt;FORM&gt; tag.<P></A>
+<A NAME="73481">
+Clicking a submit button submits a form to the URL specified by the form's <I>action</I> property. This action always loads a new page into the client; it may be the same as the current page, if the action so specifies or is not specified.<P></A>
+<A NAME="73482">
+The submit button's onClick event handler cannot prevent a form from being submitted; instead, use the form's onSubmit event handler or use the <B>submit</B> method instead of a <I>Submit</I> object. See the examples for the <I>Form</I> object.<P></A>
+<A NAME="116368">
+If a form contains only one element, a <I>Text</I> object, then when the user enters a value and presses Return, the form submits. (This is a standard HTML feature.)<P></A>
+
+</UL><A NAME="Properties
+"></A>
+<A NAME="73483">
+<H3> Properties
+</H3>
+</A>
+
+<A NAME="73507">
+The <I>Submit</I> object has the following properties:
+
+<P><TABLE BORDER="2">
+<CAPTION></CAPTION>
+<tr align=left valign=bottom><th><b><A NAME="73490">
+Property</A><B><th><b><A NAME="73492">
+Description</A><B>
+<tr align=left valign=top><td><A NAME="118878">
+<a href="ref_f-g.htm#97350">form property</a>
+</A><BR>
+
+<td><A NAME="118880">
+Specifies the form containing the <I>Submit</I> object
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="73497">
+<a href="ref_m-q.htm#176636">name</a>
+</A><BR>
+
+<td><A NAME="73499">
+Reflects the NAME attribute
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="97994">
+<a href="ref_t-z.htm#71171">type</a>
+</A><BR>
+
+<td><A NAME="97996">
+Reflects the TYPE attribute
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="73504">
+<a href="ref_t-z.htm#66860">value</a>
+</A><BR>
+
+<td><A NAME="73506">
+Reflects the VALUE attribute
+</A><BR>
+
+
+
+
+</TABLE>
+
+<TABLE>
+<TR><TD>
+</TABLE>
+
+
+<P></A>
+
+</UL><A NAME="Methods
+"></A>
+<A NAME="73508">
+<H3> Methods
+</H3>
+</A>
+
+<A NAME="118473">
+The <I>Submit</I> object has the following methods:
+
+<P><TABLE BORDER="2">
+<CAPTION></CAPTION>
+<tr align=left valign=top><td><A NAME="118455">
+<LI><a href="ref_a-c.htm#62474">blur</a>
+</A><A NAME="118459">
+<LI><a href="ref_a-c.htm#63859">click</a>
+</A><A NAME="123211">
+<LI><a href="ref_d-e.htm#573">eval</a>
+</A>
+<td><A NAME="118468">
+<LI><a href="ref_f-g.htm#59872">focus</a>
+</A><A NAME="123227">
+<LI><a href="ref_t-z.htm#70978">toString</a>
+</A><A NAME="118472">
+<LI><a href="ref_t-z.htm#91188">valueOf</a>
+</A>
+
+
+
+</TABLE>
+
+<TABLE>
+<TR><TD>
+</TABLE>
+
+
+<P></A>
+
+</UL><A NAME="Event handlers
+"></A>
+<A NAME="73513">
+<H3> Event handlers
+</H3>
+</A>
+
+<ul><A NAME="118201">
+<LI><a href="ref_m-q.htm#177100">onBlur</a>
+</A><A NAME="118267">
+<LI><a href="ref_m-q.htm#177180">onClick</a>
+</A><A NAME="73517">
+<LI><a href="ref_m-q.htm#177278">onFocus</a>
+</A>
+</UL><A NAME="Examples
+"></A>
+<A NAME="73518">
+<H3> Examples
+</H3>
+</A>
+
+</ul><A NAME="73519">
+The following example creates a <I>Submit</I> object called <I>submitButton</I>. The text "Done" is displayed on the face of the button.<P></A>
+<A NAME="73520">
+<PRE>&lt;INPUT TYPE="submit" NAME="submitButton" VALUE="Done"&gt;</PRE>
+</A>
+<A NAME="73524">
+See also the examples for the <a href="ref_f-g.htm#60597">Form object</a>.<P></A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="73525">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="73541">
+<a href="ref_a-c.htm#62518">Button</a> object, <a href="ref_f-g.htm#60597">Form object</a>, <a href="ref_r-r.htm#26487">Reset object</a>; <a href="ref_s-s.htm#73411">submit method</a>; <a href="ref_m-q.htm#177477">onSubmit</a> event handler<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="substring
+"></A>
+<A NAME="1106">
+<H1> substring
+</H1>
+</A>
+
+<A NAME="1108">
+Method. Returns a subset of a <I>String</I> object.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="1110">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="1112">
+<PRE><I>stringName</I>.substring(<I>indexA</I>, <I>indexB</I>)</PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="5764">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="1114">
+<I>stringName</I> is any string or a property of an existing object.<P></A>
+<A NAME="1116">
+<I>indexA</I> is any integer from zero to <I>stringName</I>.length - 1, or a property of an existing object.<P></A>
+<A NAME="1118">
+<I>indexB</I> is any integer from zero to <I>stringName</I>.length, or a property of an existing object.<P></A>
+
+</UL><A NAME="Method of
+"></A>
+<A NAME="1120">
+<H3> Method of
+</H3>
+</A>
+
+<A NAME="1122">
+<a href="ref_s-s.htm#870">String</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="88261">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="88262">
+Navigator 2.0<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="1124">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="1126">
+Characters in a string are indexed from left to right. The index of the first character is zero, and the index of the last character is <I>stringName</I>.length - 1.<P></A>
+<A NAME="1128">
+<UL>
+<LI>If <I>indexA</I> is less than <I>indexB</I>, the <B>substring</B> method returns the subset starting with the character at <I>indexA</I> and ending with the character before <I>indexB</I>.
+
+<LI>If <I>indexA</I> is greater than <I>indexB</I>, the <B>substring</B> method returns the subset starting with the character before <I>indexB</I> and ending with the character at <I>indexA</I>.
+
+<LI>If <I>indexA</I> is equal to <I>indexB</I>, the <B>substring</B> method returns the empty string.
+</A>
+</UL>
+
+<A NAME="Examples
+"></A>
+<A NAME="1130">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="1132">
+<B>Example 1.</B> The following example uses <B>substring</B> to display characters from the string "Netscape":<P></A>
+<A NAME="1134">
+<PRE>
+var anyString="Netscape"
+
+//Displays "Net"
+document.write(anyString.substring(0,3))
+document.write(anyString.substring(3,0))
+//Displays "cap"
+document.write(anyString.substring(4,7))
+document.write(anyString.substring(7,4))
+//Displays "Netscap"
+document.write(anyString.substring(0,7))
+//Displays "Netscape"
+document.write(anyString.substring(0,8))
+document.write(anyString.substring(0,10))
+</PRE>
+</A>
+<A NAME="118753">
+<B>Example 2.</B> The following example replaces a substring within a string. It will replace both individual characters and substrings. The function call at the end of the example changes the string "Brave New World" into "Brave New Web".<P></A>
+<A NAME="118595">
+<PRE>function replaceString(oldS,newS,fullS) {<br>// Replaces oldS with newS in the string fullS<br>&nbsp;&nbsp;&nbsp;for (var i=0; i&lt;fullS.length; i++) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (fullS.substring(i,i+oldS.length) == oldS) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fullS = fullS.substring(0,i)+newS+fullS.substring(i+oldS.length,fullS.length)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;return fullS<br>}</PRE>
+</A>
+<A NAME="118785">
+<PRE>replaceString("World","Web","Brave New World")</PRE>
+</A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="suffixes
+"></A>
+<A NAME="79636">
+<H1> suffixes
+</H1>
+</A>
+
+<A NAME="79643">
+Property. A string listing possible file suffixes (also known as file name extensions) for the MIME type.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="103582">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="103583">
+<PRE>navigator.mimeTypes[<I>index</I>].suffixes</PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="103584">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="103585">
+<I>index</I> is either an integer representing a MIME type supported by the client or a string containing the type of a <I>MimeType</I> object (from the <I>type</I> property).<P></A>
+
+</UL><A NAME="Property of
+"></A>
+<A NAME="79646">
+<H3> Property of
+</H3>
+</A>
+
+<A NAME="79647">
+<a href="ref_m-q.htm#176261">MimeType</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="79648">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="79649">
+Navigator 3.0<P></A>
+
+</UL><A NAME="Tainted?
+"></A>
+<A NAME="111775">
+<H3> Tainted?
+</H3>
+</A>
+
+<A NAME="111776">
+No<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="79650">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="110198">
+The <I>suffixes</I> property is a string consisting of each valid suffix (typically three letters long) separated by commas. For example, the suffixes for the "audio/x-midi" MIME type are "mid, midi".<P></A>
+<A NAME="103570">
+<I>suffixes </I>is a read-only property.<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="103493">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="103597">
+See the examples for the <I><a href="ref_m-q.htm#176261">MimeType</a></I> object.<P></A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="79654">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="103540">
+<a href="ref_d-e.htm#82624">description</a>, <a href="ref_d-e.htm#64183">enabledPlugin</a>, <a href="ref_t-z.htm#71171">type</a> properties<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="sup
+"></A>
+<A NAME="1136">
+<H1> sup
+</H1>
+</A>
+
+<A NAME="1138">
+Method. Causes a string to be displayed as a superscript, as if it were in a &lt;SUP&gt; tag.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="1140">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="1142">
+<PRE><I>stringName</I>.sup()</PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="5772">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="1144">
+<I>stringName</I> is any string or a property of an existing object.<P></A>
+
+</UL><A NAME="Method of
+"></A>
+<A NAME="1146">
+<H3> Method of
+</H3>
+</A>
+
+<A NAME="1148">
+<a href="ref_s-s.htm#870">String</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="88292">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="88293">
+Navigator 2.0<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="1150">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="1152">
+Use the <B>sup</B> method with the <B>write</B> or <B>writeln</B> methods to format and display a string in a document.<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="1154">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="1156">
+The following example uses the <B>sub</B> and <B>sup</B> methods to format a string:<P></A>
+<A NAME="1158">
+<PRE>var superText="superscript"<br>var subText="subscript"<br><br>document.write("This is what a " + superText.sup() + " looks like.")<br>document.write("&lt;P&gt;This is what a " + subText.sub() + " looks like.")</PRE>
+</A>
+<A NAME="1160">
+The previous example produces the same output as the following HTML:<P></A>
+<A NAME="1162">
+<PRE>This is what a &lt;SUP&gt;superscript&lt;/SUP&gt; looks like.<br>&lt;P&gt;This is what a &lt;SUB&gt;subscript&lt;/SUB&gt; looks like.</PRE>
+</A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="1164">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="1166">
+<a href="ref_s-s.htm#958">sub</a> method<P></A>
+
+<HR>
+<A HREF="ref_t-z.htm">[Next reference file]</A>
+

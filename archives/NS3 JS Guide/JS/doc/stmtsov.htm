@@ -1,0 +1,285 @@
+<BODY BGCOLOR="#FFFFFF">
+<A NAME="1001595">
+<P>
+</A><A NAME="1001596">
+<P>
+</A><A NAME="996824">
+<H1>Overview of JavaScript statements
+</H1>
+</A>
+
+<A NAME="1004992">
+
+<img src="graphics/stmtsova.gif">
+
+avaScript supports a compact set of statements that you can use to incorporate a great deal of interactivity in Web pages. The statements fall into the following categories:<P></A>
+<ul><A NAME="1004996">
+<LI><a href="stmtsov.htm#1004912">Conditional statement</a>: <B>if...else</B>
+</A><A NAME="1005000">
+<LI><a href="stmtsov.htm#1004245">Loop statements</a>: <B>for, while, break, and continue</B>
+</A><A NAME="1004226">
+<LI><a href="stmtsov.htm#1004285">Object manipulation statements and operators</a>: <B>for...in, new, this, and with</B>
+</A><A NAME="1004232">
+<LI><a href="stmtsov.htm#1004310">Comments</a>: single-line (<B>//</B>) and multiline (<B>/*...*/</B>)
+</A></ul><A NAME="1004236">
+The following sections provide a brief overview of each statement. See the statements reference for details.<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="Conditional statement"></A>
+<A NAME="1004912">
+<H1> Conditional statement</H1>
+</A>
+<A NAME="1004915">
+Use the <B>if</B> statement to perform certain statements if a logical condition is true; use the optional <B>else</B> clause to perform other statements if the condition is false. An <B>if</B> statement looks as follows:<P></A>
+<A NAME="1004241">
+<PRE><B>if</B> (<I>condition</I>) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>statements1</I> <br>[ } <B>else</B> {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>statements2</I> ]<br>}</PRE>
+</A>
+<A NAME="1004242">
+The condition can be any JavaScript expression that evaluates to true or false. The statements to be executed can be any JavaScript statements, including further nested <B>if</B> statements. If you want to use more than one statement after an <B>if</B> or <B>else</B> statement, you must enclose the statements in curly braces, {}.<P></A>
+<A NAME="1004243">
+<B>Example.</B> In the following example, the function <B>checkData</B> returns true if the number of characters in a <I>Text</I> object is three; otherwise, it displays an alert and returns false.<P></A>
+<A NAME="1004244">
+<PRE>function checkData () {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (document.form1.threeChar.value.length == 3) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return true<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} else {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert("Enter exactly three characters. " + &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.form1.threeChar.value + " is not valid.")<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return false<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>}</PRE>
+</A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="Loop statements"></A>
+<A NAME="1004245">
+<H1> Loop statements</H1>
+</A>
+<A NAME="1004246">
+A loop is a set of commands that executes repeatedly until a specified condition is met. JavaScript supports two loop statements: <B>for</B> and <B>while</B>. In addition, you can use the <B>break</B> and <B>continue</B> statements within loop statements.<P></A>
+<A NAME="1004247">
+Another statement, <B>for...in</B>, executes statements repeatedly but is used for object manipulation. See <a href="stmtsov.htm#1004285">"Object manipulation statements and operators"</a>.<P></A>
+
+<A NAME="for statement"></A>
+<A NAME="1004248">
+<H2> for statement</H2>
+</A>
+
+<A NAME="1004249">
+A <B>for</B> loop repeats until a specified condition evaluates to false. The JavaScript <B>for</B> loop is similar to the Java and C <B>for</B> loop. A <B>for</B> statement looks as follows:<P></A>
+<A NAME="1004250">
+<PRE><B>for</B> ([<I>initial-expression</I>]; [<I>condition</I>]; [<I>increment-expression</I>]) {<br>&nbsp;&nbsp;&nbsp;<I>statements<br></I>}</PRE>
+</A>
+<A NAME="1004251">
+When a <B>for</B> loop executes, the following occurs:<P></A>
+<ol>
+<a name="1004252">
+<li>The initializing expression <I>initial-expression</I>, if any, is executed. This expression usually initializes one or more loop counters, but the syntax allows an expression of any degree of complexity.
+</a>
+
+<a name="1004756">
+<li>The <I>condition</I> expression is evaluated. If the value of <I>condition</I> is true, the loop statements execute. If the value of <I>condition</I> is false, the <B>for</B> loop terminates.
+</a>
+
+<a name="1004763">
+<li>The update expression <I>increment-expression</I> executes.
+</a>
+
+<a name="1004774">
+<li>The <I>statements</I> execute, and control returns to step 2.
+</a>
+
+</ol>
+<A NAME="1004256">
+<B>Example.</B> The following function contains a <B>for</B> statement that counts the number of selected options in a scrolling list (a <I>Select</I> object that allows multiple selections). The <B>for</B> statement declares the variable <I>i</I> and initializes it to zero. It checks that <I>i</I> is less than the number of options in the <I>Select</I> object, performs the succeeding <B>if</B> statement, and increments <I>i</I> by one after each pass through the loop.<P></A>
+<A NAME="1005426">
+<PRE>&lt;SCRIPT&gt;<br>function howMany(selectObject) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var numberSelected=0<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (var i=0; i &lt; selectObject.options.length; i++) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (selectObject.options[i].selected==true)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;numberSelected++<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return numberSelected<br>}<br>&lt;/SCRIPT&gt;<br>&lt;FORM NAME="selectForm"&gt;<br>&lt;P&gt;&lt;B&gt;Choose some music types, then click the button below:&lt;/B&gt;<br>&lt;BR&gt;&lt;SELECT NAME="musicTypes" MULTIPLE&gt;<br>&lt;OPTION SELECTED&gt; R&amp;B<br>&lt;OPTION&gt; Jazz<br>&lt;OPTION&gt; Blues<br>&lt;OPTION&gt; New Age<br>&lt;OPTION&gt; Classical<br>&lt;OPTION&gt; Opera<br>&lt;/SELECT&gt;<br>&lt;P&gt;&lt;INPUT TYPE="button" VALUE="How many are selected?"<br>onClick="alert ('Number of options selected: ' + howMany(document.selectForm.musicTypes))"&gt;<br>&lt;/FORM&gt;</PRE>
+</A>
+
+<A NAME="while statement"></A>
+<A NAME="1005429">
+<H2> while statement</H2>
+</A>
+
+<A NAME="1004259">
+A <B>while</B> statement repeats a loop as long as a specified condition evaluates to true. A <B>while</B> statement looks as follows:<P></A>
+<A NAME="1004260">
+<PRE><B>while</B> (<I>condition</I>) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>statements<br></I>}</PRE>
+</A>
+<A NAME="1004261">
+If the condition becomes false, the statements within the loop stop executing and control passes to the statement following the loop.<P></A>
+<A NAME="1004262">
+The condition test occurs only when the statements in the loop have been executed and the loop is about to be repeated. That is, the condition test is not continuous but is performed once at the beginning of the loop and again just following the last statement in <I>statements</I>, each time control passes through the loop.<P></A>
+<A NAME="1004263">
+<B>Example 1.</B> The following <B>while</B> loop iterates as long as <I>n</I> is less than three:<P></A>
+<A NAME="1004264">
+<PRE>n = 0<br>x = 0<br>while( n &lt; 3 ) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;n ++<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x += n<br>}</PRE>
+</A>
+<A NAME="1004265">
+With each iteration, the loop increments <I>n</I> and adds that value to <I>x</I>. Therefore, <I>x</I> and <I>n</I> take on the following values:<P></A>
+<ul><A NAME="1004266">
+<LI>After the first pass: <I>n</I> = 1 and <I>x</I> = 1
+</A><A NAME="1004267">
+<LI>After the second pass: <I>n</I> = 2 and <I>x</I> = 3
+</A><A NAME="1005036">
+<LI>After the third pass: <I>n</I> = 3 and <I>x</I> = 6
+</A></ul><A NAME="1005037">
+After completing the third pass, the condition <code>n &lt; 3</code> is no longer true, so the loop terminates.<P></A>
+<A NAME="1004270">
+<B>Example 2: infinite loop.</B> Make sure the condition in a loop eventually becomes false; otherwise, the loop will never terminate. The statements in the following <B>while</B> loop execute forever because the condition never becomes false:<P></A>
+<A NAME="1004271">
+<PRE>while (true) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert("Hello, world") }</PRE>
+</A>
+
+<A NAME="break statement"></A>
+<A NAME="1004272">
+<H2> break statement</H2>
+</A>
+
+<A NAME="1004273">
+The <B>break</B> statement terminates the current <B>while</B> or <B>for</B> loop and transfers program control to the statement following the terminated loop. A <B>break</B> statement looks as follows:<P></A>
+<A NAME="1004274">
+<PRE><B>break</B></PRE>
+</A>
+<A NAME="1004275">
+<B>Example.</B> The following function has a <B>break</B> statement that terminates the <B>while</B> loop when <I>i</I> is three, and then returns the value 3 * <I>x</I>.<P></A>
+<A NAME="1004276">
+<PRE>function testBreak(x) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var i = 0<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;while (i &lt; 6) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (i == 3)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i++<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return i*x<br>}</PRE>
+</A>
+
+<A NAME="continue statement"></A>
+<A NAME="1004277">
+<H2> continue statement</H2>
+</A>
+
+<A NAME="1004278">
+A <B>continue</B> statement terminates execution of the block of statements in a <B>while</B> or <B>for</B> loop and continues execution of the loop with the next iteration. A <B>continue</B> statement looks as follows:<P></A>
+<A NAME="1004279">
+<PRE><B>continue</B></PRE>
+</A>
+<A NAME="1004280">
+In contrast to the <B>break</B> statement, <B>continue</B> does not terminate the execution of the loop entirely. Instead,<P></A>
+<ul><A NAME="1004281">
+<LI>In a <B>while</B> loop, it jumps back to the <I>condition</I>.
+</A><A NAME="1004282">
+<LI>In a <B>for</B> loop, it jumps to the <I>increment-expression</I>.
+</A></ul><A NAME="1004283">
+<B>Example.</B> The following example shows a <B>while</B> loop with a <B>continue</B> statement that executes when the value of <I>i</I> is three. Thus, <I>n</I> takes on the values one, three, seven, and twelve.<P></A>
+<A NAME="1004284">
+<PRE>i = 0<br>n = 0<br>while (i &lt; 5) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i++<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (i == 3)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;continue<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;n += i<br>}</PRE>
+</A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="Object manipulation statements and operators"></A>
+<A NAME="1004285">
+<H1> Object manipulation statements and operators</H1>
+</A>
+<A NAME="1004286">
+JavaScript has several ways of manipulating objects: <B>new</B> operator, <B>this</B> keyword, <B>for...in</B> statement, and <B>with</B> statement.<P></A>
+
+<A NAME="new operator"></A>
+<A NAME="1005962">
+<H2> new operator</H2>
+</A>
+
+<A NAME="1005963">
+You can use the <B>new</B> operator to create an instance of a user-defined object type or of one of the built-in object types <I>Array, Boolean, Date, Function, Math, Number,</I> or <I>String.</I> Use <B>new</B> as follows:<P></A>
+<A NAME="1005964">
+<PRE><I>objectName</I> = <B>new</B> <I>objectType</I> ( <I>param1</I> [,<I>param2</I>] ...[,<I>paramN</I>] )</PRE>
+</A>
+<A NAME="1006050">
+The following example creates an <I>Array</I> object with 25 elements, then assigns values to the first three elements:<P></A>
+<A NAME="1006051">
+<PRE>musicTypes = new Array(25)<br>musicTypes[0] = "R&amp;B"<br>musicTypes[1] = "Blues"<br>musicTypes[2] = "Jazz"</PRE>
+</A>
+<A NAME="1006034">
+The following examples create several <I>Date</I> objects:<P></A>
+<A NAME="1006035">
+<PRE>today = new Date()<br>birthday = new Date("December 17, 1995 03:24:00")<br>birthday = new Date(95,12,17)</PRE>
+</A>
+<A NAME="1006064">
+The following example creates a user-define object type <I>car,</I> with properties for make, model, and year. The example then creates an object called <I>mycar</I> and assigns values to its properties. The value of <I>mycar.make</I> is the string "Eagle", <I>mycar.year</I> is the integer 1993, and so on.<P></A>
+<A NAME="1006065">
+<PRE>function car(make, model, year) {<br>&nbsp;&nbsp;&nbsp;this.make = make<br>&nbsp;&nbsp;&nbsp;this.model = model<br>&nbsp;&nbsp;&nbsp;this.year = year<br>}<br><br>mycar = new car("Eagle", "Talon TSi", 1993)</PRE>
+</A>
+<A NAME="1005968">
+For more information on <B>new</B>, see <a href="stmts.htm#1004841">"new"</a>.<P></A>
+
+<A NAME="this keyword"></A>
+<A NAME="1005995">
+<H2> this keyword</H2>
+</A>
+
+<A NAME="1005996">
+Use the <B>this</B> keyword to refer to the current object. In general, <B>this</B> refers to the calling object in a method. Use <B>this</B> as follows:<P></A>
+<A NAME="1005997">
+<PRE><B>this</B>[.<I>propertyName</I>]</PRE>
+</A>
+<A NAME="1005998">
+<B>Example 1.</B> Suppose a function called <B>validate</B> validates an object's <I>value</I> property, given the object and the high and low values:<P></A>
+<A NAME="1005999">
+<PRE>function validate(obj, lowval, hival) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if ((obj.value &lt; lowval) || (obj.value &gt; hival))<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert("Invalid Value!")<br>}</PRE>
+</A>
+<A NAME="1006000">
+You could call <B>validate</B> in each form element's onChange event handler, using <B>this</B> to pass it the form element, as in the following example:<P></A>
+<A NAME="1006001">
+<PRE>&lt;B&gt;Enter a number between 18 and 99:&lt;/B&gt;<br>&lt;INPUT TYPE = "text" NAME = "age" SIZE = 3<br>onChange="validate(this, 18, 99)"&gt;</PRE>
+</A>
+<A NAME="1006002">
+<B>Example 2.</B> When combined with the <I>form</I> property, <B>this</B> can refer to the current object's parent form. In the following example, the form <I>myForm</I> contains a <I>Text</I> object and a button. When the user clicks the button, the value of the <I>Text</I> object is set to the form's name. The button's onClick event handler uses <code>this.form</code> to refer to the parent form, <I>myForm</I>.<P></A>
+<A NAME="1006003">
+<PRE>&lt;FORM NAME="myForm"&gt;<br>Form name:&lt;INPUT TYPE="text" NAME="text1" VALUE="Beluga"&gt;<br>&lt;P&gt;<br>&lt;INPUT NAME="button1" TYPE="button" VALUE="Show Form Name"<br>&nbsp;&nbsp;&nbsp;onClick="this.form.text1.value=this.form.name"&gt;<br>&lt;/FORM&gt;</PRE>
+</A>
+
+<A NAME="for...in statement"></A>
+<A NAME="1004287">
+<H2> for...in statement</H2>
+</A>
+
+<A NAME="1004288">
+The <B>for...in</B> statement iterates a specified variable over all the properties of an object. For each distinct property, JavaScript executes the specified statements. A <B>for...in</B> statement looks as follows:<P></A>
+<A NAME="1005769">
+<PRE><B>for</B> (<I>variable</I> <B>in</B> <I>object</I>) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>statements</I> }</PRE>
+</A>
+<A NAME="1005770">
+<B>Example.</B> The following function takes as its argument an object and the object's name. It then iterates over all the object's properties and returns a string that lists the property names and their values.<P></A>
+<A NAME="1004291">
+<PRE>function dump_props(obj, obj_name) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var result = ""<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (var i in obj) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;result += obj_name + "." + i + " = " + obj[i] + "&lt;BR&gt;"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;result += "&lt;HR&gt;"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return result<br>}</PRE>
+</A>
+<A NAME="1004292">
+For an object <I>car</I> with properties <I>make</I> and <I>model</I>, <I>result</I> would be:<P></A>
+<A NAME="1004293">
+car.make = Ford<br>car.model = Mustang<P></A>
+
+<A NAME="with statement"></A>
+<A NAME="1004408">
+<H2> with statement</H2>
+</A>
+
+<A NAME="1004306">
+The <B>with</B> statement establishes the default object for a set of statements. Within the set of statements, any property references that do not specify an object are assumed to be for the default object. A <B>with</B> statement looks as follows:<P></A>
+<A NAME="1004307">
+<PRE><B>with</B> <I>(object)</I>{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>statements<br></I>}</PRE>
+</A>
+<A NAME="1004308">
+<B>Example.</B> The following <B>with</B> statement specifies that the <I>Math</I> object is the default object. The statements following the <B>with</B> statement refer to the <I>PI</I> property and the <B>cos</B> and <B>sin</B> methods, without specifying an object. JavaScript assumes the <I>Math</I> object for these references.<P></A>
+<A NAME="1004309">
+<PRE>var a, x, y<br>var r=10<br>with (Math) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a = PI * r * r<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x = r * cos(PI)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;y = r * sin(PI/2)<br>}</PRE>
+</A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="Comments"></A>
+<A NAME="1004310">
+<H1> Comments</H1>
+</A>
+<A NAME="1004311">
+Comments are author notations that explain what a script does. Comments are ignored by the interpreter. JavaScript supports Java-style comments:<P></A>
+<ul><A NAME="1004312">
+<LI>Comments on a single line are preceded by a double-slash (//).
+</A><A NAME="1004313">
+<LI>Comments that span multiple lines are preceded by /* and followed by */:
+</A></ul><A NAME="1004314">
+<B>Example.</B> The following example shows two comments:<P></A>
+<A NAME="1004315">
+<PRE>// This is a single-line comment.<br>/* This is a multiple-line comment. It can be of any length, and<br>you can put whatever you want here. */</PRE>
+</A>

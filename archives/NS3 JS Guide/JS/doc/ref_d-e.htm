@@ -1,0 +1,2010 @@
+<BODY BGCOLOR="#FFFFFF">
+<A HREF="ref_a-c.htm">[Previous reference file]</A>
+<!------------------------------>
+<HR>
+<A NAME="Date
+"></A>
+<A NAME="8153">
+<H1> Date
+</H1>
+</A>
+
+<A NAME="8155">
+Object. Lets you work with dates and times.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="97">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="99">
+To create a <I>Date</I> object:<P></A>
+<A NAME="101">
+<PRE>1. <I>dateObjectName</I> = new Date()<br>2. <I>dateObjectName</I> = new Date("<I>month day</I>, <I>year hours</I>:<I>minutes</I>:<I>seconds</I>")<br>3. <I>dateObjectName</I> = new Date(<I>year</I>, <I>month</I>, <I>day</I>)<br>4. <I>dateObjectName</I> = new Date(<I>year</I>, <I>month</I>, <I>day</I>, <I>hours</I>, <I>minutes</I>, <I>seconds</I>)</PRE>
+</A>
+<A NAME="107">
+To use a <I>Date</I> object:<P></A>
+<A NAME="109">
+<PRE>1. <I>dateObjectName.propertyName<br></I>2. <I>dateObjectName.methodName(parameters)</I></PRE>
+</A>
+<A NAME="2708">
+Exceptions: The <I>Date</I> object's <B>parse</B> and <B>UTC</B> methods are static methods that you use as follows:<P></A>
+<A NAME="2709">
+<PRE>Date.UTC(<I>parameters</I>)<br>Date.parse(<I>parameters</I>)</PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="2486">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="2597">
+<I>dateObjectName</I> is either the name of a new object or a property of an existing object. When using <I>Date</I> properties and methods, <I>dateObjectName</I> is either the name of an existing <I>Date</I> object or a property of an existing object.<P></A>
+<A NAME="2598">
+<I>month, day, year, hours, minutes, </I>and<I> seconds</I> are string values for form 2 of the syntax. For forms 3 and 4, they are integer values.<P></A>
+<A NAME="73061">
+<I>propertyName</I> is one of the properties listed below.<P></A>
+<A NAME="113">
+<I>methodName</I> is one of the methods listed below.<P></A>
+
+</UL><A NAME="Property of
+"></A>
+<A NAME="119">
+<H3> Property of
+</H3>
+</A>
+
+<A NAME="121">
+None<P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="54101">
+<H3> Implemented in
+</H3>
+</A>
+
+<ul><A NAME="54102">
+<LI>Navigator 2.0
+</A><A NAME="56524">
+<LI>Navigator 3.0: added <I>prototype</I> property
+</A>
+</UL><A NAME="Description
+"></A>
+<A NAME="123">
+<H3> Description
+</H3>
+</A>
+
+</ul><A NAME="125">
+The <I>Date</I> object is a built-in JavaScript object.<P></A>
+<A NAME="127">
+Form 1 of the syntax creates today's date and time. If you omit hours, minutes, or seconds from form 2 or 4 of the syntax, the value will be set to zero.<P></A>
+<A NAME="129">
+The way JavaScript handles dates is very similar to the way Java handles dates: both languages have many of the same date methods, and both store dates internally as the number of milliseconds since January 1, 1970 00:00:00. Dates prior to 1970 are not allowed.<P></A>
+
+</UL><A NAME="Properties
+"></A>
+<A NAME="131">
+<H3> Properties
+</H3>
+</A>
+
+<A NAME="56787">
+The <I>Date</I> object has the following properties:
+
+<P><TABLE BORDER="2">
+<CAPTION></CAPTION>
+<tr align=left valign=bottom><th><b><A NAME="56780">
+Property</A><B><th><b><A NAME="56782">
+Description</A><B>
+<tr align=left valign=top><td><A NAME="56784">
+<a href="ref_m-q.htm#178711">prototype</a></A><td><A NAME="56786">
+Lets you add a properties to a <I>Date</I> object.</A>
+
+</TABLE>
+
+<TABLE>
+<TR><TD>
+</TABLE>
+
+
+<P></A>
+
+</UL><A NAME="Methods
+"></A>
+<A NAME="135">
+<H3> Methods
+</H3>
+</A>
+
+<A NAME="26621">
+The <I>Date</I> object has the following methods:
+
+<P><TABLE BORDER="2">
+<CAPTION></CAPTION>
+<tr align=left valign=top><td><A NAME="26582">
+<LI><a href="ref_d-e.htm#573">eval</a>
+</A><A NAME="83318">
+<LI><a href="ref_f-g.htm#590">getDate</a>
+</A><A NAME="26586">
+<LI><a href="ref_f-g.htm#618">getDay</a>
+</A><A NAME="26590">
+<LI><a href="ref_f-g.htm#642">getHours</a>
+</A><A NAME="26594">
+<LI><a href="ref_f-g.htm#670">getMinutes</a>
+</A><A NAME="26598">
+<LI><a href="ref_f-g.htm#698">getMonth</a>
+</A><A NAME="26602">
+<LI><a href="ref_f-g.htm#726">getSeconds</a>
+</A><A NAME="26606">
+<LI><a href="ref_f-g.htm#754">getTime</a>
+</A><A NAME="26609">
+<LI><a href="ref_f-g.htm#782">getTimezoneOffset</a>
+</A><A NAME="26614">
+<LI><a href="ref_f-g.htm#804">getYear</a>
+</A><A NAME="26618">
+<LI><a href="ref_m-q.htm#177758">parse</a>
+</A><A NAME="73628">
+<LI><a href="ref_s-s.htm#464">setDate</a>
+</A><td><A NAME="76175">
+<LI><a href="ref_s-s.htm#490">setHours</a>
+</A><A NAME="26897">
+<LI><a href="ref_s-s.htm#514">setMinutes</a>
+</A><A NAME="76180">
+<LI><a href="ref_s-s.htm#538">setMonth</a>
+</A><A NAME="26901">
+<LI><a href="ref_s-s.htm#562">setSeconds</a>
+</A><A NAME="26905">
+<LI><a href="ref_s-s.htm#586">setTime</a>
+</A><A NAME="26909">
+<LI><a href="ref_s-s.htm#650">setYear</a>
+</A><A NAME="26913">
+<LI><a href="ref_t-z.htm#427">toGMTString</a>
+</A><A NAME="26917">
+<LI><a href="ref_t-z.htm#459">toLocaleString</a>
+</A><A NAME="73886">
+<LI><a href="ref_t-z.htm#70978">toString</a>
+</A><A NAME="26620">
+<LI><a href="ref_t-z.htm#653">UTC</a>
+</A><A NAME="73892">
+<LI><a href="ref_t-z.htm#91188">valueOf</a>
+</A>
+
+</TABLE>
+
+<TABLE>
+<TR><TD>
+</TABLE>
+
+
+<P></A>
+
+</UL><A NAME="Event handlers
+"></A>
+<A NAME="26662">
+<H3> Event handlers
+</H3>
+</A>
+
+<A NAME="179">
+None.<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="17352">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="17353">
+The following examples show several ways to assign dates:<P></A>
+<A NAME="17354">
+<PRE>today = new Date()<br>birthday = new Date("December 17, 1995 03:24:00")<br>birthday = new Date(95,12,17)<br>birthday = new Date(95,12,17,3,24,0)</PRE>
+</A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="defaultChecked
+"></A>
+<A NAME="46826">
+<H1> defaultChecked
+</H1>
+</A>
+
+<A NAME="46828">
+Property. A Boolean value indicating the default selection state of a checkbox or radio button.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="46829">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="46830">
+<PRE>1. <I>checkboxName</I>.defaultChecked<br>2. <I>radioName</I>[<I>index</I>].defaultChecked</PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="46831">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="46832">
+<I>checkboxName</I> is either the value of the NAME attribute of a <I>Checkbox</I> object or an element in the <I>elements</I> array.<P></A>
+<A NAME="46833">
+<I>radioName</I> is the value of the NAME attribute of a <I>Radio</I> object.<P></A>
+<A NAME="46834">
+<I>index</I> is an integer representing a radio button in a <I>Radio</I> object.<P></A>
+
+</UL><A NAME="Property of
+"></A>
+<A NAME="46835">
+<H3> Property of
+</H3>
+</A>
+
+<A NAME="46842">
+<a href="ref_a-c.htm#63502">Checkbox</a>, <a href="ref_r-r.htm#26345">Radio</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="54221">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="54222">
+Navigator 2.0<P></A>
+
+</UL><A NAME="Tainted?
+"></A>
+<A NAME="69220">
+<H3> Tainted?
+</H3>
+</A>
+
+<A NAME="69221">
+Yes<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="46843">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="46844">
+If a checkbox or radio button is selected by default, the value of the <I>defaultChecked</I> property is true; otherwise, it is false. <I>defaultChecked</I> initially reflects whether the CHECKED attribute is used within an &lt;INPUT&gt; tag; however, setting <I>defaultChecked</I> overrides the CHECKED attribute.<P></A>
+<A NAME="46845">
+You can set the <I>defaultChecked</I> property at any time. The display of the checkbox or radio button does not update when you set the <I>defaultChecked</I> property, only when you set the <I>checked</I> property.<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="46846">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="46847">
+The following example resets an array of radio buttons called <I>musicType</I> on the <I>musicForm</I> form to the default selection state:<P></A>
+<A NAME="46848">
+<PRE>function radioResetter() {<br>&nbsp;&nbsp;&nbsp;var i=""<br>&nbsp;&nbsp;&nbsp;for (i in document.musicForm.musicType) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (document.musicForm.musicType[i].defaultChecked==true) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.musicForm.musicType[i].checked=true<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;}<br>}</PRE>
+</A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="46849">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="46853">
+<a href="ref_a-c.htm#63602">checked</a> property<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="defaultSelected
+"></A>
+<A NAME="46856">
+<H1> defaultSelected
+</H1>
+</A>
+
+<A NAME="46858">
+Property. A Boolean value indicating the default selection state of an option in a <I>Select</I> object.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="46859">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="46860">
+<PRE><I>selectName</I>.options[<I>index</I>].defaultSelected<br><I>optionName</I>.defaultSelected</PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="46861">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="46862">
+<I>selectName</I> is either the value of the NAME attribute of a <I>Select</I> object or an element in the <I>elements</I> array.<P></A>
+<A NAME="46863">
+<I>index</I> is an integer representing an option in a <I>Select</I> object.<P></A>
+<A NAME="57504">
+<I>optionName</I> is the name of a <I>Select</I> object option created using the Option() constructor.<P></A>
+
+</UL><A NAME="Property of
+"></A>
+<A NAME="46864">
+<H3> Property of
+</H3>
+</A>
+
+<A NAME="46868">
+Option object (see <a href="ref_s-s.htm#72585">Select object</a>)<I>, options</I> array (see <a href="ref_s-s.htm#72585">Select object</a>)<P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="54573">
+<H3> Implemented in
+</H3>
+</A>
+
+<ul><A NAME="54574">
+<LI>Navigator 2.0
+</A><A NAME="57494">
+<LI>Navigator 3.0: property of <I>Option</I> object
+</A>
+</UL><A NAME="Tainted?
+"></A>
+<A NAME="69379">
+<H3> Tainted?
+</H3>
+</A>
+
+</ul><A NAME="69380">
+Yes<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="46869">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="46870">
+If an option in a <I>Select</I> object is selected by default, the value of the <I>defaultSelected</I> property is true; otherwise, it is false. <I>defaultSelected</I> initially reflects whether the SELECTED attribute is used within an &lt;OPTION&gt; tag; however, setting <I>defaultSelected</I> overrides the SELECTED attribute.<P></A>
+<A NAME="46871">
+You can set the <I>defaultSelected</I> property at any time. The display of the <I>Select</I> object does not update when you set the <I>defaultSelected</I> property, only when you set the <I>selected</I> or <I>selectedIndex</I> properties.<P></A>
+<A NAME="46872">
+A <I>Select</I> object created without the MULTIPLE attribute can have only one option selected by default. When you set <I>defaultSelected</I> in such an object, any previous default selections, including defaults set with the SELECTED attribute, are cleared. If you set <I>defaultSelected</I> in a <I>Select</I> object created with the MULTIPLE attribute, previous default selections are not affected.<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="46873">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="46874">
+In the following example, the <B>restoreDefault</B> function returns the <I>musicType</I> <I>Select</I> object to its default state. The <B>for</B> loop uses the <I>options</I> array to evaluate every option in the <I>Select</I> object. The <B>if</B> statement sets the <I>selected</I> property if <I>defaultSelected</I> is true.<P></A>
+<A NAME="46875">
+<PRE>function restoreDefault() {<br>&nbsp;&nbsp;&nbsp;for (var i = 0; i &lt; document.musicForm.musicType.length; i++) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (document.musicForm.musicType.options[i].defaultSelected == true) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.musicForm.musicType.options[i].selected=true<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;}<br>}</PRE>
+</A>
+<A NAME="46876">
+The previous example assumes that the <I>Select</I> object is similar to the following:<P></A>
+<A NAME="46877">
+<PRE>&lt;SELECT NAME="musicType"&gt; <br>&nbsp;&nbsp;&nbsp;&lt;OPTION SELECTED&gt; R&amp;B<br>&nbsp;&nbsp;&nbsp;&lt;OPTION&gt; Jazz<br>&nbsp;&nbsp;&nbsp;&lt;OPTION&gt; Blues<br>&nbsp;&nbsp;&nbsp;&lt;OPTION&gt; New Age<br>&lt;/SELECT&gt;</PRE>
+</A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="46878">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="46888">
+<a href="ref_h-l.htm#84372">index</a>, <a href="ref_s-s.htm#72795">selected</a>, <a href="ref_s-s.htm#72830">selectedIndex</a> properties<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="defaultStatus
+"></A>
+<A NAME="46891">
+<H1> defaultStatus
+</H1>
+</A>
+
+<A NAME="46893">
+Property. The default message displayed in the status bar at the bottom of the window.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="46894">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="46895">
+<PRE><I>windowReference</I>.defaultStatus</PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="46896">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="48243">
+<I>windowReference</I> is a valid way of referring to a window, as described in the <a href="ref_t-z.htm#67013">window object</a>.<P></A>
+
+</UL><A NAME="Property of
+"></A>
+<A NAME="48247">
+<H3> Property of
+</H3>
+</A>
+
+<A NAME="46905">
+<a href="ref_t-z.htm#67013">window object</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="54689">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="54690">
+Navigator 2.0<P></A>
+
+</UL><A NAME="Tainted?
+"></A>
+<A NAME="69391">
+<H3> Tainted?
+</H3>
+</A>
+
+<A NAME="69392">
+Yes<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="46906">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="46907">
+The <I>defaultStatus</I> message appears when nothing else is in the status bar. Do not confuse the <I>defaultStatus</I> property with the <I>status</I> property. The <I>status</I> property reflects a priority or transient message in the status bar, such as the message that appears when a mouseOver event occurs over an anchor.<P></A>
+<A NAME="46908">
+You can set the <I>defaultStatus</I> property at any time. You must return true if you want to set the <I>defaultStatus</I> property in the onMouseOut or onMouseOver event handlers.<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="46909">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="46910">
+In the following example, the <B>statusSetter</B> function sets both the <I>status</I> and <I>defaultStatus</I> properties in an onMouseOver event handler:<P></A>
+<A NAME="46911">
+<PRE>function statusSetter() {<br>&nbsp;&nbsp;&nbsp;window.defaultStatus = "Click the link for the Netscape home page"<br>&nbsp;&nbsp;&nbsp;window.status = "Netscape home page"<br>}<br><br>&lt;A HREF="http://home.netscape.com"<br>&nbsp;&nbsp;&nbsp;onMouseOver = "statusSetter(); return true"&gt;Netscape&lt;/A&gt;</PRE>
+</A>
+<A NAME="46912">
+In the previous example, notice that the onMouseOver event handler returns a value of true. You must return true to set <I>status</I> or <I>defaultStatus</I> in an event handler.<P></A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="46913">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="46917">
+<a href="ref_s-s.htm#73380">status</a> property<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="defaultValue
+"></A>
+<A NAME="46920">
+<H1> defaultValue
+</H1>
+</A>
+
+<A NAME="46922">
+Property. A string indicating the default value of a <I>Password</I>, <I>Text</I>, or <I>Textarea</I> object.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="46923">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="46924">
+<PRE>1. <I>passwordName</I>.defaultValue<br>2. <I>textName</I>.defaultValue<br>3. <I>textareaName</I>.defaultValue</PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="46925">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="46926">
+<I>passwordName</I> is either the value of the NAME attribute of a <I>Password</I> object or an element in the <I>elements</I> array.<P></A>
+<A NAME="46927">
+<I>textName</I> is either the value of the NAME attribute of a <I>Text</I> object or an element in the <I>elements</I> array.<P></A>
+<A NAME="46928">
+<I>textareaName</I> is either the value of the NAME attribute of a <I>Textarea</I> object or an element in the <I>elements</I> array.<P></A>
+
+</UL><A NAME="Property of
+"></A>
+<A NAME="46929">
+<H3> Property of
+</H3>
+</A>
+
+<A NAME="46939">
+<a href="ref_m-q.htm#177857">Password</a> object, <a href="ref_t-z.htm#65229">Text object</a>, <a href="ref_t-z.htm#65386">Textarea</a> object<P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="55055">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="55056">
+Navigator 2.0<P></A>
+
+</UL><A NAME="Tainted?
+"></A>
+<A NAME="69407">
+<H3> Tainted?
+</H3>
+</A>
+
+<A NAME="69408">
+Yes<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="46940">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="46941">
+The initial value of <I>defaultValue</I> differs for each object:<P></A>
+<ul><A NAME="60028">
+<LI>For <I>Text</I> objects, it initially reflects the value of the VALUE attribute.
+</A><A NAME="60029">
+<LI>For <I>Textarea</I> objects, it initially reflects the value specified between the &lt;TEXTAREA&gt; and &lt;/TEXTAREA&gt; tags.
+</A><A NAME="46944">
+<LI>For <I>Password</I> objects, it initially is null (for security reasons), regardless of the value of the VALUE attribute.
+</A></ul><A NAME="46945">
+Setting <I>defaultValue</I> programmatically overrides the initial setting. If you programmatically set <I>defaultValue</I> for the <I>Password</I> object and then evaluate it, JavaScript returns the current value.<P></A>
+<A NAME="46946">
+You can set the <I>defaultValue</I> property at any time. The display of the related object does not update when you set the <I>defaultValue</I> property, only when you set the <I>value</I> property.<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="46947">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="46948">
+The following function evaluates the <I>defaultValue</I> property of objects on the <I>surfCity</I> form and displays the values in the <I>msgWindow</I> window:<P></A>
+<A NAME="46949">
+<PRE>function defaultGetter() {<br>&nbsp;&nbsp;&nbsp;msgWindow=window.open("")<br>&nbsp;&nbsp;&nbsp;msgWindow.document.write("hidden.defaultValue is " +<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.surfCity.hiddenObj.defaultValue + "&lt;BR&gt;")<br>&nbsp;&nbsp;&nbsp;msgWindow.document.write("password.defaultValue is " +<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.surfCity.passwordObj.defaultValue + "&lt;BR&gt;")<br>&nbsp;&nbsp;&nbsp;msgWindow.document.write("text.defaultValue is " +<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.surfCity.textObj.defaultValue + "&lt;BR&gt;")<br>&nbsp;&nbsp;&nbsp;msgWindow.document.write("textarea.defaultValue is " +<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.surfCity.textareaObj.defaultValue + "&lt;BR&gt;")<br>&nbsp;&nbsp;&nbsp;msgWindow.document.close()<br>}</PRE>
+</A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="46950">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="46954">
+<a href="ref_t-z.htm#66860">value</a> property<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="description
+"></A>
+<A NAME="82624">
+<H1> description
+</H1>
+</A>
+
+<A NAME="82625">
+Property. A description of a MIME type or plug-in.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="82626">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="52655">
+<PRE>1. navigator.mimeTypes[<I>index1</I>].description<br>2. navigator.plugins[<I>index</I>2].description</PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="64323">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="64314">
+<I>index1</I> is either an integer representing a MIME type supported by the client or a string containing the type of a <I>MimeType</I> object (from the <I>type</I> property).<P></A>
+<A NAME="64332">
+<I>index2</I> is either an integer representing a plug-in installed on the client or a string containing the name of a <I>Plugin</I> object (from the <I>name</I> property).<P></A>
+
+</UL><A NAME="Property of
+"></A>
+<A NAME="52658">
+<H3> Property of
+</H3>
+</A>
+
+<ul><A NAME="52659">
+<LI><a href="ref_m-q.htm#176261">MimeType</a>
+</A><A NAME="52660">
+<LI><a href="ref_m-q.htm#178075">Plugin</a>
+</A>
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="52661">
+<H3> Implemented in
+</H3>
+</A>
+
+</ul><A NAME="52662">
+Navigator 3.0<P></A>
+
+</UL><A NAME="Tainted?
+"></A>
+<A NAME="69414">
+<H3> Tainted?
+</H3>
+</A>
+
+<A NAME="69415">
+No<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="52663">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="64255">
+For <I>MimeType</I> objects, the <I>description</I> property is a description of the content and encoding for the MIME data type.<P></A>
+<A NAME="69082">
+For <I>Plugin</I> objects, the <I>description</I> property is a description of the plug-in. The description is supplied by the plug-in itself.<P></A>
+<A NAME="64349">
+<I>description </I>is a read-only property.<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="52665">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="52666">
+See the examples for the <I><a href="ref_m-q.htm#176261">MimeType</a></I> and <I><a href="ref_m-q.htm#178075">Plugin</a></I> objects.<P></A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="52667">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="64238">
+For <I>MimeType</I> objects: <a href="ref_d-e.htm#64183">enabledPlugin</a>, <a href="ref_t-z.htm#71171">type</a>, <a href="ref_s-s.htm#79636">suffixes</a> properties<P></A>
+<A NAME="64293">
+For <I>Plugin</I> objects: <a href="ref_f-g.htm#67355">filename</a>, <a href="ref_h-l.htm#84418">length</a>, <a href="ref_m-q.htm#176636">name</a> properties<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="document
+"></A>
+<A NAME="47667">
+<H1> document
+</H1>
+</A>
+
+<A NAME="47669">
+Object. Contains information on the current document, and provides methods for displaying HTML output to the user.<P></A>
+
+</UL><A NAME="HTML syntax
+"></A>
+<A NAME="47670">
+<H3> HTML syntax
+</H3>
+</A>
+
+<A NAME="47671">
+To define a <I>document</I> object, use standard HTML syntax with the addition of JavaScript event handlers:<P></A>
+<A NAME="47672">
+<PRE>&lt;BODY<br>&nbsp;&nbsp;&nbsp;BACKGROUND="<I>backgroundImage</I>"<br>&nbsp;&nbsp;&nbsp;BGCOLOR="<I>backgroundColor</I>"<br>&nbsp;&nbsp;&nbsp;TEXT="<I>foregroundColor</I>"<br>&nbsp;&nbsp;&nbsp;LINK="<I>unfollowedLinkColor</I>"<br>&nbsp;&nbsp;&nbsp;ALINK="<I>activatedLinkColor</I>"<br>&nbsp;&nbsp;&nbsp;VLINK="<I>followedLinkColor</I>"<br>&nbsp;&nbsp;&nbsp;[onBlur="<I>handlerText</I>"]<br>&nbsp;&nbsp;&nbsp;[onFocus="<I>handlerText</I>"]<br>&nbsp;&nbsp;&nbsp;[onLoad="<I>handlerText</I>"]<br>&nbsp;&nbsp;&nbsp;[onUnload="<I>handlerText</I>"]&gt;<br>&lt;/BODY&gt;</PRE>
+</A>
+
+</UL><A NAME="HTML attributes
+"></A>
+<A NAME="47673">
+<H3> HTML attributes
+</H3>
+</A>
+
+<A NAME="47674">
+<I>BACKGROUND</I> specifies an image that fills the background of the document.<P></A>
+<A NAME="47675">
+<I>BGCOLOR</I>, <I>TEXT</I>, <I>LINK</I>, <I>ALINK</I>, and <I>VLINK</I> are color specifications expressed as a hexadecimal RGB triplet (in the format "rrggbb" or "#rrggbb") or as one of the string literals listed in <a href="colors.htm#1002170">"Color values"</a>.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="47679">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="47680">
+To use a <I>document</I> object's properties and methods:<P></A>
+<A NAME="47681">
+<PRE>1. document.<I>propertyName<br></I>2. document.<I>methodName</I>(<I>parameters</I>)</PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="47682">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="47683">
+<I>propertyName</I> is one of the properties listed below.<P></A>
+<A NAME="47684">
+<I>methodName</I> is one of the methods listed below.<P></A>
+
+</UL><A NAME="Property of
+"></A>
+<A NAME="47685">
+<H3> Property of
+</H3>
+</A>
+
+<A NAME="47689">
+<a href="ref_t-z.htm#67013">window object</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="55601">
+<H3> Implemented in
+</H3>
+</A>
+
+<ul><A NAME="55602">
+<LI>Navigator 2.0
+</A><A NAME="58012">
+<LI>Navigator 3.0: added onBlur and onFocus syntax; added <I>applets, domain, embeds,</I> and <I>images</I> properties; added <I>Applet, Area, Image,</I> and <I>Plugin</I> objects as properties
+</A>
+</UL><A NAME="Description
+"></A>
+<A NAME="47690">
+<H3> Description
+</H3>
+</A>
+
+</ul><A NAME="47691">
+An HTML document consists of &lt;HEAD&gt; and &lt;BODY&gt; tags. The &lt;HEAD&gt; tag includes information on the document's title and base (the absolute URL base to be used for relative URL links in the document). The &lt;BODY&gt; tag encloses the body of a document, which is defined by the current URL. The entire body of the document (all other HTML elements for the document) goes within the &lt;BODY&gt; tag.<P></A>
+<A NAME="47695">
+You can load a new document by using the <I>window.<a href="ref_h-l.htm#84722">location</a></I> object.<P></A>
+<A NAME="58227">
+You can clear the document pane (and remove the text, form elements, and so on so they do not redisplay) by using <code>document.close(); document.open(); document.write()</code>. You can omit the <code>document.open()</code> call if you are writing text or HTML, since <B>write</B> does an implicit open of that mime type if the document stream is closed.<P></A>
+<A NAME="47696">
+You can reference the anchors, forms, and links of a document by using the <I>anchors, forms,</I> and <I>links</I> arrays. These arrays contain an entry for each anchor, form, or link in a document.<P></A>
+<A NAME="58464">
+Do not use <I>location</I> as a property of the <I>document</I> object; use the <I>document.URL</I> property instead. The <I>document.location</I> property, which is a synonym for <I>document.URL</I>, will be removed in a future release.<P></A>
+
+</UL><A NAME="Properties
+"></A>
+<A NAME="47697">
+<H3> Properties
+</H3>
+</A>
+
+<A NAME="47795">
+The <I>document</I> object has the following properties:
+
+<P><TABLE BORDER="2">
+<CAPTION></CAPTION>
+<tr align=left valign=bottom><th><b><A NAME="47704">
+<SUP></SUP>Property</A><B><th><b><A NAME="47706">
+Description</A><B>
+<tr align=left valign=top><td><A NAME="47711">
+<a href="ref_a-c.htm#59030">alinkColor</a></A><td><A NAME="47713">
+Reflects the ALINK attribute</A>
+<tr align=left valign=top><td><A NAME="47718">
+<a href="ref_a-c.htm#61010">anchors</a></A><td><A NAME="47720">
+An array reflecting all the anchors in a document</A>
+<tr align=left valign=top><td><A NAME="57734">
+<a href="ref_a-c.htm#97897">applets</a></A><td><A NAME="57736">
+An array reflecting all the applets in a document</A>
+<tr align=left valign=top><td><A NAME="47725">
+<a href="ref_a-c.htm#62435">bgColor</a></A><td><A NAME="47727">
+Reflects the BGCOLOR attribute</A>
+<tr align=left valign=top><td><A NAME="47732">
+<a href="ref_a-c.htm#64400">cookie</a></A><td><A NAME="47734">
+Specifies a cookie</A>
+<tr align=left valign=top><td><A NAME="73029">
+<a href="ref_d-e.htm#68458">domain</a></A><td><A NAME="73031">
+Specifies the domain name of the server that served a document</A>
+<tr align=left valign=top><td><A NAME="57838">
+<a href="ref_d-e.htm#59713">embeds array</a></A><td><A NAME="57840">
+An array reflecting all the plugins in a document</A>
+<tr align=left valign=top><td><A NAME="47739">
+<a href="ref_f-g.htm#59824">fgColor</a></A><td><A NAME="47741">
+Reflects the TEXT attribute</A>
+<tr align=left valign=top><td><A NAME="47746">
+<a href="ref_f-g.htm#98285">forms</a></A><td><A NAME="47748">
+An array reflecting all the forms in a document</A>
+<tr align=left valign=top><td><A NAME="57884">
+<a href="ref_h-l.htm#106682">images</a></A><td><A NAME="57886">
+An array reflecting all the images in a document</A>
+<tr align=left valign=top><td><A NAME="47753">
+<a href="ref_h-l.htm#84401">lastModified</a></A><td><A NAME="47755">
+Reflects the date a document was last modified</A>
+<tr align=left valign=top><td><A NAME="47760">
+<a href="ref_h-l.htm#84668">linkColor</a></A><td><A NAME="47762">
+Reflects the LINK attribute</A>
+<tr align=left valign=top><td><A NAME="47767">
+<a href="ref_h-l.htm#84704">links</a></A><td><A NAME="47769">
+An array reflecting all the links in a document</A>
+<tr align=left valign=top><td><A NAME="47774">
+<a href="ref_r-r.htm#26468">referrer</a></A><td><A NAME="47776">
+Reflects the URL of the calling document</A>
+<tr align=left valign=top><td><A NAME="47781">
+<a href="ref_t-z.htm#98940">title</a></A><td><A NAME="47783">
+Reflects the contents of the &lt;TITLE&gt; tag</A>
+<tr align=left valign=top><td><A NAME="47785">
+<a href="ref_t-z.htm#82880">URL</a></A><td><A NAME="47787">
+Reflects the complete URL of a document</A>
+<tr align=left valign=top><td><A NAME="47792">
+<a href="ref_t-z.htm#66971">vlinkColor</a></A><td><A NAME="47794">
+Reflects the VLINK attribute</A>
+
+</TABLE>
+
+<TABLE>
+<TR><TD>
+</TABLE>
+
+
+<P></A>
+<A NAME="47796">
+The following objects are also properties of the <I>document</I> object:
+
+<P><TABLE BORDER="2">
+<CAPTION></CAPTION>
+<tr align=left valign=top><td><A NAME="58882">
+<LI><a href="ref_a-c.htm#60954">Anchor object</a>
+</A><A NAME="58883">
+<LI><a href="ref_a-c.htm#73156">Applet</a>
+</A><A NAME="58884">
+<LI>Area (see <a href="ref_h-l.htm#84501">Link object</a>)
+</A><td><A NAME="58975">
+<LI><a href="ref_f-g.htm#60597">Form object</a>
+</A><A NAME="82663">
+<LI><a href="ref_h-l.htm#90746">Image</a>
+</A><A NAME="58979">
+<LI><a href="ref_h-l.htm#84501">Link object</a>
+</A>
+
+</TABLE>
+
+<P></A>
+
+</UL><A NAME="Methods
+"></A>
+<A NAME="48395">
+<H3> Methods
+</H3>
+</A>
+
+<A NAME="47833">
+The <I>document</I> object has the following methods:
+
+<P><TABLE BORDER="2">
+<CAPTION></CAPTION>
+<tr align=left valign=top><td><A NAME="47819">
+<LI><a href="ref_a-c.htm#63902">close (document object)</a>
+</A><A NAME="83324">
+<LI><a href="ref_d-e.htm#573">eval</a>
+</A><A NAME="47823">
+<LI><a href="ref_m-q.htm#177567">open (document object)</a>
+</A><A NAME="75715">
+<LI><a href="ref_t-z.htm#70978">toString</a>
+</A><td><A NAME="48429">
+<LI><a href="ref_t-z.htm#91188">valueOf</a>
+</A><A NAME="75729">
+<LI><a href="ref_t-z.htm#67240">write</a>
+</A><A NAME="48433">
+<LI><a href="ref_t-z.htm#67313">writeln</a>
+</A>
+
+</TABLE>
+
+<TABLE>
+<TR><TD>
+</TABLE>
+
+
+<P></A>
+
+</UL><A NAME="Event handlers
+"></A>
+<A NAME="47834">
+<H3> Event handlers
+</H3>
+</A>
+
+<A NAME="47835">
+None. The onBlur, onFocus, onLoad, and onUnload event handlers are specified in the &lt;BODY&gt; tag but are actually event handlers for the <I>window</I> object.<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="47836">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="47837">
+The following example creates two frames, each with one document. The document in the first frame contains links to anchors in the document of the second frame. Each document defines its colors.<P></A>
+<A NAME="47838">
+<code>doc0.html</code>, which defines the frames, contains the following code:<P></A>
+<A NAME="47839">
+<PRE>&lt;HTML&gt;<br>&lt;HEAD&gt;<br>&lt;TITLE&gt;Document object example&lt;/TITLE&gt;<br>&lt;/HEAD&gt;<br>&lt;FRAMESET COLS="30%,70%"&gt;<br>&lt;FRAME SRC="doc1.html" NAME="frame1"&gt;<br>&lt;FRAME SRC="doc2.html" NAME="frame2"&gt;<br>&lt;/FRAMESET&gt;<br>&lt;/HTML&gt;</PRE>
+</A>
+<A NAME="47840">
+<code>doc1.html</code>, which defines the content for the first frame, contains the following code:<P></A>
+<A NAME="47841">
+<PRE>&lt;HTML&gt;<br>&lt;SCRIPT&gt;<br>&lt;/SCRIPT&gt;<br>&lt;BODY<br>&nbsp;&nbsp;&nbsp;BGCOLOR="antiquewhite"<br>&nbsp;&nbsp;&nbsp;TEXT="darkviolet"<br>&nbsp;&nbsp;&nbsp;LINK="fuchsia"<br>&nbsp;&nbsp;&nbsp;ALINK="forestgreen"<br>&nbsp;&nbsp;&nbsp;VLINK="navy"&gt;<br>&lt;P&gt;&lt;B&gt;Some links&lt;/B&gt;<br>&lt;LI&gt;&lt;A HREF="doc2.html#numbers" TARGET="frame2"&gt;Numbers&lt;/A&gt;<br>&lt;LI&gt;&lt;A HREF="doc2.html#colors" TARGET="frame2"&gt;Colors&lt;/A&gt;<br>&lt;LI&gt;&lt;A HREF="doc2.html#musicTypes" TARGET="frame2"&gt;Music types&lt;/A&gt;<br>&lt;LI&gt;&lt;A HREF="doc2.html#countries" TARGET="frame2"&gt;Countries&lt;/A&gt;<br>&lt;/BODY&gt;<br>&lt;/HTML&gt;</PRE>
+</A>
+<A NAME="47842">
+<code>doc2.html</code>, which defines the content for the second frame, contains the following code:<P></A>
+<A NAME="47843">
+<PRE>&lt;HTML&gt;<br>&lt;SCRIPT&gt;<br>&lt;/SCRIPT&gt;<br>&lt;BODY<br>&nbsp;&nbsp;&nbsp;BGCOLOR="oldlace" onLoad="alert('Hello, World.')"<br>&nbsp;&nbsp;&nbsp;TEXT="navy"&gt;<br>&lt;P&gt;&lt;A NAME="numbers"&gt;&lt;B&gt;Some numbers&lt;/B&gt;&lt;/A&gt;<br>&lt;UL&gt;&lt;LI&gt;one<br>&lt;LI&gt;two<br>&lt;LI&gt;three<br>&lt;LI&gt;four&lt;/UL&gt;<br>&lt;P&gt;&lt;A NAME="colors"&gt;&lt;B&gt;Some colors&lt;/B&gt;&lt;/A&gt;<br>&lt;UL&gt;&lt;LI&gt;red<br>&lt;LI&gt;orange<br>&lt;LI&gt;yellow<br>&lt;LI&gt;green&lt;/UL&gt;<br>&lt;P&gt;&lt;A NAME="musicTypes"&gt;&lt;B&gt;Some music types&lt;/B&gt;&lt;/A&gt;<br>&lt;UL&gt;&lt;LI&gt;R&amp;B<br>&lt;LI&gt;Jazz<br>&lt;LI&gt;Soul<br>&lt;LI&gt;Reggae&lt;/UL&gt;<br>&lt;P&gt;&lt;A NAME="countries"&gt;&lt;B&gt;Some countries&lt;/B&gt;&lt;/A&gt;<br>&lt;UL&gt;&lt;LI&gt;Afghanistan<br>&lt;LI&gt;Brazil<br>&lt;LI&gt;Canada<br>&lt;LI&gt;Finland&lt;/UL&gt;<br>&lt;/BODY&gt;<br>&lt;/HTML&gt;</PRE>
+</A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="48451">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="48458">
+<a href="ref_f-g.htm#60829">Frame</a> object, <a href="ref_t-z.htm#67013">window object</a><P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="domain
+"></A>
+<A NAME="68458">
+<H1> domain
+</H1>
+</A>
+
+<A NAME="68460">
+Property. Specifies the domain name of the server that served a document.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="68461">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="68462">
+<PRE>document.domain</PRE>
+</A>
+
+</UL><A NAME="Property of
+"></A>
+<A NAME="68463">
+<H3> Property of
+</H3>
+</A>
+
+<A NAME="68467">
+<a href="ref_d-e.htm#47667">document</a><P></A>
+
+</UL><A NAME="Tainted?
+"></A>
+<A NAME="69427">
+<H3> Tainted?
+</H3>
+</A>
+
+<A NAME="69428">
+Yes<P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="68468">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="68469">
+Navigator 3.0<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="68470">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="71774">
+The <I>domain</I> property lets scripts on multiple servers share properties when data tainting is not enabled. With tainting disabled, a script running in one window can read properties of another window only if both windows come from the same Web server. But large Web sites with multiple servers might need to share properties among servers. For example, a script on the host <code>www.yahoo.com</code> might need to share properties with a script on the host <code>search.yahoo.com</code>.<P></A>
+<A NAME="72519">
+If scripts on two different servers change their <I>domain</I> property so that both scripts have the same domain name, both scripts can share properties. For example, a script loaded from <code>search.yahoo.com</code> could set its <I>domain</I> property to "yahoo.com". A script from <code>www.yahoo.com</code> running in another window could also set its <I>domain</I> property to "yahoo.com". Then, since both scripts have the domain "yahoo.com", these two scripts can share properties, even though they did not originate from the same server.<P></A>
+<A NAME="72565">
+You can change <I>domain</I> only in a restricted way. Initially, <I>domain</I> contains the hostname of the Web server from which the document was loaded. You can set <I>domain</I> only to a domain suffix of itself. For example, a script from <code>search.yahoo.com</code> can't set its <I>domain</I> property to "search.yahoo". And a script from <code>IWantYourMoney.com</code> cannot set its domain to "yahoo.com".<P></A>
+<A NAME="80551">
+Once you change the <I>domain </I>property,<I> </I>you cannot change it back to its original value. For example, if you change <I>domain</I> from "search.yahoo.com" to "yahoo.com", you cannot reset it to "search.yahoo.com".<P></A>
+<A NAME="72582">
+You can change <I>domain</I> at any time.<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="70817">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="68473">
+The following statement changes the <I>domain</I> property to "braveNewWorld.com". This statement is valid only if "braveNewWorld.com" is a suffix of the current domain, such as "www.braveNewWorld.com".<P></A>
+<A NAME="71007">
+<PRE>document.domain="braveNewWorld.com"</PRE>
+</A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="68474">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="68475">
+<a href="ref_t-z.htm#98587">taint</a>, <a href="ref_t-z.htm#135008">untaint</a> functions; <a href="advtopic.htm#1009533">"Using data tainting for security"</a><P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="E
+"></A>
+<A NAME="48461">
+<H1> E
+</H1>
+</A>
+
+<A NAME="441">
+Property. Euler's constant and the base of natural logarithms, approximately 2.718.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="443">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="445">
+<PRE>Math.E</PRE>
+</A>
+
+</UL><A NAME="Property of
+"></A>
+<A NAME="447">
+<H3> Property of
+</H3>
+</A>
+
+<A NAME="449">
+<a href="ref_m-q.htm#175987">Math</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="55630">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="73222">
+Navigator 2.0<P></A>
+
+</UL><A NAME="Tainted?
+"></A>
+<A NAME="73223">
+<H3> Tainted?
+</H3>
+</A>
+
+<A NAME="73247">
+No<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="73257">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="73224">
+Because <I>E</I> is a constant, it is a read-only property of <I>Math</I>.<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="455">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="17506">
+The following function returns Euler's constant:<P></A>
+<A NAME="17507">
+<PRE>function getEuler() {<br>&nbsp;&nbsp;&nbsp;return Math.E<br>}</PRE>
+</A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="461">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="1082">
+<a href="ref_d-e.htm#3128">exp</a>, <a href="ref_h-l.htm#768">LN2</a>, <a href="ref_h-l.htm#794">LN10</a>, <a href="ref_h-l.htm#1042">LOG2E</a>, <a href="ref_h-l.htm#1068">LOG10E</a>, <a href="ref_m-q.htm#178032">PI</a>, <a href="ref_s-s.htm#754">SQRT1_2</a>, <a href="ref_s-s.htm#780">SQRT2</a> properties<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="elements array
+"></A>
+<A NAME="47988">
+<H1> elements array
+</H1>
+</A>
+
+<A NAME="47989">
+Property. An array of objects corresponding to form elements (such as <I>checkbox</I>, <I>radio</I>, and <I>Text</I> objects) in source order.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="47990">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="47991">
+<PRE>1. <I>formName</I>.elements[<I>index</I>]<br>2. <I>formName</I>.elements.length</PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="47992">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="47993">
+<I>formName</I> is either the name of a form or an element in the <I>forms</I> array.<P></A>
+<A NAME="47994">
+<I>index</I> is an integer representing an object on a form or the name of an object as specified by the NAME attribute.<P></A>
+
+</UL><A NAME="Property of
+"></A>
+<A NAME="47995">
+<H3> Property of
+</H3>
+</A>
+
+<A NAME="47999">
+<a href="ref_f-g.htm#60597">Form object</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="55828">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="55829">
+Navigator 2.0<P></A>
+
+</UL><A NAME="Tainted?
+"></A>
+<A NAME="69456">
+<H3> Tainted?
+</H3>
+</A>
+
+<A NAME="69457">
+No<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="48000">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="48001">
+You can reference a form's elements in your code by using the <I>elements</I> array. This array contains an entry for each object (<I>Button</I>, <I>Checkbox</I>, <I>FileUpload, Hidden</I>, <I>Password</I>, <I>Radio</I>, <I>Reset</I>, <I>Select</I>, <I>Submit</I>, <I>Text</I>, or <I>Textarea</I> object) in a form in source order. For example, if a form has a text field and two checkboxes, these elements are reflected as formName<code>.elements[0]</code>, formName<code>.elements[1]</code>, and formName<code>.elements[2]</code>.<P></A>
+<A NAME="48002">
+Although you can also reference a form's elements by using the element's name (from the NAME attribute), the <I>elements</I> array provides a way to reference <I>Form</I> objects programmatically without using their names. For example, if the first object on the <I>userInfo</I> form is the <I>userName</I> <I>Text</I> object, you can evaluate it in either of the following ways:<P></A>
+<A NAME="48003">
+<PRE>userInfo.userName.value<br>userInfo.elements[0].value</PRE>
+</A>
+<A NAME="48004">
+To obtain the number of elements on a form, use the <I>length</I> property: formName<code>.elements.length</code>. Each radio button in a <I>Radio</I> object appears as a separate element in the <I>elements</I> array.<P></A>
+<A NAME="48005">
+Elements in the <I>elements</I> array are read-only. For example, the statement formName<code>.elements[0]="music"</code> has no effect.<P></A>
+<A NAME="48006">
+The value of each element in the <I>elements</I> array is the full HTML statement for the object.<P></A>
+
+</UL><A NAME="Properties
+"></A>
+<A NAME="48007">
+<H3> Properties
+</H3>
+</A>
+
+<A NAME="48008">
+The <I>elements</I> array has the following properties:
+
+<P><TABLE BORDER="2">
+<CAPTION></CAPTION>
+<tr align=left valign=bottom><th><b><A NAME="63314">
+Property</A><B><th><b><A NAME="63316">
+Description</A><B>
+<tr align=left valign=top><td><A NAME="63324">
+<a href="ref_h-l.htm#84418">length</a></A><td><A NAME="63326">
+Reflects the number of elements in the form</A>
+
+</TABLE>
+
+<TABLE>
+<TR><TD>
+</TABLE>
+
+
+<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="48009">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="48013">
+See the examples for the <a href="ref_f-g.htm#60829">Frame</a> property.<P></A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="48014">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="48018">
+<a href="ref_f-g.htm#60597">Form object</a><P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="elements property
+"></A>
+<A NAME="48019">
+<H1> elements property
+</H1>
+</A>
+
+<A NAME="48020">
+Property. An array of objects corresponding to form elements (such as <I>Checkbox</I>, <I>Radio</I>, and <I>Text</I> objects) in source order. See the <a href="ref_d-e.htm#47988">elements array</a> for information.<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="embeds array
+"></A>
+<A NAME="59713">
+<H1> embeds array
+</H1>
+</A>
+
+<A NAME="59714">
+Property. An array reflecting all the &lt;EMBED&gt; tags in a document in source order.<P></A>
+
+</UL><A NAME="HTML syntax
+"></A>
+<A NAME="77009">
+<H3> HTML syntax
+</H3>
+</A>
+
+<A NAME="77010">
+To generate output from a plug-in application, use standard HTML syntax:<P></A>
+<A NAME="77011">
+<PRE>&lt;EMBED<br>&nbsp;&nbsp;&nbsp;SRC=<I>source<br></I>&nbsp;&nbsp;&nbsp;NAME=<I>embedName<br></I>&nbsp;&nbsp;&nbsp;HEIGHT=<I>height<br></I>&nbsp;&nbsp;&nbsp;WIDTH=<I>width&gt;<br>&nbsp;&nbsp;&nbsp;</I>[<I>parameterName=parameterValue</I>]<br><I>&nbsp;&nbsp;&nbsp;</I>[ ... <I>parameterName=parameterValue</I>]<br>&lt;/EMBED&gt;</PRE>
+</A>
+<A NAME="78272">
+For the complete syntax of the &lt;EMBED&gt; tag, see http://home.netscape.com/eng/mozilla/3.0/handbook/plugins/index.html.<P></A>
+
+</UL><A NAME="HTML attributes
+"></A>
+<A NAME="78273">
+<H3> HTML attributes
+</H3>
+</A>
+
+<A NAME="77013">
+SRC=source&lt;/I&gt; specifies the URL containing the source content.<P></A>
+<A NAME="77014">
+<I>NAME=embedName</I> specifies the name of the embedded object in the document. You can use this name when indexing the <I>embeds</I> array.<P></A>
+<A NAME="77015">
+<I>HEIGHT=height</I> specifies the height of the applet in pixels within the browser window.<P></A>
+<A NAME="78469">
+<I>WIDTH=width</I> specifies the width of the applet in pixels within the browser window.<P></A>
+<A NAME="78471">
+<I>parameterName=parameterValue</I> specifies the name and value of a parameter to pass to the embedded object's plug-in.<P></A>
+
+</UL><A NAME="Property of
+"></A>
+<A NAME="78473">
+<H3> Property of
+</H3>
+</A>
+
+<A NAME="78477">
+<a href="ref_d-e.htm#47667">document</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="77388">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="77389">
+Navigator 3.0<P></A>
+
+</UL><A NAME="Tainted?
+"></A>
+<A NAME="77745">
+<H3> Tainted?
+</H3>
+</A>
+
+<A NAME="77746">
+No<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="77131">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="77147">
+You can reference embedded objects (created with the &lt;EMBED&gt; tag) in your code by using the <I>embeds</I> array. This array contains an entry for each &lt;EMBED&gt; tag in a document in source order. For example, if a document contains three &lt;EMBED&gt; tags, these &lt;EMBED&gt; tags are reflected as <code>document.embeds[0]</code>, <code>document.embeds[1]</code>, and <code>document.embeds[2]</code>.<P></A>
+<A NAME="77148">
+Elements in the <I>embeds</I> array may have public callable functions, if they reference a "LiveConnected" plug-in. See <a href="livecon.htm#996824">Chapter&nbsp;4, "LiveConnect."</a><P></A>
+<A NAME="83114">
+To use the <I>embeds</I> array:<P></A>
+<A NAME="77149">
+<PRE>1. document.embeds[<I>index</I>]<br>2. document.embeds.length</PRE>
+</A>
+<A NAME="77150">
+<I>index</I> is an integer representing an &lt;EMBED&gt; tag or the name of an embedded object as specified by the NAME attribute.<P></A>
+<A NAME="77151">
+To obtain the number of &lt;EMBED&gt; tags in a document, use the <I>length</I> property: <code>document.embeds.length</code>.<P></A>
+<A NAME="77152">
+Use the elements in the embeds array to interact with the plug-in that is displaying the embedded object. If a plug-in is not Java-enabled, you cannot do anything with its element in the <I>embeds</I> array. The fields and methods of the elements in the <I>embeds</I> array vary from plug-in to plug-in; see the documentation supplied by the plug-in manufacturer.<P></A>
+<A NAME="78201">
+When you use the &lt;EMBED&gt; tag to generate output from a plug-in application, you are not creating a <I>Plugin</I> object. See the <I><a href="ref_m-q.htm#178075">Plugin</a></I> object.<P></A>
+<A NAME="77286">
+Elements in the <I>embeds</I> array are read-only. For example, the statement <code>document.embeds[0]="myavi.avi"</code> has no effect.<P></A>
+
+</UL><A NAME="Properties
+"></A>
+<A NAME="77287">
+<H3> Properties
+</H3>
+</A>
+
+<A NAME="77313">
+The <I>embeds</I> array has the following properties:
+
+<P><TABLE BORDER="2">
+<CAPTION></CAPTION>
+<tr align=left valign=bottom><th><b><A NAME="77303">
+Property</A><B><th><b><A NAME="77305">
+Description</A><B>
+<tr align=left valign=top><td><A NAME="77310">
+<a href="ref_h-l.htm#84418">length</a></A><td><A NAME="77312">
+Reflects the number of elements in the array</A>
+
+</TABLE>
+
+<TABLE>
+<TR><TD>
+</TABLE>
+
+
+<P></A>
+
+</UL><A NAME="Methods
+"></A>
+<A NAME="77580">
+<H3> Methods
+</H3>
+</A>
+
+<ul><A NAME="77587">
+<LI>None.
+</A>
+</UL><A NAME="Event handlers
+"></A>
+<A NAME="77417">
+<H3> Event handlers
+</H3>
+</A>
+
+<A NAME="77418">
+<LI>None.
+</A>
+</UL><A NAME="Examples
+"></A>
+<A NAME="77419">
+<H3> Examples
+</H3>
+</A>
+
+</ul><A NAME="77794">
+The following code includes an audio plug-in in a document.<P></A>
+<A NAME="77795">
+<PRE>&lt;EMBED SRC="train.au" HEIGHT=50 WIDTH=250&gt;</PRE>
+</A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="77260">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="77139">
+<I><a href="ref_m-q.htm#178075">Plugin</a></I> object<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="enabledPlugin
+"></A>
+<A NAME="64183">
+<H1> enabledPlugin
+</H1>
+</A>
+
+<A NAME="64187">
+Property. The <I>Plugin</I> object for the plug-in that is configured for the specified MIME type.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="64384">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="64385">
+<PRE>navigator.mimeTypes[<I>index</I>].enabledPlugin</PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="64386">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="64387">
+<I>index</I> is either an integer representing a MIME type supported by the client or a string containing the type of a <I>MimeType</I> object (from the <I>type</I> property).<P></A>
+
+</UL><A NAME="Property of
+"></A>
+<A NAME="52790">
+<H3> Property of
+</H3>
+</A>
+
+<A NAME="52791">
+<a href="ref_m-q.htm#176261">MimeType</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="52792">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="52793">
+Navigator 3.0<P></A>
+
+</UL><A NAME="Tainted?
+"></A>
+<A NAME="69470">
+<H3> Tainted?
+</H3>
+</A>
+
+<A NAME="69471">
+No<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="79445">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="79446">
+Use the <I>enabledPlugin</I> property to determine which plug-in is configured for a specific MIME type. Each plug-in may support multiple MIME types, and each MIME type could potentially be supported by multiple plug-ins. However, only one plug-in can be <I>configured</I> for a MIME type. (On Macintosh and Unix, the user can configure the handler for each MIME type; on Windows, the handler is determined at Navigator start-up time.)<P></A>
+<A NAME="79442">
+The <I>enabledPlugin</I> property is a reference to a <I>Plugin</I> object that represents the plug-in that is configured for the specified MIME type. If the MIME type does not have a plug-in configured, <I>enabledPlugin</I> is null.<P></A>
+<A NAME="79310">
+Without the <I>enabledPlugin</I> property, you could determine if the user has a particular plug-in installed, if their Navigator can handle a particular MIME type, and if the MIME type is supported by any plug-ins. But you could not determine whether a plug-in is configured for the MIME type. You might need to know this information, for example, so you could dynamically emit an &lt;EMBED&gt; tag on the page if the user has a plug-in configured for the MIME type.<P></A>
+<A NAME="79311">
+<I>enabledPlugin </I>is a read-only property.<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="52799">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="52800">
+The following example determines whether the Shockwave plug-in is installed. If it is, a movie is displayed.<P></A>
+<A NAME="65085">
+<PRE>// Can we display Shockwave movies?<br>mimetype = navigator.mimeTypes["application/x-director"]<br>if (mimetype) {<br>&nbsp;&nbsp;&nbsp;// Yes, so can we display with a plug-in?<br>&nbsp;&nbsp;&nbsp;plugin = mimetype.enabledPlugin<br>&nbsp;&nbsp;&nbsp;if (plugin)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Yes, so show the data in-line<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.writeln("Here\'s a movie: &lt;EMBED SRC=mymovie.dir HEIGHT=100 WIDTH=100&gt;")<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// No, so provide a link to the data<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.writeln("&lt;A HREF='mymovie.dir&gt;Click here&lt;/A&gt; to see a movie.")<br>&nbsp;&nbsp;&nbsp;} else {<br>&nbsp;&nbsp;&nbsp;// No, so tell them so<br>&nbsp;&nbsp;&nbsp;document.writeln("Sorry, can't show you this cool movie.")<br>}</PRE>
+</A>
+<A NAME="64754">
+See also the examples for the <I><a href="ref_m-q.htm#176261">MimeType</a></I> object.<P></A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="52802">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="64217">
+<a href="ref_d-e.htm#82624">description</a>, <a href="ref_t-z.htm#71171">type</a>, <a href="ref_s-s.htm#79636">suffixes</a> properties<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="encoding
+"></A>
+<A NAME="48026">
+<H1> encoding
+</H1>
+</A>
+
+<A NAME="48028">
+Property. A string specifying the MIME encoding of the form.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="48029">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="48030">
+<PRE><I>formName</I>.encoding</PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="48031">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="48032">
+<I>formName</I> is either the name of a form or an element in the <I>forms</I> array.<P></A>
+
+</UL><A NAME="Property of
+"></A>
+<A NAME="48033">
+<H3> Property of
+</H3>
+</A>
+
+<A NAME="48037">
+<a href="ref_f-g.htm#60597">Form object</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="55914">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="55915">
+Navigator 2.0<P></A>
+
+</UL><A NAME="Tainted?
+"></A>
+<A NAME="69482">
+<H3> Tainted?
+</H3>
+</A>
+
+<A NAME="69483">
+No<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="48038">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="48039">
+The <I>encoding</I> property initially reflects the ENCTYPE attribute of the &lt;FORM&gt; tag; however, setting <I>encoding</I> overrides the ENCTYPE attribute.<P></A>
+<A NAME="48040">
+You can set the <I>encoding</I> property at any time.<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="48041">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="48042">
+The following function returns the value of the <I>musicForm</I> <I>encoding</I> property:<P></A>
+<A NAME="48043">
+<PRE>function getEncoding() {<br>&nbsp;&nbsp;&nbsp;return document.musicForm.encoding<br>}</PRE>
+</A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="48044">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="48057">
+<a href="ref_a-c.htm#96428">action</a>, <a href="ref_m-q.htm#176192">method</a>, <a href="ref_t-z.htm#65191">target</a> properties; <a href="ref_f-g.htm#60597">Form object</a><P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="escape
+"></A>
+<A NAME="48073">
+<H1> escape
+</H1>
+</A>
+
+<A NAME="48075">
+Function. Returns the ASCII encoding of an argument in the ISO Latin-1 character set.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="48076">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="48077">
+<PRE>escape("<I>string</I>")</PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="48078">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="48079">
+<I>string</I> is a nonalphanumeric string in the ISO Latin-1 character set, or a property of an existing object.<P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="56164">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="56165">
+Navigator 2.0<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="48080">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="48081">
+The value returned by the <B>escape</B> function is a string of the form "%xx," where <I>xx</I> is the ASCII encoding of a character in the argument. If you pass the <B>escape</B> function an alphanumeric character, the <B>escape</B> function returns the same character. <B>escape</B> is a top-level function not associated with any object.<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="80211">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="80212">
+The following example returns "Hello%2C%20World":<P></A>
+<A NAME="80213">
+<PRE>escape("Hello, World")</PRE>
+</A>
+<A NAME="80297">
+The following example returns "%26":<P></A>
+<A NAME="80298">
+<PRE>escape("&amp;")</PRE>
+</A>
+<A NAME="80299">
+The following example returns "%21%23":<P></A>
+<A NAME="48086">
+<PRE>escape("!#")</PRE>
+</A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="48087">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="48091">
+<a href="ref_t-z.htm#66677">unescape</a> function<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="eval
+"></A>
+<A NAME="573">
+<H1> eval
+</H1>
+</A>
+
+<A NAME="575">
+Method. The <B>eval</B> method evaluates a string of JavaScript code in the context of the specified object.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="577">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="579">
+<PRE>[<I>objectName</I>.]eval(<I>string</I>)</PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="2903">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="82022">
+<I>objectName</I> is the object for which a string is to be evaluated. If omitted, the string is evaluated without regard to any object.<P></A>
+<A NAME="581">
+<I>string</I> is any string representing a JavaScript expression, statement, or sequence of statements. The expression can include variables and properties of existing objects.<P></A>
+
+</UL><A NAME="Method of
+"></A>
+<A NAME="81990">
+<H3> Method of
+</H3>
+</A>
+
+<A NAME="81994">
+<B>eval</B> is a method of all objects.<P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="56236">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="56237">
+Navigator 2.0: a built-in JavaScript function, not associated with any object, but part of the language itself<P></A>
+<A NAME="81701">
+Navigator 3.0: a method of every object<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="583">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="587">
+The argument of the <B>eval</B> method is a string. If the string represents an expression, <B>eval</B> evaluates the expression. If the argument represents one or more JavaScript statements, <B>eval</B> performs the statements. Do not call <B>eval</B> to evaluate an arithmetic expression; JavaScript evaluates arithmetic expressions automatically.<P></A>
+<A NAME="589">
+If you construct an arithmetic expression as a string, you can use <B>eval</B> to evaluate it at a later time. For example, suppose you have a variable <I>x</I>. You can postpone evaluation of an expression involving <I>x</I> by assigning the string value of the expression, say <code>"3&nbsp;*&nbsp;x&nbsp;+&nbsp;2"</code>, to a variable, and then calling <B>eval</B> at a later point in your script.<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="591">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="593">
+<B>Example 1.</B> Both of the write statements below display 42. The first evaluates the string "x + y + 1," and the second evaluates the string "42."<P></A>
+<A NAME="595">
+<PRE>var x = 2<br>var y = 39<br>var z = "42"<br>document.write(eval("x + y + 1"), "&lt;BR&gt;") <br>document.write(eval(z), "&lt;BR&gt;")</PRE>
+</A>
+<A NAME="597">
+<B>Example 2.</B> In the following example, the <B>getFieldName(n)</B> function returns the name of the <I>n</I>th form element as a string. The first statement assigns the string value of the third form element to the variable <I>field</I>. The second statement uses <B>eval</B> to display the value of the form element.<P></A>
+<A NAME="599">
+<PRE>var field = getFieldName(3) <br>document.write("The field named ", field, " has value of ", eval(field + ".value"))</PRE>
+</A>
+<A NAME="601">
+<B>Example 3.</B> The following example uses <B>eval</B> to evaluate the string <I>str</I>. This string consists of JavaScript statements that open an Alert dialog box and assigns <I>z</I> a value of 42 if <I>x</I> is five, and assigns zero to <I>z</I> otherwise. When the second statement is executed, <B>eval</B> will cause these statements to be performed, and it will also evaluate the set of statements and return the value that is assigned to <I>z</I>.<P></A>
+<A NAME="82436">
+<PRE>var str = "if (x == 5) {alert('z is 42'); z = 42;} else z = 0; "<br>document.write("&lt;P&gt;z is ", eval(str))</PRE>
+</A>
+<A NAME="82437">
+<B>Example 4.</B> In the following example, the <B>setValue</B> function uses <B>eval</B> to assign the value of the variable <I>newValue</I> to the text field <I>textObject</I>:<P></A>
+<A NAME="82438">
+<PRE>function setValue (textObject, newValue) {<br>&nbsp;&nbsp;&nbsp;eval ("document.forms[0]." + textObject + ".value") = newValue<br>}</PRE>
+</A>
+<A NAME="82439">
+<B>Example 5.</B> The following example creates <I>breed</I> as a property of the object <I>myDog,</I> and also as a variable. The first write statement uses <code>eval('breed')</code> without specifying an object; the string "breed" is evaluated without regard to any object, and the <B>write</B> method displays "Shepherd", which is the value of the <I>breed</I> variable. The second write statement uses <code>myDog.eval('breed')</code> which specifies the object <I>myDog</I>; the string "breed" is evaluated with regard to the <I>myDog</I> object, and the <B>write</B> method displays "Lab", which is the value of the <I>breed</I> property of the <I>myDog</I> object.<P></A>
+<A NAME="82231">
+<PRE>function Dog(name,breed,color) {<br>&nbsp;&nbsp;&nbsp;this.name=name<br>&nbsp;&nbsp;&nbsp;this.breed=breed<br>&nbsp;&nbsp;&nbsp;this.color=color<br>}<br>myDog = new Dog("Gabby")<br>myDog.breed="Lab"<br>var breed='Shepherd'<br>document.write("&lt;P&gt;" + eval('breed'))<br>document.write("&lt;BR&gt;" + myDog.eval('breed'))</PRE>
+</A>
+<A NAME="82602">
+<B>Example 6.</B> The following example uses <B>eval</B> within a function that defines an object type, <I>flintstone.</I> The statement <code>fred = new flintstone("x=42")</code> creates the object <I>fred</I> with the properties <I>x, y, z,</I> and <I>z2.</I> The write statements display the values of these properties as 42, 43, 44, and 45, respectively.<P></A>
+<A NAME="82603">
+<PRE>function flintstone(str) {<br>&nbsp;&nbsp;&nbsp;this.eval("this."+str)<br>&nbsp;&nbsp;&nbsp;this.eval("this.y=43")<br>&nbsp;&nbsp;&nbsp;this.z=44<br>&nbsp;&nbsp;&nbsp;this["z2"] = 45<br>}<br>fred = new flintstone("x=42")<br>document.write("&lt;BR&gt;fred.x is " + fred.x)<br>document.write("&lt;BR&gt;fred.y is " + fred.y)<br>document.write("&lt;BR&gt;fred.z is " + fred.z)<br>document.write("&lt;BR&gt;fred.z2 is " + fred.z2)</PRE>
+</A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="exp
+"></A>
+<A NAME="3128">
+<H1> exp
+</H1>
+</A>
+
+<A NAME="3130">
+Method. Returns enumber, where <I>number</I> is the argument, and <I>e</I> is Euler's constant, the base of the natural logarithms.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="613">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="615">
+<PRE>Math.exp(<I>number</I>)</PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="2908">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="617">
+<I>number</I> is any numeric expression or a property of an existing object.<P></A>
+
+</UL><A NAME="Method of
+"></A>
+<A NAME="619">
+<H3> Method of
+</H3>
+</A>
+
+<A NAME="621">
+<a href="ref_m-q.htm#175987">Math</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="56450">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="56451">
+Navigator 2.0<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="623">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="17548">
+The following function returns the exp value of the variable <I>x:</I><P></A>
+<A NAME="17549">
+<PRE>function getExp(x) {<br>&nbsp;&nbsp;&nbsp;return Math.exp(x)<br>}</PRE>
+</A>
+<A NAME="17550">
+If you pass <B>getExp</B> the value 1, it returns 2.718281828459045.<P></A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="627">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="629">
+<a href="ref_d-e.htm#48461">E</a>, <a href="ref_h-l.htm#1016">log</a>, <a href="ref_m-q.htm#178449">pow</a> methods<P></A>
+<A NAME="38317">
+<P></A>
+
+<HR>
+<A HREF="ref_f-g.htm">[Next reference file]</A>
+

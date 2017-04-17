@@ -1,0 +1,3013 @@
+<BODY BGCOLOR="#FFFFFF">
+<A HREF="ref_d-e.htm">[Previous reference file]</A>
+<!------------------------------>
+<HR>
+<A NAME="fgColor
+"></A>
+<A NAME="59824">
+<H1> fgColor
+</H1>
+</A>
+
+<A NAME="59826">
+Property. A string specifying the color of the document (foreground) text.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="59827">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="59828">
+<PRE>document.fgColor</PRE>
+</A>
+
+</UL><A NAME="Property of
+"></A>
+<A NAME="61715">
+<H3> Property of
+</H3>
+</A>
+
+<A NAME="61719">
+<a href="ref_d-e.htm#47667">document</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="69231">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="69232">
+Navigator 2.0<P></A>
+
+</UL><A NAME="Tainted?
+"></A>
+<A NAME="86897">
+<H3> Tainted?
+</H3>
+</A>
+
+<A NAME="86898">
+No<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="61720">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="59835">
+The <I>fgColor</I> property is expressed as a hexadecimal RGB triplet or as one of the string literals listed in <a href="colors.htm#1002170">"Color values"</a>. This property is the JavaScript reflection of the TEXT attribute of the &lt;BODY&gt; tag. The default value of this property is set by the user on the Colors tab of the Preferences dialog box, which is displayed by choosing General Preferences from the Options menu. You cannot set this property after the HTML source has been through layout.<P></A>
+<A NAME="59839">
+If you express the color as a hexadecimal RGB triplet, you must use the format rrggbb. For example, the hexadecimal RGB values for salmon are red=FA, green=80, and blue=72, so the RGB triplet for salmon is "FA8072."<P></A>
+<A NAME="59840">
+You can override the value set in the <I>fgColor</I> property in either of the following ways:<P></A>
+<ul><A NAME="59841">
+<LI>Setting the COLOR attribute of the &lt;FONT&gt; tag.
+</A><A NAME="59842">
+<LI>Using the <B>fontcolor</B> method.
+</A>
+</UL><A NAME="Examples
+"></A>
+<A NAME="59843">
+<H3> Examples
+</H3>
+</A>
+
+</ul><A NAME="59844">
+The following example sets the color of the foreground text to aqua using a string literal:<P></A>
+<A NAME="59845">
+<PRE>document.fgColor="aqua"</PRE>
+</A>
+<A NAME="59846">
+The following example sets the color of the foreground text to aqua using a hexadecimal triplet:<P></A>
+<A NAME="59847">
+<PRE>document.fgColor="00FFFF"</PRE>
+</A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="59848">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="59864">
+<a href="ref_a-c.htm#59030">alinkColor</a>, <a href="ref_a-c.htm#62435">bgColor</a>, <a href="ref_h-l.htm#84668">linkColor</a>, <a href="ref_t-z.htm#66971">vlinkColor</a> properties; <a href="ref_f-g.htm#224">fontcolor</a> method<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="filename
+"></A>
+<A NAME="67355">
+<H1> filename
+</H1>
+</A>
+
+<A NAME="67362">
+Property. The name of a plug-in file on disk.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="67363">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="67364">
+<PRE>1. navigator.plugins[<I>index</I>].filename<br>2. navigator.plugins[<I>pluginName</I>].filename</PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="81300">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="81302">
+<I>index</I> is either an integer representing a plug-in installed on the client or a string containing the name of a <I>Plugin</I> object (from the <I>name</I> property).<P></A>
+
+</UL><A NAME="Property of
+"></A>
+<A NAME="67366">
+<H3> Property of
+</H3>
+</A>
+
+<A NAME="67367">
+<a href="ref_m-q.htm#178075">Plugin</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="67368">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="67369">
+Navigator 3.0<P></A>
+
+</UL><A NAME="Tainted?
+"></A>
+<A NAME="87289">
+<H3> Tainted?
+</H3>
+</A>
+
+<A NAME="87290">
+No<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="67370">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="82040">
+The <I>filename </I>property is the plug-in program's file name and is supplied by the plug-in itself. This name may vary from platform to platform.<P></A>
+<A NAME="82041">
+<I>filename </I>is a read-only property.<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="82042">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="82049">
+See the examples for the <I><a href="ref_m-q.htm#178075">Plugin</a></I> object.<P></A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="67374">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="80538">
+<a href="ref_d-e.htm#82624">description</a>, <a href="ref_h-l.htm#84418">length</a>, <a href="ref_m-q.htm#176636">name</a> properties<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="FileUpload
+"></A>
+<A NAME="104945">
+<H1> FileUpload
+</H1>
+</A>
+
+<A NAME="104946">
+Object. A file upload element on an HTML form. A file upload element lets the user supply a file as input.<P></A>
+
+</UL><A NAME="HTML syntax
+"></A>
+<A NAME="67411">
+<H3> HTML syntax
+</H3>
+</A>
+
+<A NAME="67412">
+To define a <I>FileUpload</I> object, use standard HTML syntax with the addition of JavaScript event handlers:<P></A>
+<A NAME="67413">
+<PRE>&lt;INPUT<br>&nbsp;&nbsp;&nbsp;TYPE="file"<br>&nbsp;&nbsp;&nbsp;NAME="<I>fileUploadName</I>"<br>&nbsp;&nbsp;&nbsp;[onBlur="<I>handlerText</I>"]<br>&nbsp;&nbsp;&nbsp;[onChange="<I>handlerText</I>"]<br>&nbsp;&nbsp;&nbsp;[onFocus="<I>handlerText</I>"]<br>&gt;</PRE>
+</A>
+
+</UL><A NAME="HTML attributes
+"></A>
+<A NAME="67414">
+<H3> HTML attributes
+</H3>
+</A>
+
+<A NAME="67415">
+<I>NAME="fileUploadName"</I> specifies the name of the <I>FileUpload</I> object (this is not the name of the file to upload). You can access this value using the <I>name</I> property, and you can use this name when indexing the <I>elements</I> array.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="67416">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="67417">
+To use a <I>FileUpload</I> object's properties and methods:<P></A>
+<A NAME="67418">
+<PRE><I>fileUploadName</I>.<I>propertyName<br>fileUploadName</I>.<I>methodName</I></PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="67419">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="67420">
+<I>fileUploadName</I> is the value of the NAME attribute of a <I>FileUpload</I> object.<P></A>
+<A NAME="67421">
+<I>propertyName</I> is one of the properties listed below.<P></A>
+<A NAME="94872">
+<I>methodName</I> is one of the properties listed below.<P></A>
+
+</UL><A NAME="Property of
+"></A>
+<A NAME="67422">
+<H3> Property of
+</H3>
+</A>
+
+<A NAME="67423">
+<a href="ref_f-g.htm#60597">Form object</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="67424">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="67425">
+Navigator 3.0<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="67426">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="67427">
+A <I>FileUpload</I> object on a form looks as follows:<p>
+
+<FORM>
+&nbsp&nbsp&nbsp&nbsp&nbsp
+<B>File containing your entry:</B>
+<BR>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<INPUT TYPE="file">
+</FORM>
+
+<P></A>
+<A NAME="79762">
+A <I>FileUpload</I> object is a form element and must be defined within a &lt;FORM&gt; tag.<P></A>
+
+</UL><A NAME="Properties
+"></A>
+<A NAME="67428">
+<H3> Properties
+</H3>
+</A>
+
+<A NAME="67446">
+The <I>FileUpload</I> object has the following properties:
+
+<P><TABLE BORDER="2">
+<CAPTION></CAPTION>
+<tr align=left valign=bottom><th><b><A NAME="67435">
+Property</A><B><th><b><A NAME="67437">
+Description</A><B>
+<tr align=left valign=top><td><A NAME="98140">
+<a href="ref_f-g.htm#97350">form property</a>
+</A><BR>
+
+<td><A NAME="98142">
+Specifies the form containing the <I>FileUpload</I> object
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="67439">
+<a href="ref_m-q.htm#176636">name</a>
+</A><BR>
+
+<td><A NAME="67441">
+Reflects the NAME attribute
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="93810">
+<a href="ref_t-z.htm#71171">type</a>
+</A><BR>
+
+<td><A NAME="93812">
+Reflects the TYPE attribute
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="67443">
+<a href="ref_t-z.htm#66860">value</a>
+</A><BR>
+
+<td><A NAME="67445">
+Reflects the current value of the file upload element's 
+field; this corresponds to the name of the file to upload. 
+This is a read-only property for security purposes.
+</A><BR>
+
+
+
+
+</TABLE>
+
+<TABLE>
+<TR><TD>
+</TABLE>
+
+
+<P></A>
+
+</UL><A NAME="Methods
+"></A>
+<A NAME="67447">
+<H3> Methods
+</H3>
+</A>
+
+<A NAME="96739">
+The <I>FileUpload</I> object has the following methods:
+
+<P><TABLE BORDER="2">
+<CAPTION></CAPTION>
+<tr align=left valign=top><td><A NAME="97117">
+<LI><a href="ref_a-c.htm#62474">blur</a>
+</A><A NAME="106152">
+<LI><a href="ref_d-e.htm#573">eval</a>
+</A><A NAME="96729">
+<LI><a href="ref_f-g.htm#59872">focus</a>
+</A>
+<td><A NAME="97198">
+<LI><a href="ref_t-z.htm#70978">toString</a>
+</A><A NAME="96738">
+<LI><a href="ref_t-z.htm#91188">valueOf</a>
+</A>
+
+
+
+</TABLE>
+
+<TABLE>
+<TR><TD>
+</TABLE>
+
+
+<P></A>
+
+</UL><A NAME="Event handlers
+"></A>
+<A NAME="67449">
+<H3> Event handlers
+</H3>
+</A>
+
+<ul><A NAME="67450">
+<LI><a href="ref_m-q.htm#177100">onBlur</a>
+</A><A NAME="94831">
+<LI><a href="ref_m-q.htm#177149">onChange</a>
+</A><A NAME="94840">
+<LI><a href="ref_m-q.htm#177278">onFocus</a>
+</A>
+</UL><A NAME="Examples
+"></A>
+<A NAME="67451">
+<H3> Examples
+</H3>
+</A>
+
+</ul><A NAME="67452">
+The following example places a <I>FileUpload</I> object on a form and provides two buttons that let the user display current values of the <I>name</I> and <I>value</I> properties.<P></A>
+<A NAME="67453">
+<PRE>&lt;FORM NAME="form1"&gt;<br>File to send: &lt;INPUT TYPE="file" NAME="myUploadObject"&gt;<br>&lt;P&gt;Get properties&lt;BR&gt;<br>&lt;INPUT TYPE="button" VALUE="name"<br>&nbsp;&nbsp;&nbsp;onClick="alert('name: ' + document.form1.myUploadObject.name)"&gt;<br>&lt;INPUT TYPE="button" VALUE="value"<br>&nbsp;&nbsp;&nbsp;onClick="alert('value: ' + document.form1.myUploadObject.value)"&gt;&lt;BR&gt;<br>&lt;/FORM&gt;</PRE>
+</A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="67454">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="67455">
+<a href="ref_t-z.htm#65229">Text object</a><P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="fixed
+"></A>
+<A NAME="136">
+<H1> fixed
+</H1>
+</A>
+
+<A NAME="138">
+Method. Causes a string to be displayed in fixed-pitch font as if it were in a &lt;TT&gt; tag.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="140">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="142">
+<PRE><I>stringName</I>.fixed()</PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="2976">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="144">
+<I>stringName</I> is any string or a property of an existing object.<P></A>
+
+</UL><A NAME="Method of
+"></A>
+<A NAME="146">
+<H3> Method of
+</H3>
+</A>
+
+<A NAME="148">
+<a href="ref_s-s.htm#870">String</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="70439">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="70440">
+Navigator 2.0<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="150">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="152">
+Use the <B>fixed</B> method with the <B>write</B> or <B>writeln</B> methods to format and display a string in a document.<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="154">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="156">
+The following example uses the <B>fixed</B> method to change the formatting of a string:<P></A>
+<A NAME="158">
+<PRE>var worldString="Hello, world"<br>document.write(worldString.fixed())</PRE>
+</A>
+<A NAME="160">
+The previous example produces the same output as the following HTML:<P></A>
+<A NAME="162">
+<PRE>&lt;TT&gt;Hello, world&lt;/TT&gt;</PRE>
+</A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="floor
+"></A>
+<A NAME="164">
+<H1> floor
+</H1>
+</A>
+
+<A NAME="166">
+Method. Returns the greatest integer less than or equal to a number.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="168">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="170">
+<PRE>Math.floor(<I>number</I>)</PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="2985">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="172">
+<I>number</I> is any numeric expression or a property of an existing object.<P></A>
+
+</UL><A NAME="Method of
+"></A>
+<A NAME="174">
+<H3> Method of
+</H3>
+</A>
+
+<A NAME="176">
+<a href="ref_m-q.htm#175987">Math</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="70789">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="70790">
+Navigator 2.0<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="178">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="20435">
+The following function returns the floor value of the variable <I>x:</I><P></A>
+<A NAME="20436">
+<PRE>function getFloor(x) {<br>&nbsp;&nbsp;&nbsp;return Math.floor(x)<br>}</PRE>
+</A>
+<A NAME="20437">
+If you pass <B>getFloor</B> the value 45.95, it returns 45; if you pass it the value -45.95, it returns -46.<P></A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="182">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="184">
+<a href="ref_a-c.htm#43425">ceil</a> method<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="focus
+"></A>
+<A NAME="59872">
+<H1> focus
+</H1>
+</A>
+
+<A NAME="59874">
+Method. Gives focus to the specified object.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="59875">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="59876">
+<PRE>1. <I>fileUploadName</I>.focus()<br>2. <I>passwordName</I>.focus()<br>3. <I>selectName</I>.focus()<br>4. <I>textName</I>.focus()<br>5. <I>textareaName</I>.focus()<br>6. <I>frameReference</I>.focus()<br>7. <I>windowReference</I>.focus()</PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="59877">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="95106">
+<I>fileUploadName</I> is either the value of the NAME attribute of a <I>FileUpload</I> object or an element in the <I>elements</I> array.<P></A>
+<A NAME="59878">
+<I>passwordName</I> is either the value of the NAME attribute of a <I>Password</I> object or an element in the <I>elements</I> array.<P></A>
+<A NAME="59879">
+<I>selectName</I> is either the value of the NAME attribute of a <I>Select</I> object or an element in the <I>elements</I> array.<P></A>
+<A NAME="59880">
+<I>textName</I> is either the value of the NAME attribute of a <I>Text</I> object or an element in the <I>elements</I> array.<P></A>
+<A NAME="59881">
+<I>textareaName</I> is either the value of the NAME attribute of a <I>Textarea</I> object or an element in the <I>elements</I> array.<P></A>
+<A NAME="73616">
+<I>frameReference</I> is a valid way of referring to a frame, as described in the <a href="ref_f-g.htm#60829">Frame</a> object.<P></A>
+<A NAME="73617">
+<I>windowReference</I> is a valid way of referring to a window, as described in the <a href="ref_t-z.htm#67013">window object</a>.<P></A>
+
+</UL><A NAME="Method of
+"></A>
+<A NAME="61756">
+<H3> Method of
+</H3>
+</A>
+
+<A NAME="61769">
+<a href="ref_a-c.htm#62518">Button</a> object, <a href="ref_a-c.htm#63502">Checkbox</a> object, <a href="ref_f-g.htm#104945">FileUpload</a> object, <a href="ref_f-g.htm#60829">Frame</a> object, <a href="ref_m-q.htm#177857">Password</a> object, <a href="ref_r-r.htm#26345">Radio</a> object, <a href="ref_r-r.htm#26487">Reset object</a> object, <a href="ref_s-s.htm#72585">Select object</a>, <a href="ref_s-s.htm#73448">Submit object</a>, <a href="ref_t-z.htm#65229">Text object</a>, <a href="ref_t-z.htm#65386">Textarea</a> object, <a href="ref_t-z.htm#67013">window object</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="71147">
+<H3> Implemented in
+</H3>
+</A>
+
+<ul><A NAME="73873">
+<LI>Navigator 2.0
+</A><A NAME="73874">
+<LI>Navigator 3.0: method of <I>Button, Checkbox, FileUpload, Frame, Radio, Reset, Submit </I>and <I>window</I>
+</A>
+</UL><A NAME="Description
+"></A>
+<A NAME="93769">
+<H3> Description
+</H3>
+</A>
+
+</ul><A NAME="105906">
+Use the <B>focus</B> method to navigate to a specific form element, window, or frame, and give it focus. You can then either programmatically enter a value in the form element or let the user enter a value. Giving focus to a window brings the window forward in most windowing systems.<P></A>
+
+<a name="105983">
+<B><blockquote>Note
+</blockquote></B>
+</a>
+
+<a name="105957">
+<blockquote>On some platforms, the <B>focus</B> method gives focus to a frame but the focus is 
+not visually apparent (for example, the frame's border is not darkened). Please 
+see the release notes (after starting Netscape, choose Release Notes from the 
+Help menu).
+</blockquote>
+</a>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="105943">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="105908">
+In the following example, the <B>checkPassword</B> function confirms that a user has entered a valid password. If the password is not valid, the <B>focus</B> method returns focus to the <I>Password</I> object and the <B>select</B> method highlights it so the user can re-enter the password.<P></A>
+<A NAME="59900">
+<PRE>function checkPassword(userPass) {<br>&nbsp;&nbsp;&nbsp;if (badPassword) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert("Please enter your password again.")<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;userPass.focus()<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;userPass.select()<br>&nbsp;&nbsp;&nbsp;}<br>}</PRE>
+</A>
+<A NAME="59901">
+This example assumes that the <I>Password</I> object is defined as<P></A>
+<A NAME="59902">
+<PRE>&lt;INPUT TYPE="password" NAME="userPass"&gt;</PRE>
+</A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="59903">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="59910">
+<a href="ref_a-c.htm#62474">blur</a> method, <a href="ref_s-s.htm#72548">select method</a><P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="fontcolor
+"></A>
+<A NAME="224">
+<H1> fontcolor
+</H1>
+</A>
+
+<A NAME="226">
+Method. Causes a string to be displayed in the specified color as if it were in a &lt;FONT COLOR=<I>color</I>&gt; tag.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="228">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="230">
+<PRE><I>stringName</I>.fontcolor(<I>color</I>)</PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="2995">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="232">
+<I>stringName</I> is any string or a property of an existing object.<P></A>
+<A NAME="234">
+<I>color</I> is a string or a property of an existing object, expressing the color as a hexadecimal RGB triplet or as one of the string literals listed in <a href="colors.htm#1002170">"Color values"</a>.<P></A>
+
+</UL><A NAME="<I></I>Method of
+"></A>
+<A NAME="236">
+<H3> <I></I>Method of
+</H3>
+</A>
+
+<A NAME="238">
+<a href="ref_s-s.htm#870">String</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="71251">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="71252">
+Navigator 2.0<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="240">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="242">
+Use the <B>fontcolor</B> method with the <B>write</B> or <B>writeln</B> methods to format and display a string in a document.<P></A>
+<A NAME="244">
+If you express <I>color</I> as a hexadecimal RGB triplet, you must use the format rrggbb. For example, the hexadecimal RGB values for salmon are red=FA, green=80, and blue=72, so the RGB triplet for salmon is "FA8072."<P></A>
+<A NAME="246">
+The <B>fontcolor</B> method overrides a value set in the <I>fgColor</I> property.<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="248">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="250">
+The following example uses the <B>fontcolor</B> method to change the color of a string:<P></A>
+<A NAME="252">
+<PRE>var worldString="Hello, world"<br><br>document.write(worldString.fontcolor("maroon") +<br>&nbsp;&nbsp;&nbsp;" is maroon in this line")<br>document.write("&lt;P&gt;" + worldString.fontcolor("salmon") +<br>&nbsp;&nbsp;&nbsp;" is salmon in this line")<br>document.write("&lt;P&gt;" + worldString.fontcolor("red") +<br>&nbsp;&nbsp;&nbsp;" is red in this line")<br><br>document.write("&lt;P&gt;" + worldString.fontcolor("8000") +<br>&nbsp;&nbsp;&nbsp;" is maroon in hexadecimal in this line")<br>document.write("&lt;P&gt;" + worldString.fontcolor("FA8072") +<br>&nbsp;&nbsp;&nbsp;" is salmon in hexadecimal in this line")<br>document.write("&lt;P&gt;" + worldString.fontcolor("FF00") +<br>&nbsp;&nbsp;&nbsp;" is red in hexadecimal in this line")</PRE>
+</A>
+<A NAME="254">
+The previous example produces the same output as the following HTML:<P></A>
+<A NAME="256">
+<PRE>&lt;FONT COLOR="maroon"&gt;Hello, world&lt;/FONT&gt; is maroon in this line<br>&lt;P&gt;&lt;FONT COLOR="salmon"&gt;Hello, world&lt;/FONT&gt; is salmon in this line<br>&lt;P&gt;&lt;FONT COLOR="red"&gt;Hello, world&lt;/FONT&gt; is red in this line<br><br>&lt;FONT COLOR="8000"&gt;Hello, world&lt;/FONT&gt; is maroon in hexadecimal in this line<br>&lt;P&gt;&lt;FONT COLOR="FA8072"&gt;Hello, world&lt;/FONT&gt; is salmon in hexadecimal in this line<br>&lt;P&gt;&lt;FONT COLOR="FF00"&gt;Hello, world&lt;/FONT&gt; is red in hexadecimal in this line</PRE>
+</A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="fontsize
+"></A>
+<A NAME="258">
+<H1> fontsize
+</H1>
+</A>
+
+<A NAME="260">
+Method. Causes a string to be displayed in the specified font size as if it were in a &lt;FONTSIZE=<I>size</I>&gt; tag.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="262">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="264">
+<PRE><I>stringName</I>.fontsize(<I>size</I>)</PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="3004">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="266">
+<I>stringName</I> is any string or a property of an existing object.<P></A>
+<A NAME="268">
+<I>size</I> is an integer between one and seven, a string representing a signed integer between one and seven, or a property of an existing object.<P></A>
+
+</UL><A NAME="Method of
+"></A>
+<A NAME="270">
+<H3> Method of
+</H3>
+</A>
+
+<A NAME="272">
+<a href="ref_s-s.htm#870">String</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="71821">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="71822">
+Navigator 2.0<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="274">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="276">
+Use the <B>fontsize</B> method with the <B>write</B> or <B>writeln</B> methods to format and display a string in a document.<P></A>
+<A NAME="20359">
+When you specify <I>size</I> as an integer, you set the size of <I>stringName</I> to one of the seven defined sizes. When you specify <I>size</I> as a string such as "-2," you adjust the font size of <I>stringName</I> relative to the size set in the &lt;BASEFONT&gt; tag.<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="278">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="280">
+The following example uses <I>string</I> methods to change the size of a string:<P></A>
+<A NAME="282">
+<PRE>var worldString="Hello, world"<br><br>document.write(worldString.small())<br>document.write("&lt;P&gt;" + worldString.big())<br>document.write("&lt;P&gt;" + worldString.fontsize(7))</PRE>
+</A>
+<A NAME="284">
+The previous example produces the same output as the following HTML:<P></A>
+<A NAME="286">
+<PRE>&lt;SMALL&gt;Hello, world&lt;/SMALL&gt;<br>&lt;P&gt;&lt;BIG&gt;Hello, world&lt;/BIG&gt;<br>&lt;P&gt;&lt;FONTSIZE=7&gt;Hello, world&lt;/FONTSIZE&gt;</PRE>
+</A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="288">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="290">
+<a href="ref_a-c.htm#43045">big</a>, <a href="ref_s-s.htm#700">small</a> methods<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="Form object
+"></A>
+<A NAME="60597">
+<H1> Form object
+</H1>
+</A>
+
+<A NAME="60599">
+Object. Lets users input text and make choices from <I>Form</I> elements such as checkboxes, radio buttons, and selection lists. You can also use a form to post data to a server.<P></A>
+
+</UL><A NAME="HTML syntax
+"></A>
+<A NAME="60600">
+<H3> HTML syntax
+</H3>
+</A>
+
+<A NAME="60601">
+To define a form, use standard HTML syntax with the addition of JavaScript event handlers:<P></A>
+<A NAME="74460">
+<PRE>&lt;FORM<br>&nbsp;&nbsp;&nbsp;NAME="<I>formName</I>"<br>&nbsp;&nbsp;&nbsp;TARGET="<I>windowName</I>"<br>&nbsp;&nbsp;&nbsp;ACTION="<I>serverURL</I>"<br>&nbsp;&nbsp;&nbsp;METHOD=GET | POST<br>&nbsp;&nbsp;&nbsp;ENCTYPE="<I>encodingType</I>"<br>&nbsp;&nbsp;&nbsp;[onReset="<I>handlerText</I>"]<br>&nbsp;&nbsp;&nbsp;[onSubmit="<I>handlerText</I>"]&gt;<br>&lt;/FORM&gt;</PRE>
+</A>
+
+</UL><A NAME="HTML attributes
+"></A>
+<A NAME="60603">
+<H3> HTML attributes
+</H3>
+</A>
+
+<A NAME="60604">
+<I>NAME="formName"</I> specifies the name of the <I>Form</I> object. You can access this value using the <I>name</I> property, and you can use this name when indexing the <I>forms</I> array.<P></A>
+<A NAME="60606">
+<I>TARGET="windowName"</I> specifies the window that form responses go to. When you submit a form with a TARGET attribute, server responses are displayed in the specified window instead of the window that contains the form. <I>windowName</I> can be an existing window; it can be a frame name specified in a &lt;FRAMESET&gt; tag; or it can be one of the literal frame names _top, _parent, _self, or _blank; it cannot be a JavaScript expression (for example, it cannot be parent<I>.frameName</I> or <I>windowName.frameName</I>). You can access this value using the <I>target</I> property.<P></A>
+<A NAME="60608">
+<I>ACTION="serverURL"</I> specifies the URL of the server to which form field input information is sent. This attribute can specify a CGI or LiveWire application on the server; it can also be a mailto: URL if the form is to be mailed. See the <I><a href="ref_h-l.htm#84722">location</a></I> object for a description of the URL components. You can access this value using the <I>action</I> property.<P></A>
+<A NAME="60613">
+<I>METHOD=GET | POST</I> specifies how information is sent to the server specified by <I>ACTION</I>. GET (the default) appends the input information to the URL, which on most receiving systems becomes the value of the environment variable <I>QUERY_STRING</I>. POST sends the input information in a data body, which is available on <I>stdin</I> with the data length set in the environment variable <I>CONTENT_LENGTH</I>. If the METHOD attribute has the value "POST," then the ENCTYPE attribute typically has the value "application/x-www-form-urlencoded." You can access this value using the <I>method</I> property.<P></A>
+<A NAME="60615">
+<I>ENCTYPE="encodingType"</I> specifies the MIME encoding of the data sent: "application/x-www-form-urlencoded" (the default) or "multipart/form-data." Use "multipart/form-data" if the form contains a file upload element (INPUT TYPE="file"). If the METHOD attribute has the value "POST," then the ENCTYPE attribute typically has the value "application/x-www-form-urlencoded." You can access this value using the <I>encoding</I> property.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="60616">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="60617">
+To use a <I>Form</I> object's properties and methods:<P></A>
+<A NAME="60618">
+<PRE>1. <I>formName</I>.<I>propertyName<br></I>2. <I>formName</I>.<I>methodName</I>(<I>parameters</I>)<br>3. forms[<I>index</I>].<I>propertyName<br></I>4. forms[<I>index</I>].<I>methodName</I>(<I>parameters</I>)</PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="60619">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="60620">
+<I>formName</I> is the value of the NAME attribute of a <I>Form</I> object.<P></A>
+<A NAME="60621">
+<I>index</I> is an integer representing a <I>Form</I> object or the name of a <I>Form</I> object as specified by the NAME attribute.<P></A>
+<A NAME="60622">
+<I>propertyName</I> is one of the properties listed below.<P></A>
+<A NAME="60623">
+<I>methodName</I> is one of the methods listed below.<P></A>
+
+</UL><A NAME="Property of
+"></A>
+<A NAME="60624">
+<H3> Property of
+</H3>
+</A>
+
+<A NAME="60628">
+<a href="ref_d-e.htm#47667">document</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="72069">
+<H3> Implemented in
+</H3>
+</A>
+
+<ul><A NAME="72070">
+<LI>Navigator 2.0
+</A><A NAME="74691">
+<LI>Navigator 3.0: added <I>FileUpload</I> object as property; added <I>reset</I> method; added onReset event handler
+</A>
+</UL><A NAME="Description
+"></A>
+<A NAME="60629">
+<H3> Description
+</H3>
+</A>
+
+</ul><A NAME="60630">
+Each form in a document is a distinct object.<P></A>
+<A NAME="60631">
+You can reference a form's elements in your code by using the element's name (from the NAME attribute) or the <a href="ref_d-e.htm#47988">elements array</a>. The <I>elements</I> array contains an entry for each element (such as a <I>Checkbox</I>, <I>Radio</I>, or <I>Text</I> object) in a form.<P></A>
+
+<A NAME="The forms array
+"></A>
+<A NAME="60636">
+<H4> The forms array
+</H4>
+</A>
+
+<A NAME="60637">
+You can reference the forms in your code by using the <I>forms</I> array (you can also use the form name). This array contains an entry for each <I>Form</I> object (&lt;FORM&gt; tag) in a document in source order. For example, if a document contains three forms, these forms are reflected as <code>document.forms[0]</code>, <code>document.forms[1]</code>, and <code>document.forms[2]</code>.<P></A>
+<A NAME="60638">
+To use the <I>forms</I> array:<P></A>
+<A NAME="60639">
+<PRE>1. document.forms[<I>index</I>]<br>2. document.forms.length</PRE>
+</A>
+<A NAME="60640">
+<I>index</I> is an integer representing a form in a document or the name of a <I>Form</I> object as specified by the NAME attribute.<P></A>
+<A NAME="60641">
+To obtain the number of forms in a document, use the <I>length</I> property: <code>document.forms.length</code>.<P></A>
+<A NAME="60642">
+You can also refer to a form's elements by using the <I>forms</I> array. For example, you would refer to a <I>Text</I> object named <I>quantity</I> in the second form as <code>document.forms[1].quantity</code>. You would refer to the <I>value</I> property of this <I>Text</I> object as <code>document.forms[1].quantity.value</code>.<P></A>
+<A NAME="60643">
+Elements in the <I>forms</I> array are read-only. For example, the statement <code>document.forms[0]="music"</code> has no effect.<P></A>
+<A NAME="60644">
+The value of each element in the <I>forms</I> array is &lt;<code>object nameAttribute&gt;</code>, where <I>nameAttribute</I> is the NAME attribute of the form.<P></A>
+
+</UL><A NAME="Properties
+"></A>
+<A NAME="60645">
+<H3> Properties
+</H3>
+</A>
+
+<A NAME="60697">
+The <I>Form</I> object has the following properties:
+
+<P><TABLE BORDER="2">
+<CAPTION></CAPTION>
+<tr align=left valign=bottom><th><b><A NAME="60652">
+Property</A><B><th><b><A NAME="60654">
+Description</A><B>
+<tr align=left valign=top><td><A NAME="60659">
+<a href="ref_a-c.htm#96428">action</a>
+</A><BR>
+
+<td><A NAME="60661">
+Reflects the ACTION attribute
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="60666">
+<a href="ref_d-e.htm#47988">elements array</a>
+</A><BR>
+
+<td><A NAME="60668">
+An array reflecting all the elements in a form
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="60673">
+<a href="ref_d-e.htm#48026">encoding</a>
+</A><BR>
+
+<td><A NAME="60675">
+Reflects the ENCTYPE attribute
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="60680">
+<a href="ref_h-l.htm#84418">length</a>
+</A><BR>
+
+<td><A NAME="60682">
+Reflects the number of elements on a form
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="102646">
+<a href="ref_m-q.htm#176636">name</a>
+</A><BR>
+
+<td><A NAME="102648">
+Reflects the NAME attribute
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="60687">
+<a href="ref_m-q.htm#176192">method</a>
+</A><BR>
+
+<td><A NAME="60689">
+Reflects the METHOD attribute
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="60694">
+<a href="ref_t-z.htm#65191">target</a>
+</A><BR>
+
+<td><A NAME="60696">
+Reflects the TARGET attribute
+</A><BR>
+
+
+
+
+</TABLE>
+
+<TABLE>
+<TR><TD>
+</TABLE>
+
+
+<P></A>
+<A NAME="60741">
+The following objects are also properties of the <I>Form</I> object:
+
+<P><TABLE BORDER="2">
+<CAPTION></CAPTION>
+<tr align=left valign=top><td><A NAME="102620">
+<LI><a href="ref_a-c.htm#62518">Button</a>
+</A><A NAME="102624">
+<LI><a href="ref_a-c.htm#63502">Checkbox</a>
+</A><A NAME="102628">
+<LI><a href="ref_f-g.htm#104945">FileUpload</a>
+</A><A NAME="102632">
+<LI><a href="ref_h-l.htm#83862">Hidden</a>
+</A><A NAME="102636">
+<LI><a href="ref_m-q.htm#177857">Password</a>
+</A><A NAME="102640">
+<LI><a href="ref_r-r.htm#26345">Radio</a>
+</A>
+<td><A NAME="60724">
+<LI><a href="ref_r-r.htm#26487">Reset object</a>
+</A><A NAME="61919">
+<LI><a href="ref_s-s.htm#72585">Select object</a>
+</A><A NAME="61923">
+<LI><a href="ref_s-s.htm#73448">Submit object</a>
+</A><A NAME="61927">
+<LI><a href="ref_t-z.htm#65229">Text object</a>
+</A><A NAME="60740">
+<LI><a href="ref_t-z.htm#65386">Textarea</a>
+</A>
+</TABLE>
+
+<P></A>
+<A NAME="60742">
+The <I>forms</I> array has the following properties:
+
+<P><TABLE BORDER="2">
+<CAPTION></CAPTION>
+<tr align=left valign=bottom><th><b><A NAME="78577">
+Property</A><B><th><b><A NAME="78579">
+Description</A><B>
+<tr align=left valign=top><td><A NAME="78584">
+<a href="ref_h-l.htm#84418">length</a>
+</A><BR>
+
+<td><A NAME="78586">
+Reflects the number of forms in the document
+</A><BR>
+
+
+
+
+</TABLE>
+
+<TABLE>
+<TR><TD>
+</TABLE>
+
+
+<P></A>
+
+</UL><A NAME="Methods
+"></A>
+<A NAME="74580">
+<H3> Methods
+</H3>
+</A>
+
+<A NAME="97262">
+The <I>Form</I> object has the following methods:
+
+<P><TABLE BORDER="2">
+<CAPTION></CAPTION>
+<tr align=left valign=top><td><A NAME="106194">
+<LI><a href="ref_d-e.htm#573">eval</a> method
+</A><A NAME="97288">
+<LI><a href="ref_r-r.htm#29120">reset method</a>
+</A><A NAME="97252">
+<LI><a href="ref_s-s.htm#73411">submit method</a>
+</A>
+<td><A NAME="97311">
+<LI><a href="ref_t-z.htm#70978">toString</a> method
+</A><A NAME="97261">
+<LI><a href="ref_t-z.htm#91188">valueOf</a> method
+</A>
+
+
+
+</TABLE>
+
+<TABLE>
+<TR><TD>
+</TABLE>
+
+
+<P></A>
+
+</UL><A NAME="Event handlers
+"></A>
+<A NAME="74585">
+<H3> Event handlers
+</H3>
+</A>
+
+<ul><A NAME="60752">
+<LI><a href="ref_m-q.htm#177435">onReset</a>
+</A><A NAME="74689">
+<LI><a href="ref_m-q.htm#177477">onSubmit</a>
+</A>
+</UL><A NAME="Examples
+"></A>
+<A NAME="60753">
+<H3> Examples
+</H3>
+</A>
+
+</ul><A NAME="60754">
+<B>Example 1: Named form.</B> The following example creates a form called <I>form1</I> that contains text fields for first name and last name. The form also contains two buttons that change the names to all uppercase or all lowercase. The function <B>setCase</B> shows how to refer to the form by its name.<P></A>
+<A NAME="60755">
+<PRE>&lt;HTML&gt;<br>&lt;HEAD&gt;<br>&lt;TITLE&gt;Form object example&lt;/TITLE&gt;<br>&lt;/HEAD&gt;<br>&lt;SCRIPT&gt;<br>function setCase (caseSpec){<br>if (caseSpec == "upper") {<br>&nbsp;&nbsp;&nbsp;document.form1.firstName.value=document.form1.firstName.value.toUpperCase()<br>&nbsp;&nbsp;&nbsp;document.form1.lastName.value=document.form1.lastName.value.toUpperCase()}<br>&nbsp;&nbsp;&nbsp;else {<br>&nbsp;&nbsp;&nbsp;document.form1.firstName.value=document.form1.firstName.value.toLowerCase()<br>&nbsp;&nbsp;&nbsp;document.form1.lastName.value=document.form1.lastName.value.toLowerCase()}<br>}<br>&lt;/SCRIPT&gt;<br>&lt;BODY&gt;<br>&lt;FORM NAME="form1"&gt;<br>&lt;B&gt;First name:&lt;/B&gt;<br>&lt;INPUT TYPE="text" NAME="firstName" SIZE=20&gt;<br>&lt;BR&gt;&lt;B&gt;Last name:&lt;/B&gt;<br>&lt;INPUT TYPE="text" NAME="lastName" SIZE=20&gt;<br>&lt;P&gt;&lt;INPUT TYPE="button" VALUE="Names to uppercase" NAME="upperButton"<br>&nbsp;&nbsp;&nbsp;onClick="setCase('upper')"&gt;<br>&lt;INPUT TYPE="button" VALUE="Names to lowercase" NAME="lowerButton"<br>&nbsp;&nbsp;&nbsp;onClick="setCase('lower')"&gt;<br>&lt;/FORM&gt;<br>&lt;/BODY&gt;<br>&lt;/HTML&gt;</PRE>
+</A>
+<A NAME="60756">
+<B>Example 2: forms array.</B> The onLoad event handler in the following example displays the name of the first form in an Alert dialog box.<P></A>
+<A NAME="60757">
+<PRE>&lt;BODY onLoad="alert('You are looking at the ' + document.forms[0] + ' form!')"&gt;</PRE>
+</A>
+<A NAME="60758">
+If the form name is <I>musicType</I>, the alert displays the following message:<P></A>
+<A NAME="60759">
+<PRE>You are looking at the &lt;object musicType&gt; form!</PRE>
+</A>
+<A NAME="60760">
+<B>Example 3: onSubmit event handler.</B> The following example shows an onSubmit event handler that determines whether to submit a form. The form contains one <I>Text</I> object where the user enters three characters. The onSubmit event handler calls a function, <B>checkData</B>, that returns true if the number of characters is three; otherwise, it returns false. Notice that the form's onSubmit event handler, not the submit button's onClick event handler, calls the <B>checkData</B> function. Also, the onSubmit event handler contains a <B>return</B> statement that returns the value obtained with the function call.<P></A>
+<A NAME="60761">
+<PRE>&lt;HTML&gt;<br>&lt;HEAD&gt;<br>&lt;TITLE&gt;Form object/onSubmit event handler example&lt;/TITLE&gt;<br>&lt;TITLE&gt;Form object example&lt;/TITLE&gt;<br>&lt;/HEAD&gt;<br>&lt;SCRIPT&gt;<br>var dataOK=false<br>function checkData (){<br>if (document.form1.threeChar.value.length == 3) {<br>&nbsp;&nbsp;&nbsp;return true}<br>&nbsp;&nbsp;&nbsp;else {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert("Enter exactly three characters. " + document.form1.threeChar.value +<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" is not valid.")<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return false}<br>}<br>&lt;/SCRIPT&gt;<br>&lt;BODY&gt;<br>&lt;FORM NAME="form1" onSubmit="return checkData()"&gt;<br>&lt;B&gt;Enter 3 characters:&lt;/B&gt;<br>&lt;INPUT TYPE="text" NAME="threeChar" SIZE=3&gt;<br>&lt;P&gt;&lt;INPUT TYPE="submit" VALUE="Done" NAME="submit1"<br>&nbsp;&nbsp;&nbsp;onClick="document.form1.threeChar.value=document.form1.threeChar.value.toUpperCase()"&gt;<br>&lt;/FORM&gt;<br>&lt;/BODY&gt;<br>&lt;/HTML&gt;</PRE>
+</A>
+<A NAME="75759">
+<B>Example 4: submit method.</B> The following example is similar to the previous one, except it submits the form using the <B>submit</B> method instead of a <I>Submit</I> object. The form's onSubmit event handler does not prevent the form from being submitted. The form uses a button's onClick event handler to call the <B>checkData</B> function. If the value is valid, the <B>checkData</B> function submits the form by calling the form's <B>submit</B> method.<P></A>
+<A NAME="60763">
+<PRE>&lt;HTML&gt;<br>&lt;HEAD&gt;<br>&lt;TITLE&gt;Form object/submit method example&lt;/TITLE&gt;<br>&lt;/HEAD&gt;<br>&lt;SCRIPT&gt;<br>var dataOK=false<br>function checkData (){<br>if (document.form1.threeChar.value.length == 3) {<br>&nbsp;&nbsp;&nbsp;document.form1.submit()}<br>&nbsp;&nbsp;&nbsp;else {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert("Enter exactly three characters. " + document.form1.threeChar.value +<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" is not valid.")<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return false}<br>}<br>&lt;/SCRIPT&gt;<br>&lt;BODY&gt;<br>&lt;FORM NAME="form1" onSubmit="alert('Form is being submitted.')"&gt;<br>&lt;B&gt;Enter 3 characters:&lt;/B&gt;<br>&lt;INPUT TYPE="text" NAME="threeChar" SIZE=3&gt;<br>&lt;P&gt;&lt;INPUT TYPE="button" VALUE="Done" NAME="button1"<br>&nbsp;&nbsp;&nbsp;onClick="checkData()"&gt;<br>&lt;/FORM&gt;<br>&lt;/BODY&gt;<br>&lt;/HTML&gt;</PRE>
+</A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="60764">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="60780">
+<a href="ref_a-c.htm#62518">Button</a> object, <a href="ref_a-c.htm#63502">Checkbox</a> object, <a href="ref_f-g.htm#104945">FileUpload</a> object, <a href="ref_h-l.htm#83862">Hidden</a> object, <a href="ref_m-q.htm#177857">Password</a> object, <a href="ref_r-r.htm#26345">Radio</a> object, <a href="ref_r-r.htm#26487">Reset object</a>, <a href="ref_s-s.htm#72585">Select object</a>, <a href="ref_s-s.htm#73448">Submit object</a>, <a href="ref_t-z.htm#65229">Text object</a>, <a href="ref_t-z.htm#65386">Textarea</a> object; <a href="ref_f-g.htm#97350">form property</a><P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="form property
+"></A>
+<A NAME="97350">
+<H1> form property
+</H1>
+</A>
+
+<A NAME="97352">
+Property. An object reference specifying the form containing an object.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="97353">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="97354">
+<PRE>this.form<br><I>objectReference</I>.form</PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="98810">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="99010">
+<I>objectReference</I> specifies an object on a form.<P></A>
+
+</UL><A NAME="Property of
+"></A>
+<A NAME="99011">
+<H3> Property of
+</H3>
+</A>
+
+<A NAME="97359">
+<a href="ref_a-c.htm#62518">Button</a> object, <a href="ref_a-c.htm#63502">Checkbox</a> object, <a href="ref_f-g.htm#104945">FileUpload</a> object, <a href="ref_h-l.htm#83862">Hidden</a> object, <a href="ref_m-q.htm#177857">Password</a> object, <a href="ref_r-r.htm#26345">Radio</a> object, <a href="ref_r-r.htm#26487">Reset object</a>, <a href="ref_s-s.htm#72585">Select object</a>, <a href="ref_s-s.htm#73448">Submit object</a>, <a href="ref_t-z.htm#65229">Text object</a>, <a href="ref_t-z.htm#65386">Textarea</a> object<P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="97360">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="97361">
+Navigator 2.0<P></A>
+
+</UL><A NAME="Tainted?
+"></A>
+<A NAME="97362">
+<H3> Tainted?
+</H3>
+</A>
+
+<A NAME="97363">
+No<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="97364">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="97365">
+Each form element has a <I>form</I> property that is a reference to the element's parent form. This property is especially useful in event handlers, where you might need to refer to another element on the current form.<P></A>
+<A NAME="97368">
+<I>form</I> is a read-only property.<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="97369">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="100692">
+<B>Example 1.</B> In the following example, the form <I>myForm</I> contains a <I>Text</I> object and a button. When the user clicks the button, the value of the <I>Text</I> object is set to the form's name. The button's onClick event handler uses <code>this.form</code> to refer to the parent form, <I>myForm</I>.<P></A>
+<A NAME="100585">
+<PRE>&lt;FORM NAME="myForm"&gt;<br>Form name:&lt;INPUT TYPE="text" NAME="text1" VALUE="Beluga"&gt;<br>&lt;P&gt;<br>&lt;INPUT NAME="button1" TYPE="button" VALUE="Show Form Name"<br>&nbsp;&nbsp;&nbsp;onClick="this.form.text1.value=this.form.name"&gt;<br>&lt;/FORM&gt;</PRE>
+</A>
+<A NAME="100592">
+<B>Example 2.</B> The following example shows a form with several elements. When the user clicks <I>button2,</I> the function <B>showElements</B> displays an alert dialog box containing the names of each element on the form <I>myForm.</I><P></A>
+<A NAME="100698">
+<PRE>function showElements(theForm) {<br>&nbsp;&nbsp;&nbsp;str = "Form Elements of form " + theForm.name + ": \n "<br>&nbsp;&nbsp;&nbsp;for (i = 0; i &lt; theForm.length; i++) <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;str += theForm.elements[i].name + "\n"<br>&nbsp;&nbsp;&nbsp;alert(str)<br>}<br>&lt;/script&gt;<br>&lt;FORM NAME="myForm"&gt;<br>Form name:&lt;INPUT TYPE="text" NAME="text1" VALUE="Beluga"&gt;<br>&lt;P&gt;<br>&lt;INPUT NAME="button1" TYPE="button" VALUE="Show Form Name"<br>&nbsp;&nbsp;&nbsp;onClick="this.form.text1.value=this.form.name"&gt;<br>&lt;INPUT NAME="button2" TYPE="button" VALUE="Show Form Elements"<br>&nbsp;&nbsp;&nbsp;onClick="showElements(this.form)"&gt;<br>&lt;/FORM&gt;</PRE>
+</A>
+<A NAME="101685">
+The alert dialog box displays the following text:<P></A>
+<A NAME="101740">
+<PRE>JavaScript Alert:<br>Form Elements of form myForm:<br>text1<br>button1<br>button2</PRE>
+</A>
+<A NAME="101762">
+<B>Example 3.</B> The following example uses an object reference, rather than the <B>this</B> keyword, to refer to a form. The code returns a reference to <I>myForm,</I> which is a form containing <I>myTextObject</I>.<P></A>
+<A NAME="101781">
+<PRE>document.myForm.myTextObject.form</PRE>
+</A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="99651">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="98270">
+<a href="ref_f-g.htm#60597">Form object</a><P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="forms
+"></A>
+<A NAME="98285">
+<H1> forms
+</H1>
+</A>
+
+<A NAME="89860">
+Property. An array of objects corresponding to the forms (&lt;FORM&gt; tags) in a document in source order. See the <a href="ref_f-g.htm#60597">Form object</a> for information.<P></A>
+
+</UL><A NAME="Tainted?
+"></A>
+<A NAME="90881">
+<H3> Tainted?
+</H3>
+</A>
+
+<A NAME="90882">
+Yes<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="forward
+"></A>
+<A NAME="89866">
+<H1> forward
+</H1>
+</A>
+
+<A NAME="89868">
+Method. Loads the next URL in the history list.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="60807">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="60808">
+<PRE>history.forward()</PRE>
+</A>
+
+</UL><A NAME="Method of
+"></A>
+<A NAME="60809">
+<H3> Method of
+</H3>
+</A>
+
+<A NAME="60813">
+<a href="ref_h-l.htm#83926">history object</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="72420">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="72421">
+Navigator 2.0<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="60814">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="60815">
+This method performs the same action as a user choosing the <B>Forward</B> button in the Navigator. The <B>forward</B> method is the same as <code>history.go(1)</code>.<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="60816">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="60817">
+The following custom buttons perform the same operations as the Navigator <B>Back</B> and <B>Forward</B> buttons:<P></A>
+<A NAME="60818">
+<PRE>&lt;P&gt;&lt;INPUT TYPE="button" VALUE="&lt; Back"<br>&nbsp;&nbsp;&nbsp;onClick="history.back()"&gt;<br>&lt;P&gt;&lt;INPUT TYPE="button" VALUE="&gt; Forward"<br>&nbsp;&nbsp;&nbsp;onClick="history.forward()"&gt;</PRE>
+</A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="60819">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="60826">
+<a href="ref_a-c.htm#62224">back</a>, <a href="ref_f-g.htm#61290">go</a> methods<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="Frame
+"></A>
+<A NAME="60829">
+<H1> Frame
+</H1>
+</A>
+
+<A NAME="60831">
+Object. A window that can display multiple, independently scrollable frames on a single screen, each with its own distinct URL. Frames can point to different URLs and be targeted by other URLs, all within the same screen. A series of frames makes up a page.<P></A>
+
+</UL><A NAME="HTML syntax
+"></A>
+<A NAME="74856">
+<H3> HTML syntax
+</H3>
+</A>
+
+<A NAME="74857">
+To define a <I>Frame</I> object, use standard HTML syntax with the addition of JavaScript event handlers:<P></A>
+<A NAME="60834">
+<PRE>&lt;FRAMESET<br>&nbsp;&nbsp;&nbsp;ROWS="<I>rowHeightList</I>"<br>&nbsp;&nbsp;&nbsp;COLS="<I>columnWidthList</I>"<br>&nbsp;&nbsp;&nbsp;[onBlur="<I>handlerText</I>"]<br>&nbsp;&nbsp;&nbsp;[onFocus="<I>handlerText</I>"]<br>&nbsp;&nbsp;&nbsp;[onLoad="<I>handlerText</I>"]<br>&nbsp;&nbsp;&nbsp;[onUnload="<I>handlerText</I>"]&gt;<br>&nbsp;&nbsp;&nbsp;&lt;FRAME SRC="<I>URL</I>" NAME="<I>frameName</I>"&gt;<br>&nbsp;&nbsp;&nbsp;[ ... &lt;FRAME SRC="<I>URL</I>" NAME="<I>frameName</I>"&gt;]<br>&lt;/FRAMESET&gt;</PRE>
+</A>
+
+</UL><A NAME="HTML attributes
+"></A>
+<A NAME="60835">
+<H3> HTML attributes
+</H3>
+</A>
+
+<A NAME="60836">
+<I>ROWS="rowHeightList"</I> is a comma-separated list of values specifying the row-height of the frame. An optional suffix defines the units. Default units are pixels.<P></A>
+<A NAME="60837">
+<I>COLS="columnWidthList"</I> is a comma-separated list of values specifying the column-width of the frame. An optional suffix defines the units. Default units are pixels.<P></A>
+<A NAME="60838">
+<I>&lt;FRAME&gt;</I> defines a frame.<P></A>
+<A NAME="60839">
+<I>SRC="URL"</I> specifies the URL of the document to be displayed in the frame. The URL cannot include an anchor name; for example &lt;<code>FRAME SRC="doc2.html#colors" NAME="frame2"&gt;</code> is invalid. See the <I><a href="ref_h-l.htm#84722">location</a></I> object for a description of the URL components.<P></A>
+<A NAME="60840">
+<I>NAME="frameName"</I> specifies a name to be used as a target of hyperlink jumps. You can access this value using the <I>name</I> property, and you can use this name when indexing the <I>frames</I> array.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="60841">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="60842">
+To use a <I>Frame</I> object's properties:<P></A>
+<A NAME="60843">
+<PRE>1. [<I>windowReference</I>.]<I>frameName</I>.<I>propertyName<br></I>2. [<I>windowReference</I>.]frames[<I>index</I>].<I>propertyName<br></I>3. window.<I>propertyName<br></I>4. self.<I>propertyName<br></I>5. parent.<I>propertyName</I></PRE>
+</A>
+<A NAME="74867">
+To define an onBlur or onFocus event handler for a frame (for frames, you cannot specify these event handlers in HTML):<P></A>
+<A NAME="74868">
+<PRE>1. <I>frameReference</I>.onblur=<I>errorHandler<br></I>2. <I>frameReference</I>.onfocus=<I>errorHandler</I></PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="60844">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="60845">
+<I>windowReference</I> is a variable <I>windowVar</I> from a window definition (see the <a href="ref_t-z.htm#67013">window object</a>), or one of the synonyms <I>top</I> or <I>parent</I>.<P></A>
+<A NAME="60846">
+<I>frameName</I> is the value of the NAME attribute in the &lt;FRAME&gt; tag of a <I>Frame</I> object.<P></A>
+<A NAME="60847">
+<I>index</I> is an integer representing a <I>Frame</I> object or the name of a <I>Frame</I> object as specified by the NAME attribute.<P></A>
+<A NAME="60848">
+<I>propertyName</I> is one of the properties listed below.<P></A>
+<A NAME="74903">
+<I>frameReference</I> is a valid way of referring to a frame.<P></A>
+<A NAME="74904">
+<I>errorHandler</I> is the keyword null, the name of an error-handling function, or a variable or property that contains null or a valid function reference.<P></A>
+
+</UL><A NAME="Property of
+"></A>
+<A NAME="60849">
+<H3> Property of
+</H3>
+</A>
+
+<A NAME="60853">
+The <I>Frame</I> object is a property of the <a href="ref_t-z.htm#67013">window object</a>.<P></A>
+<A NAME="60860">
+The <I>frames</I> array is a property of both the <a href="ref_f-g.htm#60829">Frame</a> object and <a href="ref_t-z.htm#67013">window object</a>.<P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="72718">
+<H3> Implemented in
+</H3>
+</A>
+
+<ul><A NAME="72719">
+<LI>Navigator 2.0
+</A><A NAME="74985">
+<LI>Navigator 3.0: added <B>blur</B> and <B>focus</B> methods; added onBlur and onFocus event handlers
+</A>
+</UL><A NAME="Description
+"></A>
+<A NAME="60861">
+<H3> Description
+</H3>
+</A>
+
+</ul><A NAME="60862">
+The &lt;FRAMESET&gt; tag is used in an HTML document whose sole purpose is to define the layout of frames that make up a page. Each frame is a <I>window</I> object.<P></A>
+<A NAME="60863">
+If a &lt;FRAME&gt; tag contains SRC and NAME attributes, you can refer to that frame from a sibling frame by using <code>parent.frameName</code> or <code>parent.frames[index]</code>. For example, if the fourth frame in a set has NAME="homeFrame," sibling frames can refer to that frame using <code>parent.homeFrame</code> or <code>parent.frames[3]</code>.<P></A>
+<A NAME="60864">
+The <I>self</I> and <I>window</I> properties are synonyms for the current frame, and you can optionally use them to refer to the current frame. You can use these properties to make your code more readable. See the properties listed below for examples.<P></A>
+<A NAME="60865">
+The <I>top</I> and <I>parent</I> properties are also synonyms that can be used in place of the frame name. <I>top</I> refers to the top-most window that contains frames or nested framesets, and <I>parent</I> refers to the window containing the current frameset. See the <a href="ref_t-z.htm#66649">top</a> and <a href="ref_m-q.htm#177723">parent</a> properties.<P></A>
+<A NAME="74991">
+To create an onBlur or onFocus event handler for a frame, you must set the <I>onblur</I> or <I>onfocus</I> property and specify it in all lowercase (you cannot specify it in HTML).<P></A>
+
+<A NAME="The frames array
+"></A>
+<A NAME="60874">
+<H4> The frames array
+</H4>
+</A>
+
+<A NAME="60875">
+You can reference the <I>Frame</I> objects in your code by using the <I>frames</I> array. This array contains an entry for each child frame (&lt;FRAME&gt; tag) in a window containing a &lt;FRAMESET&gt; tag in source order. For example, if a window contains three child frames, these frames are reflected as <code>parent.frames[0]</code>, <code>parent.frames[1]</code>, and <code>parent.frames[2]</code>.<P></A>
+<A NAME="60876">
+To use the <I>frames</I> array:<P></A>
+<A NAME="60877">
+<PRE>1. [<I>frameReference</I>.]frames[<I>index</I>]<br>2. [<I>frameReference</I>.]frames.length<br>3. [<I>windowReference</I>.]frames[<I>index</I>]<br>4. [<I>windowReference</I>.]frames.length</PRE>
+</A>
+<A NAME="60881">
+<I>frameReference</I> is a valid way of referring to a frame.<P></A>
+<A NAME="60882">
+<I>windowReference</I> is a variable <I>windowVar</I> from a window definition (see the <a href="ref_t-z.htm#67013">window object</a>), or one of the synonyms <I>top</I> or <I>parent</I>.<P></A>
+<A NAME="60886">
+<I>index</I> is an integer representing a frame in a parent window or the name of a <I>Frame</I> object as specified by the NAME attribute.<P></A>
+<A NAME="60887">
+To obtain the number of child frames in a window or frame, use the <I>length</I> property:<P></A>
+<A NAME="60888">
+<PRE>[<I>windowReference</I>.].frames.length<br>[<I>frameReference</I>.].frames.length</PRE>
+</A>
+<A NAME="60889">
+Elements in the <I>frames</I> array are read-only. For example, the statement <code>windowReference.frames[0]="frame1"</code> has no effect.<P></A>
+<A NAME="60890">
+The value of each element in the <I>frames</I> array is &lt;<code>object nameAttribute&gt;</code>, where <I>nameAttribute</I> is the NAME attribute of the frame.<P></A>
+
+</UL><A NAME="Properties
+"></A>
+<A NAME="60891">
+<H3> Properties
+</H3>
+</A>
+
+<A NAME="60943">
+The <I>Frame</I> object has the following properties:
+
+<P><TABLE BORDER="2">
+<CAPTION></CAPTION>
+<tr align=left valign=bottom><th><b><A NAME="60898">
+Property</A><B><th><b><A NAME="60900">
+Description</A><B>
+<tr align=left valign=top><td><A NAME="60905">
+<a href="ref_f-g.htm#60976">frames</a>
+</A><BR>
+
+<td><A NAME="60907">
+An array reflecting all the frames in a window
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="60912">
+<a href="ref_m-q.htm#176636">name</a>
+</A><BR>
+
+<td><A NAME="60914">
+Reflects the NAME attribute of the &lt;FRAME&gt; tag
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="60919">
+<a href="ref_h-l.htm#84418">length</a>
+</A><BR>
+
+<td><A NAME="60921">
+Reflects the number of child frames within a frame
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="60926">
+<a href="ref_m-q.htm#177723">parent</a>
+</A><BR>
+
+<td><A NAME="60928">
+A synonym for the window or frame containing the current 
+frameset
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="60933">
+<a href="ref_s-s.htm#72867">self</a>
+</A><BR>
+
+<td><A NAME="60935">
+A synonym for the current frame
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="60940">
+<a href="ref_t-z.htm#67207">window property</a>
+</A><BR>
+
+<td><A NAME="60942">
+A synonym for the current frame
+</A><BR>
+
+
+
+
+</TABLE>
+
+<TABLE>
+<TR><TD>
+</TABLE>
+
+
+<P></A>
+<A NAME="60944">
+The <I>frames</I> array has the following properties:
+
+<P><TABLE BORDER="2">
+<CAPTION></CAPTION>
+<tr align=left valign=bottom><th><b><A NAME="78635">
+Property</A><B><th><b><A NAME="78637">
+Description</A><B>
+<tr align=left valign=top><td><A NAME="78642">
+<a href="ref_h-l.htm#84418">length</a>
+</A><BR>
+
+<td><A NAME="78644">
+Reflects the number of child frames in the document
+</A><BR>
+
+
+
+
+</TABLE>
+
+<TABLE>
+<TR><TD>
+</TABLE>
+
+
+<P></A>
+
+</UL><A NAME="Methods
+"></A>
+<A NAME="60945">
+<H3> Methods
+</H3>
+</A>
+
+<A NAME="92735">
+The <I>Frame</I> object has the following methods:
+
+<P><TABLE BORDER="2">
+<CAPTION></CAPTION>
+<tr align=left valign=top><td><A NAME="93174">
+<LI><a href="ref_a-c.htm#62474">blur</a>
+</A><A NAME="93178">
+<LI><a href="ref_a-c.htm#63827">clearTimeout</a>
+</A><A NAME="106200">
+<LI><a href="ref_d-e.htm#573">eval</a>
+</A><A NAME="92725">
+<LI><a href="ref_f-g.htm#59872">focus</a>
+</A>
+<td><A NAME="93305">
+<LI><a href="ref_s-s.htm#73328">setTimeout</a>
+</A><A NAME="93309">
+<LI><a href="ref_t-z.htm#70978">toString</a>
+</A><A NAME="92734">
+<LI><a href="ref_t-z.htm#91188">valueOf</a>
+</A>
+
+
+
+</TABLE>
+
+<TABLE>
+<TR><TD>
+</TABLE>
+
+
+<P></A>
+
+</UL><A NAME="Event handlers
+"></A>
+<A NAME="60954">
+<H3> Event handlers
+</H3>
+</A>
+
+<ul><A NAME="75290">
+<LI><a href="ref_m-q.htm#177100">onBlur</a>
+</A><A NAME="75291">
+<LI><a href="ref_m-q.htm#177278">onFocus</a>
+</A></ul><A NAME="75341">
+The onLoad and onUnload event handlers are specified in the &lt;FRAMESET&gt; tag but are actually event handlers for the <I>window</I> object.<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="60956">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="60957">
+The following example creates two windows, each with four frames. In the first window, the first frame contains pushbuttons that change the background colors of the frames in both windows. <code>framset1.html</code>, which defines the frames for the first window, contains the following code:<P></A>
+<A NAME="60958">
+<PRE>&lt;HTML&gt;<br>&lt;HEAD&gt;<br>&lt;TITLE&gt;Frames and Framesets: Window 1&lt;/TITLE&gt;<br>&lt;/HEAD&gt;<br>&lt;FRAMESET ROWS="50%,50%" COLS="40%,60%" <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;onLoad="alert('Hello, World.')"&gt;<br>&lt;FRAME SRC=framcon1.html NAME="frame1"&gt;<br>&lt;FRAME SRC=framcon2.html NAME="frame2"&gt;<br>&lt;FRAME SRC=framcon2.html NAME="frame3"&gt;<br>&lt;FRAME SRC=framcon2.html NAME="frame4"&gt;<br>&lt;/FRAMESET&gt;<br>&lt;/HTML&gt;</PRE>
+</A>
+<A NAME="60959">
+<code>framset2.html</code>, which defines the frames for the second window, contains the following code:<P></A>
+<A NAME="60960">
+<PRE>&lt;HTML&gt;<br>&lt;HEAD&gt;<br>&lt;TITLE&gt;Frames and Framesets: Window 2&lt;/TITLE&gt;<br>&lt;/HEAD&gt;<br>&lt;FRAMESET ROWS="50%,50%" COLS="40%,60%"&gt;<br>&lt;FRAME SRC=framcon2.html NAME="frame1"&gt;<br>&lt;FRAME SRC=framcon2.html NAME="frame2"&gt;<br>&lt;FRAME SRC=framcon2.html NAME="frame3"&gt;<br>&lt;FRAME SRC=framcon2.html NAME="frame4"&gt;<br>&lt;/FRAMESET&gt;<br>&lt;/HTML&gt;</PRE>
+</A>
+<A NAME="60961">
+<code>framcon1.html</code>, which defines the content for the first frame in the first window, contains the following code:<P></A>
+<A NAME="60962">
+<PRE>&lt;HTML&gt;<br>&lt;BODY&gt;<br>&lt;A NAME="frame1"&gt;&lt;H1&gt;Frame1&lt;/H1&gt;&lt;/A&gt;<br>&lt;P&gt;&lt;A HREF="framcon3.htm" target=frame2&gt;Click here&lt;/A&gt;<br>&nbsp;&nbsp;&nbsp;to load a different file into frame 2.<br>&lt;SCRIPT&gt;<br>window2=open("framset2.htm","secondFrameset")<br>&lt;/SCRIPT&gt;<br>&lt;FORM&gt;<br>&lt;P&gt;&lt;INPUT TYPE="button" VALUE="Change frame2 to teal"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;onClick="parent.frame2.document.bgColor='teal'"&gt;<br>&lt;P&gt;&lt;INPUT TYPE="button" VALUE="Change frame3 to slateblue"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;onClick="parent.frames[2].document.bgColor='slateblue'"&gt;<br>&lt;P&gt;&lt;INPUT TYPE="button" VALUE="Change frame4 to darkturquoise"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;onClick="top.frames[3].document.bgColor='darkturquoise'"&gt;<br><br>&lt;P&gt;&lt;INPUT TYPE="button" VALUE="window2.frame2 to violet"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;onClick="window2.frame2.document.bgColor='violet'"&gt;<br>&lt;P&gt;&lt;INPUT TYPE="button" VALUE="window2.frame3 to fuchsia"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;onClick="window2.frames[2].document.bgColor='fuchsia'"&gt;<br>&lt;P&gt;&lt;INPUT TYPE="button" VALUE="window2.frame4 to deeppink"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;onClick="window2.frames[3].document.bgColor='deeppink'"&gt;<br>&lt;/FORM&gt;<br>&lt;/BODY&gt;<br>&lt;/HTML&gt;</PRE>
+</A>
+<A NAME="60963">
+<code>framcon2.html</code>, which defines the content for the remaining frames, contains the following code:<P></A>
+<A NAME="60964">
+<PRE>&lt;HTML&gt;<br>&lt;BODY&gt;<br>&lt;P&gt;This is a frame.<br>&lt;/BODY&gt;<br>&lt;/HTML&gt;</PRE>
+</A>
+<A NAME="60965">
+<code>framcon3.html</code>, which is referenced in a <I>Link</I> object in <code>framcon1.html</code>, contains the following code:<P></A>
+<A NAME="60966">
+<PRE>&lt;HTML&gt;<br>&lt;BODY&gt;<br>&lt;P&gt;This is a frame. What do you think?<br>&lt;/BODY&gt;<br>&lt;/HTML&gt;</PRE>
+</A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="60967">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="60974">
+<a href="ref_d-e.htm#47667">document</a> object, <a href="ref_t-z.htm#67013">window object</a><P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="frames
+"></A>
+<A NAME="60976">
+<H1> frames
+</H1>
+</A>
+
+<A NAME="60977">
+Property. An array of objects corresponding to child frames (&lt;FRAME&gt; tag) in source order. See the <a href="ref_f-g.htm#60829">Frame</a> object for information.<P></A>
+
+</UL><A NAME="Tainted?
+"></A>
+<A NAME="90952">
+<H3> Tainted?
+</H3>
+</A>
+
+<A NAME="90953">
+No<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="Function
+"></A>
+<A NAME="104993">
+<H1> Function
+</H1>
+</A>
+
+<A NAME="104994">
+Object. Specifies a string of JavaScript code to be compiled as a function.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="104995">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="90999">
+To create a <I>Function</I> object:<P></A>
+<A NAME="67751">
+<PRE><I>functionObjectName</I> = new Function ([<I>arg1, arg2, ... argn</I>], <I>functionBody</I>)</PRE>
+</A>
+<A NAME="91007">
+To use a <I>Function</I> object:<P></A>
+<A NAME="91008">
+<PRE><I>functionObjectName.propertyName</I></PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="67752">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="67754">
+<I>functionObjectName </I>is the name of a variable or a property of an existing object. It can also be an object followed by a lowercase event handler name, such as <code>window.onerror</code>. When using <I>Function</I> properties, <I>functionObjectName</I> is either the name of an existing <I>Function</I> object or a property of an existing object.<P></A>
+<A NAME="67755">
+<I>arg1, arg2, ... argn</I> are arguments to be used by the function as formal argument names. Each must be a string that corresponds to a valid JavaScript identifier; for example "x" or "theForm".<P></A>
+<A NAME="67756">
+<I>functionBody</I> is a string specifying the JavaScript code to be compiled as the function body.<P></A>
+<A NAME="91582">
+<I>propertyName</I> is one of the properties listed below.<P></A>
+
+</UL><A NAME="Property of
+"></A>
+<A NAME="75570">
+<H3> Property of
+</H3>
+</A>
+
+<A NAME="75574">
+None<P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="67757">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="67758">
+Navigator 3.0<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="67759">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="67761">
+<I>Function</I> objects are evaluated each time they are used. This is less efficient than declaring a function and calling it within your code, because declared functions are compiled.<P></A>
+<A NAME="102658">
+In addition to defining functions as described here, you can also use the <B>function</B> statement, as described in <a href="stmts.htm#1004825">"function"</a>.<P></A>
+
+<A NAME="Specifying a variable value with a Function object
+"></A>
+<A NAME="67763">
+<H4> Specifying a variable value with a Function object
+</H4>
+</A>
+
+<A NAME="67764">
+The following code assigns a function to the variable <I>setBGColor</I>. This function sets the current document's background color.<P></A>
+<A NAME="67765">
+<PRE>var setBGColor = new Function("document.bgColor='antiquewhite'")</PRE>
+</A>
+<A NAME="67766">
+To call the <I>Function</I> object, you can specify the variable name as if it were a function. The following code executes the function specified by the <I>setBGColor</I> variable:<P></A>
+<A NAME="67767">
+<PRE>var colorChoice="antiquewhite"<br>if (colorChoice=="antiquewhite") {setBGColor()}</PRE>
+</A>
+<A NAME="67768">
+You can assign the function to an event handler in either of the following ways:<P></A>
+<A NAME="67769">
+<PRE>1. document.form1.colorButton.onclick=setBGColor<br>2. &lt;INPUT NAME="colorButton" TYPE="button"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;VALUE="Change background color"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;onClick="setBGColor()"&gt;</PRE>
+</A>
+<A NAME="67770">
+Creating the variable <I>setBGColor</I> shown above is similar to declaring the following function:<P></A>
+<A NAME="67771">
+<PRE>function setBGColor() {<br>&nbsp;&nbsp;&nbsp;document.bgColor='antiquewhite'<br>}</PRE>
+</A>
+<A NAME="67772">
+Assigning a function to a variable is similar to declaring a function, but they have differences:<P></A>
+<ul><A NAME="67773">
+<LI>When you assign a function to a variable using <code>var setBGColor = new Function("...")</code>, <I>setBGColor</I> is a variable for which the current value is a reference to the function created with <code>new Function()</code>.
+</A><A NAME="105034">
+<LI>When you create a function using <code>function setBGColor() {...}</code>, <I>setBGColor</I> is not a variable, it is the name of a function.
+</A>
+</ul>
+<A NAME="Specifying arguments in a Function object
+"></A>
+<A NAME="105035">
+<H4> Specifying arguments in a Function object
+</H4>
+</A>
+
+<A NAME="105036">
+The following code specifies a <I>Function</I> object that takes two arguments.<P></A>
+<A NAME="67777">
+<PRE>var multFun = new Function("x", "y", "return x * y")</PRE>
+</A>
+<A NAME="67778">
+The string arguments "x" and "y" are formal argument names that are used in the function body, "return x * y".<P></A>
+<A NAME="67779">
+The following code shows several ways to call the function <I>multFun</I>:<P></A>
+<A NAME="67780">
+<PRE>var theAnswer = multFun(7,6)<br><br>document.write("15*2 = " + multFun(15,2))<br><br>&lt;INPUT NAME="operand1" TYPE="text" VALUE="5" SIZE=5&gt;<br>&lt;INPUT NAME="operand2" TYPE="text" VALUE="6" SIZE=5&gt;<br>&lt;INPUT NAME="result" TYPE="text" VALUE="" SIZE=10&gt;<br>&lt;INPUT NAME="buttonM" TYPE="button" VALUE="Multiply"<br>&nbsp;&nbsp;&nbsp;onClick="document.form1.result.value=<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;multFun(document.form1.operand1.value,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.form1.operand2.value)"&gt;</PRE>
+</A>
+<A NAME="67782">
+You cannot call the function <I>multFun</I> in an object's event handler property, because event handler properties cannot take arguments. For example, you cannot call the function <I>multFun</I> by setting a button's <I>onclick</I> property as follows:<P></A>
+<A NAME="67783">
+<PRE>document.form1.button1.onclick=multFun(5,10)</PRE>
+</A>
+
+<A NAME="Specifying an event handler with a Function object
+"></A>
+<A NAME="67784">
+<H4> Specifying an event handler with a Function object
+</H4>
+</A>
+
+<A NAME="67785">
+The following code assigns a function to a window's onFocus event handler (the event handler must be spelled in all lowercase):<P></A>
+<A NAME="67786">
+<PRE>window.onfocus = new Function("document.bgColor='antiquewhite'")</PRE>
+</A>
+<A NAME="67787">
+Once you have a reference to a function object, you can use it like a function and it will convert from an object to a function:<P></A>
+<A NAME="67788">
+<PRE>window.onfocus()</PRE>
+</A>
+<A NAME="67789">
+Event handlers do not take arguments, so you cannot declare any arguments in the Function() constructor for an event handler.<P></A>
+
+</UL><A NAME="Properties
+"></A>
+<A NAME="67790">
+<H3> Properties
+</H3>
+</A>
+
+<A NAME="67791">
+The <I>Function</I> object has the following properties:
+
+<P><TABLE BORDER="2">
+<CAPTION></CAPTION>
+<tr align=left valign=bottom><th><b><A NAME="67798">
+Property</A><B><th><b><A NAME="67800">
+Description</A><B>
+<tr align=left valign=top><td><A NAME="67802">
+<a href="ref_a-c.htm#42839">arguments array</a>
+</A><BR>
+
+<td><A NAME="67804">
+Corresponds to elements of a function.
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="86511">
+<a href="ref_a-c.htm#118859">caller</a>
+</A><BR>
+
+<td><A NAME="86513">
+Specifies which function called the current function
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="67806">
+<a href="ref_m-q.htm#178711">prototype</a>
+</A><BR>
+
+<td><A NAME="67808">
+Lets you add a properties to a <I>Function</I> object.
+</A><BR>
+
+
+
+
+</TABLE>
+
+<TABLE>
+<TR><TD>
+</TABLE>
+
+
+<P></A>
+
+</UL><A NAME="Methods
+"></A>
+<A NAME="67811">
+<H3> Methods
+</H3>
+</A>
+
+<ul><A NAME="106326">
+<LI><a href="ref_d-e.htm#573">eval</a>
+</A><A NAME="93527">
+<LI><a href="ref_t-z.htm#70978">toString</a>
+</A><A NAME="93531">
+<LI><a href="ref_t-z.htm#91188">valueOf</a>
+</A>
+</UL><A NAME="Event handlers
+"></A>
+<A NAME="67814">
+<H3> Event handlers
+</H3>
+</A>
+
+</ul><A NAME="67815">
+None.<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="67816">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="67819">
+<B>Example 1.</B> The following example creates onFocus and onBlur event handlers for a frame. This code exists in the same file that contains the &lt;FRAMESET&gt; tag. Note that this is the only way to create onFocus and onBlur event handlers for a frame, because you cannot specify the event handlers in the &lt;FRAME&gt; tag.<P></A>
+<A NAME="67820">
+<PRE>frames[0].onfocus = new Function("document.bgColor='antiquewhite'")<br>frames[0].onblur = new Function("document.bgColor='lightgrey'")</PRE>
+</A>
+<A NAME="101870">
+<B>Example 2.</B> You can determine whether a function exists by comparing the function name to null. In the following example, <I>func1</I> is called if the function <I>noFunc</I> does not exist; otherwise <I>func2</I> is called. Notice that the window name is needed when referring to the function name <I>noFunc.</I><P></A>
+<A NAME="102449">
+<PRE>if (window.noFunc == null)<br>&nbsp;&nbsp;&nbsp;func1()<br>else func2()</PRE>
+</A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="getDate
+"></A>
+<A NAME="590">
+<H1> getDate
+</H1>
+</A>
+
+<A NAME="592">
+Method. Returns the day of the month for the specified date.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="594">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="596">
+<PRE><I>dateObjectName</I>.getDate()</PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="3090">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="598">
+<I>dateObjectName</I> is either the name of a <I>Date</I> object or a property of an existing object.<P></A>
+
+</UL><A NAME="Method of
+"></A>
+<A NAME="600">
+<H3> Method of
+</H3>
+</A>
+
+<A NAME="602">
+<a href="ref_d-e.htm#8153">Date</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="72828">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="72829">
+Navigator 2.0<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="604">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="606">
+The value returned by <B>getDate</B> is an integer between one and 31.<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="608">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="610">
+The second statement below assigns the value 25 to the variable <I>day</I>, based on the value of the <I>Date</I> object <I>Xmas95</I>.<P></A>
+<A NAME="612">
+<PRE>Xmas95 = new Date("December 25, 1995 23:15:00")<br>day = Xmas95.getDate()</PRE>
+</A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="614">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="616">
+<a href="ref_s-s.htm#464">setDate</a> method<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="getDay
+"></A>
+<A NAME="618">
+<H1> getDay
+</H1>
+</A>
+
+<A NAME="620">
+Method. Returns the day of the week for the specified date.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="622">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="624">
+<PRE><I>dateObjectName</I>.getDay()</PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="3095">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="626">
+<I>dateObjectName</I> is either the name of a <I>Date</I> object or a property of an existing object.<P></A>
+
+</UL><A NAME="Method of
+"></A>
+<A NAME="628">
+<H3> Method of
+</H3>
+</A>
+
+<A NAME="630">
+<a href="ref_d-e.htm#8153">Date</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="72866">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="72867">
+Navigator 2.0<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="632">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="634">
+The value returned by <B>getDay</B> is an integer corresponding to the day of the week: zero for Sunday, one for Monday, two for Tuesday, and so on.<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="45100">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="45101">
+The second statement below assigns the value 1 to <I>weekday</I>, based on the value of the <I>Date</I> object <I>Xmas95</I>. This is because December 25, 1995, is a Monday.<P></A>
+<A NAME="640">
+<PRE>Xmas95 = new Date("December 25, 1995 23:15:00")<br>weekday = Xmas95.getDay()</PRE>
+</A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="getHours
+"></A>
+<A NAME="642">
+<H1> getHours
+</H1>
+</A>
+
+<A NAME="644">
+Method. Returns the hour for the specified date.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="646">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="648">
+<PRE><I>dateObjectName</I>.getHours()</PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="3115">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="650">
+<I>dateObjectName</I> is either the name of a <I>Date</I> object or a property of an existing object.<P></A>
+
+</UL><A NAME="Method of
+"></A>
+<A NAME="652">
+<H3> Method of
+</H3>
+</A>
+
+<A NAME="654">
+<a href="ref_d-e.htm#8153">Date</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="72916">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="72917">
+Navigator 2.0<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="656">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="658">
+The value returned by <B>getHours</B> is an integer between zero and 23.<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="660">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="662">
+The second statement below assigns the value 23 to the variable <I>hours</I>, based on the value of the <I>Date</I> object <I>Xmas95</I>.<P></A>
+<A NAME="664">
+<PRE>Xmas95 = new Date("December 25, 1995 23:15:00")<br>hours = Xmas95.getHours()</PRE>
+</A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="666">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="668">
+<a href="ref_s-s.htm#490">setHours</a> method<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="getMinutes
+"></A>
+<A NAME="670">
+<H1> getMinutes
+</H1>
+</A>
+
+<A NAME="672">
+Method. Returns the minutes in the specified date.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="674">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="676">
+<PRE><I>dateObjectName</I>.getMinutes()</PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="3132">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="678">
+<I>dateObjectName</I> is either the name of a <I>Date</I> object or a property of an existing object.<P></A>
+
+</UL><A NAME="Method of
+"></A>
+<A NAME="680">
+<H3> Method of
+</H3>
+</A>
+
+<A NAME="682">
+<a href="ref_d-e.htm#8153">Date</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="72992">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="72993">
+Navigator 2.0<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="684">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="686">
+The value returned by <B>getMinutes</B> is an integer between zero and 59.<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="688">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="690">
+The second statement below assigns the value 15 to the variable <I>minutes</I>, based on the value of the <I>Date</I> object <I>Xmas95</I>.<P></A>
+<A NAME="692">
+<PRE>Xmas95 = new Date("December 25, 1995 23:15:00")<br>minutes = Xmas95.getMinutes()</PRE>
+</A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="694">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="696">
+<a href="ref_s-s.htm#514">setMinutes</a> method<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="getMonth
+"></A>
+<A NAME="698">
+<H1> getMonth
+</H1>
+</A>
+
+<A NAME="700">
+Method. Returns the month in the specified date.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="702">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="704">
+<PRE><I>dateObjectName</I>.getMonth()</PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="3149">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="706">
+<I>dateObjectName</I> is either the name of a <I>Date</I> object or a property of an existing object.<P></A>
+
+</UL><A NAME="Method of
+"></A>
+<A NAME="708">
+<H3> Method of
+</H3>
+</A>
+
+<A NAME="710">
+<a href="ref_d-e.htm#8153">Date</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="73079">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="73080">
+Navigator 2.0<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="712">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="714">
+The value returned by <B>getMonth</B> is an integer between zero and 11. Zero corresponds to January, one to February, and so on.<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="716">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="718">
+The second statement below assigns the value 11 to the variable <I>month</I>, based on the value of the <I>Date</I> object <I>Xmas95</I>.<P></A>
+<A NAME="720">
+<PRE>Xmas95 = new Date("December 25, 1995 23:15:00")<br>month = Xmas95.getDate()</PRE>
+</A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="722">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="724">
+<a href="ref_s-s.htm#538">setMonth</a> method<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="getSeconds
+"></A>
+<A NAME="726">
+<H1> getSeconds
+</H1>
+</A>
+
+<A NAME="728">
+Method. Returns the seconds in the current time.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="730">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="732">
+<PRE><I>dateObjectName</I>.getSeconds()</PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="3162">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="734">
+<I>dateObjectName</I> is either the name of a <I>Date</I> object or a property of an existing object.<P></A>
+
+</UL><A NAME="Method of
+"></A>
+<A NAME="736">
+<H3> Method of
+</H3>
+</A>
+
+<A NAME="738">
+<a href="ref_d-e.htm#8153">Date</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="73332">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="73333">
+Navigator 2.0<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="740">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="742">
+The value returned by <B>getSeconds</B> is an integer between zero and 59.<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="744">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="746">
+The second statement below assigns the value 30 to the variable <I>secs</I>, based on the value of the <I>Date</I> object <I>Xmas95</I>.<P></A>
+<A NAME="748">
+<PRE>Xmas95 = new Date("December 25, 1995 23:15:30")<br>secs = Xmas95.getSeconds()</PRE>
+</A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="750">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="752">
+<a href="ref_s-s.htm#562">setSeconds</a> method<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="getTime
+"></A>
+<A NAME="754">
+<H1> getTime
+</H1>
+</A>
+
+<A NAME="756">
+Method. Returns the numeric value corresponding to the time for the specified date.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="758">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="760">
+<PRE><I>dateObjectName</I>.getTime()</PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="3175">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="762">
+<I>dateObjectName</I> is either the name of a <I>Date</I> object or a property of an existing object.<P></A>
+
+</UL><A NAME="Method of
+"></A>
+<A NAME="764">
+<H3> Method of
+</H3>
+</A>
+
+<A NAME="766">
+<a href="ref_d-e.htm#8153">Date</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="73391">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="73392">
+Navigator 2.0<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="768">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="770">
+The value returned by the <B>getTime</B> method is the number of milliseconds since 1 January 1970 00:00:00. You can use this method to help assign a date and time to another <I>Date</I> object.<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="772">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="774">
+The following example assigns the date value of <I>theBigDay</I> to <I>sameAsBigDay:</I><P></A>
+<A NAME="776">
+<PRE>theBigDay = new Date("July 1, 1999")<br>sameAsBigDay = new Date()<br>sameAsBigDay.setTime(theBigDay.getTime())</PRE>
+</A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="778">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="780">
+<a href="ref_s-s.htm#586">setTime</a> method<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="getTimezoneOffset
+"></A>
+<A NAME="782">
+<H1> getTimezoneOffset
+</H1>
+</A>
+
+<A NAME="784">
+Method. Returns the time-zone offset in minutes for the current locale.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="786">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="788">
+<PRE><I>dateObjectName</I>.getTimezoneOffset()</PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="3180">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="790">
+<I>dateObjectName</I> is either the name of a <I>Date</I> object or a property of an existing object.<P></A>
+
+</UL><A NAME="Method of
+"></A>
+<A NAME="792">
+<H3> Method of
+</H3>
+</A>
+
+<A NAME="794">
+<a href="ref_d-e.htm#8153">Date</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="73440">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="73441">
+Navigator 2.0<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="796">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="798">
+The time-zone offset is the difference between local time and GMT. Daylight savings time prevents this value from being a constant.<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="800">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="802">
+<PRE>x = new Date()<br>currentTimeZoneOffsetInHours = x.getTimezoneOffset()/60</PRE>
+</A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="getYear
+"></A>
+<A NAME="804">
+<H1> getYear
+</H1>
+</A>
+
+<A NAME="806">
+Method. Returns the year in the specified date.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="808">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="810">
+<PRE><I>dateObjectName</I>.getYear()</PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="3185">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="812">
+<I>dateObjectName</I> is either the name of a <I>Date</I> object or a property of an existing object.<P></A>
+
+</UL><A NAME="Method of
+"></A>
+<A NAME="814">
+<H3> Method of
+</H3>
+</A>
+
+<A NAME="816">
+<a href="ref_d-e.htm#8153">Date</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="73478">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="73479">
+Navigator 2.0<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="818">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="820">
+The <B>getYear</B> method returns either a two-digit or four-digit year:<P></A>
+<ul><A NAME="93687">
+<LI>For years prior to 2000, the value returned by <B>getYear</B> is the year less 1900. For example, if the year is 1976, the value returned is 76.
+</A><A NAME="93701">
+<LI>For the years 2000 and beyond, the value returned by <B>getYear</B> is the four-digit year. For example, if the year is 2026, the value returned is 2026.
+</A>
+</UL><A NAME="Examples
+"></A>
+<A NAME="822">
+<H3> Examples
+</H3>
+</A>
+
+</ul><A NAME="824">
+<B>Example 1.</B> The second statement below assigns the value 95 to the variable <I>year</I>, based on the value of the <I>Date</I> object <I>Xmas95</I>.<P></A>
+<A NAME="826">
+<PRE>Xmas95 = new Date("December 25, 1995 23:15:00")<br>year = Xmas95.getYear()</PRE>
+</A>
+<A NAME="93721">
+<B>Example 2.</B> The second statement below assigns the value 2026 to the variable <I>theYear</I>, based on the value of the <I>Date</I> object <I>newYears2026</I>.<P></A>
+<A NAME="93722">
+<PRE>newYears2026 = new Date("2026, January, 1")<br>theYear = newYears2026.getYear()</PRE>
+</A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="828">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="830">
+<a href="ref_s-s.htm#650">setYear</a> method<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="go
+"></A>
+<A NAME="61290">
+<H1> go
+</H1>
+</A>
+
+<A NAME="61292">
+Method. Loads a URL from the history list.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="61293">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="61294">
+<PRE>history.go(<I>delta</I> | "<I>location</I>")</PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="61295">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="61296">
+<I>delta</I> is an integer or a property of an existing object, representing a relative position in the history list.<P></A>
+<A NAME="61297">
+<I>location</I> is a string or a property of an existing object, representing all or part of a URL in the history list.<P></A>
+
+</UL><A NAME="Method of
+"></A>
+<A NAME="61298">
+<H3> Method of
+</H3>
+</A>
+
+<A NAME="61302">
+<a href="ref_h-l.htm#83926">history object</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="73512">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="73513">
+Navigator 2.0<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="61303">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="61304">
+The <B>go</B> method navigates to the location in the history list determined by the argument that you specify. You can interactively display the history list by choosing History from the Window menu. Up to 10 items in the history list are also displayed on the Go menu.<P></A>
+<A NAME="61305">
+The <I>delta</I> argument is a positive or negative integer. If <I>delta</I> is greater than zero, the <B>go</B> method loads the URL that is that number of entries forward in the history list; otherwise, it loads the URL that is that number of entries backward in the history list. If delta is zero, Navigator reloads the current page.<P></A>
+<A NAME="61306">
+The <I>location</I> argument is a string. Use <I>location</I> to load the nearest history entry whose URL contains <I>location</I> as a substring. The <I>location</I> to URL matching is case-insensitive. Each section of a URL contains different information. See the <I><a href="ref_h-l.htm#84722">location</a></I> object for a description of the URL components.<P></A>
+<A NAME="106435">
+The <B>go</B> method creates a new entry in the history list. To load a URL without creating an entry in the history list, use <B><a href="ref_r-r.htm#29022">replace</a></B>.<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="61310">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="61311">
+The following button navigates to the nearest history entry that contains the string "home.netscape.com":<P></A>
+<A NAME="61312">
+<PRE>&lt;P&gt;&lt;INPUT TYPE="button" VALUE="Go"<br>&nbsp;&nbsp;&nbsp;onClick="history.go('home.netscape.com')"&gt;</PRE>
+</A>
+<A NAME="61313">
+The following button navigates to the URL that is three entries backward in the history list:<P></A>
+<A NAME="61314">
+<PRE>&lt;P&gt;&lt;INPUT TYPE="button" VALUE="Go"<br>&nbsp;&nbsp;&nbsp;onClick="history.go(-3)"&gt;</PRE>
+</A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="61315">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="61322">
+<a href="ref_a-c.htm#62224">back</a>, <a href="ref_f-g.htm#89866">forward</a>, <a href="ref_r-r.htm#28934">reload</a>, <a href="ref_r-r.htm#29022">replace</a> methods<P></A>
+
+<HR>
+<A HREF="ref_h-l.htm">[Next reference file]</A>
+

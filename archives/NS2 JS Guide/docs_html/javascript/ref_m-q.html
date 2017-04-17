@@ -1,0 +1,995 @@
+<HTML>
+<BODY>
+
+<A NAME="Math_object"><H2>Math object</H2></A>
+<P>A built-in object that has properties and methods for mathematical constants and functions. For example, the Math object's PI property has the value of pi.
+
+
+<H3>Syntax</H3>
+<P>To use a Math object:
+<PRE>
+1. Math.<I>propertyName</I>
+2. Math.<I>methodName</I>(<I>parameters</I>)
+</PRE>
+<I>propertyName</I> is one of the properties listed below.
+<BR><I>methodName</I> is one of the methods listed below.
+
+
+<H3>Property of</H3>
+<LI>None.
+
+
+<H3>Description</H3>
+<P>The Math object is a built-in JavaScript object.
+
+<P>You reference the constant PI as <TT>Math.PI</TT>. Constants are defined with the full precision of real numbers in JavaScript.
+<P>
+Similarly, you reference Math functions as methods. For example, the sine function is <TT>Math.sin(<I>argument</I>)</TT>, where <I>argument</I> is the argument.
+<P>
+It is often convenient to use the <B>with</B> statement when a section of code uses several Math constants and methods, so you don't have to type "Math" repeatedly. For example,
+<PRE>
+with (Math) {
+   a = PI * r*r
+   y = r*sin(theta)
+   x = r*cos(theta)
+}
+</PRE>
+
+
+<H3>Properties</H3>
+<LI><A HREF=ref_d-e.html#E_property>E</A>
+<LI><A HREF=ref_h-l.html#LN2_property>LN2</A>
+<LI><A HREF=ref_h-l.html#LN10_property>LN10</A>
+<LI><A HREF=ref_h-l.html#LOG2E_property>LOG2E</A>
+<LI><A HREF=ref_h-l.html#LOG10E_property>LOG10E</A>
+<LI><A HREF=ref_m-q.html#PI_property>PI</A>
+<LI><A HREF=ref_s-s.html#SQRT1_2_property>SQRT1_2</A>
+<LI><A HREF=ref_s-s.html#SQRT2_property>SQRT2</A>
+
+
+<H3>Methods</H3>
+<LI><A HREF=ref_a-c.html#abs_method>abs</A>
+<LI><A HREF=ref_a-c.html#acos_method>acos</A>
+<LI><A HREF=ref_a-c.html#asin_method>asin</A>
+<LI><A HREF=ref_a-c.html#atan_method>atan</A>
+<LI><A HREF=ref_a-c.html#ceil_method>ceil</A>
+<LI><A HREF=ref_a-c.html#cos_method>cos</A>
+<LI><A HREF=ref_d-e.html#exp_method>exp</A>
+<LI><A HREF=ref_f-g.html#floor_method>floor</A>
+<LI><A HREF=ref_h-l.html#log_method>log</A>
+<LI><A HREF=ref_m-q.html#max_method>max</A>
+<LI><A HREF=ref_m-q.html#min_method>min</A>
+<LI><A HREF=ref_m-q.html#pow_method>pow</A>
+<LI><A HREF=ref_r-r.html#random_method>random</A>
+<LI><A HREF=ref_r-r.html#round_method>round</A>
+<LI><A HREF=ref_s-s.html#sin_method>sin</A>
+<LI><A HREF=ref_s-s.html#sqrt_method>sqrt</A>
+<LI><A HREF=ref_t-z.html#tan_method>tan</A>
+
+
+<H3>Event handlers</H3>
+<LI>None. Built-in objects do not have event handlers.
+
+
+<H3>Examples</H3>
+<P>See the examples for the individual properties and methods.
+
+
+<!------------------------------------------------------------------------------------------------->
+<HR>
+<A NAME="max_method"><H2>max method</H2></A>
+<P>
+Returns the greater of two numbers.
+
+<H3>Syntax</H3>
+<PRE>Math.max(<I>number1, number2</I>)</PRE>
+<I>number1</I> and <I>number2</I> are any numeric arguments or the properties of existing objects.
+
+<H3>Method of</H3>
+<P><A HREF=ref_m-q.html#Math_object>Math</A>
+
+<H3>Examples</H3>
+<PRE>
+//Displays the value 20
+document.write("The maximum value is " + Math.max(10,20))
+
+//Displays the value -10
+document.write("&ltP&gtThe maximum value is " + Math.max(-10,-20))
+</PRE>
+
+<H3>See also</H3>
+<LI><A HREF=ref_m-q.html#min_method>min</A> method
+<!------------------------------------------------------------------------------------------------>
+<HR>
+<A NAME="method_property"><H2>method property</H2></A>
+<P>
+A string specifying how form field input information is sent to the server.
+
+<H3>Syntax</H3>
+<PRE><I>formName</I>.method</PRE>
+<P><I>formName</I> is either the name of a form or an element in the <I>forms</I> array.
+
+<H3>Property of</H3>
+<P><A HREF=ref_f-g.html#form_object>form</A>
+
+<H3>Description</H3>
+<P>The method property is a reflection of the METHOD attribute of the &ltFORM&gt tag. The method property should evaluate to either "get" or "post".
+
+<P>You can set the method property at any time.
+
+<P>Certain values of the method property may require specific values for other form properties. See <A HREF="http://www.ics.uci.edu/pub/ietf/html/rfc1867.txt" TARGET="_top">RFC 1867</A> for more information.
+
+<H3>Examples</H3>
+<P>The following function returns the value of the <I>musicForm</I> method property:
+<PRE>
+function getMethod() {
+  return document.musicForm.method
+}
+</PRE>
+
+<H3>See also</H3>
+<LI><A HREF=ref_a-c.html#action_property>action</A>, <A HREF=ref_d-e.html#encoding_property>encoding</A>, <A HREF=ref_t-z.html#target_property>target</A> properties
+<!------------------------------------------------------------------------------------------------->
+<HR>
+<A NAME="min_method"><H2>min method</H2></A>
+<P>
+Returns the lesser of two numbers.
+
+<H3>Syntax</H3>
+<PRE>Math.min(<I>number1, number2</I>)</PRE>
+<I>number1</I> and <I>number2</I> are any numeric arguments or the properties of existing objects.
+
+<H3>Method of</H3>
+<P><A HREF=ref_m-q.html#Math_object>Math</A>
+
+<H3>Examples</H3>
+<PRE>
+//Displays the value 10
+document.write("<P>The minimum value is " + Math.min(10,20))
+
+//Displays the value -20
+document.write("&ltP&gtThe minimum value is " + Math.min(-10,-20))
+</PRE>
+
+<H3>See also</H3>
+<LI><A HREF=ref_m-q.html#max_method>max</A> method
+<!------------------------------------------------------------------------------------------------>
+<HR>
+<A NAME="name_property"><H2>name property</H2></A>
+<P>
+A string specifying the name of an object.
+
+<H3>Syntax</H3>
+<PRE>
+1. <I>objectName</I>.name
+2. <I>frameReference</I>.name
+3. <I>frameReference</I>.frames.name
+4. <I>radioName</I>[<I>index</I>].name
+5. <I>selectName</I>.options.name
+6. <I>windowReference</I>.name
+7. <I>windowReference</I>.frames.name
+</PRE>
+
+<P><I>objectName</I> is either the value of the NAME attribute of any of the objects listed below or an element in the <I>elements</I> array.
+<BR><I>frameReference</I> is a valid way of referring to a frame, as described in the <A HREF=ref_f-g.html#frame_object>frame</A> object.
+<BR><I>radioName</I> is the value of the NAME attribute of a radio object.
+<BR><I>selectName</I> is either the value of the NAME attribute of a select object or an element in the <I>elements</I> array.
+<BR><I>windowReference</I> is a valid way of referring to a window, as described in the <A HREF=ref_t-z.html#window_object>window</A> object.
+
+<H3>Property of</H3>
+<LI><A HREF=ref_a-c.html#button_object>button</A>, <A HREF=ref_a-c.html#checkbox_object>checkbox</A>, <A HREF=ref_f-g.html#frame_object>frame</A>, <A HREF=ref_h-l.html#hidden_object>hidden</A>, <A HREF=ref_m-q.html#password_object>password</A>, <A HREF=ref_r-r.html#radio_object>radio</A>, <A HREF=ref_r-r.html#reset_object>reset</A>, <A HREF=ref_s-s.html#select_object>select</A>, <A HREF=ref_s-s.html#submit_object>submit</A>, <A HREF=ref_t-z.html#text_object>text</A>, <A HREF=ref_t-z.html#textarea_object>textarea</A>, <A HREF=ref_t-z.html#window_object>window</A>
+<LI><A HREF=ref_s-s.html#select_object>options</A> array
+
+<H3>Description</H3>
+<P>The value of the name property differs between the window object and other objects.
+<H4>window object</H4>
+<P>The name property for the window object is represented by form 6 and form 7 of the syntax. The name property represents the value of the <I>windowName</I> argument described in the <A HREF=ref_t-z.html#window_object>window</A> object syntax. Both forms of the syntax represent the same value.
+
+<P>name is a read-only property.
+
+<H4>All other objects</H4>
+<P>The name property for all objects except window is represented by forms 1 through 5 of the syntax. For all objects except window, the name property initially reflects the value of the NAME attribute. Changing the name property overrides this setting.
+
+<P>You can set the name property at any time.
+
+<P>The name property is the same for every radio button in a single radio object. Individual radio buttons are referenced by their position in the radio array.
+
+<P>Do not confuse the name property with the label displayed on a button, reset, or submit object. The value property specifies the label for these objects. The name property is not displayed onscreen; it is used to reference the objects programatically.
+
+<P>For a select object, the values specified by form 1 and form 5 of the syntax are the same. For a frame object, the values specified by forms 1, 2, and 3 of the syntax are the same.
+
+<P>If multiple objects on the same form have the same NAME attribute, an array of the given name is created automatically. Each element in the array represents an individual form object. Elements are indexed in source order starting at 0. For example, if two text elements and a textarea element on the same form have their NAME attribute set to "myField", an array with the elements myField[0], myField[1], and myField[2] is created.
+
+<H3>Examples</H3>
+<P>In the following example, the <I>valueGetter()</I> function uses a <B>for</B> loop to iterate over the array of elements on the <I>valueTest</I> form. The <I>msgWindow</I> window displays the names of all the elements on the form:
+
+<PRE>
+newWindow=window.open("http://www.netscape.com")
+
+function valueGetter() {
+   var msgWindow=window.open("")
+   for (var i = 0; i < newWindow.document.valueTest.elements.length; i++) {
+      msgWindow.document.write(newWindow.document.valueTest.elements[i].name + "&ltBR&gt")
+   }
+}
+</PRE>
+
+In the following example, the first statement creates a window called <I>netscapeWin</I>. The second statement displays the value "netscapeHomePage" in the alert dialog box, because "netscapeHomePage" is the value of the <I>windowName</I> argument of <I>netscapeWin</I>.
+<PRE>
+netscapeWin=window.open("http://www.netscape.com", "netscapeHomePage")
+
+alert(netscapeWin.name)
+</PRE>
+
+<H3>See also</H3>
+<P>For button, reset, and submit:
+<LI><A HREF=ref_t-z.html#value_property>value</A> property
+
+<!------------------------------------------------------------------------------------------------->
+<HR>
+<A NAME="navigator_object"><H2>navigator object</H2></A>
+<P>Contains information about the version of Navigator in use.
+
+
+<H3>Syntax</H3>
+<P>To use a navigator object:
+<PRE>
+navigator.<I>propertyName</I>
+</PRE>
+<I>propertyName</I> is one of the properties listed below.
+
+
+<H3>Property of</H3>
+<LI>None.
+
+
+<H3>Description</H3>
+<P>Use the navigator object to determine which version of the Navigator your users have.
+
+
+<H3>Properties</H3>
+<LI><A HREF=ref_a-c.html#appCodeName_property>appCodeName</A> specifies the code name of the browser
+<LI><A HREF=ref_a-c.html#appName_property>appName</A> specifies the name of the browser
+<LI><A HREF=ref_a-c.html#appVersion_property>appVersion</A> specifies version information for the Navigator
+<LI><A HREF=ref_t-z.html#userAgent_property>userAgent</A> specifies the user-agent header
+
+
+<H3>Methods</H3>
+<LI>None.
+
+
+<H3>Event handlers</H3>
+<LI>None.
+
+
+<H3>Examples</H3>
+<P>See the examples for the individual properties.
+
+
+<H3>See also</H3>
+<LI><A HREF=ref_h-l.html#link_object>link</A> object
+<LI><A HREF=ref_a-c.html#anchor_object>anchors</A> object
+
+
+<!------------------------------------------------------------------------------------------------->
+<HR>
+<A NAME="onBlur_event"><H2>onBlur event handler</H2></A>
+<P>A blur event occurs when a select, text, or textarea field on a form loses focus. The onBlur event handler executes JavaScript code when a blur event occurs.
+<P>See the relevant objects for the onBlur syntax.
+
+<H3>Event Handler of</H3>
+<P><A HREF=ref_s-s.html#select_object>select</A>, <A HREF=ref_t-z.html#text_object>text</A>, <A HREF=ref_t-z.html#textarea_object>textarea</A>
+
+<H3>Examples</H3>
+<P>In the following example, <I>userName</I> is a required text field. When a user attempts to leave the field, the onBlur event handler calls the required() function to confirm that <I>userName</I> has a legal value.
+<PRE>&ltINPUT TYPE="text" VALUE="" NAME="userName" onBlur="required(this.value)"&gt</PRE>
+
+<H3>See also</H3>
+<LI> <A HREF=ref_m-q.html#onChange_event>onChange</A> , <A HREF=ref_m-q.html#onFocus_event>onFocus</A> event handlers
+<!------------------------------------------------------------------------------------------------->
+<HR>
+<A NAME="onChange_event"><H2>onChange event handler</H2></A>
+<P>A change event occurs when a select, text, or textarea field loses focus and its value has been modified. The onChange event handler executes JavaScript code when a change event occurs.
+<P>Use the onChange event handler to validate data after it is modified by a user.
+<P>See the relevant objects for the onChange syntax.
+
+
+<H3>Event Handler of</H3>
+<P><A HREF=ref_s-s.html#select_object>select</A>, <A HREF=ref_t-z.html#text_object>text</A>, <A HREF=ref_t-z.html#textarea_object>textarea</A>
+
+<H3>Examples</H3>
+<P>In the following example, <I>userName</I> is a text field. When a user attempts to leave the field, the onBlur event handler calls the checkValue() function to confirm that <I>userName</I> has a legal value.
+<PRE>&ltINPUT TYPE="text" VALUE="" NAME="userName" onBlur="checkValue(this.value)"&gt</PRE>
+
+<H3>See also</H3>
+<LI> <A HREF=ref_m-q.html#onBlur_event>onBlur</A> , <A HREF=ref_m-q.html#onFocus_event>onFocus</A> event handlers
+<!------------------------------------------------------------------------------------------------->
+<HR>
+<A NAME="onClick_event"><H2>onClick event handler</H2></A>
+<P>
+A click event occurs when an object on a form is clicked. The onClick event handler executes JavaScript code when a click event occurs.
+<P>See the relevant objects for the onClick syntax.
+
+<H3>Event Handler of</H3>
+<P><A HREF=ref_a-c.html#button_object>button</A>, <A HREF=ref_a-c.html#checkbox_object>checkbox</A>, <A HREF=ref_r-r.html#radio_object>radio</A>, <A HREF=ref_h-l.html#link_object>link</A>, <A HREF=ref_r-r.html#reset_object>reset</A>, <A HREF=ref_s-s.html#submit_object>submit</A>
+
+<H3>Examples</H3>
+<P>
+For example, suppose you have created a JavaScript function called compute(). You can execute the compute() function when the user clicks a button by calling the function in the onClick event handler, as follows:
+<PRE>&ltINPUT TYPE=&quotbutton&quot VALUE=&quotCalculate&quot onClick=&quotcompute(this.form)&quot&gt</PRE>
+<P>In the above example, the keyword <I>this</I> refers to the current object; in this case, the Calculate button. The construct <I>this.form</I> refers to the form containing the button.
+<P>For another example, suppose you have created a JavaScript function called pickRandomURL() that lets you select a URL at random. You can use the onClick event handler of a link to specify a value for the HREF attribute of the &ltA&gt tag dynamically, as shown in the following example:
+<XMP><A HREF=""
+   onClick="this.href=pickRandomURL()"
+   onMouseOver="window.status='Pick a random URL'; return true">
+Go!</A></XMP>
+<P>In the above example, the onMouseOver event handler specifies a custom message for the Navigator status bar when the user places the mouse pointer over the Go! anchor. As this example shows, you must return true to set the window.status property in the onMouseOver event handler.
+<!------------------------------------------------------------------------------------------------->
+<HR>
+<A NAME="onFocus_event"><H2>onFocus event handler</H2></A>
+<P>
+A focus event occurs when a field receives input focus by tabbing with the keyboard or clicking with the mouse. Selecting within a field results in a select event, not a focus event. The onFocus event handler executes JavaScript code when a focus event occurs.
+<P>See the relevant objects for the onFocus syntax.
+
+
+<H3>Event Handler of</H3>
+<P><A HREF=ref_s-s.html#select_object>select</A>, <A HREF=ref_t-z.html#text_object>text</A>, <A HREF=ref_t-z.html#textarea_object>textarea</A>
+
+<H3>Examples</H3>
+<P>The following example uses an onFocus handler in the <I>valueField</I> textarea object to call the valueCheck() function.
+<PRE>&ltINPUT TYPE="textarea" VALUE="" NAME="valueField" onFocus="valueCheck()"&gt</PRE>
+
+<H3>See also</H3>
+<LI> <A HREF=ref_m-q.html#onBlur_event>onBlur</A> , <A HREF=ref_m-q.html#onChange_event>onChange</A> event handlers
+<!------------------------------------------------------------------------------------------------->
+<HR>
+<A NAME="onLoad_event"><H2>onLoad event handler</H2></A>
+<P>A load event occurs when Navigator finishes loading a window or all frames within a &ltFRAMESET&gt. The onLoad event handler executes JavaScript code when a load event occurs.
+
+<P>Use the onLoad event handler within either the &ltBODY&gt or the &ltFRAMESET&gt tag, for example, <TT>&ltBODY onLoad="..."&gt</TT>.
+
+<P>In a &ltFRAMESET&gt and &ltFRAME&gt relationship, an onLoad event within a frame (placed in the &ltBODY&gt tag) occurs before an onLoad event within the &ltFRAMESET&gt (placed in the &ltFRAMESET&gt tag).
+
+<H3>Event Handler of</H3>
+<P><A HREF=ref_t-z.html#window_object>window</A>
+
+<H3>Examples</H3>
+<P>In the following example, the onLoad event handler displays a greeting message after a web page is loaded.
+<PRE>
+&ltBODY onLoad="window.alert("Welcome to the Brave New World home page!")&gt
+</PRE>
+
+<H3>See also</H3>
+<P><A HREF=ref_m-q.html#onUnload_event>onUnload</A> event handler
+<!------------------------------------------------------------------------------------------------->
+<HR>
+<A NAME="onMouseOver_event"><H2>onMouseOver event handler</H2></A>
+<P>
+<P>A mouseOver event occurs once each time the mouse pointer moves over an object from outside that object. The onMouseOver event handler executes JavaScript code when a mouseOver event occurs.
+<P>You must return true within the event handler if you want to set the status or defaultStatus properties with the onMouseOver event handler.
+<P>See the relevant objects for the onMouseOver syntax.
+
+
+<H3>Event Handler of</H3>
+<P><A HREF=ref_h-l.html#link_object>link</A>
+
+<H3>Examples</H3>
+<P>
+By default, the HREF value of an anchor displays in the status bar at the bottom of the Navigator when a user places the mouse pointer over the anchor. In the following example, the onMouseOver event handler provides the custom message "Click this if you dare."
+<XMP><A HREF="http://home.netscape.com/"
+   onMouseOver="window.status='Click this if you dare!'; return true">
+Click me</A></XMP>
+<P>See <A HREF=ref_m-q.html#onClick_event>onClick</A> for an example of using onMouseOver when the &ltA&gt tag's HREF attribute is set dynamically.
+<!------------------------------------------------------------------------------------------------->
+<HR>
+<A NAME="onSelect_event"><H2>onSelect event handler</H2></A>
+<P>
+<P>A select event occurs when a user selects some of the text within a text or textarea field. The onSelect event handler executes JavaScript code when a select event occurs.
+<P>See the relevant objects for the onSelect syntax.
+
+
+<H3>Event Handler of</H3>
+<P><A HREF=ref_t-z.html#text_object>text</A>, <A HREF=ref_t-z.html#textarea_object>textarea</A>
+
+<H3>Examples</H3>
+<P>The following example uses an onSelect handler in the <I>valueField</I> text object to call the selectState() function.
+<PRE>&ltINPUT TYPE="text" VALUE="" NAME="valueField" onSelect="selectState()"&gt</PRE>
+<!------------------------------------------------------------------------------------------------->
+<HR>
+<A NAME="onSubmit_event"><H2>onSubmit event handler</H2></A>
+<P>
+A submit event occurs when a user submits a form. The onSubmit event handler executes JavaScript code when a submit event occurs.
+
+<P>You can use the onSubmit event handler to prevent a form from being submitted; to do so, put a <B>return</B> statement that returns false in the event handler. Any other returned value lets the form submit. If you omit the <B>return</B> statement, the form is submitted.
+
+<P>See the relevant objects for the onSubmit syntax.
+
+<H3>Event Handler of</H3>
+<P><A HREF=ref_f-g.html#form_object>form</A>
+
+<H3>Examples</H3>
+<P>In the following example, the onSubmit event handler calls the formData() function to evaluate the data being submitted. If the data is valid, the form is submitted; otherwise, the form is not submitted.
+<PRE>
+form.onSubmit="return formData(this)"
+</PRE>
+<P>See also the examples for the <A HREF=ref_f-g.html#form_object>form</A> object.
+
+<H3>See also</H3>
+<LI><A HREF=ref_s-s.html#submit_object>submit</A> object
+<LI><A HREF=ref_s-s.html#submit_method>submit</A> method
+<!------------------------------------------------------------------------------------------------->
+<HR>
+<A NAME="onUnload_event"><H2>onUnload event handler</H2></A>
+<P>An unload event occurs when you exit a document. The onUnload event handler executes JavaScript code when an unload event occurs.
+
+<P>Use the onUnload event handler within either the &ltBODY&gt or the &ltFRAMESET&gt tag, for example, <TT>&ltBODY onUnload="..."&gt</TT>.
+
+<P>In a &ltFRAMESET&gt and &ltFRAME&gt relationship, an onUnload event within a frame (placed in the &ltBODY&gt tag) occurs before an onUnload event within the &ltFRAMESET&gt (placed in the &ltFRAMESET&gt tag).
+
+<H3>Event Handler of</H3>
+<P><A HREF=ref_t-z.html#window_object>window</A>
+
+<H3>Examples</H3>
+<P>In the following example, the onUnload event handler calls the cleanUp() function to perform some shut down processing when the user exits a web page:
+<PRE>
+&ltBODY onUnload="cleanUp()"&gt
+</PRE>
+
+<H3>See also</H3>
+<P><A HREF=ref_m-q.html#onLoad_event>onLoad</A> event handler
+<!------------------------------------------------------------------------------------------------->
+<HR>
+
+
+
+
+<A NAME="open_document_method"><H2>open method (document object)</H2></A>
+<P>
+Opens a stream to collect the output of write or writeln methods.
+
+<H3>Syntax</H3>
+<PRE>document.open(["<I>mimeType</I>"])</PRE>
+<P>
+<I>mimeType</I> specifies any of the following document types:
+<PRE>
+   text/html
+   text/plain
+   image/gif
+   image/jpeg
+   image/x-bitmap
+   <I>plugIn</I>
+</PRE>
+<I>plugIn</I> is any two-part plug-in MIME type that Netscape supports.
+
+<H3>Method of</H3>
+<P><A HREF=ref_d-e.html#document_object>document</A>
+
+<H3>Description</H3>
+<P>The open method opens a stream to collect the output of write or writeln methods. If the <I>mimeType</I> is text or image, the stream is opened to layout; otherwise, the stream is opened to a plug-in. If a document exists in the target window, the open method clears it.
+
+<P>End the stream by using the document.close() method. The close method causes text or images that were sent to layout to display. After using document.close(), issue document.open() again when you want to begin another output stream. 
+
+<P><I>mimeType</I> is an optional argument that specifies the type of document to which you are writing. If you do not specify a <I>mimeType</I>, the open method assumes <TT>text/html</TT> by default.
+
+<P>Following is a description of <I>mimeType</I>:
+<LI><I>text/html</I> specifies a document containing ASCII text with HTML formatting.
+<LI><I>text/plain</I> specifies a document containing plain ASCII text with end-of-line characters to delimit displayed lines.
+<LI><I>image/gif</I> specifies a document with encoded bytes constituting a GIF header and pixel data.
+<LI><I>image/jpeg</I> specifies a document with encoded bytes constituting a JPEG header and pixel data.
+<LI><I>image/x-bitmap</I> specifies a document with encoded bytes constituting a bitmap header and pixel data.
+<LI><I>plugIn</I> loads the specified plug-in and uses it as the destination for write and writeln methods. For example, "x-world/vrml" loads the VR Scout VRML plug-in from Chaco Communications, and "application/x-director" loads the Macromedia Shockwave plug-in.
+
+
+<H3>Examples</H3>
+The following function calls document.open() to open a stream before issuing a write method:
+<PRE>
+function windowWriter1() {
+   var myString = "Hello, world!"
+   msgWindow.document.open()
+   msgWindow.document.write("&ltP&gt" + myString)
+   msgWindow.document.close()
+}
+</PRE>
+
+In the following example, the <I>probePlugIn()</I> function determines whether a user has the Shockwave plug-in installed:
+<PRE>
+function probePlugIn(mimeType) {
+   var havePlugIn = false
+   var tiny = window.open("", "teensy", "width=1,height=1")
+   if (tiny != null) {
+      if (tiny.document.open(mimeType) != null)
+         havePlugIn = true
+      tiny.close()
+   }
+   return havePlugIn
+}
+
+var haveShockwavePlugIn = probePlugIn("application/x-director")
+</PRE>
+
+<H3>See also</H3>
+<LI><A HREF=ref_a-c.html#clear_method>clear</A>, <A HREF=ref_a-c.html#close_document_method>close</A>, <A HREF=ref_t-z.html#write_method>write</A>, <A HREF=ref_t-z.html#writeln_method>writeln</A> methods
+<!------------------------------------------------------------------------------------------------>
+<HR>
+<A NAME="open_window_method"><H2>open method (window object)</H2></A>
+<P>
+Opens a new web browser window.
+
+<H3>Syntax</H3>
+<PRE>
+[<I>windowVar</I> = ][window].open("<I>URL</I>", "<I>windowName</I>", ["<I>windowFeatures</I>"])
+</PRE>
+<P><I>windowVar</I> is the name of a new window. Use this variable when referring to a window's properties, methods, and containership.
+<BR><I>URL</I> specifies the URL to open in the new window. See the <A HREF=ref_h-l.html#location_object>location</A> object for a description of the URL components.
+<BR><I>windowName</I> is the window name to use in the TARGET attribute of a &LTFORM&GT or &LTA&GT tag. <I>windowName</I> can contain only alphanumeric or underscore (_) characters.
+<BR><I>windowFeatures</I> is a comma-separated list of any of the following options and values:
+<PRE>
+   toolbar[=yes|no]|[=1|0]
+   location[=yes|no]|[=1|0]
+   directories[=yes|no]|[=1|0]
+   status[=yes|no]|[=1|0]
+   menubar[=yes|no]|[=1|0]
+   scrollbars[=yes|no]|[=1|0]
+   resizable[=yes|no]|[=1|0]
+   width=<I>pixels</I>
+   height=<I>pixels</I>
+</PRE>
+<P>You may use any subset of these options. Separate options with a comma. Do not put spaces between the options.
+<P><I>pixels</I> is a positive integer specifying the dimension in pixels.
+
+<H3>Method of</H3>
+<P><A HREF=ref_t-z.html#window_object>window</A>
+
+<H3>Description</H3>
+<P>The open method opens a new web browser window on the client, similar to choosing New Web Browser from the File menu of the Navigator. The <I>URL</I> argument specifies the URL contained by the new window. If <I>URL</I> is an empty string, a new, empty window is created.
+
+<P>In event handlers, you must specify window.open() instead of simply using open(). Due to the scoping of static objects in JavaScript, a call to open() without specifying an object name is equivalent to document.open().
+
+<P><I>windowFeatures</I> is an optional, comma-separated list of options for the new window. The boolean <I>windowFeatures</I> options are set to true if they are specified without values, or as <TT>yes</TT> or <TT>1</TT>. For example, <TT>open("", "messageWindow", "toolbar")</TT> and <TT>open("", "messageWindow", "toolbar=1")</TT> both set the toolbar option to true. If <I>windowName</I> does not specify an existing window and you do not specify <I>windowFeatures</I>, all boolean <I>windowFeatures</I> are true by default. If you specify any item in <I>windowFeatures</I>, all other Boolean <I>windowFeatures</I> are false unless you explicitly specify them.
+
+<P>Following is a description of the <I>windowFeatures</I>:
+<LI><I>toolbar</I> creates the standard Navigator toolbar, with buttons such as "Back" and "Forward", if true
+<LI><I>location</I> creates a Location entry field, if true
+<LI><I>directories</I> creates the standard Navigator directory buttons, such as "What's New" and "What's Cool", if true
+<LI><I>status</I> creates the status bar at the bottom of the window, if true
+<LI><I>menubar</I> creates the menu at the top of the window, if true
+<LI><I>scrollbars</I> creates horizontal and vertical scrollbars when the document grows larger than the window dimensions, if true
+<LI><I>resizable</I> allows a user to resize the window, if true
+<LI><I>width</I> specifies the width of the window in pixels
+<LI><I>height</I> specifies the height of the window in pixels
+
+<H3>Examples</H3>
+<P>In the following example, the windowOpener function opens a window and uses write methods to display a message:
+<PRE>function windowOpener() {
+   msgWindow=window.open("","displayWindow","menubar=yes")
+   msgWindow.document.write
+      ("&ltHEAD&gt&ltTITLE&gtMessage window&lt/TITLE&gt&lt/HEAD&gt")
+   msgWindow.document.write
+      ("&ltCENTER&gt&ltBIG&gt&ltB&gtHello, world!&lt/B&gt&lt/BIG&gt&lt/CENTER&gt")
+}
+</PRE>
+<P>
+The following is an onClick event handler that opens a new client window displaying the content specified in the file <I>sesame.html</I>. The window opens with the specified option settings; all other options are false because they are not specified.
+<xmp>
+<FORM NAME="myform">
+<INPUT TYPE="button" NAME="Button1" VALUE="Open Sesame!"
+   onClick="window.open
+   ('sesame.html', 'newWin', 'scrollbars=yes,status=yes,width=300,height=300')">
+</FORM>
+</xmp>
+<P>
+Notice the use of single quotes (') inside the onClick event handler.
+
+
+<H3>See also</H3>
+<LI><A HREF=ref_a-c.html#close_window_method>close</A> method
+<!------------------------------------------------------------------------------------------------>
+<HR>
+<A NAME="options_property"><H2>options property</H2></A>
+<P>An array corresponding to options in a select object (&ltOPTION&gt tags) in source order. See <A HREF=ref_s-s.html#select_object>select</A> object.
+
+<!------------------------------------------------------------------------------------------------->
+<HR>
+<A NAME="parent_property"><H2>parent property</H2></A>
+<P>
+The parent property is a synonym for a window or frame whose frameset contains the current frame.
+
+<H3>Syntax</H3>
+<PRE>
+1. parent.<I>propertyName</I>
+2. parent.<I>methodName</I>
+3. parent.<I>frameName</I>
+4. parent.frames[<I>index</I>]
+</PRE>
+<P><I>propertyName</I> is the defaultStatus, status, length, name, or parent property when the calling parent refers to a window object.
+<BR><I>propertyName</I> is the length, name, or parent property when the calling parent refers to a frame object.
+<BR><I>methodName</I> is any method associated with the window object.
+<BR><I>frameName</I> and frames[<I>index</I>] are ways to refer to frames.
+
+<H3>Property of</H3>
+<P><A HREF=ref_f-g.html#frame_object>frame</A>, <A HREF=ref_t-z.html#window_object>window</A>
+
+<H3>Description</H3>
+
+<P>The parent property refers to the &ltFRAMESET&gt window of a frame. Child frames within a frameset refer to sibling frames by using "parent" in place of the window name as follows: <TT>parent.<I>frameName</I></TT> or <TT>parent.frames[<I>index</I>]</TT>. For example, if the fourth frame in a set has NAME="homeFrame", sibling frames can refer to that frame using <TT>parent.homeFrame</TT> or <TT>parent.frames[3]</TT>.
+
+<P>You can use <TT>parent.parent</TT> to refer to the "grandparent" frame or window when a &ltFRAMESET&gt tag is nested within a child frame.
+
+<P>The parent property is read-only. The value of the parent property is 
+<PRE>     &ltobject <I>nameAttribute</I>&gt</PRE>
+where <I>nameAttribute</I> is the NAME attribute if the parent is a frame, or an internal reference if the parent is a window.
+
+<H3>Examples</H3>
+<P>See the examples for the <A HREF=ref_f-g.html#frame_object>frame</A> object.
+<!------------------------------------------------------------------------------------------------->
+<HR>
+<A NAME="parse_method"><H2>parse method</H2></A>
+<P>
+Returns the number of milliseconds in a date string since January 1, 1970 00:00:00, local time.
+
+<H3>Syntax</H3>
+<PRE>Date.parse(<I>dateString</I>)</PRE>
+<I>dateString</I> is a string representing a date or a property of an existing object.
+
+<H3>Method of</H3>
+<P><A HREF=ref_d-e.html#Date_object>Date</A>
+
+<H3>Description</H3>
+<P>
+The parse method takes a date string (such as "Dec 25, 1995"), and returns the number of milliseconds since January 1, 1970 00:00:00 (local time). This function is useful for setting date values based on string values, for example in conjunction with the setTime method and the Date object.
+<P>
+Given a string representing a time, parse returns the time value. It accepts the IETF standard date syntax: "Mon, 25 Dec 1995 13:30:00 GMT". It understands the continental US time zone abbreviations, but for general use, use a time zone offset, for example "Mon, 25 Dec 1995 13:30:00 GMT+0430" (4 hours, 30 minutes west of the Greenwich meridian). If you do not specify a time zone, the local time zone is assumed. GMT and UTC are considered equivalent. 
+
+<P>
+Because the parse function is a static method of Date, you always use it as <code>Date.parse()</code>, rather than as a method of a date object you created.
+
+<H3>Examples</H3>
+<P>
+If <I>IPOdate</I> is an existing date object, then 
+<PRE>
+IPOdate.setTime(Date.parse("Aug 9, 1995"))
+</PRE>
+
+<H3>See also</H3>
+<LI><A HREF=ref_t-z.html#UTC_method>UTC</A> method
+<!------------------------------------------------------------------------------------------------>
+<HR>
+<A NAME="parseFloat_method"><H2>parseFloat function</H2></A>
+<P>
+Parses a string argument and returns a floating point number.
+
+<H3>Syntax</H3>
+<PRE>parseFloat(<I>string</I>)</PRE>
+<P><I>string</I> is a string that represents the value you want to parse.
+
+<H3>Description</H3>
+<P>The parseFloat function is a built-in JavaScript function. It is not a method associated with any object, but is part of the language itself.
+
+<P>parseFloat parses its argument, a string, and returns a floating point number. If it encounters a character other than a sign ( + or -), numeral (0-9), a decimal point, or an exponent, then it returns the value up to that point and ignores that character and all succeeding characters.
+
+<P>If the first character cannot be converted to a number, parseFloat returns one of the following values:
+<LI>0 on Windows platforms.
+<LI>"NaN" on any other platform, indicating that the value is not a number.
+
+<P>For arithmetic purposes, the "NaN" value is not a number in any radix. You can call the isNaN function to determine if the result of parseFloat is "NaN". If "NaN" is passed on to arithmetic operations, the operation results will also be "NaN".
+
+<H3>Examples</H3>
+<P>
+The following examples all return 3.14:
+<PRE>
+parseFloat("3.14")
+parseFloat("314e-2")
+parseFloat("0.0314E+2")
+var x = "3.14"
+parseFloat(x)
+</PRE>
+<P>
+The following example returns "NaN" or 0:
+<PRE>
+parseFloat("FF2")
+</PRE>
+
+<H3>See also</H3>
+<LI><A HREF=ref_h-l.html#isNaN_method>isNaN</A>, <A HREF=ref_m-q.html#parseInt_method>parseInt</A> functions
+
+<!------------------------------------------------------------------------------------------------>
+<HR>
+<A NAME="parseInt_method"><H2>parseInt function</H2></A>
+<P>
+Parses a string argument and returns an integer of the specified radix or base.
+
+<H3>Syntax</H3>
+<PRE>parseInt(<I>string</I> [,<I>radix</I>])</PRE>
+<P><I>string</I> is a string that represents the value you want to parse.
+<BR><I>radix</I> is an integer that represents the radix of the return value.
+
+<H3>Description</H3>
+<P>The parseInt function is a built-in JavaScript function. It is not a method associated with any object, but is part of the language itself.
+
+<P>The parseInt function parses its first argument, a string, and attempts to return an integer of the specified radix (base). For example, a radix of 10 indicates to convert to a decimal number, 8 octal, 16 hexadecimal, and so on. For radixes above 10, the letters of the alphabet indicate numerals greater than 9. For example, for hexadecimal numbers (base 16), A through F are used.
+
+<P>If parseInt encounters a character that is not a numeral in the specified radix, it ignores it and all succeeding characters and returns the integer value parsed up to that point. ParseInt truncates numbers to integer values.
+
+<P>If the radix is not specified or is specified as 0, JavaScript assumes the following:
+<LI>If the input <I>string</I> begins with "0x", the radix is 16 (hexadecimal).
+<LI>If the input <I>string</I> begins with "0", the radix is 8 (octal).
+<LI>If the input <I>string</I> begins with any other value, the radix is 10 (decimal).
+
+<P>If the first character cannot be converted to a number, parseFloat returns one of the following values:
+<LI>0 on Windows platforms.
+<LI>"NaN" on any other platform, indicating that the value is not a number.
+
+<P>For arithmetic purposes, the "NaN" value is not a number in any radix. You can call the isNaN function to determine if the result of parseInt is "NaN". If "NaN" is passed on to arithmetic operations, the operation results will also be "NaN".
+
+<H3>Examples</H3>
+<P>The following examples all return 15:
+<PRE>
+parseInt("F", 16)
+parseInt("17", 8)
+parseInt("15", 10)
+parseInt(15.99, 10)
+parseInt("FXX123", 16)
+parseInt("1111", 2)
+parseInt("15*3", 10)
+</PRE>
+
+<P>The following examples all return "NaN" or 0:
+<PRE>
+parseInt("Hello", 8)
+parseInt("0x7", 10)
+parseInt("FFF", 10)
+</PRE>
+
+<P>Even though the radix is specified differently, the following examples all return 17 because the input <I>string</I> begins with "0x".
+<PRE>
+parseInt("0x11", 16)
+parseInt("0x11", 0)
+parseInt("0x11")
+</PRE>
+
+<H3>See also</H3>
+<LI><A HREF=ref_h-l.html#isNaN_method>isNaN</A>, <A HREF=ref_m-q.html#parseFloat_method>parseFloat</A> functions
+
+<!------------------------------------------------------------------------------------------------>
+<HR>
+<A NAME="password_object"><H2>password object</H2></A>
+<P>A text field on an HTML form that conceals its value by displaying asterisks (*). When the user enters text into the field, asterisks (*) hide anything entered from view.
+
+
+<H3>Syntax</H3>
+<P>To define a password object, use standard HTML syntax:
+<PRE>
+&LTINPUT
+   TYPE="password"
+   NAME="<I>passwordName</I>"
+   [VALUE="<I>textValue</I>"]
+   SIZE=<I>integer</I>&GT
+</PRE>
+<I>NAME="passwordName"</I> specifies the name of the password object. You can access this value using the name property.
+<BR><I>VALUE="textValue"</I> specifies the initial value of the password object. You can access this value using the defaultValue property.
+<BR><I>SIZE=integer</I> specifies the number of characters the password object can accommodate without scrolling.
+
+<P>To use a password object's properties and methods:
+<PRE>
+1. <I>passwordName</I>.<I>propertyName</I>
+2. <I>passwordName</I>.<I>methodName</I>(<I>parameters</I>)
+3. <I>formName</I>.elements[<I>index</I>].<I>propertyName</I>
+4. <I>formName</I>.elements[<I>index</I>].<I>methodName</I>(<I>parameters</I>)
+</PRE>
+<I>passwordName</I> is the value of the NAME attribute of a password object.
+<BR><I>formName</I> is either the value of the NAME attribute of a form object or an element in the <I>forms</I> array.
+<BR><I>index</I> is an integer representing a password object on a form.
+<BR><I>propertyName</I> is one of the properties listed below.
+<BR><I>methodName</I> is one of the methods listed below.
+
+
+<H3>Property of</H3>
+<LI><A HREF=ref_f-g.html#form_object>form</A>
+
+
+<H3>Description</H3>
+<P>A password object on a form looks as follows:
+<FORM>
+<P><B>Enter your password:</B> <INPUT TYPE="password" VALUE="baylaurel" SIZE=25>
+</FORM>
+<P>A password object is a form element and must be defined within a &LTFORM&GT tag.
+
+
+<H3>Properties</H3>
+<LI><A HREF=ref_d-e.html#defaultValue_property>defaultValue</A> reflects the VALUE attribute
+<LI><A HREF=ref_m-q.html#name_property>name</A> reflects the NAME attribute
+<LI><A HREF=ref_t-z.html#value_property>value</A> reflects the current value of the password object's field
+
+
+<H3>Methods</H3>
+<LI><A HREF=ref_f-g.html#focus_method>focus</A>
+<LI><A HREF=ref_a-c.html#blur_method>blur</A>
+<LI><A HREF=ref_s-s.html#select_method>select</A>
+
+
+<H3>Event handlers</H3>
+<LI>None.
+
+
+<H3>Examples</H3>
+<P>
+<XMP>
+<B>Password:</B> <INPUT TYPE="password" NAME="password" VALUE="" SIZE=25>
+</XMP>
+
+
+<H3>See also</H3>
+<LI><A HREF=ref_f-g.html#form_object>form</A> and <A HREF=ref_t-z.html#text_object>text</A> objects
+
+
+<!------------------------------------------------------------------------------------------------->
+<HR>
+<A NAME="pathname_property"><H2>pathname property</H2></A>
+<P>
+A string specifying the url-path portion of the URL.
+
+<H3>Syntax</H3>
+<PRE>
+1. links[<I>index</I>].pathname
+2. location.pathname
+</PRE>
+<P><I>index</I> is an integer representing a link object.
+
+<H3>Property of</H3>
+<P><A HREF=ref_h-l.html#link_object>link</A>, <A HREF=ref_h-l.html#location_object>location</A>
+
+<H3>Description</H3>
+<P>The pathname property specifies a portion of the URL. The pathname supplies the details of how the specified resource can be accessed.
+
+<P>You can set the pathname property at any time, although it is safer to set the href property to change a location. If the pathname that you specify cannot be found in the current location, you will get an error.
+
+<P>See Section 3.1 of <A HREF="http://www.cis.ohio-state.edu/htbin/rfc/rfc1738.html" TARGET="_top">RFC 1738</A> for complete information about the pathname.
+
+
+<H3>Examples</H3>
+<P>See the examples for the <A HREF=ref_h-l.html#href_property>href</A> property.
+
+<H3>See also</H3>
+<LI><A HREF=ref_h-l.html#hash_property>hash</A>, <A HREF=ref_h-l.html#host_property>host</A>, <A HREF=ref_h-l.html#hostname_property>hostname</A>, <A HREF=ref_h-l.html#href_property>href</A>, <A HREF=ref_m-q.html#port_property>port</A>, <A HREF=ref_m-q.html#protocol_property>protocol</A>, <A HREF=ref_s-s.html#search_property>search</A> properties
+<!------------------------------------------------------------------------------------------------->
+<HR>
+<A NAME="PI_property"><H2>PI property</H2></A>
+<P>
+The ratio of the circumference of a circle to its diameter, approximately 3.14159.
+
+<H3>Syntax</H3>
+<PRE>Math.PI</PRE>
+
+<H3>Property of</H3>
+<P><A HREF=ref_m-q.html#Math_object>Math</A>
+
+<H3>Description</H3>
+<P>Because PI is a constant, it is a read-only property of Math.
+
+<H3>Examples</H3>
+<P>The following example displays the value of pi:
+<PRE>document.write("The value of pi is " + Math.PI)</PRE>
+
+<H3>See also</H3>
+<LI><A HREF=ref_d-e.html#E_property>E</A>, <A HREF=ref_h-l.html#LN2_property>LN2</A>, <A HREF=ref_h-l.html#LN10_property>LN10</A>, <A HREF=ref_h-l.html#LOG2E_property>LOG2E</A>, <A HREF=ref_h-l.html#LOG10E_property>LOG10E</A>, <A HREF=ref_s-s.html#SQRT1_2_property>SQRT1_2</A>, <A HREF=ref_s-s.html#SQRT2_property>SQRT2</A> properties
+<!------------------------------------------------------------------------------------------------->
+<HR>
+<A NAME="port_property"><H2>port property</H2></A>
+<P>
+A string specifying the communications port that the server uses for communications.
+
+<H3>Syntax</H3>
+<PRE>
+1. links[<I>index</I>].port
+2. location.port
+</PRE>
+<P><I>index</I> is an integer representing a link object.
+
+<H3>Property of</H3>
+<P><A HREF=ref_h-l.html#link_object>link</A>, <A HREF=ref_h-l.html#location_object>location</A>
+
+<H3>Description</H3>
+<P>The port property specifies a portion of the URL. The port property is a substring of the host property. The host property is the concatenation of the hostname and port properties, separated by a colon. When the port property is not defined, the host property is the same as the hostname property.
+
+<P>You can set the port property at any time, although it is safer to set the href property to change a location. If the port that you specify cannot be found in the current location, you will get an error. If the port property is not specified, it defaults to 80 on the server.
+
+<P>See Section 3.1 of <A HREF="http://www.cis.ohio-state.edu/htbin/rfc/rfc1738.html" TARGET="_top">RFC 1738</A> for complete information about the port.
+
+<H3>Examples</H3>
+<P>See the examples for the <A HREF=ref_h-l.html#href_property>href</A> property.
+
+<H3>See also</H3>
+<LI><A HREF=ref_h-l.html#hash_property>hash</A>, <A HREF=ref_h-l.html#host_property>host</A>, <A HREF=ref_h-l.html#hostname_property>hostname</A>, <A HREF=ref_h-l.html#href_property>href</A>, <A HREF=ref_m-q.html#pathname_property>pathname</A>, <A HREF=ref_m-q.html#protocol_property>protocol</A>, <A HREF=ref_s-s.html#search_property>search</A> properties
+<!------------------------------------------------------------------------------------------------->
+<HR>
+<A NAME="pow_method"><H2>pow method</H2></A>
+<P>
+Returns <I>base</I> to the <I>exponent</I> power, that is, <I>base</I><sup><I>exponent</I></sup>.
+
+<H3>Syntax</H3>
+<PRE>Math.pow(<I>base, exponent</I>)</PRE>
+<I>base</I> is any numeric expression or a property of an existing object.
+<BR><I>exponent</I> is any numeric expression or a property of an existing object.
+If the result would include an imaginary number (for example pow(-1, 0.5)), then the value returned is
+always zero.
+
+<H3>Method of</H3>
+<P><A HREF=ref_m-q.html#Math_object>Math</A>
+
+<H3>Examples</H3>
+<PRE>
+//Displays the value 49
+document.write("7 to the power of 2 is " + Math.pow(7,2))
+
+//Displays the value 1024
+document.write("&ltP&gt2 to the power of 10 is " + Math.pow(2,10))
+</PRE>
+
+<H3>See also</H3>
+<LI><A HREF=ref_d-e.html#exp_method>exp</A>, <A HREF=ref_h-l.html#log_method>log</A> methods
+<!------------------------------------------------------------------------------------------------>
+<HR>
+<A NAME="prompt_method"><H2>prompt method</H2></A>
+<P>
+Displays a Prompt dialog box with a message and an input field.
+
+<H3>Syntax</H3>
+<PRE>prompt(<I>message</I>, [<i>inputDefault</i>])</PRE>
+<I>message</I> is any string or a property of an existing object; the string is displayed as the message.
+<BR><I>inputDefault</I> is a string, integer, or property of an existing object that represents the default value of the input field.
+
+
+<H3>Method of</H3>
+<P><A HREF=ref_t-z.html#window_object>window</A>
+
+<H3>Description</H3>
+<P>Use the prompt method to display a dialog box that receives user input. If you do not specify an initial value for <I>inputDefault</I>, the dialog box displays the value &ltundefined&gt.
+
+<P>Although prompt is a method of the window object, you do not need to specify a <I>windowReference</I> when you call it. For example, <TT><I>windowReference</I>.prompt()</TT> is unnecessary.
+
+<H3>Examples</H3>
+<PRE>
+prompt("Enter the number of cookies you want to order:", 12)
+</PRE>
+
+<H3>See also</H3>
+<LI><A HREF=ref_a-c.html#alert_method>alert</A>, <A HREF=ref_a-c.html#confirm_method>confirm</A> methods
+<!------------------------------------------------------------------------------------------------>
+<HR>
+<A NAME="protocol_property"><H2>protocol property</H2></A>
+<P>
+A string specifying the beginning of the URL, up to and including the first colon.
+
+<H3>Syntax</H3>
+<PRE>
+1. links[<I>index</I>].protocol
+2. location.protocol
+</PRE>
+<P><I>index</I> is an integer representing a link object.
+
+<H3>Property of</H3>
+<P><A HREF=ref_h-l.html#link_object>link</A>, <A HREF=ref_h-l.html#location_object>location</A>
+
+<H3>Description</H3>
+<P>The protocol property specifies a portion of the URL. The protocol indicates the access method of the URL. For example, a protocol of "http:" specifies Hypertext Transfer Protocol, and a protocol of "javascript:" specifies JavaScript code.
+
+<P>You can set the protocol property at any time, although it is safer to set the href property to change a location. If the protocol that you specify cannot be found in the current location, you will get an error.
+
+<P>The protocol property represents the scheme name of the URL. See Section 2.1 of <A HREF="http://www.cis.ohio-state.edu/htbin/rfc/rfc1738.html" TARGET="_top">RFC 1738</A> for complete information about the protocol.
+
+
+<H3>Examples</H3>
+<P>See the examples for the <A HREF=ref_h-l.html#href_property>href</A> property.
+
+<H3>See also</H3>
+<LI><A HREF=ref_h-l.html#hash_property>hash</A>, <A HREF=ref_h-l.html#host_property>host</A>, <A HREF=ref_h-l.html#hostname_property>hostname</A>, <A HREF=ref_h-l.html#href_property>href</A>, <A HREF=ref_m-q.html#pathname_property>pathname</A>, <A HREF=ref_m-q.html#port_property>port</A>, <A HREF=ref_s-s.html#search_property>search</A> properties
+<!------------------------------------------------------------------------------------------------->
+<HR>
+
+<SCRIPT>
+document.write("<FONT SIZE=-2>Last modified " + document.lastModified)
+</SCRIPT>
+<P>
+</BODY>
+<HTML>
+

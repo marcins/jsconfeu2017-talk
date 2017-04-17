@@ -1,0 +1,86 @@
+<HTML>
+<HEAD>
+<TITLE>Welcome to Nikki's Diner</TITLE>
+</HEAD>
+
+<STYLE TYPE="text/css">
+<!--
+    P {margin-left:10%; margin-right:10%;}
+    P.plainPara {margin-left:0};
+
+    #formlayer {position:relative; left:20pt; }
+    #menulayer {position:absolute; left:20pt; width:400;
+      include-source:url("specials/sat.htm");}
+-->
+
+</STYLE>
+
+<SCRIPT>
+function showSpecials(n) {
+   var specials = document.menulayer;
+   switch (n) {
+    case 0: specials.src = "specials/sat.htm";
+
+    break;
+    case 1: specials.src = "specials/sun.htm";
+    break;
+    case 2: specials.src = "specials/mon.htm";
+    break;
+    case 3: specials.src = "specials/tues.htm";
+    break;
+    case 4: specials.src = "specials/wed.htm";
+    break;
+    case 5: specials.src = "specials/thurs.htm";
+    break;
+    default: specials.src = "specials/fri.htm";
+}
+}
+
+</SCRIPT>
+
+
+
+
+<BODY BGCOLOR="white">
+<HR>
+<H1 align = "center">Welcome to Nikki's Diner!</H1>
+<HR>
+
+<P  CLASS=plainPara>Nikki's Diner is the best place for vegan food in Netscapeville. </P>
+
+
+<P CLASS=plainPara>You can find us at the corner of Communicator Street and Navigator Way. We're open from 10 am to 6 pm every day. We don't take reservations, so just come on down. We guarantee that after you visit us once, you'll be back on a regular basis!</P>
+
+<P CLASS=plainPara>We have an extensive regular menu of tasty meals in addition to our daily specials.</P>
+
+<P CLASS=plainPara >You can use the following menu (no pun intended) to view the Specials for any day this week. Our specials change every week.</P>
+
+
+<DIV ID=formlayer>
+<P CLASS=plainPara> Please select a day of the week:</P>
+
+    <FORM NAME=form1>
+
+     <SELECT name=menu1 onChange="showSpecials(this.selectedIndex); return false;">
+        <OPTION >Saturday
+        <OPTION >Sunday
+        <OPTION >Monday
+        <OPTION >Tuesday
+        <OPTION >Wednesday
+        <OPTION >Thursday
+        <OPTION >Friday
+     </SELECT>
+   </FORM>
+</DIV>
+
+<DIV ID=menulayer>
+
+</DIV>
+
+
+
+
+</BODY>
+</HTML>
+
+

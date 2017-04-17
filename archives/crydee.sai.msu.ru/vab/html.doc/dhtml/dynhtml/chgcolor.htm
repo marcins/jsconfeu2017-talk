@@ -1,0 +1,20 @@
+<HTML>
+<HEAD><TITLE>Simple Color Change Example</TITLE>
+</HEAD>
+
+<BODY bgcolor=white>
+
+<LAYER ID="layer1" BGCOLOR="red" width=200 height=100
+    onMouseOver='changeColor("blue");'
+    onMouseOut='changeColor("red")'>
+  <P>Layer content...</P>
+  <SCRIPT>
+    function changeColor(newcol) {
+     bgColor=newcol;
+     return false;
+     }
+  </SCRIPT>
+</LAYER>
+
+</BODY>
+</HTML>

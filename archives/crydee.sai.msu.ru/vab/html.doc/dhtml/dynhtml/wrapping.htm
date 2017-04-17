@@ -1,0 +1,64 @@
+<HTML>
+<HEAD><TITLE>
+Resizing Wrapping Width Example
+</TITLE> </HEAD>
+
+<STYLE TYPE="text/css">
+P {padding:10%;}
+</STYLE>
+
+<BODY>
+<H1>Resizing a layer and its contents using the load() function</H1>
+
+
+<LAYER NAME="layer1" SRC="mytext.htm" LEFT=100pts
+WIDTH=300 BGCOLOR="#99bbFF">
+</LAYER>
+</BODY>
+
+<SCRIPT>
+var layerWidth = 300;
+var oldX;
+var layer1 = document.layers['layer1'];
+
+layer1.document.captureEvents(
+       Event.MOUSEUP|Event.MOUSEDOWN|Event.MOUSEDRAG);
+
+layer1.document.onMouseDown=begindrag;
+layer1.document.onMouseUp=enddrag;
+layer1.onload=resetcapture;
+
+function resetcapture() {
+	layer1.document.captureEvents(
+	   Event.MOUSEUP|Event.MOUSEDOWN|Event.MOUSEDRAG|Event.MOUSEMOVE);
+}
+
+
+function begindrag(e) {
+ layer1.document.captureEvents(Event.MOUSEMOVE);
+ layer1.document.onmousemove=drag;
+ oldX=e.pageX;
+ return false;
+}
+
+function drag(e) {
+ changeWidth(layer1, e.pageX - oldX);
+ oldX = e.pageX;
+ return false;
+}
+
+function changeWidth(layer, delta)
+{
+
+ layerWidth = layerWidth + delta;
+ if (delta != 0)
+ layer.load("mytext.htm", layerWidth);
+}
+
+function enddrag(e) {
+ layer1.document.onmousemove=0;
+ layer1.document.releaseEvents(Event.MOUSEMOVE);
+ return false;
+}
+</SCRIPT>
+

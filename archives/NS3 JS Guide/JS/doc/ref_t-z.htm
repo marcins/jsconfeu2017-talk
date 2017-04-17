@@ -1,0 +1,3908 @@
+<BODY BGCOLOR="#FFFFFF">
+<A HREF="ref_s-s.htm">[Previous reference file]</A>
+<!------------------------------>
+<HR>
+<A NAME="taint
+"></A>
+<A NAME="98587">
+<H1> taint
+</H1>
+</A>
+
+<A NAME="98591">
+Function. Adds tainting to a data element or script.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="98592">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="90989">
+<PRE>taint(<I>dataElementName</I>)</PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="95767">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="95768">
+<I>dataElementName</I> is the property, variable, function, or object to taint. If omitted, taint is added to the script itself.<P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="95769">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="95770">
+Navigator 3.0<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="90994">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="95931">
+Tainting prevents other scripts from passing information that should be secure and private, such as directory structures or user session history. JavaScript cannot pass tainted values on to any server without the end user's permission.<P></A>
+<A NAME="94227">
+Use <B>taint</B> to mark data that otherwise is not tainted.<P></A>
+<A NAME="98380">
+In some cases, control flow rather than data flow carries tainted information. In these cases, taint is added to the script's window. You can add taint to the script's window by calling <B>taint</B> with no arguments. See <a href="advtopic.htm#1008815">"Tainting that results from conditional statements"</a>.<P></A>
+<A NAME="97121">
+<B>taint</B> does not modify its argument; instead, it returns a marked copy of the value, or, for objects, an unmarked reference to the value.<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="90996">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="98127">
+The following statement adds taint to a property so that a script cannot send it to another server without the end user's permission:<P></A>
+<A NAME="98128">
+<PRE>taintedStatus=taint(window.defaultStatus)<br>// taintedStatus now cannot be sent in a URL or form post without<br>// the end user's permission</PRE>
+</A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="94170">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="94177">
+<a href="ref_d-e.htm#68458">domain</a> property; <a href="ref_t-z.htm#99739">taintEnabled</a> method; <a href="ref_t-z.htm#135008">untaint</a> function; <a href="advtopic.htm#1009533">"Using data tainting for security"</a><P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="taintEnabled
+"></A>
+<A NAME="99739">
+<H1> taintEnabled
+</H1>
+</A>
+
+<A NAME="99740">
+Method. Specifies whether data tainting is enabled.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="99741">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="99742">
+<PRE>navigator.taintEnabled()</PRE>
+</A>
+
+</UL><A NAME="Method of
+"></A>
+<A NAME="99743">
+<H3> Method of
+</H3>
+</A>
+
+<A NAME="99747">
+<a href="ref_m-q.htm#176789">navigator</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="99748">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="100093">
+Navigator 3.0<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="100160">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="101516">
+Tainting prevents other scripts from passing information that should be secure and private, such as directory structures or user session history. JavaScript cannot pass tainted values on to any server without the end user's permission.<P></A>
+<A NAME="101517">
+Use <B>taintEnabled</B> to determine if data tainting is enabled. <B>taintEnabled</B> returns true if data tainting is enabled, false otherwise. The user enables or disables data tainting by using the environment variable NS_ENABLE_TAINT.<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="99752">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="99753">
+The following code executes <I>function1</I> if data tainting is enabled; otherwise it executes <I>function2</I>.<P></A>
+<A NAME="99754">
+<PRE>if (navigator.taintEnabled()) {<br>&nbsp;&nbsp;&nbsp;function1()<br>}<br>else function2()</PRE>
+</A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="99755">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="99765">
+<a href="ref_d-e.htm#68458">domain</a> property; <a href="ref_t-z.htm#98587">taint</a>, <a href="ref_t-z.htm#135008">untaint</a> functions; <a href="advtopic.htm#1009533">"Using data tainting for security"</a><P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="tan
+"></A>
+<A NAME="94180">
+<H1> tan
+</H1>
+</A>
+
+<A NAME="13402">
+Method. Returns the tangent of a number.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="115">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="117">
+<PRE>Math.tan(<I>number</I>)</PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="4865">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="119">
+<I>number</I> is a numeric expression representing the size of an angle in radians, or a property of an existing object.<P></A>
+
+</UL><A NAME="Method of
+"></A>
+<A NAME="121">
+<H3> Method of
+</H3>
+</A>
+
+<A NAME="123">
+<a href="ref_m-q.htm#175987">Math</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="71927">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="71928">
+Navigator 2.0<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="125">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="127">
+The <B>tan</B> method returns a numeric value that represents the tangent of the angle.<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="129">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="27172">
+The following function returns the tangent of the variable <I>x:</I><P></A>
+<A NAME="27173">
+<PRE>function getTan(x) {<br>&nbsp;&nbsp;&nbsp;return Math.tan(x)<br>}</PRE>
+</A>
+<A NAME="27174">
+If you pass <B>getTan</B> the value Math.PI/4, it returns 0.9999999999999999.<P></A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="133">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="135">
+<a href="ref_a-c.htm#42437">acos</a>, <a href="ref_a-c.htm#42868">asin</a>, <a href="ref_a-c.htm#42905">atan</a>, <a href="ref_a-c.htm#76855">atan2</a>, <a href="ref_a-c.htm#44122">cos</a>, <a href="ref_s-s.htm#674">sin</a> methods<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="target
+"></A>
+<A NAME="65191">
+<H1> target
+</H1>
+</A>
+
+<A NAME="65193">
+Property. For <I>form</I>, a string specifying the name of the window that responses go to after a form has been submitted. For <I>link</I>, a string specifying the name of the window that displays the content of a clicked hypertext link.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="65194">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="65195">
+<PRE>1. <I>formName</I>.target<br>2. links[<I>index</I>].target<br>3. <I>areaName</I>.target</PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="136571">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="136572">
+<I>formName</I> is either the name of a form or an element in the <I>forms0</I> array.<P></A>
+<A NAME="136573">
+<I>index</I> is an integer representing a <I>Link</I> object or the name of a <I>Link</I> object as specified by the NAME attribute.<P></A>
+<A NAME="76876">
+<I>areaName</I> is the value of the NAME attribute of an <I>Area</I> object.<P></A>
+
+</UL><A NAME="Property of
+"></A>
+<A NAME="65199">
+<H3> Property of
+</H3>
+</A>
+
+<A NAME="65206">
+Area object (see <a href="ref_h-l.htm#84501">Link object</a>), <a href="ref_f-g.htm#60597">Form object</a>, <a href="ref_h-l.htm#84501">Link object</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="72293">
+<H3> Implemented in
+</H3>
+</A>
+
+<ul><A NAME="72294">
+<LI>Navigator 2.0
+</A><A NAME="76880">
+<LI>Navigator 3.0: property of <I>Area</I>
+</A>
+</UL><A NAME="Tainted?
+"></A>
+<A NAME="98784">
+<H3> Tainted?
+</H3>
+</A>
+
+</ul><A NAME="98785">
+No<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="65207">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="65208">
+The <I>target</I> property initially reflects the TARGET attribute of the &lt;A&gt;, &lt;AREA&gt;, and &lt;FORM&gt; tags; however, setting <I>target</I> overrides these attributes.<P></A>
+<A NAME="65209">
+You can set <I>target</I> using a string, if the string represents a window name. The <I>target</I> property cannot be assigned the value of a JavaScript expression or variable.<P></A>
+<A NAME="76937">
+You can set the <I>target</I> property at any time.<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="65210">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="65211">
+The following example specifies that responses to the <I>musicInfo</I> form are displayed in the <I>msgWindow</I> window:<P></A>
+<A NAME="65212">
+<PRE>document.musicInfo.target="msgWindow"</PRE>
+</A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="65213">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="65226">
+For form: <a href="ref_a-c.htm#96428">action</a>, <a href="ref_d-e.htm#48026">encoding</a>, <a href="ref_m-q.htm#176192">method</a> properties; <a href="ref_f-g.htm#60597">Form object</a><P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="Text object
+"></A>
+<A NAME="65229">
+<H1> Text object
+</H1>
+</A>
+
+<A NAME="65231">
+Object. A text input field on an HTML form. The user can enter a word, phrase, or series of numbers in a text field.<P></A>
+
+</UL><A NAME="HTML syntax
+"></A>
+<A NAME="65232">
+<H3> HTML syntax
+</H3>
+</A>
+
+<A NAME="65233">
+To define a <I>Text</I> object, use standard HTML syntax with the addition of JavaScript event handlers:<P></A>
+<A NAME="65234">
+<PRE>&lt;INPUT<br>&nbsp;&nbsp;&nbsp;TYPE="text"<br>&nbsp;&nbsp;&nbsp;NAME="<I>textName</I>"<br>&nbsp;&nbsp;&nbsp;VALUE="<I>textValue</I>"<br>&nbsp;&nbsp;&nbsp;SIZE=<I>integer<br></I>&nbsp;&nbsp;&nbsp;[onBlur="<I>handlerText</I>"]<br>&nbsp;&nbsp;&nbsp;[onChange="<I>handlerText</I>"]<br>&nbsp;&nbsp;&nbsp;[onFocus="<I>handlerText</I>"]<br>&nbsp;&nbsp;&nbsp;[onSelect="<I>handlerText</I>"]&gt;</PRE>
+</A>
+
+</UL><A NAME="HTML attributes
+"></A>
+<A NAME="65235">
+<H3> HTML attributes
+</H3>
+</A>
+
+<A NAME="65236">
+<I>NAME="textName"</I> specifies the name of the <I>Text</I> object. You can access this value using the <I>name</I> property, and you can use this name when indexing the <I>elements</I> array.<P></A>
+<A NAME="65237">
+<I>VALUE="textValue"</I> specifies the initial value of the <I>Text</I> object. You can access this value using the <I>defaultValue</I> property.<P></A>
+<A NAME="65238">
+<I>SIZE=integer</I> specifies the number of characters the <I>Text</I> object can accommodate without scrolling.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="65239">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="65240">
+To use a <I>Text</I> object's properties and methods:<P></A>
+<A NAME="65241">
+<PRE>1. <I>textName</I>.<I>propertyName<br></I>2. <I>textName</I>.<I>methodName</I>(<I>parameters</I>)<br>3. <I>formName</I>.elements[<I>index</I>].<I>propertyName<br></I>4. <I>formName</I>.elements[<I>index</I>].<I>methodName</I>(<I>parameters</I>)</PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="65242">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="65243">
+<I>textName</I> is the value of the NAME attribute of a <I>Text</I> object.<P></A>
+<A NAME="65244">
+<I>formName</I> is either the value of the NAME attribute of a <I>Form</I> object or an element in the <I>forms</I> array.<P></A>
+<A NAME="65245">
+<I>index</I> is an integer representing a <I>Text</I> object on a form or the name of a <I>Text</I> object as specified by the NAME attribute.<P></A>
+<A NAME="65246">
+<I>propertyName</I> is one of the properties listed below.<P></A>
+<A NAME="65247">
+<I>methodName</I> is one of the methods listed below.<P></A>
+
+</UL><A NAME="Property of
+"></A>
+<A NAME="65248">
+<H3> Property of
+</H3>
+</A>
+
+<A NAME="65252">
+<a href="ref_f-g.htm#60597">Form object</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="72498">
+<H3> Implemented in
+</H3>
+</A>
+
+<ul><A NAME="72499">
+<LI>Navigator 2.0
+</A><A NAME="79271">
+<LI>Navigator 3.0: added <I>type</I> property
+</A>
+</UL><A NAME="Description
+"></A>
+<A NAME="65253">
+<H3> Description
+</H3>
+</A>
+
+</ul><A NAME="65261">
+A <I>Text</I> object on a form looks as follows:<p>
+
+<FORM>
+<P><B>Last name:</B> <INPUT TYPE="text" VALUE="Salamone" SIZE=25>
+</FORM>
+
+<P></A>
+<A NAME="65262">
+A <I>Text</I> object is a form element and must be defined within a &lt;FORM&gt; tag.<P></A>
+<A NAME="65263">
+<I>Text</I> objects can be updated (redrawn) dynamically by setting the <I>value</I> property (this.value).<P></A>
+<A NAME="133352">
+If a form contains only one element, a <I>Text</I> object, then when the user enters a value and presses Return, the form submits. (This is a standard HTML feature.)<P></A>
+
+</UL><A NAME="Properties
+"></A>
+<A NAME="133342">
+<H3> Properties
+</H3>
+</A>
+
+<A NAME="65295">
+The <I>Text</I> object has the following properties:
+
+<P><TABLE BORDER="2">
+<CAPTION></CAPTION>
+<tr align=left valign=bottom><th><b><A NAME="65271">
+Property</A><B><th><b><A NAME="65273">
+Description</A><B>
+<tr align=left valign=top><td><A NAME="65278">
+<a href="ref_d-e.htm#46920">defaultValue</a>
+</A><BR>
+
+<td><A NAME="65280">
+Reflects the VALUE attribute
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="135337">
+<a href="ref_f-g.htm#97350">form property</a>
+</A><BR>
+
+<td><A NAME="135339">
+Specifies the form containing the <I>Text</I> object
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="65285">
+<a href="ref_m-q.htm#176636">name</a>
+</A><BR>
+
+<td><A NAME="65287">
+Reflects the NAME attribute
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="79156">
+<a href="ref_t-z.htm#71171">type</a>
+</A><BR>
+
+<td><A NAME="79158">
+Reflects the TYPE attribute
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="65292">
+<a href="ref_t-z.htm#66860">value</a>
+</A><BR>
+
+<td><A NAME="65294">
+Reflects the current value of the <I>Text</I> object's field
+</A><BR>
+
+
+
+
+</TABLE>
+
+<TABLE>
+<TR><TD>
+</TABLE>
+
+
+<P></A>
+
+</UL><A NAME="Methods
+"></A>
+<A NAME="65296">
+<H3> Methods
+</H3>
+</A>
+
+<A NAME="101684">
+The <I>Text</I> object has the following methods:
+
+<P><TABLE BORDER="2">
+<CAPTION></CAPTION>
+<tr align=left valign=top><td><A NAME="102232">
+<LI><a href="ref_a-c.htm#62474">blur</a>
+</A><A NAME="138364">
+<LI><a href="ref_d-e.htm#573">eval</a>
+</A><A NAME="102236">
+<LI><a href="ref_f-g.htm#59872">focus</a>
+</A>
+<td><A NAME="102262">
+<LI><a href="ref_s-s.htm#72548">select method</a>
+</A><A NAME="138371">
+<LI><a href="ref_t-z.htm#70978">toString</a>
+</A><A NAME="101683">
+<LI><a href="ref_t-z.htm#91188">valueOf</a>
+</A>
+
+
+
+</TABLE>
+
+<TABLE>
+<TR><TD>
+</TABLE>
+
+
+<P></A>
+
+</UL><A NAME="Event handlers
+"></A>
+<A NAME="65309">
+<H3> Event handlers
+</H3>
+</A>
+
+<ul><A NAME="65313">
+<LI><a href="ref_m-q.htm#177100">onBlur</a>
+</A><A NAME="65317">
+<LI><a href="ref_m-q.htm#177149">onChange</a>
+</A><A NAME="65321">
+<LI><a href="ref_m-q.htm#177278">onFocus</a>
+</A><A NAME="65325">
+<LI><a href="ref_m-q.htm#177458">onSelect</a>
+</A>
+</UL><A NAME="Examples
+"></A>
+<A NAME="65326">
+<H3> Examples
+</H3>
+</A>
+
+</ul><A NAME="65327">
+<B>Example 1.</B> The following example creates a <I>Text</I> object that is 25 characters long. The text field appears immediately to the right of the words "Last name:". The text field is blank when the form loads.<P></A>
+<A NAME="65328">
+<PRE>&lt;B&gt;Last name:&lt;/B&gt; &lt;INPUT TYPE="text" NAME="last_name" VALUE="" SIZE=25&gt;</PRE>
+</A>
+<A NAME="65329">
+<B>Example 2.</B> The following example creates two <I>Text</I> objects on a form. Each object has a default value. The <I>city</I> object has an onFocus event handler that selects all the text in the field when the user tabs to that field. The <I>state</I> object has an onChange event handler that forces the value to uppercase.<P></A>
+<A NAME="65330">
+<PRE>&lt;FORM NAME="form1"&gt;<br>&lt;BR&gt;&lt;B&gt;City: &lt;/B&gt;&lt;INPUT TYPE="text" NAME="city" VALUE="Anchorage"<br>&nbsp;&nbsp;&nbsp;SIZE="20" onFocus="this.select()"&gt;<br>&lt;B&gt;State: &lt;/B&gt;&lt;INPUT TYPE="text" NAME="state" VALUE="AK" SIZE="2"<br>&nbsp;&nbsp;&nbsp;onChange="this.value=this.value.toUpperCase()"&gt;<br>&lt;/FORM&gt;</PRE>
+</A>
+<A NAME="65343">
+See also the examples for the <a href="ref_m-q.htm#177100">onBlur</a>, <a href="ref_m-q.htm#177149">onChange</a>, <a href="ref_m-q.htm#177278">onFocus</a>, and <a href="ref_m-q.htm#177458">onSelect</a> event handlers.<P></A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="65344">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="65357">
+<a href="ref_f-g.htm#104945">FileUpload</a> object, <a href="ref_f-g.htm#60597">Form object</a>, <a href="ref_m-q.htm#177857">Password</a> object, <a href="ref_s-s.htm#870">String</a> object, <a href="ref_t-z.htm#65386">Textarea</a> object<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="text property
+"></A>
+<A NAME="65360">
+<H1> text property
+</H1>
+</A>
+
+<A NAME="65362">
+Property. A string specifying the text that follows an &lt;OPTION&gt; tag in a <I>Select</I> object.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="65363">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="65364">
+<PRE>1. <I>selectName</I>.options[<I>index</I>].text<br>2. <I>optionName</I>.text</PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="65365">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="65366">
+<I>selectName</I> is either the value of the NAME attribute of a <I>Select</I> object or an element in the <I>elements</I> array.<P></A>
+<A NAME="65367">
+<I>index</I> is an integer representing an option in a <I>Select</I> object.<P></A>
+<A NAME="79442">
+<I>optionName</I> is the name of a <I>Select</I> object option created using the Option() constructor.<P></A>
+
+</UL><A NAME="Property of
+"></A>
+<A NAME="65368">
+<H3> Property of
+</H3>
+</A>
+
+<A NAME="65372">
+Option object (see <a href="ref_s-s.htm#72585">Select object</a>)<I>, options</I> array (see <a href="ref_s-s.htm#72585">Select object</a>)<P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="73172">
+<H3> Implemented in
+</H3>
+</A>
+
+<ul><A NAME="73173">
+<LI>Navigator 2.0
+</A><A NAME="79282">
+<LI>Navigator 3.0: The <I>text</I> property of the <I>options</I> array can be changed and the text displayed by the option in the <I>Select</I> object changes. In previous releases, you could set the <I>text</I> property but the new value was not reflected in the <I>Select</I> object.
+</A>
+</UL><A NAME="Tainted?
+"></A>
+<A NAME="98815">
+<H3> Tainted?
+</H3>
+</A>
+
+</ul><A NAME="98816">
+Yes<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="65373">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="65374">
+The <I>text</I> property initially reflects the text that follows an &lt;OPTION&gt; tag in a <I>Select</I> object.<P></A>
+<A NAME="65375">
+You can set the <I>text</I> property at any time and the text displayed by the option in the <I>Select</I> object changes.<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="65379">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="65380">
+In the following example, the <B>getChoice</B> function returns the value of the <I>text</I> property for the selected option. The <B>for</B> loop evaluates every option in the <I>musicType</I> <I>Select</I> object. The <B>if</B> statement finds the option that is selected.<P></A>
+<A NAME="65381">
+<PRE>function getChoice() {<br>&nbsp;&nbsp;&nbsp;for (var i = 0; i &lt; document.musicForm.musicType.length; i++) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (document.musicForm.musicType.options[i].selected == true) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return document.musicForm.musicType.options[i].text<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;return null<br>}</PRE>
+</A>
+<A NAME="65382">
+The previous example assumes that the <I>Select</I> object is similar to the following:<P></A>
+<A NAME="65383">
+<PRE>&lt;SELECT NAME="musicType"&gt;<br>&nbsp;&nbsp;&nbsp;&lt;OPTION SELECTED&gt; R&amp;B<br>&nbsp;&nbsp;&nbsp;&lt;OPTION&gt; Jazz<br>&nbsp;&nbsp;&nbsp;&lt;OPTION&gt; Blues<br>&nbsp;&nbsp;&nbsp;&lt;OPTION&gt; New Age<br>&lt;/SELECT&gt;</PRE>
+</A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="Textarea
+"></A>
+<A NAME="65386">
+<H1> Textarea
+</H1>
+</A>
+
+<A NAME="65388">
+Object. A multiline input field on an HTML form. The user can use a textarea field to enter words, phrases, or numbers.<P></A>
+
+</UL><A NAME="HTML syntax
+"></A>
+<A NAME="65389">
+<H3> HTML syntax
+</H3>
+</A>
+
+<A NAME="65390">
+To define a text area, use standard HTML syntax with the addition of JavaScript event handlers:<P></A>
+<A NAME="65391">
+<PRE>&lt;TEXTAREA<br>&nbsp;&nbsp;&nbsp;NAME="<I>textareaName</I>"<br>&nbsp;&nbsp;&nbsp;ROWS="<I>integer</I>"<br>&nbsp;&nbsp;&nbsp;COLS="<I>integer</I>"<br>&nbsp;&nbsp;&nbsp;[onBlur="<I>handlerText</I>"]<br>&nbsp;&nbsp;&nbsp;[onChange="<I>handlerText</I>"]<br>&nbsp;&nbsp;&nbsp;[onFocus="<I>handlerText</I>"]<br>&nbsp;&nbsp;&nbsp;[onSelect="<I>handlerText</I>"]&gt;<br>&nbsp;&nbsp;&nbsp;<I>textToDisplay<br></I>&lt;/TEXTAREA&gt;</PRE>
+</A>
+
+</UL><A NAME="HTML attributes
+"></A>
+<A NAME="83372">
+<H3> HTML attributes
+</H3>
+</A>
+
+<A NAME="83373">
+<I>NAME="textareaName"</I> specifies the name of the <I>Textarea</I> object. You can access this value using the <I>name</I> property, and you can use this name when indexing the <I>elements</I> array.<P></A>
+<A NAME="65394">
+<I>ROWS="integer"</I> and <I>COLS="integer"</I> define the physical size of the displayed input field in numbers of characters.<P></A>
+<A NAME="65395">
+<I>textToDisplay</I> specifies the initial value of the <I>Textarea</I> object. A <I>Textarea</I> allows only ASCII text, and new lines are respected. You can access this value using the <I>defaultValue</I> property.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="65396">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="65397">
+To use a <I>Textarea</I> object's properties and methods:<P></A>
+<A NAME="65398">
+<PRE>1. <I>textareaName</I>.<I>propertyName<br></I>2. <I>textareaName</I>.<I>methodName</I>(<I>parameters</I>)<br>3. <I>formName</I>.elements[<I>index</I>].<I>propertyName<br></I>4. <I>formName</I>.elements[<I>index</I>].<I>methodName</I>(<I>parameters</I>)</PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="65399">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="65400">
+<I>textareaName</I> is the value of the NAME attribute of a <I>Textarea</I> object.<P></A>
+<A NAME="65401">
+<I>formName</I> is either the value of the NAME attribute of a <I>Form</I> object or an element in the <I>forms</I> array.<P></A>
+<A NAME="65402">
+<I>index</I> is an integer representing a <I>Textarea</I> object on a form or the name of a <I>Textarea</I> object as specified by the NAME attribute.<P></A>
+<A NAME="65403">
+<I>propertyName</I> is one of the properties listed below.<P></A>
+<A NAME="65404">
+<I>methodName</I> is one of the methods listed below.<P></A>
+
+</UL><A NAME="Property of
+"></A>
+<A NAME="65405">
+<H3> Property of
+</H3>
+</A>
+
+<A NAME="65409">
+<a href="ref_f-g.htm#60597">Form object</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="73670">
+<H3> Implemented in
+</H3>
+</A>
+
+<ul><A NAME="73671">
+<LI>Navigator 2.0
+</A><A NAME="80192">
+<LI>Navigator 3.0: added <I>type</I> property
+</A>
+</UL><A NAME="Description
+"></A>
+<A NAME="65410">
+<H3> Description
+</H3>
+</A>
+
+</ul><A NAME="65418">
+A <I>Textarea</I> object on a form looks as follows:<p>
+
+<FORM>
+<P><TEXTAREA NAME="item_description" ROWS=5 COLS=45>
+Our storage ottoman provides an attractive way to
+store lots of CDs and videos--and it's versatile
+enough to store other things as well.
+
+It can hold up to 72 CDs under the lid and 20 videos
+in the drawer below.
+</TEXTAREA>
+</FORM>
+
+<P></A>
+<A NAME="65419">
+A <I>Textarea</I> object is a form element and must be defined within a &lt;FORM&gt; tag.<P></A>
+<A NAME="65420">
+<I>Textarea</I> objects can be updated (redrawn) dynamically by setting the <I>value</I> property (this.value).<P></A>
+<A NAME="65421">
+To begin a new line in a <I>Textarea</I> object, you can use a newline character. Although this character varies from platform to platform (Unix is \n, Windows is \r, and Macintosh is \n), JavaScript checks for all newline characters before setting a string-valued property and translates them as needed for the user's platform. You could also enter a newline character programmatically--one way is to test the <I>appVersion</I> property to determine the current platform, then set the newline character accordingly. See the <I><a href="ref_a-c.htm#61077">appVersion</a></I> property for an example.<P></A>
+
+</UL><A NAME="Properties
+"></A>
+<A NAME="65425">
+<H3> Properties
+</H3>
+</A>
+
+<A NAME="65456">
+The <I>Textarea</I> object has the following properties:
+
+<P><TABLE BORDER="2">
+<CAPTION></CAPTION>
+<tr align=left valign=bottom><th><b><A NAME="65432">
+Property</A><B><th><b><A NAME="65434">
+Description</A><B>
+<tr align=left valign=top><td><A NAME="65439">
+<a href="ref_d-e.htm#46920">defaultValue</a>
+</A><BR>
+
+<td><A NAME="65441">
+Reflects the VALUE attribute
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="135312">
+<a href="ref_f-g.htm#97350">form property</a>
+</A><BR>
+
+<td><A NAME="135314">
+Specifies the form containing the <I>Textarea</I> object
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="65446">
+<a href="ref_m-q.htm#176636">name</a>
+</A><BR>
+
+<td><A NAME="65448">
+Reflects the NAME attribute
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="80320">
+<a href="ref_t-z.htm#71171">type</a>
+</A><BR>
+
+<td><A NAME="80322">
+Specifies that the object is a <I>Textarea</I> object
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="65453">
+<a href="ref_t-z.htm#66860">value</a>
+</A><BR>
+
+<td><A NAME="65455">
+Reflects the current value of the <I>Textarea</I> object
+</A><BR>
+
+
+
+
+</TABLE>
+
+<TABLE>
+<TR><TD>
+</TABLE>
+
+
+<P></A>
+
+</UL><A NAME="Methods
+"></A>
+<A NAME="65457">
+<H3> Methods
+</H3>
+</A>
+
+<A NAME="103133">
+The <I>Textarea</I> object has the following methods:
+
+<P><TABLE BORDER="2">
+<CAPTION></CAPTION>
+<tr align=left valign=top><td><A NAME="104368">
+<LI><a href="ref_a-c.htm#62474">blur</a>
+</A><A NAME="138384">
+<LI><a href="ref_d-e.htm#573">eval</a>
+</A><A NAME="104372">
+<LI><a href="ref_f-g.htm#59872">focus</a>
+</A>
+<td><A NAME="104461">
+<LI><a href="ref_s-s.htm#72548">select method</a>
+</A><A NAME="139966">
+<LI><a href="ref_t-z.htm#70978">toString</a>
+</A><A NAME="103132">
+<LI><a href="ref_t-z.htm#91188">valueOf</a>
+</A>
+
+
+
+</TABLE>
+
+<TABLE>
+<TR><TD>
+</TABLE>
+
+
+<P></A>
+
+</UL><A NAME="Event handlers
+"></A>
+<A NAME="65470">
+<H3> Event handlers
+</H3>
+</A>
+
+<ul><A NAME="65474">
+<LI><a href="ref_m-q.htm#177100">onBlur</a>
+</A><A NAME="65478">
+<LI><a href="ref_m-q.htm#177149">onChange</a>
+</A><A NAME="65482">
+<LI><a href="ref_m-q.htm#177278">onFocus</a>
+</A><A NAME="65486">
+<LI><a href="ref_m-q.htm#177458">onSelect</a>
+</A>
+</UL><A NAME="Examples
+"></A>
+<A NAME="65487">
+<H3> Examples
+</H3>
+</A>
+
+</ul><A NAME="65488">
+<B>Example 1.</B> The following example creates a <I>Textarea</I> object that is six rows long and 55 columns wide. The textarea field appears immediately below the word "Description:". When the form loads, the <I>Textarea</I> object contains several lines of data, including one blank line.<P></A>
+<A NAME="65489">
+<PRE>&lt;B&gt;Description:&lt;/B&gt;<br>&lt;BR&gt;&lt;TEXTAREA NAME="item_description" ROWS=6 COLS=55&gt;<br>Our storage ottoman provides an attractive way to<br>store lots of CDs and videos--and it's versatile<br>enough to store other things as well.<br><br>It can hold up to 72 CDs under the lid and 20 videos<br>in the drawer below.<br>&lt;/TEXTAREA&gt;</PRE>
+</A>
+<A NAME="131356">
+<B>Example 2.</B> The following example creates a string variable containing newline two characters for different platforms. When the user clicks the button, the <I>Textarea</I> object is populated with the value from the string variable. The result is three lines of text in the <I>Textarea</I> object.<P></A>
+<A NAME="131645">
+<PRE>&lt;SCRIPT&gt;<br>myString="This is line one.\nThis is line two.\rThis is line three."<br>&lt;/SCRIPT&gt;<br>&lt;FORM NAME="form1"&gt;<br>&lt;INPUT TYPE="button" Value="Populate the textarea"<br>onClick="document.form1.textarea1.value=myString"&gt;<br>&nbsp;&nbsp;&nbsp;&lt;P&gt;<br>&lt;TEXTAREA NAME="textarea1" ROWS=6 COLS=55&gt;&lt;/TEXTAREA&gt;</PRE>
+</A>
+<A NAME="65502">
+See also the examples for the <a href="ref_m-q.htm#177100">onBlur</a>, <a href="ref_m-q.htm#177149">onChange</a>, <a href="ref_m-q.htm#177278">onFocus</a>, and <a href="ref_m-q.htm#177458">onSelect</a> event handlers.<P></A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="65503">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="98937">
+<a href="ref_f-g.htm#60597">Form object</a>, <a href="ref_m-q.htm#177857">Password</a> object, <a href="ref_s-s.htm#870">String</a> object, <a href="ref_t-z.htm#65229">Text object</a><P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="title
+"></A>
+<A NAME="98940">
+<H1> title
+</H1>
+</A>
+
+<A NAME="98942">
+Property. A string representing the title of a document.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="65522">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="65523">
+<PRE>document.title</PRE>
+</A>
+
+</UL><A NAME="Property of
+"></A>
+<A NAME="65524">
+<H3> Property of
+</H3>
+</A>
+
+<A NAME="65528">
+<a href="ref_d-e.htm#47667">document</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="73839">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="73840">
+Navigator 2.0<P></A>
+
+</UL><A NAME="Tainted?
+"></A>
+<A NAME="98976">
+<H3> Tainted?
+</H3>
+</A>
+
+<A NAME="98977">
+Yes<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="65529">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="65530">
+The <I>title</I> property is a reflection of the value specified within the &lt;TITLE&gt; and &lt;/TITLE&gt; tags. If a document does not have a title, the <I>title</I> property is null.<P></A>
+<A NAME="65531">
+<I>title</I> is a read-only property.<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="65532">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="65533">
+In the following example, the value of the <I>title</I> property is assigned to a variable called <I>docTitle:</I><P></A>
+<A NAME="65534">
+<PRE>var newWindow = window.open("http://home.netscape.com")<br>var docTitle = newWindow.document.title</PRE>
+</A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="toGMTString
+"></A>
+<A NAME="427">
+<H1> toGMTString
+</H1>
+</A>
+
+<A NAME="429">
+Method. Converts a date to a string, using the Internet GMT conventions.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="431">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="433">
+<PRE><I>dateObjectName</I>.toGMTString()</PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="4919">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="435">
+<I>dateObjectName</I> is either the name of a <I>Date</I> object or a property of an existing object.<P></A>
+
+</UL><A NAME="Method of
+"></A>
+<A NAME="437">
+<H3> Method of
+</H3>
+</A>
+
+<A NAME="439">
+<a href="ref_d-e.htm#8153">Date</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="73917">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="73918">
+Navigator 2.0<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="441">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="443">
+The exact format of the value returned by <B>toGMTString</B> varies according to the platform.<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="445">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="447">
+In the following example, <I>today</I> is a <I>Date</I> object:<P></A>
+<A NAME="52493">
+<PRE>today.toGMTString()</PRE>
+</A>
+<A NAME="52494">
+In this example, the <B>toGMTString</B> method converts the date to GMT (UTC) using the operating system's time-zone offset and returns a string value that is similar to the following form. The exact format depends on the platform.<P></A>
+<A NAME="453">
+<PRE>Mon, 18 Dec 1995 17:28:35 GMT</PRE>
+</A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="455">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="457">
+<a href="ref_t-z.htm#459">toLocaleString</a> method<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="toLocaleString
+"></A>
+<A NAME="459">
+<H1> toLocaleString
+</H1>
+</A>
+
+<A NAME="461">
+Method. Converts a date to a string, using the current locale's conventions.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="463">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="465">
+<PRE><I>dateObjectName</I>.toLocaleString()</PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="4924">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="467">
+<I>dateObjectName</I> is either the name of a <I>Date</I> object or a property of an existing object.<P></A>
+
+</UL><A NAME="Method of
+"></A>
+<A NAME="469">
+<H3> Method of
+</H3>
+</A>
+
+<A NAME="471">
+<a href="ref_d-e.htm#8153">Date</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="73985">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="73986">
+Navigator 2.0<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="473">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="475">
+If you are trying to pass a date using <B>toLocaleString</B>, be aware that different locales assemble the string in different ways. Using methods such as <B>getHours</B>, <B>getMinutes</B>, and <B>getSeconds</B> gives more portable results.<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="477">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="479">
+In the following example, <I>today</I> is a <I>Date</I> object:<P></A>
+<A NAME="481">
+<PRE>today.toLocaleString()</PRE>
+</A>
+<A NAME="483">
+In this example, <B>toLocaleString</B> returns a string value that is similar to the following form. The exact format depends on the platform.<P></A>
+<A NAME="485">
+<PRE>12/18/95 17:28:35</PRE>
+</A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="487">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="489">
+<a href="ref_t-z.htm#427">toGMTString</a> method<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="toLowerCase
+"></A>
+<A NAME="491">
+<H1> toLowerCase
+</H1>
+</A>
+
+<A NAME="493">
+Method. Returns the calling string value converted to lowercase.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="495">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="497">
+<PRE><I>stringName</I>.toLowerCase()</PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="4948">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="499">
+<I>stringName</I> is any string or a property of an existing object.<P></A>
+
+</UL><A NAME="Method of
+"></A>
+<A NAME="501">
+<H3> Method of
+</H3>
+</A>
+
+<A NAME="503">
+<a href="ref_s-s.htm#870">String</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="74045">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="74046">
+Navigator 2.0<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="505">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="507">
+The <B>toLowerCase</B> method returns the value of <I>stringName</I> converted to lowercase. <B>toLowerCase</B> does not affect the value of <I>stringName</I> itself.<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="509">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="511">
+The following example displays the lowercase string "alphabet":<P></A>
+<A NAME="513">
+<PRE>var upperText="ALPHABET"<br>document.write(upperText.toLowerCase())</PRE>
+</A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="515">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="517">
+<a href="ref_t-z.htm#82391">toUpperCase</a> method<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="top
+"></A>
+<A NAME="66649">
+<H1> top
+</H1>
+</A>
+
+<A NAME="66651">
+Property. The <I>top</I> property is a synonym for the top-most Navigator window, which is a "document window" or "Web Browser window."<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="66652">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="66653">
+<PRE>1. top.<I>propertyName<br></I>2. top.<I>methodName<br></I>3. top.<I>frameName<br></I>4. top.frames[<I>index</I>]</PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="66654">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="66655">
+<I>propertyName</I> is <I>defaultStatus</I>, <I>status</I>, or <I>length</I>.<P></A>
+<A NAME="66656">
+<I>methodName</I> is any method associated with the <I>window</I> object.<P></A>
+<A NAME="66657">
+<I>frameName</I> and frames[<I>index</I>] are ways to refer to frames.<P></A>
+
+</UL><A NAME="Property of
+"></A>
+<A NAME="66658">
+<H3> Property of
+</H3>
+</A>
+
+<A NAME="66662">
+<a href="ref_t-z.htm#67013">window object</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="74295">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="74296">
+Navigator 2.0<P></A>
+
+</UL><A NAME="Tainted?
+"></A>
+<A NAME="98992">
+<H3> Tainted?
+</H3>
+</A>
+
+<A NAME="98993">
+No<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="66663">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="66664">
+The <I>top</I> property refers to the top-most window that contains frames or nested framesets. Use the <I>top</I> property to refer to this ancestor window.<P></A>
+<A NAME="66665">
+The <I>top</I> property is read-only. The value of the <I>top</I> property is<P></A>
+<A NAME="66666">
+<PRE>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;object <I>objectReference&gt;</I></PRE>
+</A>
+<A NAME="66667">
+where <I>objectReference</I> is an internal reference.<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="66668">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="66669">
+The statement <code>top.close()</code> closes the top-most ancestor window.<P></A>
+<A NAME="66670">
+The statement <code>top.length</code> specifies the number of frames contained within the top-most ancestor window. When the top-most ancestor is defined as follows, <code>top.length</code> returns three:<P></A>
+<A NAME="66671">
+<PRE>&lt;FRAMESET COLS="30%,40%,30%"&gt;<br>&lt;FRAME SRC=child1.htm NAME="childFrame1"&gt;<br>&lt;FRAME SRC=child2.htm NAME="childFrame2"&gt;<br>&lt;FRAME SRC=child3.htm NAME="childFrame3"&gt;<br>&lt;/FRAMESET&gt;</PRE>
+</A>
+<A NAME="66672">
+The following example sets the background color of a frame called <I>myFrame</I> to red. <I>myFrame</I> is a child of the top-most ancestor window.<P></A>
+<A NAME="66673">
+<PRE>top.myFrame.document.bgColor="red"</PRE>
+</A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="toString
+"></A>
+<A NAME="70978">
+<H1> toString
+</H1>
+</A>
+
+<A NAME="70983">
+Method. Returns a string representing the specified object.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="70986">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="70987">
+<PRE><I>objectName</I>.toString()<br><I>numberObjectName</I>.toString([<I>radix</I>])</PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="70988">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="70989">
+<I>objectName</I> is the object to convert to a string.<P></A>
+<A NAME="122725">
+<I>numberObjectName</I> is the <I>Number</I> object to convert to a string.<P></A>
+<A NAME="70990">
+<I>radix</I> is an integer between 2 and 16 specifying the base to use for representing numeric values.<P></A>
+
+</UL><A NAME="Method of
+"></A>
+<A NAME="70991">
+<H3> Method of
+</H3>
+</A>
+
+<A NAME="70992">
+<B>toString</B> is a method of all objects.<P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="70993">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="70994">
+Navigator 2.0<P></A>
+<A NAME="87929">
+Navigator 3.0: added <I>radix</I><P></A>
+
+</UL><A NAME="Tainted?
+"></A>
+<A NAME="99242">
+<H3> Tainted?
+</H3>
+</A>
+
+<A NAME="99243">
+Yes, for history, location, Link, and any form input element; No for all other objects<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="70995">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="70999">
+Every object has a <B>toString</B> method that is automatically called when it is to be represented as a text value or when an object is referenced in a string concatenation. For example, the following examples require <I>theDog</I> to be represented as a string:<P></A>
+<A NAME="121723">
+<PRE>document.write(theDog)<br>document.write("The dog is " + theDog)</PRE>
+</A>
+<A NAME="121736">
+You can use <B>toString</B> within your own code to convert an object into a string, and you can create your own function to be called in place of the default <B>toString</B> method.<P></A>
+
+<A NAME="Built-in toString methods
+"></A>
+<A NAME="121566">
+<H4> Built-in toString methods
+</H4>
+</A>
+
+<A NAME="105575">
+Every object type has a built-in <B>toString</B> method, which JavaScript calls whenever it needs to convert an object to a string. If an object has no string value and no user-defined <B>toString</B> method, <B>toString</B> returns "[object <I>type</I>]", where <I>type</I> is the object type or the name of the constructor function that created the object. For example, if the following <I>Image</I> object named "sealife" exists, <code>sealife.toString()</code> returns <code>[object Image]</code>.<P></A>
+<A NAME="71001">
+<PRE>&lt;IMG NAME="sealife" SRC="images\seaotter.gif" ALIGN="left" VSPACE="10"&gt;</PRE>
+</A>
+
+<A NAME="User-defined toString methods
+"></A>
+<A NAME="105753">
+<H4> User-defined toString methods
+</H4>
+</A>
+
+<A NAME="110807">
+You can create a function to be called in place of the default <B>toString</B> method. The <B>toString</B> method takes no arguments and should return a string. The <B>toString</B> method you create can be any value you want, but it will be most useful if it carries information about the object.<P></A>
+<A NAME="121600">
+Suppose you have an object type <I>Dog</I> and you want to create a <B>toString</B> method for it. The following code defines the <I>Dog</I> object type and creates <I>theDog,</I> an object of type <I>Dog</I>:<P></A>
+<A NAME="113763">
+<PRE>function Dog(name,breed,color,sex) {<br>&nbsp;&nbsp;&nbsp;this.name=name<br>&nbsp;&nbsp;&nbsp;this.breed=breed<br>&nbsp;&nbsp;&nbsp;this.color=color<br>&nbsp;&nbsp;&nbsp;this.sex=sex<br>}<br><br>theDog = new Dog("Gabby","Lab","chocolate","girl")</PRE>
+</A>
+<A NAME="112830">
+The following code creates <B>objectToString,</B> the function that will be used in place of the default <B>toString</B> method. This function generates a string containing each property, of the form "<I>property</I> = <I>value</I>;".<P></A>
+<A NAME="111628">
+<PRE>function objectToString() {<br>&nbsp;&nbsp;&nbsp;var ret = "Object " + this.name + " is ["<br>&nbsp;&nbsp;&nbsp;for (var prop in this)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ret += "  " + prop + " is " + this[prop] + ";"<br>&nbsp;&nbsp;&nbsp;return ret + "]"<br>}</PRE>
+</A>
+<A NAME="110910">
+The following code assigns the user-defined function to the object's <B>toString</B> method:<P></A>
+<A NAME="112987">
+<PRE>Dog.prototype.toString = objectToString</PRE>
+</A>
+<A NAME="114649">
+With the preceding code in place, any time <I>theDog</I> is used in a string context, JavaScript automatically calls the <B>objectToString</B> function, which returns the following string:<P></A>
+<A NAME="114740">
+Object Gabby is [ name is Gabby; breed is Lab; color is chocolate; sex is 
+girl; toString is function objectToString() { var ret = "Object " + this.name + " 
+is ["; for (var prop in this) { ret += " " + prop + " is " + this[prop] + ";"; } return 
+ret + "]"; } ;]
+<P>
+</A>
+
+<A NAME="121762">
+An object's <B>toString</B> method is usually invoked by JavaScript, but you can invoke it yourself as follows:<P></A>
+<A NAME="121763">
+<PRE>alert(theDog.toString())</PRE>
+</A>
+
+<A NAME="Arrays and toString
+"></A>
+<A NAME="71002">
+<H4> Arrays and toString
+</H4>
+</A>
+
+<A NAME="105740">
+For <I>Array</I> objects, the built-in <B>toString</B> method joins the array and returns one string containing each array element separated by commas. For example, the following code creates an array and uses <B>toString</B> to convert the array to a string while writing output.<P></A>
+<A NAME="71003">
+<PRE>var monthNames = new Array("Jan","Feb","Mar","Apr")<br>document.write("monthNames.toString() is " + monthNames.toString())</PRE>
+</A>
+<A NAME="71004">
+The output is as follows:<P></A>
+<A NAME="71005">
+<PRE>monthNames.toString() is Jan,Feb,Mar,Apr</PRE>
+</A>
+
+<A NAME="Boolean objects and toString
+"></A>
+<A NAME="122064">
+<H4> Boolean objects and toString
+</H4>
+</A>
+
+<A NAME="122071">
+For <I>Boolean</I> objects and values, the built-in <B>toString</B> method returns "true" or "false" depending on the value of the boolean object. In the following code, <code>flag.toString</code> returns "true".<P></A>
+<A NAME="122262">
+<PRE>flag = new Boolean(true)<br>document.write("flag.toString() is " + flag.toString() + "&lt;BR&gt;")</PRE>
+</A>
+
+<A NAME="Functions and toString
+"></A>
+<A NAME="105746">
+<H4> Functions and toString
+</H4>
+</A>
+
+<A NAME="71006">
+For <I>Function</I> objects, the built-in <B>toString</B> method decompiles the function back into the JavaScript source that defines the function. This string includes the <B>function</B> keyword, the argument list, curly braces, and function body.<P></A>
+<A NAME="122613">
+For example, suppose you create the function <B>Dog</B> shown in <a href="ref_t-z.htm#105753">"User-defined toString methods"</a>. Any time <B>Dog</B> is used in a string context, JavaScript automatically calls the <B>toString</B> function, which returns the following string:<P></A>
+<A NAME="115472">
+function Dog(name, breed, color, sex) { this.name = name; this.breed = 
+breed; this.color = color; this.sex = sex; }
+<P>
+</A>
+
+
+<A NAME="Numbers and toString
+"></A>
+<A NAME="122733">
+<H4> Numbers and toString
+</H4>
+</A>
+
+<A NAME="122734">
+You can use <B>toString</B> on numeric values, but not on numeric literals:<P></A>
+<A NAME="122735">
+<PRE>// The next two lines are valid<br>var howMany=10<br>document.write("howMany.toString() is " + howMany.toString() + "&lt;BR&gt;")</PRE>
+</A>
+<A NAME="123719">
+<PRE>// The next line causes an error<br>document.write("45.toString() is " + 45.toString() + "&lt;BR&gt;")</PRE>
+</A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="71007">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="117099">
+<B>Example 1: The location object.</B> The following example prints the string equivalent of the current location.<P></A>
+<A NAME="117148">
+<PRE>document.write("location.toString() is " + location.toString() + "&lt;BR&gt;")</PRE>
+</A>
+<A NAME="117161">
+The output is as follows:<P></A>
+<A NAME="117109">
+<PRE>file:///C|/TEMP/myprog.html</PRE>
+</A>
+<A NAME="121489">
+<B>Example 2: Object with no string value.</B> Suppose the following <I>Image</I> object named "sealife" exists:<P></A>
+<A NAME="120934">
+<PRE>&lt;IMG NAME="sealife" SRC="images\seaotter.gif" ALIGN="left" VSPACE="10"&gt;</PRE>
+</A>
+<A NAME="121504">
+Because the <I>Image</I> object itself has no string equivalent, <code>sealife.toString()</code> will return the following:<P></A>
+<A NAME="121509">
+<PRE>[object Image]</PRE>
+</A>
+<A NAME="117104">
+<B>Example 3: The radix parameter.</B> The following example prints the string equivalents of the numbers 0 through 9 in decimal and binary.<P></A>
+<A NAME="71010">
+<PRE>for (x = 0; x &lt; 10; x++) {<br>&nbsp;&nbsp;&nbsp;document.write("Decimal: ", x.toString(10), " Binary: ",<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x.toString(2), "&lt;BR&gt;")<br>}</PRE>
+</A>
+<A NAME="71011">
+The preceding example produces the following output:<P></A>
+<A NAME="71012">
+<PRE>Decimal: 0 Binary: 0<br>Decimal: 1 Binary: 1<br>Decimal: 2 Binary: 10<br>Decimal: 3 Binary: 11<br>Decimal: 4 Binary: 100<br>Decimal: 5 Binary: 101<br>Decimal: 6 Binary: 110<br>Decimal: 7 Binary: 111<br>Decimal: 8 Binary: 1000<br>Decimal: 9 Binary: 1001</PRE>
+</A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="82387">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="82388">
+<a href="ref_m-q.htm#178711">prototype</a> property; <a href="ref_t-z.htm#91188">valueOf</a> method<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="toUpperCase
+"></A>
+<A NAME="82391">
+<H1> toUpperCase
+</H1>
+</A>
+
+<A NAME="561">
+Method. Returns the calling string value converted to uppercase.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="563">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="565">
+<PRE><I>stringName</I>.toUpperCase()</PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="5030">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="567">
+<I>stringName</I> is any string or a property of an existing object.<P></A>
+
+</UL><A NAME="Method of
+"></A>
+<A NAME="569">
+<H3> Method of
+</H3>
+</A>
+
+<A NAME="571">
+<a href="ref_s-s.htm#870">String</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="74534">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="74535">
+Navigator 2.0<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="573">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="575">
+The <B>toUpperCase</B> method returns the value of <I>stringName</I> converted to uppercase. <B>toUpperCase</B> does not affect the value of <I>stringName</I> itself.<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="577">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="579">
+The following example displays the string "ALPHABET":<P></A>
+<A NAME="581">
+<PRE>var lowerText="alphabet"<br>document.write(lowerText.toUpperCase())</PRE>
+</A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="583">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="585">
+<a href="ref_t-z.htm#491">toLowerCase</a> method<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="type
+"></A>
+<A NAME="71171">
+<H1> type
+</H1>
+</A>
+
+<A NAME="71176">
+Property. For form elements created with the &lt;INPUT&gt;, &lt;SELECT&gt;, or &lt;TEXTAREA&gt; tags, a string specifying the type of form element. For <I>MimeType</I> objects, the a string specifying the name of the MIME type.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="71177">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="71178">
+<PRE>1. <I>objectName</I>.type<br>2. navigator.mimeTypes[<I>index</I>].type</PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="71179">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="71180">
+<I>objectName</I> is either the value of the NAME attribute of a form element object (button, checkbox, file upload, hidden, password, radio, reset, select, submit, text, or textarea) or an element in the <I>elements</I> array.<P></A>
+<A NAME="86536">
+<I>index</I> is either an integer representing a MIME type supported by the client or a string containing the type of a <I>MimeType</I> object (from the <I>type</I> property).<P></A>
+
+</UL><A NAME="Property of
+"></A>
+<A NAME="71181">
+<H3> Property of
+</H3>
+</A>
+
+<A NAME="71182">
+<a href="ref_a-c.htm#62518">Button</a> object, <a href="ref_a-c.htm#63502">Checkbox</a> object, <a href="ref_f-g.htm#104945">FileUpload</a> object, <a href="ref_h-l.htm#83862">Hidden</a> object, <a href="ref_m-q.htm#176261">MimeType</a> object, <a href="ref_m-q.htm#177857">Password</a> object, <a href="ref_r-r.htm#26345">Radio</a> object, <a href="ref_r-r.htm#26487">Reset object</a>, <a href="ref_s-s.htm#72585">Select object</a>, <a href="ref_s-s.htm#73448">Submit object</a>, <a href="ref_t-z.htm#65229">Text object</a>, <a href="ref_t-z.htm#65386">Textarea</a> object<P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="71183">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="71184">
+Navigator 3.0<P></A>
+
+</UL><A NAME="Tainted?
+"></A>
+<A NAME="99092">
+<H3> Tainted?
+</H3>
+</A>
+
+<A NAME="99093">
+No<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="71185">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="86745">
+For <I>MimeType</I> objects, the <I>type</I> property is a unique string that distinguishes the MIME type from all others; for example "video/mpeg" or "audio/x-wav".<P></A>
+<A NAME="71244">
+For form elements, the value of the <I>type</I> property is assigned as follows:
+
+<P><TABLE BORDER="2">
+<CAPTION></CAPTION>
+<tr align=left valign=bottom><th><b><A NAME="71193">
+HTML element</A><B><th><b><A NAME="71195">
+Value of type property</A><B>
+<tr align=left valign=top><td><A NAME="71197">
+INPUT TYPE="button"
+</A><BR>
+
+<td><A NAME="71199">
+"button"
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="71201">
+INPUT TYPE="checkbox"
+</A><BR>
+
+<td><A NAME="71203">
+"checkbox"
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="71205">
+INPUT TYPE="file"
+</A><BR>
+
+<td><A NAME="71207">
+"file"
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="71209">
+INPUT TYPE="hidden"
+</A><BR>
+
+<td><A NAME="71211">
+"hidden"
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="71213">
+INPUT TYPE="password"
+</A><BR>
+
+<td><A NAME="71215">
+"password"
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="71217">
+INPUT TYPE="radio"
+</A><BR>
+
+<td><A NAME="71219">
+"radio"
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="71221">
+INPUT TYPE="reset"
+</A><BR>
+
+<td><A NAME="71223">
+"reset"
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="71225">
+INPUT TYPE="submit"
+</A><BR>
+
+<td><A NAME="71227">
+"submit"
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="71229">
+INPUT TYPE="text"
+</A><BR>
+
+<td><A NAME="71231">
+"text"
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="71233">
+SELECT
+</A><BR>
+
+<td><A NAME="71235">
+"select-one"
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="71237">
+SELECT MULTIPLE
+</A><BR>
+
+<td><A NAME="71239">
+"select-multiple"
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="71241">
+TEXTAREA
+</A><BR>
+
+<td><A NAME="71243">
+"textarea"
+</A><BR>
+
+
+
+
+</TABLE>
+
+<TABLE>
+<TR><TD>
+</TABLE>
+
+
+<P></A>
+<A NAME="86464">
+<I>type </I>is a read-only property.<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="71245">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="130375">
+The following example writes the value of the <I>type</I> property for every element on a form.<P></A>
+<A NAME="130269">
+<PRE>for (var i = 0; i &lt; document.form1.elements.length; i++) {<br>&nbsp;&nbsp;&nbsp;document.writeln("&lt;BR&gt;type is " + document.form1.elements[i].type)<br>}</PRE>
+</A>
+<A NAME="130263">
+See also the examples for the <I><a href="ref_m-q.htm#176261">MimeType</a></I> object.<P></A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="71247">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="86348">
+For <I>MimeType</I> objects: <a href="ref_d-e.htm#82624">description</a>, <a href="ref_d-e.htm#64183">enabledPlugin</a>, <a href="ref_s-s.htm#79636">suffixes</a> properties<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="unescape
+"></A>
+<A NAME="66677">
+<H1> unescape
+</H1>
+</A>
+
+<A NAME="66679">
+Function. Returns the ASCII string for the specified value.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="66680">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="66681">
+<PRE>unescape("<I>string</I>")</PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="66682">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="66683">
+<I>string</I> is a string or a property of an existing object, containing characters in either of the following forms:<P></A>
+<ul><A NAME="66684">
+<LI>"%<I>integer</I>", where <I>integer</I> is a number between 0 and 255 (decimal)
+</A><A NAME="66685">
+<LI>"<I>hex</I>", where <I>hex</I> is a number between 0x0 and 0xFF (hexadecimal)
+</A>
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="74606">
+<H3> Implemented in
+</H3>
+</A>
+
+</ul><A NAME="74607">
+Navigator 2.0<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="66686">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="66687">
+The string returned by the <B>unescape</B> function is a series of characters in the ISO Latin-1 character set. The <B>unescape</B> function is a top-level JavaScript function not associated with any object.<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="66688">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="66689">
+The following example returns "&amp;":<P></A>
+<A NAME="66690">
+<PRE>unescape("%26")</PRE>
+</A>
+<A NAME="66691">
+The following example returns "!#":<P></A>
+<A NAME="66692">
+<PRE>unescape("%21%23")</PRE>
+</A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="66693">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="66697">
+<a href="ref_d-e.htm#48073">escape</a> function<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="untaint
+"></A>
+<A NAME="135008">
+<H1> untaint
+</H1>
+</A>
+
+<A NAME="135012">
+Function. Removes tainting from a data element or script.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="135013">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="135014">
+<PRE>untaint(<I>dataElementName</I>)</PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="135015">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="135016">
+<I>dataElementName</I> is the property, variable, function, or object to remove tainting from. If omitted, taint is removed from the script itself.<P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="135017">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="135018">
+Navigator 3.0<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="135019">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="135020">
+Tainting prevents other scripts from passing information that should be secure and private, such as directory structures or user session history. JavaScript cannot pass tainted values on to any server without the end user's permission.<P></A>
+<A NAME="135021">
+Use <B>untaint</B> to clear tainting that marks data that should not to be sent by other scripts to different servers.<P></A>
+<A NAME="135022">
+A script can untaint only data that originated in that script (that is, only data that has the script's taint code or has the identity (null) taint code). If you use <B>untaint</B> with a data element from another server's script (or any data that you cannot untaint), <B>untaint</B> returns the data without change or error.<P></A>
+<A NAME="135023">
+In some cases, control flow rather than data flow carries tainted information. In these cases, taint is added to the script's window. You can remove taint from the script's window by calling <B>untaint</B> with no arguments, if the window contains taint only from the current window. See <a href="advtopic.htm#1008815">"Tainting that results from conditional statements"</a>.<P></A>
+<A NAME="135027">
+<B>untaint</B> does not modify its argument; instead, it returns an unmarked copy of the value, or, for objects, an unmarked reference to the value.<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="135028">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="135029">
+The following statement removes taint from a property so that a script can send it to another server:<P></A>
+<A NAME="135030">
+<PRE>untaintedStatus=untaint(window.defaultStatus)<br>// untaintedStatus can now be sent in a URL or form post by other<br>// scripts</PRE>
+</A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="135031">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="135041">
+<a href="ref_d-e.htm#68458">domain</a> property; <a href="ref_t-z.htm#98587">taint</a> function; <a href="advtopic.htm#1009533">"Using data tainting for security"</a><P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="URL
+"></A>
+<A NAME="82880">
+<H1> URL
+</H1>
+</A>
+
+<A NAME="82882">
+Property. A string specifying the complete URL of the document.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="82883">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="82884">
+<PRE>document.URL</PRE>
+</A>
+
+</UL><A NAME="Property of
+"></A>
+<A NAME="82885">
+<H3> Property of
+</H3>
+</A>
+
+<A NAME="82889">
+<a href="ref_d-e.htm#47667">document</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="82890">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="82891">
+Navigator 2.0<P></A>
+
+</UL><A NAME="Tainted?
+"></A>
+<A NAME="99120">
+<H3> Tainted?
+</H3>
+</A>
+
+<A NAME="99121">
+Yes<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="82892">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="82893">
+<I>URL</I> is a read-only property of <I>document</I> containing the full URL of the document. <I>URL</I> is a string-valued property that usually matches what <I>window.location.href</I> is set to when you load the document, but redirection may change<I> location.href</I>.<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="82894">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="82895">
+The following example displays the URL of the current document:<P></A>
+<A NAME="82896">
+<PRE>document.write("The current URL is " + document.URL)</PRE>
+</A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="82897">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="82901">
+<a href="ref_h-l.htm#84322">href </a><P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="userAgent
+"></A>
+<A NAME="66822">
+<H1> userAgent
+</H1>
+</A>
+
+<A NAME="66824">
+Property. A string representing the value of the user-agent header sent in the HTTP protocol from client to server.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="66825">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="66826">
+<PRE>navigator.userAgent</PRE>
+</A>
+
+</UL><A NAME="Property of
+"></A>
+<A NAME="66827">
+<H3> Property of
+</H3>
+</A>
+
+<A NAME="66831">
+<a href="ref_m-q.htm#176789">navigator</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="75590">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="75591">
+Navigator 2.0<P></A>
+
+</UL><A NAME="Tainted?
+"></A>
+<A NAME="99132">
+<H3> Tainted?
+</H3>
+</A>
+
+<A NAME="99133">
+No<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="66832">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="66833">
+Servers use the value sent in the user-agent header to identify the client.<P></A>
+<A NAME="66834">
+<I>userAgent</I> is a read-only property.<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="66835">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="66836">
+The following example displays <I>userAgent</I> information for the Navigator:<P></A>
+<A NAME="66837">
+<PRE>document.write("The value of navigator.userAgent is " +<br>&nbsp;&nbsp;&nbsp;navigator.userAgent)</PRE>
+</A>
+<A NAME="66838">
+For Navigator 2.0, this displays the following:<P></A>
+<A NAME="66839">
+<PRE>The value of navigator.userAgent is Mozilla/2.0 (Win16; I)</PRE>
+</A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="66840">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="66850">
+<a href="ref_a-c.htm#61017">appCodeName</a>, <a href="ref_a-c.htm#61047">appName</a>, <a href="ref_a-c.htm#61077">appVersion</a>, <a href="ref_h-l.htm#91297">javaEnabled</a> properties<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="UTC
+"></A>
+<A NAME="653">
+<H1> UTC
+</H1>
+</A>
+
+<A NAME="655">
+Method. Returns the number of milliseconds in a <I>Date</I> object since January 1, 1970, 00:00:00, Universal Coordinated Time (GMT).<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="657">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="659">
+<PRE>Date.UTC(<I>year, month, day [, hrs] [, min] [, sec]</I>)</PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="5061">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="661">
+<I>year</I> is a year after 1900.<P></A>
+<A NAME="663">
+<I>month</I> is a month between zero and 11.<P></A>
+<A NAME="665">
+<I>date</I> is a day of the month between one and 31.<P></A>
+<A NAME="667">
+<I>hrs</I> is hours between zero and 23.<P></A>
+<A NAME="669">
+<I>min</I> is minutes between zero and 59.<P></A>
+<A NAME="671">
+<I>sec</I> is seconds between zero and 59.<P></A>
+
+</UL><A NAME="Method of
+"></A>
+<A NAME="673">
+<H3> Method of
+</H3>
+</A>
+
+<A NAME="675">
+<a href="ref_d-e.htm#8153">Date</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="75836">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="75837">
+Navigator 2.0<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="677">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="679">
+<I>UTC</I> takes comma-delimited date parameters and returns the number of milliseconds since January 1, 1970, 00:00:00, Universal Coordinated Time (GMT).<P></A>
+<A NAME="681">
+Because UTC is a static method of <I>Date</I>, you always use it as <code>Date.UTC()</code>, rather than as a method of a <I>Date</I> object you created.<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="683">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="685">
+The following statement creates a <I>Date</I> object using GMT instead of local time:<P></A>
+<A NAME="687">
+<PRE>gmtDate = new Date(Date.UTC(96, 11, 1, 0, 0, 0))</PRE>
+</A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="689">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="691">
+<a href="ref_m-q.htm#177758">parse</a> method<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="value
+"></A>
+<A NAME="66860">
+<H1> value
+</H1>
+</A>
+
+<A NAME="66861">
+Property. A string that is related to the VALUE attribute of its object.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="66862">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="66863">
+<PRE>1. <I>objectName</I>.value<br>2. <I>radioName</I>[<I>index</I>].value<br>3. <I>selectName</I>.options.[<I>index</I>].value<br>4. <I>fileUploadName</I>.value<br>5. <I>optionName</I>.value</PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="66864">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="66865">
+<I>objectName</I> is either the value of the NAME attribute of a <I>Hidden</I>, <I>Password</I>, <I>Text</I>, <I>Textarea</I>, <I>Button</I>, <I>Reset</I>, <I>Submit,</I> or <I>Checkbox</I> object or an element in the <I>elements</I> array.<P></A>
+<A NAME="66866">
+<I>radioName</I> is the value of the NAME attribute of a <I>Radio</I> object.<P></A>
+<A NAME="66867">
+<I>selectName</I> is either the value of the NAME attribute of a <I>Select</I> object or an element in the <I>elements</I> array.<P></A>
+<A NAME="66868">
+<I>index</I> is an integer representing a radio button in a <I>Radio</I> object or an option in a <I>Select</I> object.<P></A>
+<A NAME="80855">
+<I>fileUploadName</I> is either the value of the NAME attribute of a <I>FileUpload</I> object or an element in the <I>elements</I> array.<P></A>
+<A NAME="80856">
+<I>optionName</I> is the name of a <I>Select</I> object option created using the Option() constructor.<P></A>
+
+</UL><A NAME="Property of
+"></A>
+<A NAME="66869">
+<H3> Property of
+</H3>
+</A>
+
+<ul><A NAME="66885">
+<LI><a href="ref_a-c.htm#62518">Button</a> object, <a href="ref_a-c.htm#63502">Checkbox</a> object, <a href="ref_f-g.htm#104945">FileUpload</a> object, <a href="ref_h-l.htm#83862">Hidden</a> object, Option object (see <a href="ref_s-s.htm#72585">Select object</a>), <a href="ref_m-q.htm#177857">Password</a> object, <a href="ref_r-r.htm#26345">Radio</a> object, <a href="ref_r-r.htm#26487">Reset object</a>, <a href="ref_s-s.htm#73448">Submit object</a>, <a href="ref_t-z.htm#65229">Text object</a>, <a href="ref_t-z.htm#65386">Textarea</a> object
+</A><A NAME="66901">
+<LI><I>options</I> array (see <a href="ref_s-s.htm#72585">Select object</a>)
+</A>
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="75898">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="75899">
+<LI>Navigator 2.0
+</A><A NAME="80886">
+<LI>Navigator 3.0: property of <I>FileUpload, Option</I>
+</A>
+</UL><A NAME="Tainted?
+"></A>
+<A NAME="99148">
+<H3> Tainted?
+</H3>
+</A>
+
+</ul><A NAME="99149">
+Yes<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="66902">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="66903">
+The <I>value</I> property differs for every object.<P></A>
+
+<A NAME="Button, Reset, and Submit objects
+"></A>
+<A NAME="81854">
+<H4> Button, Reset, and Submit objects
+</H4>
+</A>
+
+<A NAME="81855">
+When a VALUE attribute is specified in HTML, the <I>value</I> property is a string that reflects it. This string is displayed on the face of the button.<P></A>
+<A NAME="81856">
+When a VALUE attribute is not specified in HTML, the <I>value</I> property differs for each object:<P></A>
+<ul><A NAME="81857">
+<LI>For <I>button</I>, it is an empty string.
+</A><A NAME="81858">
+<LI>For <I>reset</I>, it is the string "Reset."
+</A><A NAME="81859">
+<LI>For <I>submit</I>, it is the string "Submit Query."
+</A></ul><A NAME="81860">
+These strings are displayed on the faces of the buttons.<P></A>
+<A NAME="81861">
+<I>value</I> is a read-only property.<P></A>
+<A NAME="81862">
+Do not confuse the <I>value</I> property with the <I>name</I> property. The <I>name</I> property is not displayed on-screen; it is used to reference the objects programmatically.<P></A>
+
+<A NAME="Checkbox and Radio objects
+"></A>
+<A NAME="81863">
+<H4> Checkbox and Radio objects
+</H4>
+</A>
+
+<A NAME="81864">
+When a VALUE attribute is specified in HTML, the <I>value</I> property is a string that reflects it. When a VALUE attribute is not specified in HTML, the <I>value</I> property is a string that evaluates to "on." The <I>value</I> property is not displayed on-screen but is returned to the server if the radio button or checkbox is selected.<P></A>
+<A NAME="81865">
+You can set the <I>value</I> property at any time.<P></A>
+<A NAME="81866">
+Do not confuse the <I>value</I> property with the selection state of the object or the text that is displayed next to each checkbox and radio button. The <I>checked</I> property determines the selection state of the object, and the <I>defaultChecked</I> property determines the default selection state. The text that is displayed is specified following the &lt;INPUT TYPE="checkbox"&gt; or the &lt;INPUT TYPE="radio"&gt; tag.<P></A>
+
+<A NAME="FileUpload objects
+"></A>
+<A NAME="81082">
+<H4> FileUpload objects
+</H4>
+</A>
+
+<A NAME="81083">
+The <I>value</I> property is a string that reflects the current value of a <I>FileUpload</I> object's field. Use the <I>value</I> property to obtain the file name that the user typed into a <I>FileUpload</I> object.<P></A>
+<A NAME="81084">
+<I>value</I> is a read-only property.<P></A>
+
+<A NAME="Hidden, Text, and Textarea objects
+"></A>
+<A NAME="66904">
+<H4> Hidden, Text, and Textarea objects
+</H4>
+</A>
+
+<A NAME="66905">
+The <I>value</I> property is a string that initially reflects the VALUE attribute. This string is displayed in the text and textarea fields. The value of this property changes when a user or a program modifies the field.<P></A>
+<A NAME="66906">
+You can set the <I>value</I> property at any time. The display of the <I>Text</I> and <I>Textarea</I> objects updates immediately when you set the <I>value</I> property.<P></A>
+
+<A NAME="Password object
+"></A>
+<A NAME="66907">
+<H4> Password object
+</H4>
+</A>
+
+<A NAME="66908">
+The <I>value</I> property is a string that initially reflects the VALUE attribute. This string is represented by asterisks in the <I>Password</I> object field. The value of this property changes when a user or a program modifies the field, but the value is always displayed as asterisks.<P></A>
+<A NAME="66909">
+If you programmatically set the <I>value</I> property and then evaluate it, JavaScript returns the current value. If a user interactively modifies the value in the password field, you cannot evaluate it accurately unless data tainting is enabled. See <a href="advtopic.htm#1009533">"Using data tainting for security"</a>.<P></A>
+
+<A NAME="Select object options
+"></A>
+<A NAME="81115">
+<H4> Select object options
+</H4>
+</A>
+
+<A NAME="81116">
+For <I>Select</I> object options created using the Option() constructor, the value property is a string that initially reflects the VALUE attribute. This value is not displayed onscreen, but is returned to the server if the option is selected. The value of this property can change when a program modifies it.<P></A>
+<A NAME="81117">
+You can set the <I>value</I> property at any time.<P></A>
+
+<A NAME="options array
+"></A>
+<A NAME="82229">
+<H4> options array
+</H4>
+</A>
+
+<A NAME="82230">
+The <I>value</I> property is a string that initially reflects the VALUE attribute. The value of this property can change when a program modifies it. The <I>value</I> property is not displayed on-screen but is returned to the server if the option is selected.<P></A>
+<A NAME="82231">
+You can set the <I>value</I> property at any time.<P></A>
+<A NAME="82232">
+Do not confuse the <I>value</I> property with the selection state of the <I>Select</I> object or the text that is displayed as an option. The <I>selected</I> and <I>selectedIndex</I> properties determine which options are selected, and the <I>defaultSelected</I> property determines the default selection state. The text that is displayed in each option is specified by its <I>text</I> property.<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="66927">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="66928">
+The following function evaluates the <I>value</I> property of a group of buttons and displays it in the <I>msgWindow</I> window:<P></A>
+<A NAME="66929">
+<PRE>function valueGetter() {<br>&nbsp;&nbsp;&nbsp;var msgWindow=window.open("")<br>&nbsp;&nbsp;&nbsp;msgWindow.document.write("submitButton.value is " +<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.valueTest.submitButton.value + "&lt;BR&gt;")<br>&nbsp;&nbsp;&nbsp;msgWindow.document.write("resetButton.value is " +<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.valueTest.resetButton.value + "&lt;BR&gt;")<br>&nbsp;&nbsp;&nbsp;msgWindow.document.write("helpButton.value is " +<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.valueTest.helpButton.value + "&lt;BR&gt;")<br>&nbsp;&nbsp;&nbsp;msgWindow.document.close()<br>}</PRE>
+</A>
+<A NAME="66930">
+This example displays the following values:<P></A>
+<A NAME="66931">
+<PRE>Query Submit<br>Reset<br>Help</PRE>
+</A>
+<A NAME="66932">
+The previous example assumes the buttons have been defined as follows:<P></A>
+<A NAME="66933">
+<PRE>&lt;INPUT TYPE="submit" NAME="submitButton"&gt;<br>&lt;INPUT TYPE="reset" NAME="resetButton"&gt;<br>&lt;INPUT TYPE="button" NAME="helpButton" VALUE="Help"&gt;</PRE>
+</A>
+<A NAME="66934">
+The following function evaluates the <I>value</I> property of a group of radio buttons and displays it in the <I>msgWindow</I> window:<P></A>
+<A NAME="66935">
+<PRE>function valueGetter() {<br>&nbsp;&nbsp;&nbsp;var msgWindow=window.open("")<br>&nbsp;&nbsp;&nbsp;for (var i = 0; i &lt; document.valueTest.radioObj.length; i++) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; msgWindow.document.write<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ("The value of radioObj[" + i + "] is " +<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; document.valueTest.radioObj[i].value +"&lt;BR&gt;")<br>&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;msgWindow.document.close()<br>}</PRE>
+</A>
+<A NAME="66936">
+This example displays the following values:<P></A>
+<A NAME="66937">
+<PRE>on<br>on<br>on<br>on</PRE>
+</A>
+<A NAME="66938">
+The previous example assumes the buttons have been defined as follows:<P></A>
+<A NAME="66939">
+<PRE>&lt;BR&gt;&lt;INPUT TYPE="radio" NAME="radioObj"&gt;R&amp;B<br>&lt;BR&gt;&lt;INPUT TYPE="radio" NAME="radioObj" CHECKED&gt;Soul<br>&lt;BR&gt;&lt;INPUT TYPE="radio" NAME="radioObj"&gt;Rock and Roll<br>&lt;BR&gt;&lt;INPUT TYPE="radio" NAME="radioObj"&gt;Blues</PRE>
+</A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="66940">
+<H3> See also
+</H3>
+</A>
+
+<ul><A NAME="66944">
+<LI>For <I>hidden</I>, <I>password</I>, <I>text</I>, and <I>textarea:</I> <a href="ref_d-e.htm#46920">defaultValue</a> property
+</A><A NAME="66948">
+<LI>For <I>button</I>, <I>reset</I>, and <I>submit</I>: <a href="ref_m-q.htm#176636">name</a> property
+</A><A NAME="66958">
+<LI>For <I>options</I> array: <a href="ref_d-e.htm#46856">defaultSelected</a> property, <a href="ref_s-s.htm#72795">selected</a> property, <a href="ref_s-s.htm#72830">selectedIndex</a> property, <a href="ref_t-z.htm#65360">text property</a>
+</A><A NAME="66968">
+<LI>For <I>checkbox</I> and <I>radio:</I> <a href="ref_a-c.htm#63602">checked</a>, <a href="ref_d-e.htm#46826">defaultChecked</a> properties
+</A>
+</ul>
+<!------------------------------>
+<HR>
+<A NAME="valueOf
+"></A>
+<A NAME="91188">
+<H1> valueOf
+</H1>
+</A>
+
+<A NAME="91192">
+Method. Returns the primitive value of the specified object.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="91193">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="91194">
+<PRE><I>objectName</I>.valueOf()</PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="91195">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="124042">
+<I>objectName</I> is the object to converted to a value.<P></A>
+
+</UL><A NAME="Method of
+"></A>
+<A NAME="91197">
+<H3> Method of
+</H3>
+</A>
+
+<A NAME="91199">
+<B>valueOf</B> is a method of all objects.<P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="136473">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="136477">
+Navigator 3.0<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="136478">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="124669">
+Every object has a <B>valueOf</B> method that is automatically called when it is to be represented as a primitive value. If an object has no primitive value, <B>valueOf</B> returns the object itself.<P></A>
+<A NAME="124671">
+You can use <B>valueOf</B> within your own code to convert an object into a primitive value, and you can create your own function to be called in place of the default <B>valueOf</B> method.<P></A>
+
+<A NAME="Built-in valueOf methods
+"></A>
+<A NAME="124506">
+<H4> Built-in valueOf methods
+</H4>
+</A>
+
+<A NAME="124507">
+Every object type has a built-in <B>valueOf</B> method, which JavaScript calls whenever it needs to convert an object to a primitive value.<P></A>
+<A NAME="129208">
+You rarely need to invoke the <B>valueOf</B> method yourself. JavaScript automatically invokes it when encountering an object where a primitive value is expected.<P></A>
+<A NAME="127398">
+The valueOf method is most useful for the following object types. Most other objects have no primitive value.
+
+<P><TABLE BORDER="2">
+<CAPTION></CAPTION>
+<tr align=left valign=bottom><th><b><A NAME="127445">
+Object type</A><B><th><b><A NAME="127447">
+Value returned by <B>valueOf</B></A><B>
+<tr align=left valign=top><td><A NAME="127555">
+Number
+</A><BR>
+
+<td><A NAME="127451">
+Primitive numeric value associated with the object.
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="127620">
+Boolean
+</A><BR>
+
+<td><A NAME="127455">
+Primitive boolean value associated with the object.
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="127684">
+String
+</A><BR>
+
+<td><A NAME="127459">
+String associated with the object.
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="127461">
+Function
+</A><BR>
+
+<td><A NAME="127463">
+Function reference associated with the object. For 
+example, <code>typeOf funObj</code> returns "object", but 
+<code>typeOf funObj.valueOf()</code> returns "function".
+</A><BR>
+
+
+
+
+</TABLE>
+
+<TABLE>
+<TR><TD>
+</TABLE>
+
+
+<P></A>
+
+<A NAME="User-defined valueOf methods
+"></A>
+<A NAME="124510">
+<H4> User-defined valueOf methods
+</H4>
+</A>
+
+<A NAME="128836">
+You can create a function to be called in place of the default <B>valueOf</B> method. The <B>valueOf</B> method takes no arguments.<P></A>
+<A NAME="128838">
+Suppose you have an object type <I>myNumberType</I> and you want to create a <B>valueOf</B> method for it. The following code assigns a user-defined function to the object's <B>valueOf</B> method:<P></A>
+<A NAME="126848">
+<PRE>myNumberType.prototype.valueOf = new Function(<I>functionText</I>)</PRE>
+</A>
+<A NAME="126849">
+With the preceding code in place, any time an object of type <I>myNumberType</I> is used in a context where it is to be represented as a primitive value, JavaScript automatically calls the function defined in the preceding code.<P></A>
+<A NAME="124520">
+An object's <B>valueOf</B> method is usually invoked by JavaScript, but you can invoke it yourself as follows:<P></A>
+<A NAME="124521">
+<PRE>myNumber.valueOf()</PRE>
+</A>
+
+<A NAME="toString vs. valueOf for String objects
+"></A>
+<A NAME="125368">
+<H4> toString vs. valueOf for String objects
+</H4>
+</A>
+
+<A NAME="124987">
+Objects in string contexts convert via the <B>toString</B> method, which is different from <I>String</I> objects converting to string primitives via <B>valueOf</B>. All string objects have a string conversion, if only "[object <I>type</I>]". But many objects do not convert to number, boolean, or function. For information on toString, see <a href="ref_t-z.htm#70978">toString</a>.<P></A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="91225">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="91226">
+<a href="ref_m-q.htm#177816">parseInt</a> function, <a href="ref_t-z.htm#70978">toString</a> method; <a href="expr.htm#1007193">"typeof"</a><P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="vlinkColor
+"></A>
+<A NAME="66971">
+<H1> vlinkColor
+</H1>
+</A>
+
+<A NAME="66973">
+Property. A string specifying the color of visited links.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="66974">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="66975">
+<PRE>document.vlinkColor</PRE>
+</A>
+
+</UL><A NAME="Property of
+"></A>
+<A NAME="66976">
+<H3> Property of
+</H3>
+</A>
+
+<A NAME="66980">
+<a href="ref_d-e.htm#47667">document</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="75985">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="75986">
+Navigator 2.0<P></A>
+
+</UL><A NAME="Tainted?
+"></A>
+<A NAME="99155">
+<H3> Tainted?
+</H3>
+</A>
+
+<A NAME="99156">
+No<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="66981">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="66982">
+The <I>vlinkColor</I> property is expressed as a hexadecimal RGB triplet or as one of the string literals listed in <a href="colors.htm#1002170">"Color values"</a>. This property is the JavaScript reflection of the VLINK attribute of the &lt;BODY&gt; tag. The default value of this property is set by the user on the Colors tab of the Preferences dialog box, which is displayed by choosing General Preferences from the Options menu. You cannot set this property after the HTML source has been through layout.<P></A>
+<A NAME="66986">
+If you express the color as a hexadecimal RGB triplet, you must use the format rrggbb. For example, the hexadecimal RGB values for salmon are red=FA, green=80, and blue=72, so the RGB triplet for salmon is "FA8072."<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="66987">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="66988">
+The following example sets the color of visited links to aqua using a string literal:<P></A>
+<A NAME="66989">
+<PRE>document.vlinkColor="aqua"</PRE>
+</A>
+<A NAME="66990">
+The following example sets the color of active links to aqua using a hexadecimal triplet:<P></A>
+<A NAME="66991">
+<PRE>document.vlinkColor="00FFFF"</PRE>
+</A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="66992">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="67005">
+<a href="ref_a-c.htm#59030">alinkColor</a>, <a href="ref_a-c.htm#62435">bgColor</a>, <a href="ref_f-g.htm#59824">fgColor</a>, <a href="ref_h-l.htm#84668">linkColor</a> properties<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="vspace
+"></A>
+<A NAME="71625">
+<H1> vspace
+</H1>
+</A>
+
+<A NAME="71629">
+Property. A string specifying a margin in pixels between the top and bottom edges of an image and the surrounding text.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="71630">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="71631">
+<PRE><I>imageName</I>.vspace</PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="71632">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="71633">
+<I>imageName</I> is either the name of an <I>Image</I> object or an element in the <I>images</I> array.<P></A>
+
+</UL><A NAME="Property of
+"></A>
+<A NAME="71634">
+<H3> Property of
+</H3>
+</A>
+
+<A NAME="71635">
+<a href="ref_h-l.htm#90746">Image</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="71636">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="71637">
+Navigator 3.0<P></A>
+
+</UL><A NAME="Tainted?
+"></A>
+<A NAME="99170">
+<H3> Tainted?
+</H3>
+</A>
+
+<A NAME="99171">
+No<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="71638">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="71639">
+The <I>vspace</I> property reflects the VSPACE attribute of the &lt;IMG&gt; tag. For images created with the Image() constructor, the value of the <I>vspace</I> property is 0.<P></A>
+<A NAME="71640">
+<I>vspace</I> is a read-only property.<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="71641">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="71642">
+See the examples for the <a href="ref_h-l.htm#90142">height</a> property.<P></A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="71643">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="71644">
+<a href="ref_a-c.htm#77159">border</a>, <a href="ref_h-l.htm#90142">height</a>, <a href="ref_h-l.htm#90475">hspace</a>, <a href="ref_t-z.htm#71712">width</a> properties<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="width
+"></A>
+<A NAME="71712">
+<H1> width
+</H1>
+</A>
+
+<A NAME="71716">
+Property. A string specifying the width of an image in pixels.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="71717">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="71718">
+<PRE><I>imageName</I>.width</PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="71719">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="71720">
+<I>imageName</I> is either the name of an <I>Image</I> object or an element in the <I>images</I> array.<P></A>
+
+</UL><A NAME="Property of
+"></A>
+<A NAME="71721">
+<H3> Property of
+</H3>
+</A>
+
+<A NAME="71722">
+<a href="ref_h-l.htm#90746">Image</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="71723">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="71724">
+Navigator 3.0<P></A>
+
+</UL><A NAME="Tainted?
+"></A>
+<A NAME="99205">
+<H3> Tainted?
+</H3>
+</A>
+
+<A NAME="99206">
+No<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="71725">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="71726">
+The <I>width</I> property reflects the WIDTH attribute of the &lt;IMG&gt; tag. For images created with the Image() constructor, the value of the <I>width</I> property is the actual, not the displayed, width of the image.<P></A>
+<A NAME="71727">
+<I>width</I> is a read-only property.<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="71728">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="71729">
+See the examples for the <a href="ref_h-l.htm#90142">height</a> property.<P></A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="71730">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="71731">
+<a href="ref_a-c.htm#77159">border</a>, <a href="ref_h-l.htm#90142">height</a>, <a href="ref_h-l.htm#90475">hspace</a>, <a href="ref_t-z.htm#71625">vspace</a> properties<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="window object
+"></A>
+<A NAME="67013">
+<H1> window object
+</H1>
+</A>
+
+<A NAME="67015">
+Object. The top-level object for each <I>document</I>, <I>location</I>, and <I>history</I> object group.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="67016">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="67017">
+To define a window, use the <B>open</B> method:<P></A>
+<A NAME="67018">
+<PRE><I>windowVar</I> = window.open("<I>URL</I>", "<I>windowName</I>" [,"<I>windowFeatures</I>"])</PRE>
+</A>
+<A NAME="67022">
+For details on defining a window, see the <a href="ref_m-q.htm#177627">open (window object)</a> method.<P></A>
+<A NAME="67023">
+To use a <I>window</I> object's properties and methods:<P></A>
+<A NAME="67024">
+<PRE> 1. window.<I>propertyName<br></I> 2. window.<I>methodName</I>(<I>parameters</I>)<br> 3. self.<I>propertyName<br></I> 4. self.<I>methodName</I>(<I>parameters</I>)<br> 5. top.<I>propertyName<br></I> 6. top.<I>methodName</I>(<I>parameters</I>)<br> 7. parent.<I>propertyName<br></I> 8. parent.<I>methodName</I>(<I>parameters</I>)<br> 9. <I>windowVar</I>.<I>propertyName<br></I>10. <I>windowVar</I>.<I>methodName</I>(<I>parameters</I>)<br>11. <I>propertyName<br></I>12. <I>methodName</I>(<I>parameters</I>)</PRE>
+</A>
+<A NAME="67025">
+To define an event handler for a <I>window</I> object, use the &lt;BODY&gt; or &lt;FRAMESET&gt; tags:<P></A>
+<A NAME="67026">
+<PRE>&lt;BODY<br>&nbsp;&nbsp;&nbsp;...<br>&nbsp;&nbsp;&nbsp;[onBlur="<I>handlerText</I>"]<br>&nbsp;&nbsp;&nbsp;[onFocus="<I>handlerText</I>"]<br>&nbsp;&nbsp;&nbsp;[onLoad="<I>handlerText</I>"]<br>&nbsp;&nbsp;&nbsp;[onUnload="<I>handlerText</I>"]&gt;<br>&lt;/BODY&gt;<br><br>&lt;FRAMESET<br>&nbsp;&nbsp;&nbsp;ROWS="<I>rowHeightList</I>"<br>&nbsp;&nbsp;&nbsp;COLS="<I>columnWidthList</I>"<br>&nbsp;&nbsp;&nbsp;[onBlur="<I>handlerText</I>"]<br>&nbsp;&nbsp;&nbsp;[onFocus="<I>handlerText</I>"]<br>&nbsp;&nbsp;&nbsp;[onLoad="<I>handlerText</I>"]<br>&nbsp;&nbsp;&nbsp;[onUnload="<I>handlerText</I>"]&gt;<br>&nbsp;&nbsp;&nbsp;[&lt;FRAME SRC="<I>URL</I>" NAME="<I>frameName</I>"&gt;]<br>&lt;/FRAMESET&gt;</PRE>
+</A>
+
+<a name="80501">
+<B><blockquote>Note
+</blockquote></B>
+</a>
+
+<a name="80502">
+<blockquote>On some platforms, placing an onBlur or onFocus event handler in a 
+&lt;FRAMESET&gt; tag has no effect. Please see the release notes (after starting 
+Netscape, choose Release Notes from the Help menu).
+</blockquote>
+</a>
+<A NAME="67030">
+For information on the &lt;BODY&gt; and &lt;FRAMESET&gt; tags, see the <a href="ref_d-e.htm#47667">document</a> and <a href="ref_f-g.htm#60829">Frame</a> objects.<P></A>
+<A NAME="80641">
+To define an onError event handler for a <I>window</I> object:<P></A>
+<A NAME="80642">
+<PRE>window.onerror=<I>errorHandler</I></PRE>
+</A>
+<A NAME="80609">
+For information on specifying the onError event handler, see <a href="ref_m-q.htm#177224">onError</a> event handler.<P></A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="67034">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="67035">
+<I>windowVar</I> is the name of a new window. Use this variable when referring to a window's properties, methods, and containership.<P></A>
+<A NAME="67036">
+<I>windowName</I> is the window name to use in the TARGET attribute of a &lt;FORM&gt; or &lt;A&gt; tag.<P></A>
+<A NAME="67037">
+<I>propertyName</I> is one of the properties listed below.<P></A>
+<A NAME="67038">
+<I>methodName</I> is one of the methods listed below.<P></A>
+<A NAME="80588">
+<I>errorHandler</I> is the keyword null, the name of an error-handling function, or a variable or property that contains null or a valid function reference.<P></A>
+
+</UL><A NAME="Property of
+"></A>
+<A NAME="67039">
+<H3> Property of
+</H3>
+</A>
+
+<A NAME="67040">
+None<P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="76098">
+<H3> Implemented in
+</H3>
+</A>
+
+<ul><A NAME="76099">
+<LI>Navigator 2.0
+</A><A NAME="80372">
+<LI>Navigator 3.0: added <I>closed</I> and <I>opener</I> properties; added <B>blur, focus,</B> and <B>scroll</B> methods; added onBlur, onError, and onFocus event handlers
+</A>
+</UL><A NAME="Description
+"></A>
+<A NAME="67041">
+<H3> Description
+</H3>
+</A>
+
+</ul><A NAME="67042">
+The <I>window</I> object is the top-level object in the JavaScript client hierarchy. <I>Frame</I> objects are also windows.<P></A>
+<A NAME="67043">
+The <I>self</I> and <I>window</I> properties are synonyms for the current window, and you can optionally use them to refer to the current window. For example, you can close the current window by calling either <code>window.close()</code> or <code>self.close()</code>. You can use these properties to make your code more readable or to disambiguate the property reference <code>self.status</code> from a form called <code>status</code>. See the properties and methods listed below for more examples.<P></A>
+<A NAME="67044">
+The <I>top</I> and <I>parent</I> properties are also synonyms that can be used in place of the window name. <I>top</I> refers to the top-most Navigator window, and <I>parent</I> refers to a window containing a frameset. See the <a href="ref_t-z.htm#66649">top</a> and <a href="ref_m-q.htm#177723">parent</a> properties.<P></A>
+<A NAME="67051">
+Because the existence of the current window is assumed, you do not have to reference the name of the window when you call its methods and assign its properties. For example, <code>status="Jump to a new location"</code> is a valid property assignment, and <code>close()</code> is a valid method call. However, when you open or close a window within an event handler, you must specify <code>window.open()</code> or <code>window.close()</code> instead of simply using <code>open()</code> or <code>close()</code>. Due to the scoping of static objects in JavaScript, a call to <code>close()</code> without specifying an object name is equivalent to <code>document.close()</code>.<P></A>
+<A NAME="80678">
+When you reference the <I>location</I> object within an event handler, you must specify <code>window.location</code> instead of simply using <code>location</code>. Due to the scoping of static objects in JavaScript, a call to <code>location</code> without specifying an object name is equivalent to <code>document.location</code>, which is a synonym for <code>document.URL</code>.<P></A>
+<A NAME="67052">
+You can reference a window's <I>Frame</I> objects in your code by using the <I>frames</I> array. The <I>frames</I> array contains an entry for each frame in a window with a &lt;FRAMESET&gt; tag.<P></A>
+<A NAME="67053">
+Windows lack event handlers until some HTML is loaded into them containing a &lt;BODY&gt; or &lt;FRAMESET&gt; tag.<P></A>
+
+</UL><A NAME="Properties
+"></A>
+<A NAME="67054">
+<H3> Properties
+</H3>
+</A>
+
+<A NAME="67127">
+The <I>window</I> object has the following properties:
+
+<P><TABLE BORDER="2">
+<CAPTION></CAPTION>
+<tr align=left valign=bottom><th><b><A NAME="67061">
+Property</A><B><th><b><A NAME="67063">
+Description</A><B>
+<tr align=left valign=top><td><A NAME="131150">
+<a href="ref_a-c.htm#156922">closed</a>
+</A><BR>
+
+<td><A NAME="131152">
+Specifies whether a window has been closed
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="67068">
+<a href="ref_d-e.htm#46891">defaultStatus</a>
+</A><BR>
+
+<td><A NAME="67070">
+Reflects the default message displayed in the window's status 
+bar
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="67075">
+<a href="ref_f-g.htm#60976">frames</a>
+</A><BR>
+
+<td><A NAME="67077">
+An array reflecting all the frames in a window
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="67082">
+<a href="ref_h-l.htm#84418">length</a>
+</A><BR>
+
+<td><A NAME="67084">
+Reflects the number of frames in a parent window
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="67089">
+<a href="ref_m-q.htm#176636">name</a>
+</A><BR>
+
+<td><A NAME="67091">
+Reflects the <I>windowName</I> argument
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="80364">
+<a href="ref_m-q.htm#177675">opener</a>
+</A><BR>
+
+<td><A NAME="80366">
+Specifies the window name of the calling document when a 
+window is opened using the <B>open</B> method
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="67096">
+<a href="ref_m-q.htm#177723">parent</a>
+</A><BR>
+
+<td><A NAME="67098">
+A synonym for the <I>windowName</I> argument and refers to a 
+window containing a frameset
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="67103">
+<a href="ref_s-s.htm#72867">self</a>
+</A><BR>
+
+<td><A NAME="67105">
+A synonym for the <I>windowName</I> argument and refers to the 
+current window
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="67110">
+<a href="ref_s-s.htm#73380">status</a>
+</A><BR>
+
+<td><A NAME="67112">
+Specifies a priority or transient message in the window's 
+status bar
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="67117">
+<a href="ref_t-z.htm#66649">top</a>
+</A><BR>
+
+<td><A NAME="67119">
+A synonym for the <I>windowName</I> argument and refers to the 
+top-most Navigator window
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="67124">
+<a href="ref_t-z.htm#67207">window property</a>
+</A><BR>
+
+<td><A NAME="67126">
+A synonym for the <I>windowName</I> argument and refers to the 
+current window
+</A><BR>
+
+
+
+
+</TABLE>
+
+<TABLE>
+<TR><TD>
+</TABLE>
+
+
+<P></A>
+<A NAME="67128">
+The following objects are also properties of the <I>window</I> object:<P></A>
+<ul><A NAME="67132">
+<LI><a href="ref_d-e.htm#47667">document</a>
+</A><A NAME="67136">
+<LI><a href="ref_f-g.htm#60829">Frame</a>
+</A><A NAME="67140">
+<LI><a href="ref_h-l.htm#83926">history object</a>
+</A><A NAME="67144">
+<LI><a href="ref_h-l.htm#84722">location</a>
+</A>
+</UL><A NAME="Methods
+"></A>
+<A NAME="67145">
+<H3> Methods
+</H3>
+</A>
+
+</ul><A NAME="67177">
+The <I>window</I> object has the following methods:
+
+<P><TABLE BORDER="2">
+<CAPTION></CAPTION>
+<tr align=left valign=top><td><A NAME="67151">
+<LI><a href="ref_a-c.htm#59000">alert</a>
+</A><A NAME="80428">
+<LI><a href="ref_a-c.htm#62474">blur</a>
+</A><A NAME="67155">
+<LI><a href="ref_a-c.htm#63827">clearTimeout</a>
+</A><A NAME="67292">
+<LI><a href="ref_a-c.htm#64288">close (window object)</a>
+</A><A NAME="67159">
+<LI><a href="ref_a-c.htm#64367">confirm</a>
+</A><A NAME="139996">
+<LI><a href="ref_d-e.htm#573">eval</a>
+</A><A NAME="104970">
+<LI><a href="ref_f-g.htm#59872">focus</a>
+</A>
+<td><A NAME="67168">
+<LI><a href="ref_m-q.htm#177627">open (window object)</a>
+</A><A NAME="67304">
+<LI><a href="ref_m-q.htm#178558">prompt</a>
+</A><A NAME="80461">
+<LI><a href="ref_s-s.htm#78791">scroll</a>
+</A><A NAME="67172">
+<LI><a href="ref_s-s.htm#73328">setTimeout</a>
+</A><A NAME="105009">
+<LI><a href="ref_t-z.htm#70978">toString</a>
+</A><A NAME="105004">
+<LI><a href="ref_t-z.htm#91188">valueOf</a>
+</A>
+
+
+
+</TABLE>
+
+<TABLE>
+<TR><TD>
+</TABLE>
+
+
+<P></A>
+
+</UL><A NAME="Event handlers
+"></A>
+<A NAME="67178">
+<H3> Event handlers
+</H3>
+</A>
+
+<ul><A NAME="80465">
+<LI><a href="ref_m-q.htm#177100">onBlur</a>
+</A><A NAME="80466">
+<LI><a href="ref_m-q.htm#177224">onError</a>
+</A><A NAME="80467">
+<LI><a href="ref_m-q.htm#177278">onFocus</a>
+</A><A NAME="67182">
+<LI><a href="ref_m-q.htm#177323">onLoad</a>
+</A><A NAME="67186">
+<LI><a href="ref_m-q.htm#177506">onUnload</a>
+</A>
+</UL><A NAME="Examples
+"></A>
+<A NAME="67187">
+<H3> Examples
+</H3>
+</A>
+
+</ul><A NAME="67188">
+In the following example, the document in the top window opens a second window, <I>window2,</I> and defines pushbuttons that open a message window, write to the message window, close the message window, and close <I>window2.</I> The onLoad and onUnload event handlers of the document loaded into <I>window2</I> display alerts when the window opens and closes.<P></A>
+<A NAME="67189">
+<code>win1.html</code>, which defines the frames for the first window, contains the following code:<P></A>
+<A NAME="67190">
+<PRE>&lt;HTML&gt;<br>&lt;HEAD&gt;<br>&lt;TITLE&gt;Window object example: Window 1&lt;/TITLE&gt;<br>&lt;/HEAD&gt;<br>&lt;BODY BGCOLOR="antiquewhite"&gt;<br>&lt;SCRIPT&gt;<br>window2=open("win2.html","secondWindow",<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"scrollbars=yes,width=250, height=400")<br>document.writeln("&lt;B&gt;The first window has no name: " <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+ window.name + "&lt;/B&gt;")<br>document.writeln("&lt;BR&gt;&lt;B&gt;The second window is named: " <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+ window2.name + "&lt;/B&gt;")<br>&lt;/SCRIPT&gt;<br>&lt;FORM NAME="form1"&gt;<br>&lt;P&gt;&lt;INPUT TYPE="button" VALUE="Open a message window"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;onClick = "window3=window.open('','messageWindow',<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'scrollbars=yes,width=175, height=300')"&gt;<br>&lt;P&gt;&lt;INPUT TYPE="button" VALUE="Write to the message window"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;onClick="window3.document.writeln('Hey there'); <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;window3.document.close()"&gt;<br>&lt;P&gt;&lt;INPUT TYPE="button" VALUE="Close the message window"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;onClick="window3.close()"&gt;<br>&lt;P&gt;&lt;INPUT TYPE="button" VALUE="Close window2"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;onClick="window2.close()"&gt;<br>&lt;/FORM&gt;<br>&lt;/BODY&gt;<br>&lt;/HTML&gt;</PRE>
+</A>
+<A NAME="67191">
+<code>win2.html</code>, which defines the content for <I>window2</I>, contains the following code:<P></A>
+<A NAME="67192">
+<PRE>&lt;HTML&gt;<br>&lt;HEAD&gt;<br>&lt;TITLE&gt;Window object example: Window 2&lt;/TITLE&gt;<br>&lt;/HEAD&gt;<br>&lt;BODY BGCOLOR="oldlace"<br>&nbsp;&nbsp;&nbsp;onLoad="alert('Message from ' + window.name + ': Hello, World.')"<br>&nbsp;&nbsp;&nbsp;onUnload="alert('Message from ' + window.name + ': I\'m closing')"&gt;<br>&lt;B&gt;Some numbers&lt;/B&gt;<br>&lt;UL&gt;&lt;LI&gt;one<br>&lt;LI&gt;two<br>&lt;LI&gt;three<br>&lt;LI&gt;four&lt;/UL&gt;<br>&lt;/BODY&gt;<br>&lt;/HTML&gt;</PRE>
+</A>
+<A NAME="67196">
+See also the example for the <a href="ref_f-g.htm#60829">Frame</a> object.<P></A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="67197">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="67204">
+<a href="ref_d-e.htm#47667">document</a>, <a href="ref_f-g.htm#60829">Frame</a> objects<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="window property
+"></A>
+<A NAME="67207">
+<H1> window property
+</H1>
+</A>
+
+<A NAME="67208">
+Property. The <I>window</I> property is a synonym for the current window or frame.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="67209">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="67210">
+<PRE>1. window.<I>propertyName<br></I>2. window.<I>methodName</I></PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="67211">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="67212">
+<I>propertyName</I> is the <I>defaultStatus</I>, <I>status</I>, <I>length</I>, or <I>name</I> property when the calling window refers to a <I>window</I> object.<P></A>
+<A NAME="67213">
+<I>propertyName</I> is the <I>length</I> or <I>name</I> property when the calling window refers to a <I>Frame</I> object.<P></A>
+<A NAME="67214">
+<I>methodName</I> is any method associated with the <I>window</I> object.<P></A>
+
+</UL><A NAME="Property of
+"></A>
+<A NAME="67215">
+<H3> Property of
+</H3>
+</A>
+
+<A NAME="67222">
+<a href="ref_f-g.htm#60829">Frame</a> object, <a href="ref_t-z.htm#67013">window object</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="76249">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="76250">
+Navigator 2.0<P></A>
+
+</UL><A NAME="Tainted?
+"></A>
+<A NAME="99214">
+<H3> Tainted?
+</H3>
+</A>
+
+<A NAME="99215">
+No<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="67223">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="67224">
+The <I>window</I> property refers to the current window or frame.<P></A>
+<A NAME="67225">
+Although you can use the <I>window</I> property as a synonym for the current frame, your code is more readable if you use the <I>self</I> property. For example, <code>window.name</code> and <code>self.name</code> both specify the name of the current frame, but <code>self.name</code> is easier to understand.<P></A>
+<A NAME="67226">
+Use the <I>window</I> property to disambiguate a property of the <I>window</I> object from a form or form element of the same name. You can also use the <I>window</I> property to make your code more readable.<P></A>
+<A NAME="67227">
+The <I>window</I> property is read-only. The value of the <I>window</I> property is<P></A>
+<A NAME="67228">
+<PRE>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;object <I>nameAttribute&gt;</I></PRE>
+</A>
+<A NAME="67229">
+where <I>nameAttribute</I> is the NAME attribute if <I>window</I> refers to a frame, or an internal reference if <I>window</I> refers to a window.<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="67230">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="67231">
+In the following example, <code>window.status</code> is used to set the <I>status</I> property of the current window. This usage disambiguates the <I>status</I> property of the current window from a form called "status" within the current window.<P></A>
+<A NAME="67232">
+<PRE>&lt;A HREF=""<br>&nbsp;&nbsp;&nbsp;onClick="this.href=pickRandomURL()"<br>&nbsp;&nbsp;&nbsp;onMouseOver="window.status='Pick a random URL' ; return true"&gt;<br>Go!&lt;/A&gt;</PRE>
+</A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="67233">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="67237">
+<a href="ref_s-s.htm#72867">self</a> property<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="write
+"></A>
+<A NAME="67240">
+<H1> write
+</H1>
+</A>
+
+<A NAME="67242">
+Method. Writes one or more HTML expressions to a document in the specified window.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="67243">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="67244">
+<PRE>document.write(<I>expression1</I> [,<I>expression2</I>], ...[,<I>expressionN</I>])</PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="67245">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="67246">
+<I>expression1</I> through <I>expressionN</I> are any JavaScript expressions or the properties of existing objects.<P></A>
+
+</UL><A NAME="Method of
+"></A>
+<A NAME="67247">
+<H3> Method of
+</H3>
+</A>
+
+<A NAME="67251">
+<a href="ref_d-e.htm#47667">document</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="76337">
+<H3> Implemented in
+</H3>
+</A>
+
+<ul><A NAME="76338">
+<LI>Navigator 2.0
+</A><A NAME="135384">
+<LI>Navigator 3.0: users can print and save generated HTML using the commands on the File menu
+</A>
+</UL><A NAME="Description
+"></A>
+<A NAME="67252">
+<H3> Description
+</H3>
+</A>
+
+</ul><A NAME="67253">
+The <B>write</B> method displays any number of expressions in a document window. You can specify any JavaScript expression with the <B>write</B> method, including numerics, strings, or logicals.<P></A>
+<A NAME="67254">
+The <B>write</B> method is the same as the <B>writeln</B> method, except the <B>write</B> method does not append a newline character to the end of the output.<P></A>
+<A NAME="67255">
+Use the <B>write</B> method within any &lt;SCRIPT&gt; tag or within an event handler. Event handlers execute after the original document closes, so the <B>write</B> method will implicitly open a new document of <I>mimeType</I> <code>text/html</code> if you do not explicitly issue a <code>document.open()</code> method in the event handler.<P></A>
+<A NAME="130470">
+You can use the <B>write</B> method to generate HTML and JavaScript code. However, the HTML parser reads the generated code as it is being written, so you might have to escape some characters. For example, the following write method generates a comment and writes it to <I>window2</I>:<P></A>
+<A NAME="135488">
+<PRE>window2=window.open('','window2')<br>beginComment="\&lt;!--"<br>endComment="--\&gt;"<br>window2.document.write(beginComment)<br>window2.document.write(" This some text inside a comment. ")<br>window2.document.write(endComment)</PRE>
+</A>
+
+<A NAME="Printing, saving, and viewing generated HTML
+"></A>
+<A NAME="135489">
+<H4> Printing, saving, and viewing generated HTML
+</H4>
+</A>
+
+<A NAME="135742">
+In Navigator 3.0, users can print and save generated HTML using the commands on the File menu.<P></A>
+<A NAME="136001">
+To view HTML code that was generated with JavaScript <B><a href="ref_t-z.htm#67240">write</a></B> and <B><a href="ref_t-z.htm#67313">writeln</a></B> methods, the user must specify the view-source: protocol. If the user chooses Document Source or Frame Source from the View menu, the content displayed is that of the wysiwyg: URL. The following example shows a view-source: URL:<P></A>
+<A NAME="136079">
+<PRE>view-source:wysiwyg://0/file:/c|/temp/genhtml.html</PRE>
+</A>
+<A NAME="136066">
+For information on specifying the view-source: protocol in the <I>location</I> object, see the <I><a href="ref_h-l.htm#84722">location</a></I> object.<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="135925">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="135926">
+In the following example, the <B>write</B> method takes several arguments, including strings, a numeric, and a variable:<P></A>
+<A NAME="67258">
+<PRE>var mystery = "world"<br>// Displays Hello world testing 123<br>msgWindow.document.write("Hello ", mystery, " testing ", 123)</PRE>
+</A>
+<A NAME="67259">
+In the following example, the <B>write</B> method takes two arguments. The first argument is an assignment expression, and the second argument is a string literal.<P></A>
+<A NAME="67260">
+<PRE>//Displays Hello world...<br>msgWindow.<code>document.write</code>(mystr = "Hello " + "world...")</PRE>
+</A>
+<A NAME="67261">
+In the following example, the <B>write</B> method takes a single argument that is a conditional expression. If the value of the variable <I>age</I> is less than 18, the method displays "Minor." If the value of <I>age</I> is greater than or equal to 18, the method displays "Adult."<P></A>
+<A NAME="67262">
+<PRE>msgWindow.document.write(status = (age &gt;= 18) ? "Adult" : "Minor")</PRE>
+</A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="67263">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="67276">
+<a href="ref_a-c.htm#63902">close (document object)</a>, <a href="ref_m-q.htm#177567">open (document object)</a>, <a href="ref_t-z.htm#67313">writeln</a> methods<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="writeln
+"></A>
+<A NAME="67313">
+<H1> writeln
+</H1>
+</A>
+
+<A NAME="67315">
+Method. Writes one or more HTML expressions to a document in the specified window and follows them with a newline character.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="67316">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="67317">
+<PRE>document.writeln(<I>expression1</I> [,<I>expression2</I>], ...[,<I>expressionN</I>])</PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="67318">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="67319">
+<I>expression1</I> through <I>expressionN</I> are any JavaScript expressions or the properties of existing objects.<P></A>
+
+</UL><A NAME="Method of
+"></A>
+<A NAME="67320">
+<H3> Method of
+</H3>
+</A>
+
+<A NAME="67324">
+<a href="ref_d-e.htm#47667">document</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="76551">
+<H3> Implemented in
+</H3>
+</A>
+
+<ul><A NAME="135444">
+<LI>Navigator 2.0
+</A><A NAME="135445">
+<LI>Navigator 3.0: users can print and save generated HTML using the commands on the File menu
+</A>
+</UL><A NAME="Description
+"></A>
+<A NAME="67325">
+<H3> Description
+</H3>
+</A>
+
+</ul><A NAME="67326">
+The <B>writeln</B> method displays any number of expressions in a document window. You can specify any JavaScript expression, including numerics, strings, or logicals.<P></A>
+<A NAME="67327">
+The <B>writeln</B> method is the same as the <B>write</B> method, except the <B>writeln</B> method appends a newline character to the end of the output. HTML ignores the newline character, except within certain tags such as &lt;PRE&gt;.<P></A>
+<A NAME="67328">
+Use the <B>writeln</B> method within any &lt;SCRIPT&gt; tag or within an event handler. Event handlers execute after the original document closes, so the <B>writeln</B> method will implicitly open a new document of <I>mimeType</I> <code>text/html</code> if you do not explicitly issue a <code>document.open()</code> method in the event handler.<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="67329">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="67330">
+All the examples used for the <B>write</B> method are also valid with the <B>writeln</B> method.<P></A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="67331">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="67344">
+<a href="ref_a-c.htm#63902">close (document object)</a>, <a href="ref_m-q.htm#177567">open (document object)</a>, <a href="ref_t-z.htm#67240">write</a> methods<P></A>
+<A NAME="52998">
+<P></A>

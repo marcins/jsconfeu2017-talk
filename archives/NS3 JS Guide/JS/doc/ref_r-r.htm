@@ -1,0 +1,1233 @@
+<BODY BGCOLOR="#FFFFFF">
+<A HREF="ref_m-q.htm">[Previous reference file]</A>
+<!------------------------------>
+<HR>
+<A NAME="Radio
+"></A>
+<A NAME="26345">
+<H1> Radio
+</H1>
+</A>
+
+<A NAME="26347">
+Object. A set of radio buttons on an HTML form. The user can use a set of radio to choose one item from a list.<P></A>
+
+</UL><A NAME="HTML syntax
+"></A>
+<A NAME="26348">
+<H3> HTML syntax
+</H3>
+</A>
+
+<A NAME="26349">
+To define a set of radio buttons, use standard HTML syntax with the addition of JavaScript event handlers:<P></A>
+<A NAME="26350">
+<PRE>&lt;INPUT<br>&nbsp;&nbsp;&nbsp;TYPE="radio"<br>&nbsp;&nbsp;&nbsp;NAME="<I>radioName</I>"<br>&nbsp;&nbsp;&nbsp;VALUE="<I>buttonValue</I>"<br>&nbsp;&nbsp;&nbsp;[CHECKED]<br>&nbsp;&nbsp;&nbsp;[onBlur="<I>handlerText</I>"]<br>&nbsp;&nbsp;&nbsp;[onClick="<I>handlerText</I>"]<br>&nbsp;&nbsp;&nbsp;[onFocus="<I>handlerText</I>"]&gt;<br>&nbsp;&nbsp;&nbsp;<I>textToDisplay</I></PRE>
+</A>
+
+</UL><A NAME="HTML attributes
+"></A>
+<A NAME="26351">
+<H3> HTML attributes
+</H3>
+</A>
+
+<A NAME="26352">
+<I>NAME="radioName"</I> specifies the name of the <I>Radio</I> object. All radio buttons in a group have the same NAME attribute. You can access this value using the <I>name</I> property, and you can use this name when indexing the <I>elements</I> array.<P></A>
+<A NAME="26353">
+<I>VALUE="buttonValue"</I> specifies a value that is returned to the server when the radio button is selected and the form is submitted. This defaults to "on." You can access this value using the <I>value</I> property.<P></A>
+<A NAME="26354">
+<I>CHECKED</I> specifies that the radio button is selected. You can access this value using the <I>defaultChecked</I> property.<P></A>
+<A NAME="26355">
+<I>textToDisplay</I> specifies the label to display beside the radio button.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="26356">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="26357">
+To use a radio button's properties and methods:<P></A>
+<A NAME="26358">
+<PRE>1. <I>radioName</I>[<I>index1</I>].<I>propertyName<br></I>2. <I>radioName</I>[<I>index1</I>].<I>methodName</I>(<I>parameters</I>)<br>3. <I>formName</I>.elements[<I>index2</I>].<I>propertyName<br></I>4. <I>formName</I>.elements[<I>index2</I>].<I>methodName</I>(<I>parameters</I>)</PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="26359">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="26360">
+<I>radioName</I> is the value of the NAME attribute of a <I>Radio</I> object.<P></A>
+<A NAME="26361">
+<I>index1</I> is an integer representing a radio button in a <I>Radio</I> object.<P></A>
+<A NAME="26362">
+<I>formName</I> is either the value of the NAME attribute of a <I>Form</I> object or an element in the <I>forms</I> array.<P></A>
+<A NAME="26363">
+<I>index2</I> is an integer representing a radio button on a form. The <I>elements</I> array contains an entry for each radio button in a <I>Radio</I> object.<P></A>
+<A NAME="26364">
+<I>propertyName</I> is one of the properties listed below.<P></A>
+<A NAME="26365">
+<I>methodName</I> is one of the methods listed below.<P></A>
+
+</UL><A NAME="Property of
+"></A>
+<A NAME="26366">
+<H3> Property of
+</H3>
+</A>
+
+<A NAME="26370">
+<a href="ref_f-g.htm#60597">Form object</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="29377">
+<H3> Implemented in
+</H3>
+</A>
+
+<ul><A NAME="29378">
+<LI>Navigator 2.0
+</A><A NAME="31099">
+<LI>Navigator 3.0: added <I>type</I> property; added <B>blur</B> and <B>focus</B> methods
+</A>
+</UL><A NAME="Description
+"></A>
+<A NAME="26371">
+<H3> Description
+</H3>
+</A>
+
+</ul><A NAME="26380">
+A <I>Radio</I> object on a form looks as follows:<p>
+
+<FORM>
+<P><INPUT TYPE="radio" NAME="musicChoice" CHECKED> R&B
+<BR><INPUT TYPE="radio" NAME="musicChoice"> Jazz
+<BR><INPUT TYPE="radio" NAME="musicChoice"> Soul
+</FORM>
+
+<P></A>
+<A NAME="26381">
+A <I>Radio</I> object is a form element and must be defined within a &lt;FORM&gt; tag.<P></A>
+<A NAME="26382">
+All radio buttons in a radio button group use the same <I>name</I> property. To access the individual radio buttons in your code, follow the object name with an index starting from zero, one for each button the same way you would for an array such as <I>forms:</I> <code>document.forms[0].radioName[0]</code> is the first, <code>document.forms[0].radioName[1]</code> is the second, and so on.<P></A>
+
+</UL><A NAME="Properties
+"></A>
+<A NAME="26383">
+<H3> Properties
+</H3>
+</A>
+
+<A NAME="26428">
+The <I>Radio</I> object has the following properties:
+
+<P><TABLE BORDER="2">
+<CAPTION></CAPTION>
+<tr align=left valign=bottom><th><b><A NAME="26390">
+Property</A><B><th><b><A NAME="26392">
+Description</A><B>
+<tr align=left valign=top><td><A NAME="26397">
+<a href="ref_a-c.htm#63602">checked</a>
+</A><BR>
+
+<td><A NAME="26399">
+Lets you programmatically select a radio button
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="26404">
+<a href="ref_d-e.htm#46826">defaultChecked</a>
+</A><BR>
+
+<td><A NAME="26406">
+Reflects the CHECKED attribute
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="40299">
+<a href="ref_f-g.htm#97350">form property</a>
+</A><BR>
+
+<td><A NAME="40301">
+Specifies the form containing the <I>Radio</I> object
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="26411">
+<a href="ref_h-l.htm#84418">length</a>
+</A><BR>
+
+<td><A NAME="26413">
+Reflects the number of radio buttons in a <I>Radio</I> object
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="26418">
+<a href="ref_m-q.htm#176636">name</a>
+</A><BR>
+
+<td><A NAME="26420">
+Reflects the NAME attribute
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="31607">
+<a href="ref_t-z.htm#71171">type</a>
+</A><BR>
+
+<td><A NAME="31609">
+Reflects the TYPE attribute
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="26425">
+<a href="ref_t-z.htm#66860">value</a>
+</A><BR>
+
+<td><A NAME="26427">
+Reflects the VALUE attribute
+</A><BR>
+
+
+
+
+</TABLE>
+
+<TABLE>
+<TR><TD>
+</TABLE>
+
+
+<P></A>
+
+</UL><A NAME="Methods
+"></A>
+<A NAME="26429">
+<H3> Methods
+</H3>
+</A>
+
+<A NAME="39435">
+The <I>Radio</I> object has the following methods:
+
+<P><TABLE BORDER="2">
+<CAPTION></CAPTION>
+<tr align=left valign=top><td><A NAME="39998">
+<LI><a href="ref_a-c.htm#62474">blur</a>
+</A><A NAME="40002">
+<LI><a href="ref_a-c.htm#63859">click</a>
+</A><A NAME="41458">
+<LI><a href="ref_d-e.htm#573">eval</a>
+</A>
+<td><A NAME="40026">
+<LI><a href="ref_f-g.htm#59872">focus</a>
+</A><A NAME="41480">
+<LI><a href="ref_t-z.htm#70978">toString</a>
+</A><A NAME="39434">
+<LI><a href="ref_t-z.htm#91188">valueOf</a>
+</A>
+
+
+
+</TABLE>
+
+<TABLE>
+<TR><TD>
+</TABLE>
+
+
+<P></A>
+
+</UL><A NAME="Event handlers
+"></A>
+<A NAME="26434">
+<H3> Event handlers
+</H3>
+</A>
+
+<ul><A NAME="26438">
+<LI><a href="ref_m-q.htm#177100">onBlur</a>
+</A><A NAME="38859">
+<LI><a href="ref_m-q.htm#177180">onClick</a>
+</A><A NAME="39251">
+<LI><a href="ref_m-q.htm#177278">onFocus</a>
+</A>
+</UL><A NAME="Examples
+"></A>
+<A NAME="26439">
+<H3> Examples
+</H3>
+</A>
+
+</ul><A NAME="26440">
+<B>Example 1.</B> The following example defines a radio button group to choose among three music catalogs. Each radio button is given the same name, <I>NAME="musicChoice,"</I> forming a group of buttons for which only one choice can be selected. The example also defines a text field that defaults to what was chosen via the radio buttons but that allows the user to type a nonstandard catalog name as well. The onClick event handler sets the catalog name input field when the user clicks a radio button.<P></A>
+<A NAME="26441">
+<PRE>&lt;INPUT TYPE="text" NAME="catalog" SIZE="20"&gt;<br>&lt;INPUT TYPE="radio" NAME="musicChoice" VALUE="soul-and-r&amp;b"<br>&nbsp;&nbsp;&nbsp;onClick="musicForm.catalog.value = 'soul-and-r&amp;b'"&gt; Soul and R&amp;B<br>&lt;INPUT TYPE="radio" NAME="musicChoice" VALUE="jazz"<br>&nbsp;&nbsp;&nbsp;onClick="musicForm.catalog.value = 'jazz'"&gt; Jazz<br>&lt;INPUT TYPE="radio" NAME="musicChoice" VALUE="classical"<br>&nbsp;&nbsp;&nbsp;onClick="musicForm.catalog.value = 'classical'"&gt; Classical</PRE>
+</A>
+<A NAME="26442">
+<B>Example 2.</B> The following example contains a form with three text boxes and three radio buttons. The radio buttons let the user choose whether the text fields are converted to uppercase or lowercase, or not converted at all. Each text field has an onChange event handler that converts the field value depending on which radio button is checked. The radio buttons for uppercase and lowercase have onClick event handlers that convert all fields when the user clicks the radio button.<P></A>
+<A NAME="26443">
+<PRE>&lt;HTML&gt;<br>&lt;HEAD&gt;<br>&lt;TITLE&gt;Radio object example&lt;/TITLE&gt;<br>&lt;/HEAD&gt;<br>&lt;SCRIPT&gt;<br>function convertField(field) {<br>&nbsp;&nbsp;&nbsp;if (document.form1.conversion[0].checked) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;field.value = field.value.toUpperCase()}<br>&nbsp;&nbsp;&nbsp;else {<br>&nbsp;&nbsp;&nbsp;if (document.form1.conversion[1].checked) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;field.value = field.value.toLowerCase()}<br>&nbsp;&nbsp;&nbsp;}<br>}<br>function convertAllFields(caseChange) {<br>&nbsp;&nbsp;&nbsp;if (caseChange=="upper") {<br>&nbsp;&nbsp;&nbsp;document.form1.lastName.value = document.form1.lastName.value.toUpperCase()<br>&nbsp;&nbsp;&nbsp;document.form1.firstName.value = document.form1.firstName.value.toUpperCase()<br>&nbsp;&nbsp;&nbsp;document.form1.cityName.value = document.form1.cityName.value.toUpperCase()}<br>&nbsp;&nbsp;&nbsp;else {<br>&nbsp;&nbsp;&nbsp;document.form1.lastName.value = document.form1.lastName.value.toLowerCase()<br>&nbsp;&nbsp;&nbsp;document.form1.firstName.value = document.form1.firstName.value.toLowerCase()<br>&nbsp;&nbsp;&nbsp;document.form1.cityName.value = document.form1.cityName.value.toLowerCase()<br>&nbsp;&nbsp;&nbsp;}<br>}<br>&lt;/SCRIPT&gt;<br>&lt;BODY&gt;<br>&lt;FORM NAME="form1"&gt;<br>&lt;B&gt;Last name:&lt;/B&gt;<br>&lt;INPUT TYPE="text" NAME="lastName" SIZE=20 onChange="convertField(this)"&gt;<br>&lt;BR&gt;&lt;B&gt;First name:&lt;/B&gt;<br>&lt;INPUT TYPE="text" NAME="firstName" SIZE=20 onChange="convertField(this)"&gt;<br>&lt;BR&gt;&lt;B&gt;City:&lt;/B&gt;<br>&lt;INPUT TYPE="text" NAME="cityName" SIZE=20 onChange="convertField(this)"&gt;<br>&lt;P&gt;&lt;B&gt;Convert values to:&lt;/B&gt;<br>&lt;BR&gt;&lt;INPUT TYPE="radio" NAME="conversion" VALUE="upper"<br>&nbsp;&nbsp;&nbsp;onClick="if (this.checked) {convertAllFields('upper')}"&gt; Upper case<br>&lt;BR&gt;&lt;INPUT TYPE="radio" NAME="conversion" VALUE="lower"<br>&nbsp;&nbsp;&nbsp;onClick="if (this.checked) {convertAllFields('lower')}"&gt; Lower case<br>&lt;BR&gt;&lt;INPUT TYPE="radio" NAME="conversion" VALUE="noChange"&gt; No conversion<br>&lt;/FORM&gt;<br>&lt;/BODY&gt;<br>&lt;/HTML&gt;</PRE>
+</A>
+<A NAME="26447">
+See also the example for the <a href="ref_h-l.htm#84501">Link object</a>.<P></A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="26448">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="26458">
+<a href="ref_a-c.htm#63502">Checkbox</a> object, <a href="ref_f-g.htm#60597">Form object</a>, <a href="ref_s-s.htm#72585">Select object</a><P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="random
+"></A>
+<A NAME="194">
+<H1> random
+</H1>
+</A>
+
+<A NAME="196">
+Method. Returns a pseudo-random number between zero and one. The random number generator is seeded from current time, as in Java.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="198">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="200">
+<PRE>Math.random()</PRE>
+</A>
+
+</UL><A NAME="Method of
+"></A>
+<A NAME="202">
+<H3> Method of
+</H3>
+</A>
+
+<A NAME="204">
+<a href="ref_m-q.htm#175987">Math</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="29840">
+<H3> Implemented in
+</H3>
+</A>
+
+<ul><A NAME="29841">
+<LI>Navigator 2.0
+</A><A NAME="31612">
+<LI>Navigator 3.0: works on all platforms. In previous releases, it worked on Unix platforms only.
+</A>
+</UL><A NAME="Examples
+"></A>
+<A NAME="206">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="208">
+<PRE>//Returns a random number between 0 and 1<br>function getRandom() {<br>&nbsp;&nbsp;&nbsp;return Math.random()<br>}</PRE>
+</A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="referrer
+"></A>
+<A NAME="26468">
+<H1> referrer
+</H1>
+</A>
+
+</ul><A NAME="26470">
+Property. Specifies the URL of the calling document when a user clicks a link.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="26471">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="26472">
+<PRE>document.referrer</PRE>
+</A>
+
+</UL><A NAME="Property of
+"></A>
+<A NAME="26473">
+<H3> Property of
+</H3>
+</A>
+
+<A NAME="26477">
+<a href="ref_d-e.htm#47667">document</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="30742">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="30743">
+Navigator 2.0<P></A>
+
+</UL><A NAME="Tainted?
+"></A>
+<A NAME="36460">
+<H3> Tainted?
+</H3>
+</A>
+
+<A NAME="36461">
+Yes<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="26478">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="26479">
+When a user navigates to a destination document by clicking a <I>Link</I> object on a source document, the <I>referrer</I> property contains the URL of the source document. Evaluate the <I>referrer</I> property from the destination document.<P></A>
+<A NAME="36718">
+If the user clicked on a link to get to the current URL<I>, referrer</I> contains the URL the user linked from. <I>referrer</I> is empty if the user typed a URL in the Location box, or used some other means to get to the current URL. <I>referrer</I> is also empty if the server does not provide environment variable information.<P></A>
+<A NAME="36712">
+<I>referrer</I> is a read-only property.<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="26481">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="26482">
+In the following example, the <B>getReferrer</B> function is called from the destination document. It returns the URL of the source document.<P></A>
+<A NAME="26483">
+<PRE>function getReferrer() {<br>&nbsp;&nbsp;&nbsp;return document.referrer<br>}</PRE>
+</A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="refresh
+"></A>
+<A NAME="37499">
+<H1> refresh
+</H1>
+</A>
+
+<A NAME="37500">
+Method. Makes newly installed plug-ins available, updates related arrays such as the <I>plugins</I> array, and optionally reloads open documents that contain plug-ins.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="37501">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="37502">
+<PRE>navigator.plugins.refresh([true|false])</PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="37503">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="37504">
+<I>true</I> refreshes the <I>plugins</I> array to make newly installed plug-ins available, and reloads all open documents that contain embedded objects (&lt;EMBED&gt; tag).<P></A>
+<A NAME="41528">
+<I>false</I> refreshes the <I>plugins</I> array to make newly installed plug-ins available, but does not reload open documents.<P></A>
+
+</UL><A NAME="Method of
+"></A>
+<A NAME="37505">
+<H3> Method of
+</H3>
+</A>
+
+<A NAME="37509">
+<a href="ref_m-q.htm#178311">plugins</a> array<P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="37510">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="37511">
+Navigator 3.0<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="37512">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="37513">
+The <B>refresh</B> method makes newly installed plug-ins available by updating related arrays such as the <I>plugins</I> array. If the true keyword is specified, <B>refresh</B> reloads all open documents that contain plug-ins.<P></A>
+<A NAME="38483">
+When the user installs a plug-in, that plug-in is not available until <B>refresh</B> is called or the user closes and restarts Navigator.<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="37517">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="37518">
+The following code refreshes arrays and reloads open documents containing embedded objects:<P></A>
+<A NAME="37519">
+<PRE>navigator.plugins.refresh(true)</PRE>
+</A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="37520">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="37527">
+<a href="ref_f-g.htm#61290">go</a>, <a href="ref_r-r.htm#28934">reload</a>, <a href="ref_r-r.htm#29022">replace</a> methods<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="reload
+"></A>
+<A NAME="28934">
+<H1> reload
+</H1>
+</A>
+
+<A NAME="28938">
+Method. Forces a reload of the window's current document.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="28939">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="28940">
+<PRE>location.reload([true])</PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="28941">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="28942">
+<I>true</I> forces an unconditional HTTP GET of the document from the server. This should not be used unless you have reason to believe that disk and memory caches are off or broken, or the server has a new version of the document (possibly it is generated by a CGI on each request).<P></A>
+
+</UL><A NAME="Method of
+"></A>
+<A NAME="28943">
+<H3> Method of
+</H3>
+</A>
+
+<A NAME="28944">
+<a href="ref_h-l.htm#84722">location</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="28945">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="28946">
+Navigator 3.0<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="28947">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="28948">
+The <B>reload</B> method forces a reload of the document specified by the URL in the <I>location.href</I> property.<P></A>
+<A NAME="28949">
+This method uses the same policy that the Navigator's Reload button uses (Once per Session, Every Time, or Never). The user sets the default value of this policy by choosing Network Preferences from the Options menu and specifying Verify Documents on the Cache tab of the Preferences dialog box.<P></A>
+<A NAME="28950">
+The <B>reload</B> method does not force a transaction with the server, unless the user has set the preference to Every Time, in which case it does a "conditional GET" request using an If-modified-since HTTP header, to ask the server to return the document only if its last-modified time is newer than the time the client keeps in its cache. In other words, <B>reload</B> will reload from the cache, unless the user has specified Every Time <I>and</I> the document has changed on the server since it was last loaded and saved in the cache.<P></A>
+<A NAME="28951">
+In event handlers, you must specify <code>window.location.reload()</code> instead of simply using <code>location.reload()</code>. Due to the scoping of static objects in JavaScript, a call to <code>location</code> without specifying an object name is equivalent to <code>document.location</code>, which is a synonym for <code>document.URL</code>.<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="28952">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="28953">
+The following example displays an image and three radio buttons. The user can click the radio buttons to choose which image is displayed. Clicking another button lets the user reload the document.<P></A>
+<A NAME="28954">
+<PRE>&lt;SCRIPT&gt;<br>function displayImage(theImage) {<br>&nbsp;&nbsp;&nbsp;document.images[0].src=theImage<br>}<br>&lt;/SCRIPT&gt;<br><br>&lt;FORM NAME="imageForm"&gt;<br>&lt;B&gt;Choose an image:&lt;/B&gt;<br>&lt;BR&gt;&lt;INPUT TYPE="radio" NAME="imageChoice" VALUE="image1" CHECKED<br>&nbsp;&nbsp;&nbsp;onClick="displayImage('seaotter.gif')"&gt;Sea otter<br>&lt;BR&gt;&lt;INPUT TYPE="radio" NAME="imageChoice" VALUE="image2"<br>&nbsp;&nbsp;&nbsp;onClick="displayImage('orca.gif')"&gt;Killer whale<br>&lt;BR&gt;&lt;INPUT TYPE="radio" NAME="imageChoice" VALUE="image3"<br>&nbsp;&nbsp;&nbsp;onClick="displayImage('humpback.gif')"&gt;Humpback whale<br><br>&lt;BR&gt;<br>&lt;IMG NAME="marineMammal" SRC="seaotter.gif" ALIGN="left" VSPACE="10"&gt;<br><br>&lt;P&gt;&lt;INPUT TYPE="button" VALUE="Click here to reload"<br>&nbsp;&nbsp;&nbsp;onClick="window.location.reload()"&gt;<br>&lt;/FORM&gt;</PRE>
+</A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="28955">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="28956">
+<a href="ref_f-g.htm#61290">go</a>, <a href="ref_r-r.htm#37499">refresh</a>, <a href="ref_r-r.htm#29022">replace</a> methods<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="replace
+"></A>
+<A NAME="29022">
+<H1> replace
+</H1>
+</A>
+
+<A NAME="29026">
+Method. Loads the specified URL over the current history entry.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="29027">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="29028">
+<PRE>location.replace("<I>URL</I>")</PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="29029">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="29030">
+<I>URL</I> specifies the URL to load.<P></A>
+
+</UL><A NAME="Method of
+"></A>
+<A NAME="29031">
+<H3> Method of
+</H3>
+</A>
+
+<A NAME="29032">
+<a href="ref_h-l.htm#84722">location</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="29033">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="29034">
+Navigator 3.0<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="29035">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="29036">
+The <B>replace</B> method loads the specified URL over the current history entry, so after the <B>replace</B> method is used, the user cannot navigate to the previous URL by using Navigator's Back button.<P></A>
+<A NAME="29037">
+In event handlers, you must specify <code>window.location.replace()</code> instead of simply using <code>location.replace()</code>. Due to the scoping of static objects in JavaScript, a call to <code>location</code> without specifying an object name is equivalent to <code>document.location</code>, which is a synonym for <code>document.URL</code>.<P></A>
+<A NAME="37332">
+If your program will be run with JavaScript in Navigator 2.0, you could put the following line in a &lt;SCRIPT&gt; tag early in your program. This emulates <B>replace</B>, which was introduced in Navigator 3.0:<P></A>
+<A NAME="29038">
+<PRE>if (location.replace == null)<br>&nbsp;&nbsp;&nbsp;location.replace = location.assign</PRE>
+</A>
+<A NAME="41550">
+The <B>replace </B>method does not create a new entry in the history list. To create an entry in the history list while loading a URL, use <B><a href="ref_f-g.htm#61290">go</a></B>.<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="37330">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="29039">
+The following example lets the user choose among several catalogs to display. The example displays two sets of radio buttons which let the user choose a season and a category, for example the Spring/Summer Clothing catalog or the Fall/Winter Home &amp; Garden catalog. When the user clicks the Go button, the <I>displayCatalog</I> function executes the <B>replace</B> method, replacing the current URL with the URL appropriate for the catalog the user has chosen. Note that after the <B>replace</B> method is used, the user cannot navigate to the previous URL (the list of catalogs) by using Navigator's Back button.<P></A>
+<A NAME="29040">
+<PRE>&lt;SCRIPT&gt;<br>function displayCatalog() {<br>&nbsp;&nbsp;&nbsp;var seaName=""<br>&nbsp;&nbsp;&nbsp;var catName=""<br><br>&nbsp;&nbsp;&nbsp;for (var i=0; i &lt; document.catalogForm.season.length; i++) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (document.catalogForm.season[i].checked) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seaName=document.catalogForm.season[i].value<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i=document.catalogForm.season.length<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;}<br><br>&nbsp;&nbsp;&nbsp;for (var i in document.catalogForm.category) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (document.catalogForm.category[i].checked) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;catName=document.catalogForm.category[i].value<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i=document.catalogForm.category.length<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;fileName=seaName + catName + ".html"<br>&nbsp;&nbsp;&nbsp;location.replace(fileName)<br>}<br>&lt;/SCRIPT&gt;<br><br>&lt;FORM NAME="catalogForm"&gt;<br>&lt;B&gt;Which catalog do you want to see?&lt;/B&gt;<br><br>&lt;P&gt;&lt;B&gt;Season&lt;/B&gt;<br>&lt;BR&gt;&lt;INPUT TYPE="radio" NAME="season" VALUE="q1" CHECKED&gt;Spring/Summer<br>&lt;BR&gt;&lt;INPUT TYPE="radio" NAME="season" VALUE="q3"&gt;Fall/Winter<br><br>&lt;P&gt;&lt;B&gt;Category&lt;/B&gt;<br>&lt;BR&gt;&lt;INPUT TYPE="radio" NAME="category" VALUE="clo" CHECKED&gt;Clothing<br>&lt;BR&gt;&lt;INPUT TYPE="radio" NAME="category" VALUE="lin"&gt;Linens<br>&lt;BR&gt;&lt;INPUT TYPE="radio" NAME="category" VALUE="hom"&gt;Home &amp; Garden<br><br>&lt;P&gt;&lt;INPUT TYPE="button" VALUE="Go" onClick="displayCatalog()"&gt;<br>&lt;/FORM&gt;</PRE>
+</A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="29041">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="29042">
+<a href="ref_h-l.htm#83926">history object</a>; "replace" parameter of <a href="ref_m-q.htm#177567">open (document object)</a> method; <a href="ref_f-g.htm#61290">go</a>, <a href="ref_r-r.htm#37499">refresh</a>, <a href="ref_r-r.htm#28934">reload</a> methods<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="reset method
+"></A>
+<A NAME="29120">
+<H1> reset method
+</H1>
+</A>
+
+<A NAME="29124">
+Method. Simulates a mouse click on a reset button for the calling form.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="29125">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="29126">
+<PRE><I>formName</I>.reset()</PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="29127">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="29128">
+<I>formName</I> is the name of any form or an element in the <I>forms</I> array.<P></A>
+
+</UL><A NAME="Method of
+"></A>
+<A NAME="29129">
+<H3> Method of
+</H3>
+</A>
+
+<A NAME="29130">
+<a href="ref_f-g.htm#60597">Form object</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="29131">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="29132">
+Navigator 3.0<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="29133">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="29134">
+The <B>reset</B> method restores a form element's default values. A reset button does not need to be defined for the form.<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="29135">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="29136">
+The following example displays a <I>Text</I> object in which the user is to type "CA" or "AZ". The <I>Text</I> object's onChange event handler calls a function that executes the form's <B>reset</B> method if the user provides incorrect input. When the <B>reset</B> method executes, defaults are restored and the form's onReset event handler displays a message.<P></A>
+<A NAME="29137">
+<PRE>&lt;SCRIPT&gt;<br>function verifyInput(textObject) {<br>&nbsp;&nbsp;&nbsp;if (textObject.value == 'CA' || textObject.value == 'AZ') {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert('Nice input')<br>&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;else { document.form1.reset() }<br>}<br>&lt;/SCRIPT&gt;<br><br>&lt;FORM NAME="form1" onReset="alert('Please enter CA or AZ.')"&gt;<br>Enter CA or AZ:<br>&lt;INPUT TYPE="text" NAME="state" SIZE="2" onChange=verifyInput(this)&gt;&lt;P&gt;<br>&lt;/FORM&gt;</PRE>
+</A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="29138">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="29139">
+<a href="ref_m-q.htm#177435">onReset</a> event handler, <a href="ref_r-r.htm#26487">Reset object</a><P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="Reset object
+"></A>
+<A NAME="26487">
+<H1> Reset object
+</H1>
+</A>
+
+<A NAME="26489">
+Object. A reset button on an HTML form. A reset button resets all elements in a form to their defaults.<P></A>
+
+</UL><A NAME="HTML syntax
+"></A>
+<A NAME="26490">
+<H3> HTML syntax
+</H3>
+</A>
+
+<A NAME="26491">
+To define a reset button, use standard HTML syntax with the addition of JavaScript event handlers:<P></A>
+<A NAME="26492">
+<PRE>&lt;INPUT<br>&nbsp;&nbsp;&nbsp;TYPE="reset"<br>&nbsp;&nbsp;&nbsp;NAME="<I>resetName</I>"<br>&nbsp;&nbsp;&nbsp;VALUE="<I>buttonText</I>"<br>&nbsp;&nbsp;&nbsp;[onBlur="<I>handlerText</I>"]<br>&nbsp;&nbsp;&nbsp;[onClick="<I>handlerText</I>"]<br>&nbsp;&nbsp;&nbsp;[onFocus="<I>handlerText</I>"]&gt;</PRE>
+</A>
+
+</UL><A NAME="HTML attributes
+"></A>
+<A NAME="26493">
+<H3> HTML attributes
+</H3>
+</A>
+
+<A NAME="26494">
+<I>NAME="resetName"</I> specifies the name of the <I>Reset</I> object. You can access this value using the <I>name</I> property, and you can use this name when indexing the <I>elements</I> array.<P></A>
+<A NAME="26495">
+<I>VALUE="buttonText"</I> specifies the text to display on the button face. You can access this value using the <I>value</I> property.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="26496">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="26497">
+To use a <I>Reset</I> object's properties and methods:<P></A>
+<A NAME="26498">
+<PRE>1. <I>resetName</I>.<I>propertyName<br></I>2. <I>resetName</I>.<I>methodName</I>(<I>parameters</I>)<br>3. <I>formName</I>.elements[<I>index</I>].<I>propertyName<br></I>4. <I>formName</I>.elements[<I>index</I>].<I>methodName</I>(<I>parameters</I>)</PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="26499">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="26500">
+<I>resetName</I> is the value of the NAME attribute of a <I>Reset</I> object.<P></A>
+<A NAME="26501">
+<I>formName</I> is either the value of the NAME attribute of a <I>Form</I> object or an element in the <I>forms</I> array.<P></A>
+<A NAME="26502">
+<I>index</I> is an integer representing a <I>Reset</I> object on a form or the name of a <I>Reset</I> object as specified by the NAME attribute.<P></A>
+<A NAME="40182">
+<I>propertyName</I> is one of the properties listed below.<P></A>
+<A NAME="40183">
+<I>methodName</I> is one of the methods listed below.<P></A>
+
+</UL><A NAME="Property of
+"></A>
+<A NAME="40184">
+<H3> Property of
+</H3>
+</A>
+
+<A NAME="26509">
+<a href="ref_f-g.htm#60597">Form object</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="30985">
+<H3> Implemented in
+</H3>
+</A>
+
+<ul><A NAME="30986">
+<LI>Navigator 2.0
+</A><A NAME="31929">
+<LI>Navigator 3.0: added <I>type</I> property; added onBlur and onFocus event handlers; added <B>blur</B> and <B>focus</B> methods
+</A>
+</UL><A NAME="Description
+"></A>
+<A NAME="26510">
+<H3> Description
+</H3>
+</A>
+
+</ul><A NAME="26518">
+A <I>Reset</I> object on a form looks as follows:<p>
+
+<FORM>
+<P><INPUT TYPE="reset" VALUE="Defaults">
+</FORM>
+
+<P></A>
+<A NAME="26519">
+A <I>Reset</I> object is a form element and must be defined within a &lt;FORM&gt; tag.<P></A>
+<A NAME="26520">
+The reset button's onClick event handler cannot prevent a form from being reset; once the button is clicked, the reset cannot be canceled.<P></A>
+
+</UL><A NAME="Properties
+"></A>
+<A NAME="26521">
+<H3> Properties
+</H3>
+</A>
+
+<A NAME="26545">
+The <I>Reset</I> object has the following properties:
+
+<P><TABLE BORDER="2">
+<CAPTION></CAPTION>
+<tr align=left valign=bottom><th><b><A NAME="26528">
+Property</A><B><th><b><A NAME="26530">
+Description</A><B>
+<tr align=left valign=top><td><A NAME="40270">
+<a href="ref_f-g.htm#97350">form property</a>
+</A><BR>
+
+<td><A NAME="40272">
+Specifies the form containing the <I>Reset</I> object
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="26535">
+<a href="ref_m-q.htm#176636">name</a>
+</A><BR>
+
+<td><A NAME="26537">
+Reflects the NAME attribute
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="31953">
+<a href="ref_t-z.htm#71171">type</a>
+</A><BR>
+
+<td><A NAME="31955">
+Reflects the TYPE attribute
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="26542">
+<a href="ref_t-z.htm#66860">value</a>
+</A><BR>
+
+<td><A NAME="26544">
+Reflects the VALUE attribute
+</A><BR>
+
+
+
+
+</TABLE>
+
+<TABLE>
+<TR><TD>
+</TABLE>
+
+
+<P></A>
+
+</UL><A NAME="Methods
+"></A>
+<A NAME="26546">
+<H3> Methods
+</H3>
+</A>
+
+<A NAME="40057">
+The <I>Reset</I> object has the following methods:
+
+<P><TABLE BORDER="2">
+<CAPTION></CAPTION>
+<tr align=left valign=top><td><A NAME="40039">
+<LI><a href="ref_a-c.htm#62474">blur</a>
+</A><A NAME="40043">
+<LI><a href="ref_a-c.htm#63859">click</a>
+</A><A NAME="41483">
+<LI><a href="ref_d-e.htm#573">eval</a>
+</A>
+<td><A NAME="40052">
+<LI><a href="ref_f-g.htm#59872">focus</a>
+</A><A NAME="41522">
+<LI><a href="ref_t-z.htm#70978">toString</a>
+</A><A NAME="40056">
+<LI><a href="ref_t-z.htm#91188">valueOf</a>
+</A>
+
+
+
+</TABLE>
+
+<TABLE>
+<TR><TD>
+</TABLE>
+
+
+<P></A>
+
+</UL><A NAME="Event handlers
+"></A>
+<A NAME="26551">
+<H3> Event handlers
+</H3>
+</A>
+
+<ul><A NAME="39300">
+<LI><a href="ref_m-q.htm#177100">onBlur</a>
+</A><A NAME="39304">
+<LI><a href="ref_m-q.htm#177180">onClick</a>
+</A><A NAME="39308">
+<LI><a href="ref_m-q.htm#177278">onFocus</a>
+</A>
+</UL><A NAME="Examples
+"></A>
+<A NAME="26556">
+<H3> Examples
+</H3>
+</A>
+
+</ul><A NAME="26557">
+<B>Example 1.</B> The following example displays a <I>Text</I> object with the default value "CA" and a reset button with the text "Clear Form" displayed on its face. If the user types a state abbreviation in the <I>Text</I> object and then clicks the <B>Clear Form</B> button, the original value of "CA" is restored.<P></A>
+<A NAME="26558">
+<PRE>&lt;B&gt;State: &lt;/B&gt;&lt;INPUT TYPE="text" NAME="state" VALUE="CA" SIZE="2"&gt;<br>&lt;P&gt;&lt;INPUT TYPE="reset" VALUE="Clear Form"&gt;</PRE>
+</A>
+<A NAME="26559">
+<B>Example 2.</B> The following example displays two <I>Text</I> objects, a <I>Select</I> object, and three radio buttons; all of these objects have default values. The form also has a reset button with the text "Defaults" on its face. If the user changes the value of any of the objects and then clicks the <B>Defaults</B> button, the original values are restored.<P></A>
+<A NAME="26560">
+<PRE>&lt;HTML&gt;<br>&lt;HEAD&gt;<br>&lt;TITLE&gt;Reset object example&lt;/TITLE&gt;<br>&lt;/HEAD&gt;<br>&lt;BODY&gt;<br>&lt;FORM NAME="form1"&gt;<br>&lt;BR&gt;&lt;B&gt;City: &lt;/B&gt;&lt;INPUT TYPE="text" NAME="city" VALUE="Santa Cruz" SIZE="20"&gt;<br>&lt;B&gt;State: &lt;/B&gt;&lt;INPUT TYPE="text" NAME="state" VALUE="CA" SIZE="2"&gt;<br>&lt;P&gt;&lt;SELECT NAME="colorChoice"&gt;<br>&nbsp;&nbsp;&nbsp;&lt;OPTION SELECTED&gt; Blue<br>&nbsp;&nbsp;&nbsp;&lt;OPTION&gt; Yellow<br>&nbsp;&nbsp;&nbsp;&lt;OPTION&gt; Green<br>&nbsp;&nbsp;&nbsp;&lt;OPTION&gt; Red<br>&lt;/SELECT&gt;<br>&lt;P&gt;&lt;INPUT TYPE="radio" NAME="musicChoice" VALUE="soul-and-r&amp;b"<br>&nbsp;&nbsp;&nbsp;CHECKED&gt; Soul and R&amp;B<br>&lt;BR&gt;&lt;INPUT TYPE="radio" NAME="musicChoice" VALUE="jazz"&gt;<br>&nbsp;&nbsp;&nbsp;Jazz<br>&lt;BR&gt;&lt;INPUT TYPE="radio" NAME="musicChoice" VALUE="classical"&gt;<br>&nbsp;&nbsp;&nbsp;Classical<br>&lt;P&gt;&lt;INPUT TYPE="reset" VALUE="Defaults" NAME="reset1"&gt;<br>&lt;/FORM&gt;<br>&lt;/BODY&gt;<br>&lt;/HTML&gt;</PRE>
+</A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="26561">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="26571">
+<a href="ref_a-c.htm#62518">Button</a> object, <a href="ref_f-g.htm#60597">Form object</a>, <a href="ref_m-q.htm#177435">onReset</a> event handler, <a href="ref_r-r.htm#29120">reset method</a>, <a href="ref_s-s.htm#73448">Submit object</a><P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="reverse
+"></A>
+<A NAME="29187">
+<H1> reverse
+</H1>
+</A>
+
+<A NAME="29191">
+Method. Transposes the elements of an array: the first array element becomes the last and the last becomes the first.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="29192">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="29193">
+<PRE><I>arrayName</I>.reverse()</PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="29194">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="29195">
+<I>arrayName</I> is the name of an <I>Array</I> object or a property of an existing object.<P></A>
+
+</UL><A NAME="Method of
+"></A>
+<A NAME="29196">
+<H3> Method of
+</H3>
+</A>
+
+<A NAME="29197">
+<a href="ref_a-c.htm#74072">Array</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="29198">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="29199">
+Navigator 3.0<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="29200">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="29201">
+The <B>reverse</B> method transposes the elements of the calling array object.<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="29202">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="29203">
+The following example creates an array <I>myArray</I>, containing three elements, then reverses the array.<P></A>
+<A NAME="29204">
+<PRE>myArray = new Array("one", "two", "three")<br>myArray.reverse()</PRE>
+</A>
+<A NAME="29205">
+This code changes <I>myArray</I> so that:<P></A>
+<ul><A NAME="29206">
+<LI>myArray[0] is "three"
+</A><A NAME="29207">
+<LI>myArray[1] is "two"
+</A><A NAME="29208">
+<LI>myArray[2] is "one"
+</A>
+</UL><A NAME="See also
+"></A>
+<A NAME="29209">
+<H3> See also
+</H3>
+</A>
+
+</ul><A NAME="29210">
+<a href="ref_h-l.htm#91531">join</a>, <a href="ref_s-s.htm#79162">sort</a> methods<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="round
+"></A>
+<A NAME="308">
+<H1> round
+</H1>
+</A>
+
+<A NAME="310">
+Method. Returns the value of a number rounded to the nearest integer.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="312">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="314">
+<PRE>Math.round(<I>number</I>)</PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="1700">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="316">
+<I>number</I> is any numeric expression or a property of an existing object.<P></A>
+
+</UL><A NAME="Method of
+"></A>
+<A NAME="318">
+<H3> Method of
+</H3>
+</A>
+
+<A NAME="320">
+<a href="ref_m-q.htm#175987">Math</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="31049">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="31050">
+Navigator 2.0<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="322">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="324">
+If the fractional portion of <I>number</I> is .5 or greater, the argument is rounded to the next highest integer. If the fractional portion of <I>number</I> is less than .5, the argument is rounded to the next lowest integer.<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="326">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="328">
+<PRE>//Displays the value 20<br>document.write("The rounded value is " + Math.round(20.49))<br><br>//Displays the value 21<br>document.write("&lt;P&gt;The rounded value is " + Math.round(20.5))<br><br>//Displays the value -20<br>document.write("&lt;P&gt;The rounded value is " + Math.round(-20.5))<br><br>//Displays the value -21<br>document.write("&lt;P&gt;The rounded value is " + Math.round(-20.51))</PRE>
+</A>
+<A NAME="10218">
+<P></A>
+
+<HR>
+<A HREF="ref_s-s.htm">[Next reference file]</A>
+

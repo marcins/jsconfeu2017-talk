@@ -1,0 +1,542 @@
+<BODY BGCOLOR="#FFFFFF">
+<A NAME="1001595">
+<P>
+</A><A NAME="1001596">
+<P>
+</A><A NAME="1005423">
+<H1>Using Navigator objects
+</H1>
+</A>
+
+<A NAME="1005424">
+
+<img src="graphics/navobja.gif">
+
+his chapter describes JavaScript objects in Navigator and how to use them. These client-side JavaScript objects are sometimes referred to as <I>Navigator objects</I>, to distinguish them from LiveWire objects or user-defined objects.<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="Navigator object hierarchy"></A>
+<A NAME="1006931">
+<H1> Navigator object hierarchy</H1>
+</A>
+<A NAME="1008075">
+When you load a document in Navigator, it creates a number of JavaScript objects with property values based on the HTML in the document and other pertinent information. These objects exist in a hierarchy that reflects the structure of the HTML page itself.<P></A>
+<A NAME="1008089">
+Although you cannot derive object classes from JavaScript objects, as you can in languages such as Java, it is useful to understand the Navigator JavaScript object hierarchy. In the strict object-oriented sense, this type of hierarchy is known as an <I>instance hierarchy</I>, because it concerns specific instances of objects rather than object classes. The Navigator object hierarchy is illustrated in the following figure.<P></A>
+
+
+<P><A NAME="1008534">
+<img src="graphics/objhier.gif">
+</A><P>
+
+<A NAME="1007259">
+In this hierarchy, an object's "descendants" are properties of the object. For example, a form named <I>form1</I> is an object as well as a property of <I>document</I>, and is referred to as <I>document.form1</I>. For a list of all objects and their properties, methods, and event handlers, see <a href="summary.htm#1002170">Appendix&nbsp;A, "Object summary."</a><P></A>
+<A NAME="1007993">
+Every page has the following objects:<P></A>
+<ul><A NAME="1007995">
+<LI><I>navigator:</I> has properties for the name and version of the Navigator being used, for the MIME types supported by the client, and for the plug-ins installed on the client.
+</A><A NAME="1007997">
+<LI><I>window:</I> the top-level object; has properties that apply to the entire window. There is also a <I>window</I> object for each "child window" in a frames document.
+</A><A NAME="1007999">
+<LI><I>document:</I> contains properties based on the content of the document, such as title, background color, links, and forms.
+</A><A NAME="1008001">
+<LI><I>location:</I> has properties based on the current URL.
+</A><A NAME="1008003">
+<LI><I>history:</I> contains properties representing URLs the client has previously requested.
+</A></ul><A NAME="1008004">
+Depending on its content, the document may contain other objects. For instance, each form (defined by a FORM tag) in the document will have a corresponding <I>Form</I> object.<P></A>
+<A NAME="1006964">
+To refer to specific properties, you must specify the object name and all its ancestors. Generally, an object gets its name from the NAME attribute of the HTML tag. For more information and examples, see <a href="windows.htm#996824">Chapter&nbsp;3, "Using windows and frames."</a><P></A>
+<A NAME="1008045">
+For example, the following refers to the <I>value</I> property of a text field named <I>text1</I> in a form named <I>myform</I> in the current document.<P></A>
+<A NAME="1006965">
+<PRE>document.myform.text1.value.</PRE>
+</A>
+<A NAME="1010227">
+If an object is on a form, you must include the form name when referring to that object, even if the object does not need to be on a form. For example, images do not need to be on a form. The following code refers to an image that is on a form:<P></A>
+<A NAME="1010232">
+<PRE>document.imageForm.aircraft.src='f15e.gif'</PRE>
+</A>
+<A NAME="1010233">
+The following code refers to an image that is <em>not</em> on a form:<P></A>
+<A NAME="1010234">
+<PRE>document.aircraft.src='f15e.gif'</PRE>
+</A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="document properties: an example"></A>
+<A NAME="1006066">
+<H1> document properties: an example</H1>
+</A>
+<A NAME="1006536">
+The properties of the <I>document</I> object are largely content-dependent. That is, they are created based on the HTML in the document. For example, <I>document</I> has a property for each form and each anchor in the document.<P></A>
+<A NAME="1004228">
+Suppose you create a page named <code>simple.html</code> that contains the following HTML:<P></A>
+<A NAME="1004229">
+<PRE>&lt;HEAD&gt;&lt;TITLE&gt;A Simple Document&lt;/TITLE&gt;<br>&lt;SCRIPT&gt;<br>function update(form) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert("Form being updated")<br>}<br>&lt;/SCRIPT&gt;<br>&lt;/HEAD&gt;<br>&lt;BODY&gt;<br>&lt;FORM NAME="myform" ACTION="foo.cgi" METHOD="get" &gt;Enter a value:<br>&lt;INPUT TYPE="text" NAME="text1" VALUE="blahblah" SIZE=20 &gt;<br>Check if you want: <br>&lt;INPUT TYPE="checkbox" NAME="Check1" CHECKED &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;onClick="update(this.form)"&gt; Option #1<br>&lt;P&gt;<br>&lt;INPUT TYPE="button" NAME="button1" VALUE="Press Me"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;onClick="update(this.form)"&gt;<br>&lt;/FORM&gt;<br>&lt;/BODY&gt;</PRE>
+</A>
+<A NAME="1004230">
+As you saw in the previous chapter, JavaScript uses the following object notation:<P></A>
+<A NAME="1006055">
+<PRE><I>objectName.propertyName</I></PRE>
+</A>
+<A NAME="1006054">
+So, given the preceding HTML example, the basic objects would have properties like those shown here:
+
+<P><TABLE BORDER="2">
+<CAPTION></CAPTION>
+<tr align=left valign=bottom><th><b><A NAME="1006046">
+Property</A><B><th><b><A NAME="1006048">
+Value</A><B>
+<tr align=left valign=top><td><A NAME="1006038">
+<I>document.title
+</I></A><BR>
+
+<td><A NAME="1006040">
+ "A Simple Document"
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1006018">
+<I>document.fgColor
+</I></A><BR>
+
+<td><A NAME="1006020">
+ #000000
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1006022">
+<I>document.bgColor
+</I></A><BR>
+
+<td><A NAME="1006024">
+ #ffffff
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1006462">
+<I>location.href
+</I></A><BR>
+
+<td><A NAME="1006464">
+ "http://www.sampson.com/samples/simple.html"
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1006026">
+<I>history.length
+</I></A><BR>
+
+<td><A NAME="1006028">
+ 7
+</A><BR>
+
+
+
+
+</TABLE>
+
+<TABLE>
+<TR><TD>
+</TABLE>
+
+
+<P></A>
+<A NAME="1004237">
+Notice that the value of <I>document.title</I> reflects the value specified in the TITLE tag. The values for <I>document.fgColor</I> (the color of text) and <I>document.bgColor</I> (the background color) were not set in the HTML, so they are based on the default values specified in the Preferences dialog box (when the user chooses General Preferences from the Options menu).<P></A>
+<A NAME="1006058">
+Because there is a form in the document, there is also a <I>Form</I> object called <I>myform</I> (based on the form's NAME attribute) that has child objects for the checkbox and the button. Each of these objects has a name based on the NAME attribute of the HTML tag that defines it, as follows:<P></A>
+
+<a name="1008150">
+<blockquote>These are the full 
+names of the objects, 
+based on the 
+Navigator object 
+hierarchy. 
+</blockquote>
+</a>
+<ul><A NAME="1004238">
+<LI><I>document.myform</I>, the form
+</A><A NAME="1006083">
+<LI><I>document.myform.Check1</I>, the checkbox
+</A><A NAME="1006084">
+<LI><I>document.myform.button1</I>, the button
+</A></ul><A NAME="1007050">
+Thus, the <I>Form</I> object <I>myform</I> has properties based on the attributes of the FORM tag, for example,<P></A>
+<ul><A NAME="1004242">
+<LI><I>action</I> is <code>http://www.sampson.com/samples/foo.cgi</code>, the URL to which the form is submitted.
+</A><A NAME="1006196">
+<LI><I>method</I> is "get," based on the value of the METHOD attribute.
+</A><A NAME="1006237">
+<LI><I>length</I> is 3, because there are three input elements in the form.
+</A></ul><A NAME="1006085">
+The <I>Form</I> object has child objects named <I>button1</I> and <I>text1,</I> corresponding to the button and text field in the form. These objects have their own properties based on their HTML attribute values, for example,<P></A>
+<ul><A NAME="1006365">
+<LI><I>button1.value</I> is "Press Me"
+</A><A NAME="1006369">
+<LI><I>button1.name</I> is "Button1"
+</A><A NAME="1006379">
+<LI><I>text1.value</I> is "blahblah"
+</A><A NAME="1006380">
+<LI><I>text1.name</I> is "text1"
+</A></ul><A NAME="1004470">
+In practice, you refer to these properties using their full names, for example, <I>document.myform.button1.value</I>. This full name is based on the Navigator object hierarchy, starting with <I>document</I>, followed by the name of the form, <I>myform</I>, then the element name, <I>button1</I>, and, finally, the property name.<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="JavaScript reflection and HTML layout"></A>
+<A NAME="1007007">
+<H1> JavaScript reflection and HTML layout</H1>
+</A>
+<A NAME="1007008">
+JavaScript object property values are based on the content of your HTML document, sometimes referred to as <I>reflection</I> because the property values reflect the HTML. To understand JavaScript reflection, it is important to understand how the Navigator performs <I>layout</I>--the process by which Navigator transforms HTML tags into graphical display on your computer.<P></A>
+<A NAME="1007009">
+Generally, layout happens sequentially in the Navigator: the Navigator starts at the top of the HTML file and works downward, displaying output to the screen as it goes. Because of this "top-down" behavior, JavaScript reflects only HTML that it has encountered. For example, suppose you define a form with a couple of text-input elements:<P></A>
+<A NAME="1007011">
+<PRE>&lt;FORM NAME="statform"&gt;<br>&lt;INPUT TYPE = "text" name = "userName" size = 20&gt;<br>&lt;INPUT TYPE = "text" name = "Age" size = 3&gt;</PRE>
+</A>
+<A NAME="1007012">
+These form elements are reflected as JavaScript objects that you can use <B>after</B> the form is defined: <I>document.statform.userName</I> and <I>document.statform.Age</I>. For example, you could display the value of these objects in a script after defining the form:<P></A>
+<A NAME="1007013">
+<PRE>&lt;SCRIPT&gt;<br>document.write(document.statform.userName.value)<br>document.write(document.statform.Age.value)<br>&lt;/SCRIPT&gt;</PRE>
+</A>
+<A NAME="1007014">
+However, if you tried to do this before the form definition (above it in the HTML page), you would get an error, because the objects don't exist yet in the Navigator.<P></A>
+<A NAME="1007015">
+Likewise, once layout has occurred, setting a property value does not affect its value or appearance. For example, suppose you have a document title defined as follows:<P></A>
+<A NAME="1007016">
+<PRE>&lt;TITLE&gt;My JavaScript Page&lt;/TITLE&gt;</PRE>
+</A>
+<A NAME="1008366">
+This is reflected in JavaScript as the value of <I>document.title</I>. Once the Navigator has displayed this in the title bar of the Navigator window, you cannot change the value in JavaScript. If you have the following script later in the page, it will not change the value of <I>document.title</I>, affect the appearance of the page, or generate an error.<P></A>
+<A NAME="1007018">
+<PRE>document.title = "The New Improved JavaScript Page"</PRE>
+</A>
+<A NAME="1007020">
+There are some important exceptions to this rule: you can update the value of form elements dynamically. For example, the following script defines a text field that initially displays the string "Starting Value." Each time you click the button, you add the text "...Updated!" to the value.<P></A>
+<A NAME="1007021">
+<PRE>&lt;FORM NAME="demoForm"&gt;<br>&lt;INPUT TYPE="text" NAME="mytext" SIZE="40" VALUE="Starting Value"&gt;<br>&lt;P&gt;&lt;INPUT TYPE="button" VALUE="Click to Update Text Field"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;onClick="document.demoForm.mytext.value += '...Updated!' "&gt;<br>&lt;/FORM&gt;</PRE>
+</A>
+<A NAME="1009017">
+This is a simple example of updating a form element after layout.<P></A>
+<A NAME="1009035">
+Using event handlers, you can also change a few other properties after layout has completed, for example, <I>document.bgcolor</I>.<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="Key Navigator objects"></A>
+<A NAME="1009022">
+<H1> Key Navigator objects</H1>
+</A>
+<A NAME="1009186">
+This section describes some of the most useful Navigator objects, including <I>window</I>, <I>Frame,</I> <I>document</I>, <I>Form</I>, <I>location</I>, and <I>history </I>objects. For more detailed information on these objects, see the corresponding reference topics in Part&nbsp;3, "Reference."<P></A>
+
+<A NAME="window and Frame objects"></A>
+<A NAME="1010392">
+<H2> window and Frame objects</H2>
+</A>
+
+
+<a name="1010393">
+<blockquote>For more 
+information on 
+windows and frames, 
+see <a href="windows.htm#996824">Chapter&nbsp;3, "Using 
+windows and 
+frames."</a>
+</blockquote>
+</a>
+<A NAME="1004280">
+The <I>window</I> object is the "parent" object for all other objects in Navigator. You can create multiple windows in a Navigator JavaScript application. A <I>Frame</I> object is defined by the FRAME tag in a FRAMESET document. <I>Frame</I> objects have the same properties and methods as <I>window</I> objects and differ only in the way they are displayed.<P></A>
+<A NAME="1004281">
+The <I>window</I> object has numerous useful methods:<P></A>
+<ul><A NAME="1004282">
+<LI><B>open</B> and <B>close:</B> Opens and closes a browser window; you can specify the size of the window, its content, and whether it has a button bar, location field, and other "chrome" attributes.
+</A><A NAME="1004283">
+<LI><B>alert:</B> Displays an Alert dialog box with a message.
+</A><A NAME="1004284">
+<LI><B>confirm:</B> Displays a Confirm dialog box with <B>OK</B> and <B>Cancel</B> buttons.
+</A><A NAME="1004285">
+<LI><B>prompt:</B> Displays a Prompt dialog box with a text field for entering a value.
+</A><A NAME="1010362">
+<LI><B>blur</B> and <B>focus:</B> Removes focus from, or gives focus to a window.
+</A><A NAME="1010373">
+<LI><B>scroll:</B> Scrolls a window to a specified coordinate.
+</A><A NAME="1004286">
+<LI><B>setTimeout:</B> Evaluates an expression after the specified time.
+</A></ul><A NAME="1008401">
+<I>window</I> also has two properties you can set to perform useful tasks: location and status.<P></A>
+<A NAME="1008408">
+You can set <I>location</I> to redirect the client to another URL. For example, the following statement redirects the client to the Netscape home page, as if the user had clicked a hyperlink or otherwise loaded the URL:<P></A>
+<A NAME="1008402">
+<PRE>location = "http://home.netscape.com"</PRE>
+</A>
+<A NAME="1004287">
+You can use the <I>status</I> property to set the message in the status bar at the bottom of the client window; for more information, see <a href="advtopic.htm#1006028">"Using the status bar"</a>.<P></A>
+
+<A NAME="document object"></A>
+<A NAME="1004289">
+<H2> document object</H2>
+</A>
+
+<A NAME="1004290">
+Because its <B>write</B> and <B>writeln</B> methods generate HTML, the <I>document</I> object is one of the most useful Navigator objects. A page has only one <I>document</I> object.<P></A>
+<A NAME="1008427">
+The <I>document</I> object has a number of properties that reflect the colors of the background, text, and links in the page: <I>bgColor</I>, <I>fgColor</I>, <I>linkColor</I>, <I>alinkColor</I>, and <I>vlinkColor</I>. Other useful document properties include <I>lastModified</I>, the date the document was last modified, <I>referrer</I>, the previous URL the client visited, and <I>URL</I>, the URL of the document. The <I>cookie</I> property enables you to get and set cookie values; for more information, see <a href="advtopic.htm#1013101">"Using cookies"</a>.<P></A>
+<A NAME="1010134">
+The <I>document</I> object is the ancestor for all the <I>Anchor, Applet, Area, Form, Image, Link</I>, and <I>Plugin</I> objects in the page.<P></A>
+<A NAME="1010205">
+In Navigator 3.0, users can print and save generated HTML, by using the commands on the File menu. See <a href="ref_t-z.htm#67240">"write"</a>.<P></A>
+
+<A NAME="Form object"></A>
+<A NAME="1010137">
+<H2> Form object</H2>
+</A>
+
+<A NAME="1004294">
+Each form in a document creates a <I>Form</I> object. Because a document can contain more than one form, <I>Form</I> objects are stored in an array called <I>forms</I>. The first form (topmost in the page) is forms[0], the second forms[1], and so on. In addition to referring to each form by name, you can refer to the first form in a document as<P></A>
+<A NAME="1004301">
+<PRE>document.forms[0]</PRE>
+</A>
+<A NAME="1004302">
+Likewise, the elements in a form, such as text fields, radio buttons, and so on, are stored in an <I>elements</I> array. So you could refer to the first element (regardless of what it is) in the first form as<P></A>
+<A NAME="1006532">
+<PRE>document.forms[0].elements[0]</PRE>
+</A>
+<A NAME="1011487">
+Each form element has a <I>form</I> property that is a reference to the element's parent form. This property is especially useful in event handlers, where you might need to refer to another element on the current form. In the following example, the form <I>myForm</I> contains a <I>Text</I> object and a button. When the user clicks the button, the value of the <I>Text</I> object is set to the form's name. The button's onClick event handler uses <code>this.form</code> to refer to the parent form, <I>myForm</I>.<P></A>
+<A NAME="1011510">
+<PRE>&lt;FORM NAME="myForm"&gt;<br>Form name:&lt;INPUT TYPE="text" NAME="text1" VALUE="Beluga"&gt;<br>&lt;P&gt;<br>&lt;INPUT NAME="button1" TYPE="button" VALUE="Show Form Name"<br>&nbsp;&nbsp;&nbsp;onClick="this.form.text1.value=this.form.name"&gt;<br>&lt;/FORM&gt;</PRE>
+</A>
+
+<A NAME="location object"></A>
+<A NAME="1004213">
+<H2> location object</H2>
+</A>
+
+<A NAME="1006560">
+The <I>location</I> object has properties based on the current URL. For example, the <I>hostname</I> property is the server and domain name of the server hosting the document.<P></A>
+<A NAME="1010450">
+The <I>location</I> object has two methods:<P></A>
+<ul><A NAME="1010455">
+<LI><B>reload</B> forces a reload of the window's current document.
+</A><A NAME="1010464">
+<LI><B>replace</B> loads the specified URL over the current history entry.
+</A></ul>
+<A NAME="history object"></A>
+<A NAME="1010406">
+<H2> history object</H2>
+</A>
+
+<A NAME="1006577">
+The <I>history</I> object contains a list of strings representing the URLs the client has visited. You can access the current, next, and previous history entries by using the <I>history</I> object's <I>current, next,</I> and <I>previous</I> properties. You can access the other history values using the <I>history</I> array. This array contains an entry for each history entry in source order; each array entry is a string containing a URL.<P></A>
+<A NAME="1011397">
+You can also redirect the client to any history entry by using the <B>go</B> method. For example, the following code loads the URL that is two entries back in the client's history list.<P></A>
+<A NAME="1006582">
+<PRE>history.go(-2)</PRE>
+</A>
+<A NAME="1006583">
+The following code reloads the current page:<P></A>
+<A NAME="1006584">
+<PRE>history.go(0)</PRE>
+</A>
+<A NAME="1006585">
+The history list is displayed in the Navigator Go menu.<P></A>
+
+<A NAME="navigator object"></A>
+<A NAME="1011844">
+<H2> navigator object</H2>
+</A>
+
+<A NAME="1011845">
+The <I>navigator</I> object contains information about the version of Navigator in use. For example, the <I>appName</I> property specifies the name of the browser, and the <I>appVersion</I> property specifies version information for the Navigator.<P></A>
+<A NAME="1011846">
+The <I>navigator</I> object has two methods:<P></A>
+<ul><A NAME="1011847">
+<LI><B>javaEnabled</B> specifies whether Java is enabled.
+</A><A NAME="1011848">
+<LI><B>taintEnabled</B> specifies whether data tainting is enabled.
+</A></ul>
+
+<!------------------------------>
+<HR>
+<A NAME="Navigator's object arrays"></A>
+<A NAME="1009796">
+<H1> Navigator's object arrays</H1>
+</A>
+<A NAME="1011790">
+Navigator has the following predefined arrays:
+
+<P><TABLE BORDER="2">
+<CAPTION></CAPTION>
+<tr align=left valign=bottom><th><b><A NAME="1011735">
+Array</A><B><th><b><A NAME="1011737">
+Description</A><B>
+<tr align=left valign=top><td><A NAME="1011739">
+anchors
+</A><BR>
+
+<td><A NAME="1011741">
+Reflects all the &lt;A&gt; tags containing a NAME attribute in a 
+document in source order
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1011743">
+applets
+</A><BR>
+
+<td><A NAME="1011745">
+Reflects all the &lt;APPLET&gt; tags in a document in source order
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1011747">
+arguments
+</A><BR>
+
+<td><A NAME="1011749">
+Reflects all the arguments to a function
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1011751">
+elements
+</A><BR>
+
+<td><A NAME="1011753">
+Reflects a form's elements (such as Checkbox, Radio, and Text 
+objects) in source order
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1011755">
+embeds
+</A><BR>
+
+<td><A NAME="1011757">
+Reflects a document's &lt;EMBED&gt; tags in source order
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1011759">
+forms
+</A><BR>
+
+<td><A NAME="1011761">
+Reflects a document's &lt;FORM&gt; tags in source order
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1011763">
+frames
+</A><BR>
+
+<td><A NAME="1011765">
+Reflects all the &lt;FRAME&gt; tags in a window containing a 
+&lt;FRAMESET&gt; tag in source order
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1011767">
+history
+</A><BR>
+
+<td><A NAME="1011769">
+Reflects a window's history entries
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1011771">
+images
+</A><BR>
+
+<td><A NAME="1011773">
+Reflects a document's &lt;IMG&gt; tags in source order (images 
+created with the Image() constructor are not included in the 
+<I>images</I> array)
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1011775">
+links
+</A><BR>
+
+<td><A NAME="1011777">
+Reflects a document's &lt;AREA HREF="..."&gt; tags, &lt;A HREF=""&gt; 
+tags, and <I>Link</I> objects created with the <B>link</B> method in source 
+order
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1011779">
+mimeTypes
+</A><BR>
+
+<td><A NAME="1011781">
+Reflects all the MIME types supported by the client (either 
+internally, via helper applications, or by plug-ins)
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1011783">
+options
+</A><BR>
+
+<td><A NAME="1011785">
+Reflects all the options in a Select object (&lt;OPTION&gt; tags) in 
+source order
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1011787">
+plugins
+</A><BR>
+
+<td><A NAME="1011789">
+Reflects all the plug-ins installed on the client in source order
+</A><BR>
+
+
+
+
+</TABLE>
+
+<TABLE>
+<TR><TD>
+</TABLE>
+
+
+<P></A>
+<A NAME="1011792">
+In Navigator 2.0, you must index arrays by their ordinal number, for example <code>document.forms[0]</code>. In Navigator 3.0, you can index arrays by either their ordinal number or their name (if defined). For example, if the second &lt;FORM&gt; tag in a document has a NAME attribute of "myForm", you can refer to the form as <code>document.forms[1]</code> or <code>document.forms["myForm"]</code> or <code>document.myForm</code>.<P></A>
+<A NAME="1009991">
+For example, suppose the following form element is defined:<P></A>
+<A NAME="1010002">
+<PRE>&lt;INPUT TYPE="text" NAME="String|Comments"&gt;</PRE>
+</A>
+<A NAME="1010013">
+If you need to refer to this form element by name, you can specify <code>document.forms["String|Comments"]</code>.<P></A>

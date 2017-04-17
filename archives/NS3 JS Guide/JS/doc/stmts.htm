@@ -1,0 +1,879 @@
+<BODY BGCOLOR="#FFFFFF">
+<A NAME="1005814">
+<P>
+</A><A NAME="1005816">
+<P>
+</A><A NAME="1003191">
+<H1>Statements
+</H1>
+</A>
+
+<A NAME="1007251">
+
+<img src="graphics/stmtsa.gif">
+
+avaScript statements consist of keywords used with the appropriate syntax. A single statement may span multiple lines. Multiple statements may occur on a single line if each statement is separated by a semi-colon.<P></A>
+<A NAME="1004756">
+<B>Syntax conventions</B>: All keywords in syntax statements are in bold. Words in italics represent user-defined names or statements. Any portions enclosed in square brackets, [ ], are optional. <code>{statements}</code> indicates a block of statements, which can consist of a single statement or multiple statements delimited by a curly braces {}.<P></A>
+<A NAME="1004757">
+The following statements are available in JavaScript:
+
+<P><TABLE BORDER="2">
+<CAPTION></CAPTION>
+<tr align=left valign=top><td><A NAME="1005219">
+<a href="stmts.htm#1004780">break</a>
+</A><BR>
+<A NAME="1005220">
+<a href="stmts.htm#1004787">comment</a>
+</A><BR>
+<A NAME="1005221">
+<a href="stmts.htm#1005879">continue</a>
+</A><BR>
+<A NAME="1005222">
+<a href="stmts.htm#1004804">for</a>
+</A><BR>
+<A NAME="1005223">
+<a href="stmts.htm#1004815">for...in</a>
+</A><BR>
+<A NAME="1005224">
+<a href="stmts.htm#1004825">function</a>
+</A><BR>
+<A NAME="1005225">
+<a href="stmts.htm#1004833">if...else</a>
+</A><BR>
+
+<td><A NAME="1005227">
+<a href="stmts.htm#1004841">new</a> (operator)
+</A><BR>
+<A NAME="1005228">
+<a href="stmts.htm#1004871">return</a>
+</A><BR>
+<A NAME="1005229">
+<a href="stmts.htm#1004878">this</a> (operator)
+</A><BR>
+<A NAME="1005230">
+<a href="stmts.htm#1004887">var</a>
+</A><BR>
+<A NAME="1005231">
+<a href="stmts.htm#1004896">while</a>
+</A><BR>
+<A NAME="1005232">
+<a href="stmts.htm#1004910">with</a>
+</A><BR>
+
+
+
+
+</TABLE>
+
+<TABLE>
+<TR><TD>
+</TABLE>
+
+
+<P></A>
+
+<a name="1004779">
+<B><blockquote>Note
+</blockquote></B>
+</a>
+
+<a name="1005389">
+<blockquote><B>new</B> and <B>this</B> are not statements, but are included in this section for convenience.
+</blockquote>
+</a>
+
+
+<!------------------------------>
+<HR>
+<A NAME="break
+"></A>
+<A NAME="1004780">
+<H1> break
+</H1>
+</A>
+
+<A NAME="1004781">
+A statement that terminates the current <B>while</B> or <B>for</B> loop and transfers program control to the statement following the terminated loop.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="1004782">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="1004783">
+<PRE><B>break</B></PRE>
+</A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="1008142">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="1008143">
+Navigator 2.0<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="1004784">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="1004785">
+The following function has a <B>break</B> statement that terminates the <B>while</B> loop when <I>i</I> is 3, and then returns the value 3 * <I>x</I>.<P></A>
+<A NAME="1004786">
+<PRE>function testBreak(x) {<br>&nbsp;&nbsp;&nbsp;var i = 0<br>&nbsp;&nbsp;&nbsp;while (i &lt; 6) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (i == 3)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i++<br>&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;return i*x<br>}</PRE>
+</A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="comment
+"></A>
+<A NAME="1004787">
+<H1> comment
+</H1>
+</A>
+
+<A NAME="1004788">
+Notations by the author to explain what a script does. Comments are ignored by the interpreter. JavaScript supports Java-style comments:<P></A>
+<ul><A NAME="1004789">
+<LI>Comments on a single line are preceded by a double-slash (//).
+</A><A NAME="1004790">
+<LI>Comments that span multiple lines are preceded by a /* and followed by a */.
+</A>
+</UL><A NAME="Syntax
+"></A>
+<A NAME="1004791">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="1004792">
+<PRE>1. // <I>comment text<br></I>2. /* <I>multiple line comment text </I>*/</PRE>
+</A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="1008162">
+<H3> Implemented in
+</H3>
+</A>
+
+</ul><A NAME="1008354">
+Navigator 2.0<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="1004793">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="1004794">
+<PRE>// This is a single-line comment.<br>/* This is a multiple-line comment. It can be of any length, and <br>you can put whatever you want here. */</PRE>
+</A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="continue
+"></A>
+<A NAME="1005879">
+<H1> continue
+</H1>
+</A>
+
+<A NAME="1005880">
+A statement that terminates execution of the block of statements in a <B>while</B> or <B>for</B> loop, and continues execution of the loop with the next iteration. In contrast to the <B>break</B> statement, <B>continue</B> does not terminate the execution of the loop entirely: instead,<P></A>
+<ul><A NAME="1004797">
+<LI>In a <B>while</B> loop, it jumps back to the <I>condition</I>.
+</A><A NAME="1004798">
+<LI>In a <B>for</B> loop, it jumps to the <I>update</I> expression.
+</A>
+</UL><A NAME="Syntax
+"></A>
+<A NAME="1004799">
+<H3> Syntax
+</H3>
+</A>
+
+</ul><A NAME="1004800">
+<B>continue</B><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="1008170">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="1008357">
+Navigator 2.0<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="1004801">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="1004802">
+The following example shows a <B>while</B> loop that has a <B>continue</B> statement that executes when the value of <I>i</I> is 3. Thus, <I>n</I> takes on the values 1, 3, 7, and 12.<P></A>
+<A NAME="1004803">
+<PRE>i = 0<br>n = 0<br>while (i &lt; 5) {<br>&nbsp;&nbsp;&nbsp;i++<br>&nbsp;&nbsp;&nbsp;if (i == 3)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;continue<br>&nbsp;&nbsp;&nbsp;n += i<br>}</PRE>
+</A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="for
+"></A>
+<A NAME="1004804">
+<H1> for
+</H1>
+</A>
+
+<A NAME="1004805">
+A statement that creates a loop that consists of three optional expressions, enclosed in parentheses and separated by semicolons, followed by a block of statements executed in the loop.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="1004806">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="1004807">
+<PRE>for ([<I>initial-expression</I>;] [<I>condition</I>;] [<I>increment-expression</I>]) {<br>&nbsp;&nbsp;&nbsp;<I>statements<br></I>}</PRE>
+</A>
+
+</UL><A NAME="Arguments
+"></A>
+<A NAME="1005639">
+<H3> Arguments
+</H3>
+</A>
+
+<A NAME="1004808">
+<I>initial-expression</I> is a statement or variable declaration. It is typically used to initialize a counter variable. This expression may optionally declare new variables with the <B>var</B> keyword.<P></A>
+<A NAME="1004809">
+<I>condition</I> is evaluated on each pass through the loop. If this condition evaluates to true, the statements in <I>statements</I> are performed. This conditional test is optional. If omitted, the condition always evaluates to true.<P></A>
+<A NAME="1004810">
+<I>increment-expression</I> is generally used to update or increment the counter variable.<P></A>
+<A NAME="1004811">
+<I>statements</I> is a block of statements that are executed as long as <I>condition</I> evaluates to true. This can be a single statement or multiple statements. Although not required, it is good practice to indent these statements from the beginning of the <B>for</B> statement.<P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="1008183">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="1008360">
+Navigator 2.0<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="1004812">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="1004813">
+The following <B>for</B> statement starts by declaring the variable <I>i</I> and initializing it to zero. It checks that <I>i</I> is less than nine, performs the two succeeding statements, and increments <I>i</I> by one after each pass through the loop.<P></A>
+<A NAME="1004814">
+<PRE>for (var i = 0; i &lt; 9; i++) {<br>&nbsp;&nbsp;&nbsp;n += i<br>&nbsp;&nbsp;&nbsp;myfunc(n)<br>}</PRE>
+</A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="for...in
+"></A>
+<A NAME="1004815">
+<H1> for...in
+</H1>
+</A>
+
+<A NAME="1004816">
+A statement that iterates a specified variable over all the properties of an object. For each distinct property, JavaScript executes the specified statements.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="1004817">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="1004818">
+<PRE><B>for</B> (<I>variable</I> <B>in</B> <I>object</I>) {<br>&nbsp;&nbsp;&nbsp;<I>statements</I> }</PRE>
+</A>
+
+</UL><A NAME="Arguments
+"></A>
+<A NAME="1005653">
+<H3> Arguments
+</H3>
+</A>
+
+<A NAME="1004819">
+<I>variable</I> is the variable to iterate over every property.<P></A>
+<A NAME="1004820">
+<I>object</I> is the object for which the properties are iterated.<P></A>
+<A NAME="1004821">
+<I>statements</I> specifies the statements to execute for each property.<P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="1008189">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="1008363">
+Navigator 2.0<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="1004822">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="1004823">
+The following function takes as its argument an object and the object's name. It then iterates over all the object's properties and returns a string that lists the property names and their values.<P></A>
+<A NAME="1004824">
+<PRE>function dump_props(obj, obj_name) {<br>&nbsp;&nbsp;&nbsp;var result = ""<br>&nbsp;&nbsp;&nbsp;for (var i in obj) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;result += obj_name + "." + i + " = " + obj[i] + "&lt;BR&gt;"<br>&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;result += "&lt;HR&gt;"<br>&nbsp;&nbsp;&nbsp;return result<br>}</PRE>
+</A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="function
+"></A>
+<A NAME="1004825">
+<H1> function
+</H1>
+</A>
+
+<A NAME="1004826">
+A statement that declares a JavaScript function <I>name</I> with the specified parameters <I>param</I>. Acceptable parameters include strings, numbers, and objects.<P></A>
+<A NAME="1004827">
+To return a value, the function must have a <B>return</B> statement that specifies the value to return. You cannot nest a function statement in another statement or in itself.<P></A>
+<A NAME="1004828">
+All parameters are passed to functions, <I>by value</I>. In other words, the value is passed to the function, but if the function changes the value of the parameter, this change is not reflected globally or in the calling function.<P></A>
+<A NAME="1007931">
+In addition to defining functions as described here, you can also define <I>Function</I> objects, as described in <a href="ref_f-g.htm#104993">"Function"</a>.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="1004829">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="1004830">
+<PRE><B>function</B> <I>name</I>([<I>param</I>] [, <I>param</I>] [..., <I>param</I>]) {<br>&nbsp;&nbsp;&nbsp;<I>statements </I>}</PRE>
+</A>
+
+</UL><A NAME="Arguments
+"></A>
+<A NAME="1007886">
+<H3> Arguments
+</H3>
+</A>
+
+<A NAME="1007887">
+<I>name</I> is the function name.<P></A>
+<A NAME="1007899">
+<I>param</I> is the name of an argument to be passed to the function. A function can have up to 255 arguments.<P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="1008195">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="1008366">
+Navigator 2.0<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="1004831">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="1004832">
+<PRE>//This function returns the total dollar amount of sales, when<br>//given the number of units sold of products a, b, and c.<br>function calc_sales(units_a, units_b, units_c) {<br>&nbsp;&nbsp;&nbsp;return units_a*79 + units_b*129 + units_c*699<br>}</PRE>
+</A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="if...else
+"></A>
+<A NAME="1004833">
+<H1> if...else
+</H1>
+</A>
+
+<A NAME="1004834">
+A statement that executes a set of statements if a specified condition is true. If the condition is false, another set of statements can be executed.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="1004835">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="1004836">
+<PRE><B>if</B> (<I>condition</I>) {<br>&nbsp;&nbsp;&nbsp;<I>statements1</I> }<br>[<B>else</B> {<br>&nbsp;&nbsp;&nbsp;<I>statements2</I>}]</PRE>
+</A>
+
+</UL><A NAME="Arguments
+"></A>
+<A NAME="1005661">
+<H3> Arguments
+</H3>
+</A>
+
+<A NAME="1004837">
+<I>condition</I> can be any JavaScript expression that evaluates to true or false. Parentheses are required around the condition. If <I>condition</I> evaluates to true, the statements in <I>statements1</I> are executed.<P></A>
+<A NAME="1004838">
+<I>statements1</I> and <I>statements2</I> can be any JavaScript statements, including further nested <B>if</B> statements. Multiple statements must be enclosed in braces.<P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="1008201">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="1008369">
+Navigator 2.0<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="1004839">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="1004840">
+<PRE>if ( cipher_char == from_char ) {<br>&nbsp;&nbsp;&nbsp;result = result + to_char<br>&nbsp;&nbsp;&nbsp;x++ }<br>else<br>&nbsp;&nbsp;&nbsp;result = result + clear_char</PRE>
+</A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="new
+"></A>
+<A NAME="1004841">
+<H1> new
+</H1>
+</A>
+
+<A NAME="1004842">
+An operator that lets you create an instance of a user-defined object type or of one of the built-in object types <I>Array, Boolean, Date, Function, Math, Number,</I> or <I>String.</I><P></A>
+<A NAME="1004843">
+Creating a user-defined object type requires two steps:<P></A>
+<ol>
+<a name="1004844">
+<li>Define the object type by writing a function.
+</a>
+
+<a name="1004845">
+<li>Create an instance of the object with <B>new</B>.
+</a>
+
+</ol>
+<A NAME="1004846">
+To define an object type, create a function for the object type that specifies its name, properties, and methods. An object can have a property that is itself another object. See the examples below.<P></A>
+<A NAME="1005416">
+You can always add a property to a previously defined object. For example, the statement <code>car1.color = "black"</code> adds a property <I>color</I> to <I>car1</I>, and assigns it a value of "black". However, this does not affect any other objects. To add the new property to all objects of the same type, you must add the property to the definition of the <I>car</I> object type.<P></A>
+<A NAME="1007936">
+You can add a property to a previously defined object type by using the <I>prototype</I> property. This defines a property that is shared by all objects of the specified type, rather than by just one instance of the object. The following code adds a <I>color</I> property to all objects of type <I>car</I>, and then assigns a value to the <I>color</I> property of the object <I>car1.</I> For more information, see <a href="ref_m-q.htm#178711">"prototype"</a>.<P></A>
+<A NAME="1007937">
+<PRE>Car.prototype.color=null<br>car1.color="black"<br>birthday.description="The day you were born"</PRE>
+</A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="1004848">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="1004849">
+<PRE><I>objectName</I> = <B>new</B> <I>objectType</I> ( <I>param1</I> [,<I>param2</I>] ...[,<I>paramN</I>] )</PRE>
+</A>
+
+</UL><A NAME="Arguments
+"></A>
+<A NAME="1005665">
+<H3> Arguments
+</H3>
+</A>
+
+<A NAME="1004850">
+<I>objectName</I> is the name of the new object instance.<P></A>
+<A NAME="1004851">
+<I>objectType</I> is the object type. It must be a function that defines an object type.<P></A>
+<A NAME="1004852">
+<I>param1...paramN</I> are the property values for the object. These properties are parameters defined for the <I>objectType</I> function.<P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="1008209">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="1008376">
+Navigator 2.0<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="1004853">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="1004854">
+<B>Example 1: object type and object instance.</B> Suppose you want to create an object type for cars. You want this type of object to be called <I>car</I>, and you want it to have properties for make, model, and year. To do this, you would write the following function:<P></A>
+<A NAME="1004855">
+<PRE>function car(make, model, year) {<br>&nbsp;&nbsp;&nbsp;this.make = make<br>&nbsp;&nbsp;&nbsp;this.model = model<br>&nbsp;&nbsp;&nbsp;this.year = year<br>}</PRE>
+</A>
+<A NAME="1004856">
+Now you can create an object called <I>mycar</I> as follows:<P></A>
+<A NAME="1004857">
+<PRE>mycar = new car("Eagle", "Talon TSi", 1993)</PRE>
+</A>
+<A NAME="1004858">
+This statement creates <I>mycar</I> and assigns it the specified values for its properties. Then the value of <I>mycar.make</I> is the string "Eagle", <I>mycar.year</I> is the integer 1993, and so on.<P></A>
+<A NAME="1004859">
+You can create any number of <I>car</I> objects by calls to <B>new</B>. For example,<P></A>
+<A NAME="1004860">
+<PRE>kenscar = new car("Nissan", "300ZX", 1992)</PRE>
+</A>
+<A NAME="1004861">
+<B>Example 2: object property that is itself another object.</B> Suppose you define an object called <I>person</I> as follows:<P></A>
+<A NAME="1004862">
+<PRE>function person(name, age, sex) {<br>&nbsp;&nbsp;&nbsp;this.name = name<br>&nbsp;&nbsp;&nbsp;this.age = age<br>&nbsp;&nbsp;&nbsp;this.sex = sex<br>}</PRE>
+</A>
+<A NAME="1004863">
+And then instantiate two new <I>person</I> objects as follows:<P></A>
+<A NAME="1004864">
+<PRE>rand = new person("Rand McNally", 33, "M")<br>ken = new person("Ken Jones", 39, "M")</PRE>
+</A>
+<A NAME="1004865">
+Then you can rewrite the definition of <I>car</I> to include an owner property that takes a <I>person</I> object, as follows:<P></A>
+<A NAME="1004866">
+<PRE>function car(make, model, year, owner) {<br>&nbsp;&nbsp;&nbsp;this.make = make; <br>&nbsp;&nbsp;&nbsp;this.model = model;<br>&nbsp;&nbsp;&nbsp;this.year = year;<br>&nbsp;&nbsp;&nbsp;this.owner = owner;<br>}</PRE>
+</A>
+<A NAME="1004867">
+To instantiate the new objects, you then use the following:<P></A>
+<A NAME="1004868">
+<PRE>car1 = new car("Eagle", "Talon TSi", 1993, rand);<br>car2 = new car("Nissan", "300ZX", 1992, ken)</PRE>
+</A>
+<A NAME="1004869">
+Instead of passing a literal string or integer value when creating the new objects, the above statements pass the objects <I>rand</I> and <I>ken</I> as the parameters for the owners. To find out the name of the owner of <I>car2</I>, you can access the following property:<P></A>
+<A NAME="1004870">
+<PRE>car2.owner.name</PRE>
+</A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="return
+"></A>
+<A NAME="1004871">
+<H1> return
+</H1>
+</A>
+
+<A NAME="1004872">
+A statement that specifies the value to be returned by a function.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="1005200">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="1005201">
+<PRE><B>return</B> <I>expression</I></PRE>
+</A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="1008244">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="1008379">
+Navigator 2.0<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="1005202">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="1005203">
+The following function returns the square of its argument, <I>x</I>, where <I>x</I> is a number.<P></A>
+<A NAME="1004877">
+<PRE>function square( x ) {<br>&nbsp;&nbsp;&nbsp;return x * x<br>}</PRE>
+</A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="this
+"></A>
+<A NAME="1004878">
+<H1> this
+</H1>
+</A>
+
+<A NAME="1004879">
+A keyword that you can use to refer to the current object. In general, in a method <B>this</B> refers to the calling object.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="1004880">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="1004881">
+<PRE><B>this</B>[.<I>propertyName</I>]</PRE>
+</A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="1008250">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="1008382">
+Navigator 2.0<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="1004882">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="1004883">
+Suppose a function called <I>validate</I> validates an object's value property, given the object and the high and low values:<P></A>
+<A NAME="1004884">
+<PRE>function validate(obj, lowval, hival) {<br>&nbsp;&nbsp;&nbsp;if ((obj.value &lt; lowval) || (obj.value &gt; hival))<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert("Invalid Value!")<br>}</PRE>
+</A>
+<A NAME="1004885">
+You could call <I>validate</I> in each form element's onChange event handler, using <B>this</B> to pass it the form element, as in the following example:<P></A>
+<A NAME="1004886">
+<PRE>&lt;B&gt;Enter a number between 18 and 99:&lt;/B&gt;<br>&lt;INPUT TYPE = "text" NAME = "age" SIZE = 3<br>&nbsp;&nbsp;&nbsp;onChange="validate(this, 18, 99)"&gt;</PRE>
+</A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="var
+"></A>
+<A NAME="1004887">
+<H1> var
+</H1>
+</A>
+
+<A NAME="1004888">
+A statement that declares a variable, optionally initializing it to a value. The scope of a variable is the current function or, for variables declared outside a function, the current application.<P></A>
+<A NAME="1004889">
+Using <B>var</B> outside a function is optional; you can declare a variable by simply assigning it a value. However, it is good style to use <B>var</B>, and it is necessary in functions if a global variable of the same name exists.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="1004890">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="1004891">
+<PRE><B>var</B> <I>varname</I> [= <I>value</I>] [..., <I>varname</I> [= <I>value</I>] ]</PRE>
+</A>
+
+</UL><A NAME="Arguments
+"></A>
+<A NAME="1005669">
+<H3> Arguments
+</H3>
+</A>
+
+<A NAME="1004892">
+<I>varname</I> is the variable name. It can be any legal identifier.<P></A>
+<A NAME="1004893">
+<I>value</I> is the initial value of the variable and can be any legal expression.<P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="1008317">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="1008385">
+Navigator 2.0<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="1004894">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="1004895">
+<PRE>var num_hits = 0, cust_no = 0</PRE>
+</A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="while
+"></A>
+<A NAME="1004896">
+<H1> while
+</H1>
+</A>
+
+<A NAME="1004897">
+A statement that creates a loop that evaluates an expression, and if it is true, executes a block of statements. The loop then repeats, as long as the specified condition is true.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="1004898">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="1004899">
+<PRE><B>while</B> (<I>condition</I>) {<br>&nbsp;&nbsp;&nbsp;<I>statements<br></I>}</PRE>
+</A>
+
+</UL><A NAME="Arguments
+"></A>
+<A NAME="1005673">
+<H3> Arguments
+</H3>
+</A>
+
+<A NAME="1004900">
+<I>condition</I> is evaluated before each pass through the loop. If this condition evaluates to true, the statements in the succeeding block are performed. When <I>condition</I> evaluates to false, execution continues with the statement following <I>statements</I>.<P></A>
+<A NAME="1004901">
+<I>statements</I> is a block of statements that are executed as long as the <I>condition</I> evaluates to true. Although not required, it is good practice to indent these statements from the beginning of the <B>while</B> statement.<P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="1008322">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="1008388">
+Navigator 2.0<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="1004902">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="1004903">
+The following <B>while</B> loop iterates as long as <I>n</I> is less than three.<P></A>
+<A NAME="1004904">
+<PRE>n = 0<br>x = 0<br>while( n &lt; 3 ) {<br>&nbsp;&nbsp;&nbsp;n ++<br>&nbsp;&nbsp;&nbsp;x += n<br>}</PRE>
+</A>
+<A NAME="1004905">
+Each iteration, the loop increments <I>n</I> and adds it to <I>x</I>. Therefore, <I>x</I> and <I>n</I> take on the following values:<P></A>
+<ul><A NAME="1004906">
+<LI>After the first pass: n = 1 and x = 1
+</A><A NAME="1004907">
+<LI>After the second pass: n = 2 and x = 3
+</A><A NAME="1004908">
+<LI>After the third pass: n = 3 and x = 6
+</A></ul><A NAME="1004909">
+After completing the third pass, the condition <code>n &lt; 3</code> is no longer true, so the loop terminates.<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="with
+"></A>
+<A NAME="1004910">
+<H1> with
+</H1>
+</A>
+
+<A NAME="1004911">
+A statement that establishes the default object for a set of statements. Within the set of statements, any property references that do not specify an object are assumed to be for the default object.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="1004912">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="1004913">
+<PRE><B>with</B> <I>(object)</I>{<br>&nbsp;&nbsp;&nbsp;<I>statements<br></I>}</PRE>
+</A>
+
+</UL><A NAME="Arguments
+"></A>
+<A NAME="1005677">
+<H3> Arguments
+</H3>
+</A>
+
+<A NAME="1004914">
+<I>object</I> specifies the default object to use for the <I>statements</I>. The parentheses around <I>object</I> are required.<P></A>
+<A NAME="1004915">
+<I>statements</I> is any block of statements.<P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="1008328">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="1008399">
+Navigator 2.0<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="1004916">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="1004917">
+The following <B>with</B> statement specifies that the Math object is the default object. The statements following the <B>with</B> statement refer to the PI property and the cos and sin methods, without specifying an object. JavaScript assumes the Math object for these references.<P></A>
+<A NAME="1004918">
+<PRE>var a, x, y<br>var r=10<br>with (Math) {<br>&nbsp;&nbsp;&nbsp;a = PI * r * r<br>&nbsp;&nbsp;&nbsp;x = r * cos(PI)<br>&nbsp;&nbsp;&nbsp;y = r * sin(PI/2)<br>}</PRE>
+</A>

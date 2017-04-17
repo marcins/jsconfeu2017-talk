@@ -1,0 +1,75 @@
+<HTML>
+<HEAD>
+<TITLE>Welcome to Nikki's Diner</TITLE>
+
+<STYLE TYPE="text/javascript">
+    tags.P.marginLeft = 50;
+    classes.plainPara.P.marginLeft=0;
+</STYLE>
+
+
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF">
+<HR>
+<H1 align = "center">Welcome to Nikki's Diner!</H1>
+<HR>
+
+<DIV CLASS=plainPara>
+<P>Nikki's Diner is the best place for vegan food in Netscapeville.
+</P>
+
+<P>You can find us at the corner of Communicator Street and Navigator Way. We're open from 10 am to 6 pm every day. We don't take reservations, so just come on down. We guarantee that after you visit us once, you'll be back on a regular basis!</P>
+
+<P>We have an extensive regular menu of tasty meals in addition to our daily specials.</P>
+
+<P>You can use the following menu (no pun intended) to view the Specials for any day this week. Our specials change every week.</P>
+
+</DIV>
+<!-- let the top of the form layer fall in the natural position-->
+<ILAYER LEFT=50 >
+<P CLASS=plainPara> Please select a day of the week:</P>
+
+    <FORM NAME=form1>
+
+     <SELECT name=menu1 onChange="showSpecials(this.selectedIndex); return false;">
+        <OPTION >Saturday
+        <OPTION >Sunday
+        <OPTION >Monday
+        <OPTION >Tuesday
+        <OPTION >Wednesday
+        <OPTION >Thursday
+        <OPTION >Friday
+     </SELECT>
+   </FORM>
+</ILAYER>
+
+<LAYER NAME="menu" LEFT=50
+
+   WIDTH=400
+   BGCOLOR="BBFFBB" src="specials/sat.htm">
+
+</LAYER>
+
+
+<SCRIPT>
+function showSpecials(n) {
+ var specials = document.menu;
+ switch (n) {
+  case 0: specials.src = "specials/sat.htm"; break;
+  case 1: specials.src = "specials/sun.htm"; break;
+  case 2: specials.src = "specials/mon.htm"; break;
+  case 3: specials.src = "specials/tues.htm"; break;
+  case 4: specials.src = "specials/wed.htm"; break;
+  case 5: specials.src = "specials/thurs.htm"; break;
+  default: specials.src = "specials/fri.htm";
+  }
+}
+
+
+</SCRIPT>
+
+</BODY>
+</HTML>
+
+

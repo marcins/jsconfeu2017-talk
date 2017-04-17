@@ -1,0 +1,632 @@
+<HTML>
+<BODY>
+
+<A NAME="Date_object"><H2>Date object</H2></A>
+<P>Lets you work with dates and times.
+
+<H3>Syntax</H3>
+<P>To create a Date object:
+<PRE>
+1. <I>dateObjectName</I> = new Date()
+2. <I>dateObjectName</I> = new Date("<I>month day</I>, <I>year hours</I>:<I>minutes</I>:<I>seconds</I>")
+3. <I>dateObjectName</I> = new Date(<I>year</I>, <I>month</I>, <I>day</I>)
+4. <I>dateObjectName</I> = new Date(<I>year</I>, <I>month</I>, <I>day</I>, <I>hours</I>, <I>minutes</I>, <I>seconds</I>)
+</PRE>
+<I>dateObjectName</I> is either the name of a new object or a property of an existing object.
+<BR><I>month, day, year, hours, minutes, and seconds</I> are string values for form 2 of the syntax. For forms 3 and 4, they are integer values.
+
+<P>To use Date methods:
+<PRE>
+<I>dateObjectName.methodName(parameters)</I>
+</PRE>
+<I>dateObjectName</I> is either the name of an existing Date object or a property of an existing object..
+<BR><I>methodName</I> is one of the methods listed below.
+
+<P>Exceptions: The Date object's parse and UTC methods are static methods that you use as follows:
+<PRE>
+Date.UTC(<I>parameters</I>)
+Date.parse(<I>parameters</I>)
+</PRE>
+
+
+<H3>Property of</H3>
+<LI>None.
+
+
+<H3>Description</H3>
+<P>The Date object is a built-in JavaScript object.
+
+<P>Form 1 of the syntax creates today's date and time. If you omit hours, minutes, or seconds from form 2 or 4 of the syntax, the value will be set to zero.
+
+<P>The way JavaScript handles dates is very similar to the way Java handles dates: both languages have many of the same date methods, and both store dates internally as the number of milliseconds since January 1, 1970 00:00:00. Dates prior to 1970 are not allowed.
+
+
+<H3>Properties</H3>
+<LI>None.
+
+
+<H3>Methods</H3>
+<LI><A HREF=ref_f-g.html#getDate_method>getDate</A>
+<LI><A HREF=ref_f-g.html#getDay_method>getDay</A>
+<LI><A HREF=ref_f-g.html#getHours_method>getHours</A>
+<LI><A HREF=ref_f-g.html#getMinutes_method>getMinutes</A>
+<LI><A HREF=ref_f-g.html#getMonth_method>getMonth</A>
+<LI><A HREF=ref_f-g.html#getSeconds_method>getSeconds</A>
+<LI><A HREF=ref_f-g.html#getTime_method>getTime</A>
+<LI><A HREF=ref_f-g.html#getTimezoneOffset_method>getTimezoneOffset</A>
+<LI><A HREF=ref_f-g.html#getYear_method>getYear</A>
+<LI><A HREF=ref_m-q.html#parse_method>parse</A>
+<LI><A HREF=ref_s-s.html#setDate_method>setDate</A>
+<LI><A HREF=ref_s-s.html#setHours_method>setHours</A>
+<LI><A HREF=ref_s-s.html#setMinutes_method>setMinutes</A>
+<LI><A HREF=ref_s-s.html#setMonth_method>setMonth</A>
+<LI><A HREF=ref_s-s.html#setSeconds_method>setSeconds</A>
+<LI><A HREF=ref_s-s.html#setTime_method>setTime</A>
+<LI><A HREF=ref_s-s.html#setYear_method>setYear</A>
+<LI><A HREF=ref_t-z.html#toGMTString_method>toGMTString</A>
+<LI><A HREF=ref_t-z.html#toLocaleString_method>toLocaleString</A>
+<LI><A HREF=ref_t-z.html#UTC_method>UTC</A>
+
+
+<H3>Event handlers</H3>
+<LI>None. Built-in objects do not have event handlers.
+
+
+<H3>Examples</H3>
+<P>
+<XMP>today = new Date()
+birthday = new Date("December 17, 1995 03:24:00")
+birthday = new Date(95,12,17)
+birthday = new Date(95,12,17,3,24,0)
+</XMP>
+
+
+<!------------------------------------------------------------------------------------------------->
+<HR>
+<A NAME="defaultChecked_property"><H2>defaultChecked property</H2></A>
+<P>
+A Boolean value indicating the default selection state of a checkbox or radio button.
+
+<H3>Syntax</H3>
+<PRE>
+1. <I>checkboxName</I>.defaultChecked
+2. <I>radioName</I>[<I>index</I>].defaultChecked
+</PRE>
+<P><I>checkboxName</I> is either the value of the NAME attribute of a checkbox object or an element in the <I>elements</I> array.
+<BR><I>radioName</I> is the value of the NAME attribute of a radio object.
+<BR><I>index</I> is an integer representing a radio button in a radio object.
+
+<H3>Property of</H3>
+<P><A HREF=ref_a-c.html#checkbox_object>checkbox</A>, <A HREF=ref_r-r.html#radio_object>radio</A>
+
+<H3>Description</H3>
+<P>If an checkbox or radio button is selected by default, the value of the defaultChecked property is true; otherwise, it is false. defaultChecked initially reflects whether the CHECKED attribute is used within an &ltINPUT&gt tag; however, setting defaultChecked overrides the CHECKED attribute.
+
+<P>You can set the defaultChecked property at any time. The display of the checkbox or radio button does not update when you set the defaultChecked property, only when you set the checked property.
+
+<H3>Examples</H3>
+<P>The following example resets an array of radio buttons called <I>musicType</I> on the <I>musicForm</I> form to the default selection state.
+
+<PRE>
+function radioResetter() {
+   var i=""
+   for (i in document.musicForm.musicType) {
+      if (document.musicForm.musicType[i].defaultChecked==true) {
+         document.musicForm.musicType[i].checked=true
+      }
+   }
+}
+</PRE>
+
+<H3>See also</H3>
+<LI><A HREF=ref_a-c.html#checked_property>checked</A> property
+<!------------------------------------------------------------------------------------------------->
+<HR>
+<A NAME="defaultSelected_property"><H2>defaultSelected property</H2></A>
+<P>
+A Boolean value indicating the default selection state of an option in a select object.
+
+<H3>Syntax</H3>
+<PRE><I>selectName</I>.options[<I>index</I>].defaultSelected</PRE>
+<P><I>selectName</I> is either the value of the NAME attribute of a select object or an element in the <I>elements</I> array.
+<BR><I>index</I> is an integer representing an option in a select object.
+
+<H3>Property of</H3>
+<P><A HREF=ref_s-s.html#select_object>options</A> array
+
+<H3>Description</H3>
+<P>If an option in a select object is selected by default, the value of the defaultSelected property is true; otherwise, it is false. defaultSelected initially reflects whether the SELECTED attribute is used within an &ltOPTION&gt tag; however, setting defaultSelected overrides the SELECTED attribute.
+
+<P>You can set the defaultSelected property at any time. The display of the select object does not update when you set the defaultSelected property, only when you set the selected or selectedIndex properties.
+
+<P>A select object created without the MULTIPLE attribute can have only one option selected by default. When you set defaultSelected in such an object, any previous default selections, including defaults set with the SELECTED attribute, are cleared. If you set defaultSelected in a select object created with the MULTIPLE attribute, previous default selections are not affected.
+
+<H3>Examples</H3>
+<P>In the following example, the <I>restoreDefault()</I> function returns the <I>musicType</I> select object to its default state. The <B>for</B> loop uses the options array to evaluate every option in the select object. The <B>if</B> statement sets the selected property if defaultSelected is true.
+<PRE>
+function restoreDefault() {
+   for (var i = 0; i < document.musicForm.musicType.length; i++) {
+      if (document.musicForm.musicType.options[i].defaultSelected == true) {
+         document.musicForm.musicType.options[i].selected=true
+      }
+   }
+}
+</PRE>
+The previous example assumes that the select object is similar to the following:
+<PRE>
+&ltSELECT NAME="musicType"&gt 
+   &ltOPTION SELECTED&gt R&B
+   &ltOPTION&gt Jazz
+   &ltOPTION&gt Blues
+   &ltOPTION&gt New Age
+&lt/SELECT&gt
+</PRE>
+
+<H3>See also</H3>
+<LI><A HREF=ref_h-l.html#index_property>index</A>, <A HREF=ref_s-s.html#selected_property>selected</A>, <A HREF=ref_s-s.html#selectedIndex_property>selectedIndex</A> properties
+<!------------------------------------------------------------------------------------------------->
+<HR>
+<A NAME="defaultStatus_property"><H2>defaultStatus property</H2></A>
+<P>
+The default message displayed in the status bar at the bottom of the window.
+
+<H3>Syntax</H3>
+<PRE><I>windowReference</I>.defaultStatus</PRE>
+<P><I>windowReference</I> is a valid way of referring to a window, as described in the <A HREF=ref_t-z.html#window_object>window</A> object.
+
+<H3>Property of</H3>
+<P><A HREF=ref_t-z.html#window_object>window</A>
+
+<H3>Description</H3>
+<P>The defaultStatus message appears when nothing else is in the status bar. Do not confuse the defaultStatus property with the status property. The status property reflects a priority or transient message in the status bar, such as the message that appears when a mouseOver event occurs over an anchor.
+
+<P>You can set the defaultStatus property at any time. You must return true if you want to set the defaultStatus property in the onMouseOver event handler.
+
+
+<H3>Examples</H3>
+<P>In the following example, the <I>statusSetter()</I> function sets both the status and defaultStatus properties in an onMouseOver event handler:
+
+<PRE>
+function statusSetter() {
+   window.defaultStatus = "Click the link for the Netscape home page"
+   window.status = "Netscape home page"
+}
+
+&ltA HREF="http://www.netscape.com"
+   onMouseOver = "statusSetter(); return true"&gtNetscape&lt/A&gt
+</PRE>
+
+In the previous example, notice that the onMouseOver event handler returns a value of true. You must return true to set status or defaultStatus in an event handler.
+
+<H3>See also</H3>
+<LI><A HREF=ref_s-s.html#status_property>status</A> property
+<!------------------------------------------------------------------------------------------------->
+<HR>
+<A NAME="defaultValue_property"><H2>defaultValue property</H2></A>
+<P>
+A string indicating the default value of a password, text, or textarea object.
+
+<H3>Syntax</H3>
+<PRE>
+1. <I>passwordName</I>.defaultValue
+2. <I>textName</I>.defaultValue
+3. <I>textareaName</I>.defaultValue
+</PRE>
+<P><I>passwordName</I> is either the value of the NAME attribute of a password object or an element in the <I>elements</I> array.
+<BR><I>textName</I> is either the value of the NAME attribute of a text object or an element in the <I>elements</I> array.
+<BR><I>textareaName</I> is either the value of the NAME attribute of a textarea object or an element in the <I>elements</I> array.
+
+<H3>Property of</H3>
+<P><A HREF=ref_m-q.html#password_object>password</A>, <A HREF=ref_t-z.html#text_object>text</A>, <A HREF=ref_t-z.html#textarea_object>textarea</A>
+
+<H3>Description</H3>
+<P>The initial value of defaultValue differs for each object:
+<LI>For text objects, it initially reflects the value of the VALUE attribute.
+<LI>For textarea objects, it initially reflects the value specified between the &ltTEXTAREA&gt and &lt/TEXTAREA&gt tags.
+<LI>For password objects, it initially is null (for security reasons), regardless of the value of the VALUE attribute.
+
+<P>Setting defaultValue programatically overrides the initial setting. If you programatically set defaultValue for the password object and then evaluate it, JavaScript returns the current value.
+
+<P>You can set the defaultValue property at any time. The display of the related object does not update when you set the defaultValue property, only when you set the value property.
+
+<H3>Examples</H3>
+<P>The following function evaluates the defaultValue property of objects on the <I>surfCity</I> form and displays the values in the <I>msgWindow</I> window:
+<PRE>
+function defaultGetter() {
+   msgWindow=window.open("")
+   msgWindow.document.write("hidden.defaultValue is " +
+      document.surfCity.hiddenObj.defaultValue + "&ltBR&gt")
+   msgWindow.document.write("password.defaultValue is " +
+      document.surfCity.passwordObj.defaultValue + "&ltBR&gt")
+   msgWindow.document.write("text.defaultValue is " +
+      document.surfCity.textObj.defaultValue + "&ltBR&gt")
+   msgWindow.document.write("textarea.defaultValue is " +
+      document.surfCity.textareaObj.defaultValue + "&ltBR&gt")
+   msgWindow.document.close()
+}
+</PRE>
+
+<H3>See also</H3>
+<LI><A HREF=ref_t-z.html#value_property>value</A> property
+<!------------------------------------------------------------------------------------------------->
+<HR>
+<A NAME="document_object"><H2>document object</H2> </A>
+<P>Contains information on the current document, and provides methods for displaying HTML output to the user.
+
+
+<H3>Syntax</H3>
+<P>To define a document object, use standard HTML syntax:
+<PRE>
+&LTBODY
+   BACKGROUND="<I>backgroundImage</I>"
+   BGCOLOR="<I>backgroundColor</I>"
+   TEXT="<I>foregroundColor</I>"
+   LINK="<I>unfollowedLinkColor</I>"
+   ALINK="<I>activatedLinkColor</I>"
+   VLINK="<I>followedLinkColor</I>"
+   [onLoad="<I>handlerText</I>"]
+   [onUnload="<I>handlerText</I>"]&GT
+&LT/BODY&GT
+</PRE>
+<I>BACKGROUND</I> specifies an image that fills the background of the document.
+<BR><I>BGCOLOR</I>, <I>TEXT</I>, <I>LINK</I>, <I>ALINK</I>, and <I>VLINK</I> are color specifications expressed as a hexadecimal RGB triplet (in the format "rrggbb" or "#rrggbb") or as one of the string literals listed in <A HREF=colors.html>Color Values</A>.
+
+<P>To use a document object's properties and methods:
+<PRE>
+1. document.<I>propertyName</I>
+2. document.<I>methodName</I>(<I>parameters</I>)
+</PRE>
+<I>propertyName</I> is one of the properties listed below.
+<BR><I>methodName</I> is one of the methods listed below.
+
+
+<H3>Property of</H3>
+<LI><A HREF=ref_t-z.html#window_object>window</A>
+
+
+<H3>Description</H3>
+<P>An HTML document consists of a &LTHEAD&GT and &LTBODY&GT tag. The &LTHEAD&GT includes information on the document's title and base (the absolute URL base to be used for relative URL links in the document). The &LTBODY&GT tag encloses the body of a document, which is defined by the current URL. The entire body of the document (all other HTML elements for the document) goes within the &LTBODY&GT tag.
+
+<P>You can load a new document by using the <A HREF=ref_h-l.html#location_object>location</A> object.
+
+<P>You can reference the anchors, forms, and links of a document by using the <I>anchors, forms,</I> and <I>links</I> arrays. These arrays contain an entry for each anchor, form, or link in a document.
+
+
+<H3>Properties</H3>
+<LI><A HREF=ref_a-c.html#alinkColor_property>alinkColor</A> reflects the ALINK attribute
+<LI><A HREF=ref_a-c.html#anchor_object>anchors</A> is an array reflecting all the anchors in a document
+<LI><A HREF=ref_a-c.html#bgColor_property>bgColor</A> reflects the BGCOLOR attribute
+<LI><A HREF=ref_a-c.html#cookie_property>cookie</A> specifies a cookie
+<LI><A HREF=ref_f-g.html#fgColor_property>fgColor</A> reflects the TEXT attribute
+<LI><A HREF=ref_f-g.html#form_object>forms</A> is an array reflecting all the forms in a document
+<LI><A HREF=ref_h-l.html#lastModified_property>lastModified</A> reflects the date a document was last modified
+<LI><A HREF=ref_h-l.html#linkColor_property>linkColor</A> reflects the LINK attribute
+<LI><A HREF=ref_h-l.html#link_object>links</A> is an array reflecting all the links in a document
+<LI><A HREF=ref_h-l.html#location_property>location</A> reflects the complete URL of a document
+<LI><A HREF=ref_r-r.html#referrer_property>referrer</A> reflects the URL of the calling document
+<LI><A HREF=ref_t-z.html#title_property>title</A> reflects the contents of the &LTTITLE&GT tag
+<LI><A HREF=ref_t-z.html#vlinkColor_property>vlinkColor</A> reflects the VLINK attribute
+
+<P>The following objects are also properties of the document object:
+<LI><A HREF=ref_a-c.html#anchor_object>anchor</A>
+<LI><A HREF=ref_f-g.html#form_object>form</A>
+<LI><A HREF=ref_h-l.html#history_object>history</A>
+<LI><A HREF=ref_h-l.html#link_object>link</A>
+
+
+<H3>Methods</H3>
+<LI><A HREF=ref_a-c.html#clear_method>clear</A>
+<LI><A HREF=ref_a-c.html#close_document_method>close</A>
+<LI><A HREF=ref_m-q.html#open_document_method>open</A>
+<LI><A HREF=ref_t-z.html#write_method>write</A>
+<LI><A HREF=ref_t-z.html#writeln_method>writeln</A>
+
+
+<H3>Event handlers</H3>
+<LI>None. The onLoad and onUnload event handlers are specified in the &LTBODY&GT tag but are actually event handlers for the window object.
+
+
+<H3>Examples</H3>
+<P>The following example creates two frames, each with one document. The document in the first frame contains links to anchors in the document of the second frame. Each document defines its colors.
+
+<P>DOC0.HTML, which defines the frames, contains the following code:
+<XMP>
+<HTML>
+<HEAD>
+<TITLE>Document object example</TITLE>
+</HEAD>
+<FRAMESET COLS="30%,70%">
+<FRAME SRC="doc1.html" NAME="frame1">
+<FRAME SRC="doc2.html" NAME="frame2">
+</FRAMESET>
+</HTML>
+</XMP>
+
+<P>DOC1.HTML, which defines the content for the first frame, contains the following code:
+<XMP>
+<HTML>
+<SCRIPT>
+</SCRIPT>
+<BODY
+   BGCOLOR="antiquewhite"
+   TEXT="darkviolet"
+   LINK="fuchsia"
+   ALINK="forestgreen"
+   VLINK="navy">
+<P><B>Some links</B>
+<LI><A HREF="doc2.html#numbers" TARGET="frame2">Numbers</A>
+<LI><A HREF="doc2.html#colors" TARGET="frame2">Colors</A>
+<LI><A HREF="doc2.html#musicTypes" TARGET="frame2">Music types</A>
+<LI><A HREF="doc2.html#countries" TARGET="frame2">Countries</A>
+</BODY>
+</HTML>
+</XMP>
+
+<P>DOC2.HTML, which defines the content for the second frame, contains the following code:
+<XMP>
+<HTML>
+<SCRIPT>
+</SCRIPT>
+<BODY
+   BGCOLOR="oldlace" onLoad="alert('Hello, World.')"
+   TEXT="navy">
+<P><A NAME="numbers"><B>Some numbers</B></A>
+<LI>one
+<LI>two
+<LI>three
+<LI>four
+<LI>five
+<LI>six
+<LI>seven
+<LI>eight
+<LI>nine
+<P><A NAME="colors"><B>Some colors</B></A>
+<LI>red
+<LI>orange
+<LI>yellow
+<LI>green
+<LI>blue
+<LI>purple
+<LI>brown
+<LI>black
+<P><A NAME="musicTypes"><B>Some music types</B></A>
+<LI>R&B
+<LI>Jazz
+<LI>Soul
+<LI>Reggae
+<LI>Rock
+<LI>Country
+<LI>Classical
+<LI>Opera
+<P><A NAME="countries"><B>Some countries</B></A>
+<LI>Afghanistan
+<LI>Brazil
+<LI>Canada
+<LI>Finland
+<LI>India
+<LI>Italy
+<LI>Japan
+<LI>Kenya
+<LI>Mexico
+<LI>Nigeria
+</BODY>
+</HTML>
+</XMP>
+
+
+<H3>See also</H3>
+<LI><A HREF=ref_f-g.html#frame_object>frame</A> and <A HREF=ref_t-z.html#window_object>window</A> objects
+
+
+<!------------------------------------------------------------------------------------------------->
+<HR>
+<A NAME="E_property"><H2>E property</H2></A>
+<P>
+Euler's constant and the base of natural logarithms, approximately 2.718.
+
+<H3>Syntax</H3>
+<PRE>Math.E</PRE>
+
+<H3>Property of</H3>
+<P><A HREF=ref_m-q.html#Math_object>Math</A>
+
+<H3>Description</H3>
+<P>Because E is a constant, it is a read-only property of Math.
+
+<H3>Examples</H3>
+<P>The following example displays Euler's constant:
+<PRE>document.write("Euler's constant is " + Math.E)</PRE>
+
+<H3>See also</H3>
+<LI><A HREF=ref_h-l.html#LN2_property>LN2</A>, <A HREF=ref_h-l.html#LN10_property>LN10</A>, <A HREF=ref_h-l.html#LOG2E_property>LOG2E</A>, <A HREF=ref_h-l.html#LOG10E_property>LOG10E</A>, <A HREF=ref_m-q.html#PI_property>PI</A>, <A HREF=ref_s-s.html#SQRT1_2_property>SQRT1_2</A>, <A HREF=ref_s-s.html#SQRT2_property>SQRT2</A> properties
+<!------------------------------------------------------------------------------------------------->
+<HR>
+<A NAME="elements_object"><H2><I>elements</I> array</H2> </A>
+<P>An array of objects corresponding to form elements (such as checkbox, radio, and text objects) in source order.
+
+<H3>Syntax</H3>
+<PRE>
+1. <I>formName</I>.elements[<I>index</I>]
+2. <I>formName</I>.elements.length
+</PRE>
+<P><I>formName</I> is either the name of a form or an element in the <I>forms</I> array.
+<BR><I>index</I> is an integer representing an object on a form.
+
+
+<H3>Property of</H3>
+<LI><A HREF=ref_f-g.html#form_object>form</A>
+
+
+<H3>Description</H3>
+<P>You can reference a form's elements in your code by using the <I>elements</I> array. This array contains an entry for each object (button, checkbox, hidden, password, radio, reset, select, submit, text, or textarea object) in a form in source order. For example, if a form has a text field and two checkboxes, these elements are reflected as <TT><I>formName</I>.elements[0]</TT>, <TT><I>formName</I>.elements[1]</TT>, and <TT><I>formName</I>.elements[2]</TT>.
+
+<P>Although you can also reference a form's elements by using the element's name (from the NAME attribute), the elements array provides a way to reference form objects programatically without using their names. For example, if the first object on the <I>userInfo</I> form is the <I>userName</I> text object, you can evaluate it in either of the following ways:
+<PRE>
+userInfo.userName.value
+userInfo.elements[0].value
+</PRE>
+
+<P>To obtain the number of elements on a form, use the length property: <TT><I>formName</I>.elements.length</TT>. Each radio button in a radio object appears as a separate element in the <I>elements</I> array.
+
+<P>Elements in the <I>elements</I> array are read-only. For example, the statement <TT><I>formName</I>.elements[0]="music"</TT> has no effect.
+
+<P>The value of each element in the <I>elements</I> array is the full HTML statement for the object.
+
+
+<H3>Properties</H3>
+<LI><A HREF=ref_h-l.html#length_property>length</A> reflects the number of elements on a form
+
+
+<H3>Examples</H3>
+<P>See the examples for the <A HREF=ref_m-q.html#name_property>name</A> property.
+
+
+<H3>See also</H3>
+<LI><A HREF=ref_f-g.html#form_object>form</A> object
+
+
+<!------------------------------------------------------------------------------------------------->
+<HR>
+<A NAME="elements_property"><H2>elements property</H2></A>
+<P>An array of objects corresponding to form elements (such as checkbox, radio, and text objects) in source order. See <A HREF=ref_d-e.html#elements_object><I>elements</I></A> array.
+
+<!------------------------------------------------------------------------------------------------->
+<HR>
+<A NAME="encoding_property"><H2>encoding property</H2></A>
+<P>
+A string specifying the MIME encoding of the form.
+
+<H3>Syntax</H3>
+<PRE><I>formName</I>.encoding</PRE>
+<P><I>formName</I> is either the name of a form or an element in the <I>forms</I> array.
+
+<H3>Property of</H3>
+<P><A HREF=ref_f-g.html#form_object>form</A>
+
+<H3>Description</H3>
+<P>The encoding property initially reflects the ENCTYPE attribute of the &ltFORM&gt tag; however, setting encoding overrides the ENCTYPE attribute.
+
+<P>You can set the encoding property at any time.
+
+<P>Certain values of the encoding property may require specific values for other form properties. See <A HREF="http://www.ics.uci.edu/pub/ietf/html/rfc1867.txt" TARGET="_top">RFC 1867</A> for more information.
+
+<H3>Examples</H3>
+<P>The following function returns the value of the <I>musicForm</I> encoding property:
+<PRE>
+function getEncoding() {
+   return document.musicForm.encoding
+}
+</PRE>
+
+<H3>See also</H3>
+<LI><A HREF=ref_a-c.html#action_property>action</A>, <A HREF=ref_m-q.html#method_property>method</A>, <A HREF=ref_t-z.html#target_property>target</A> properties
+
+<!------------------------------------------------------------------------------------------------->
+<HR>
+<A NAME="escape_method"><H2>escape function</H2></A>
+<P>
+Returns the ASCII encoding of an argument in the ISO Latin-1 character set.
+
+<H3>Syntax</H3>
+<PRE>escape("<I>string</I>")</PRE>
+<P><I>string</I> is a non-alphanumeric string in the ISO Latin-1 character set, or a property of an existing object.
+
+<H3>Description</H3>
+<P>The escape function is not a method associated with any object, but is part of the language itself.
+
+<P>The value returned by the escape function is a string of the form "%xx", where <I>xx</I> is the ASCII encoding of a character in the argument. If you pass the escape function an alphanumeric character, the escape function returns the same character.
+
+
+<H3>Examples</H3>
+<P>The following example returns "%26"
+<PRE>
+escape("&")
+</PRE>
+
+<P>The following example returns "%21%23"
+<PRE>
+escape("!#")
+</PRE>
+
+<H3>See also</H3>
+<LI><A HREF=ref_t-z.html#unescape_method>unescape</A> function
+
+<!------------------------------------------------------------------------------------------------>
+<HR>
+<A NAME="eval_method"> <H2>eval function</H2></A>
+<P>
+The eval function evaluates a string and returns a value.
+
+<H3>Syntax</H3>
+<PRE>eval(<I>string</I>)</PRE>
+<I>string</I> is any string representing a JavaScript expression, statement, or sequence of statements. The expression can include variables and properties of existing objects.
+
+<H3>Description</H3>
+<P>The eval function is a built-in JavaScript function. It is not a method associated with any object, but is part of the language itself.
+
+<P>The argument of the eval function is a string. Do not call eval to evaluate an arithmetic expression. JavaScript evaluates arithmetic expressions automatically. If the argument represents an expression, eval evaluates the expression. If the argument represents one or more JavaScript statements, eval performs the statements. 
+
+<P>If you construct an arithmetic expression as a string, you can use eval to evaluate it at a later time. For example, suppose you have a variable <I>x</I>. You can postpone evaluation of an expression involving <I>x</I> by assigning the string value of the expression, say <TT>"3&nbsp*&nbspx&nbsp+&nbsp2"</TT>, to a variable, and then calling eval at a later point in your script.
+
+<H3>Examples</H3>
+<P><B>Example 1.</B> Both of the write statements below display 42. The first evaluates the string "x + y + 1", and the second evaluates the string "42".
+
+<PRE>
+var x = 2
+var y = 39
+var z = "42"
+document.write(eval("x + y + 1"), "&ltBR&gt") 
+document.write(eval(z), "&ltBR&gt")
+</PRE>
+
+<P><B>Example 2.</B> In the following example, the <I>getFieldName(n)</I> function returns the name of the nth form element as a string. The first statement assigns the string value of the third form element to the variable <I>field</I>. The second statement uses eval to display the value of the form element.
+<PRE>
+var field = getFieldName(3) 
+document.write("The field named ", field, " has value of ", eval(field + ".value"))
+</PRE>
+
+<P><B>Example 3.</B> The following example uses eval to evaluate the string <I>str</I>. This string consists of JavaScript statements that opens an alert dialog box and assigns z a value of 42 if x is five, and assigns zero to z otherwise. When the second statement is executed, eval will cause these statements to be performed, and it will also evaluate the set of statements and return the value that is assigned to z.
+
+<PRE>
+var str = "if (x == 5) {alert('z is 42'); z = 42;} else z = 0; "
+document.write("&ltP&gtz is ", eval(str))
+</PRE>
+
+<P><B>Example 4.</B> In the following example, the <I>setValue()</I> function uses eval to assign the value of the variable <I>newValue</I> to the text field <I>textObject</I>.
+<PRE>
+function setValue (textObject, newValue) {
+  eval ("document.forms[0]." + textObject + ".value") = newValue
+}
+</PRE>
+
+<!------------------------------------------------------------------------------------------------>
+<HR>
+<A NAME="exp_method"><H2>exp method</H2></A>
+<P>
+Returns e<SUP><I>number</I></SUP>, where <I>number</I> is the argument, and <I>e</I> is Euler's constant, the base of the natural logarithms.
+
+<H3>Syntax</H3>
+<PRE>Math.exp(<I>number</I>)</PRE>
+<I>number</I> is any numeric expression or a property of an existing object.
+
+<H3>Method of</H3>
+<P><A HREF=ref_m-q.html#Math_object>Math</A>
+
+<H3>Examples</H3>
+<PRE>
+//Displays the value 2.718281828459045
+document.write("The value of e&ltSUP&gt1&lt/SUP&gt is " + Math.exp(1))
+</PRE>
+
+<H3>See also</H3>
+<LI><A HREF=ref_h-l.html#log_method>log</A>, <A HREF=ref_m-q.html#pow_method>pow</A> methods
+<!------------------------------------------------------------------------------------------------>
+<HR>
+
+<SCRIPT>
+document.write("<FONT SIZE=-2>Last modified " + document.lastModified)
+</SCRIPT>
+<P>
+</BODY>
+<HTML>
+

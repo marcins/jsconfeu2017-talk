@@ -1,0 +1,5368 @@
+<BODY BGCOLOR="#FFFFFF">
+<A HREF="ref_h-l.htm">[Previous reference file]</A>
+<!------------------------------>
+<HR>
+<A NAME="Math
+"></A>
+<A NAME="175987">
+<H1> Math
+</H1>
+</A>
+
+<A NAME="175989">
+Object. A built-in object that has properties and methods for mathematical constants and functions. For example, the <I>Math</I> object's <I>PI</I> property has the value of pi.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="175990">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="175991">
+To use a <I>Math</I> object:<P></A>
+<A NAME="175992">
+<PRE>1. Math.<I>propertyName<br></I>2. Math.<I>methodName</I>(<I>parameters</I>)</PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="175993">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="175994">
+<I>propertyName</I> is one of the properties listed below.<P></A>
+<A NAME="175995">
+<I>methodName</I> is one of the methods listed below.<P></A>
+
+</UL><A NAME="Property of
+"></A>
+<A NAME="175996">
+<H3> Property of
+</H3>
+</A>
+
+<A NAME="175997">
+None. The <I>Math</I> object is a top-level, built-in JavaScript object.<P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="175998">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="175999">
+Navigator 2.0<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="176000">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="176001">
+You reference the constant PI as <code>Math.PI</code>. Constants are defined with the full precision of real numbers in JavaScript. Similarly, you reference <I>Math</I> functions as methods. For example, the sine function is <code>Math.sin(argument)</code>, where <I>argument</I> is the argument.<P></A>
+<A NAME="176002">
+It is often convenient to use the <B>with</B> statement when a section of code uses several <I>Math</I> constants and methods, so you don't have to type "Math" repeatedly. For example,<P></A>
+<A NAME="176003">
+<PRE>with (Math) {<br>&nbsp;&nbsp;&nbsp;a = PI * r*r<br>&nbsp;&nbsp;&nbsp;y = r*sin(theta)<br>&nbsp;&nbsp;&nbsp;x = r*cos(theta)<br>}</PRE>
+</A>
+
+</UL><A NAME="Properties
+"></A>
+<A NAME="176004">
+<H3> Properties
+</H3>
+</A>
+
+<A NAME="176040">
+The <I>Math</I> object has the following properties:
+
+<P><TABLE BORDER="2">
+<tr align=left valign=top><td><A NAME="176010">
+<LI><a href="ref_d-e.htm#48461">E</a>
+</A><A NAME="176014">
+<LI><a href="ref_h-l.htm#768">LN2</a>
+</A><A NAME="176018">
+<LI><a href="ref_h-l.htm#794">LN10</a>
+</A><A NAME="176022">
+<LI><a href="ref_h-l.htm#1042">LOG2E</a>
+</A>
+<td><A NAME="176027">
+<LI><a href="ref_h-l.htm#1068">LOG10E</a>
+</A><A NAME="176031">
+<LI><a href="ref_m-q.htm#178032">PI</a>
+</A><A NAME="176035">
+<LI><a href="ref_s-s.htm#754">SQRT1_2</a>
+</A><A NAME="176039">
+<LI><a href="ref_s-s.htm#780">SQRT2</a>
+</A>
+
+
+
+</TABLE>
+
+<TABLE>
+<TR><TD>
+</TABLE>
+
+
+<P></A>
+
+</UL><A NAME="Methods
+"></A>
+<A NAME="176041">
+<H3> Methods
+</H3>
+</A>
+
+<A NAME="176125">
+The <I>Math</I> object has the following methods:
+
+<P><TABLE BORDER="2">
+<CAPTION></CAPTION>
+<tr align=left valign=top><td><A NAME="176047">
+<LI><a href="ref_a-c.htm#45090">abs</a>
+</A><A NAME="176051">
+<LI><a href="ref_a-c.htm#42437">acos</a>
+</A><A NAME="176055">
+<LI><a href="ref_a-c.htm#42868">asin</a>
+</A><A NAME="176059">
+<LI><a href="ref_a-c.htm#42905">atan</a>
+</A><A NAME="176063">
+<LI><a href="ref_a-c.htm#76855">atan2</a>
+</A><A NAME="176067">
+<LI><a href="ref_a-c.htm#43425">ceil</a>
+</A><A NAME="176071">
+<LI><a href="ref_a-c.htm#44122">cos</a>
+</A>
+<td><A NAME="215797">
+<LI><a href="ref_d-e.htm#573">eval</a>
+</A><A NAME="215801">
+<LI><a href="ref_d-e.htm#3128">exp</a>
+</A><A NAME="215805">
+<LI><a href="ref_f-g.htm#164">floor</a>
+</A><A NAME="176088">
+<LI><a href="ref_h-l.htm#1016">log</a>
+</A><A NAME="215810">
+<LI><a href="ref_m-q.htm#176132">max</a>
+</A><A NAME="176092">
+<LI><a href="ref_m-q.htm#176506">min</a>
+</A><A NAME="176096">
+<LI><a href="ref_m-q.htm#178449">pow</a>
+</A>
+<td><A NAME="215722">
+<LI><a href="ref_r-r.htm#194">random</a>
+</A><A NAME="215726">
+<LI><a href="ref_r-r.htm#308">round</a>
+</A><A NAME="215730">
+<LI><a href="ref_s-s.htm#674">sin</a>
+</A><A NAME="215734">
+<LI><a href="ref_s-s.htm#16857">sqrt</a>
+</A><A NAME="215738">
+<LI><a href="ref_t-z.htm#94180">tan</a>
+</A><A NAME="215742">
+<LI><a href="ref_t-z.htm#70978">toString</a>
+</A><A NAME="215707">
+<LI><a href="ref_t-z.htm#91188">valueOf</a>
+</A>
+
+
+
+</TABLE>
+
+<TABLE>
+<TR><TD>
+</TABLE>
+
+
+<P></A>
+
+</UL><A NAME="Event handlers
+"></A>
+<A NAME="176126">
+<H3> Event handlers
+</H3>
+</A>
+
+<A NAME="176127">
+None.<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="176128">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="176129">
+See the examples for the individual properties and methods.<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="max
+"></A>
+<A NAME="176132">
+<H1> max
+</H1>
+</A>
+
+<A NAME="176134">
+Method. Returns the greater of two numbers.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="176135">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="176136">
+<PRE>Math.max(<I>number1, number2</I>)</PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="176137">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="176138">
+<I>number1</I> and <I>number2</I> are any numeric arguments or the properties of existing objects.<P></A>
+
+</UL><A NAME="Method of
+"></A>
+<A NAME="176139">
+<H3> Method of
+</H3>
+</A>
+
+<A NAME="176143">
+<a href="ref_m-q.htm#175987">Math</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="176144">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="176145">
+Navigator 2.0<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="176146">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="176147">
+The following function evaluates the variables <I>x </I>and <I>y:</I><P></A>
+<A NAME="176148">
+<PRE>function getMax(x,y) {<br>&nbsp;&nbsp;&nbsp;return Math.max(x,y)<br>}</PRE>
+</A>
+<A NAME="176149">
+If you pass <B>getMax</B> the values 10 and 20, it returns 20; if you pass it the values -10 and -20, it returns -10.<P></A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="176150">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="176154">
+<a href="ref_m-q.htm#176506">min</a> method<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="MAX_VALUE
+"></A>
+<A NAME="176157">
+<H1> MAX_VALUE
+</H1>
+</A>
+
+<A NAME="176159">
+Property. The maximum numeric value representable in JavaScript.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="176160">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="176161">
+<PRE>Number.MAX_VALUE</PRE>
+</A>
+
+</UL><A NAME="Property of
+"></A>
+<A NAME="176162">
+<H3> Property of
+</H3>
+</A>
+
+<A NAME="176166">
+<a href="ref_m-q.htm#176989">Number</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="176167">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="176168">
+Navigator 3.0<P></A>
+
+</UL><A NAME="Tainted?
+"></A>
+<A NAME="176169">
+<H3> Tainted?
+</H3>
+</A>
+
+<A NAME="176170">
+No<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="176171">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="176172">
+The maximum numeric value representable in JavaScript<P></A>
+<A NAME="190971">
+The <I>MAX_VALUE</I> property has a value of approximately 1.79E+308. Values larger than <I>MAX_VALUE</I> are represented as "Infinity".<P></A>
+<A NAME="187600">
+Because <I>MAX_VALUE</I> is a constant, it is a read-only property of <I>Number</I>.<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="176173">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="183283">
+The following code multiplies two numeric values. If the result is less than or equal to <I>MAX_VALUE</I>, the <I>func1</I> function is called; otherwise, the <I>func2</I> function is called.<P></A>
+<A NAME="190786">
+<PRE>if (num1 * num2 &lt;= Number.MAX_VALUE)<br>&nbsp;&nbsp;&nbsp;func1()<br>else<br>&nbsp;&nbsp;&nbsp;func2()</PRE>
+</A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="176176">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="176189">
+<a href="ref_m-q.htm#176531">MIN_VALUE</a>, <a href="ref_m-q.htm#176751">NaN</a>, <a href="ref_m-q.htm#176884">NEGATIVE_INFINITY</a>, <a href="ref_m-q.htm#208991">POSITIVE_INFINITY</a> properties<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="method
+"></A>
+<A NAME="176192">
+<H1> method
+</H1>
+</A>
+
+<A NAME="176194">
+Property. A string specifying how form field input information is sent to the server.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="176195">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="176196">
+<PRE><I>formName</I>.method</PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="176197">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="176198">
+<I>formName</I> is either the name of a form or an element in the <I>forms</I> array.<P></A>
+
+</UL><A NAME="Property of
+"></A>
+<A NAME="176199">
+<H3> Property of
+</H3>
+</A>
+
+<A NAME="176203">
+<a href="ref_f-g.htm#60597">Form object</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="176204">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="176205">
+Navigator 2.0<P></A>
+
+</UL><A NAME="Tainted?
+"></A>
+<A NAME="176206">
+<H3> Tainted?
+</H3>
+</A>
+
+<A NAME="176207">
+No<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="176208">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="176209">
+The <I>method</I> property is a reflection of the METHOD attribute of the &lt;FORM&gt; tag. The <I>method</I> property should evaluate to either "get" or "post."<P></A>
+<A NAME="176210">
+You can set the <I>method</I> property at any time.<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="176211">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="176212">
+The following function returns the value of the <I>musicForm</I> <I>method</I> property:<P></A>
+<A NAME="176213">
+<PRE>function getMethod() {<br>&nbsp;&nbsp;&nbsp;return document.musicForm.method<br>}</PRE>
+</A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="176214">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="176227">
+<a href="ref_a-c.htm#96428">action</a>, <a href="ref_d-e.htm#48026">encoding</a>, <a href="ref_t-z.htm#65191">target</a> properties; <a href="ref_f-g.htm#60597">Form object</a><P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="MimeType
+"></A>
+<A NAME="176261">
+<H1> MimeType
+</H1>
+</A>
+
+<A NAME="176262">
+Object. A MIME type (Multipart Internet Mail Extension) supported by the client.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="176263">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="176264">
+To use a <I>MimeType</I> object:<P></A>
+<A NAME="176265">
+<PRE>navigator.mimeTypes[<I>index</I>].<I>propertyName</I></PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="176266">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="176267">
+<I>index</I> is either an integer representing a MIME type supported by the client or a string containing the type of a <I>MimeType</I> object (from the <I>type</I> property).<P></A>
+<A NAME="176268">
+<I>propertyName</I> is one of the properties listed below.<P></A>
+
+</UL><A NAME="Property of
+"></A>
+<A NAME="204251">
+<H3> Property of
+</H3>
+</A>
+
+<A NAME="204255">
+The <I>mimeTypes</I> array is a property of <a href="ref_m-q.htm#176789">navigator</a>.<P></A>
+<A NAME="204256">
+The <I>MimeType</I> object is a member of the <I>mimeTypes</I> array; each <I>Plugin</I> object also has an array of <I>MimeType</I> objects.<P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="176284">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="176285">
+Navigator 3.0<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="176286">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="176287">
+Each <I>MimeType</I> object is an element in the <I>mimeTypes</I> array.<P></A>
+<A NAME="176288">
+For example, the following table summarizes the values for displaying JPEG images:
+
+<P><TABLE BORDER="2">
+<CAPTION></CAPTION>
+<tr align=left valign=bottom><th><b><A NAME="176295">
+Expression</A><B><th><b><A NAME="176297">
+Value</A><B>
+<tr align=left valign=top><td><A NAME="176299">
+<code>navigator.mimeTypes["image/jpeg"].type
+</code></A><BR>
+
+<td><A NAME="176301">
+<code>image/jpeg
+</code></A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="176303">
+<code>navigator.mimeTypes["image/jpeg"].description
+</code></A><BR>
+
+<td><A NAME="176305">
+<code>JPEG Image
+</code></A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="176307">
+<code>navigator.mimeTypes["image/jpeg"].suffixes
+</code></A><BR>
+
+<td><A NAME="176309">
+<code>jpeg, jpg, jpe, jfif, 
+pjpeg, pjp
+</code></A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="176311">
+<code>navigator.mimeTypes["image/jpeg"].enabledPlugins
+</code></A><BR>
+
+<td><A NAME="176313">
+<code>null
+</code></A><BR>
+
+
+
+
+</TABLE>
+
+<TABLE>
+<TR><TD>
+</TABLE>
+
+
+<P></A>
+
+<A NAME="The mimeTypes array
+"></A>
+<A NAME="176315">
+<H4> The mimeTypes array
+</H4>
+</A>
+
+<A NAME="176319">
+The <I>mimeTypes</I> array contains an entry for each MIME type supported by the client (either internally, via helper applications, or by plug-ins). For example, if a client supports three MIME types, these MIME types are reflected as <code>navigator.mimeTypes[0]</code>, <code>navigator.mimeTypes[1]</code>, and <code>navigator.mimeTypes[2]</code>.<P></A>
+<A NAME="176320">
+Each element of the <I>mimeTypes</I> array is a <I>MimeType</I> object. <P></A>
+<A NAME="176321">
+To use the <I>mimeTypes</I> array:<P></A>
+<A NAME="176322">
+<PRE>1. navigator.mimeTypes[<I>index</I>]<br>2. navigator.mimeTypes.length</PRE>
+</A>
+<A NAME="176323">
+<I>index</I> is either an integer representing a MIME type supported by the client or a string containing the type of a <I>MimeType</I> object (from the <I>type</I> property).<P></A>
+<A NAME="176324">
+To obtain the number of MIME types supported by the client, use the <I>length</I> property: <code>navigator.mimeTypes.length</code>.<P></A>
+<A NAME="176325">
+Elements in the <I>mimeTypes</I> array are read-only. For example, the statement <code>navigator.mimeTypes[0]="video/quicktime"</code> has no effect.<P></A>
+
+<A NAME="The mimeTypes array used with the Plugin object
+"></A>
+<A NAME="204289">
+<H4> The mimeTypes array used with the Plugin object
+</H4>
+</A>
+
+<A NAME="183435">
+Each <I>Plugin</I> object has its own <I>mimeTypes</I> array, which contains an entry for each MIME type handled by the plug-in. For information, see <I><a href="ref_m-q.htm#178075">Plugin</a></I>.<P></A>
+
+</UL><A NAME="Properties
+"></A>
+<A NAME="176326">
+<H3> Properties
+</H3>
+</A>
+
+<A NAME="176364">
+The <I>MimeType</I> object has the following properties:
+
+<P><TABLE BORDER="2">
+<CAPTION></CAPTION>
+<tr align=left valign=bottom><th><b><A NAME="176333">
+Property</A><B><th><b><A NAME="176335">
+Description</A><B>
+<tr align=left valign=top><td><A NAME="176340">
+<a href="ref_d-e.htm#82624">description</a>
+</A><BR>
+
+<td><A NAME="176342">
+A description of the type
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="176347">
+<a href="ref_d-e.htm#64183">enabledPlugin</a>
+</A><BR>
+
+<td><A NAME="176349">
+A reference to the <I>Plugin</I> object configured for the MIME 
+type
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="176354">
+<a href="ref_t-z.htm#71171">type</a>
+</A><BR>
+
+<td><A NAME="176356">
+The name of the MIME type, for example "video/mpeg 
+or audio/x-wav"
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="176361">
+<a href="ref_s-s.htm#79636">suffixes</a>
+</A><BR>
+
+<td><A NAME="204311">
+A string listing possible file name extensions for the 
+MIME type, for example "mpeg, mpg, mpe, mpv, vbs, 
+mpegv"
+</A><BR>
+
+
+
+
+</TABLE>
+
+<TABLE>
+<TR><TD>
+</TABLE>
+
+
+<P></A>
+<A NAME="176381">
+The <I>mimeTypes</I> array has the following properties:
+
+<P><TABLE BORDER="2">
+<CAPTION></CAPTION>
+<tr align=left valign=bottom><th><b><A NAME="176371">
+Property</A><B><th><b><A NAME="176373">
+Description</A><B>
+<tr align=left valign=top><td><A NAME="176378">
+<a href="ref_h-l.htm#84418">length</a>
+</A><BR>
+
+<td><A NAME="176380">
+Reflects the number of MIME types supported by the 
+client
+</A><BR>
+
+
+
+
+</TABLE>
+
+<TABLE>
+<TR><TD>
+</TABLE>
+
+
+<P></A>
+
+</UL><A NAME="Methods
+"></A>
+<A NAME="176382">
+<H3> Methods
+</H3>
+</A>
+
+<ul><A NAME="215602">
+<LI><a href="ref_d-e.htm#573">eval</a>
+</A><A NAME="176386">
+<LI><a href="ref_t-z.htm#70978">toString</a>
+</A><A NAME="176390">
+<LI><a href="ref_t-z.htm#91188">valueOf</a>
+</A>
+</UL><A NAME="Event handlers
+"></A>
+<A NAME="176391">
+<H3> Event handlers
+</H3>
+</A>
+
+</ul><A NAME="176392">
+None.<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="176393">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="176397">
+The following code displays the <I>type, description, suffixes,</I> and <I>enabledPlugin</I> properties for each <I>MimeType</I> object on a client:<P></A>
+<A NAME="202523">
+<PRE>document.writeln("&lt;TABLE BORDER=1&gt;&lt;TR VALIGN=TOP&gt;",<br>&nbsp;&nbsp;&nbsp;"&lt;TH ALIGN=left&gt;i",<br>&nbsp;&nbsp;&nbsp;"&lt;TH ALIGN=left&gt;type",<br>&nbsp;&nbsp;&nbsp;"&lt;TH ALIGN=left&gt;description",<br>&nbsp;&nbsp;&nbsp;"&lt;TH ALIGN=left&gt;suffixes",<br>&nbsp;&nbsp;&nbsp;"&lt;TH ALIGN=left&gt;enabledPlugin.name&lt;/TR&gt;")<br>for (i=0; i &lt; navigator.mimeTypes.length; i++) {<br>&nbsp;&nbsp;&nbsp;document.writeln("&lt;TR VALIGN=TOP&gt;&lt;TD&gt;",i,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"&lt;TD&gt;",navigator.mimeTypes[i].type,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"&lt;TD&gt;",navigator.mimeTypes[i].description,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"&lt;TD&gt;",navigator.mimeTypes[i].suffixes)<br>&nbsp;&nbsp;&nbsp;if (navigator.mimeTypes[i].enabledPlugin==null) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.writeln(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"&lt;TD&gt;None",<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"&lt;/TR&gt;")<br>&nbsp;&nbsp;&nbsp;} else {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.writeln(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"&lt;TD&gt;",navigator.mimeTypes[i].enabledPlugin.name,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"&lt;/TR&gt;")<br>&nbsp;&nbsp;&nbsp;}<br>}<br>document.writeln("&lt;/TABLE&gt;")</PRE>
+</A>
+<A NAME="176490">
+The preceding example displays output similar to the following:
+
+<P><TABLE BORDER="2">
+<CAPTION></CAPTION>
+<tr align=left valign=bottom><th><b><A NAME="176411">
+i</A><B><th><b><A NAME="176413">
+ type</A><B><th><b><A NAME="176415">
+ description</A><B><th><b><A NAME="176417">
+ suffixes</A><B><th><b><A NAME="176419">
+ enabledPlugin.name</A><B>
+<tr align=left valign=top><td><A NAME="176421">
+ 0
+</A><BR>
+
+<td><A NAME="176423">
+ audio/aiff
+</A><BR>
+
+<td><A NAME="176425">
+ AIFF 
+</A><BR>
+
+<td><A NAME="176427">
+ aif, aiff
+</A><BR>
+
+<td><A NAME="176429">
+ LiveAudio
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="176431">
+ 1
+</A><BR>
+
+<td><A NAME="176433">
+ audio/wav
+</A><BR>
+
+<td><A NAME="176435">
+ WAV 
+</A><BR>
+
+<td><A NAME="176437">
+ wav
+</A><BR>
+
+<td><A NAME="176439">
+ LiveAudio
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="176441">
+ 2
+</A><BR>
+
+<td><A NAME="176443">
+ audio/x-midi
+</A><BR>
+
+<td><A NAME="176445">
+ MIDI 
+</A><BR>
+
+<td><A NAME="176447">
+ mid, midi
+</A><BR>
+
+<td><A NAME="176449">
+ LiveAudio
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="176451">
+ 3
+</A><BR>
+
+<td><A NAME="176453">
+ audio/midi
+</A><BR>
+
+<td><A NAME="176455">
+ MIDI 
+</A><BR>
+
+<td><A NAME="176457">
+ mid, midi
+</A><BR>
+
+<td><A NAME="176459">
+ LiveAudio
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="176461">
+ 4
+</A><BR>
+
+<td><A NAME="176463">
+ video/msvideo
+</A><BR>
+
+<td><A NAME="176465">
+ Video for Windows 
+</A><BR>
+
+<td><A NAME="176467">
+ avi
+</A><BR>
+
+<td><A NAME="176469">
+NPAVI32 Dynamic 
+Link Library
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="176471">
+ 5
+</A><BR>
+
+<td><A NAME="176473">
+ *
+</A><BR>
+
+<td><A NAME="176475">
+ Netscape Default Plugin 
+</A><BR>
+
+<td><A NAME="176477">
+ 
+</A><BR>
+
+<td><A NAME="176479">
+Netscape Default 
+Plugin
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="176481">
+6
+</A><BR>
+
+<td><A NAME="176483">
+ zz-application/zz-winassoc-TGZ
+</A><BR>
+
+<td><A NAME="176485">
+
+</A><BR>
+
+<td><A NAME="176487">
+TGZ
+</A><BR>
+
+<td><A NAME="176489">
+ None
+</A><BR>
+
+
+
+
+</TABLE>
+
+<TABLE>
+<TR><TD>
+</TABLE>
+
+
+<P></A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="176491">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="176495">
+<a href="ref_m-q.htm#178075">Plugin</a> object<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="mimeTypes
+"></A>
+<A NAME="176497">
+<H1> mimeTypes
+</H1>
+</A>
+
+<A NAME="176498">
+Property. An array of all MIME types supported by the client. See the <I><a href="ref_m-q.htm#176261">MimeType</a></I> object for information.<P></A>
+
+</UL><A NAME="Tainted?
+"></A>
+<A NAME="176502">
+<H3> Tainted?
+</H3>
+</A>
+
+<A NAME="176503">
+No<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="min
+"></A>
+<A NAME="176506">
+<H1> min
+</H1>
+</A>
+
+<A NAME="176508">
+Method. Returns the lesser of two numbers.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="176509">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="176510">
+<PRE>Math.min(<I>number1, number2</I>)</PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="176511">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="176512">
+<I>number1</I> and <I>number2</I> are any numeric arguments or the properties of existing objects.<P></A>
+
+</UL><A NAME="Method of
+"></A>
+<A NAME="176513">
+<H3> Method of
+</H3>
+</A>
+
+<A NAME="176517">
+<a href="ref_m-q.htm#175987">Math</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="176518">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="176519">
+Navigator 2.0<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="176520">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="176521">
+The following function evaluates the variables <I>x </I>and <I>y:</I><P></A>
+<A NAME="176522">
+<PRE>function getMin(x,y) {<br>&nbsp;&nbsp;&nbsp;return Math.min(x,y)<br>}</PRE>
+</A>
+<A NAME="176523">
+If you pass <B>getMin</B> the values 10 and 20, it returns 10; if you pass it the values -10 and -20, it returns -20.<P></A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="176524">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="176528">
+<a href="ref_m-q.htm#176132">max</a> method<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="MIN_VALUE
+"></A>
+<A NAME="176531">
+<H1> MIN_VALUE
+</H1>
+</A>
+
+<A NAME="176533">
+Property. The smallest positive numeric value representable in JavaScript.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="176534">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="176535">
+<PRE>Number.MIN_VALUE</PRE>
+</A>
+
+</UL><A NAME="Property of
+"></A>
+<A NAME="176536">
+<H3> Property of
+</H3>
+</A>
+
+<A NAME="176540">
+<a href="ref_m-q.htm#176989">Number</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="176541">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="176542">
+Navigator 3.0<P></A>
+
+</UL><A NAME="Tainted?
+"></A>
+<A NAME="176543">
+<H3> Tainted?
+</H3>
+</A>
+
+<A NAME="176544">
+No<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="176545">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="191992">
+The <I>MIN_VALUE</I> property is the number closest to zero, not the most negative number, that JavaScript can represent.<P></A>
+<A NAME="192541">
+<I>MIN_VALUE</I> has a value of approximately 2.22E-308. Values smaller than <I>MIN_VALUE</I> ("underflow values") are converted to zero.<P></A>
+<A NAME="192531">
+Because <I>MIN_VALUE</I> is a constant, it is a read-only property of <I>Number</I>.<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="190980">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="190981">
+The following code divides two numeric values. If the result is greater than or equal to <I>MIN_VALUE</I>, the <I>func1</I> function is called; otherwise, the <I>func2</I> function is called.<P></A>
+<A NAME="193297">
+<PRE>if (num1 / num2 &gt;= Number.MIN_VALUE)<br>&nbsp;&nbsp;&nbsp;func1()<br>else<br>&nbsp;&nbsp;&nbsp;func2()</PRE>
+</A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="176550">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="176563">
+<a href="ref_m-q.htm#176157">MAX_VALUE</a>, <a href="ref_m-q.htm#176751">NaN</a>, <a href="ref_m-q.htm#176884">NEGATIVE_INFINITY</a>, <a href="ref_m-q.htm#208991">POSITIVE_INFINITY</a> properties<P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="176576">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="176577">
+Navigator 2.0<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="name
+"></A>
+<A NAME="176636">
+<H1> name
+</H1>
+</A>
+
+<A NAME="176638">
+Property. A string specifying the name of an object.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="176639">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="176640">
+<PRE>1. <I>objectName</I>.name<br>2. <I>frameReference</I>.name<br>3. <I>frameReference</I>.frames.name<br>4. <I>radioName</I>[<I>index</I>].name<br>5. <I>imageName</I>.name<br>6. navigator.plugins[<I>index</I>].name<br>7. <I>windowReference</I>.name<br>8. <I>windowReference</I>.frames.name</PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="176641">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="176642">
+<I>objectName</I> is either the value of the NAME attribute of any of the objects listed below or an element in the <I>elements</I> array.<P></A>
+<A NAME="176643">
+<I>frameReference</I> is a valid way of referring to a frame, as described in the <I>Frame</I> object.<P></A>
+<A NAME="176644">
+<I>radioName</I> is the value of the NAME attribute of a <I>Radio</I> object.<P></A>
+<A NAME="176645">
+<I>selectName</I> is either the value of the NAME attribute of a <I>Select</I> object or an element in the <I>elements</I> array.<P></A>
+<A NAME="176647">
+<I>imageName</I> is either the value of the NAME attribute of a <I>Image</I> object or an element in the <I>images</I> array.<P></A>
+<A NAME="176648">
+<I>index</I> is either an integer representing a plug-in installed on the client or a string containing the name of a <I>Plugin</I> object (from the <I>name</I> property).<P></A>
+<A NAME="176649">
+<I>windowReference</I> is a valid way of referring to a window, as described in the <I>window</I> object.<P></A>
+
+</UL><A NAME="Property of
+"></A>
+<A NAME="176650">
+<H3> Property of
+</H3>
+</A>
+
+<A NAME="176669">
+<a href="ref_a-c.htm#62518">Button</a> object, <a href="ref_a-c.htm#63502">Checkbox</a> object, <a href="ref_f-g.htm#104945">FileUpload</a> object, <a href="ref_f-g.htm#60597">Form object</a>, <a href="ref_f-g.htm#60829">Frame</a> object, <a href="ref_h-l.htm#83862">Hidden</a> object, <a href="ref_h-l.htm#90746">Image</a> object, <a href="ref_m-q.htm#177857">Password</a> object, <a href="ref_m-q.htm#178075">Plugin</a> object, <a href="ref_r-r.htm#26345">Radio</a> object, <a href="ref_r-r.htm#26487">Reset object</a>, <a href="ref_s-s.htm#72585">Select object</a>, <a href="ref_s-s.htm#73448">Submit object</a>, <a href="ref_t-z.htm#65229">Text object</a>, <a href="ref_t-z.htm#65386">Textarea</a> object, <a href="ref_t-z.htm#67013">window object</a>
+</A>
+<A NAME="Implemented in
+"></A>
+<A NAME="176700">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="176701">
+<LI>Navigator 2.0
+</A><A NAME="176702">
+<LI>Navigator 3.0: property of <I>FileUpload, Form, Image, </I>and <I>Plugin</I> objects
+</A>
+</UL><A NAME="Tainted?
+"></A>
+<A NAME="176703">
+<H3> Tainted?
+</H3>
+</A>
+
+</ul><A NAME="176704">
+Yes<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="176705">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="176706">
+The value of the <I>name</I> property differs between the <I>window</I> object and other objects. The <I>name</I> property is a read-only property for the <I>FileUpload</I> object, <I>Image</I> object, and <I>Plugin</I> object.<P></A>
+
+<A NAME="window object
+"></A>
+<A NAME="176707">
+<H4> window object
+</H4>
+</A>
+
+<A NAME="176708">
+The <I>name</I> property for the <I>window</I> object is represented by form 7 and form 8 of the syntax. The <I>name</I> property represents the value of the <I>windowName</I> argument described in the <a href="ref_t-z.htm#67013">window object</a> syntax. Both forms of the syntax represent the same value.<P></A>
+<A NAME="176712">
+<I>name</I> is a read-only property.<P></A>
+
+<A NAME="Image and Plugin objects
+"></A>
+<A NAME="176713">
+<H4> Image and Plugin objects
+</H4>
+</A>
+
+<A NAME="176714">
+The <I>name</I> property for <I>Image</I> and <I>Plugin</I> objects is represented by forms 5-6 of the syntax.<P></A>
+<ul><A NAME="176715">
+<LI>For <I>Image</I> objects, the <I>name</I> property represents the value of the NAME attribute. For images created with the Image() constructor, the value of the <I>name</I> property is null.
+</A><A NAME="176716">
+<LI>For <I>Plugin</I> objects, the <I>name </I>property is the plug-in's name and is supplied by the plug-in itself. Each plug-in should have a name that uniquely identifies it.
+</A></ul><A NAME="176717">
+<I>name</I> is a read-only property.<P></A>
+
+<A NAME="All other objects
+"></A>
+<A NAME="176718">
+<H4> All other objects
+</H4>
+</A>
+
+<A NAME="176719">
+The <I>name</I> property for all other objects is represented by forms 1 through 4 of the syntax. For all objects except <I>Image, Plugin,</I> and <I>window</I>, the <I>name</I> property initially reflects the value of the NAME attribute. Changing the <I>name</I> property overrides this setting.<P></A>
+<A NAME="176720">
+You can set the <I>name</I> property at any time.<P></A>
+<A NAME="176721">
+The <I>name</I> property is the same for every radio button in a single <I>Radio</I> object. Individual radio buttons are referenced by their position in the <I>Radio</I> array.<P></A>
+<A NAME="176722">
+Do not confuse the <I>name</I> property with the label displayed on a <I>Button</I>, <I>Reset</I>, or <I>Submit</I> object. The <I>value</I> property specifies the label for these objects. The <I>name</I> property is not displayed on-screen; it is used to reference the objects programmatically.<P></A>
+<A NAME="176723">
+For a <I>Frame</I> object, the values specified by forms 1, 2, and 3 of the syntax are the same.<P></A>
+<A NAME="176724">
+If multiple objects on the same form have the same NAME attribute, an array of the given name is created automatically. Each element in the array represents an individual <I>Form</I> object. Elements are indexed in source order starting at zero. For example, if two text elements and a textarea element on the same form have their NAME attribute set to "myField," an array with the elements myField[0], myField[1], and myField[2] is created.<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="176725">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="176726">
+In the following example, the <B>valueGetter</B> function uses a <B>for</B> loop to iterate over the array of elements on the <I>valueTest</I> form. The <I>msgWindow</I> window displays the names of all the elements on the form:<P></A>
+<A NAME="176727">
+<PRE>newWindow=window.open("http://home.netscape.com")<br><br>function valueGetter() {<br>&nbsp;&nbsp;&nbsp;var msgWindow=window.open("")<br>&nbsp;&nbsp;&nbsp;for (var i = 0; i &lt; newWindow.document.valueTest.elements.length; i++) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;msgWindow.document.write(newWindow.document.valueTest.elements[i].name + "&lt;BR&gt;")<br>&nbsp;&nbsp;&nbsp;}<br>}</PRE>
+</A>
+<A NAME="176728">
+In the following example, the first statement creates a window called <I>netscapeWin</I>. The second statement displays the value "netscapeHomePage" in the Alert dialog box, because "netscapeHomePage" is the value of the <I>windowName</I> argument of <I>netscapeWin</I>.<P></A>
+<A NAME="176729">
+<PRE>netscapeWin=window.open("http://home.netscape.com","netscapeHomePage")<br><br>alert(netscapeWin.name)</PRE>
+</A>
+<A NAME="176733">
+For <I>Plugin</I> objects, see the examples for the <I><a href="ref_m-q.htm#178075">Plugin</a></I> object.<P></A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="176734">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="176738">
+For <I>button</I>, <I>reset</I>, and <I>submit:</I> <a href="ref_t-z.htm#66860">value</a> property<P></A>
+<A NAME="176748">
+For <I>Plugin:</I> <a href="ref_d-e.htm#82624">description</a>, <a href="ref_f-g.htm#67355">filename</a>, <a href="ref_h-l.htm#84418">length</a> properties<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="NaN
+"></A>
+<A NAME="176751">
+<H1> NaN
+</H1>
+</A>
+
+<A NAME="176753">
+Property. A special value representing Not-A-Number. This value is represented as the unquoted literal NaN.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="176754">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="176755">
+<PRE>Number.NaN</PRE>
+</A>
+
+</UL><A NAME="Property of
+"></A>
+<A NAME="176756">
+<H3> Property of
+</H3>
+</A>
+
+<A NAME="176760">
+<a href="ref_m-q.htm#176989">Number</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="176761">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="176762">
+Navigator 3.0<P></A>
+
+</UL><A NAME="Tainted?
+"></A>
+<A NAME="176763">
+<H3> Tainted?
+</H3>
+</A>
+
+<A NAME="176764">
+No<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="176765">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="215857">
+JavaScript prints the value <code>Number.NaN</code> as <code>NaN</code>.<P></A>
+<A NAME="216053">
+<I>NaN</I> always compares unequal to any other number, including NaN itself; you cannot check for the not-a-number value by comparing to <I>Number.NaN</I>. Use the <B><a href="ref_h-l.htm#26420">isNaN</a></B> function insead.<P></A>
+<A NAME="216085">
+You might use the <I>NaN</I> property to indicate an error condition for a function that should return a valid number.<P></A>
+<A NAME="194583">
+Because <I>NaN</I> is a constant, it is a read-only property of <I>Number</I>.<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="176767">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="195210">
+In the following example, if <I>month</I> has a value greater than 12, it is assigned NaN, and a message is displayed indicating valid values.<P></A>
+<A NAME="216104">
+<PRE>var month = 13<br>if (month &lt; 1 || month &gt; 12) {<br>&nbsp;&nbsp;&nbsp;month = Number.NaN<br>&nbsp;&nbsp;&nbsp;alert("Month must be between 1 and 12.")<br>}</PRE>
+</A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="176770">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="176783">
+<a href="ref_m-q.htm#176157">MAX_VALUE</a>, <a href="ref_m-q.htm#176531">MIN_VALUE</a>, <a href="ref_m-q.htm#176884">NEGATIVE_INFINITY</a>, <a href="ref_m-q.htm#208991">POSITIVE_INFINITY</a> properties; <a href="ref_h-l.htm#26420">isNaN</a>, <a href="ref_m-q.htm#177786">parseFloat</a>, <a href="ref_m-q.htm#177816">parseInt</a> functions<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="navigator
+"></A>
+<A NAME="176789">
+<H1> navigator
+</H1>
+</A>
+
+<A NAME="176791">
+Object. Contains information about the version of Navigator in use.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="176792">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="176793">
+To use a <I>navigator</I> object:<P></A>
+<A NAME="176794">
+<PRE>1. navigator.<I>propertyName<br></I>2. navigator.<I>methodName</I></PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="176795">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="176796">
+<I>propertyName</I> is one of the properties listed below.<P></A>
+<A NAME="202596">
+<I>methodName</I> is one of the methods listed below.<P></A>
+
+</UL><A NAME="Property of
+"></A>
+<A NAME="176797">
+<H3> Property of
+</H3>
+</A>
+
+<A NAME="176798">
+None<P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="176799">
+<H3> Implemented in
+</H3>
+</A>
+
+<ul><A NAME="176800">
+<LI>Navigator 2.0
+</A><A NAME="176801">
+<LI>Navigator 3.0: added <I>mimeTypes</I>, <I>plugins</I> properties; added <B>javaEnabled</B> method
+</A>
+</UL><A NAME="Description
+"></A>
+<A NAME="176802">
+<H3> Description
+</H3>
+</A>
+
+</ul><A NAME="176803">
+Use the <I>navigator</I> object to determine which version of the Navigator your users have, what MIME types the user's Navigator can handle, and what plug-ins the user has installed.<P></A>
+
+</UL><A NAME="Properties
+"></A>
+<A NAME="176804">
+<H3> Properties
+</H3>
+</A>
+
+<A NAME="176856">
+The <I>navigator</I> object has the following properties:
+
+<P><TABLE BORDER="2">
+<CAPTION></CAPTION>
+<tr align=left valign=bottom><th><b><A NAME="176811">
+Property</A><B><th><b><A NAME="176813">
+Description</A><B>
+<tr align=left valign=top><td><A NAME="176818">
+<a href="ref_a-c.htm#61017">appCodeName</a>
+</A><BR>
+
+<td><A NAME="176820">
+Specifies the code name of the browser
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="176825">
+<a href="ref_a-c.htm#61047">appName</a>
+</A><BR>
+
+<td><A NAME="176827">
+Specifies the name of the browser
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="176832">
+<a href="ref_a-c.htm#61077">appVersion</a>
+</A><BR>
+
+<td><A NAME="176834">
+Specifies version information for the Navigator
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="176839">
+<a href="ref_m-q.htm#176497">mimeTypes</a>
+</A><BR>
+
+<td><A NAME="176841">
+An array of all MIME types supported by the client
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="176846">
+<a href="ref_m-q.htm#178311">plugins</a>
+</A><BR>
+
+<td><A NAME="176848">
+An array of all plug-ins currently installed on the client
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="176853">
+<a href="ref_t-z.htm#66822">userAgent</a>
+</A><BR>
+
+<td><A NAME="176855">
+Specifies the user-agent header
+</A><BR>
+
+
+
+
+</TABLE>
+
+<TABLE>
+<TR><TD>
+</TABLE>
+
+
+<P></A>
+
+</UL><A NAME="Methods
+"></A>
+<A NAME="176857">
+<H3> Methods
+</H3>
+</A>
+
+<A NAME="207152">
+The <I>navigator</I> object has the following methods:
+
+<P><TABLE BORDER="2">
+<CAPTION></CAPTION>
+<tr align=left valign=top><td><A NAME="215620">
+<LI><a href="ref_d-e.htm#573">eval</a>
+</A><A NAME="208468">
+<LI><a href="ref_h-l.htm#91297">javaEnabled</a>
+</A><A NAME="207142">
+<LI><a href="ref_t-z.htm#99739">taintEnabled</a>
+</A>
+<td><A NAME="208488">
+<LI><a href="ref_t-z.htm#70978">toString</a>
+</A><A NAME="207151">
+<LI><a href="ref_t-z.htm#91188">valueOf</a>
+</A>
+
+
+
+</TABLE>
+
+<TABLE>
+<TR><TD>
+</TABLE>
+
+
+<P></A>
+
+</UL><A NAME="Event handlers
+"></A>
+<A NAME="176870">
+<H3> Event handlers
+</H3>
+</A>
+
+<A NAME="176871">
+None.<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="176872">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="176873">
+See the examples for the individual properties and methods.<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="NEGATIVE_INFINITY
+"></A>
+<A NAME="176884">
+<H1> NEGATIVE_INFINITY
+</H1>
+</A>
+
+<A NAME="176886">
+Property. A special numeric value representing negative infinity. This value is represented as "-Infinity".<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="176887">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="176888">
+<PRE>Number.NEGATIVE_INFINITY</PRE>
+</A>
+
+</UL><A NAME="Property of
+"></A>
+<A NAME="176889">
+<H3> Property of
+</H3>
+</A>
+
+<A NAME="176893">
+<a href="ref_m-q.htm#176989">Number</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="176894">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="176895">
+Navigator 3.0<P></A>
+
+</UL><A NAME="Tainted?
+"></A>
+<A NAME="176896">
+<H3> Tainted?
+</H3>
+</A>
+
+<A NAME="176897">
+No<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="176898">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="187544">
+This value behaves mathematically like an infinity; for example, anything multiplied by infinity is infinity, and anything divided by infinity is zero.<P></A>
+<A NAME="187635">
+Because <I>NEGATIVE_INFINITY</I> is a constant, it is a read-only property of <I>Number</I>.<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="176900">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="183381">
+In the following example, the variable <I>smallNumber</I> is assigned a value that is smaller than the minimum value. When the <B>if</B> statement executes, <I>smallNumber</I> has the value "-Infinity", so the <I>func1</I> function is called.<P></A>
+<A NAME="185221">
+<PRE>var smallNumber = -Number.MAX_VALUE*10<br>if (smallNumber == Number.NEGATIVE_INFINITY)<br>&nbsp;&nbsp;&nbsp;func1()<br>else<br>&nbsp;&nbsp;&nbsp;func2()</PRE>
+</A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="176903">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="176916">
+<a href="ref_m-q.htm#176157">MAX_VALUE</a>, <a href="ref_m-q.htm#176531">MIN_VALUE</a>, <a href="ref_m-q.htm#176751">NaN</a>, <a href="ref_m-q.htm#208991">POSITIVE_INFINITY</a> properties<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="next
+"></A>
+<A NAME="176919">
+<H1> next
+</H1>
+</A>
+
+<A NAME="176920">
+Property. A string specifying the complete URL of the next history entry.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="176921">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="176922">
+<PRE>history.next</PRE>
+</A>
+
+</UL><A NAME="Property of
+"></A>
+<A NAME="176923">
+<H3> Property of
+</H3>
+</A>
+
+<A NAME="176927">
+<a href="ref_h-l.htm#83926">history object</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="176928">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="176929">
+Navigator 3.0<P></A>
+
+</UL><A NAME="Tainted?
+"></A>
+<A NAME="176930">
+<H3> Tainted?
+</H3>
+</A>
+
+<A NAME="176931">
+Yes<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="176932">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="176933">
+The <I>next</I> property reflects the URL that would be used if the user chose Forward from the Go menu. This property has a value only if data tainting is enabled; if data tainting is not enabled, <I>next</I> has no value.<P></A>
+<A NAME="176934">
+<I>next</I> is a read-only property.<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="176935">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="176936">
+The following example determines whether <I>history.next</I> contains the string "NETSCAPE.COM". If it does, the function <I>myFunction</I> is called.<P></A>
+<A NAME="176937">
+<PRE>if (history.next.indexOf("NETSCAPE.COM") != -1) {<br>&nbsp;&nbsp;&nbsp;myFunction(history.next)<br>}</PRE>
+</A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="176938">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="176948">
+<a href="ref_a-c.htm#137304">current</a>, <a href="ref_m-q.htm#178477">previous</a> properties; <a href="advtopic.htm#1009533">"Using data tainting for security"</a><P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="Number
+"></A>
+<A NAME="176989">
+<H1> Number
+</H1>
+</A>
+
+<A NAME="176991">
+Object. Lets you work with numeric values. The <I>Number</I> object is an object wrapper for primitive numeric values.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="176992">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="176993">
+To create a <I>Number</I> object:<P></A>
+<A NAME="176994">
+<PRE><I>numberObjectName</I> = new Number()</PRE>
+</A>
+<A NAME="176995">
+To use a <I>Number</I> object:<P></A>
+<A NAME="176996">
+<PRE><I>numberObjectName</I>.<I>propertyName</I></PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="176997">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="176998">
+<I>numberObjectName</I> is either the name of a new object or a property of an existing object. When using <I>Number</I> properties, <I>numberObjectName</I> is either the name of an existing <I>Number</I> object or a property of an existing object.<P></A>
+<A NAME="176999">
+<I>propertyName</I> is one of the properties listed below.<P></A>
+
+</UL><A NAME="Property of
+"></A>
+<A NAME="177000">
+<H3> Property of
+</H3>
+</A>
+
+<A NAME="177001">
+None<P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="177002">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="177003">
+Navigator 3.0
+</A>
+
+<A NAME="Description
+"></A>
+<A NAME="177004">
+<H3> Description
+</H3>
+</A>
+
+</ul><A NAME="177005">
+The <I>Number </I>object is a built-in JavaScript object.<P></A>
+<A NAME="197045">
+The primary uses for the <I>Number</I> object are:<P></A>
+<ul><A NAME="199243">
+<LI>To access its constant properties, which represent the largest and smallest representable numbers, positive and negative infinity, and the Not-a-Number value.
+</A><A NAME="199244">
+<LI>To create numeric objects that you can add properties to. Most likely, you will rarely need to create a <I>Number</I> object.
+</A>
+</UL><A NAME="Properties
+"></A>
+<A NAME="177008">
+<H3> Properties
+</H3>
+</A>
+
+</ul><A NAME="177060">
+The <I>Number </I>object has the following properties:
+
+<P><TABLE BORDER="2">
+<CAPTION></CAPTION>
+<tr align=left valign=bottom><th><b><A NAME="177015">
+Property</A><B><th><b><A NAME="177017">
+Description</A><B>
+<tr align=left valign=top><td><A NAME="177022">
+<a href="ref_m-q.htm#176157">MAX_VALUE</a>
+</A><BR>
+
+<td><A NAME="177024">
+The largest representable number
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="177029">
+<a href="ref_m-q.htm#176531">MIN_VALUE</a>
+</A><BR>
+
+<td><A NAME="177031">
+The smallest representable number
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="177036">
+<a href="ref_m-q.htm#176751">NaN</a>
+</A><BR>
+
+<td><A NAME="177038">
+Special "not a number" value
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="177043">
+<a href="ref_m-q.htm#176884">NEGATIVE_INFINITY</a>
+</A><BR>
+
+<td><A NAME="177045">
+Special infinite value; returned on overflow
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="177050">
+<a href="ref_m-q.htm#208991">POSITIVE_INFINITY</a>
+</A><BR>
+
+<td><A NAME="177052">
+Special negative infinite value; returned on overflow
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="177057">
+<a href="ref_m-q.htm#178711">prototype</a>
+</A><BR>
+
+<td><A NAME="177059">
+Lets you add a properties to a <I>Number</I> object.
+</A><BR>
+
+
+
+
+</TABLE>
+
+<TABLE>
+<TR><TD>
+</TABLE>
+
+
+<P></A>
+
+</UL><A NAME="Methods
+"></A>
+<A NAME="177061">
+<H3> Methods
+</H3>
+</A>
+
+<ul><A NAME="215632">
+<LI><a href="ref_d-e.htm#573">eval</a>
+</A><A NAME="177065">
+<LI><a href="ref_t-z.htm#70978">toString</a>
+</A><A NAME="177069">
+<LI><a href="ref_t-z.htm#91188">valueOf</a>
+</A>
+</UL><A NAME="Event handlers
+"></A>
+<A NAME="177070">
+<H3> Event handlers
+</H3>
+</A>
+
+</ul><A NAME="177071">
+None.<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="177072">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="198746">
+<B>Example 1.</B> The following example uses the <I>Number</I> object's properties to assign values to several numeric variables:<P></A>
+<A NAME="198747">
+<PRE>biggestNum = Number.MAX_VALUE<br>smallestNum = Number.MIN_VALUE<br>infiniteNum = Number.POSITIVE_INFINITY<br>negInfiniteNum = Number.NEGATIVE_INFINITY<br>notANum = Number.NaN</PRE>
+</A>
+<A NAME="199242">
+Note that these properties are properties of the Number() constructor itself, not of individual <I>Number</I> objects.<P></A>
+<A NAME="177073">
+<B>Example 2.</B> The following example creates a <I>Number</I> object, <I>myNum</I>, then adds a <I>description</I> property to all <I>Number</I> objects. Then a value is assigned to the <I>myNum</I> object's <I>description</I> property.<P></A>
+<A NAME="197069">
+<PRE>myNum = new Number(65)<br>Number.prototype.description=null<br>myNum.description="wind speed"</PRE>
+</A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="onAbort
+"></A>
+<A NAME="177077">
+<H1> onAbort
+</H1>
+</A>
+
+<A NAME="177078">
+Event handler. An abort event occurs when the user aborts the loading of an image (for example by clicking a link or clicking the Stop button). The onAbort event handler executes JavaScript code when an abort event occurs.<P></A>
+<A NAME="177079">
+See the relevant objects for the onAbort syntax.<P></A>
+
+</UL><A NAME="Event handler of
+"></A>
+<A NAME="177080">
+<H3> Event handler of
+</H3>
+</A>
+
+<A NAME="177084">
+<a href="ref_h-l.htm#90746">Image</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="177085">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="177086">
+Navigator 3.0<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="177087">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="177088">
+In the following example, an onAbort handler in an <I>Image</I> object displays a message when the user aborts the image load:<P></A>
+<A NAME="177089">
+<PRE>&lt;IMG NAME="aircraft" SRC="f15e.gif"<br>&nbsp;&nbsp;&nbsp;onAbort="alert('You didn\'t get to see the image!')"&gt;</PRE>
+</A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="177090">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="177097">
+<a href="ref_m-q.htm#177224">onError</a>, <a href="ref_m-q.htm#177323">onLoad</a> event handlers<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="onBlur
+"></A>
+<A NAME="177100">
+<H1> onBlur
+</H1>
+</A>
+
+<A NAME="177102">
+Event handler. A blur event occurs when a form element loses focus or when a window or frame loses focus. The blur event can result from a <B>blur</B> method or from the user clicking the mouse on another object or window or tabbing with the keyboard. The onBlur event handler executes JavaScript code when a blur event occurs.<P></A>
+<A NAME="177103">
+For windows, frames, and framesets, the onBlur event handler specifies JavaScript code to execute when a window loses focus.<P></A>
+<A NAME="177104">
+A frame's onBlur event handler overrides an onBlur event handler in the &lt;BODY&gt; tag of the document loaded into frame.<P></A>
+
+<a name="177105">
+<B><blockquote>Note
+</blockquote></B>
+</a>
+
+<a name="177106">
+<blockquote>On some platforms, placing an onBlur event handler in a &lt;FRAMESET&gt; tag has 
+no effect. Please see the release notes (after starting Netscape, choose Release 
+Notes from the Help menu).
+</blockquote>
+</a>
+<A NAME="177107">
+See the relevant objects for the onBlur syntax.<P></A>
+
+</UL><A NAME="Event handler of
+"></A>
+<A NAME="177108">
+<H3> Event handler of
+</H3>
+</A>
+
+<A NAME="177124">
+<a href="ref_a-c.htm#62518">Button</a> object, <a href="ref_a-c.htm#63502">Checkbox</a> object, <a href="ref_f-g.htm#104945">FileUpload</a> object, <a href="ref_f-g.htm#60829">Frame</a> object, <a href="ref_m-q.htm#177857">Password</a> object, <a href="ref_r-r.htm#26345">Radio</a> object, <a href="ref_r-r.htm#26487">Reset object</a>, <a href="ref_s-s.htm#72585">Select object</a>, <a href="ref_s-s.htm#73448">Submit object</a>, <a href="ref_t-z.htm#65229">Text object</a>, <a href="ref_t-z.htm#65386">Textarea</a> object, <a href="ref_t-z.htm#67013">window object</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="177125">
+<H3> Implemented in
+</H3>
+</A>
+
+<ul><A NAME="177126">
+<LI>Navigator 2.0
+</A><A NAME="177127">
+<LI>Navigator 3.0: event handler of <I>Button, Checkbox, FileUpload, Frame, Password, Radio, Reset, Submit,</I> and <I>window</I>
+</A>
+</UL><A NAME="Examples
+"></A>
+<A NAME="177128">
+<H3> Examples
+</H3>
+</A>
+
+</ul><A NAME="177129">
+<B>Example 1: Validate form input.</B> In the following example, <I>userName</I> is a required text field. When a user attempts to leave the field, the onBlur event handler calls the <B>required</B> function to confirm that <I>userName</I> has a legal value.<P></A>
+<A NAME="177130">
+<PRE>&lt;INPUT TYPE="text" VALUE="" NAME="userName" onBlur="required(this.value)"&gt;</PRE>
+</A>
+<A NAME="177131">
+<B>Example 2: Change the background color of a window.</B> In the following example, a window's onBlur and onFocus event handlers change the window's background color depending on whether the window has focus.<P></A>
+<A NAME="177132">
+<PRE>&lt;BODY BGCOLOR="lightgrey"<br>&nbsp;&nbsp;&nbsp;onBlur="document.bgColor='lightgrey'"<br>&nbsp;&nbsp;&nbsp;onFocus="document.bgColor='antiquewhite'"&gt;</PRE>
+</A>
+<A NAME="177133">
+<B>Example 3: Change the background color of a frame.</B> The following example creates four frames. The source for each frame, <code>onblur2.html</code> has the &lt;BODY&gt; tag with the onBlur and onFocus event handlers shown in Example 1. When the document loads, all frames are "lightgrey". When the user clicks a frame, the onFocus event handler changes the frame's background color to "antiquewhite". The frame that loses focus is changed to "lightgrey". Note that the onBlur and onFocus event handlers are within the &lt;BODY&gt; tag, not the &lt;FRAME&gt; tag.<P></A>
+<A NAME="177134">
+<PRE>&lt;FRAMESET ROWS="50%,50%" COLS="40%,60%"&gt;<br>&lt;FRAME SRC=onblur2.html NAME="frame1"&gt;<br>&lt;FRAME SRC=onblur2.html NAME="frame2"&gt;<br>&lt;FRAME SRC=onblur2.html NAME="frame3"&gt;<br>&lt;FRAME SRC=onblur2.html NAME="frame4"&gt;<br>&lt;/FRAMESET&gt;</PRE>
+</A>
+<A NAME="177135">
+The following code has the same effect as the previous code, but is implemented differently. The onFocus and onBlur event handlers are associated with the frame, not the document. The onBlur and onFocus event handlers for the frame are specified by setting the <I>onblur</I> and <I>onfocus</I> properties. For information on using <B>new</B> to specify a string of JavaScript code to be compiled as a function, see the <I>Function</I> object.<P></A>
+<A NAME="177136">
+<PRE>&lt;SCRIPT&gt;<br>function setUpHandlers() {<br>&nbsp;&nbsp;&nbsp;for (var i = 0; i &lt; frames.length; i++) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;frames[i].onfocus=new Function("document.bgColor='antiquewhite'")<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;frames[i].onblur=new Function("document.bgColor='lightgrey'")<br>&nbsp;&nbsp;&nbsp;}<br>}<br>&lt;/SCRIPT&gt;<br><br>&lt;FRAMESET ROWS="50%,50%" COLS="40%,60%" onLoad=setUpHandlers()&gt;<br>&lt;FRAME SRC=onblur2.html NAME="frame1"&gt;<br>&lt;FRAME SRC=onblur2.html NAME="frame2"&gt;<br>&lt;FRAME SRC=onblur2.html NAME="frame3"&gt;<br>&lt;FRAME SRC=onblur2.html NAME="frame4"&gt;<br>&lt;/FRAMESET&gt;</PRE>
+</A>
+<A NAME="177137">
+<B>Example 4: Close a window.</B> In the following example, a window's onBlur event handler closes the window when the window loses focus.<P></A>
+<A NAME="177138">
+<PRE>&lt;BODY onBlur="window.close()"&gt;<br>This is some text<br>&lt;/BODY&gt;</PRE>
+</A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="177139">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="177146">
+<a href="ref_m-q.htm#177149">onChange</a>, <a href="ref_m-q.htm#177278">onFocus</a> event handlers<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="onChange
+"></A>
+<A NAME="177149">
+<H1> onChange
+</H1>
+</A>
+
+<A NAME="177151">
+Event handler. A change event occurs when a select, text, or textarea field loses focus and its value has been modified. The onChange event handler executes JavaScript code when a change event occurs.<P></A>
+<A NAME="177152">
+Use the onChange event handler to validate data after it is modified by a user.<P></A>
+<A NAME="177153">
+See the relevant objects for the onChange syntax.<P></A>
+
+</UL><A NAME="Event handler of
+"></A>
+<A NAME="177154">
+<H3> Event handler of
+</H3>
+</A>
+
+<A NAME="177164">
+<a href="ref_f-g.htm#104945">FileUpload</a> object, <a href="ref_s-s.htm#72585">Select object</a>, <a href="ref_t-z.htm#65229">Text object</a>, <a href="ref_t-z.htm#65386">Textarea</a> object<P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="177165">
+<H3> Implemented in
+</H3>
+</A>
+
+<UL><LI><A NAME="177166">
+Navigator 2.0</A>
+<LI><A NAME="202397">
+Navigator 3.0: event handler of <I>FileUpload</I></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="177167">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="177168">
+In the following example, <I>userName</I> is a text field. When a user changes the text and leaves the field, the onChange event handler calls the <B>checkValue</B> function to confirm that <I>userName</I> has a legal value.<P></A>
+<A NAME="177169">
+<PRE>&lt;INPUT TYPE="text" VALUE="" NAME="userName" &nbsp;&nbsp;&nbsp;onChange="checkValue(this.value)"&gt;</PRE>
+</A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="177170">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="177177">
+<a href="ref_m-q.htm#177100">onBlur</a>, <a href="ref_m-q.htm#177278">onFocus</a> event handlers<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="onClick
+"></A>
+<A NAME="177180">
+<H1> onClick
+</H1>
+</A>
+
+<A NAME="177182">
+Event handler. A click event occurs when an object on a form is clicked. The onClick event handler executes JavaScript code when a click event occurs.<P></A>
+<A NAME="177183">
+For checkboxes, links, radio buttons, reset buttons, and submit buttons, the onClick event handler can return false to cancel the action normally associated with a click event.<P></A>
+<A NAME="177184">
+For example, the following code creates a hyperlink that, when clicked, displays a confirm dialog box. If the user clicks the hyperlink and then chooses cancel, the page specified by the hyperlink is not loaded.<P></A>
+<A NAME="177185">
+<PRE>&lt;A HREF = "http://home.netscape.com/"<br>&nbsp;&nbsp;&nbsp;onClick="return confirm('Load Netscape home page?')"&gt;Netscape&lt;/A&gt;</PRE>
+</A>
+<A NAME="177186">
+Returning false in an onClick event handler for a button has no effect.<P></A>
+
+<a name="177187">
+<B><blockquote>Note
+</blockquote></B>
+</a>
+
+<a name="177188">
+<blockquote>On some platforms, returning false in an onClick event handler for a reset 
+button has no effect. Please see the release notes (after starting Netscape, 
+choose Release Notes from the Help menu).
+</blockquote>
+</a>
+<A NAME="177189">
+See the relevant objects for the onClick syntax.<P></A>
+
+</UL><A NAME="Event handler of
+"></A>
+<A NAME="177190">
+<H3> Event handler of
+</H3>
+</A>
+
+<A NAME="177208">
+<a href="ref_a-c.htm#62518">Button</a> object, <a href="ref_a-c.htm#63502">Checkbox</a> object, <a href="ref_h-l.htm#84501">Link object</a>, <a href="ref_r-r.htm#26345">Radio</a> object, <a href="ref_r-r.htm#26487">Reset object</a>, <a href="ref_s-s.htm#73448">Submit object</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="177210">
+<H3> Implemented in
+</H3>
+</A>
+
+<ul><A NAME="177211">
+<LI>Navigator 2.0
+</A><A NAME="177212">
+<LI>Navigator 3.0: added the ability to return false to cancel the action associated with a click event
+</A>
+</UL><A NAME="Examples
+"></A>
+<A NAME="177213">
+<H3> Examples
+</H3>
+</A>
+
+</ul><A NAME="177214">
+<B>Example 1: Call a function when a user clicks a button.</B> Suppose you have created a JavaScript function called <B>compute</B>. You can execute the <B>compute</B> function when the user clicks a button by calling the function in the onClick event handler, as follows:<P></A>
+<A NAME="177215">
+<PRE>&lt;INPUT TYPE="button" VALUE="Calculate" onClick="compute(this.form)"&gt;</PRE>
+</A>
+<A NAME="177216">
+In the preceding example, the keyword <I>this</I> refers to the current object; in this case, the <B>Calculate</B> button. The construct <I>this.form</I> refers to the form containing the button.<P></A>
+<A NAME="177217">
+For another example, suppose you have created a JavaScript function called <B>pickRandomURL</B> that lets you select a URL at random. You can use the onClick event handler of a link to specify a value for the HREF attribute of the &lt;A&gt; tag dynamically, as shown in the following example:<P></A>
+<A NAME="177218">
+<PRE>&lt;A HREF=""<br>&nbsp;&nbsp;&nbsp;onClick="this.href=pickRandomURL()"<br>&nbsp;&nbsp;&nbsp;onMouseOver="window.status='Pick a random URL'; return true"&gt;<br>Go!&lt;/A&gt;</PRE>
+</A>
+<A NAME="177219">
+In the above example, the onMouseOver event handler specifies a custom message for the Navigator status bar when the user places the mouse pointer over the Go! anchor. As this example shows, you must return true to set the <I>window.status</I> property in the onMouseOver event handler.<P></A>
+<A NAME="177220">
+<B>Example 2: Cancel the checking of a checkbox.</B> The following example creates a checkbox with an onClick event handler. The event handler displays a confirm that warns the user that checking the checkbox purges all files. If the user chooses Cancel, the onClick event handler returns false and the checkbox is not checked.<P></A>
+<A NAME="177221">
+<PRE>&lt;INPUT TYPE="checkbox" NAME="check1" VALUE="check1"<br>&nbsp;&nbsp;&nbsp;onClick="return confirm('This purges all your files. Are you sure?')"&gt; Remove files</PRE>
+</A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="onError
+"></A>
+<A NAME="177224">
+<H1> onError
+</H1>
+</A>
+
+<A NAME="177225">
+Event handler. An error event occurs when the loading of a document or image causes an error. The onError event handler executes JavaScript code when an error event occurs.<P></A>
+<A NAME="181170">
+An error event occurs only when a JavaScript syntax or runtime error occurs, not when a Navigator error occurs. For example, if you try set <code>window.location.href='notThere.html'</code> and <code>notThere.html</code> does not exist, the resulting error message is a Navigator error message; therefore, an onError event handler would not intercept that message. However, an error event <I>is</I> triggered by a bad URL within an &lt;IMG&gt; tag or by corrupted image data.<P></A>
+<A NAME="200255">
+<code>window.onerror</code> applies only to errors that occur in the window containing <code>window.onerror</code>, not in other windows.<P></A>
+<A NAME="200253">
+The onError event handler can be any of the following:<P></A>
+<ul><A NAME="177227">
+<LI>null to suppress all JavaScript error dialogs. Setting <code>window.onerror</code> to null means your users won't see JavaScript errors caused by your own code.
+</A><A NAME="177228">
+<LI>The name of a function that handles errors (arguments are message text, URL, and line number of the offending line). To suppress the standard JavaScript error dialog, the function must return true. See Example 3 below.
+</A><A NAME="177232">
+<LI>A variable or property that contains null or a valid function reference.
+</A></ul><A NAME="177233">
+If you write an error-handling function, you have three options for reporting errors:<P></A>
+<ul><A NAME="177234">
+<LI>Trace errors but let the standard JavaScript dialog report them (use an error handling function that returns false or does not return a value)
+</A><A NAME="177235">
+<LI>Report errors yourself and disable the standard error dialog (use an error handling function that returns true)
+</A><A NAME="177236">
+<LI>Turn off all error reporting (set the onError event handler to null)
+</A></ul><A NAME="177238">
+See the relevant objects for the onError syntax.<P></A>
+
+</UL><A NAME="Event handler of
+"></A>
+<A NAME="177239">
+<H3> Event handler of
+</H3>
+</A>
+
+<A NAME="177246">
+<a href="ref_h-l.htm#90746">Image</a> object, <a href="ref_t-z.htm#67013">window object</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="177247">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="177248">
+Navigator 3.0<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="177249">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="177253">
+<B>Example 1: Null event handler.</B> In the following &lt;IMG&gt; tag, the code <code>onError="null"</code> suppresses error messages if errors occur when the image loads.<P></A>
+<A NAME="177254">
+<PRE>&lt;IMG NAME="imageBad1" SRC="corrupt.gif" ALIGN="left" BORDER="2"<br>&nbsp;&nbsp;&nbsp;onError="null"&gt;</PRE>
+</A>
+<A NAME="177255">
+<B>Example 2: Null event handler for a window.</B> The onError event handler for windows cannot be expressed in HTML. Therefore, you must spell it all lowercase and set it in a &lt;SCRIPT&gt; tag. The following code assigns null to the onError handler for the entire window, not just the <I>Image</I> object. This suppresses all JavaScript error messages, including those for the <I>Image</I> object.<P></A>
+<A NAME="177256">
+<PRE>&lt;SCRIPT&gt;<br>window.onerror=null<br>&lt;/SCRIPT&gt;<br>&lt;IMG NAME="imageBad1" SRC="corrupt.gif" ALIGN="left" BORDER="2"&gt;</PRE>
+</A>
+<A NAME="182133">
+However, if the <I>Image</I> object has a custom onError event handler, the handler would execute if the image had an error. This is because <code>window.onerror=null</code> suppresses JavaScript error messages, not onError event handlers.<P></A>
+<A NAME="182544">
+<PRE>&lt;SCRIPT&gt;<br>window.onerror=null<br>function myErrorFunc() {<br>&nbsp;&nbsp;&nbsp;alert("The image had a nasty error.")<br>}<br>&lt;/SCRIPT&gt;<br>&lt;IMG NAME="imageBad1" SRC="corrupt.gif" ALIGN="left" BORDER="2"<br>&nbsp;&nbsp;&nbsp;onError="myErrorFunc()"&gt;</PRE>
+</A>
+<A NAME="177257">
+In the following example, <code>window.onerror=null</code> suppresses all error reporting. Without <code>onerror=null</code>, the code would cause a stack overflow error because of infinite recursion.<P></A>
+<A NAME="177258">
+<PRE>&lt;SCRIPT&gt;<br>window.onerror = null;<br>function testErrorFunction() {<br>&nbsp;&nbsp;&nbsp;testErrorFunction();<br>}<br>&lt;/SCRIPT&gt;<br>&lt;BODY onload="testErrorFunction()"&gt;<br>test message<br>&lt;/BODY&gt;</PRE>
+</A>
+<A NAME="177259">
+<B>Example 3: Error handling function.</B> The following example defines a function, <I>myOnError</I>, that intercepts JavaScript errors. The function uses three arrays to store the message, URL, and line number for each error. When the user clicks the Display Error Report button, the <I>displayErrors</I> function opens a window and creates an error report in that window. Note that the function returns true to suppress the standard JavaScript error dialog.<P></A>
+<A NAME="177260">
+<PRE>&lt;SCRIPT&gt;<br>window.onerror = myOnError<br><br>msgArray = new Array()<br>urlArray = new Array()<br>lnoArray = new Array()<br><br>function myOnError(msg, url, lno) {<br>&nbsp;&nbsp;&nbsp;msgArray[msgArray.length] = msg<br>&nbsp;&nbsp;&nbsp;urlArray[urlArray.length] = url<br>&nbsp;&nbsp;&nbsp;lnoArray[lnoArray.length] = lno<br>&nbsp;&nbsp;&nbsp;return true<br>}<br><br>function displayErrors() {<br>&nbsp;&nbsp;&nbsp;win2=window.open('','window2','scrollbars=yes')<br>&nbsp;&nbsp;&nbsp;win2.document.writeln('&lt;B&gt;Error Report&lt;/B&gt;&lt;P&gt;')<br><br>&nbsp;&nbsp;&nbsp;for (var i=0; i &lt; msgArray.length; i++) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;win2.document.writeln('&lt;B&gt;Error in file:&lt;/B&gt; ' + urlArray[i] + '&lt;BR&gt;')<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;win2.document.writeln('&lt;B&gt;Line number:&lt;/B&gt; ' + lnoArray[i] + '&lt;BR&gt;')<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;win2.document.writeln('&lt;B&gt;Message:&lt;/B&gt; ' + msgArray[i] + '&lt;P&gt;')<br>&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;win2.document.close()<br>}<br>&lt;/SCRIPT&gt;<br><br>&lt;BODY onload="noSuchFunction()"&gt;<br>&lt;FORM&gt;<br>&lt;BR&gt;&lt;INPUT TYPE="button" VALUE="This button has a syntax error"<br>&nbsp;&nbsp;&nbsp;onClick="alert('unterminated string)"&gt;<br><br>&lt;P&gt;&lt;INPUT TYPE="button" VALUE="Display Error Report"<br>&nbsp;&nbsp;&nbsp;onClick="displayErrors()"&gt;<br>&lt;/FORM&gt;</PRE>
+</A>
+<A NAME="177261">
+This example produces the following output:<P></A>
+<A NAME="177262">
+<PRE><B>Error Report</B></PRE>
+</A>
+<A NAME="177263">
+<PRE><B>Error in file:</B> file:///c%7C/temp/onerror.html<br><B>Line number:</B> 34<br><B>Message:</B> unterminated string literal</PRE>
+</A>
+<A NAME="177264">
+<PRE><B>Error in file:</B> file:///c%7C/temp/onerror.html<br><B>Line number:</B> 34<br><B>Message:</B> missing ) after argument list</PRE>
+</A>
+<A NAME="177265">
+<PRE><B>Error in file:</B> file:///c%7C/temp/onerror.html<br><B>Line number:</B> 30<br><B>Message:</B> noSuchFunction is not defined</PRE>
+</A>
+<A NAME="177266">
+<B>Example 4: Event handler calls a function.</B> In the following &lt;IMG&gt; tag, the onError event handler calls the function <I>badImage</I> if errors occur when the image loads.<P></A>
+<A NAME="177267">
+<PRE>&lt;SCRIPT&gt;<br>function badImage(theImage) {<br>&nbsp;&nbsp;&nbsp;alert('Error: ' + theImage.name + ' did not load properly.')<br>}<br>&lt;/SCRIPT&gt;<br>&lt;FORM&gt;<br>&lt;IMG NAME="imageBad2" SRC="orca.gif" ALIGN="left" BORDER="2"<br>&nbsp;&nbsp;&nbsp;onError="badImage(this)"&gt;<br>&lt;/FORM&gt;</PRE>
+</A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="177268">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="177275">
+<a href="ref_m-q.htm#177077">onAbort</a>, <a href="ref_m-q.htm#177323">onLoad</a> event handlers<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="onFocus
+"></A>
+<A NAME="177278">
+<H1> onFocus
+</H1>
+</A>
+
+<A NAME="177280">
+Event handler. A focus event occurs when a window, frame, or frameset receives focus or when a form element receives input focus. The focus event can result from a <B>focus</B> method or from the user clicking the mouse on an object or window or tabbing with the keyboard. Selecting within a field results in a select event, not a focus event. The onFocus event handler executes JavaScript code when a focus event occurs.<P></A>
+<A NAME="177281">
+A frame's onFocus event handler overrides an onFocus event handler in the &lt;BODY&gt; tag of the document loaded into frame.<P></A>
+<A NAME="177282">
+Note that placing an alert in an onFocus event handler results in recurrent alerts: when you press OK to dismiss the alert, the underlying window gains focus again and produces another focus event.<P></A>
+
+<a name="177283">
+<B><blockquote>Note
+</blockquote></B>
+</a>
+
+<a name="177284">
+<blockquote>On some platforms, placing an onFocus event handler in a &lt;FRAMESET&gt; tag 
+has no effect. Please see the release notes (after starting Netscape, choose 
+Release Notes from the Help menu).
+</blockquote>
+</a>
+<A NAME="177285">
+See the relevant objects for the onFocus syntax.<P></A>
+
+</UL><A NAME="Event handler of
+"></A>
+<A NAME="177286">
+<H3> Event handler of
+</H3>
+</A>
+
+<A NAME="177302">
+<a href="ref_a-c.htm#62518">Button</a> object, <a href="ref_a-c.htm#63502">Checkbox</a> object, <a href="ref_f-g.htm#104945">FileUpload</a> object, <a href="ref_f-g.htm#60829">Frame</a> object, <a href="ref_m-q.htm#177857">Password</a> object, <a href="ref_r-r.htm#26345">Radio</a> object, <a href="ref_r-r.htm#26487">Reset object</a>, <a href="ref_s-s.htm#72585">Select object</a>, <a href="ref_s-s.htm#73448">Submit object</a>, <a href="ref_t-z.htm#65229">Text object</a>, <a href="ref_t-z.htm#65386">Textarea</a> object, <a href="ref_t-z.htm#67013">window object</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="177303">
+<H3> Implemented in
+</H3>
+</A>
+
+<ul><A NAME="177304">
+<LI>Navigator 2.0
+</A><A NAME="177305">
+<LI>Navigator 3.0: event handler of <I>Button, Checkbox, FileUpload, Frame, Password, Radio, Reset, Submit,</I> and <I>window</I>
+</A>
+</UL><A NAME="Examples
+"></A>
+<A NAME="177306">
+<H3> Examples
+</H3>
+</A>
+
+</ul><A NAME="177307">
+The following example uses an onFocus handler in the <I>valueField</I> <I>Textarea</I> object to call the <B>valueCheck</B> function.<P></A>
+<A NAME="177308">
+<PRE>&lt;INPUT TYPE="textarea" VALUE="" NAME="valueField" onFocus="valueCheck()"&gt;</PRE>
+</A>
+<A NAME="177312">
+See also the examples for the <a href="ref_m-q.htm#177100">onBlur</a> event handler.<P></A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="177313">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="177320">
+<a href="ref_m-q.htm#177100">onBlur</a>, <a href="ref_m-q.htm#177149">onChange</a> event handlers<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="onLoad
+"></A>
+<A NAME="177323">
+<H1> onLoad
+</H1>
+</A>
+
+<A NAME="177325">
+Event handler. A load event occurs when Navigator finishes loading a window or all frames within a &lt;FRAMESET&gt; tag. The onLoad event handler executes JavaScript code when a load event occurs.<P></A>
+<A NAME="177326">
+Use the onLoad event handler within either the BODY or the &lt;FRAMESET&gt; tag, for example, &lt;<code>BODY onLoad="..."&gt;</code>.<P></A>
+<A NAME="177327">
+In a FRAMESET and FRAME relationship, an onLoad event within a frame (placed in the &lt;BODY&gt; tag) occurs before an onLoad event within the FRAMESET (placed in the &lt;FRAMESET&gt; tag).<P></A>
+<A NAME="177328">
+For images, the onLoad event handler indicates the script to execute when an image is displayed. Do not confuse displaying an image with loading an image. You can load several images, then display them one by one in the same <I>Image</I> object by setting the object's <I>src</I> property. If you change the image displayed in this way, the onLoad event handler executes every time an image is displayed, not just when the image is loaded into memory.<P></A>
+<A NAME="177329">
+If you specify an onLoad event handler for an <I>Image</I> object that displays a looping GIF animation (multi-image GIF), each loop of the animation triggers the onLoad event, and the event handler executes once for each loop.<P></A>
+<A NAME="177330">
+You can use the onLoad event handler to create a JavaScript animation by repeatedly setting the <I>src</I> property of an <I>Image</I> object. See the <I><a href="ref_h-l.htm#90746">Image</a></I> object for information.<P></A>
+
+</UL><A NAME="Event handler of
+"></A>
+<A NAME="177334">
+<H3> Event handler of
+</H3>
+</A>
+
+<A NAME="177341">
+<a href="ref_h-l.htm#90746">Image</a> object, <a href="ref_t-z.htm#67013">window object</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="177342">
+<H3> Implemented in
+</H3>
+</A>
+
+<ul><A NAME="177343">
+<LI>Navigator 2.0
+</A><A NAME="177344">
+<LI>Navigator 3.0: event handler of <I>Image</I>
+</A>
+</UL><A NAME="Examples
+"></A>
+<A NAME="177345">
+<H3> Examples
+</H3>
+</A>
+
+</ul><A NAME="177346">
+<B>Example 1: Display message when page loads.</B> In the following example, the onLoad event handler displays a greeting message after a Web page is loaded.<P></A>
+<A NAME="177347">
+<PRE>&lt;BODY onLoad="window.alert("Welcome to the Brave New World home page!")&gt;</PRE>
+</A>
+<A NAME="177348">
+<B>Example 2: Display alert when image loads.</B> The following example creates two <I>Image</I> objects, one with the Image() constructor and one with the &lt;IMG&gt; tag. Each <I>Image</I> object has an onLoad event handler that calls the <I>displayAlert</I> function, which displays an alert. For the image created with the &lt;IMG&gt; tag, the alert displays the image name. For the image created with the Image() constructor, the alert displays a message without the image name. This is because the onLoad handler for an object created with the Image() constructor must be the name of a function, and it cannot specify parameters for the <I>displayAlert</I> function.<P></A>
+<A NAME="177349">
+<PRE>&lt;SCRIPT&gt;<br>imageA = new Image(50,50)<br>imageA.onload=displayAlert<br>imageA.src="cyanball.gif"<br><br>function displayAlert(theImage) {<br>&nbsp;&nbsp;&nbsp;if (theImage==null) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert('An image loaded')<br>&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;else alert(theImage.name + ' has been loaded.')<br>}<br>&lt;/SCRIPT&gt;<br><br>&lt;IMG NAME="imageB" SRC="greenball.gif" ALIGN="top"<br>&nbsp;&nbsp;&nbsp;onLoad=displayAlert(this)&gt;&lt;BR&gt;</PRE>
+</A>
+<A NAME="177350">
+<B>Example 3: Looping GIF animation.</B> The following example displays an image, <code>birdie.gif</code>, that is a looping GIF animation. The onLoad event handler for the image increments the variable <I>cycles</I>, which keeps track of the number of times the animation has looped. To see the value of <I>cycles</I>, the user clicks the button labeled Count Loops.<P></A>
+<A NAME="177351">
+<PRE>&lt;SCRIPT&gt;<br>var cycles=0<br>&lt;/SCRIPT&gt;<br>&lt;IMG ALIGN="top" SRC="birdie.gif" BORDER=0<br>&nbsp;&nbsp;&nbsp;onLoad="++cycles"&gt;<br>&lt;INPUT TYPE="button" VALUE="Count Loops"<br>&nbsp;&nbsp;&nbsp;onClick="alert('The animation has looped ' + cycles + ' times.')"&gt;</PRE>
+</A>
+<A NAME="177352">
+<B>Example 4: Change GIF animation displayed.</B> The following example uses an onLoad event handler to rotate the display of six GIF animations. Each animation is displayed in sequence in one <I>Image</I> object. When the document loads, <code>!anim0.html</code> is displayed. When that animation completes, the onLoad event handler causes the next file, <code>!anim1.html</code>, to load in place of the first file. After the last animation, <code>!anim5.html</code>, completes, the first file is again displayed. Notice that the <I>changeAnimation</I> function does not call itself after changing the <I>src</I> property of the <I>Image</I> object. This is because when the <I>src</I> property changes, the image's onLoad event handler is triggered and the <I>changeAnimation</I> function is called.<P></A>
+<A NAME="177353">
+<PRE>&lt;SCRIPT&gt;<br>var whichImage=0<br>var maxImages=5<br><br>function changeAnimation(theImage) {<br>&nbsp;&nbsp;&nbsp;++whichImage<br>&nbsp;&nbsp;&nbsp;if (whichImage &lt;= maxImages) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var imageName="!anim" + whichImage + ".gif"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;theImage.src=imageName<br>&nbsp;&nbsp;&nbsp;} else {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;whichImage=-1<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return<br>&nbsp;&nbsp;&nbsp;}<br>}<br>&lt;/SCRIPT&gt;<br><br>&lt;IMG NAME="changingAnimation" SRC="!anim0.gif" BORDER=0 ALIGN="top"<br>&nbsp;&nbsp;&nbsp;onLoad="changeAnimation(this)"&gt;</PRE>
+</A>
+<A NAME="177357">
+See also the examples for the <I><a href="ref_h-l.htm#90746">Image</a></I> object.<P></A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="177358">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="177368">
+<a href="ref_m-q.htm#177077">onAbort</a>, <a href="ref_m-q.htm#177224">onError</a>, <a href="ref_m-q.htm#177506">onUnload</a> event handlers<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="onMouseOut
+"></A>
+<A NAME="177371">
+<H1> onMouseOut
+</H1>
+</A>
+
+<A NAME="177372">
+Event handler. A mouseOut event occurs each time the mouse pointer leaves an area (client-side image map) or link from inside that area or link. The onMouseOut event handler executes JavaScript code when a mouseOut event occurs.<P></A>
+<A NAME="177373">
+If the mouse moves from one area into another in a client-side image map, you'll get onMouseOut for the first area, then onMouseOver for the second.<P></A>
+<A NAME="177374">
+<I>Area</I> objects that use the onMouseOut event handler must include the HREF attribute within the &lt;AREA&gt; tag.<P></A>
+<A NAME="177375">
+You must return true within the event handler if you want to set the <I>status</I> or <I>defaultStatus</I> properties with the onMouseOver event handler.<P></A>
+<A NAME="177376">
+See the relevant objects for the onMouseOut syntax.<P></A>
+
+</UL><A NAME="Event handler of
+"></A>
+<A NAME="177377">
+<H3> Event handler of
+</H3>
+</A>
+
+<A NAME="177384">
+Area object (see <a href="ref_h-l.htm#84501">Link object</a>), <a href="ref_h-l.htm#84501">Link object</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="177385">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="177386">
+Navigator 3.0<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="177387">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="177391">
+See the examples for the <a href="ref_h-l.htm#84501">Link object</a>.<P></A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="177392">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="177396">
+<a href="ref_m-q.htm#214258">onMouseOver</a> event handler<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="onMouseOver
+"></A>
+<A NAME="214258">
+<H1> onMouseOver
+</H1>
+</A>
+
+<A NAME="214260">
+Event handler. A mouseOver event occurs once each time the mouse pointer moves over an object or area from outside that object or area. The onMouseOver event handler executes JavaScript code when a mouseOver event occurs.<P></A>
+<A NAME="177402">
+If the mouse moves from one area into another in a client-side image map, you'll get onMouseOut for the first area, then onMouseOver for the second.<P></A>
+<A NAME="177403">
+<I>Area</I> objects that use the onMouseOver event handler must include the HREF attribute within the &lt;AREA&gt; tag.<P></A>
+<A NAME="177404">
+You must return true within the event handler if you want to set the <I>status</I> or <I>defaultStatus</I> properties with the onMouseOver event handler.<P></A>
+<A NAME="177405">
+See the relevant objects for the onMouseOver syntax.<P></A>
+
+</UL><A NAME="Event handler of
+"></A>
+<A NAME="177406">
+<H3> Event handler of
+</H3>
+</A>
+
+<A NAME="177413">
+Area object (see <a href="ref_h-l.htm#84501">Link object</a>), <a href="ref_h-l.htm#84501">Link object</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="177414">
+<H3> Implemented in
+</H3>
+</A>
+
+<ul><A NAME="177415">
+<LI>Navigator 2.0
+</A><A NAME="177416">
+<LI>Navigator 3.0: event handler of <I>Area</I>
+</A>
+</UL><A NAME="Examples
+"></A>
+<A NAME="177417">
+<H3> Examples
+</H3>
+</A>
+
+</ul><A NAME="177418">
+By default, the HREF value of an anchor displays in the status bar at the bottom of the Navigator when a user places the mouse pointer over the anchor. In the following example, the onMouseOver event handler provides the custom message "Click this if you dare."<P></A>
+<A NAME="177419">
+<PRE>&lt;A HREF="http://home.netscape.com/"<br>&nbsp;&nbsp;&nbsp;onMouseOver="window.status='Click this if you dare!'; return true"&gt;<br>Click me&lt;/A&gt;</PRE>
+</A>
+<A NAME="177423">
+See <a href="ref_m-q.htm#177180">onClick</a> for an example of using onMouseOver when the &lt;A&gt; tag's HREF attribute is set dynamically.<P></A>
+<A NAME="177427">
+See also the examples for the <a href="ref_h-l.htm#84501">Link object</a>.<P></A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="177428">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="177432">
+<a href="ref_m-q.htm#177371">onMouseOut</a> event handler<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="onReset
+"></A>
+<A NAME="177435">
+<H1> onReset
+</H1>
+</A>
+
+<A NAME="177436">
+Event handler. A reset event occurs when a user resets a form (clicks a Reset button). The onReset event handler executes JavaScript code when a reset event occurs.<P></A>
+<A NAME="177437">
+See the relevant objects for the onReset syntax.<P></A>
+
+</UL><A NAME="Event handler of
+"></A>
+<A NAME="177438">
+<H3> Event handler of
+</H3>
+</A>
+
+<A NAME="177442">
+<a href="ref_f-g.htm#60597">Form object</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="177443">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="177444">
+Navigator 3.0<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="177445">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="177446">
+The following example displays a <I>Text</I> object with the default value "CA" and a reset button. If the user types a state abbreviation in the <I>Text</I> object and then clicks the reset button, the original value of "CA" is restored. The form's onReset event handler displays a message indicating that defaults have been restored.<P></A>
+<A NAME="177447">
+<PRE>&lt;FORM NAME="form1" onReset="alert('Defaults have been restored.')"&gt;<br>State:<br>&lt;INPUT TYPE="text" NAME="state" VALUE="CA" SIZE="2"&gt;&lt;P&gt;<br>&lt;INPUT TYPE="reset" VALUE="Clear Form" NAME="reset1"&gt;<br>&lt;/FORM&gt;</PRE>
+</A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="177448">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="177455">
+<a href="ref_r-r.htm#29120">reset method</a>, <a href="ref_r-r.htm#26487">Reset object</a><P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="onSelect
+"></A>
+<A NAME="177458">
+<H1> onSelect
+</H1>
+</A>
+
+<A NAME="177460">
+Event handler. A select event occurs when a user selects some of the text within a text or textarea field. The onSelect event handler executes JavaScript code when a select event occurs.<P></A>
+<A NAME="177461">
+See the relevant objects for the onSelect syntax.<P></A>
+
+</UL><A NAME="Event handler of
+"></A>
+<A NAME="177462">
+<H3> Event handler of
+</H3>
+</A>
+
+<A NAME="177469">
+<a href="ref_t-z.htm#65229">Text object</a>, <a href="ref_t-z.htm#65386">Textarea</a> object<P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="177470">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="177471">
+Navigator 2.0<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="177472">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="177473">
+The following example uses an onSelect handler in the <I>valueField</I> <I>Text</I> object to call the <B>selectState</B> function.<P></A>
+<A NAME="177474">
+<PRE>&lt;INPUT TYPE="text" VALUE="" NAME="valueField" onSelect="selectState()"&gt;</PRE>
+</A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="onSubmit
+"></A>
+<A NAME="177477">
+<H1> onSubmit
+</H1>
+</A>
+
+<A NAME="177479">
+Event handler. A submit event occurs when a user submits a form. The onSubmit event handler executes JavaScript code when a submit event occurs.<P></A>
+<A NAME="177480">
+You can use the onSubmit event handler to prevent a form from being submitted; to do so, put a <B>return</B> statement that returns false in the event handler. Any other returned value lets the form submit. If you omit the <B>return</B> statement, the form is submitted.<P></A>
+<A NAME="177481">
+See the relevant objects for the onSubmit syntax.<P></A>
+
+</UL><A NAME="Event handler of
+"></A>
+<A NAME="177482">
+<H3> Event handler of
+</H3>
+</A>
+
+<A NAME="177486">
+<a href="ref_f-g.htm#60597">Form object</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="177487">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="177488">
+Navigator 2.0<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="177489">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="177490">
+In the following example, the onSubmit event handler calls the <I>validate</I> function to evaluate the data being submitted. If the data is valid, the form is submitted; otherwise, the form is not submitted.<P></A>
+<A NAME="177491">
+<PRE>&lt;FORM onSubmit="return validate(this)"&gt;<br>...<br>&lt;/FORM&gt;</PRE>
+</A>
+<A NAME="177495">
+See also the examples for the <a href="ref_f-g.htm#60597">Form object</a>.<P></A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="177496">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="177503">
+<a href="ref_s-s.htm#73448">Submit object</a>, <a href="ref_s-s.htm#73411">submit method</a><P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="onUnload
+"></A>
+<A NAME="177506">
+<H1> onUnload
+</H1>
+</A>
+
+<A NAME="177508">
+Event handler. An unload event occurs when you exit a document. The onUnload event handler executes JavaScript code when an unload event occurs.<P></A>
+<A NAME="177509">
+Use the onUnload event handler within either the BODY or the &lt;FRAMESET&gt; tag, for example, &lt;<code>BODY onUnload="..."&gt;</code>.<P></A>
+<A NAME="177510">
+In a frameset and frame relationship, an onUnload event within a frame (placed in the &lt;BODY&gt; tag) occurs before an onUnload event within the frameset (placed in the &lt;FRAMESET&gt; tag).<P></A>
+
+</UL><A NAME="Event handler of
+"></A>
+<A NAME="177511">
+<H3> Event handler of
+</H3>
+</A>
+
+<A NAME="177515">
+<a href="ref_t-z.htm#67013">window object</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="177516">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="177517">
+Navigator 2.0<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="177518">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="177519">
+In the following example, the onUnload event handler calls the <B>cleanUp</B> function to perform some shutdown processing when the user exits a Web page:<P></A>
+<A NAME="177520">
+<PRE>&lt;BODY onUnload="cleanUp()"&gt;</PRE>
+</A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="177521">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="177526">
+<a href="ref_m-q.htm#177323">onLoad</a> event handler<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="open (document object)
+"></A>
+<A NAME="177567">
+<H1> open (document object)
+</H1>
+</A>
+
+<A NAME="177569">
+Method. Opens a stream to collect the output of <B>write</B> or <B>writeln</B> methods.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="177570">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="177571">
+<PRE>document.open(["<I>mimeType</I>"])<br>[<I>windowReference</I>.]document.open("text/html","replace")</PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="177575">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="177576">
+<I>mimeType</I> is an optional argument that specifies the type of document to which you are writing. If you do not specify a <I>mimeType</I>, <code>text/html</code> is the default.<P></A>
+<ul><A NAME="177577">
+<LI><code>text/html</code> specifies a document containing ASCII text with HTML formatting.
+</A><A NAME="177578">
+<LI><code>text/plain</code> specifies a document containing plain ASCII text with end-of-line characters to delimit displayed lines.
+</A><A NAME="177579">
+<LI><code>image/gif</code> specifies a document with encoded bytes constituting a GIF header and pixel data.
+</A><A NAME="177580">
+<LI><code>image/jpeg</code> specifies a document with encoded bytes constituting a JPEG header and pixel data.
+</A><A NAME="177581">
+<LI><code>image/x-bitmap</code> specifies a document with encoded bytes constituting a bitmap header and pixel data.
+</A><A NAME="177582">
+<LI><I>plugIn</I> loads the specified plug-in and uses it as the destination for <B>write</B> and <B>writeln</B> methods. For example, "x-world/vrml" loads the VR Scout VRML plug-in from Chaco Communications, and "application/x-director" loads the Macromedia Shockwave plug-in. Plug-in MIME types are only valid if the user has installed the required plug-in software.
+</A></ul><A NAME="177583">
+<I>windowReference</I> is a valid way of referring to a window, as described in the <a href="ref_t-z.htm#67013">window object</a>.<P></A>
+<A NAME="177587">
+<I>"replace"</I> causes the new document to reuse the history entry that the previous document used. When you specify "replace" while opening a document, the target window's history length is not incremented even after you write and close.<P></A>
+
+</UL><A NAME="Method of
+"></A>
+<A NAME="177588">
+<H3> Method of
+</H3>
+</A>
+
+<A NAME="177592">
+<a href="ref_d-e.htm#47667">document</a><P></A>
+
+</UL>
+
+<A NAME="Implemented in
+"></A>
+<A NAME="177593">
+<H3> Implemented in
+</H3>
+</A>
+
+<UL>
+<LI><A NAME="177594">
+Navigator 2.0</A>
+<LI><A NAME="200221">
+Navigator 3.0: added "replace" parameter; document.open() or document.open("text/html") clears the current document if it has finished loading</A>
+</UL>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="177595">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="177596">
+The <B>open</B> method opens a stream to collect the output of <B>write</B> or <B>writeln</B> methods. If the <I>mimeType</I> is text or image, the stream is opened to layout; otherwise, the stream is opened to a plug-in. If a document exists in the target window, the <B>open</B> method clears it.<P></A>
+<A NAME="177597">
+End the stream by using the <code>document.close()</code> method. The <B>close</B> method causes text or images that were sent to layout to display. After using <code>document.close()</code>, issue <code>document.open()</code> again when you want to begin another output stream.<P></A>
+<A NAME="200153">
+In Navigator 3.0, document.open() or document.open("text/html") clears the current document if it has finished loading. This is because this type of <I>open</I> call writes a default &lt;BASE HREF=&gt; tag so you can generate relative URLs based on the generating script's document base.<P></A>
+
+<A NAME="Using "replace"
+"></A>
+<A NAME="200151">
+<H4> Using "replace"
+</H4>
+</A>
+
+<A NAME="177599">
+The "replace" keyword<I> </I>causes the new document to reuse the history entry that the previous document used. When you specify "replace" while opening a document, the target window's history length is not incremented even after you write and close.<P></A>
+<A NAME="177603">
+"replace" is typically used on a window that has a blank document or an "about:blank" URL. After "replace" is specified, the <B>write</B> method typically generates HTML for the window, replacing the history entry for the blank URL. Take care when using generated HTML on a window with a blank URL. If you do not specify "replace", the generated HTML has its own history entry, and the user can press the Back button and back up until the frame is empty.<P></A>
+<A NAME="177604">
+After <code>document.open("text/html","replace")</code> executes, <I>history.current</I> for the target window is the URL of document that executed <I>document.open</I>.<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="179646">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="177606">
+<B>Example 1.</B> The following function calls <I>document.open</I> to open a stream before issuing a <B>write</B> method:<P></A>
+<A NAME="177607">
+<PRE>function windowWriter1() {<br>&nbsp;&nbsp;&nbsp;var myString = "Hello, world!"<br>&nbsp;&nbsp;&nbsp;msgWindow.document.open()<br>&nbsp;&nbsp;&nbsp;msgWindow.document.write("&lt;P&gt;" + myString)<br>&nbsp;&nbsp;&nbsp;msgWindow.document.close()<br>}</PRE>
+</A>
+<A NAME="177608">
+<B>Example 2.</B> The following function calls <I>document.open</I> with the "replace" keyword to open a stream before issuing <B>write</B> methods. The HTML code in the <B>write</B> methods is written to <I>msgWindow</I>, replacing the current history entry. The history length of <I>msgWindow</I> is not incremented.<P></A>
+<A NAME="177609">
+<PRE>function windowWriter2() {<br>&nbsp;&nbsp;&nbsp;var myString = "Hello, world!"<br>&nbsp;&nbsp;&nbsp;msgWindow.document.open("text/html","replace")<br>&nbsp;&nbsp;&nbsp;msgWindow.document.write("&lt;P&gt;" + myString)<br>&nbsp;&nbsp;&nbsp;msgWindow.document.write("&lt;P&gt;history.length is " + <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;msgWindow.history.length)<br>&nbsp;&nbsp;&nbsp;msgWindow.document.close()<br>}</PRE>
+</A>
+<A NAME="177610">
+The following code creates the <I>msgWindow</I> window and calls the function:<P></A>
+<A NAME="177611">
+<PRE>msgWindow=window.open('','',<br>&nbsp;&nbsp;&nbsp;'toolbar=yes,scrollbars=yes,width=400,height=300')<br>windowWriter2()</PRE>
+</A>
+<A NAME="177612">
+<B>Example 3.</B> In the following example, the <B>probePlugIn</B> function determines whether a user has the Shockwave plug-in installed:<P></A>
+<A NAME="177613">
+<PRE>function probePlugIn(mimeType) {<br>&nbsp;&nbsp;&nbsp;var havePlugIn = false<br>&nbsp;&nbsp;&nbsp;var tiny = window.open("", "teensy", "width=1,height=1")<br>&nbsp;&nbsp;&nbsp;if (tiny != null) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (tiny.document.open(mimeType) != null)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;havePlugIn = true<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tiny.close()<br>&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;return havePlugIn<br>}<br><br>var haveShockwavePlugIn = probePlugIn("application/x-director")</PRE>
+</A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="177614">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="177624">
+<a href="ref_a-c.htm#63902">close (document object)</a>, <a href="ref_r-r.htm#28934">reload</a>, <a href="ref_r-r.htm#29022">replace</a>, <a href="ref_t-z.htm#67240">write</a>, <a href="ref_t-z.htm#67313">writeln</a> methods<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="open (window object)
+"></A>
+<A NAME="177627">
+<H1> open (window object)
+</H1>
+</A>
+
+<A NAME="177629">
+Method. Opens a new web browser window.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="177630">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="177631">
+<PRE>[<I>windowVar</I> = ][window].open("<I>URL</I>", "<I>windowName</I>", ["<I>windowFeatures</I>"])</PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="177632">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="177633">
+<I>windowVar</I> is the name of a new window. Use this variable when referring to a window's properties, methods, and containership.<P></A>
+<A NAME="177637">
+<I>URL</I> specifies the URL to open in the new window. See the <I><a href="ref_h-l.htm#84722">location</a></I> object for a description of the URL components.<P></A>
+<A NAME="177638">
+<I>windowName</I> is the window name to use in the TARGET attribute of a FORM or &lt;A&gt; tag. <I>windowName</I> can contain only alphanumeric or underscore (_) characters.<P></A>
+<A NAME="177639">
+<I>windowFeatures</I> is a comma-separated list of any of the following options and values:<P></A>
+<A NAME="177640">
+<PRE>&nbsp;&nbsp;&nbsp;toolbar[=yes|no]|[=1|0]<br>&nbsp;&nbsp;&nbsp;location[=yes|no]|[=1|0]<br>&nbsp;&nbsp;&nbsp;directories[=yes|no]|[=1|0]<br>&nbsp;&nbsp;&nbsp;status[=yes|no]|[=1|0]<br>&nbsp;&nbsp;&nbsp;menubar[=yes|no]|[=1|0]<br>&nbsp;&nbsp;&nbsp;scrollbars[=yes|no]|[=1|0]<br>&nbsp;&nbsp;&nbsp;resizable[=yes|no]|[=1|0]<br>&nbsp;&nbsp;&nbsp;width=<I>pixels<br></I>&nbsp;&nbsp;&nbsp;height=<I>pixels</I></PRE>
+</A>
+<A NAME="177641">
+You may use any subset of these options. Separate options with a comma. Do not put spaces between the options. The <I>windowFeatures</I> are:<P></A>
+<ul><A NAME="177642">
+<LI><I>toolbar</I> creates the standard Navigator toolbar, with buttons such as <B>Back</B> and <B>Forward</B>, if true.
+</A><A NAME="177643">
+<LI><I>location</I> creates a Location entry field, if true.
+</A><A NAME="177644">
+<LI><I>directories</I> creates the standard Navigator directory buttons, such as <B>What's New</B> and <B>What's Cool</B>, if true.
+</A><A NAME="177645">
+<LI><I>status</I> creates the status bar at the bottom of the window, if true.
+</A><A NAME="177646">
+<LI><I>menubar</I> creates the menu at the top of the window, if true.
+</A><A NAME="177647">
+<LI><I>scrollbars</I> creates horizontal and vertical scrollbars when the document grows larger than the window dimensions, if true.
+</A><A NAME="177648">
+<LI><I>resizable</I> allows a user to resize the window, if true.
+</A><A NAME="177649">
+<LI><I>width</I> specifies the width of the window in pixels.
+</A><A NAME="177650">
+<LI><I>height</I> specifies the height of the window in pixels.
+</A>
+</UL><A NAME="Method of
+"></A>
+<A NAME="177651">
+<H3> Method of
+</H3>
+</A>
+
+</ul><A NAME="177655">
+<a href="ref_t-z.htm#67013">window object</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="177656">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="177657">
+Navigator 2.0<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="177658">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="177659">
+The <B>open</B> method opens a new Web browser window on the client, similar to choosing New Web Browser from the File menu of the Navigator. The <I>URL</I> argument specifies the URL contained by the new window. If <I>URL</I> is an empty string, a new, empty window is created.<P></A>
+<A NAME="177660">
+In event handlers, you must specify <code>window.open()</code> instead of simply using <code>open()</code>. Due to the scoping of static objects in JavaScript, a call to <code>open()</code> without specifying an object name is equivalent to <code>document.open()</code>.<P></A>
+<A NAME="177661">
+<I>windowFeatures</I> is an optional, comma-separated list of options for the new window. The Boolean <I>windowFeatures</I> options are set to true if they are specified without values, or as <code>yes</code> or <code>1</code>. For example, <code>open("", "messageWindow", "toolbar")</code> and <code>open("", "messageWindow", "toolbar=1")</code> both set the toolbar option to true. If <I>windowName</I> does not specify an existing window and you do not specify <I>windowFeatures</I>, all Boolean <I>windowFeatures</I> are true by default. If you specify any item in <I>windowFeatures</I>, all other Boolean <I>windowFeatures</I> are false unless you explicitly specify them. After a window is open, you cannot use JavaScript to change the <I>windowFeatures.</I><P></A>
+<A NAME="199329">
+You can use <B>open</B> on an existing window, and if you pass the empty string for the URL, you will get a reference to the existing window, but not load anything into it. You can, for example, then look for properties in the window.<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="199327">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="177663">
+In the following example, the <B>windowOpener</B> function opens a window and uses <B>write</B> methods to display a message:<P></A>
+<A NAME="177664">
+<PRE>function windowOpener() {<br>&nbsp;&nbsp;&nbsp;msgWindow=window.open("","displayWindow","menubar=yes")<br>&nbsp;&nbsp;&nbsp;msgWindow.document.write<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;("&lt;HEAD&gt;&lt;TITLE&gt;Message window&lt;/TITLE&gt;&lt;/HEAD&gt;")<br>&nbsp;&nbsp;&nbsp;msgWindow.document.write<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;("&lt;CENTER&gt;&lt;BIG&gt;&lt;B&gt;Hello, world!&lt;/B&gt;&lt;/BIG&gt;&lt;/CENTER&gt;")<br>}</PRE>
+</A>
+<A NAME="177665">
+The following is an onClick event handler that opens a new client window displaying the content specified in the file <code>sesame.html</code>. The window opens with the specified option settings; all other options are false because they are not specified.<P></A>
+<A NAME="177666">
+<PRE>&lt;FORM NAME="myform"&gt;<br>&lt;INPUT TYPE="button" NAME="Button1" VALUE="Open Sesame!"<br>&nbsp;&nbsp;&nbsp;onClick="window.open ('sesame.html', 'newWin', <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'scrollbars=yes,status=yes,width=300,height=300')"&gt;<br>&lt;/FORM&gt;</PRE>
+</A>
+<A NAME="177667">
+Notice the use of single quotes (') inside the onClick event handler.<P></A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="177668">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="177672">
+<a href="ref_a-c.htm#64288">close (window object)</a> method<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="opener
+"></A>
+<A NAME="177675">
+<H1> opener
+</H1>
+</A>
+
+<A NAME="177676">
+Property. Specifies the window of the calling document when a window is opened using the <B>open</B> method.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="177677">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="177678">
+<PRE>window.opener</PRE>
+</A>
+
+</UL><A NAME="Property of
+"></A>
+<A NAME="177679">
+<H3> Property of
+</H3>
+</A>
+
+<A NAME="177683">
+<a href="ref_t-z.htm#67013">window object</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="177684">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="177685">
+Navigator 3.0<P></A>
+
+</UL><A NAME="Tainted?
+"></A>
+<A NAME="177686">
+<H3> Tainted?
+</H3>
+</A>
+
+<A NAME="177687">
+No<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="177688">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="177689">
+When a source document opens a destination window by calling the <B>open</B> method, the <I>opener</I> property specifies the window of the source document. Evaluate the <I>opener</I> property from the destination window.<P></A>
+<A NAME="182578">
+This property persists across document unload in the opened window.<P></A>
+<A NAME="177692">
+You can change the <I>opener</I> property at any time.<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="177693">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="177694">
+<B>Example 1: Close the opener.</B> The following code closes the window that opened the current window. When the opener window closes, <I>opener</I> is unchanged. However, <code>window.opener.name</code> then evaluates to undefined.<P></A>
+<A NAME="177695">
+<PRE>window.opener.close()</PRE>
+</A>
+<A NAME="177696">
+<B>Example 2: Evaluate the name of the opener.</B> A window can determine the name of its opener as follows:<P></A>
+<A NAME="177697">
+<PRE>document.write("&lt;BR&gt;opener property is " + window.opener.name)</PRE>
+</A>
+<A NAME="177698">
+<B>Example 3: Change the value of opener.</B> The following code changes the value of the <I>opener</I> property to null. After this code executes, you cannot close the opener window as shown in Example 1.<P></A>
+<A NAME="177699">
+<PRE>window.opener=null</PRE>
+</A>
+<A NAME="177700">
+<B>Example 4: Change a property of the opener.</B> The following code changes the background color of the window specified by the <I>opener</I> property.<P></A>
+<A NAME="177701">
+<PRE>window.opener.document.bgColor='bisque'</PRE>
+</A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="177702">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="177709">
+<a href="ref_a-c.htm#64288">close (window object)</a>, <a href="ref_m-q.htm#177627">open (window object)</a> methods<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="Option
+"></A>
+<A NAME="177710">
+<H1> Option
+</H1>
+</A>
+
+<A NAME="177711">
+Object. A <I>Select</I> object option created using the Option() constructor. For information, see the <a href="ref_s-s.htm#72585">Select object</a>.<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="options
+"></A>
+<A NAME="177716">
+<H1> options
+</H1>
+</A>
+
+<A NAME="177717">
+Property. An array corresponding to options in a <I>Select</I> object (OPTION tags) in source order. See the <a href="ref_s-s.htm#72585">Select object</a>.<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="parent
+"></A>
+<A NAME="177723">
+<H1> parent
+</H1>
+</A>
+
+<A NAME="177725">
+Property. The <I>parent</I> property is a synonym for a window or frame whose frameset contains the current frame.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="177726">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="177727">
+<PRE>1. parent.<I>propertyName<br></I>2. parent.<I>methodName<br></I>3. parent.<I>frameName<br></I>4. parent.frames[<I>index</I>]</PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="177728">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="177729">
+<I>propertyName</I> is the <I>defaultStatus</I>, <I>status</I>, <I>length</I>, <I>name</I>, or <I>parent</I> property when the calling parent refers to a <I>window</I> object.<P></A>
+<A NAME="177730">
+<I>propertyName</I> is the <I>length</I>, <I>name</I>, or <I>parent</I> property when the calling parent refers to a <I>Frame</I> object.<P></A>
+<A NAME="177731">
+<I>methodName</I> is any method associated with the <I>window</I> object.<P></A>
+<A NAME="177732">
+<I>frameName</I> and frames[<I>index</I>] are ways to refer to frames.<P></A>
+
+</UL><A NAME="Property of
+"></A>
+<A NAME="177733">
+<H3> Property of
+</H3>
+</A>
+
+<A NAME="177740">
+<a href="ref_f-g.htm#60829">Frame</a> object, <a href="ref_t-z.htm#67013">window object</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="177741">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="177742">
+Navigator 2.0<P></A>
+
+</UL><A NAME="Tainted?
+"></A>
+<A NAME="177743">
+<H3> Tainted?
+</H3>
+</A>
+
+<A NAME="177744">
+No<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="177745">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="177746">
+The <I>parent</I> property refers to the FRAMESET window of a frame. Child frames within a frameset refer to sibling frames by using "parent" in place of the window name as follows: <code>parent.frameName</code> or <code>parent.frames[index]</code>. For example, if the fourth frame in a set has NAME="homeFrame," sibling frames can refer to that frame using <code>parent.homeFrame</code> or <code>parent.frames[3]</code>.<P></A>
+<A NAME="177747">
+You can use <code>parent.parent</code> to refer to the "grandparent" frame or window when a &lt;FRAMESET&gt; tag is nested within a child frame.<P></A>
+<A NAME="177748">
+The <I>parent</I> property is read-only. The value of the <I>parent</I> property is <P></A>
+<A NAME="177749">
+<PRE>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;object <I>nameAttribute&gt;</I></PRE>
+</A>
+<A NAME="177750">
+where <I>nameAttribute</I> is the NAME attribute if the parent is a frame, or an internal reference if the parent is a window.<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="177751">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="177755">
+See the examples for the <a href="ref_f-g.htm#60829">Frame</a> object.<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="parse
+"></A>
+<A NAME="177758">
+<H1> parse
+</H1>
+</A>
+
+<A NAME="177760">
+Method. Returns the number of milliseconds in a date string since January 1, 1970, 00:00:00, local time.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="177761">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="177762">
+<PRE>Date.parse(<I>dateString</I>)</PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="177763">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="177764">
+<I>dateString</I> is a string representing a date or a property of an existing object.<P></A>
+
+</UL><A NAME="Method of
+"></A>
+<A NAME="177765">
+<H3> Method of
+</H3>
+</A>
+
+<A NAME="177769">
+<a href="ref_d-e.htm#8153">Date</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="177770">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="177771">
+Navigator 2.0<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="177772">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="177773">
+The <B>parse</B> method takes a date string (such as "Dec 25, 1995") and returns the number of milliseconds since January 1, 1970, 00:00:00 (local time). This function is useful for setting date values based on string values, for example in conjunction with the <B>setTime</B> method and the <I>Date</I> object.<P></A>
+<A NAME="177774">
+Given a string representing a time, <B>parse</B> returns the time value. It accepts the IETF standard date syntax: "Mon, 25 Dec 1995 13:30:00 GMT." It understands the continental US time-zone abbreviations, but for general use, use a time-zone offset, for example, "Mon, 25 Dec 1995 13:30:00 GMT+0430" (4 hours, 30 minutes west of the Greenwich meridian). If you do not specify a time zone, the local time zone is assumed. GMT and UTC are considered equivalent. <P></A>
+<A NAME="177775">
+Because the <B>parse</B> function is a static method of <I>Date</I>, you always use it as <code>Date.parse()</code>, rather than as a method of a <I>Date</I> object you created.<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="177776">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="177777">
+If <I>IPOdate</I> is an existing <I>Date</I> object, then <P></A>
+<A NAME="177778">
+<PRE>IPOdate.setTime(Date.parse("Aug 9, 1995"))</PRE>
+</A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="177779">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="177783">
+<a href="ref_t-z.htm#653">UTC</a> method<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="parseFloat
+"></A>
+<A NAME="177786">
+<H1> parseFloat
+</H1>
+</A>
+
+<A NAME="177788">
+Function. Parses a string argument and returns a floating point number.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="177789">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="177790">
+<PRE>parseFloat(<I>string</I>)</PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="177791">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="177792">
+<I>string</I> is a string that represents the value you want to parse.<P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="177793">
+<H3> Implemented in
+</H3>
+</A>
+
+<ul><A NAME="177794">
+<LI>Navigator 2.0
+</A><A NAME="177795">
+<LI>Navigator 3.0: returns "NaN" on all platforms if the first character of the string specified in parseFloat(<I>string</I>) cannot be converted to a number. In previous releases, it returned "NaN" on Solaris and Irix and zero on all other platforms.
+</A>
+</UL><A NAME="Description
+"></A>
+<A NAME="177796">
+<H3> Description
+</H3>
+</A>
+
+</ul><A NAME="177797">
+The <B>parseFloat</B> function is a built-in JavaScript function. It is not a method associated with any object, but is part of the language itself.<P></A>
+<A NAME="177798">
+<B>parseFloat</B> parses its argument, a string, and returns a floating point number. If it encounters a character other than a sign ( + or -), numeral (0-9), a decimal point, or an exponent, then it returns the value up to that point and ignores that character and all succeeding characters.<P></A>
+<A NAME="177799">
+If the first character cannot be converted to a number, <B>parseFloat</B> returns "NaN".<P></A>
+<A NAME="177800">
+For arithmetic purposes, the "NaN" value is not a number in any radix. You can call the <B>isNaN</B> function to determine if the result of <B>parseFloat</B> is "NaN." If "NaN" is passed on to arithmetic operations, the operation results will also be "NaN."<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="177801">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="177802">
+The following examples all return 3.14:<P></A>
+<A NAME="177803">
+<PRE>parseFloat("3.14")<br>parseFloat("314e-2")<br>parseFloat("0.0314E+2")<br>var x = "3.14"<br>parseFloat(x)</PRE>
+</A>
+<A NAME="177804">
+The following example returns "NaN":<P></A>
+<A NAME="177805">
+<PRE>parseFloat("FF2")</PRE>
+</A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="177806">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="177813">
+<a href="ref_h-l.htm#26420">isNaN</a>, <a href="ref_m-q.htm#177816">parseInt</a> functions<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="parseInt
+"></A>
+<A NAME="177816">
+<H1> parseInt
+</H1>
+</A>
+
+<A NAME="177818">
+Function. Parses a string argument and returns an integer of the specified radix or base.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="177819">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="177820">
+<PRE>parseInt(<I>string</I> [,<I>radix</I>])</PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="177821">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="177822">
+<I>string</I> is a string that represents the value you want to parse.<P></A>
+<A NAME="177823">
+<I>radix</I> is an integer that represents the radix of the return value.<P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="177824">
+<H3> Implemented in
+</H3>
+</A>
+
+<ul><A NAME="177825">
+<LI>Navigator 2.0
+</A><A NAME="177826">
+<LI>Navigator 3.0: returns "NaN" on all platforms if the first character of the string specified in parseInt(<I>string</I>) cannot be converted to a number. In previous releases, it returned "NaN" on Solaris and Irix and zero on all other platforms.
+</A>
+</UL><A NAME="Description
+"></A>
+<A NAME="177827">
+<H3> Description
+</H3>
+</A>
+
+</ul><A NAME="177828">
+The <B>parseInt</B> function is a built-in JavaScript function. It is not a method associated with any object, but is part of the language itself.<P></A>
+<A NAME="177829">
+The <B>parseInt</B> function parses its first argument, a string, and attempts to return an integer of the specified radix (base). For example, a radix of 10 indicates to convert to a decimal number, 8 octal, 16 hexadecimal, and so on. For radixes above 10, the letters of the alphabet indicate numerals greater than 9. For example, for hexadecimal numbers (base 16), A through F are used.<P></A>
+<A NAME="177830">
+If <B>parseInt</B> encounters a character that is not a numeral in the specified radix, it ignores it and all succeeding characters and returns the integer value parsed up to that point. <B>parseInt</B> truncates numbers to integer values.<P></A>
+<A NAME="177831">
+If the radix is not specified or is specified as zero, JavaScript assumes the following:<P></A>
+<ul><A NAME="177832">
+<LI>If the input <I>string</I> begins with "0x," the radix is 16 (hexadecimal).
+</A><A NAME="177833">
+<LI>If the input <I>string</I> begins with "0," the radix is eight (octal).
+</A><A NAME="177834">
+<LI>If the input <I>string</I> begins with any other value, the radix is 10 (decimal).
+</A></ul><A NAME="177835">
+If the first character cannot be converted to a number, <B>parseInt</B> returns "NaN".<P></A>
+<A NAME="177836">
+For arithmetic purposes, the "NaN" value is not a number in any radix. You can call the <B>isNaN</B> function to determine if the result of <B>parseInt</B> is "NaN." If "NaN" is passed on to arithmetic operations, the operation results will also be "NaN."<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="177837">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="177838">
+The following examples all return 15:<P></A>
+<A NAME="177839">
+<PRE>parseInt("F", 16)<br>parseInt("17", 8)<br>parseInt("15", 10)<br>parseInt(15.99, 10)<br>parseInt("FXX123", 16)<br>parseInt("1111", 2)<br>parseInt("15*3", 10)</PRE>
+</A>
+<A NAME="177840">
+The following examples all return "NaN":<P></A>
+<A NAME="177841">
+<PRE>parseInt("Hello", 8)<br>parseInt("0x7", 10)<br>parseInt("FFF", 10)</PRE>
+</A>
+<A NAME="177842">
+Even though the radix is specified differently, the following examples all return 17 because the input <I>string</I> begins with "0x."<P></A>
+<A NAME="177843">
+<PRE>parseInt("0x11", 16)<br>parseInt("0x11", 0)<br>parseInt("0x11")</PRE>
+</A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="177844">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="177854">
+<a href="ref_h-l.htm#26420">isNaN</a>, <a href="ref_m-q.htm#177786">parseFloat</a> functions; <a href="ref_t-z.htm#91188">valueOf</a> method<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="Password
+"></A>
+<A NAME="177857">
+<H1> Password
+</H1>
+</A>
+
+<A NAME="177859">
+Object. A text field on an HTML form that conceals its value by displaying asterisks (*). When the user enters text into the field, asterisks (*) hide entries from view.<P></A>
+
+</UL><A NAME="HTML syntax
+"></A>
+<A NAME="177860">
+<H3> HTML syntax
+</H3>
+</A>
+
+<A NAME="177861">
+To define a <I>Password</I> object, use standard HTML syntax:<P></A>
+<A NAME="177862">
+<PRE>&lt;INPUT<br>&nbsp;&nbsp;&nbsp;TYPE="password"<br>&nbsp;&nbsp;&nbsp;NAME="<I>passwordName</I>"<br>&nbsp;&nbsp;&nbsp;[VALUE="<I>textValue</I>"]<br>&nbsp;&nbsp;&nbsp;SIZE=<I>integer<br></I>&nbsp;&nbsp;&nbsp;[onBlur="<I>handlerText</I>"]<br>&nbsp;&nbsp;&nbsp;[onFocus="<I>handlerText</I>"]<I>&gt;</I></PRE>
+</A>
+
+</UL><A NAME="HTML attributes
+"></A>
+<A NAME="177863">
+<H3> HTML attributes
+</H3>
+</A>
+
+<A NAME="177864">
+<I>NAME="passwordName"</I> specifies the name of the <I>Password</I> object. You can access this value using the <I>name</I> property, and you can use this name when indexing the <I>elements</I> array.<P></A>
+<A NAME="177865">
+<I>VALUE="textValue"</I> specifies the initial value of the <I>Password</I> object. You can access this value using the <I>defaultValue</I> property.<P></A>
+<A NAME="177866">
+<I>SIZE=integer</I> specifies the number of characters the <I>Password</I> object can accommodate without scrolling.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="177867">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="177868">
+To use a <I>Password</I> object's properties and methods:<P></A>
+<A NAME="177869">
+<PRE>1. <I>passwordName</I>.<I>propertyName<br></I>2. <I>passwordName</I>.<I>methodName</I>(<I>parameters</I>)<br>3. <I>formName</I>.elements[<I>index</I>].<I>propertyName<br></I>4. <I>formName</I>.elements[<I>index</I>].<I>methodName</I>(<I>parameters</I>)</PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="177870">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="177871">
+<I>passwordName</I> is the value of the NAME attribute of a <I>Password</I> object.<P></A>
+<A NAME="177872">
+<I>formName</I> is either the value of the NAME attribute of a <I>Form</I> object or an element in the <I>forms</I> array.<P></A>
+<A NAME="177873">
+<I>index</I> is an integer representing a <I>Password</I> object on a form or the name of a <I>Password</I> object as specified by the NAME attribute.<P></A>
+<A NAME="177874">
+<I>propertyName</I> is one of the properties listed below.<P></A>
+<A NAME="177875">
+<I>methodName</I> is one of the methods listed below.<P></A>
+
+</UL><A NAME="Property of
+"></A>
+<A NAME="177876">
+<H3> Property of
+</H3>
+</A>
+
+<A NAME="177880">
+<a href="ref_f-g.htm#60597">Form object</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="177881">
+<H3> Implemented in
+</H3>
+</A>
+
+<ul><A NAME="177882">
+<LI>Navigator 2.0
+</A><A NAME="177883">
+<LI>Navigator 3.0: added <I>type</I> property; added onBlur and onFocus event handlers
+</A>
+</UL><A NAME="Description
+"></A>
+<A NAME="177884">
+<H3> Description
+</H3>
+</A>
+
+</ul><A NAME="177892">
+A <I>Password</I> object on a form looks as follows:<p>
+
+<FORM>
+<P><B>Enter your password:</B> <INPUT TYPE="password" VALUE="baylaurel" SIZE=25>
+</FORM>
+
+<P></A>
+<A NAME="177893">
+A <I>Password</I> object is a form element and must be defined within a &lt;FORM&gt; tag.<P></A>
+<A NAME="200117">
+If a user interactively modifies the value in a password field, you cannot evaluate it accurately unless data tainting is enabled. See <a href="advtopic.htm#1009533">"Using data tainting for security"</a> and the <I><a href="ref_t-z.htm#66860">value</a></I> property.<P></A>
+
+</UL><A NAME="Properties
+"></A>
+<A NAME="177894">
+<H3> Properties
+</H3>
+</A>
+
+<A NAME="177932">
+The <I>Password</I> object has the following properties:
+
+<P><TABLE BORDER="2">
+<CAPTION></CAPTION>
+<tr align=left valign=bottom><th><b><A NAME="177901">
+Property</A><B><th><b><A NAME="177903">
+Description</A><B>
+<tr align=left valign=top><td><A NAME="177908">
+<a href="ref_d-e.htm#46920">defaultValue</a>
+</A><BR>
+
+<td><A NAME="177910">
+Reflects the VALUE attribute
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="209254">
+<a href="ref_f-g.htm#97350">form property</a>
+</A><BR>
+
+<td><A NAME="209256">
+Specifies the form containing the <I>Password</I> object
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="177915">
+<a href="ref_m-q.htm#176636">name</a>
+</A><BR>
+
+<td><A NAME="177917">
+Reflects the NAME attribute
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="177922">
+<a href="ref_t-z.htm#71171">type</a>
+</A><BR>
+
+<td><A NAME="177924">
+Reflects the TYPE attribute
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="177929">
+<a href="ref_t-z.htm#66860">value</a>
+</A><BR>
+
+<td><A NAME="177931">
+Reflects the current value of the <I>Password</I> object's field
+</A><BR>
+
+
+
+
+</TABLE>
+
+<TABLE>
+<TR><TD>
+</TABLE>
+
+
+<P></A>
+
+</UL><A NAME="Methods
+"></A>
+<A NAME="177933">
+<H3> Methods
+</H3>
+</A>
+
+<A NAME="177957">
+The <I>Password</I> object has the following methods:
+
+<P><TABLE BORDER="2">
+<CAPTION></CAPTION>
+<tr align=left valign=top><td><A NAME="177939">
+<LI><a href="ref_a-c.htm#62474">blur</a>
+</A><A NAME="215641">
+<LI><a href="ref_d-e.htm#573">eval</a>
+</A><A NAME="177943">
+<LI><a href="ref_f-g.htm#59872">focus</a>
+</A>
+<td><A NAME="177952">
+<LI><a href="ref_s-s.htm#72548">select method</a>
+</A><A NAME="215662">
+<LI><a href="ref_t-z.htm#70978">toString</a>
+</A><A NAME="177956">
+<LI><a href="ref_t-z.htm#91188">valueOf</a>
+</A>
+
+
+
+</TABLE>
+
+<TABLE>
+<TR><TD>
+</TABLE>
+
+
+<P></A>
+
+</UL><A NAME="Event handlers
+"></A>
+<A NAME="177958">
+<H3> Event handlers
+</H3>
+</A>
+
+<ul><A NAME="206193">
+<LI><a href="ref_m-q.htm#177100">onBlur</a>
+</A><A NAME="206201">
+<LI><a href="ref_m-q.htm#177278">onFocus</a>
+</A>
+</UL><A NAME="Examples
+"></A>
+<A NAME="177960">
+<H3> Examples
+</H3>
+</A>
+
+</ul><A NAME="177961">
+The following example creates a <I>Password</I> object with no default value:<P></A>
+<A NAME="177962">
+<PRE>&lt;B&gt;Password:&lt;/B&gt; &lt;INPUT TYPE="password" NAME="password" VALUE="" SIZE=25&gt;</PRE>
+</A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="177963">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="177970">
+<a href="ref_f-g.htm#60597">Form object</a>, <a href="ref_t-z.htm#65229">Text object</a><P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="pathname
+"></A>
+<A NAME="177973">
+<H1> pathname
+</H1>
+</A>
+
+<A NAME="177975">
+Property. A string specifying the url-path portion of the URL.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="177976">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="177977">
+<PRE>1. links[<I>index</I>].pathname<br>2. location.pathname<br>3. <I>areaName</I>.pathname</PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="177978">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="177979">
+<I>index</I> is an integer representing a <I>Link</I> object or the name of a <I>Link</I> object as specified by the NAME attribute.<P></A>
+<A NAME="177980">
+<I>areaName</I> is the value of the NAME attribute of an <I>Area</I> object.<P></A>
+
+</UL><A NAME="Property of
+"></A>
+<A NAME="177981">
+<H3> Property of
+</H3>
+</A>
+
+<A NAME="177991">
+Area object (see <a href="ref_h-l.htm#84501">Link object</a>), <a href="ref_h-l.htm#84501">Link object</a>, <a href="ref_h-l.htm#84722">location</a> object<P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="177992">
+<H3> Implemented in
+</H3>
+</A>
+
+<ul><A NAME="177993">
+<LI>Navigator 2.0
+</A><A NAME="177994">
+<LI>Navigator 3.0: property of <I>Area</I>
+</A>
+</UL><A NAME="Tainted?
+"></A>
+<A NAME="177995">
+<H3> Tainted?
+</H3>
+</A>
+
+</ul><A NAME="177996">
+Yes<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="177997">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="177998">
+The <I>pathname</I> property specifies a portion of the URL. The pathname supplies the details of how the specified resource can be accessed.<P></A>
+<A NAME="177999">
+You can set the <I>pathname</I> property at any time, although it is safer to set the <I>href</I> property to change a location. If the pathname that you specify cannot be found in the current location, you will get an error.<P></A>
+<A NAME="178000">
+In event handlers, you must specify <code>window.location.pathname</code> instead of simply using <code>location.pathname</code>. Due to the scoping of static objects in JavaScript, a call to <code>location</code> without specifying an object name is equivalent to <code>document.location</code>, which is a synonym for <code>document.URL</code>.<P></A>
+<A NAME="178001">
+See Section 3.1 of <A HREF="http://www.cis.ohio-state.edu/htbin/rfc/rfc1738.html" TARGET="_top">RFC 1738</A> for complete information about the pathname.<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="178002">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="178006">
+See the examples for the <a href="ref_h-l.htm#84322">href</a> property.<P></A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="178007">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="178029">
+<a href="ref_h-l.htm#146128">hash</a>, <a href="ref_h-l.htm#83977">host</a>, <a href="ref_h-l.htm#84270">hostname</a>, <a href="ref_h-l.htm#84322">href</a>, <a href="ref_m-q.htm#178355">port</a>, <a href="ref_m-q.htm#178588">protocol</a>, <a href="ref_s-s.htm#72497">search</a> properties<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="PI
+"></A>
+<A NAME="178032">
+<H1> PI
+</H1>
+</A>
+
+<A NAME="178033">
+Property. The ratio of the circumference of a circle to its diameter, approximately 3.14159.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="178034">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="178035">
+<PRE>Math.PI</PRE>
+</A>
+
+</UL><A NAME="Property of
+"></A>
+<A NAME="178036">
+<H3> Property of
+</H3>
+</A>
+
+<A NAME="178040">
+<a href="ref_m-q.htm#175987">Math</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="178041">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="178042">
+Navigator 2.0<P></A>
+
+</UL><A NAME="Tainted?
+"></A>
+<A NAME="178043">
+<H3> Tainted?
+</H3>
+</A>
+
+<A NAME="178044">
+No<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="178045">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="178046">
+Because <I>PI</I> is a constant, it is a read-only property of <I>Math</I>.<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="178047">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="178048">
+The following function returns the value of pi:<P></A>
+<A NAME="178049">
+<PRE>function getPi() {<br>&nbsp;&nbsp;&nbsp;return Math.PI<br>}</PRE>
+</A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="178050">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="178072">
+<a href="ref_d-e.htm#48461">E</a>, <a href="ref_h-l.htm#768">LN2</a>, <a href="ref_h-l.htm#794">LN10</a>, <a href="ref_h-l.htm#1042">LOG2E</a>, <a href="ref_h-l.htm#1068">LOG10E</a>, <a href="ref_s-s.htm#754">SQRT1_2</a>, <a href="ref_s-s.htm#780">SQRT2</a> properties<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="Plugin
+"></A>
+<A NAME="178075">
+<H1> Plugin
+</H1>
+</A>
+
+<A NAME="178076">
+Object. A plug-in module installed on the client.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="178088">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="178089">
+To use a <I>Plugin</I> object:<P></A>
+<A NAME="178090">
+<PRE>1. navigator.plugins[<I>index</I>].<I>propertyName<br></I>2. navigator.plugins[<I>pluginIndex</I>][<I>mimeTypeIndex</I>].<I>mimeTypePropertyName</I></PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="178094">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="178095">
+<I>index </I>is an integer representing a plug-in installed on the client or a string containing the type of a <I>Plugin</I> object (from the <I>type</I> property).<P></A>
+<A NAME="178096">
+<I>mimeTypeIndex</I> is either an integer representing a MIME type supported by the plug-in or a string containing the type of a <I>MimeType</I> object (from the <I>type</I> property).<P></A>
+<A NAME="178097">
+<I>propertyName</I> is one of the properties listed below.<P></A>
+<A NAME="205053">
+<I>mimeTypePropertyName</I> is a property of a <I>MimeType</I> object. See <I><a href="ref_m-q.htm#176261">MimeType</a></I> for a list of properties.<P></A>
+
+</UL><A NAME="Property of
+"></A>
+<A NAME="178098">
+<H3> Property of
+</H3>
+</A>
+
+<A NAME="178102">
+The <I>plugins</I> array is a property of <a href="ref_m-q.htm#176789">navigator</a>.<P></A>
+<A NAME="204913">
+The <I>Plugin</I> object is a member of the <I>plugins</I> array.<P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="178107">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="178108">
+Navigator 3.0<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="178109">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="178110">
+A <I>Plugin</I> object is a plug-in installed on the client. A plug-in is a software module that Navigator can invoke to display specialized types of embedded data within the browser. The user can obtain a list of installed plug-ins by choosing About Plug-ins from the Help menu.<P></A>
+<A NAME="205086">
+Each <I>Plugin</I> object is an array containing one element for each MIME type supported by the plug-in. Each element of the array is a <I>MimeType</I> object. You can access the <I>MimeType</I> objects using form 2 of the syntax. For example, the following code displays the <I>type</I> and <I>description</I> properties of the first <I>Plugin</I> object's first <I>MimeType</I> object.<P></A>
+<A NAME="205109">
+<PRE>myPlugin=navigator.plugins[0]<br>myMimeType=myPlugin[0]<br>document.writeln('myMimeType.type is ',myMimeType.type,"&lt;BR&gt;")<br>document.writeln('myMimeType.description is ',myMimeType.description)</PRE>
+</A>
+<A NAME="205167">
+The preceding code displays output similar to the following:<P></A>
+<A NAME="205395">
+<PRE>myMimeType.type is video/quicktime<br>myMimeType.description is QuickTime for Windows </PRE>
+</A>
+<A NAME="205393">
+The <I>Plugin</I> object lets you dynamically determine which plug-ins are installed on the client. You can write scripts to display embedded plug-in data if the appropriate plug-in is installed, or display some alternative information such as images or text if not.<P></A>
+<A NAME="209132">
+Plug-ins can be platform dependent and configurable, so a <I>Plugin</I> object's array of <I>MimeType</I> objects can vary from platform to platform, and from user to user.<P></A>
+<A NAME="205420">
+Each <I>Plugin</I> object is an element in the <I>plugins</I> array.<P></A>
+<A NAME="204456">
+When you use the &lt;EMBED&gt; tag to generate output from a plug-in application, you are not creating a <I>Plugin</I> object. Use the <I>embeds</I> array to reference plug-in instances created with &lt;EMBED&gt; tags. See the <a href="ref_d-e.htm#59713">embeds array</a>.<P></A>
+
+<A NAME="The plugins array
+"></A>
+<A NAME="178115">
+<H4> The plugins array
+</H4>
+</A>
+
+<A NAME="178116">
+You can reference the <I>Plugin</I> objects installed on the client by using the <I>plugins</I> array. This array contains an entry for each plug-in installed on the client in source order. Each element of the <I>plugins</I> array is a <I>Plugin</I> object. For example, if three plug-ins are installed on the client, these plug-ins are reflected as <code>navigator.plugins[0]</code>, <code>navigator.plugins[1]</code>, and <code>navigator.plugins[2]</code>.<P></A>
+<A NAME="178117">
+To use the <I>plugins</I> array:<P></A>
+<A NAME="178118">
+<PRE>1. navigator.plugins[<I>index</I>]<br>2. navigator.plugins.length</PRE>
+</A>
+<A NAME="178119">
+<I>index</I> is an integer representing a plug-in installed on the client or a string containing the name of a <I>Plugin</I> object (from the <I>name</I> property).<P></A>
+<A NAME="178120">
+To obtain the number of plug-ins installed on the client, use the <I>length</I> property: <code>navigator.plugins.length</code>.<P></A>
+<A NAME="178121">
+Elements in the <I>plugins</I> array are read-only. For example, the statement <code>navigator.plugins[0]="LiveAudio"</code> has no effect.<P></A>
+
+</UL><A NAME="Properties
+"></A>
+<A NAME="178134">
+<H3> Properties
+</H3>
+</A>
+
+<A NAME="178179">
+The <I>Plugin</I> object has the following properties:
+
+<P><TABLE BORDER="2">
+<CAPTION></CAPTION>
+<tr align=left valign=bottom><th><b><A NAME="178144">
+Property</A><B><th><b><A NAME="178146">
+Description</A><B>
+<tr align=left valign=top><td><A NAME="178155">
+<a href="ref_d-e.htm#82624">description</a>
+</A><BR>
+
+<td><A NAME="178157">
+A description supplied by the plug-in itself
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="178162">
+<a href="ref_f-g.htm#67355">filename</a>
+</A><BR>
+
+<td><A NAME="178164">
+The name of the plug-in file on disk
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="178169">
+<a href="ref_h-l.htm#84418">length</a>
+</A><BR>
+
+<td><A NAME="178171">
+The number of elements in the plug-in's array of 
+<I>MimeType</I> objects
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="178176">
+<a href="ref_m-q.htm#176636">name</a>
+</A><BR>
+
+<td><A NAME="178178">
+The name of the plug-in
+</A><BR>
+
+
+
+
+</TABLE>
+
+<TABLE>
+<TR><TD>
+</TABLE>
+
+
+<P></A>
+<A NAME="203809">
+The <I>plugins</I> array has the following properties:
+
+<P><TABLE BORDER="2">
+<CAPTION></CAPTION>
+<tr align=left valign=bottom><th><b><A NAME="203799">
+Property</A><B><th><b><A NAME="203801">
+Description</A><B>
+<tr align=left valign=top><td><A NAME="203806">
+<a href="ref_h-l.htm#84418">length</a>
+</A><BR>
+
+<td><A NAME="203808">
+Reflects the number of plug-ins installed on the client
+</A><BR>
+
+
+
+
+</TABLE>
+
+<TABLE>
+<TR><TD>
+</TABLE>
+
+
+<P></A>
+
+</UL><A NAME="Methods
+"></A>
+<A NAME="203823">
+<H3> Methods
+</H3>
+</A>
+
+<A NAME="205983">
+The <I>Plugin</I> object has the following methods:<P></A>
+<UL>
+<A NAME="215689">
+<LI><a href="ref_d-e.htm#573">eval</a>
+</A><A NAME="205992">
+<LI><a href="ref_t-z.htm#70978">toString</a>
+</A><A NAME="205987">
+<LI><a href="ref_t-z.htm#91188">valueOf</a>
+</A><A NAME="206040">
+</UL>
+
+<P>The <I>plugins </I>array has the following methods:<P></A>
+<UL>
+<A NAME="203830">
+<LI><a href="ref_r-r.htm#37499">refresh</a>
+</A>
+</UL>
+</UL>
+
+<A NAME="Event handlers
+"></A>
+<A NAME="178226">
+<H3> Event handlers
+</H3>
+</A>
+
+</ul><A NAME="178227">
+None.<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="178228">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="205422">
+<B>Example 1.</B> The user can obtain a list of installed plug-ins by choosing About Plug-ins from the Help menu. To see the code Navigator uses for this report, choose About Plug-ins from the Help menu, then choose Document Source from the View menu.<P></A>
+<A NAME="178231">
+<B>Example 2.</B> The following code assigns shorthand variables for the predefined LiveAudio properties.<P></A>
+<A NAME="178232">
+<PRE>var myPluginName = navigator.plugins["LiveAudio"].name<br>var myPluginFile = navigator.plugins["LiveAudio"].filename<br>var myPluginDesc = navigator.plugins["LiveAudio"].description</PRE>
+</A>
+<A NAME="178233">
+<B>Example 3.</B> The following code displays the message "LiveAudio is configured for audio/wav" if the LiveAudio plug-in is installed and is enabled for the "audio/wav" MIME type:<P></A>
+<A NAME="205907">
+<PRE>var myPlugin = navigator.plugins["LiveAudio"]<br>var myType = myPlugin["audio/wav"]<br>if (myType &amp;&amp; myType.enabledPlugin == myPlugin)<br>&nbsp;&nbsp;&nbsp;document.writeln("LiveAudio is configured for audio/wav")</PRE>
+</A>
+<A NAME="178235">
+<B>Example 4.</B> The following expression represents the number of MIME types that Shockwave can display:<P></A>
+<A NAME="178236">
+<PRE>navigator.plugins["Shockwave"].length</PRE>
+</A>
+<A NAME="178237">
+<B>Example 5.</B> The following code displays the <I>name, filename,</I> <I>description</I>, and <I>length </I>properties for each <I>Plugin</I> object on a client:<P></A>
+<A NAME="178238">
+<PRE>document.writeln("&lt;TABLE BORDER=1&gt;&lt;TR VALIGN=TOP&gt;",<br>&nbsp;&nbsp;&nbsp;"&lt;TH ALIGN=left&gt;i",<br>&nbsp;&nbsp;&nbsp;"&lt;TH ALIGN=left&gt;name",<br>&nbsp;&nbsp;&nbsp;"&lt;TH ALIGN=left&gt;filename",<br>&nbsp;&nbsp;&nbsp;"&lt;TH ALIGN=left&gt;description",<br>&nbsp;&nbsp;&nbsp;"&lt;TH ALIGN=left&gt;# of types&lt;/TR&gt;")<br>for (i=0; i &lt; navigator.plugins.length; i++) {<br>&nbsp;&nbsp;&nbsp;document.writeln("&lt;TR VALIGN=TOP&gt;&lt;TD&gt;",i,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"&lt;TD&gt;",navigator.plugins[i].name,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"&lt;TD&gt;",navigator.plugins[i].filename,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"&lt;TD&gt;",navigator.plugins[i].description,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"&lt;TD&gt;",navigator.plugins[i].length,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"&lt;/TR&gt;")<br>}<br>document.writeln("&lt;/TABLE&gt;")</PRE>
+</A>
+<A NAME="178300">
+The preceding example displays output similar to the following:
+
+<P><TABLE BORDER="2">
+<CAPTION></CAPTION>
+<tr align=left valign=top><td><A NAME="178251">
+i<P></A>
+
+<td><A NAME="178253">
+name<P></A>
+
+<td><A NAME="178255">
+filename<P></A>
+
+<td><A NAME="178257">
+description<P></A>
+
+<td><A NAME="178259">
+# of types<P></A>
+
+
+
+<tr align=left valign=top><td><A NAME="178261">
+0
+</A><BR>
+
+<td><A NAME="178263">
+QuickTime 
+Plug-In
+</A><BR>
+
+<td><A NAME="178265">
+d:\nettools\netscape\nav30\Program\<br>
+plugins\NPQTW32.DLL
+</A><BR>
+
+<td><A NAME="178267">
+QuickTime Plug-In for 
+Win32 v.1.0.0
+</A><BR>
+
+<td><A NAME="178269">
+1
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="178271">
+1
+</A><BR>
+
+<td><A NAME="178273">
+LiveAudio
+</A><BR>
+
+<td><A NAME="178275">
+d:\nettools\netscape\nav30\Program\<br>
+plugins\NPAUDIO.DLL
+</A><BR>
+
+<td><A NAME="178277">
+LiveAudio - Netscape 
+Navigator sound 
+playing component
+</A><BR>
+
+<td><A NAME="178279">
+7
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="178281">
+2
+</A><BR>
+
+<td><A NAME="178283">
+NPAVI32 
+Dynamic 
+Link Library
+</A><BR>
+
+<td><A NAME="178285">
+d:\nettools\netscape\nav30\Program\<br>
+plugins\npavi32.dll
+</A><BR>
+
+<td><A NAME="178287">
+NPAVI32, avi plugin DLL
+</A><BR>
+
+<td><A NAME="178289">
+2
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="178291">
+3
+</A><BR>
+
+<td><A NAME="178293">
+Netscape 
+Default 
+Plugin
+</A><BR>
+
+<td><A NAME="178295">
+d:\nettools\netscape\nav30\Program\<br>
+plugins\npnul32.dll
+</A><BR>
+
+<td><A NAME="178297">
+Null Plugin
+</A><BR>
+
+<td><A NAME="178299">
+1
+</A><BR>
+
+
+
+
+</TABLE>
+
+<TABLE>
+<TR><TD>
+</TABLE>
+
+
+<P></A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="178301">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="178308">
+<a href="ref_m-q.htm#176261">MimeType</a> object; <a href="ref_d-e.htm#59713">embeds array</a><P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="plugins
+"></A>
+<A NAME="178311">
+<H1> plugins
+</H1>
+</A>
+
+<A NAME="178312">
+Property. An array of all plug-ins currently installed on the client. See the <I><a href="ref_m-q.htm#178075">Plugin</a></I> object for information.<P></A>
+
+</UL><A NAME="Tainted?
+"></A>
+<A NAME="178316">
+<H3> Tainted?
+</H3>
+</A>
+
+<A NAME="178317">
+No<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="port
+"></A>
+<A NAME="178355">
+<H1> port
+</H1>
+</A>
+
+<A NAME="178357">
+Property. A string specifying the communications port that the server uses for communications.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="178358">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="178359">
+<PRE>1. links[<I>index</I>].port<br>2. location.port<br>3 <I>areaName</I>.port</PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="178360">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="178361">
+<I>index</I> is an integer representing a <I>Link</I> object or the name of a <I>Link</I> object as specified by the NAME attribute.<P></A>
+<A NAME="178362">
+<I>areaName</I> is the value of the NAME attribute of an <I>Area</I> object.<P></A>
+
+</UL><A NAME="Property of
+"></A>
+<A NAME="178363">
+<H3> Property of
+</H3>
+</A>
+
+<A NAME="178373">
+Area object (see <a href="ref_h-l.htm#84501">Link object</a>), <a href="ref_h-l.htm#84501">Link object</a>, <a href="ref_h-l.htm#84722">location</a> object<P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="178374">
+<H3> Implemented in
+</H3>
+</A>
+
+<ul><A NAME="178375">
+<LI>Navigator 2.0
+</A><A NAME="178376">
+<LI>Navigator 3.0: property of <I>Area</I>
+</A>
+</UL><A NAME="Tainted?
+"></A>
+<A NAME="178377">
+<H3> Tainted?
+</H3>
+</A>
+
+</ul><A NAME="178378">
+Yes<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="178379">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="178380">
+The <I>port</I> property specifies a portion of the URL. The <I>port</I> property is a substring of the <I>hostname</I> property. The <I>hostname</I> property is the concatenation of the <I>host</I> and <I>port</I> properties, separated by a colon. When the <I>port</I> property is 80 (the default), the <I>host</I> property is the same as the <I>hostname</I> property.<P></A>
+<A NAME="178381">
+You can set the <I>port</I> property at any time, although it is safer to set the <I>href</I> property to change a location. If the port that you specify cannot be found in the current location, you will get an error. If the <I>port</I> property is not specified, it defaults to 80 on the server.<P></A>
+<A NAME="178382">
+In event handlers, you must specify <code>window.location.port</code> instead of simply using <code>location.port</code>. Due to the scoping of static objects in JavaScript, a call to <code>location</code> without specifying an object name is equivalent to <code>document.location</code>, which is a synonym for <code>document.URL</code>.<P></A>
+<A NAME="178383">
+See Section 3.1 of <A HREF="http://www.cis.ohio-state.edu/htbin/rfc/rfc1738.html" TARGET="_top">RFC 1738</A> for complete information about the port.<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="178384">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="178388">
+See the examples for the <a href="ref_h-l.htm#84322">href</a> property.<P></A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="178389">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="178411">
+<a href="ref_h-l.htm#146128">hash</a>, <a href="ref_h-l.htm#83977">host</a>, <a href="ref_h-l.htm#84270">hostname</a>, <a href="ref_h-l.htm#84322">href</a>, <a href="ref_m-q.htm#177973">pathname</a>, <a href="ref_m-q.htm#178588">protocol</a>, <a href="ref_s-s.htm#72497">search</a> properties<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="POSITIVE_INFINITY
+"></A>
+<A NAME="208991">
+<H1> POSITIVE_INFINITY
+</H1>
+</A>
+
+<A NAME="208996">
+Property. A special numeric value representing infinity. This value is represented as "Infinity".<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="208997">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="208998">
+<PRE>Number.POSITIVE_INFINITY</PRE>
+</A>
+
+</UL><A NAME="Property of
+"></A>
+<A NAME="208999">
+<H3> Property of
+</H3>
+</A>
+
+<A NAME="209003">
+<a href="ref_m-q.htm#176989">Number</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="209004">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="209005">
+Navigator 3.0<P></A>
+
+</UL><A NAME="Tainted?
+"></A>
+<A NAME="209006">
+<H3> Tainted?
+</H3>
+</A>
+
+<A NAME="209007">
+No<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="209008">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="209009">
+This value behaves mathematically like an infinity; for example, anything multiplied by infinity is infinity, and anything divided by infinity is zero.<P></A>
+<A NAME="209010">
+JavaScript does not have a literal for Infinity.<P></A>
+<A NAME="209011">
+Because <I>POSITIVE_INFINITY</I> is a constant, it is a read-only property of <I>Number</I>.<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="209012">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="209016">
+In the following example, the variable <I>bigNumber</I> is assigned a value that is larger than the maximum value. When the <B>if</B> statement executes, <I>bigNumber</I> has the value "Infinity", so the <I>func1</I> function is called.<P></A>
+<A NAME="209017">
+<PRE>var bigNumber = Number.MAX_VALUE * 10<br>if (bigNumber == Number.POSITIVE_INFINITY)<br>&nbsp;&nbsp;&nbsp;func1()<br>else<br>&nbsp;&nbsp;&nbsp;func2()</PRE>
+</A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="209018">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="209031">
+<a href="ref_m-q.htm#176157">MAX_VALUE</a>, <a href="ref_m-q.htm#176531">MIN_VALUE</a>, <a href="ref_m-q.htm#176751">NaN</a>, <a href="ref_m-q.htm#176884">NEGATIVE_INFINITY</a> properties<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="pow
+"></A>
+<A NAME="178449">
+<H1> pow
+</H1>
+</A>
+
+<A NAME="178451">
+Method. Returns <I>base</I> to the <I>exponent</I> power, that is, <I>base</I><SUP>exponent</SUP>.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="178452">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="178453">
+<PRE>Math.pow(<I>base, exponent</I>)</PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="178454">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="178455">
+<I>base</I> is any numeric expression or a property of an existing object.<P></A>
+<A NAME="178456">
+<I>exponent</I> is any numeric expression or a property of an existing object.<P></A>
+
+</UL><A NAME="Method of
+"></A>
+<A NAME="178457">
+<H3> Method of
+</H3>
+</A>
+
+<A NAME="178461">
+<a href="ref_m-q.htm#175987">Math</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="178462">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="178463">
+Navigator 2.0<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="178464">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="178465">
+<PRE>function raisePower(x,y) {<br>&nbsp;&nbsp;&nbsp;return Math.pow(x,y)<br>}</PRE>
+</A>
+<A NAME="178466">
+If <I>x</I> equals seven and <I>y</I> equals two, <I>raisePower</I> returns 49 (seven to the power of two).<P></A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="178467">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="178474">
+<a href="ref_d-e.htm#3128">exp</a>, <a href="ref_h-l.htm#1016">log</a> methods<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="previous
+"></A>
+<A NAME="178477">
+<H1> previous
+</H1>
+</A>
+
+<A NAME="178478">
+Property. A string specifying the complete URL of the previous history entry.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="178479">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="178480">
+<PRE>history.previous</PRE>
+</A>
+
+</UL><A NAME="Property of
+"></A>
+<A NAME="178481">
+<H3> Property of
+</H3>
+</A>
+
+<A NAME="178485">
+<a href="ref_h-l.htm#83926">history object</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="178486">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="178487">
+Navigator 3.0<P></A>
+
+</UL><A NAME="Tainted?
+"></A>
+<A NAME="178488">
+<H3> Tainted?
+</H3>
+</A>
+
+<A NAME="178489">
+Yes<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="178490">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="178491">
+The <I>previous</I> property reflects the URL that would be used if the user chose Back from the Go menu. This property has a value only if data tainting is enabled; if data tainting is not enabled, <I>previous</I> has no value.<P></A>
+<A NAME="178492">
+<I>previous</I> is a read-only property.<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="178493">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="178494">
+The following example determines whether <I>history.previous</I> contains the string "NETSCAPE.COM". If it does, the function <I>myFunction</I> is called.<P></A>
+<A NAME="178495">
+<PRE>if (history.previous.indexOf("NETSCAPE.COM") != -1) {<br>&nbsp;&nbsp;&nbsp;myFunction(history.previous)<br>}</PRE>
+</A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="178496">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="178506">
+<a href="ref_a-c.htm#137304">current</a>, <a href="ref_m-q.htm#176919">next</a> properties; <a href="advtopic.htm#1009533">"Using data tainting for security"</a><P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="prompt
+"></A>
+<A NAME="178558">
+<H1> prompt
+</H1>
+</A>
+
+<A NAME="178560">
+Method. Displays a Prompt dialog box with a message and an input field.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="178561">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="178562">
+<PRE>prompt(<I>message</I>, [<I>inputDefault</I>])</PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="178563">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="178564">
+<I>message</I> is any string or a property of an existing object; the string is displayed as the message.<P></A>
+<A NAME="178565">
+<I>inputDefault</I> is a string, integer, or property of an existing object that represents the default value of the input field.<P></A>
+
+</UL><A NAME="Method of
+"></A>
+<A NAME="178566">
+<H3> Method of
+</H3>
+</A>
+
+<A NAME="178570">
+<a href="ref_t-z.htm#67013">window object</a><P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="178571">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="178572">
+Navigator 2.0<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="178573">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="209841">
+A prompt dialog box looks as follows:<p>
+
+<FORM>
+<P><INPUT TYPE="button" VALUE="Click for sample prompt dialog box"
+   onClick='prompt("Enter the number of cookies you want to order:",12)'>
+</FORM>
+
+<P></A>
+<A NAME="178574">
+Use the <B>prompt</B> method to display a dialog box that receives user input. If you do not specify an initial value for <I>inputDefault</I>, the dialog box displays "&lt;undefined&gt;."<P></A>
+<A NAME="178575">
+Although <B>prompt</B> is a method of the <I>window</I> object, you do not need to specify a <I>windowReference</I> when you call it. For example, <code>windowReference.prompt()</code> is unnecessary.<P></A>
+<A NAME="199298">
+You cannot specify a title for a prompt dialog box, but you can use the open method to create your own "prompt" dialog. See <a href="ref_m-q.htm#177627">open (window object)</a>.<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="178576">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="178577">
+<PRE>prompt("Enter the number of cookies you want to order:", 12)</PRE>
+</A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="178578">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="178585">
+<a href="ref_a-c.htm#59000">alert</a>, <a href="ref_a-c.htm#64367">confirm</a> methods<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="protocol
+"></A>
+<A NAME="178588">
+<H1> protocol
+</H1>
+</A>
+
+<A NAME="178590">
+Property. A string specifying the beginning of the URL, up to and including the first colon.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="178591">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="178592">
+<PRE>1. links[<I>index</I>].protocol<br>2. location.protocol<br>3 <I>areaName</I>.protocol</PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="178593">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="178594">
+<I>index</I> is an integer representing a <I>Link</I> object or the name of a <I>Link</I> object as specified by the NAME attribute.<P></A>
+<A NAME="178595">
+<I>areaName</I> is the value of the NAME attribute of an <I>Area</I> object.<P></A>
+
+</UL><A NAME="Property of
+"></A>
+<A NAME="178596">
+<H3> Property of
+</H3>
+</A>
+
+<A NAME="178606">
+Area object (see <a href="ref_h-l.htm#84501">Link object</a>), <a href="ref_h-l.htm#84501">Link object</a>, <a href="ref_h-l.htm#84722">location</a> object<P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="178607">
+<H3> Implemented in
+</H3>
+</A>
+
+<ul><A NAME="178608">
+<LI>Navigator 2.0
+</A><A NAME="178609">
+<LI>Navigator 3.0: property of <I>Area</I>
+</A>
+</UL><A NAME="Tainted?
+"></A>
+<A NAME="178610">
+<H3> Tainted?
+</H3>
+</A>
+
+</ul><A NAME="178611">
+Yes<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="178612">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="178613">
+The <I>protocol</I> property specifies a portion of the URL. The protocol indicates the access method of the URL. For example, a protocol of "http:" specifies HyperText Transfer Protocol, and a protocol of "javascript:" specifies JavaScript code.<P></A>
+<A NAME="178614">
+You can set the <I>protocol</I> property at any time, although it is safer to set the <I>href</I> property to change a location. If the protocol that you specify cannot be found in the current location, you will get an error.<P></A>
+<A NAME="178615">
+In event handlers, you must specify <code>window.location.protocol</code> instead of simply using <code>location.protocol</code>. Due to the scoping of static objects in JavaScript, a call to <code>location</code> without specifying an object name is equivalent to <code>document.location</code>, which is a synonym for <code>document.URL</code>.<P></A>
+<A NAME="178616">
+The <I>protocol</I> property represents the scheme name of the URL. See Section 2.1 of <A HREF="http://www.cis.ohio-state.edu/htbin/rfc/rfc1738.html" TARGET="_top">RFC 1738</A> for complete information about the protocol.<P></A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="178617">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="178621">
+See the examples for the <a href="ref_h-l.htm#84322">href</a> property.<P></A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="178622">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="178644">
+<a href="ref_h-l.htm#146128">hash</a>, <a href="ref_h-l.htm#83977">host</a>, <a href="ref_h-l.htm#84270">hostname</a>, <a href="ref_h-l.htm#84322">href</a>, <a href="ref_m-q.htm#177973">pathname</a>, <a href="ref_m-q.htm#178355">port</a>, <a href="ref_s-s.htm#72497">search</a> properties<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="prototype
+"></A>
+<A NAME="178711">
+<H1> prototype
+</H1>
+</A>
+
+<A NAME="178712">
+Property. Defines a property that is shared by all objects of the specified type.<P></A>
+
+</UL><A NAME="Syntax
+"></A>
+<A NAME="178713">
+<H3> Syntax
+</H3>
+</A>
+
+<A NAME="178714">
+<PRE><I>objectType</I>.prototype.<I>propertyName</I> = <I>value</I></PRE>
+</A>
+
+</UL><A NAME="Parameters
+"></A>
+<A NAME="178715">
+<H3> Parameters
+</H3>
+</A>
+
+<A NAME="178716">
+<I>objectType</I> is the name of a constructor or function specifying an object type.<P></A>
+<A NAME="178717">
+<I>propertyName</I> is the name of the property to be created.<P></A>
+<A NAME="178718">
+<I>value</I> is the property value initially assigned for all objects of the specified <I>objectType</I>.<P></A>
+
+</UL><A NAME="Property of
+"></A>
+<A NAME="178719">
+<H3> Property of
+</H3>
+</A>
+
+<A NAME="178762">
+<I>prototype</I> is a property of any object created with <B>new</B>, such as the following:
+
+<P><TABLE BORDER="2">
+<CAPTION></CAPTION>
+<tr align=left valign=top><td><A NAME="178728">
+<LI><a href="ref_a-c.htm#74072">Array</a>
+</A><A NAME="178732">
+<LI><a href="ref_a-c.htm#129462">Boolean</a>
+</A><A NAME="178736">
+<LI><a href="ref_d-e.htm#8153">Date</a>
+</A><A NAME="178740">
+<LI><a href="ref_f-g.htm#104993">Function</a>
+</A><A NAME="178744">
+<LI><a href="ref_h-l.htm#90746">Image</a>
+</A>
+<td><A NAME="178749">
+<LI><a href="ref_m-q.htm#176989">Number</a>
+</A><A NAME="178753">
+<LI><a href="ref_s-s.htm#72585">Select object</a> option
+</A><A NAME="178757">
+<LI><a href="ref_s-s.htm#870">String</a>
+</A><A NAME="178760">
+<LI>User-defined objects (see <a href="model.htm#1005202">"Creating new objects"</a>)
+</A>
+
+
+
+</TABLE>
+
+<TABLE>
+<TR><TD>
+</TABLE>
+
+
+<P></A>
+
+</UL><A NAME="Implemented in
+"></A>
+<A NAME="178763">
+<H3> Implemented in
+</H3>
+</A>
+
+<A NAME="178764">
+Navigator 3.0<P></A>
+
+</UL><A NAME="Tainted?
+"></A>
+<A NAME="178765">
+<H3> Tainted?
+</H3>
+</A>
+
+<A NAME="178766">
+No<P></A>
+
+</UL><A NAME="Description
+"></A>
+<A NAME="178767">
+<H3> Description
+</H3>
+</A>
+
+<A NAME="178768">
+Use the <I>prototype</I> property to explicitly add properties to objects created with the <B>new</B> operator.<P></A>
+<A NAME="178769">
+For example, you can create <I>Date</I> objects by using the Date() constructor and the <B>new</B> operator. <code>Date.prototype</code> refers to the prototype object for the Date() constructor. If you set a property for the prototype, such as <code>Date.prototype.description</code>, then all objects created with Date() will have the <I>description</I> property, even if the objects already exist.<P></A>
+<A NAME="178770">
+<PRE>var today = new Date()<br>var birthday = new Date(95,12,17)<br>Date.prototype.description=null<br>today.description="Oh what a beautiful mornin\'"<br>birthday.description="The day you were born"</PRE>
+</A>
+<A NAME="178771">
+After you set a property for the prototype, all subsequent objects created with Date() will have the property:<P></A>
+<A NAME="178772">
+<PRE>startDate=new Date()<br>startDate.description="Started the daily grind"</PRE>
+</A>
+
+</UL><A NAME="Examples
+"></A>
+<A NAME="178773">
+<H3> Examples
+</H3>
+</A>
+
+<A NAME="178774">
+<B>Example 1: Add a property to a user-defined object.</B> The following example uses the function <B>Car</B> to define a <I>Car</I> object type. It then uses <B>new</B> to create <I>myCar</I>, an instance of the object. The code <code>Car.prototype.wheels=4</code> adds the <I>wheels</I> property to all instances of the <I>Car</I> object.<P></A>
+<A NAME="178775">
+<PRE>function Car(make, model, year) {<br>&nbsp;&nbsp;&nbsp;this.make = make<br>&nbsp;&nbsp;&nbsp;this.model = model<br>&nbsp;&nbsp;&nbsp;this.year = year<br>}<br><br>var myCar = new Car("Acura", "Integra", 1987)<br>Car.prototype.wheels = 4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// no 3-wheelers please!<br><br>if (myCar.wheels == 4)<br>&nbsp;&nbsp;&nbsp;document.write("The car myCar has ", myCar.wheels, " wheels.")</PRE>
+</A>
+<A NAME="178776">
+<B>Example 2: Add a method to String objects.</B> The following example creates a method, <I>str_rep,</I> and uses the statement <code>String.prototype.rep = str_rep</code> to add the method to all <I>String</I> objects. All objects created with <code>new String()</code> then have that method, even objects already created. The example then creates an alternate method and adds that to one of the <I>String</I> objects using the statement <code>s1.rep = fake_rep</code>. The <I>str_rep</I> method of the remaining <I>String</I> objects is not altered.<P></A>
+<A NAME="178777">
+<PRE>var s1 = new String("a")<br>var s2 = new String("b")<br>var s3 = new String("c")<br><br>// Create a repeat-string-N-times method for all String objects<br>function str_rep(n) {<br>   var s = "", t = this.toString()<br>   while (--n &gt;= 0) s += t<br>   return s<br>}<br>String.prototype.rep = str_rep<br><br>// Display the results<br>document.write("&lt;P&gt;s1.rep(3) is " + s1.rep(3))&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// "aaa"<br>document.write("&lt;BR&gt;s2.rep(5) is " + s2.rep(5))&nbsp;&nbsp;&nbsp;&nbsp;// "bbbbb"<br>document.write("&lt;BR&gt;s3.rep(2) is " + s3.rep(2))&nbsp;&nbsp;&nbsp;&nbsp;// "cc"<br><br>// Create an alternate method and assign it to only one String variable<br>function fake_rep(n) {<br>   return "repeat " + this + n + " times."<br>}<br><br>s1.rep = fake_rep<br><br>document.write("&lt;P&gt;s1.rep(1) is " + s1.rep(1))&nbsp;&nbsp;&nbsp;&nbsp;// "repeat a 1 times."<br>document.write("&lt;BR&gt;s2.rep(4) is " + s2.rep(4))&nbsp;&nbsp;&nbsp;// "bbbb"<br>document.write("&lt;BR&gt;s3.rep(6) is " + s3.rep(6))&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// "cccccc"</PRE>
+</A>
+<A NAME="178778">
+This example produces the following output:<P></A>
+<A NAME="178779">
+<PRE>s1.rep(3) is aaa<br>s2.rep(5) is bbbbb<br>s3.rep(2) is cc</PRE>
+</A>
+<A NAME="178780">
+<PRE>s1.rep(1) is repeat a1 times.<br>s2.rep(4) is bbbb<br>s3.rep(6) is cccccc</PRE>
+</A>
+<A NAME="178781">
+The function in this example also works on <I>String</I> objects not created with the String() constructor. The following code returns "zzz".<P></A>
+<A NAME="178782">
+<PRE>"z".rep(3)</PRE>
+</A>
+
+</UL><A NAME="See also
+"></A>
+<A NAME="178783">
+<H3> See also
+</H3>
+</A>
+
+<A NAME="178790">
+<a href="ref_a-c.htm#174197">constructor</a> property; <a href="model.htm#1005202">"Creating new objects"</a><P></A>
+
+<HR>
+<A HREF="ref_r-r.htm">[Next reference file]</A>
+

@@ -1,0 +1,318 @@
+<HTML>
+<BODY>
+
+<A NAME="radio_object"><H2>radio object</H2></A>
+<P>A set of radio buttons on an HTML form. A set of radio buttons lets the user choose one item from a list.
+
+
+<H3>Syntax</H3>
+<P>To define a set of radio buttons, use standard HTML syntax with the addition of the onClick event handler:
+<PRE>
+&LTINPUT
+   TYPE="radio"
+   NAME="<I>radioName</I>"
+   VALUE="<I>buttonValue</I>"
+   [CHECKED]
+   [onClick="<I>handlerText</I>"]&GT
+   <I>textToDisplay</I>
+</PRE>
+<I>NAME="radioName"</I> specifies the name of the radio object. All radio buttons in a group have the same NAME attribute. You can access this value using the name property.
+<BR><I>VALUE="buttonValue"</I> specifies a value that is returned to the server when the radio button is selected and the form is submitted. This defaults to "on". You can access this value using the value property.
+<BR><I>CHECKED</I> specifies that the radio button is selected. You can access this value using the defaultChecked property.
+<BR><I>textToDisplay</I> specifies the label to display beside the radio button.
+
+<P>To use a radio button's properties and methods:
+<PRE>
+1. <I>radioName</I>[<I>index1</I>].<I>propertyName</I>
+2. <I>radioName</I>[<I>index1</I>].<I>methodName</I>(<I>parameters</I>)
+3. <I>formName</I>.elements[<I>index2</I>].<I>propertyName</I>
+4. <I>formName</I>.elements[<I>index2</I>].<I>methodName</I>(<I>parameters</I>)
+</PRE>
+<I>radioName</I> is the value of the NAME attribute of a radio object.
+<BR><I>index1</I> is an integer representing a radio button in a radio object.
+<BR><I>formName</I> is either the value of the NAME attribute of a form object or an element in the <I>forms</I> array.
+<BR><I>index2</I> is an integer representing a radio button on a form. The <I>elements</I> array contains an entry for each radio button in a radio object.
+<BR><I>propertyName</I> is one of the properties listed below.
+<BR><I>methodName</I> is one of the methods listed below.
+
+
+<H3>Property of</H3>
+<LI><A HREF=ref_f-g.html#form_object>form</A>
+
+
+<H3>Description</H3>
+<P>A radio object on a form looks as follows:
+<FORM>
+<P><INPUT TYPE="radio" NAME="musicChoice" CHECKED> R&B
+<BR><INPUT TYPE="radio" NAME="musicChoice"> Jazz
+<BR><INPUT TYPE="radio" NAME="musicChoice"> Soul
+</FORM>
+<P>A radio object is a form element and must be defined within a &LTFORM&GT tag.
+
+<P>All radio buttons in a radio button group use the same name property. To access the individual radio buttons in your code, follow the object name with an index starting from zero, one for each button the same way you would for an array such as <I>forms</I>: <TT>document.forms[0].<I>radioName</I>[0]</TT> is the first, <TT>document.forms[0].<I>radioName</I>[1]</TT> is the second, etc.
+
+
+<H3>Properties</H3>
+<LI><A HREF=ref_a-c.html#checked_property>checked</A> lets you programatically select a radio button
+<LI><A HREF=ref_d-e.html#defaultChecked_property>defaultChecked</A> reflects the CHECKED attribute
+<LI><A HREF=ref_h-l.html#length_property>length</A> reflects the number of radio buttons in a radio object
+<LI><A HREF=ref_m-q.html#name_property>name</A> reflects the NAME attribute
+<LI><A HREF=ref_t-z.html#value_property>value</A> reflects the VALUE attribute
+
+
+<H3>Methods</H3>
+<LI><A HREF=ref_a-c.html#click_method>click</A>
+
+
+<H3>Event handlers</H3>
+<LI><A HREF=ref_m-q.html#onClick_event>onClick</A>
+
+
+<H3>Examples</H3>
+<P><B>Example 1.</B> The following example defines a radio button group to choose among three music catalogs. Each radio button is given the same name, <I>NAME="musicChoice"</I>, forming a group of buttons for which only one choice can be selected. The example also defines a text field that defaults to what was chosen via the radio buttons but that allows the user to type a nonstandard catalog name as well. The onClick event handler sets the catalog name input field when the user clicks a radio button.
+<XMP>
+<INPUT TYPE="text" NAME="catalog" SIZE="20">
+<INPUT TYPE="radio" NAME="musicChoice" VALUE="soul-and-r&b"
+   onClick="musicForm.catalog.value = 'soul-and-r&b'"> Soul and R&B
+<INPUT TYPE="radio" NAME="musicChoice" VALUE="jazz"
+   onClick="musicForm.catalog.value = 'jazz'"> Jazz
+<INPUT TYPE="radio" NAME="musicChoice" VALUE="classical"
+   onClick="musicForm.catalog.value = 'classical'"> Classical
+</XMP>
+
+<P><B>Example 2.</B> The following example contains a form with three text boxes and three radio buttons. The radio buttons let the user choose whether the text fields are converted to upper case or lower case, or not converted at all. Each text field has an onChange event handler that converts the field value depending on which radio button is checked. The radio buttons for upper case and lower case have onClick event handlers that convert all fields when the user clicks the radio button.
+<XMP>
+<HTML>
+<HEAD>
+<TITLE>Radio object example</TITLE>
+</HEAD>
+<SCRIPT>
+function convertField(field) {
+   if (document.form1.conversion[0].checked) {
+      field.value = field.value.toUpperCase()}
+   else {
+   if (document.form1.conversion[1].checked) {
+      field.value = field.value.toLowerCase()}
+   }
+}
+function convertAllFields(caseChange) {
+   if (caseChange=="upper") {
+   document.form1.lastName.value = document.form1.lastName.value.toUpperCase()
+   document.form1.firstName.value = document.form1.firstName.value.toUpperCase()
+   document.form1.cityName.value = document.form1.cityName.value.toUpperCase()}
+   else {
+   document.form1.lastName.value = document.form1.lastName.value.toLowerCase()
+   document.form1.firstName.value = document.form1.firstName.value.toLowerCase()
+   document.form1.cityName.value = document.form1.cityName.value.toLowerCase()
+   }
+}
+</SCRIPT>
+<BODY>
+<FORM NAME="form1">
+<B>Last name:</B>
+<INPUT TYPE="text" NAME="lastName" SIZE=20 onChange="convertField(this)">
+<BR><B>First name:</B>
+<INPUT TYPE="text" NAME="firstName" SIZE=20 onChange="convertField(this)">
+<BR><B>City:</B>
+<INPUT TYPE="text" NAME="cityName" SIZE=20 onChange="convertField(this)">
+<P><B>Convert values to:</B>
+<BR><INPUT TYPE="radio" NAME="conversion" VALUE="upper"
+   onClick="if (this.checked) {convertAllFields('upper')}"> Upper case
+<BR><INPUT TYPE="radio" NAME="conversion" VALUE="lower"
+   onClick="if (this.checked) {convertAllFields('lower')}"> Lower case
+<BR><INPUT TYPE="radio" NAME="conversion" VALUE="noChange"> No conversion
+</FORM>
+</BODY>
+</HTML>
+</XMP>
+
+<P>See also the example for the <A HREF=ref_h-l.html#link_object>link</A> object.
+
+
+<H3>See also</H3>
+<LI><A HREF=ref_a-c.html#checkbox_object>checkbox</A>, <A HREF=ref_f-g.html#form_object>form</A>, and <A HREF=ref_s-s.html#select_object>select</A> objects
+
+
+<!------------------------------------------------------------------------------------------------->
+<HR>
+<A NAME="random_method"><H2>random method</H2></A>
+<P>
+Returns a pseudo-random number between zero and one. This method is available on Unix platforms only.
+
+<H3>Syntax</H3>
+<P>Math.random()
+
+<H3>Method of</H3>
+<P><A HREF=ref_m-q.html#Math_object>Math</A>
+
+<H3>Examples</H3>
+<PRE>
+//Displays a random number between 0 and 1
+document.write("The random number is " + Math.random())
+</PRE>
+
+<!------------------------------------------------------------------------------------------------>
+<HR>
+<A NAME="referrer_property"><H2>referrer property</H2></A>
+<P>
+Specifies the URL of the calling document when a user clicks a link.
+
+<H3>Syntax</H3>
+<PRE>document.referrer</PRE>
+
+<H3>Property of</H3>
+<P><A HREF=ref_d-e.html#document_object>document</A>
+
+<H3>Description</H3>
+<P>When a user navigates to a <I>destination</I> document by clicking a link object on a <I>source</I> document, the referrer property contains the URL of the <I>source</I> document. Evaluate the referrer property from the <I>destination</I> document.
+
+<P>referrer is a read-only property.
+
+<H3>Examples</H3>
+<P>In the following example, the <I>getReferrer()</I> function is called from the <I>destination</I> document. It returns  the URL of the <I>source</I> document.
+<PRE>
+function getReferrer() {
+   return document.referrer
+}
+</PRE>
+
+<!------------------------------------------------------------------------------------------------->
+<HR>
+<A NAME="reset_object"><H2>reset object</H2></A>
+<P>A reset button on an HTML form. A reset button resets all elements in a form to their defaults.
+
+
+<H3>Syntax</H3>
+<P>To define a reset button, use standard HTML syntax with the addition of the onClick event handler:
+<PRE>
+&LTINPUT
+   TYPE="reset"
+   NAME="<I>resetName</I>"
+   VALUE="<I>buttonText</I>"
+   [onClick="<I>handlerText</I>"]&GT
+</PRE>
+<I>NAME="resetName"</I> specifies the name of the reset object. You can access this value using the name property.
+<BR><I>VALUE="buttonText"</I> specifies the text to display on the button face. You can access this value using the value property.
+
+<P>To use a reset object's properties and methods:
+<PRE>
+1. <I>resetName</I>.<I>propertyName</I>
+2. <I>resetName</I>.<I>methodName</I>(<I>parameters</I>)
+3. <I>formName</I>.elements[<I>index</I>].<I>propertyName</I>
+4. <I>formName</I>.elements[<I>index</I>].<I>methodName</I>(<I>parameters</I>)
+</PRE>
+<I>resetName</I> is the value of the NAME attribute of a reset object.
+<BR><I>formName</I> is either the value of the NAME attribute of a form object or an element in the <I>forms</I> array.
+<BR><I>index</I> is an integer representing a reset object on a form.
+<BR><I>propertyName</I> is one of the properties listed below.
+<BR><I>methodName</I> is one of the methods listed below.
+
+
+<H3>Property of</H3>
+<LI><A HREF=ref_f-g.html#form_object>form</A>
+
+
+<H3>Description</H3>
+<P>A reset object on a form looks as follows:
+<FORM>
+<P><INPUT TYPE="reset" VALUE="Defaults">
+</FORM>
+<P>A reset object is a form element and must be defined within a &LTFORM&GT tag.
+
+<P>The reset button's onClick event handler cannot prevent a form from being reset; once the button is clicked, the reset cannot be canceled.
+
+
+<H3>Properties</H3>
+<LI><A HREF=ref_m-q.html#name_property>name</A> reflects the NAME attribute
+<LI><A HREF=ref_t-z.html#value_property>value</A> reflects the VALUE attribute
+
+
+<H3>Methods</H3>
+<LI><A HREF=ref_a-c.html#click_method>click</A>
+
+
+<H3>Event handlers</H3>
+<LI><A HREF=ref_m-q.html#onClick_event>onClick</A>
+
+
+<H3>Examples</H3>
+<P><B>Example 1.</B> The following example displays a text object with the default value "CA" and a reset button with the text "Clear Form" displayed on its face. If the user types a state abbreviation in the text object and then clicks the Clear Form button, the original value of "CA" is restored.
+<XMP>
+<B>State: </B><INPUT TYPE="text" NAME="state" VALUE="CA" SIZE="2">
+<P><INPUT TYPE="reset" VALUE="Clear Form">
+</XMP>
+
+<P><B>Example 2.</B> The following example displays two text objects, a select object, and three radio buttons; all of these objects have default values. The form also has a reset button with the text "Defaults" on its face. If the user changes the value of any of the objects and then clicks the Defaults button, the original values are restored.
+<XMP>
+<HTML>
+<HEAD>
+<TITLE>Reset object example</TITLE>
+</HEAD>
+<BODY>
+<FORM NAME="form1">
+<BR><B>City: </B><INPUT TYPE="text" NAME="city" VALUE="Santa Cruz" SIZE="20">
+<B>State: </B><INPUT TYPE="text" NAME="state" VALUE="CA" SIZE="2">
+<P><SELECT NAME="colorChoice">
+   <OPTION SELECTED> Blue
+   <OPTION> Yellow
+   <OPTION> Green
+   <OPTION> Red
+</SELECT>
+<P><INPUT TYPE="radio" NAME="musicChoice" VALUE="soul-and-r&b"
+   CHECKED> Soul and R&B
+<BR><INPUT TYPE="radio" NAME="musicChoice" VALUE="jazz">
+   Jazz
+<BR><INPUT TYPE="radio" NAME="musicChoice" VALUE="classical">
+   Classical
+<P><INPUT TYPE="reset" VALUE="Defaults" NAME="reset1">
+</FORM>
+</BODY>
+</HTML>
+</XMP>
+
+
+<H3>See also</H3>
+<LI><A HREF=ref_a-c.html#button_object>button</A>, <A HREF=ref_f-g.html#form_object>form</A>, and <A HREF=ref_s-s.html#submit_object>submit</A> objects
+
+
+<!------------------------------------------------------------------------------------------------->
+<HR>
+<A NAME="round_method"><H2>round method</H2></A>
+<P>
+Returns the value of a number rounded to the nearest integer.
+
+<H3>Syntax</H3>
+<PRE>Math.round(<I>number</I>)</PRE>
+<I>number</I> is any numeric expression or a property of an existing object.
+
+<H3>Method of</H3>
+<P><A HREF=ref_m-q.html#Math_object>Math</A>
+
+<H3>Description</H3>
+<P>If the fractional portion of <I>number</I> is .5 or greater, the argument is rounded to the next highest integer. If the fractional portion of <I>number</I> is less than .5, the argument is rounded to the next lowest integer.
+
+<H3>Examples</H3>
+<PRE>
+//Displays the value 20
+document.write("The rounded value is " + Math.round(20.49))
+
+//Displays the value 21
+document.write("&ltP&gtThe rounded value is " + Math.round(20.5))
+
+//Displays the value -20
+document.write("&ltP&gtThe rounded value is " + Math.round(-20.5))
+
+//Displays the value -21
+document.write("&ltP&gtThe rounded value is " + Math.round(-20.51))
+</PRE>
+
+<!------------------------------------------------------------------------------------------------>
+<HR>
+
+<SCRIPT>
+document.write("<FONT SIZE=-2>Last modified " + document.lastModified)
+</SCRIPT>
+<P>
+</BODY>
+<HTML>
+

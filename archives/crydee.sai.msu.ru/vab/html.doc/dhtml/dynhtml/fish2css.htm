@@ -1,0 +1,143 @@
+
+<HTML>
+	<HEAD>
+	<TITLE>Swimming Fish Example 2</TITLE>
+	</HEAD>
+
+
+
+	<STYLE TYPE="text/css">
+    <!--
+
+    #bluepole {position:absolute; top: 150px; left:160px;}
+    #greenpole {position:absolute; top: 150px; left:360px;}
+    #redpole {position:absolute; top: 150px; left:260px;}
+    #fish {position:absolute; top: 170px; left:40px;}
+    #fishB {position:absolute; top: 0px; left:0px; visibility:hidden;}
+
+	-->
+
+    </STYLE>
+
+
+	<SPAN id=bluepole>
+	<IMG SRC=images/bluepole.gif>
+	</SPAN>
+
+	<SPAN id=greenpole>
+	<IMG SRC=images/greenpol.gif>
+	</SPAN>
+
+
+	<SPAN id=fish>
+	<IMG SRC=images/fish1.gif NAME="fish">
+
+	</SPAN>
+
+	<SPAN id=redpole>
+	<IMG SRC=images/redpole.gif>
+	</SPAN>
+
+	<SPAN id=fishB>
+	<IMG SRC=images/fish2.gif NAME="fishB">
+	</SPAN>
+
+	<BODY BGCOLOR="#ffffff">
+
+ <SCRIPT>
+
+ function initializeFish()
+ {
+      // create the backward fish image to force it to preload now
+
+      var fish = document.layers["fish"];
+      var fishB = document.layers["fishB"];
+      fish.direction = "forward";
+      fish.forwardimg = fish.document.images["fish"].src;
+      fish.backwardimg = fishB.document.images["fishB"].src;
+      return;
+ }
+
+ function movefish2()
+ {	var fish = document.layers["fish"];
+     if (fish.direction == "forward")
+     {
+        if (fish.left < 450) {fish.moveBy(5, 0);}
+        else {
+          changePoles();
+          changeDirection();
+          }
+       }
+      else {
+            if (fish.left > 10) {fish.moveBy(-5, 0);}
+	      else {
+                   resetPoles();
+			 changeDirection();
+			}
+		}
+      setTimeout("movefish2()", 10);
+  	return;
+	}
+
+function changeDirection ()
+{
+	var fish = document.layers["fish"];
+	if (fish.direction == "forward")
+		{fish.direction = "backward";
+		fish.document.images["fish"].src = fish.backwardimg;
+		}
+	else {fish.direction = "forward";
+	fish.document.images["fish"].src = fish.forwardimg;
+	}
+	return;
+}
+
+<!-- change the stacking order of the poles and the fish -->
+function changePoles ()
+{
+	var redpole = document.layers["redpole"];
+	var bluepole = document.layers["bluepole"];
+	var greenpole = document.layers["greenpole"];
+
+	var fish = document.layers["fish"];
+
+	fish.moveAbove(redpole);
+	bluepole.moveAbove(fish);
+	greenpole.moveAbove(bluepole);
+	return;
+}
+
+
+<!-- reset the stacking order of the poles and the fish -->
+function resetPoles ()
+{
+	var redpole = document.layers["redpole"];
+	var bluepole = document.layers["bluepole"];
+	var greenpole = document.layers["greenpole"];
+
+	var fish = document.layers["fish"];
+
+	greenpole.moveAbove(bluepole);
+	fish.moveAbove(greenpole);
+	redpole.moveAbove(fish);
+
+	return;
+}
+
+
+
+</SCRIPT>
+
+<H1>Fish Example 2</H1>
+<LAYER LEFT=10 TOP=100  name="fishlink">
+<FORM>
+<INPUT type=button value="Move the Fish" OnClick="initializeFish(); movefish2(); return false;">
+</FORM>
+</LAYER>
+
+
+</BODY>
+</HTML>
+
+
+

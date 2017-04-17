@@ -1,0 +1,1071 @@
+<BODY BGCOLOR="#FFFFFF">
+<A NAME="1001595">
+<P>
+</A><A NAME="1001596">
+<P>
+</A><A NAME="996824">
+<H1>Expressions and operators
+</H1>
+</A>
+
+<A NAME="1004588">
+
+<img src="graphics/expra.gif">
+
+his chapter describes JavaScript expressions and operators, including assignment, comparison, arithmetic, bitwise, logical, string, and special operators.<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="Expressions"></A>
+<A NAME="1004225">
+<H1> Expressions</H1>
+</A>
+<A NAME="1004226">
+An <I>expression</I> is any valid set of literals, variables, operators, and expressions that evaluates to a single value; the value can be a number, a string, or a logical value. <P></A>
+<A NAME="1005881">
+Conceptually, there are two types of expressions: those that assign a value to a variable, and those that simply have a value. For example, the expression <br><code>x = 7</code> is an expression that assigns x the value seven. This expression itself evaluates to seven. Such expressions use <I>assignment operators.</I> On the other hand, the expression <code>3 + 4</code> simply evaluates to seven; it does not perform an assignment. The operators used in such expressions are referred to simply as <I>operators</I>.<P></A>
+<A NAME="1004231">
+JavaScript has the following types of expressions:<P></A>
+<ul><A NAME="1004232">
+<LI>Arithmetic: evaluates to a number, for example 3.14159
+</A><A NAME="1004233">
+<LI>String: evaluates to a character string, for example, "Fred" or "234"
+</A><A NAME="1004234">
+<LI>Logical: evaluates to true or false
+</A></ul><A NAME="1004235">
+The special keyword <B>null</B> denotes a null value. In contrast, variables that have not been assigned a value are <I>undefined</I> and will cause a runtime error if used as numbers or as numeric variables. Array elements that have not been assigned a value, however, evaluate to false. For example, the following code executes the function <B>myFunction</B> because the array element is not defined:<P></A>
+<A NAME="1008425">
+<PRE>myArray=new Array()<br>if (!myArray["notThere"])<br>&nbsp;&nbsp;&nbsp;myFunction()</PRE>
+</A>
+
+<A NAME="Conditional expressions"></A>
+<A NAME="1004236">
+<H2> Conditional expressions</H2>
+</A>
+
+<A NAME="1004237">
+A conditional expression can have one of two values based on a condition. The syntax is<P></A>
+<A NAME="1004238">
+<PRE>(<I>condition</I>) ? <I>val1</I> : <I>val2</I></PRE>
+</A>
+<A NAME="1004239">
+If <I>condition</I> is true, the expression has the value of <I>val1</I>. Otherwise it has the value of <I>val2</I>. You can use a conditional expression anywhere you would use a standard expression.<P></A>
+<A NAME="1004240">
+For example,<P></A>
+<A NAME="1004241">
+<PRE>status = (age &gt;= 18) ? "adult" : "minor"</PRE>
+</A>
+<A NAME="1004242">
+This statement assigns the value "adult" to the variable <I>status</I> if age is eighteen or greater. Otherwise, it assigns the value "minor" to <I>status</I>.<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="Operators"></A>
+<A NAME="1004258">
+<H1> Operators</H1>
+</A>
+<A NAME="1004259">
+JavaScript has assignment, comparison, arithmetic, bitwise, logical, string, and special operators. This section describes the operators and contains information about operator precedence.<P></A>
+<A NAME="1007147">
+There are both <I>binary</I> and <I>unary</I> operators. A binary operator requires two operands, one before the operator and one after the operator:<P></A>
+<A NAME="1004260">
+<PRE><I>operand1 operator operand2</I></PRE>
+</A>
+<A NAME="1004261">
+For example, <code>3+4</code> or <code>x*y</code>.<P></A>
+<A NAME="1004263">
+A unary operator requires a single operand, either before or after the operator:<P></A>
+<A NAME="1004264">
+<PRE><I>operator operand</I></PRE>
+</A>
+<A NAME="1004265">
+or<P></A>
+<A NAME="1004266">
+<PRE><I>operand operator</I></PRE>
+</A>
+<A NAME="1004267">
+For example, <code>x++</code> or <code>++x</code>.<P></A>
+
+<A NAME="Assignment operators"></A>
+<A NAME="1007034">
+<H2> Assignment operators</H2>
+</A>
+
+
+<a name="1007035">
+<blockquote>Implemented in
+</a>
+
+<a name="1007243">
+Navigator 2.0
+</blockquote>
+</a>
+<A NAME="1007242">
+An assignment operator assigns a value to its left operand based on the value of its right operand. The basic assignment operator is equal (=), which assigns the value of its right operand to its left operand. That is, x = y assigns the value of y to x.<P></A>
+<A NAME="1007036">
+The other operators are shorthand for standard operations, as shown in the following table:
+
+<P><TABLE BORDER="2">
+<CAPTION></CAPTION>
+<tr align=left valign=bottom><th><b><A NAME="1007043">
+Shorthand operator 
+</A><BR>
+<B><th><b><A NAME="1007045">
+Meaning
+</A><BR>
+<B>
+<tr align=left valign=top><td><A NAME="1007047">
+x += y
+</A><BR>
+
+<td><A NAME="1007049">
+x = x + y
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1007051">
+x -= y 
+</A><BR>
+
+<td><A NAME="1007053">
+ x = x - y
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1007055">
+x *= y 
+</A><BR>
+
+<td><A NAME="1007057">
+ x = x * y
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1007059">
+x /= y 
+</A><BR>
+
+<td><A NAME="1007061">
+ x = x / y
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1007063">
+x %= y 
+</A><BR>
+
+<td><A NAME="1007065">
+ x = x % y
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1007067">
+x &lt;&lt;= y 
+</A><BR>
+
+<td><A NAME="1007069">
+ x = x &lt;&lt; y
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1007071">
+x &gt;&gt;= y 
+</A><BR>
+
+<td><A NAME="1007073">
+ x = x &gt;&gt; y
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1007075">
+x &gt;&gt;&gt;= y
+</A><BR>
+
+<td><A NAME="1007077">
+ x = x &gt;&gt;&gt; y
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1007079">
+x &amp;= y
+</A><BR>
+
+<td><A NAME="1007081">
+ x = x &amp; y
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1007083">
+x ^= y
+</A><BR>
+
+<td><A NAME="1007085">
+ x = x ^ y
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1007087">
+x |= y
+</A><BR>
+
+<td><A NAME="1007089">
+ x = x | y
+</A><BR>
+
+
+
+
+</TABLE>
+
+<TABLE>
+<TR><TD>
+</TABLE>
+
+
+<P></A>
+
+<A NAME="Comparison operators"></A>
+<A NAME="1007092">
+<H2> Comparison operators</H2>
+</A>
+
+
+<a name="1007255">
+<blockquote>Implemented in
+</a>
+
+<a name="1007256">
+Navigator 2.0
+</blockquote>
+</a>
+<A NAME="1007093">
+A comparison operator compares its operands and returns a logical value based on whether the comparison is true or not. The operands can be numerical or string values. When used on string values, the comparisons are based on the standard lexicographical ordering. They are described in the following table.
+
+<P><TABLE BORDER="2">
+<CAPTION></CAPTION>
+<tr align=left valign=bottom><th><b><A NAME="1007102">
+Operator</A><B><th><b><A NAME="1007104">
+Description</A><B><th><b><A NAME="1007106">
+Example</A><B>
+<tr align=left valign=top><td><A NAME="1007108">
+Equal (= =)
+</A><BR>
+
+<td><A NAME="1007110">
+Returns true if the operands are 
+equal.
+</A><BR>
+
+<td><A NAME="1007112">
+x == y returns true if x 
+equals y.
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1007114">
+Not equal (!=)
+</A><BR>
+
+<td><A NAME="1007116">
+Returns true if the operands are 
+not equal.
+</A><BR>
+
+<td><A NAME="1007118">
+x != y returns true if x is not 
+equal to y.
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1007120">
+Greater than (&gt;)
+</A><BR>
+
+<td><A NAME="1007122">
+Returns true if left operand is 
+greater than right operand. 
+</A><BR>
+
+<td><A NAME="1007124">
+x &gt; y returns true if x is 
+greater than y.
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1007126">
+Greater than or 
+equal (&gt;=)
+</A><BR>
+
+<td><A NAME="1007128">
+Returns true if left operand is 
+greater than or equal to right 
+operand. 
+</A><BR>
+
+<td><A NAME="1007130">
+x &gt;= y returns true if x is 
+greater than or equal to y.
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1007132">
+Less than (&lt;)
+</A><BR>
+
+<td><A NAME="1007134">
+Returns true if left operand is less 
+than right operand. 
+</A><BR>
+
+<td><A NAME="1007136">
+x &lt; y returns true if x is less 
+than y.
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1007138">
+Less than or equal 
+(&lt;=)
+</A><BR>
+
+<td><A NAME="1007140">
+Returns true if left operand is less 
+than or equal to right operand. 
+</A><BR>
+
+<td><A NAME="1007142">
+x &lt;= y returns true if x is 
+less than or equal to y.
+</A><BR>
+
+
+
+
+</TABLE>
+
+<TABLE>
+<TR><TD>
+</TABLE>
+
+
+<P></A>
+
+<A NAME="Arithmetic operators"></A>
+<A NAME="1004268">
+<H2> Arithmetic operators</H2>
+</A>
+
+<A NAME="1004269">
+Arithmetic operators take numerical values (either literals or variables) as their operands and return a single numerical value. The standard arithmetic operators are addition (+), subtraction (-), multiplication (*), and division (/). These operators work as they do in other programming languages.<P></A>
+
+<A NAME="Modulus (%)"></A>
+<A NAME="1004272">
+<H3> Modulus (%)</H3>
+</A>
+
+
+<a name="1007271">
+<blockquote>Implemented in
+</a>
+
+<a name="1007272">
+Navigator 2.0
+</blockquote>
+</a>
+<A NAME="1004273">
+The modulus operator is used as follows:<P></A>
+<A NAME="1004274">
+<PRE>var1 % var2</PRE>
+</A>
+<A NAME="1004275">
+The modulus operator returns the first operand modulo the second operand, that is, <I>var1</I> modulo <I>var2</I>, in the preceding statement, where <I>var1</I> and <I>var2</I> are variables. The modulo function is the floating-point remainder of dividing <I>var1</I> by <I>var2</I>. For example, 12 % 5 returns 2.<P></A>
+
+<A NAME="Increment (++)"></A>
+<A NAME="1004276">
+<H3> Increment (++)</H3>
+</A>
+
+
+<a name="1007276">
+<blockquote>Implemented in
+</a>
+
+<a name="1007277">
+Navigator 2.0
+</blockquote>
+</a>
+<A NAME="1004277">
+The increment operator is used as follows:<P></A>
+<A NAME="1004278">
+<code>var++</code> or <code>++var</code><P></A>
+<A NAME="1004279">
+This operator increments (adds one to) its operand and returns a value. If used postfix, with operator after operand (for example, x++), then it returns the value before incrementing. If used prefix with operator before operand (for example, ++x), then it returns the value after incrementing.<P></A>
+<A NAME="1004280">
+For example, if x is three, then the statement <code>y = x++ </code>sets y to three<code> and </code>increments x to four. If x is three, then the statement <code>y = ++x </code>increments x to four and sets y to four.<P></A>
+
+<A NAME="Decrement (--)"></A>
+<A NAME="1004286">
+<H3> Decrement (--)</H3>
+</A>
+
+
+<a name="1007281">
+<blockquote>Implemented in
+</a>
+
+<a name="1007282">
+Navigator 2.0
+</blockquote>
+</a>
+<A NAME="1004287">
+The decrement operator is used as follows:<P></A>
+<A NAME="1004288">
+<code>var--</code> or <code>--var</code><P></A>
+<A NAME="1004289">
+This operator decrements (subtracts one from) its operand and returns a value. If used postfix (for example, x--), then it returns the value before decrementing. If used prefix (for example, --x), then it returns the value after decrementing.<P></A>
+<A NAME="1004290">
+For example, if x is three, then the statement <code>y = x--</code> sets y to three and decrements x to two. If x is three, then the statement <code>y = --x</code> decrements x to two and sets y to two.<P></A>
+
+<A NAME="Unary negation (-)"></A>
+<A NAME="1004296">
+<H3> Unary negation (-)</H3>
+</A>
+
+
+<a name="1007288">
+<blockquote>Implemented in
+</a>
+
+<a name="1007289">
+Navigator 2.0
+</blockquote>
+</a>
+<A NAME="1004297">
+The unary negation precedes its operand and negates it. For example, <code>x = -x</code> negates the value of x; that is, if x were three, it would become -3.<P></A>
+
+<A NAME="Bitwise operators"></A>
+<A NAME="1004300">
+<H2> Bitwise operators</H2>
+</A>
+
+<A NAME="1004301">
+Bitwise operators treat their operands as a set of bits (zeros and ones), rather than as decimal, hexadecimal, or octal numbers. For example, the decimal number nine has a binary representation of 1001. Bitwise operators perform their operations on such binary representations, but they return standard JavaScript numerical values.<P></A>
+<A NAME="1006610">
+The following table summarizes JavaScript's bitwise operators
+
+<P><TABLE BORDER="2">
+<CAPTION></CAPTION>
+<tr align=left valign=bottom><th><b><A NAME="1006559">
+Operator</A><B><th><b><A NAME="1006561">
+Usage</A><B><th><b><A NAME="1006563">
+Description</A><B>
+<tr align=left valign=top><td><A NAME="1006565">
+Bitwise AND 
+</A><BR>
+
+<td><A NAME="1006568">
+a &amp; b
+</A><BR>
+
+<td><A NAME="1006570">
+Returns a one in each bit position if bits of 
+both operands are ones.
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1006572">
+Bitwise OR 
+</A><BR>
+
+<td><A NAME="1006575">
+a | b
+</A><BR>
+
+<td><A NAME="1006577">
+Returns a one in a bit if bits of either 
+operand is one.
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1006579">
+Bitwise XOR 
+</A><BR>
+
+<td><A NAME="1006582">
+a ^ b
+</A><BR>
+
+<td><A NAME="1006584">
+Returns a one in a bit position if bits of one 
+but not both operands are one.
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1006586">
+Bitwise NOT 
+</A><BR>
+
+<td><A NAME="1006589">
+~ a
+</A><BR>
+
+<td><A NAME="1006591">
+Flips the bits of its operand.
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1006593">
+Left shift
+</A><BR>
+
+<td><A NAME="1006595">
+a &lt;&lt; b
+</A><BR>
+
+<td><A NAME="1006597">
+Shifts <I>a </I>in binary representation <I>b</I> bits to 
+left, shifting in zeros from the right.
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1006599">
+Sign-propagating right 
+shift 
+</A><BR>
+
+<td><A NAME="1006601">
+a &gt;&gt; b
+</A><BR>
+
+<td><A NAME="1006603">
+Shifts <I>a</I> in binary representation <I>b</I> bits to 
+right, discarding bits shifted off.
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1006605">
+Zero-fill right shift
+</A><BR>
+
+<td><A NAME="1006607">
+a &gt;&gt;&gt; b
+</A><BR>
+
+<td><A NAME="1006609">
+Shifts <I>a</I> in binary representation <I>b</I> bits to the 
+right, discarding bits shifted off, and shifting 
+in zeros from the left.
+</A><BR>
+
+
+
+
+</TABLE>
+
+<TABLE>
+<TR><TD>
+</TABLE>
+
+
+<P></A>
+
+<A NAME="Bitwise logical operators"></A>
+<A NAME="1004302">
+<H3> Bitwise logical operators</H3>
+</A>
+
+
+<a name="1007293">
+<blockquote>Implemented in
+</a>
+
+<a name="1007294">
+Navigator 2.0
+</blockquote>
+</a>
+<A NAME="1004303">
+The bitwise logical operators work conceptually as follows:<P></A>
+<ul><A NAME="1004304">
+<LI>The operands are converted to thirty-two-bit integers and expressed by a series of bits (zeros and ones).
+</A><A NAME="1004305">
+<LI>Each bit in the first operand is paired with the corresponding bit in the second operand: first bit to first bit, second bit to second bit, and so on.
+</A><A NAME="1004306">
+<LI>The operator is applied to each pair of bits, and the result is constructed bitwise.
+</A></ul><A NAME="1004311">
+For example, the binary representation of nine is 1001, and the binary representation of fifteen is 1111. So, when the bitwise operators are applied to these values, the results are as follows:<P></A>
+<ul><A NAME="1004312">
+<LI>15 &amp; 9 yields 9 (1111 &amp; 1001 = 1001)
+</A><A NAME="1004313">
+<LI>15 | 9 yields 15 (1111 | 1001 = 1111)
+</A><A NAME="1004314">
+<LI>15 ^ 9 yields 6 (1111 ^ 1001 = 0110)
+</A></ul>
+<A NAME="Bitwise shift operators"></A>
+<A NAME="1004315">
+<H3> Bitwise shift operators</H3>
+</A>
+
+
+<a name="1007298">
+<blockquote>Implemented in
+</a>
+
+<a name="1007299">
+Navigator 2.0
+</blockquote>
+</a>
+<A NAME="1004320">
+The bitwise shift operators take two operands: the first is a quantity to be shifted, and the second specifies the number of bit positions by which the first operand is to be shifted. The direction of the shift operation is controlled by the operator used.<P></A>
+<A NAME="1004321">
+Shift operators convert their operands to thirty-two-bit integers and return a result of the same type as the left operator.<P></A>
+
+<A NAME="Left shift"></A>
+<A NAME="1004322">
+<H4> Left shift</H4>
+</A>
+
+<A NAME="1004323">
+This operator shifts the first operand the specified number of bits to the left. Excess bits shifted off to the left are discarded. Zero bits are shifted in from the right.<P></A>
+<A NAME="1004324">
+For example, 9&lt;&lt;2 yields thirty-six, because 1001 shifted two bits to the left becomes 100100, which is thirty-six.<P></A>
+
+<A NAME="Sign-propagating right shift"></A>
+<A NAME="1004325">
+<H4> Sign-propagating right shift</H4>
+</A>
+
+<A NAME="1005969">
+This operator shifts the first operand the specified number of bits to the right. Excess bits shifted off to the right are discarded. Copies of the leftmost bit are shifted in from the left.<P></A>
+<A NAME="1005970">
+For example, 9&gt;&gt;2 yields two, because 1001 shifted two bits to the right becomes 10, which is two. Likewise, -9&gt;&gt;2 yields -3, because the sign is preserved.<P></A>
+
+<A NAME="Zero-fill right shift"></A>
+<A NAME="1004328">
+<H4> Zero-fill right shift</H4>
+</A>
+
+<A NAME="1004329">
+This operator shifts the first operand the specified number of bits to the right. Excess bits shifted off to the right are discarded. Zero bits are shifted in from the left.<P></A>
+<A NAME="1004330">
+For example, 19&gt;&gt;&gt;2 yields four, because 10011 shifted two bits to the right becomes 100, which is four. For non-negative numbers, zero-fill right shift and sign-propagating right shift yield the same result.<P></A>
+
+<A NAME="Logical operators"></A>
+<A NAME="1004331">
+<H2> Logical operators</H2>
+</A>
+
+
+<a name="1007303">
+<blockquote>Implemented in
+</a>
+
+<a name="1007304">
+Navigator 2.0
+</blockquote>
+</a>
+<A NAME="1004332">
+Logical operators take Boolean (logical) values as operands and return a Boolean value. They are described in the following table.
+
+<P><TABLE BORDER="2">
+<CAPTION></CAPTION>
+<tr align=left valign=bottom><th><b><A NAME="1005616">
+Operator</A><B><th><b><A NAME="1005632">
+Usage</A><B><th><b><A NAME="1005618">
+Description</A><B>
+<tr align=left valign=top><td><A NAME="1005620">
+and (&amp;&amp;)
+</A><BR>
+
+<td><A NAME="1005649">
+expr1 &amp;&amp; expr2
+</A><BR>
+
+<td><A NAME="1005653">
+Returns true if both logical expressions <I>expr1</I> and 
+<I>expr2</I> are true. Otherwise, returns false.
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1005624">
+or (||)
+</A><BR>
+
+<td><A NAME="1005655">
+expr1 || expr2
+</A><BR>
+
+<td><A NAME="1005626">
+Returns true if either logical expression <I>expr1</I> or 
+<I>expr2</I> is true. If both are false, returns false.
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1005628">
+not (!)
+</A><BR>
+
+<td><A NAME="1005659">
+!expr
+</A><BR>
+
+<td><A NAME="1005630">
+If <I>expr</I> is true, returns false; if <I>expr</I> is false, returns 
+true.
+</A><BR>
+
+
+
+
+</TABLE>
+
+<TABLE>
+<TR><TD>
+</TABLE>
+
+
+<P></A>
+
+<A NAME="Short-circuit evaluation"></A>
+<A NAME="1004342">
+<H3> Short-circuit evaluation</H3>
+</A>
+
+<A NAME="1004343">
+As logical expressions are evaluated left to right, they are tested for possible "short-circuit" evaluation using the following rules:<P></A>
+<ul><A NAME="1004344">
+<LI><B>false</B> &amp;&amp; <I>anything</I> is short-circuit evaluated to false.
+</A><A NAME="1004345">
+<LI><B>true</B> || <I>anything</I> is short-circuit evaluated to true.
+</A></ul><A NAME="1004346">
+The rules of logic guarantee that these evaluations are always correct. Note that the <I>anything</I> part of the above expressions is not evaluated, so any side effects of doing so do not take effect.<P></A>
+
+<A NAME="String operators"></A>
+<A NAME="1005731">
+<H2> String operators</H2>
+</A>
+
+
+<a name="1007312">
+<blockquote>Implemented in
+</a>
+
+<a name="1007313">
+Navigator 2.0
+</blockquote>
+</a>
+<A NAME="1004357">
+In addition to the comparison operators, which can be used on string values, the concatenation operator (+) concatenates two string values together, returning another string that is the union of the two operand strings. For example, <code>"my " + "string"</code> returns the string <code>"my string".</code><P></A>
+<A NAME="1004361">
+The shorthand assignment operator += can also be used to concatenate strings. For example, if the variable <I>mystring</I> has the value "alpha," then the expression <code>mystring += "bet"</code> evaluates to "alphabet" and assigns this value to <I>mystring</I>.<P></A>
+
+<A NAME="Special operators"></A>
+<A NAME="1007183">
+<H2> Special operators</H2>
+</A>
+
+
+<A NAME="new"></A>
+<A NAME="1007220">
+<H3> new</H3>
+</A>
+
+
+<a name="1007317">
+<blockquote>Implemented in
+</a>
+
+<a name="1007318">
+Navigator 2.0
+</blockquote>
+</a>
+<A NAME="1007227">
+You can use the <B>new</B> operator to create an instance of a user-defined object type or of one of the built-in object types <I>Array, Boolean, Date, Function, Math, Number,</I> or <I>String.</I> Use <B>new</B> as follows:<P></A>
+<A NAME="1007228">
+<PRE><I>objectName</I> = <B>new</B> <I>objectType</I> ( <I>param1</I> [,<I>param2</I>] ...[,<I>paramN</I>] )</PRE>
+</A>
+<A NAME="1007232">
+For more information, see <a href="stmts.htm#1004841">"new"</a>.<P></A>
+
+<A NAME="typeof"></A>
+<A NAME="1007193">
+<H3> typeof</H3>
+</A>
+
+
+<a name="1007322">
+<blockquote>Implemented in
+</a>
+
+<a name="1007323">
+Navigator 3.0
+</blockquote>
+</a>
+<A NAME="1007340">
+The typeof operator is used in either of the following ways:<P></A>
+<A NAME="1007341">
+<PRE>1. typeof <I>operand<br></I>2. typeof (<I>operand</I>)</PRE>
+</A>
+<A NAME="1007423">
+The typeof operator returns a string indicating the type of the unevaluated operand. <I>operand</I> is the string, variable, keyword, or object for which the type is to be returned. The parentheses are optional.<P></A>
+<A NAME="1007346">
+Suppose you define the following variables:<P></A>
+<A NAME="1007347">
+<PRE>var myFun = new Function("5+2")<br>var shape="round"<br>var size=1<br>var today=new Date()</PRE>
+</A>
+<A NAME="1007348">
+The typeof operator returns the following results for these variables:<P></A>
+<A NAME="1007349">
+<PRE>typeof myFun is object<br>typeof shape is string<br>typeof size is number<br>typeof today is object<br>typeof dontExist is undefined</PRE>
+</A>
+<A NAME="1007350">
+For the keywords true and null, the typeof operator returns the following results:<P></A>
+<A NAME="1007351">
+<PRE>typeof true is boolean<br>typeof null is object</PRE>
+</A>
+<A NAME="1007352">
+For a number or string, the typeof operator returns the following results:<P></A>
+<A NAME="1007353">
+<PRE>typeof 62 is number<br>typeof 'Hello world' is string</PRE>
+</A>
+<A NAME="1007354">
+For property values, the typeof operator returns the type of value the property contains:<P></A>
+<A NAME="1007355">
+<PRE>typeof document.lastModified is string<br>typeof window.length is number<br>typeof Math.LN2 is number</PRE>
+</A>
+<A NAME="1007356">
+For methods and functions, the typeof operator returns results as follows:<P></A>
+<A NAME="1007358">
+<PRE>typeof blur is function<br>typeof eval is function<br>typeof parseInt is function<br>typeof shape.split is function</PRE>
+</A>
+<A NAME="1007359">
+For objects, the typeof operator returns results as follows:<P></A>
+<A NAME="1007361">
+<PRE>typeof Date is function<br>typeof Function is function<br>typeof Math is function<br>typeof Option is function<br>typeof String is function</PRE>
+</A>
+
+<A NAME="void"></A>
+<A NAME="1007206">
+<H3> void</H3>
+</A>
+
+
+<a name="1007329">
+<blockquote>Implemented in
+</a>
+
+<a name="1007330">
+Navigator 3.0
+</blockquote>
+</a>
+<A NAME="1007409">
+The void operator is used in either of the following ways:<P></A>
+<A NAME="1007415">
+<PRE>1. javascript:void (<I>expression</I>)<br>2. javascript:void <I>expression</I></PRE>
+</A>
+<A NAME="1007429">
+The void operator specifies an expression to be evaluated without returning a value. <I>expression</I> is a JavaScript expression to evaluate. The parentheses surrounding the expression are optional, but it is good style to use them.<P></A>
+<A NAME="1007433">
+You can use the void operator to specify an expression as a hypertext link. The expression is evaluated but is not loaded in place of the current document.<P></A>
+<A NAME="1007434">
+The following code creates a hypertext link that does nothing when the user clicks it. When the user clicks the link, <code>void(0)</code> evaluates to <code>0</code>, but that has no effect in JavaScript.<P></A>
+<A NAME="1007435">
+<PRE>&lt;A HREF="javascript:void(0)"&gt;Click here to do nothing&lt;/A&gt;</PRE>
+</A>
+<A NAME="1007436">
+The following code creates a hypertext link that submits a form when the user clicks it.<P></A>
+<A NAME="1007449">
+<PRE>&lt;A HREF="javascript:void(document.form.submit())"&gt;Click here to submit&lt;/A&gt;</PRE>
+</A>
+<A NAME="1007459">
+For information on creating hypertext links, see <a href="ref_a-c.htm#73597">"Area"</a> and <a href="ref_h-l.htm#84501">"Link object"</a>.<P></A>
+
+<A NAME="Operator precedence"></A>
+<A NAME="1007452">
+<H2> Operator precedence</H2>
+</A>
+
+<A NAME="1007456">
+The <I>precedence</I> of operators determines the order they are applied when evaluating an expression. You can override operator precedence by using parentheses.<P></A>
+<A NAME="1004364">
+The following table describes the precedence of operators, from lowest to highest:
+
+<P><TABLE BORDER="2">
+<CAPTION></CAPTION>
+<tr align=left valign=bottom><th><b><A NAME="1005798">
+Operator</A><B><th><b><A NAME="1005800">
+Examples</A><B>
+<tr align=left valign=top><td><A NAME="1005806">
+assignment
+</A><BR>
+
+<td><A NAME="1005808">
+<code> = += -= *= /= %= &lt;&lt;= &gt;&gt;= &gt;&gt;&gt;= &amp;= ^= |=
+</code></A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1005814">
+conditional
+</A><BR>
+
+<td><A NAME="1005816">
+<code> ?:
+</code></A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1005818">
+logical-or
+</A><BR>
+
+<td><A NAME="1005820">
+<code> ||
+</code></A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1005822">
+logical-and
+</A><BR>
+
+<td><A NAME="1005824">
+<code> &amp;&amp;
+</code></A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1005826">
+bitwise-or
+</A><BR>
+
+<td><A NAME="1005828">
+<code> |
+</code></A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1005830">
+bitwise-xor
+</A><BR>
+
+<td><A NAME="1005832">
+<code> ^
+</code></A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1005834">
+bitwise-and
+</A><BR>
+
+<td><A NAME="1005836">
+<code> &amp;
+</code></A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1005838">
+equality
+</A><BR>
+
+<td><A NAME="1005840">
+<code> == !=
+</code></A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1005842">
+relational
+</A><BR>
+
+<td><A NAME="1005844">
+<code> &lt; &lt;= &gt; &gt;=
+</code></A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1005846">
+bitwise shift
+</A><BR>
+
+<td><A NAME="1005848">
+<code> &lt;&lt; &gt;&gt; &gt;&gt;&gt;
+</code></A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1005850">
+addition/subtraction
+</A><BR>
+
+<td><A NAME="1005852">
+<code> + -
+</code></A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1005854">
+multiply/divide
+</A><BR>
+
+<td><A NAME="1005856">
+<code> * / %
+</code></A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1005858">
+negation/increment
+</A><BR>
+
+<td><A NAME="1005860">
+<code> ! ~ - ++ -- typeof void
+</code></A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1005862">
+call, member
+</A><BR>
+
+<td><A NAME="1005864">
+<code> () [] .
+</code></A><BR>
+
+
+
+
+</TABLE>
+
+<TABLE>
+<TR><TD>
+</TABLE>
+
+
+<P></A>

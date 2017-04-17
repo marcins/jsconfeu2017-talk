@@ -1,0 +1,760 @@
+<BODY BGCOLOR="#FFFFFF">
+<A NAME="1001595">
+<P>
+</A><A NAME="1001596">
+<P>
+</A><A NAME="996824">
+<H1>Built-in objects and functions
+</H1>
+</A>
+
+<A NAME="1005200">
+
+<img src="graphics/builtina.gif">
+
+everal objects are built in to JavaScript and can be used in either client or server scripts. These objects are in addition to LiveWire objects defined for server-side JavaScript and Navigator objects introduced in <a href="navobj.htm#1005423">Chapter&nbsp;2, "Using Navigator objects."</a> A handful of built-in functions can also be used in both client and server scripts.<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="Built-in objects"></A>
+<A NAME="1006985">
+<H1> Built-in objects</H1>
+</A>
+<A NAME="1007039">
+The built-in objects are <I>Array, Boolean, Date, Function, Math, Number,</I> and <I>String</I>.<P></A>
+
+<A NAME="Array object"></A>
+<A NAME="1007256">
+<H2> Array object</H2>
+</A>
+
+<A NAME="1007257">
+JavaScript does not have an explicit array data type. However, you can use the built-in Array object and its methods to work with arrays in your applications. The Array object has methods for joining, reversing, and sorting arrays. It has a property for determining the array length.<P></A>
+<A NAME="1007278">
+An <I>array</I> is an ordered set of values that you reference through a name and an index. For example, you could have an array called <I>emp</I> that contains employees' names indexed by their employee number. So <I>emp</I>[1] would be employee number one, <I>emp</I>[2] employee number two, and so on.<P></A>
+<A NAME="1007289">
+To create an Array object:<P></A>
+<A NAME="1007300">
+<PRE>1. <I>arrayObjectName</I> = new Array([<I>arrayLength</I>])<br>2. <I>arrayObjectName</I> = new Array([<I>element0, element1, ..., element</I>n])</PRE>
+</A>
+<A NAME="1007305">
+<I>arrayObjectName</I> is either the name of a new object or a property of an existing object. When using <I>Array</I> properties and methods, <I>arrayObjectName</I> is either the name of an existing <I>Array</I> object or a property of an existing object.<P></A>
+<A NAME="1007306">
+<I>arrayLength</I> is the initial length of the array. You can access this value using the <I>length</I> property.<P></A>
+<A NAME="1007307">
+<I>elementn</I> is a list of values for the array's elements. When this form is specified, the array is initalized with the specified values as its elements, and the array's <I>length</I> property is set to the number of arguments.<P></A>
+<A NAME="1007308">
+The <I>Array</I> object has the following methods:<P></A>
+<ul><A NAME="1007309">
+<LI>join joins all elements of an array into a string
+</A><A NAME="1007310">
+<LI>reverse transposes the elements of an array: the first array element becomes the last and the last becomes the first
+</A><A NAME="1007311">
+<LI>sort sorts the elements of an array
+</A></ul><A NAME="1007321">
+For example, suppose you define the following array:<P></A>
+<A NAME="1007323">
+<PRE>myArray = new Array("Wind","Rain","Fire")</PRE>
+</A>
+<A NAME="1007330">
+<code>myArray.join()</code> returns "Wind,Rain,Fire"; <code>myArray.reverse</code> transposes the array so that myArray[0] is "Fire", myArray[1] is "Rain", and myArray[2] is "Wind". <code>myArray.sort</code> sorts the array so that myArray[0] is "Fire", myArray[1] is "Rain", and myArray[2] is "Wind". <code>myArray</code>.<P></A>
+
+<A NAME="Populating an array"></A>
+<A NAME="1007391">
+<H3> Populating an array</H3>
+</A>
+
+<A NAME="1007392">
+You can populate an array by assigning values to its elements. For example,<P></A>
+<A NAME="1007393">
+<PRE>emp[1] = "Casey Jones"<br>emp[2] = "Phil Lesh"<br>emp[3] = "August West"</PRE>
+</A>
+<A NAME="1007394">
+You can also populate an array when you create it:<P></A>
+<A NAME="1007427">
+<PRE>myArray = new Array("Hello", myVar, 3.14159)</PRE>
+</A>
+<A NAME="1007493">
+The following code creates a two-dimensional array and displays the results.<P></A>
+<A NAME="1007494">
+<PRE>a = new Array(4)<br>for (i=0; i &lt; 4; i++) {<br>&nbsp;&nbsp;&nbsp;a[i] = new Array(4)<br>&nbsp;&nbsp;&nbsp;for (j=0; j &lt; 4; j++) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a[i][j] = "["+i+","+j+"]"<br>&nbsp;&nbsp;&nbsp;}<br>}<br>for (i=0; i &lt; 4; i++) {<br>&nbsp;&nbsp;&nbsp;str = "Row "+i+":"<br>&nbsp;&nbsp;&nbsp;for (j=0; j &lt; 4; j++) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;str += a[i][j]<br>&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;document.write(str,"&lt;p&gt;")<br>}</PRE>
+</A>
+<A NAME="1007495">
+This example displays the following results:<P></A>
+<A NAME="1007496">
+<PRE><B>Multidimensional array test</B></PRE>
+</A>
+<A NAME="1007497">
+<PRE>Row 0:[0,0][0,1][0,2][0,3]</PRE>
+</A>
+<A NAME="1007498">
+<PRE>Row 1:[1,0][1,1][1,2][1,3]</PRE>
+</A>
+<A NAME="1007499">
+<PRE>Row 2:[2,0][2,1][2,2][2,3]</PRE>
+</A>
+<A NAME="1007500">
+<PRE>Row 3:[3,0][3,1][3,2][3,3]</PRE>
+</A>
+
+<A NAME="Referring to array elements"></A>
+<A NAME="1008614">
+<H3> Referring to array elements</H3>
+</A>
+
+<A NAME="1008615">
+You can refer to an array's elements by using the element's value or ordinal number. For example, suppose you define the following array:<P></A>
+<A NAME="1008632">
+<PRE>myArray = new Array("Wind","Rain","Fire")</PRE>
+</A>
+<A NAME="1008635">
+You can then refer to the first element of the array as <code>myArray[0]</code> or <code>myArray["Wind"]</code>.<P></A>
+
+<A NAME="Boolean object"></A>
+<A NAME="1006652">
+<H2> Boolean object</H2>
+</A>
+
+<A NAME="1007540">
+Use the built-in <I>Boolean</I> object when you need to convert a non-boolean value to a boolean value. You can use the <I>Boolean</I> object any place JavaScript expects a primitive boolean value. JavaScript returns the primitive value of the <I>Boolean</I> object by automatically invoking the <B>valueOf</B> method.<P></A>
+<A NAME="1007546">
+To create a <I>Boolean</I> object:<P></A>
+<A NAME="1007547">
+<PRE><I>booleanObjectName</I> = new Boolean(<I>value</I>)</PRE>
+</A>
+<A NAME="1007551">
+<I>booleanObjectName</I> is either the name of a new object or a property of an existing object. When using <I>Boolean</I> properties, <I>booleanObjectName</I> is either the name of an existing <I>Boolean</I> object or a property of an existing object.<P></A>
+<A NAME="1007562">
+<I>value</I> is the initial value of the <I>Boolean</I> object. The <I>value</I> is converted to a boolean value, if necessary. If <I>value</I> is omitted or is 0, null, false, or the empty string "", it the object has an initial value of false. All other values, including the string "false" create an object with an initial value of true.<P></A>
+<A NAME="1007553">
+The following examples create <I>Boolean</I> objects:<P></A>
+<A NAME="1007554">
+<PRE>bfalse = new Boolean(false)<br>btrue = new Boolean(true)</PRE>
+</A>
+
+<A NAME="Date object"></A>
+<A NAME="1006833">
+<H2> Date object</H2>
+</A>
+
+<A NAME="1006834">
+JavaScript does not have a date data type. However, you can use the Date object and its methods to work with dates and times in your applications. The Date object has a large number of methods for setting, getting, and manipulating dates. It does not have any properties.<P></A>
+<A NAME="1006835">
+JavaScript handles dates similarly to Java. The two languages have many of the same date methods, and both languages store dates as the number of milliseconds since January 1, 1970, 00:00:00.<P></A>
+
+<a name="1006836">
+<B><blockquote>Note
+</blockquote></B>
+</a>
+
+<a name="1006837">
+<blockquote>Currently, you cannot work with dates prior to January 1, 1970.
+</blockquote>
+</a>
+<A NAME="1006839">
+To create a Date object:<P></A>
+<A NAME="1006840">
+<PRE><I>dateObjectName</I> = new Date([<I>parameters]</I>)</PRE>
+</A>
+<A NAME="1006841">
+where <I>dateObjectName</I> is the name of the Date object being created; it can be a new object or a property of an existing object.<P></A>
+<A NAME="1006842">
+The <I>parameters</I> in the preceding syntax can be any of the following:<P></A>
+<ul><A NAME="1006843">
+<LI>Nothing: creates today's date and time. For example, <code>today = new Date().</code>
+</A><A NAME="1006844">
+<LI>A string representing a date in the following form: "Month day, year hours:minutes:seconds." For example, <code>Xmas95 = new Date("December 25, 1995 13:30:00")</code>. If you omit hours, minutes, or seconds, the value will be set to zero.
+</A><A NAME="1006845">
+<LI>A set of integer values for year, month, and day. For example, <code>Xmas95 = new Date(95,11,25)</code>. A set of values for year, month, day, hour, minute, and seconds. For example, <code>Xmas95 = new Date(95,11,25,9,30,0)</code>.
+</A></ul>
+<A NAME="Methods of the Date object"></A>
+<A NAME="1006846">
+<H3> Methods of the Date object</H3>
+</A>
+
+<A NAME="1008773">
+The <I>Date</I> object methods for handling dates and times fall into these broad categories:<P></A>
+<ul><A NAME="1006847">
+<LI>"set" methods, for setting date and time values in <I>Date</I> objects.
+</A><A NAME="1006848">
+<LI>"get" methods, for getting date and time values from <I>Date</I> objects.
+</A><A NAME="1006849">
+<LI>"to" methods, for returning string values from <I>Date</I> objects.
+</A><A NAME="1006850">
+<LI>parse and UTC methods, for parsing <I>Date</I> strings.
+</A></ul><A NAME="1006851">
+With the "get" and "set" methods you can get and set seconds, minutes, hours, day of the month, day of the week, months, and years separately. There is a <B>getDay</B> method that returns the day of the week, but no corresponding <B>setDay</B> method, because the day of the week is set automatically. These methods use integers to represent these values as follows:<P></A>
+<ul><A NAME="1006854">
+<LI>Seconds and minutes: 0 to 59
+</A><A NAME="1006855">
+<LI>Hours: 0 to 23
+</A><A NAME="1006856">
+<LI>Day: 0 to 6 (day of the week)
+</A><A NAME="1006857">
+<LI>Date: 1 to 31 (day of the month)
+</A><A NAME="1006858">
+<LI>Months: 0 (January) to 11 (December)
+</A><A NAME="1006859">
+<LI>Year: years since 1900
+</A></ul><A NAME="1006860">
+For example, suppose you define the following date:<P></A>
+<A NAME="1006861">
+<PRE>Xmas95 = new Date("December 25, 1995")</PRE>
+</A>
+<A NAME="1006862">
+Then <code>Xmas95.getMonth()</code> returns 11, and <code>Xmas95.getYear()</code> returns 95.<P></A>
+<A NAME="1006865">
+The <B>getTime</B> and <B>setTime</B> methods are useful for comparing dates. The <B>getTime</B> method returns the number of milliseconds since the epoch for a <I>Date</I> object.<P></A>
+<A NAME="1006866">
+For example, the following code displays the number of days left in the current year:<P></A>
+<A NAME="1006867">
+<PRE>today = new Date()<br>endYear = new Date("December 31, 1990") // Set day and month<br>endYear.setYear(today.getYear()) // Set year to this year<br>msPerDay = 24 * 60 * 60 * 1000 // Number of milliseconds per day<br>daysLeft = (endYear.getTime() - today.getTime()) / msPerDay<br>daysLeft = Math.round(daysLeft)<br>document.write("Number of days left in the year: " + daysLeft)</PRE>
+</A>
+<A NAME="1006868">
+This example creates a <I>Date</I> object named <I>today</I> that contains today's date. It then creates a Date object named <I>endYear</I> and sets the year to the current year. Then, using the number of milliseconds per day, it computes the number of days between today and <I>endYear</I>, using <B>getTime</B> and rounding to a whole number of days.<P></A>
+<A NAME="1006870">
+The <B>parse</B> method is useful for assigning values from date strings to existing <I>Date</I> objects. For example, the following code uses <B>parse</B> and <B>setTime</B> to assign a date value to the <I>IPOdate</I> object:<P></A>
+<A NAME="1006872">
+<PRE>IPOdate = new Date()<br>IPOdate.setTime(Date.parse("Aug 9, 1995"))</PRE>
+</A>
+
+<A NAME="Using the Date object: an example"></A>
+<A NAME="1008654">
+<H3> Using the Date object: an example</H3>
+</A>
+
+<A NAME="1008659">
+The following example shows a simple application of <I>Date</I>: it displays a continuously-updated digital clock in an HTML text field. This is possible because you can dynamically change the contents of a text field with JavaScript (in contrast to ordinary text, which you cannot update without reloading the document).<P></A>
+<A NAME="1008663">
+The display in Navigator looks like this:<p>
+
+<SCRIPT language="JavaScript">
+<!--
+function JSClock() {
+	var time = new Date()
+	var hour = time.getHours()
+	var minute = time.getMinutes()
+	var second = time.getSeconds()
+	var temp = "" + ((hour > 12) ? hour - 12 : hour)
+	temp += ((minute < 10) ? ":0" : ":") + minute
+	temp += ((second < 10) ? ":0" : ":") + second
+	temp += (hour >= 12) ? " P.M." : " A.M."
+	document.clockForm.digits.value = temp
+	id = setTimeout("JSClock()",1000)
+}
+//-->
+</SCRIPT>
+<H4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;JavaScript clock</H4>
+<FORM NAME="clockForm">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The current time is <INPUT TYPE="text" NAME="digits" SIZE=12 VALUE="">
+</FORM>
+<SCRIPT>
+JSClock()
+</SCRIPT>
+
+
+<P></A>
+<A NAME="1008664">
+The &LT;BODY&GT: of the document is:<P></A>
+<A NAME="1008665">
+<PRE>&lt;BODY ONLOAD="JSClock()"&gt;<br>&lt;FORM NAME="clockForm"&gt;<br>The current time is &lt;INPUT TYPE="text" NAME="digits" SIZE=12 VALUE=""&gt;<br>&lt;/FORM&gt;<br>&lt;/BODY&gt;</PRE>
+</A>
+<A NAME="1008667">
+The &lt;BODY&gt; tag includes an onLoad event handler. When the page loads, the event handler calls the function <B>JSClock</B>, defined in the &lt;HEAD&gt;. A form called <I>clockForm</I> includes a single text field named digits, whose value is initially an empty string.<P></A>
+<A NAME="1008668">
+The &lt;HEAD&gt; of the document defines <B>JSClock</B> as follows:<P></A>
+<A NAME="1008669">
+<PRE>&lt;HEAD&gt;<br>&lt;SCRIPT language="JavaScript"&gt;<br>&lt;!--<br>function JSClock() {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var time = new Date()<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var hour = time.getHours()<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var minute = time.getMinutes()<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var second = time.getSeconds()<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var temp = "" + ((hour &gt; 12) ? hour - 12 : hour)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;temp += ((minute &lt; 10) ? ":0" : ":") + minute<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;temp += ((second &lt; 10) ? ":0" : ":") + second<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;temp += (hour &gt;= 12) ? " P.M." : " A.M."<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.clockForm.digits.value = temp<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id = setTimeout("JSClock()",1000)<br>}<br>//--&gt;<br>&lt;/SCRIPT&gt;<br>&lt;/HEAD&gt;</PRE>
+</A>
+<A NAME="1008670">
+The <B>JSClock</B> function first creates a new <I>Date</I> object called <I>time</I>; since no arguments are given, time is created with the current date and time. Then calls to the <B>getHours</B>, <B>getMinutes</B>, and <B>getSeconds</B> methods assign the value of the current hour, minute and seconds to <I>hour</I>, <I>minute</I>, and <I>second</I>. <P></A>
+<A NAME="1008674">
+The next four statements build a string value based on the time. The first statement creates a variable <I>temp</I>, assigning it a value using a conditional expression; if <I>hour</I> is greater than 12, (<I>hour</I> - 13), otherwise simply <I>hour</I>.<P></A>
+<A NAME="1008675">
+The next statement appends a <I>minute</I> value to <I>temp</I>. If the value of <I>minute</I> is less than 10, the conditional expression adds a string with a preceding zero; otherwise it adds a string with a demarcating colon. Then a statement appends a seconds value to <I>temp</I> in the same way.<P></A>
+<A NAME="1008676">
+Finally, a conditional expression appends "PM" to <I>temp</I> if <I>hour</I> is 12 or greater; otherwise, it appends "AM" to <I>temp</I>.<P></A>
+<A NAME="1008677">
+The next statement assigns the value of <I>temp</I> to the text field:<P></A>
+<A NAME="1008678">
+<PRE>document.aform.digits.value = temp</PRE>
+</A>
+<A NAME="1008679">
+This displays the time string in the document.<P></A>
+<A NAME="1008680">
+The final statement in the function is a recursive call to <B>JSClock</B>:<P></A>
+<A NAME="1008681">
+<PRE>id = setTimeout("JSClock()", 1000)</PRE>
+</A>
+<A NAME="1008683">
+The built-in JavaScript <B>setTimeout</B> function specifies a time delay to evaluate an expression, in this case a call to <B>JSClock</B>. The second argument indicates a a delay of 1,000 milliseconds (one second). This updates the display of <I>time</I> in the form at one-second intervals.<P></A>
+<A NAME="1008684">
+Note that the function returns a value (assigned to <I>id</I>), used only as an identifier (which can be used by the <B>clearTimeout</B> method to cancel the evaluation).<P></A>
+
+<A NAME="Function object"></A>
+<A NAME="1006873">
+<H2> Function object</H2>
+</A>
+
+<A NAME="1006874">
+The built-in <I>Function</I> object specifies a string of JavaScript code to be compiled as a function.<P></A>
+<A NAME="1007781">
+To create a <I>Function</I> object:<P></A>
+<A NAME="1007782">
+<PRE><I>functionObjectName</I> = new Function ([<I>arg1, arg2, ... argn</I>], <I>functionBody</I>)</PRE>
+</A>
+<A NAME="1007784">
+<I>functionObjectName </I>is the name of a variable or a property of an existing object. It can also be an object followed by a lowercase event handler name, such as <code>window.onerror</code>. When using <I>Function</I> properties, <I>functionObjectName</I> is either the name of an existing <I>Function</I> object or a property of an existing object.<P></A>
+<A NAME="1007785">
+<I>arg1, arg2, ... argn</I> are arguments to be used by the function as formal argument names. Each must be a string that corresponds to a valid JavaScript identifier; for example "x" or "theForm".<P></A>
+<A NAME="1007788">
+<I>functionBody</I> is a string specifying the JavaScript code to be compiled as the function body.<P></A>
+<A NAME="1007796">
+<I>Function</I> objects are evaluated each time they are used. This is less efficient than declaring a function and calling it within your code, because declared functions are compiled.<P></A>
+<A NAME="1007797">
+In addition to defining functions as described here, you can also use the <B>function</B> statement, as described in <a href="stmts.htm#1004825">"function"</a>.<P></A>
+<A NAME="1007802">
+The following code assigns a function to the variable <I>setBGColor</I>. This function sets the current document's background color.<P></A>
+<A NAME="1007803">
+<PRE>var setBGColor = new Function("document.bgColor='antiquewhite'")</PRE>
+</A>
+<A NAME="1007804">
+To call the <I>Function</I> object, you can specify the variable name as if it were a function. The following code executes the function specified by the <I>setBGColor</I> variable:<P></A>
+<A NAME="1007805">
+<PRE>var colorChoice="antiquewhite"<br>if (colorChoice=="antiquewhite") {setBGColor()}</PRE>
+</A>
+<A NAME="1007806">
+You can assign the function to an event handler in either of the following ways:<P></A>
+<A NAME="1007807">
+<PRE>1. document.form1.colorButton.onclick=setBGColor<br>2. &lt;INPUT NAME="colorButton" TYPE="button"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;VALUE="Change background color"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;onClick="setBGColor()"&gt;</PRE>
+</A>
+<A NAME="1007808">
+Creating the variable <I>setBGColor</I> shown above is similar to declaring the following function:<P></A>
+<A NAME="1007809">
+<PRE>function setBGColor() {<br>&nbsp;&nbsp;&nbsp;document.bgColor='antiquewhite'<br>}</PRE>
+</A>
+<A NAME="1007826">
+Assigning a function to a variable is similar to declaring a function, but they have differences:<P></A>
+<ul><A NAME="1007827">
+<LI>When you assign a function to a variable using <code>var setBGColor = new Function("...")</code>, <I>setBGColor</I> is a variable for which the current value is a reference to the function created with <code>new Function()</code>.
+</A><A NAME="1007828">
+<LI>When you create a function using <code>function setBGColor() {...}</code>, <I>setBGColor</I> is not a variable, it is the name of a function.
+</A></ul>
+<A NAME="Math object"></A>
+<A NAME="1006723">
+<H2> Math object</H2>
+</A>
+
+<A NAME="1006724">
+The built-in <I>Math</I> object has properties and methods for mathematical constants and functions. For example, the <I>Math</I> object's <I>PI</I> property has the value of pi (3.141...), which you would use in an application as<P></A>
+<A NAME="1006726">
+<PRE>Math.PI</PRE>
+</A>
+<A NAME="1006727">
+Similarly, standard mathematical functions are methods of <I>Math</I>. These include trigonometric, logarithmic, exponential, and other functions. For example, if you want to use the trigonometric function sine, you would write<P></A>
+<A NAME="1006728">
+<PRE>Math.sin(1.56)</PRE>
+</A>
+<A NAME="1006729">
+Note that all trigonometric methods of <I>Math</I> take arguments in radians.<P></A>
+<A NAME="1006779">
+The following table summarizes <I>Math's</I> methods.
+
+<P><TABLE BORDER="2">
+<CAPTION></CAPTION>
+<tr align=left valign=bottom><th><b><A NAME="1006736">
+Method</A><B><th><b><A NAME="1006738">
+Description</A><B>
+<tr align=left valign=top><td><A NAME="1006740">
+abs
+</A><BR>
+
+<td><A NAME="1006742">
+Absolute value
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1006744">
+sin, cos, tan
+</A><BR>
+
+<td><A NAME="1006746">
+Standard trigonometric functions; argument in radians
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1006748">
+acos, asin, atan
+</A><BR>
+
+<td><A NAME="1006750">
+Inverse trigonometric functions; return values in radians
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1006752">
+exp, log
+</A><BR>
+
+<td><A NAME="1006754">
+Exponential and natural logarithm, base <I>e
+</I></A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1006756">
+ceil
+</A><BR>
+
+<td><A NAME="1006758">
+Returns least integer greater than or equal to argument
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1006760">
+floor
+</A><BR>
+
+<td><A NAME="1006762">
+Returns greatest integer less than or equal to argument
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1006764">
+min, max
+</A><BR>
+
+<td><A NAME="1006766">
+Returns greater or lesser (respectively) of two arguments
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1006768">
+pow
+</A><BR>
+
+<td><A NAME="1006770">
+Exponential; first argument is base, second is exponent
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1006772">
+round
+</A><BR>
+
+<td><A NAME="1006774">
+Rounds argument to nearest integer
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1006776">
+sqrt
+</A><BR>
+
+<td><A NAME="1006778">
+Square root
+</A><BR>
+
+
+
+
+</TABLE>
+
+<TABLE>
+<TR><TD>
+</TABLE>
+
+
+<P></A>
+<A NAME="1006781">
+It is often convenient to use the <B>with</B> statement when a section of code uses several math constants and methods, so you don't have to type "Math" repeatedly. For example,<P></A>
+<A NAME="1006782">
+<PRE>with (Math) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a = PI * r*r<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;y = r*sin(theta)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x = r*cos(theta)<br>}</PRE>
+</A>
+
+<A NAME="Number object"></A>
+<A NAME="1006915">
+<H2> Number object</H2>
+</A>
+
+<A NAME="1006916">
+The <I>Number</I> object has properties for numerical constants, such as maximum value, not-a-number, and infinity. You use these properties as follows:<P></A>
+<A NAME="1007610">
+<PRE>biggestNum = Number.MAX_VALUE<br>smallestNum = Number.MIN_VALUE<br>infiniteNum = Number.POSITIVE_INFINITY<br>negInfiniteNum = Number.NEGATIVE_INFINITY<br>notANum = Number.NaN</PRE>
+</A>
+<A NAME="1007662">
+The following table summarizes <I>Number's</I> properties.
+
+<P><TABLE BORDER="2">
+<CAPTION></CAPTION>
+<tr align=left valign=bottom><th><b><A NAME="1007619">
+Method</A><B><th><b><A NAME="1007621">
+Description</A><B>
+<tr align=left valign=top><td><A NAME="1007684">
+MAX_VALUE
+</A><BR>
+
+<td><A NAME="1007686">
+The largest representable number
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1007691">
+MIN_VALUE
+</A><BR>
+
+<td><A NAME="1007693">
+The smallest representable number
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1007698">
+NaN
+</A><BR>
+
+<td><A NAME="1007700">
+Special "not a number" value
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1007705">
+NEGATIVE_INFINITY
+</A><BR>
+
+<td><A NAME="1007707">
+Special infinite value; returned on overflow
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1007712">
+POSITIVE_INFINITY
+</A><BR>
+
+<td><A NAME="1007714">
+Special negative infinite value; returned on overflow
+</A><BR>
+
+
+
+
+</TABLE>
+
+<TABLE>
+<TR><TD>
+</TABLE>
+
+
+<P></A>
+
+<A NAME="String object"></A>
+<A NAME="1004222">
+<H2> String object</H2>
+</A>
+
+<A NAME="1007862">
+JavaScript does not have a string data type. However, you can use the <I>String</I> object and its methods to work with strings in your applications. The <I>String</I> object has a large number of methods for manipulating strings. It has one property for determining the string's length.<P></A>
+<A NAME="1007884">
+To create a <I>String</I> object:<P></A>
+<A NAME="1007885">
+<PRE><I>stringObjectName</I> = new String(<I>string</I>)</PRE>
+</A>
+<A NAME="1007887">
+<I>stringObjectName</I> is the name of a new <I>String</I> object.<P></A>
+<A NAME="1007888">
+<I>string</I> is any string.<P></A>
+<A NAME="1007890">
+For example, the following statement creates a <I>String</I> object called <I>mystring</I>:<P></A>
+<A NAME="1007891">
+<PRE>mystring = new String ("Hello, World!")</PRE>
+</A>
+<A NAME="1007892">
+String literals are also <I>String</I> objects; for example, the literal "Howdy" is a <I>String</I> object.<P></A>
+<A NAME="1007917">
+A <I>String</I> object has one property, <I>length</I>, that indicates the number of characters in the string. So, using the previous example, the expression<P></A>
+<A NAME="1007918">
+<PRE>x = mystring.length</PRE>
+</A>
+<A NAME="1007919">
+assigns a value of 13 to <I>x,</I> because "Hello, World!" has 13 characters.<P></A>
+<A NAME="1007920">
+A <I>String</I> object has two types of methods: those that return a variation on the string itself, such as <B>substring</B> and <B>toUpperCase</B>, and those that return an HTML-formatted version of the string, such as <B>bold</B> and <B>link</B>.<P></A>
+<A NAME="1007925">
+For example, using the previous example, both <code>mystring.toUpperCase()</code> and <code>"hello, world!".toUpperCase()</code> return the string "HELLO, WORLD!".<P></A>
+<A NAME="1007926">
+The <B>substring</B> method takes two arguments and returns a subset of the string between the two arguments. Using the previous example, <code>mystring.substring(4, 9)</code> returns the string "o, Wo." For more information, see the reference topic for <B>substring</B>.<P></A>
+<A NAME="1007927">
+The <I>String</I> object also has a number of methods for automatic HTML formatting, such as <B>bold</B> to create boldface text and <B>link</B> to create a hyperlink. For example, you could create a hyperlink to a hypothetical URL with the <B>link</B> method as follows:<P></A>
+<A NAME="1007928">
+<PRE>mystring.link("http://www.helloworld.com")</PRE>
+</A>
+<A NAME="1007966">
+The following table summarizes the methods of <I>String</I> objects:
+
+<P><TABLE BORDER="2">
+<CAPTION></CAPTION>
+<tr align=left valign=bottom><th><b><A NAME="1008161">
+Method</A><B><th><b><A NAME="1008163">
+Description</A><B>
+<tr align=left valign=top><td><A NAME="1008229">
+anchor
+</A><BR>
+
+<td><A NAME="1008231">
+Creates HTML named anchor
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1008267">
+big, blink, bold, fixed, 
+italics, small, strike, sub, 
+sup
+</A><BR>
+
+<td><A NAME="1008269">
+Creates HTML formatted string
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1008211">
+charAt
+</A><BR>
+
+<td><A NAME="1008213">
+Returns the character at the specified position in string
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1008165">
+indexOf, lastIndexOf
+</A><BR>
+
+<td><A NAME="1008167">
+Returns the position of specified substring in the string 
+or last position of specified substring, respectively
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1008247">
+link
+</A><BR>
+
+<td><A NAME="1008249">
+Creates HTML hyperlink
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1008169">
+split
+</A><BR>
+
+<td><A NAME="1008171">
+Splits a <I>String</I> object into an array of strings by 
+separating the string into substrings
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1008173">
+substring
+</A><BR>
+
+<td><A NAME="1008175">
+Returns the specified subset of the string
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1008177">
+toLowerCase, toUpperCase
+</A><BR>
+
+<td><A NAME="1008179">
+Returns the string in all lowercase or all uppercase, 
+respectively
+</A><BR>
+
+
+
+
+</TABLE>
+
+<TABLE>
+<TR><TD>
+</TABLE>
+
+
+<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="Built-in functions"></A>
+<A NAME="1006584">
+<H1> Built-in functions</H1>
+</A>
+<A NAME="1004273">
+JavaScript has two "top-level" functions built in to the language: <B>parseInt</B> and <B>parseFloat</B>.<P></A>
+
+<A NAME="isNaN function"></A>
+<A NAME="1008872">
+<H2> isNaN function</H2>
+</A>
+
+<A NAME="1008893">
+The <B>isNaN</B> function evaluates an argument to determine if it is "NaN" (not a number).<P></A>
+<A NAME="1008902">
+The syntax of <B>isNaN</B> is:<P></A>
+<A NAME="1008904">
+<PRE>isNaN(<I>testValue</I>)</PRE>
+</A>
+<A NAME="1008906">
+<I>testValue</I> is the value you want to evaluate.<P></A>
+<A NAME="1008908">
+On platforms that support NaN, the <B>parseFloat</B> and <B>parseInt</B> functions return "NaN" when they evaluate a value that is not a number. <B>isNaN</B> returns true if passed "NaN," and false otherwise.<P></A>
+<A NAME="1008910">
+The following code evaluates <I>floatValue</I> to determine if it is a number and then calls a procedure accordingly:<P></A>
+<A NAME="1008911">
+<PRE>floatValue=parseFloat(toFloat)<br><br>if (isNaN(floatValue)) {<br>&nbsp;&nbsp;&nbsp;notFloat()<br>} else {<br>&nbsp;&nbsp;&nbsp;isFloat()<br>}</PRE>
+</A>
+
+<A NAME="parseInt and parseFloat functions"></A>
+<A NAME="1004290">
+<H2> parseInt and parseFloat functions</H2>
+</A>
+
+<A NAME="1004291">
+The two "parse" functions, <B>parseInt</B> and <B>parseFloat</B>, return a numeric value when given a string as an argument. For detailed descriptions and examples, see the reference topics.<P></A>
+<A NAME="1004292">
+The syntax of <B>parseFloat</B> is<P></A>
+<A NAME="1005608">
+<PRE>parseFloat(<I>str</I>)</PRE>
+</A>
+<A NAME="1005607">
+<B>parseFloat</B> parses its argument, the string <I>str</I>, and attempts to return a floating-point number. If it encounters a character other than a sign (+ or -), a numeral (0-9), a decimal point, or an exponent, then it returns the value up to that point and ignores that character and all succeeding characters. If the first character cannot be converted to a number, it returns "NaN" (not a number).<P></A>
+<A NAME="1004293">
+The syntax of <B>parseInt</B> is<P></A>
+<A NAME="1005623">
+<PRE>parseInt(<I>str</I> [, <I>radix</I>])</PRE>
+</A>
+<A NAME="1005616">
+<B>parseInt</B> parses its first argument, the string <I>str</I>, and attempts to return an integer of the specified <I>radix</I> (base), indicated by the second, optional argument, <I>radix</I>. For example, a radix of ten indicates to convert to a decimal number, eight octal, sixteen hexadecimal, and so on. For radixes above ten, the letters of the alphabet indicate numerals greater than nine. For example, for hexadecimal numbers (base 16), A through F are used.<P></A>
+<A NAME="1004294">
+If <B>parseInt</B> encounters a character that is not a numeral in the specified radix, it ignores it and all succeeding characters and returns the integer value parsed up to that point. If the first character cannot be converted to a number in the specified radix, it returns "NaN." The <B>parseInt</B> function truncates numbers to integer values.<P></A>

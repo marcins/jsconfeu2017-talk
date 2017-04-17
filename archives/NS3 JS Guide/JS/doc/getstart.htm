@@ -1,0 +1,1030 @@
+<BODY BGCOLOR="#FFFFFF">
+<A NAME="1001595">
+<P>
+</A><A NAME="1001596">
+<P>
+</A><A NAME="996824">
+<H1>Getting started
+</H1>
+</A>
+
+<A NAME="1006251">
+
+<img src="graphics/getstara.gif">
+
+his chapter introduces JavaScript, discusses some of the fundamental concepts of JavaScript in Navigator and provides basic examples. It shows JavaScript code in action, so you can begin writing your own scripts immediately, using the example code as a starting point.<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="What is JavaScript?"></A>
+<A NAME="1013969">
+<H1> What is JavaScript?</H1>
+</A>
+<A NAME="1013747">
+JavaScript is Netscape's cross-platform, object-based scripting language for client and server applications. There are two types of JavaScript:<P></A>
+<ul><A NAME="1013749">
+<LI>Navigator JavaScript, also called client-side JavaScript
+</A><A NAME="1013750">
+<LI>LiveWire JavaScript, also called server-side JavaScript
+</A></ul>
+<A NAME="JavaScript in Navigator"></A>
+<A NAME="1013752">
+<H2> JavaScript in Navigator</H2>
+</A>
+
+<A NAME="1013754">
+Netscape Navigator 2.0 (and later versions) can interpret JavaScript statements embedded in an HTML page. When Navigator requests such a page, the server sends the full content of the document, including HTML and JavaScript statements, over the network to the client. The Navigator then displays the HTML and executes the JavaScript, producing the results that the user sees. This process is illustrated in the following figure.<P></A>
+
+
+<P><A NAME="1018067">
+<p><img src="graphics/clientjs.gif">
+</A><P>
+
+<A NAME="1018068">
+Client-side JavaScript statements embedded in an HTML page can respond to user events such as mouse-clicks, form input, and page navigation. For example, you can write a JavaScript function to verify that users enter valid information into a form requesting a telephone number or zip code. Without any network transmission, the HTML page with embedded JavaScript can check the entered data and alert the user with a dialog box if the input is invalid.<P></A>
+
+<A NAME="JavaScript in LiveWire"></A>
+<A NAME="1013767">
+<H2> JavaScript in LiveWire</H2>
+</A>
+
+<A NAME="1013769">
+LiveWire is an application development environment that uses JavaScript for creating server-based applications similar to CGI (Common Gateway Interface) programs. In contrast to Navigator JavaScript, LiveWire JavaScript applications are compiled into bytecode executable files. These application executables are run in concert with a Netscape server (version 2.0 and later) that contains the LiveWire server extension.<P></A>
+<A NAME="1013773">
+The LiveWire server extension generates HTML dynamically; this HTML (which may also include client-side JavaScript statements) is then sent by the server over the network to the Navigator client, which displays the results. This process is illustrated in the following figure.<P></A>
+
+
+<P><A NAME="1013781">
+<img src="graphics/serverjs.gif">
+</A><P>
+
+
+<a name="1013782">
+<blockquote>For more 
+information on 
+LiveWire, see the 
+<I>LiveWire Developer's 
+Guide</I>.
+</blockquote>
+</a>
+<A NAME="1014151">
+In contrast to standard CGI programs, LiveWire JavaScript is integrated directly into HTML pages, facilitating rapid development and easy maintenance. LiveWire JavaScript contains an object framework that you can use to maintain data that persist across client requests, multiple clients, and multiple applications. LiveWire JavaScript also provides objects and methods for database access that serve as an interface to Structured Query Language (SQL) database servers.<P></A>
+
+<A NAME="JavaScript, the language"></A>
+<A NAME="1013787">
+<H2> JavaScript, the language</H2>
+</A>
+
+<A NAME="1014140">
+As described in the previous sections, client and server JavaScript differ in numerous ways, but they have the following elements in common:<P></A>
+<ul><A NAME="1013789">
+<LI>Keywords, statement syntax, and grammar
+</A><A NAME="1013790">
+<LI>Rules for expressions, variables, and literals
+</A><A NAME="1013791">
+<LI>Underlying object model (although Navigator and LiveWire have different object frameworks)
+</A><A NAME="1013792">
+<LI>Built-in objects and functions
+</A></ul><A NAME="1014120">
+So, if you have LiveWire, you will often be able to write functions that work on either the client or the server.<P></A>
+<A NAME="1017892">
+Different versions of JavaScript work with specific versions of Navigator. For example, JavaScript 1.1 is for Navigator 3.0. For information, see <a href="getstart.htm#1015607">"Specifying the JavaScript version"</a>.<P></A>
+
+<A NAME="JavaScript and Java"></A>
+<A NAME="1014127">
+<H2> JavaScript and Java</H2>
+</A>
+
+<A NAME="1013801">
+JavaScript and Java are similar in some ways but fundamentally different in others. The JavaScript language resembles Java but does not have Java's static typing and strong type checking. JavaScript supports most Java expression syntax and basic control-flow constructs. In contrast to Java's compile-time system of classes built by declarations, JavaScript supports a runtime system based on a small number of data types representing numeric, Boolean, and string values. JavaScript has a simple, instance-based object model that still provides significant capabilities. JavaScript also supports functions without any special declarative requirements. Functions can be properties of objects, executing as loosely typed methods.<P></A>
+<A NAME="1013803">
+Java is an object-oriented programming language designed for fast execution and type safety. Type safety means, for instance, that you can't cast a Java integer into an object reference or access private memory by corrupting Java bytecodes. Java's object-oriented model means that programs consist exclusively of classes and their methods. Java's class inheritance and strong typing generally require tightly coupled object hierarchies. These requirements make Java programming more complex than JavaScript authoring.<P></A>
+<A NAME="1013804">
+In contrast, JavaScript descends in spirit from a line of smaller, dynamically typed languages like HyperTalk and dBASE. These scripting languages offer programming tools to a much wider audience because of their easier syntax, specialized built-in functionality, and minimal requirements for object creation.
+
+<P><TABLE BORDER="2">
+<CAPTION></CAPTION>
+<tr align=left valign=bottom><th><b><A NAME="1013811">
+JavaScript</A><B><th><b><A NAME="1013813">
+Java</A><B>
+<tr align=left valign=top><td><A NAME="1013815">
+Interpreted (not compiled) by client.
+</A><BR>
+
+<td><A NAME="1013817">
+Compiled bytecodes downloaded from 
+server, executed on client.
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1013819">
+Object-based. Uses built-in, extensible 
+objects, but no classes or inheritance.
+</A><BR>
+
+<td><A NAME="1013821">
+Object-oriented. Applets consist of 
+object classes with inheritance.
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1013823">
+Code integrated with, and embedded in, 
+HTML.
+</A><BR>
+
+<td><A NAME="1013825">
+Applets distinct from HTML (accessed 
+from HTML pages).
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1013827">
+Variable data types not declared (loose 
+typing).
+</A><BR>
+
+<td><A NAME="1013829">
+Variable data types must be declared 
+(strong typing).
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1013831">
+Dynamic binding. Object references 
+checked at runtime.
+</A><BR>
+
+<td><A NAME="1013833">
+Static binding. Object references must 
+exist at compile-time.
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1013835">
+Cannot automatically write to hard disk.
+</A><BR>
+
+<td><A NAME="1013837">
+Cannot automatically write to hard disk.
+</A><BR>
+
+
+
+
+</TABLE>
+
+<TABLE>
+<TR><TD>
+</TABLE>
+
+
+<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="Embedding JavaScript in HTML"></A>
+<A NAME="1006443">
+<H1> Embedding JavaScript in HTML</H1>
+</A>
+<A NAME="1006689">
+You can embed JavaScript in an HTML document in the following ways:<P></A>
+<ul><A NAME="1016605">
+<LI>As statements and functions within a &lt;SCRIPT&gt; tag. See the following section, <a href="getstart.htm#1016666">"Using the SCRIPT tag"</a>.
+</A><A NAME="1016609">
+<LI>By specifying a file as the JavaScript source (rather than embedding the JavaScript in the HTML). See <a href="getstart.htm#1015866">"Specifying a file of JavaScript code"</a>.
+</A><A NAME="1016544">
+<LI>By specifying a JavaScript expression as the value for an HTML attribute. See <a href="getstart.htm#1016301">"Using JavaScript expressions as HTML attribute values"</a>.
+</A><A NAME="1004238">
+<LI>As event handlers within certain other HTML tags (mostly form elements). See <a href="getstart.htm#1004263">"Scripting event handlers"</a>.
+</A></ul><A NAME="1016664">
+Unlike HTML, JavaScript is case sensitive.<P></A>
+
+<A NAME="Using the SCRIPT tag"></A>
+<A NAME="1016666">
+<H2> Using the SCRIPT tag</H2>
+</A>
+
+<A NAME="1015594">
+The &lt;SCRIPT&gt; tag is an extension to HTML that can enclose any number of JavaScript statements as shown here:<P></A>
+<A NAME="1015783">
+<PRE>&lt;SCRIPT&gt;<br>&nbsp;&nbsp;&nbsp;<I>JavaScript statements..</I>.<br>&lt;/SCRIPT&gt;</PRE>
+</A>
+<A NAME="1015808">
+A document can have multiple SCRIPT tags, and each can enclose any number of JavaScript statements.<P></A>
+
+<A NAME="Specifying the JavaScript version"></A>
+<A NAME="1015607">
+<H3> Specifying the JavaScript version</H3>
+</A>
+
+<A NAME="1015793">
+The optional LANGUAGE attribute specifies the scripting language and JavaScript version:<P></A>
+<A NAME="1015794">
+<PRE>&lt;SCRIPT LANGUAGE="<I>JavaScriptVersion</I>"&gt;<br>&nbsp;&nbsp;&nbsp;<I>JavaScript statements.</I>..<br>&lt;/SCRIPT&gt;</PRE>
+</A>
+<A NAME="1015812">
+<I>JavaScriptVersion</I> specifies one of the following to indicate which version of JavaScript your code is written for:<P></A>
+<ul><A NAME="1015616">
+<LI><code>&lt;SCRIPT LANGUAGE="JavaScript"&gt;</code> specifies JavaScript for Navigator 2.0.
+</A><A NAME="1015617">
+<LI><code>&lt;SCRIPT LANGUAGE="JavaScript1.1"&gt;</code> specifies JavaScript for Navigator 3.0.
+</A></ul><A NAME="1015618">
+Statements within a &lt;SCRIPT&gt; tag are ignored if the user's browser does not have the level of JavaScript support specified in the LANGUAGE attribute; for example:<P></A>
+<ul><A NAME="1015619">
+<LI>Navigator 2.0 executes code within the &lt;SCRIPT LANGUAGE="JavaScript"&gt; tag; it ignores code within the &lt;SCRIPT LANGUAGE="JavaScript1.1"&gt; tag.
+</A><A NAME="1015620">
+<LI>Navigator 3.0 executes JavaScript code within either the &lt;SCRIPT LANGUAGE="JavaScript"&gt; or &lt;SCRIPT LANGUAGE="JavaScript1.1"&gt; tags.
+</A></ul><A NAME="1015621">
+If the LANGUAGE attribute is omitted, Navigator 2.0 assumes LANGUAGE="JavaScript". Navigator 3.0 assumes LANGUAGE="JavaScript1.1"<P></A>
+<A NAME="1015669">
+You can use the LANGUAGE attribute to write scripts that contain Navigator 3.0 features, and these scripts will not cause errors if run under Navigator 2.0. The following examples show some techniques for using the LANGUAGE attribute.<P></A>
+<A NAME="1015670">
+<B>Example 1.</B> This example shows how to define functions twice, once for JavaScript 1.0, and once using JavaScript 1.1 features.<P></A>
+<A NAME="1015671">
+<PRE>&lt;SCRIPT LANGUAGE="JavaScript"&gt;<br>// Define 1.0-compatible functions such as doClick() here<br>&lt;/SCRIPT&gt;<br>&lt;SCRIPT LANGUAGE="JavaScript1.1"&gt;<br>// Redefine those functions using 1.1 features<br>// Also define 1.1-only functions<br>&lt;/SCRIPT&gt;</PRE>
+</A>
+<A NAME="1015672">
+<PRE>&lt;FORM ...&gt;<br>&lt;INPUT TYPE="button" onClick="doClick(this)" ...&gt;<br>. . .<br>&lt;/FORM&gt;</PRE>
+</A>
+<A NAME="1015673">
+<B>Example 2.</B> This example shows how to use two separate versions of a JavaScript document, one for JavaScript 1.0 and one for JavaScript 1.1. The default document that loads is for JavaScript 1.0. If the user is running Navigator 3.0, the <B>replace</B> method replaces the page.<P></A>
+<A NAME="1015674">
+<PRE>&lt;SCRIPT LANGUAGE="JavaScript1.1"&gt;<br>// Replace this page in session history with the 1.1 version<br>location.replace("js1.1/mypage.html")<br>&lt;/SCRIPT&gt;<br>[1.0-compatible page continues here...]</PRE>
+</A>
+<A NAME="1015675">
+<B>Example 3.</B> This example shows how to test the <I>navigator.userAgent</I> property to determine whether the user is running Navigator 3.0. The code then conditionally executes 1.1 features.<P></A>
+<A NAME="1015676">
+<PRE>&lt;SCRIPT LANGUAGE="JavaScript"&gt;<br>if (navigator.userAgent.indexOf("3.0") != -1)<br>&nbsp;&nbsp;&nbsp;jsVersion = "1.1"<br>else<br>&nbsp;&nbsp;&nbsp;jsVersion = "1.0"<br>&lt;/SCRIPT&gt;<br>[hereafter, test jsVersion == "1.1" before use of any 1.1 extensions]</PRE>
+</A>
+<A NAME="1015677">
+<B>Example 4.</B> In many cases, you can test the differences between JavaScript 1.0 and 1.1 by comparing new properties (such as <I>navigator.javaEnabled</I> or <I>window.focus</I>) to null. In JavaScript 1.0 and 1.1, an undefined property compares equal to null, so the 1.1 function references will be non-null in Navigator 3.0.<P></A>
+<A NAME="1015678">
+<PRE>if (navigator.javaEnabled != null &amp;&amp; navigator.javaEnabled()) {<br>&nbsp;&nbsp;&nbsp;// must be 3.0 and Java is enabled, use LiveConnect here...<br>} else {<br>&nbsp;&nbsp;&nbsp;// 2.0, no Java connection<br>}</PRE>
+</A>
+
+<A NAME="Hiding scripts within comment tags"></A>
+<A NAME="1007245">
+<H3> Hiding scripts within comment tags</H3>
+</A>
+
+<A NAME="1007246">
+Only Netscape Navigator versions 2.0 and later recognize JavaScript. To ensure that other browsers ignore JavaScript code, place the entire script within HTML comment tags, and precede the ending comment tag with a double-slash (//) that indicates a JavaScript single-line comment:<P></A>
+<A NAME="1007247">
+<PRE>&lt;SCRIPT&gt;<br>&lt;!-- Begin to hide script contents from old browsers.<br><I>JavaScript statements...<br></I>// End the hiding here. --&gt;<br>&lt;/SCRIPT&gt;</PRE>
+</A>
+<A NAME="1007163">
+Since browsers typically ignore unknown tags, non-JavaScript-capable browsers will ignore the beginning and ending SCRIPT tags. All the script statements in between are enclosed in an HTML comment, so they are ignored too. Navigator properly interprets the SCRIPT tags and ignores the line in the script beginning with the double-slash (//).<P></A>
+<A NAME="1009465">
+Although you are not required to use this technique, it is considered good etiquette so that your pages don't generate unformatted script statements for those not using Navigator 2.0 or later.<P></A>
+
+<a name="1014357">
+<B><blockquote>Note
+</blockquote></B>
+</a>
+
+<a name="1014348">
+<blockquote>For simplicity, some of the examples in this book do not hide scripts, because 
+the examples are written specifically for Navigator 2.0.
+</blockquote>
+</a>
+
+<A NAME="Example: a first script"></A>
+<A NAME="1012059">
+<H3> Example: a first script</H3>
+</A>
+
+<A NAME="1014963">
+Here is a simple script:
+<XMP>
+<HTML>
+<HEAD>
+<SCRIPT LANGUAGE="JavaScript">
+<!--- Hide script from old browsers.
+document.write("Hello, net!")
+// End the hiding here. -->
+</SCRIPT>
+<P>That's all, folks.
+</BODY>
+</HTML>
+</XMP>
+
+<P></A>
+<A NAME="1012090">
+This script displays the following in Navigator:<P></A>
+<A NAME="1016961">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hello, net!<P></A>
+<A NAME="1016962">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;That's all, folks.<P></A>
+<A NAME="1016963">
+Notice that there is no difference in appearance between the first line, generated with JavaScript, and the second line, generated with plain HTML.<P></A>
+<A NAME="1012255">
+You may sometimes see a semicolon at the end of each line of JavaScript. In general, semicolons are optional and are required only if you want to put more than one statement on a single line. This is most useful in defining event handlers, which are discussed in <a href="getstart.htm#1004263">"Scripting event handlers"</a>.<P></A>
+
+<A NAME="Specifying a file of JavaScript code"></A>
+<A NAME="1015866">
+<H2> Specifying a file of JavaScript code</H2>
+</A>
+
+<A NAME="1015873">
+The SRC attribute of the &lt;SCRIPT&gt; tag lets you specify a file as the JavaScript source (rather than embedding the JavaScript in the HTML). For example:<P></A>
+<A NAME="1015874">
+<PRE>&lt;HEAD&gt;<br>&lt;TITLE&gt;My Page&lt;/TITLE&gt;<br>&lt;SCRIPT SRC="common.js"&gt;<br>...<br>&lt;/SCRIPT&gt;<br>&lt;/HEAD&gt;<br>&lt;BODY&gt;<br>...</PRE>
+</A>
+<A NAME="1015875">
+This attribute is especially useful for sharing functions among many different pages.<P></A>
+<A NAME="1017251">
+The closing &lt;/SCRIPT&gt; tag is required.<P></A>
+<A NAME="1016278">
+JavaScript statements within a &lt;SCRIPT&gt; tag with a SRC attribute are ignored unless the inclusion has an error. For example, you might want to put the following statement between the &lt;SCRIPT SRC="..."&gt; and &lt;/SCRIPT&gt; statements:<P></A>
+<A NAME="1017241">
+<PRE>document.write("Included JS file not found")</PRE>
+</A>
+<A NAME="1015876">
+The SRC attribute can specify any URL, relative or absolute. For example:<P></A>
+<A NAME="1015877">
+<PRE>&lt;SCRIPT SRC="http://home.netscape.com/functions/jsfuncs.js"&gt;</PRE>
+</A>
+<A NAME="1016074">
+External JavaScript files cannot contain any HTML tags: they must contain only JavaScript statements and function definitions.<P></A>
+<A NAME="1015879">
+External JavaScript files should have the file name suffix <code>.js</code>, and the server must map the <code>.js</code> suffix to the MIME type "application/x-javascript", which the server sends back in the HTTP header. To map the suffix to the MIME type, add the following line to the <code>mime.types</code> file in the server's config directory, and then restart the server.<P></A>
+<A NAME="1017255">
+<PRE>type=application/x-javascript&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;exts=js</PRE>
+</A>
+<A NAME="1017252">
+If the server does not map the <code>.js</code> filename suffix to "application/x-javascript" MIME type, Navigator will not load the JavaScript file specified by the SRC attribute properly.<P></A>
+
+<a name="1015880">
+<B><blockquote>Note
+</blockquote></B>
+</a>
+
+<a name="1015881">
+<blockquote>This requirement does not apply if you are using local files.
+</blockquote>
+</a>
+
+<A NAME="Using JavaScript expressions as HTML attribute values"></A>
+<A NAME="1016301">
+<H2> Using JavaScript expressions as HTML attribute values</H2>
+</A>
+
+<A NAME="1016422">
+Using <I>JavaScript entities,</I> you can specify a JavaScript expression as the value for an HTML attribute. Entity values are evaluated dynamically. This allows you to create more flexible HTML constructs, because the attributes of one HTML element can depend on information about elements placed previously on the page.<P></A>
+<A NAME="1016423">
+You may already be familiar with HTML character entities by which you can define characters with special numerical codes or names by preceding the name with an ampersand (&amp;) and terminating it with a semicolon (;). For example, you can include a greater-than symbol (&gt;) with the character entity &amp;<code>GT;</code> and a less-than symbol (&lt;) with &amp;<code>LT;</code>.<P></A>
+<A NAME="1016424">
+JavaScript entities also start with an ampersand (&amp;) and end with a semicolon (;). Instead of a name or number, you use a JavaScript expression enclosed in curly braces {}. You can use JavaScript entities only where an HTML attribute value would normally go. For example, suppose you define a variable <I>barWidth</I>. You could create a horizontal rule with the specified percentage width as follows:<P></A>
+<A NAME="1016425">
+<PRE>&lt;HR WIDTH="&amp;{barWidth};%" ALIGN="LEFT"&gt;</PRE>
+</A>
+<A NAME="1016426">
+So, for example, if <I>barWidth</I> were 50, this would create the following display:<p>
+<SCRIPT>
+barWidth=50
+</SCRIPT>
+<HR WIDTH="&{barWidth};%" ALIGN="LEFT">
+
+<P></A>
+<A NAME="1016784">
+As with other HTML, after layout has occurred, the display of a page can change only if you reload the page.<P></A>
+<A NAME="1016838">
+Unlike regular entities which can appear anywhere in the HTML text flow, JavaScript entities will be interpreted only on the right-hand side of HTML attribute name/value pairs. For example, <code>&lt;H4&gt;&amp;{myTitle};&lt;/H4&gt;</code> would display <code>myTitle</code> rather than the value of the variable <I>myTitle.</I><P></A>
+
+<A NAME="Specifying alternate content with the NOSCRIPT tag"></A>
+<A NAME="1016789">
+<H2> Specifying alternate content with the NOSCRIPT tag</H2>
+</A>
+
+<A NAME="1016302">
+Use the &lt;NOSCRIPT&gt; tag to specify alternate content for browsers that do not support JavaScript. HTML enclosed within a &lt;NOSCRIPT&gt; tag is displayed by browsers that do not support JavaScript; code within the tag is ignored by Navigator. Note however, that if the user has disabled JavaScript by choosing Network Preferences from the Options menu, Navigator displays the code within the &lt;NOSCRIPT&gt; tag.<P></A>
+<A NAME="1016303">
+The following example shows a &lt;NOSCRIPT&gt; tag.<P></A>
+<A NAME="1016304">
+<PRE>&lt;NOSCRIPT&gt;<br>&lt;B&gt;This page uses JavaScript, so you need to get Netscape Navigator 2.0<br>or later!<br>&lt;BR&gt;<br>&lt;A HREF="http://home.netscape.com/comprod/mirror/index.html"&gt;<br>&lt;IMG SRC="NSNow.gif"&gt;&lt;/A&gt;<br>If you are using Navigator 2.0 or later, and you see this message,<br>you should enable JavaScript by choosing Network Preferences from<br>the Options menu.<br>&lt;/NOSCRIPT&gt;<br>...</PRE>
+</A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="Defining and calling functions"></A>
+<A NAME="1009566">
+<H1> Defining and calling functions</H1>
+</A>
+
+<a name="1012274">
+<blockquote>For a complete 
+description of 
+defining and calling 
+functions, see 
+<a href="model.htm#1004234">"Functions"</a>.
+</blockquote>
+</a>
+<A NAME="1012750">
+Functions are one of the fundamental building blocks in JavaScript. A function is a JavaScript procedure--a set of statements that performs a specific task. A function definition has these basic parts:<P></A>
+<ul><A NAME="1017805">
+<LI>The <B>function</B> keyword.
+</A><A NAME="1017806">
+<LI>A function name.
+</A><A NAME="1017807">
+<LI>A comma-separated list of arguments to the function in parentheses.
+</A><A NAME="1014586">
+<LI>The statements in the function in curly braces.
+</A></ul><A NAME="1014587">
+It's important to understand the difference between defining and calling a function. Defining the function simply names the function and specifies what to do when the function is called. Calling the function actually performs the specified actions with the indicated parameters.<P></A>
+
+<a name="1009572">
+<blockquote>Event handlers are 
+introduced in 
+<a href="getstart.htm#1004263">"Scripting event 
+handlers"</a>.
+</blockquote>
+</a>
+<A NAME="1012266">
+Generally, you should define the functions for a page in the HEAD portion of a document. That way, all functions are defined before any content is displayed. Otherwise, the user might perform an action while the page is still loading that triggers an event handler and calls an undefined function, leading to an error.<P></A>
+<A NAME="1009573">
+The following example defines a simple function in the HEAD of a document and then calls it in the BODY of the document:<P></A>
+<A NAME="1009574">
+<PRE>&lt;HEAD&gt; <br>&lt;SCRIPT LANGUAGE="JavaScript"&gt;<br>&lt;!-- Hide script from old browsers<br>function square(number) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return number * number<br>}<br>// End script hiding from old browsers --&gt;<br>&lt;/SCRIPT&gt;<br>&lt;/HEAD&gt;<br>&lt;BODY&gt;<br>&lt;SCRIPT&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.write("The function returned ", square(5), ".")<br>&lt;/SCRIPT&gt;<br>&lt;P&gt; All done.<br>&lt;/BODY&gt;</PRE>
+</A>
+<A NAME="1009575">
+The function <B>square</B> takes one argument, called <I>number</I>. The function consists of one statement<P></A>
+<A NAME="1010876">
+<PRE><code>return number * number</code></PRE>
+</A>
+<A NAME="1010880">
+that indicates to return the argument of the function multiplied by itself. The <B>return</B> statement specifies the value returned by the function. In the BODY of the document, the statement<P></A>
+<A NAME="1009576">
+<PRE>square(5)</PRE>
+</A>
+<A NAME="1009577">
+calls the function with an argument of five. The function executes its statements and returns the value twenty-five. The script displays the following results:<P></A>
+<A NAME="1012624">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The function returned 25.<P></A>
+<A NAME="1012629">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;All done.<P></A>
+<A NAME="1012623">
+The <B>square</B> function used the line<P></A>
+<A NAME="1009848">
+<PRE><code>document.write(...)</code></PRE>
+</A>
+<A NAME="1009863">
+to display output in Navigator. This line calls the <B>write</B> method of the Navigator <I>document</I> object with JavaScript's standard object notation:<P></A>
+<A NAME="1009793">
+<PRE><I>objectName</I>.<I>methodName</I>(<I>arguments</I>...)</PRE>
+</A>
+<A NAME="1009794">
+where <I>objectName</I> is the name of the object, <I>methodName</I> is the name of the method, and <I>arguments</I> is a list of arguments to the method, separated by commas.<P></A>
+<A NAME="1017181">
+In addition to defining functions as described here, you can also define <I>Function</I> objects, as described in <a href="builtin.htm#1006873">"Function object"</a>.<P></A>
+<A NAME="1009902">
+A <I>method</I> is a function associated with an object. You'll learn more about objects and methods in <a href="model.htm#996824">Chapter&nbsp;8, "Object model."</a> But right now, we will explore <B>write</B> a little more, because it is particularly useful.<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="Using the write method"></A>
+<A NAME="1009090">
+<H1> Using the write method</H1>
+</A>
+<A NAME="1009391">
+As you saw in the previous example, the <B>write</B> method of <I>document</I> displays output in the Navigator. "Big deal," you say, "HTML already does that." But in a script you can do all kinds of things you can't do with ordinary HTML. For example, you can display text conditionally or based on variable arguments. For these reasons, <B>write</B> is one of the most often-used JavaScript methods.<P></A>
+<A NAME="1009483">
+The <B>write</B> method takes any number of string arguments that can be string literals or variables. You can also use the string concatenation operator (+) to create one string from several when using <B>write</B>.<P></A>
+<A NAME="1012787">
+Consider the following script, which generates dynamic HTML with Navigator JavaScript:<P></A>
+<A NAME="1009091">
+<PRE>&lt;HEAD&gt; &lt;SCRIPT&gt;<br>&lt;!--- Hide script from old browsers<br>// This function displays a horizontal bar of specified width<br>function bar(widthPct) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.write("&lt;HR ALIGN='left' WIDTH=" + widthPct + "%&gt;")<br>}<br>// This function displays a heading of specified level and some text<br>function output(headLevel, headText, text) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.write("&lt;H", headLevel, "&gt;", headText, "&lt;/H", <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;headLevel, "&gt;&lt;P&gt;", text)<br>}<br>// end script hiding from old browsers --&gt;<br>&lt;/SCRIPT&gt; &lt;/HEAD&gt;<br>&lt;BODY&gt;<br>&lt;SCRIPT&gt;<br>&lt;!--- hide script from old browsers<br>bar(25) <br>output(2, "JavaScript Rules!", "Using JavaScript is easy...")<br>// end script hiding from old browsers --&gt;<br>&lt;/SCRIPT&gt;<br>&lt;P&gt; This is some standard HTML, unlike the above that is generated.<br>&lt;/BODY&gt;</PRE>
+</A>
+<A NAME="1009104">
+The HEAD of this document defines two functions:<P></A>
+<ul><A NAME="1009505">
+<LI><B>bar</B>, which displays an HTML horizontal rule of a width specified by the function's argument.
+</A><A NAME="1009506">
+<LI><B>output</B>, which displays an HTML heading of the level specified by the first argument, heading text specified by the second argument, and paragraph text specified by the third argument.
+</A></ul><A NAME="1009504">
+The document BODY then calls the two functions to produce the following display:<p><img src="graphics/gs1.gif">
+<P></A>
+<A NAME="1010121">
+The following line creates the output of the <B>bar</B> function:<P></A>
+<A NAME="1010106">
+<PRE>document.write("&lt;HR ALIGN='left' WIDTH=", widthPct, "%&gt;")</PRE>
+</A>
+<A NAME="1010120">
+Notice that the definition of <B>bar</B> uses single quotation marks inside double quotation marks. You must do this whenever you want to indicate a quoted string inside a string literal. Then the call to <B>bar</B> with an argument of twenty-five produces output equivalent to the following HTML:<P></A>
+<A NAME="1010105">
+<PRE>&lt;HR ALIGN="left" WIDTH=25%&gt;</PRE>
+</A>
+<A NAME="1010168">
+<B>write</B> has a companion method, <B>writeln</B>, which adds a newline sequence (a carriage return or a carriage return and linefeed, depending on the platform) at the end of its output. Because HTML generally ignores newlines, there is no difference between <B>write</B> and <B>writeln</B> except inside tags such as PRE, which respect carriage returns.<P></A>
+
+<A NAME="Printing output"></A>
+<A NAME="1010191">
+<H2> Printing output</H2>
+</A>
+
+<A NAME="1017027">
+Navigator 3.0 prints output created with JavaScript. To print output, the user chooses Print from the File menu.<P></A>
+<A NAME="1017842">
+To view HTML code that was generated with JavaScript <B>write</B> and <B>writeln</B> methods, the user must specify the view-source: protocol. If the user chooses Document Source or Frame Source from the View menu, the content displayed is that of the wysiwyg: URL. The following example shows a view-source: URL:<P></A>
+<A NAME="1017844">
+<PRE>view-source:wysiwyg://0/file:/c|/temp/genhtml.html</PRE>
+</A>
+<A NAME="1017824">
+Navigator 2.0, does <I>not</I> print output created with JavaScript. For example, if the user chooses Print from the File menu to print the page in the previous example, you see only the line that reads "This is some standard HTML...," even though you see both lines onscreen.<P></A>
+
+<A NAME="Displaying output"></A>
+<A NAME="1017828">
+<H2> Displaying output</H2>
+</A>
+
+<A NAME="1011524">
+JavaScript in Navigator generates its results from the top of the page down. Once text has been displayed, you cannot change it without reloading the page. In general, you cannot update part of a page without updating the entire page. However, you can update<P></A>
+<ul><A NAME="1011554">
+<LI>A "subwindow" in a frame separately. For more information, see <a href="windows.htm#996824">Chapter&nbsp;3, "Using windows and frames."</a>
+</A><A NAME="1011559">
+<LI>Form elements without reloading the page; see <a href="getstart.htm#1011109">"Example: using an event handler"</a>.
+</A></ul>
+
+<!------------------------------>
+<HR>
+<A NAME="Scripting event handlers"></A>
+<A NAME="1004263">
+<H1> Scripting event handlers</H1>
+</A>
+<A NAME="1004264">
+JavaScript applications in the Navigator are largely event-driven. <I>Events</I> are actions that occur usually as a result of something the user does. For example, clicking a button is an event, as is changing a text field or moving the mouse over a hyperlink. You can define <I>event handlers</I>, such as <B>onChange and onClick</B>, to make your script react to events.<P></A>
+<A NAME="1010680">
+Each event is recognized by certain objects (HTML tags), summarized in the following table:
+
+<P><TABLE BORDER="2">
+<CAPTION></CAPTION>
+<tr align=left valign=bottom><th><b><A NAME="1012288">
+Event</A><B><th><b><A NAME="1012351">
+Applies to</A><B><th><b><A NAME="1012290">
+Occurs when</A><B><th><b><A NAME="1012292">
+Event handler</A><B>
+<tr align=left valign=top><td><A NAME="1017648">
+abort
+</A><BR>
+
+<td><A NAME="1017053">
+images
+</A><BR>
+
+<td><A NAME="1017055">
+User aborts the loading of 
+an image (for example by 
+clicking a link or clicking 
+the Stop button)
+</A><BR>
+
+<td><A NAME="1017057">
+onAbort
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1012294">
+blur
+</A><BR>
+
+<td><A NAME="1012353">
+windows, frames, and 
+all form elements
+</A><BR>
+
+<td><A NAME="1012296">
+User removes input focus 
+from window, frame, or 
+form element
+</A><BR>
+
+<td><A NAME="1012298">
+onBlur
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1012300">
+click
+</A><BR>
+
+<td><A NAME="1012355">
+buttons, radio buttons, 
+checkboxes, submit 
+buttons, reset buttons, 
+links
+</A><BR>
+
+<td><A NAME="1012302">
+User clicks form element 
+or link
+</A><BR>
+
+<td><A NAME="1012304">
+onClick
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1012306">
+change
+</A><BR>
+
+<td><A NAME="1012357">
+text fields, textareas, 
+select lists
+</A><BR>
+
+<td><A NAME="1012308">
+User changes value of 
+element
+</A><BR>
+
+<td><A NAME="1012310">
+onChange
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1017059">
+error
+</A><BR>
+
+<td><A NAME="1017061">
+images, windows
+</A><BR>
+
+<td><A NAME="1017063">
+The loading of a 
+document or image 
+causes an error
+</A><BR>
+
+<td><A NAME="1017065">
+onError
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1012312">
+focus
+</A><BR>
+
+<td><A NAME="1012359">
+windows, frames, and 
+all form elements
+</A><BR>
+
+<td><A NAME="1012314">
+User gives input focus to 
+window, frame, or form 
+element
+</A><BR>
+
+<td><A NAME="1012316">
+onFocus
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1012318">
+load
+</A><BR>
+
+<td><A NAME="1012361">
+document body
+</A><BR>
+
+<td><A NAME="1012320">
+User loads the page in the 
+Navigator
+</A><BR>
+
+<td><A NAME="1012322">
+onLoad
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1017067">
+mouseout
+</A><BR>
+
+<td><A NAME="1017069">
+areas, links
+</A><BR>
+
+<td><A NAME="1017071">
+User moves mouse 
+pointer out of an area 
+(client-side image map) or 
+link
+</A><BR>
+
+<td><A NAME="1017073">
+onMouseout
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1012324">
+mouseover
+</A><BR>
+
+<td><A NAME="1012363">
+links
+</A><BR>
+
+<td><A NAME="1012326">
+User moves mouse 
+pointer over a link
+</A><BR>
+
+<td><A NAME="1012328">
+onMouse-
+Over
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1017075">
+reset
+</A><BR>
+
+<td><A NAME="1017077">
+forms
+</A><BR>
+
+<td><A NAME="1017079">
+User resets a form (clicks 
+a Reset button)
+</A><BR>
+
+<td><A NAME="1017081">
+onReset
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1012330">
+select
+</A><BR>
+
+<td><A NAME="1012365">
+text fields, textareas
+</A><BR>
+
+<td><A NAME="1012332">
+User selects form 
+element's input field
+</A><BR>
+
+<td><A NAME="1012334">
+onSelect
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1012336">
+submit
+</A><BR>
+
+<td><A NAME="1012367">
+submit button
+</A><BR>
+
+<td><A NAME="1012338">
+User submits a form
+</A><BR>
+
+<td><A NAME="1012340">
+onSubmit
+</A><BR>
+
+
+
+<tr align=left valign=top><td><A NAME="1012342">
+unload
+</A><BR>
+
+<td><A NAME="1012369">
+document body
+</A><BR>
+
+<td><A NAME="1012344">
+User exits the page
+</A><BR>
+
+<td><A NAME="1012346">
+onUnload
+</A><BR>
+
+
+
+
+</TABLE>
+
+<TABLE>
+<TR><TD>
+</TABLE>
+
+
+<P></A>
+<A NAME="1011069">
+If an event applies to an HTML tag, then you can define an event handler for it. The name of an event handler is the name of the event, preceded by "on." For example, the event handler for the focus event is onFocus.<P></A>
+<A NAME="1013631">
+To create an event handler for an HTML tag, add an event handler attribute to the tag; Put JavaScript code in quotation marks as the attribute value. The general syntax is<P></A>
+<A NAME="1004266">
+<PRE>&lt;TAG <I>eventHandler</I>="JavaScript Code"&gt;</PRE>
+</A>
+<A NAME="1004267">
+where TAG is an HTML tag and <I>eventHandler</I> is the name of the event handler.<P></A>
+<A NAME="1004268">
+For example, suppose you have created a JavaScript function called <B>compute</B>. You can cause Navigator to perform this function when the user clicks a button by assigning the function call to the button's <I>onClick</I> event handler:<P></A>
+<A NAME="1004269">
+<PRE>&lt;INPUT TYPE="button" VALUE="Calculate" onClick="compute(this.form)"&gt;</PRE>
+</A>
+<A NAME="1004270">
+You can put any JavaScript statements inside the quotation marks following <I>onClick</I>. These statements are executed when the user clicks the button. If you want to include more than one statement, separate statements with a semicolon (;).<P></A>
+<A NAME="1004274">
+Notice in the preceding example <code>this.form</code> refers to the current form. The keyword <B>this</B> refers to the current object, which is the button. The construct <code>this.form</code> then refers to the form containing the button. The onClick event handler is a call to the <B>compute</B> function, with the current form as the argument.<P></A>
+<A NAME="1013651">
+In general, it is good practice to define functions for your event handlers:<P></A>
+<ul><A NAME="1013652">
+<LI>It makes your code modular--you can use the same function as an event handler for many different items.
+</A><A NAME="1013653">
+<LI>It makes your code easier to read.
+</A></ul>
+<A NAME="Using quotation marks"></A>
+<A NAME="1012906">
+<H2> Using quotation marks</H2>
+</A>
+
+<A NAME="1012907">
+Use single quotation marks ( ' ) to delimit string literals so that scripts can distinguish the literal from attribute values enclosed in double quotation marks. In the following example, the function <B>bar</B> contains the literal "left" within a double-quoted attribute value:<P></A>
+<A NAME="1017879">
+<PRE>function bar(widthPct) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.write("&lt;HR ALIGN='left' WIDTH=" + widthPct + "%&gt;")<br>}</PRE>
+</A>
+<A NAME="1017880">
+Here's another example:<P></A>
+<A NAME="1010284">
+<PRE>&lt;INPUT TYPE="button" VALUE="Press Me" onClick="myfunc('astring')"&gt;</PRE>
+</A>
+<A NAME="1010285">
+Be sure to alternate double quotation marks with single quotation marks. Because event handlers in HTML must be enclosed in quotation marks, you must use single quotation marks to delimit string arguments. For example:<P></A>
+<A NAME="1010286">
+<PRE>&lt;FORM NAME="myform"&gt;<br>&lt;INPUT TYPE="button" NAME="Button1" VALUE="Open Sesame!"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;onClick="window.open('mydoc.html', 'newWin')"&gt;<br>&lt;/FORM&gt;</PRE>
+</A>
+
+<A NAME="Example: using an event handler"></A>
+<A NAME="1011109">
+<H2> Example: using an event handler</H2>
+</A>
+
+<A NAME="1013690">
+In the following example, you can enter an expression (for example, 2 + 2) in the first text field, and then click the button. The second text field then displays the value of the expression (for example, 4).<P></A>
+<A NAME="1011110">
+<PRE>&lt;HEAD&gt; &lt;SCRIPT&gt;<br>&lt;!--- Hide script from old browsers<br>function compute(f) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (confirm("Are you sure?"))<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f.result.value = eval(f.expr.value)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert("Please come back again.")<br>}<br>// end hiding from old browsers --&gt;<br>&lt;/SCRIPT&gt; &lt;/HEAD&gt;<br>&lt;BODY&gt;<br>&lt;FORM&gt;<br>Enter an expression:<br>&lt;INPUT TYPE="text" NAME="expr" SIZE=15 &gt;<br>&lt;INPUT TYPE="button" VALUE="Calculate" onClick="compute(this.form)"&gt;<br>&lt;BR&gt;<br>Result:<br>&lt;INPUT TYPE="text" NAME="result" SIZE=15 &gt;<br>&lt;/FORM&gt;<br>&lt;/BODY&gt;</PRE>
+</A>
+<A NAME="1011241">
+The display in Navigator will look like this:<p>
+
+<SCRIPT>
+<!--- Hide script from old browsers
+function compute(f) {
+        if (confirm("Are you sure?"))
+                f.result.value = eval(f.expr.value)
+        else
+                alert("Please come back again.")
+}
+// end hiding from old browsers -->
+</SCRIPT> 
+<FORM>
+Enter an expression:
+<INPUT TYPE="text" NAME="expr" SIZE=15 >
+<INPUT TYPE="button" VALUE="Calculate" onClick="compute(this.form)">
+<BR>
+Result:
+<INPUT TYPE="text" NAME="result" SIZE=15 >
+</FORM>
+
+<P></A>
+<A NAME="1011389">
+The HEAD of the document defines a single function, <B>compute</B>, taking one argument, <I>f</I>, which is a <I>Form</I> object. The function uses the Navigator JavaScript method <B>confirm</B> to display a Confirm dialog box with <B>OK</B> and <B>Cancel</B> buttons.<P></A>
+<A NAME="1011475">
+If the user clicks <B>OK</B>, then <B>confirm</B> returns true, and the value of the <B>result</B> text field is set to the value of <code>eval(f.expr.value)</code>. The built-in JavaScript function <B>eval</B> evaluates its argument, which can be any string representing any JavaScript expression or statements.<P></A>
+<A NAME="1011476">
+If the user clicks <B>Cancel</B>, then <B>confirm</B> returns false and the <B>alert</B> method displays another message.<P></A>
+<A NAME="1011424">
+The form contains a button with an onClick event handler that calls the <B>compute</B> function. When the user clicks the button, JavaScript calls <B>compute</B> with the argument <code>this.form</code> that denotes the current <I>Form</I> object. In <B>compute</B>, this form is referred to as the argument <I>f</I>.<P></A>
+
+<A NAME="Calling event handlers explicitly"></A>
+<A NAME="1016979">
+<H2> Calling event handlers explicitly</H2>
+</A>
+
+<A NAME="1016980">
+In JavaScript for Navigator 3.0, you can reset an event handler specified by HTML, as shown in the following example.<P></A>
+<A NAME="1016981">
+<PRE>&lt;SCRIPT LANGUAGE="JavaScript"&gt;<br>function fun1() {<br>&nbsp;&nbsp;&nbsp;...<br>}<br>function fun2() {<br>&nbsp;&nbsp;&nbsp;...<br>}<br>&lt;/SCRIPT&gt;<br>&lt;FORM NAME="myForm"&gt;<br>&lt;INPUT TYPE="button" NAME="myButton"<br>&nbsp;&nbsp;&nbsp;onClick="fun1()"&gt;<br>&lt;/FORM&gt;<br>&lt;SCRIPT&gt;<br>document.myForm.myButton.onclick=fun2<br>&lt;/SCRIPT&gt;</PRE>
+</A>
+<A NAME="1016982">
+Note that event handlers are function references, so you must assign <code>fun2</code>, not <code>fun2()</code> (the latter calls <B>fun2</B> and has whatever type and value <B>fun2</B> returns).<P></A>
+<A NAME="1016983">
+Also, since the event handler HTML attributes are literal function bodies, you cannot use &lt;<code>INPUT onClick=fun1&gt;</code> in the HTML source to make <B>fun1</B> the onClick handler for an input; you must call <B>fun1</B> instead, as in the example.<P></A>
+<A NAME="1016984">
+Finally, because JavaScript is case-sensitive, you must spell event handler names in lowercase in JavaScript.<P></A>
+
+
+<!------------------------------>
+<HR>
+<A NAME="Validating form input"></A>
+<A NAME="1004313">
+<H1> Validating form input</H1>
+</A>
+
+<a name="1011963">
+<I>If you can't run server-based programs, skip this section.</I><P>
+</a>
+<A NAME="1011647">
+One of the most important uses of JavaScript is to validate form input to server-based programs such as LiveWire applications or CGI programs. This is useful because<P></A>
+<ul><A NAME="1011648">
+<LI>It reduces load on the server. "Bad data" are already filtered out when input is passed to the server-based program.
+</A><A NAME="1011649">
+<LI>It reduces delays in case of user error. Validation otherwise has to be performed on the server, so data must travel from client to server, be processed, and then returned to client for valid input.
+</A><A NAME="1011651">
+<LI>It simplifies the server-based program.
+</A></ul><A NAME="1011950">
+Generally, you'll want to validate input in (at least) two places:<P></A>
+<ul><A NAME="1011868">
+<LI>As the user enters it, with an onChange event handler on each form element that you want validated.
+</A><A NAME="1011869">
+<LI>When the user submits the form, with an onClick event handler on the button that submits the form.
+</A></ul>
+<A NAME="Example validation functions"></A>
+<A NAME="1011709">
+<H2> Example validation functions</H2>
+</A>
+
+<A NAME="1011898">
+The following are some simple validation functions.<P></A>
+<A NAME="1011873">
+<PRE>&lt;HEAD&gt;<br>&lt;SCRIPT LANGUAGE="javascript"&gt;<br>function isaPosNum(s) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return (parseInt(s) &gt; 0)<br>}</PRE>
+</A>
+<A NAME="1011874">
+<PRE>function qty_check(item, min, max) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var returnVal = false<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (!isaPosNum(item.value)) <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert("Please enter a postive number" )<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else if (parseInt(item.value) &lt; min) <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert("Please enter a " + item.name + " greater than " + min)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else if (parseInt(item.value) &gt; max) <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert("Please enter a " + item.name + " less than " + max)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;returnVal = true<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return returnVal<br>}</PRE>
+</A>
+<A NAME="1017889">
+<PRE>function validateAndSubmit(theform) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (qty_check(theform.quantity, 0, 999)) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert("Order has been Submitted")<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return true<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert("Sorry, Order Cannot Be Submitted!")<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return false<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>}<br>&lt;/SCRIPT&gt;<br>&lt;/HEAD&gt;</PRE>
+</A>
+<A NAME="1011905">
+<B>isaPosNum</B> is a simple function that returns true if its argument is a positive number, and false otherwise.<P></A>
+<A NAME="1011906">
+<B>qty_check</B> takes three arguments: an object corresponding to the form element being validated (<I>item</I>) and the minimum and maximum allowable values for the item (<I>min</I> and <I>max</I>). It checks that the value of <I>item</I> is a number between min and max and displays an alert if it is not.<P></A>
+<A NAME="1011907">
+<B>validateAndSubmit</B> takes a <I>Form</I> object as its argument; it uses <B>qty_check</B> to check the value of the form element and submits the form if the input value is valid. Otherwise, it displays an alert and does not submit the form.<P></A>
+
+<A NAME="Using the validation functions"></A>
+<A NAME="1011900">
+<H2> Using the validation functions</H2>
+</A>
+
+<A NAME="1011948">
+In this example, the BODY of the document uses <B>qty_check</B> as an onChange event handler for a text field and <B>validateAndSubmit</B> as the onClick event handler for a button.<P></A>
+<A NAME="1011863">
+<PRE>&lt;BODY&gt;<br>&lt;FORM NAME="widget_order" ACTION="lwapp.html" METHOD="post"&gt;<br>How many widgets today? <br>&lt;INPUT TYPE="text" NAME="quantity" onChange="qty_check(this, 0, 999)"&gt;<br>&lt;BR&gt; <br>&lt;INPUT TYPE="button" VALUE="Enter Order" onClick="validateAndSubmit(this.form)"&gt;<br>&lt;/FORM&gt;<br>&lt;/BODY&gt;</PRE>
+</A>
+<A NAME="1011887">
+This form submits the values to a page in a LiveWire application called <code>lwapp.html</code>. It also could be used to submit the form to a CGI program.<P></A>
+<A NAME="1011949">
+The form looks like this:<p>
+
+<BODY>
+<FORM NAME="widget_order" ACTION="lwapp.html" METHOD="post">
+How many widgets today? 
+<INPUT TYPE="text" NAME="quantity">
+<BR> 
+<INPUT TYPE="button" VALUE="Enter Order">
+</FORM>
+</BODY>
+
+<P></A>
+<A NAME="1011933">
+The onChange event handler is triggered when you change the value in the text field and move focus from the field by either pressing the Tab key or clicking the mouse outside the field. Notice that both event handlers use <B>this</B> to represent the current object: in the text field, it is used to pass the JavaScript object corresponding to the text field to <B>qty_check</B>, and in the button it is used to pass the JavaScript <I>Form</I> object to <B>validateAndSubmit</B>.<P></A>
+<A NAME="1011924">
+To submit the form to the server-based program, this example uses a button that calls <B>validateAndSubmit</B>, which submits the form using the <B>submit</B> method, if the data are valid. You can also use a submit button (defined by <code>&lt;INPUT TYPE="submit"&gt;</code>) with an onSubmit event handler that returns false if the data are not valid. For example,<P></A>
+<A NAME="1013722">
+<PRE>&lt;INPUT TYPE="submit"<br>&nbsp;&nbsp;&nbsp;onSubmit="return qty_check(theform.quantity, 0, 999)"</PRE>
+</A>
+<A NAME="1013718">
+When <B>qty_check</B> returns false if the data are invalid, the onSubmit handler will prohibit the form from being submitted.<P></A>

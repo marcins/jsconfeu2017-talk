@@ -1,0 +1,139 @@
+<HTML>
+	<HEAD>
+	<TITLE>Swimming Fish</TITLE>
+	</HEAD>
+
+	<SCRIPT>
+
+function showForm() {
+    document.waiting.visibility="hide";
+    document.fishlink.visibility="show";
+    return false;
+}
+
+
+ function initializeFish()
+ {
+      // create the backward fish image to force it to preload now
+
+      var fish = document.fish;
+      var fishB = document.fishB;
+      fish.direction = "forward";
+      fish.forwardimg = fish.document.images["fish"].src;
+      fish.backwardimg = fishB.document.images["fishB"].src;
+      return;
+ }
+
+ function movefish2()
+ {	var fish = document.fish;
+     if (fish.direction == "forward")
+     {
+        if (fish.left < 450) {fish.moveBy(5, 0);}
+        else {
+          changePoles();
+          changeDirection();
+          }
+       }
+      else {
+            if (fish.left > 10) {fish.moveBy(-5, 0);}
+	      else {
+                   resetPoles();
+			 changeDirection();
+			}
+		}
+      setTimeout("movefish2()", 10);
+  	return;
+	}
+
+	//This is a comment
+
+function changeDirection ()
+{
+	var fish = document.fish;
+	if (fish.direction == "forward")
+		{fish.direction = "backward";
+		fish.document.images["fish"].src = fish.backwardimg;
+		}
+	else {fish.direction = "forward";
+	fish.document.images["fish"].src = fish.forwardimg;
+	}
+	return;
+}
+
+<!-- change the stacking order of the poles and the fish -->
+function changePoles ()
+{
+	var redpole = document.redpole;
+	var bluepole = document.bluepole;
+	var greenpole = document.greenpole;
+
+	var fish = document.layers.fish;
+
+	fish.moveAbove(redpole);
+	bluepole.moveAbove(fish);
+	greenpole.moveAbove(bluepole);
+	return;
+}
+
+
+<!-- reset the stacking order of the poles and the fish -->
+function resetPoles ()
+{
+	var redpole = document.redpole;
+	var bluepole = document.bluepole;
+	var greenpole = document.greenpole;
+
+	var fish = document.fish;
+
+	greenpole.moveAbove(bluepole);
+	fish.moveAbove(greenpole);
+	redpole.moveAbove(fish);
+
+	return;
+}
+
+
+</SCRIPT>
+
+<BODY BGCOLOR="#ffffff" onload="showForm();">
+
+	<LAYER ID="bluepole" LEFT=160 TOP=150>
+		<IMG SRC=images/bluepole.gif>
+	</LAYER>
+
+	<LAYER ID="greenpole" LEFT=360 TOP=150>
+		<IMG SRC=images/greenpol.gif>
+	</LAYER>
+
+	<LAYER  ID="redpole" LEFT=260 TOP=150>
+		<IMG SRC=images/redpole.gif>
+	</LAYER>
+
+    <LAYER ID="fishB" visibility="hide" >
+	<IMG NAME="fishB" SRC=images/fish2.gif >
+	</LAYER>
+
+	<LAYER ID="fish" LEFT=40 TOP=170 above="redpole">
+	<IMG NAME="fish" SRC=images/fish1.gif >
+    </LAYER>
+
+
+
+<LAYER ID="waiting" TOP=100 LEFT=50>
+<H2>Please wait while the fish loads...</H2>
+</LAYER>
+
+
+<H1>Fish Example 2</H1>
+<LAYER LEFT=10 TOP=100  ID="fishlink" VISIBILITY=HIDE>
+<FORM>
+<INPUT type=button value="Move the Fish"
+OnClick="initializeFish(); movefish2(); return false;">
+</FORM>
+</LAYER>
+
+
+</BODY>
+</HTML>
+
+
