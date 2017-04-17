@@ -1,0 +1,494 @@
+<HTML>
+<HEAD>
+<TITLE>Utilities
+</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A HREF="contents.htm">[Contents]</A> <A HREF="oth1.htm">[Previous]</A> <A HREF="glob.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<HR>
+
+<A NAME="SendMail"></A>
+<A NAME="1015194">
+<H1> SendMail</H1>
+</A>
+<A NAME="1015195">
+Sends an email message.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1033575">
+<I>Server-side object</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1033580">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1033582">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1033584">
+Netscape Server 3.0</A></P>
+
+</TABLE>
+<P></A>
+<A NAME="1015196">
+The <CODE>To</CODE> and <CODE>From</CODE> attributes are required. All other properties are optional.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1021766">
+<H4> Created by</H4>
+</A>
+
+<A NAME="1021767">
+The <CODE>SendMail</CODE> constructor:<P></A>
+<A NAME="1021770">
+<PRE>new SendMail(); </PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1021777">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1021778">
+None.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1015197">
+<H4> Description</H4>
+</A>
+
+<A NAME="1015198">
+Whatever properties you specify for the <CODE>SendMail</CODE> object are sent in the header of the mail message.<P></A>
+<A NAME="1015199">
+The <CODE>SendMail</CODE> object allows you to send either simple text-only mail messages or complex MIME-compliant mail or add attachments to your message. To send a MIME message, set the <CODE>Content-Type</CODE> property to the MIME type of the message.<P></A>
+<A NAME="1017105">
+You can use the <CODE>prototype</CODE> property of the <CODE>SendMail</CODE> object to add a property to all <CODE>SendMail</CODE> instances. If you do so, that addition applies to all <CODE>SendMail</CODE> objects running in all applications on your server, not just in the single application that made the change. This allows you to expand the capabilities of this object for your entire server.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1015200">
+<H4> Property Summary</H4>
+</A>
+
+<A NAME="1015242">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1034115">
+<PRE><A HREF="oth2.htm#1034292"><CODE>Bcc</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1034117">
+Comma-delimited list of recipients of the message whose names should not be visible in the message.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1034123">
+<PRE><A HREF="oth2.htm#1034307"><CODE>Body</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1034125">
+Text of the message.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1015211">
+<PRE><A HREF="oth2.htm#1034325"><CODE>Cc</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1015213">
+Comma-delimited list of additional recipients of the message.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1034131">
+<PRE><A HREF="oth2.htm#1034349"><CODE>Errorsto</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1034133">
+Address to which to send errors concerning the message. Defaults to the sender's address.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1034107">
+<PRE><A HREF="oth2.htm#1034367"><CODE>From</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1034109">
+User name of the person sending the message.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1015219">
+<PRE><A HREF="oth2.htm#1034387"><CODE>Organization</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1015221">
+Organization information.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1034814">
+<PRE><A HREF="oth2.htm#1035882"><CODE>prototype</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1034818">
+Allows the addition of properties to a <CODE>SendMail</CODE> object.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1015223">
+<PRE><A HREF="oth2.htm#1034412"><CODE>Replyto</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1015225">
+User name to which replies to the message should be sent. Defaults to the sender's address.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1015227">
+<PRE><A HREF="oth2.htm#1034501"><CODE>Smtpserver</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1015229">
+Mail (SMTP) server name. Defaults to the value specified through the setting in the Administration server.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1015231">
+<PRE><A HREF="oth2.htm#1034523"><CODE>Subject</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1015233">
+Subject of the message.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1034127">
+<PRE><A HREF="oth2.htm#1034431"><CODE>To</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1034129">
+Comma-delimited list of primary recipients of the message.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1015243">
+<H4> Method Summary</H4>
+</A>
+
+<A NAME="1015266">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1015249">
+<PRE><A HREF="oth2.htm#1015279"><CODE>errorCode</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1015251">
+Returns an integer error code associated with sending this message.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1015256">
+<PRE><A HREF="oth2.htm#1015315"><CODE>errorMessage</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1015258">
+Returns a string associated with sending this message.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1015263">
+<PRE><A HREF="oth2.htm#1015325"><CODE>send</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1015265">
+Sends the mail message represented by this object.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1015269">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1015270">
+<B>Example 1: </B>The following script sends mail to vpg and gwp, copying jaym, with the specified subject and body for the message:<P></A>
+<A NAME="1015271">
+<PRE>&lt;server&gt;<br>SMName = new SendMail();<br>SMName.To = "vpg@co1.com, gwp@co2.com"<br>SMName.From = "me@myco.com"<br>SMName.Cc = "jaym@hisco.com"<br>SMName.Subject = "The State of the Universe"<br>SMName.Body = "The universe, contrary to what you may have heard, is in none too shabby shape. Not to worry! --me"<br>SMName.send()<br>&lt;/server&gt;</PRE></A><A NAME="1015272">
+<B>Example 2: </B>The following example sends an image in a GIF file:<P></A>
+<A NAME="1015273">
+<PRE>sm = new SendMail(); <br>sm.To = "satish"; <br>sm.From = "satish@netscape.com"; <br>sm.Smtpserver = "fen.mcom.com"; <br>sm["Errors-to"] = "satish"; <br>sm["Content-type"] = "image/gif"; <br>sm["Content-Transfer-Encoding"] = "base64"; <br>file = new File("/u/satish/LiveWire/mail/banner.gif"); <br>openFlag = file.open("r"); <br>if ( openFlag ) {<br>&nbsp;&nbsp;&nbsp;len = file.getLength(); <br>&nbsp;&nbsp;&nbsp;str = file.read(len); <br>&nbsp;&nbsp;&nbsp;sm.Body = str; <br>} <br>sm.send();</PRE></A><A NAME="1015274">
+<B>Example 3: </B>The following example sends a multipart message:<P></A>
+<A NAME="1015275">
+<PRE>sm = new SendMail(); <br>sm.To = "chandra@cs.uiowa.edu, satish@netscape.com"; <br>sm.From = "satish@netscape.com"; <br>sm.Smtpserver = "fen.mcom.com"; <br>sm.Organization = "Netscape Comm Corp"; <br>sm["Content-type"] = "multipart/mixed; boundary=\"------------8B3F7BA67B67C1DDE6C25D04\""; <br>file = new File("/u/satish/LiveWire/mail/mime"); <br>openFlag = file.open("r"); <br>if ( openFlag ) { <br>&nbsp;&nbsp;&nbsp;len = file.getLength(); <br>&nbsp;&nbsp;&nbsp;str = file.read(len); <br>&nbsp;&nbsp;&nbsp;sm.Body = str; <br>}<br>sm.send(); </PRE></A><A NAME="1015276">
+The file <CODE>mime</CODE> has HTML text and an Microsoft Word document separated by the specified boundary. The resulting message appears as HTML text followed by the Microsoft Word attachment.<P></A>
+
+<A NAME="Head2;"></A>
+<A NAME="1015277">
+<H3> Properties</H3>
+</A>
+
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1034292">
+<H2>Bcc</H2>
+</A>
+
+<A NAME="1034293">
+Comma-delimited list of recipients of the message whose names should not be visible in the message. <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1034296">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1034301">
+<A HREF="oth2.htm#1015194"><CODE>SendMail</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1034303">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1034305">
+Netscape Server 3.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1034307">
+<H2>Body</H2>
+</A>
+
+<A NAME="1034453">
+Text of the message.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1034311">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1034316">
+<A HREF="oth2.htm#1015194"><CODE>SendMail</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1034318">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1034320">
+Netscape Server 3.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1034325">
+<H2>Cc</H2>
+</A>
+
+<A NAME="1034326">
+Comma-delimited list of additional recipients of the message. <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1034329">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1034334">
+<A HREF="oth2.htm#1015194"><CODE>SendMail</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1034336">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1034338">
+Netscape Server 3.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1034349">
+<H2>Errorsto</H2>
+</A>
+
+<A NAME="1034475">
+Address to which to send errors concerning the message. Defaults to the sender's address. <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1034353">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1034358">
+<A HREF="oth2.htm#1015194"><CODE>SendMail</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1034360">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1034362">
+Netscape Server 3.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1034367">
+<H2>From</H2>
+</A>
+
+<A NAME="1034482">
+User name of the person sending the message.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1034371">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1034376">
+<A HREF="oth2.htm#1015194"><CODE>SendMail</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1034378">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1034380">
+Netscape Server 3.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1034387">
+<H2>Organization</H2>
+</A>
+
+<A NAME="1034489">
+Organization information.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1034391">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1034396">
+<A HREF="oth2.htm#1015194"><CODE>SendMail</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1034398">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1034400">
+Netscape Server 3.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1035882">
+<H2>prototype</H2>
+</A>
+
+<A NAME="1035883">
+Represents the prototype for this class. You can use the prototype to add properties or methods to all instances of a class. For information on prototypes, see <A HREF="core4.htm#1181210"><CODE>Function.prototype</CODE></A>.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1035889">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1035894">
+<A HREF="oth2.htm#1015194"><CODE>SendMail</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1035896">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1035898">
+LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1034412">
+<H2>Replyto</H2>
+</A>
+
+<A NAME="1034496">
+User name to which replies to the message should be sent. Defaults to the sender's address.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1034416">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1034421">
+<A HREF="oth2.htm#1015194"><CODE>SendMail</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1034423">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1034425">
+Netscape Server 3.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1034501">
+<H2>Smtpserver</H2>
+</A>
+
+<A NAME="1034540">
+Mail (SMTP) server name. Defaults to the value specified through the setting in the Administration server.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1034505">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1034510">
+<A HREF="oth2.htm#1015194"><CODE>SendMail</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1034512">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1034514">
+Netscape Server 3.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1034523">
+<H2>Subject</H2>
+</A>
+
+<A NAME="1034559">
+Subject of the message.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1034527">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1034532">
+<A HREF="oth2.htm#1015194"><CODE>SendMail</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1034534">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1034536">
+Netscape Server 3.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1034431">
+<H2>To</H2>
+</A>
+
+<A NAME="1034578">
+Comma-delimited list of primary recipients of the message.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1034435">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1034440">
+<A HREF="oth2.htm#1015194"><CODE>SendMail</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1034442">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1034444">
+Netscape Server 3.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head2;"></A>
+<A NAME="1034179">
+<H3> Methods</H3>
+</A>
+
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1015279">
+<H2>errorCode</H2>
+</A>
+
+<A NAME="1015280">
+Returns an integer error code associated with sending this message.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1033612">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1033617">
+<A HREF="oth2.htm#1015194"><CODE>SendMail</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1033619">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1033621">
+Netscape Server 3.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1015281">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1015282">
+<PRE>public errorCode();</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1015285">
+<H4> Returns</H4>
+</A>
+
+<A NAME="1015311">
+The possible return values and their meanings are as follows: <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1015288">
+<PRE>0</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1015290">
+Successful send.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1015292">
+<PRE>1</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1015294">
+SMTP server not specified.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1015296">
+<PRE>2</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1015298">
+Specified mail server is down or doesn't exist.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1015300">
+<PRE>3</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1015302">
+At least one receiver's address must be specified to send the message.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1015304">
+<PRE>4</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1015306">
+Sender's address must be specified to send the message.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1015308">
+<PRE>5</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1015310">
+Mail connection problem; data not sent.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1015315">
+<H2>errorMessage</H2>
+</A>
+
+<A NAME="1033661">
+Returns a string associated with sending this message. <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1033669">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1033674">
+<A HREF="oth2.htm#1015194"><CODE>SendMail</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1033676">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1033678">
+Netscape Server 3.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1015316">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1015317">
+<PRE>public errorMessage();</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1015320">
+<H4> Returns</H4>
+</A>
+
+<A NAME="1015321">
+An error string.<P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1015325">
+<H2>send</H2>
+</A>
+
+<A NAME="1015326">
+Sends the mail message represented by this object. <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1033703">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1033708">
+<A HREF="oth2.htm#1015194"><CODE>SendMail</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1033710">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1033712">
+Netscape Server 3.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1015327">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1015328">
+<PRE>public send ();</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1015331">
+<H4> Returns</H4>
+</A>
+
+<A NAME="1015332">
+This method returns a Boolean value to indicate whether or not the mail was successfully sent. If the mail was not successfully sent, you can use the <CODE>errorMessage</CODE> and <CODE>errorCode</CODE> methods to determine the nature of the error.<P></A>
+<A NAME="1015333">
+This method returns a string indicating the nature of the error that occurred sending the message.<P></A>
+<A NAME="1005723">
+<PRE></PRE></A>
+<P><HR>
+<A HREF="contents.htm">[Contents]</A> <A HREF="oth1.htm">[Previous]</A> <A HREF="glob.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<P ALIGN=right>
+
+<FONT SIZE=-2><I>Last Updated:  10/31/97  16:37:22
+</I></FONT>
+
+<HR SIZE=4>
+
+<P> <CENTER>Copyright © 1997
+<A HREF="http://home.netscape.com/misc/contact_info.html"
+TARGET=_top>Netscape Communications Corporation</A></FONT>
+</CENTER>
+<P>
+<P>
+</BODY>
+</HTML>
+

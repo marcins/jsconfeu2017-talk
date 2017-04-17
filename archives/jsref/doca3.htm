@@ -1,0 +1,1337 @@
+<HTML>
+<HEAD>
+<TITLE>
+</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A HREF="contents.htm">[Contents]</A> <A HREF="doca2.htm">[Previous]</A> <A HREF="win.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<HR>
+
+<A NAME="Layer"></A>
+<A NAME="1113061">
+<H1> Layer</H1>
+</A>
+<A NAME="1113072">
+Corresponds to a layer in an HTML page and provides a means for manipulating that layer. <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1113065">
+<I>Client-side object</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1113067">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1113069">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1113071">
+Navigator 4.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1113073">
+<H4> Created by</H4>
+</A>
+
+<A NAME="1113074">
+The HTML <CODE><A HREF="http://developer.netscape.com/library/documentation/htmlguid/index.htm?content=tags12.htm#tags:LAYER" TARGET="_top">LAYER</A></CODE> or <CODE><A HREF="http://developer.netscape.com/library/documentation/htmlguid/index.htm?content=tags12.htm#tags:ILAYER" TARGET="_top">ILAYER</A></CODE> tag, or using cascading style sheet syntax. The JavaScript runtime engine creates a <CODE>Layer</CODE> object corresponding to each layer in your document. It puts these objects in an array in the <A HREF="doc1.htm#1113634"><CODE>document.layers</CODE></A> property. You access a <CODE>Layer</CODE> object by indexing this array.<P></A>
+<A NAME="1117785">
+To define a layer, use standard HTML syntax. If you specify the <CODE>ID</CODE> attribute, you can use the value of that attribute to index into the <CODE>layers</CODE> array.<P></A>
+<A NAME="1117787">
+For a complete description of layers, see <A HREF="http://developer.netscape.com/library/documentation/communicator/dynhtml/index.htm" TARGET="_top"><EM>Dynamic HTML in Netscape Communicator</EM></A><A HREF="#1117790"><SUP>1</SUP></A>.<P></A>
+<a name="1113082">
+Some <CODE>layer</CODE> properties can be directly modified by assignment; for example, 
+"<CODE>mylayer.visibility = hide</CODE>". A layer object also has methods that can 
+affect these properties.
+</blockquote>
+</a>
+
+<A NAME="Head3;"></A>
+<A NAME="1113083">
+<H4> Event handlers</H4>
+</A>
+
+<ul><A NAME="1113087">
+<LI><A HREF="evnt17.htm#1010759"><CODE>onMouseOver</CODE></A></LI>
+</A><A NAME="1113091">
+<LI><A HREF="evnt16.htm#1010731"><CODE>onMouseOut</CODE></A> </LI>
+</A><A NAME="1113095">
+<LI><A HREF="evnt13.htm#1010680"><CODE>onLoad</CODE></A> </LI>
+</A><A NAME="1113099">
+<LI><A HREF="evnt9.htm#1010615"><CODE>onFocus</CODE></A> </LI>
+</A><A NAME="1113103">
+<LI><A HREF="evnt3.htm#1010414"><CODE>onBlur</CODE></A></LI>
+</A></ul>
+<A NAME="Head3;"></A>
+<A NAME="1113105">
+<H4> Property Summary</H4>
+</A>
+
+<a name="1113258">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1113111">
+<PRE><A HREF="doca3.htm#1113375"><CODE>above</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1113113">
+The <CODE>layer</CODE> object above this one in z-order, among all layers in the document or the enclosing window object if this layer is topmost. </A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1113118">
+<PRE><A HREF="doca3.htm#1113394"><CODE>background</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1113120">
+The image to use as the background for the layer's canvas.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1113125">
+<PRE><A HREF="doca3.htm#1113413"><CODE>bgColor</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1113127">
+The color to use as a solid background color for the layer's canvas.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1113132">
+<PRE><A HREF="doca3.htm#1113448"><CODE>below</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1113134">
+The <CODE>layer</CODE> object below this one in z-order, among all layers in the document or null if this layer is at the bottom. </A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1113139">
+<PRE><A HREF="doca3.htm#1113467"><CODE>clip.bottom</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1113141">
+The bottom edge of the clipping rectangle (the part of the layer that is visible.)</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1113146">
+<PRE><A HREF="doca3.htm#1113482"><CODE>clip.height</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1113148">
+The height of the clipping rectangle (the part of the layer that is visible.)</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1113153">
+<PRE><A HREF="doca3.htm#1113497"><CODE>clip.left</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1113155">
+The left edge of the clipping rectangle (the part of the layer that is visible.)</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1113160">
+<PRE><A HREF="doca3.htm#1113512"><CODE>clip.right</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1113162">
+The right edge of the clipping rectangle (the part of the layer that is visible.)</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1113167">
+<PRE><A HREF="doca3.htm#1113527"><CODE>clip.top</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1113169">
+The top edge of the clipping rectangle (the part of the layer that is visible.)</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1113174">
+<PRE><A HREF="doca3.htm#1113542"><CODE>clip.width</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1113176">
+The width of the clipping rectangle (the part of the layer that is visible.)</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1117170">
+<PRE><A HREF="doca3.htm#1113582"><CODE>document</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1117172">
+The layer's associated document.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1113188">
+<PRE><A HREF="doca3.htm#1116593"><CODE>left</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1113190">
+The horizontal position of the layer's left edge, in pixels, relative to the origin of its parent layer. </A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1113195">
+<PRE><A HREF="doca3.htm#1113598"><CODE>name</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1113197">
+A string specifying the name assigned to the layer through the <CODE>ID</CODE> attribute in the <CODE>LAYER </CODE>tag. </A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1113202">
+<PRE><A HREF="doca3.htm#1113619"><CODE>pageX</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1113204">
+The horizontal position of the layer, in pixels, relative to the page.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1113206">
+<PRE>page y</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1113208">
+The vertical position of the layer, in pixels, relative to the page. </A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1113213">
+<PRE><A HREF="doca3.htm#1113649"><CODE>parentLayer</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1113215">
+The <CODE>layer</CODE> object that contains this layer, or the enclosing <CODE>window</CODE> object if this layer is not nested in another layer. </A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1113220">
+<PRE><A HREF="doca3.htm#1113668"><CODE>siblingAbove</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1113222">
+The <CODE>layer</CODE> object above this one in z-order, among all layers that share the same parent layer, or null if the layer has no sibling above. </A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1113227">
+<PRE><A HREF="doca3.htm#1113687"><CODE>siblingBelow</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1113229">
+The <CODE>layer</CODE> object below this one in z-order, among all layers that share the same parent layer, or null if layer is at the bottom.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1113241">
+<PRE><A HREF="doca3.htm#1113707"><CODE>src</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1113243">
+A string specifying the URL of the layer's content.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1117650">
+<PRE><A HREF="doca3.htm#1113725"><CODE>top</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1117652">
+The vertical position of the layer's top edge, in pixels, relative to the origin of its parent layer.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1113248">
+<PRE><A HREF="doca3.htm#1113754"><CODE>visibility</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1113250">
+Whether or not the layer is visible.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1113255">
+<PRE><A HREF="doca3.htm#1116877"><CODE>zIndex</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1113257">
+The relative z-order of this layer with respect to its siblings.</A></P>
+
+</TABLE>
+
+</blockquote>
+</a>
+
+<A NAME="Head3;"></A>
+<A NAME="1113260">
+<H4> Method Summary</H4>
+</A>
+
+<A NAME="1113357">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1113266">
+<PRE><A HREF="doca3.htm#1113804"><CODE>captureEvents</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1113268">
+Sets the window or document to capture all events of the specified type.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1113273">
+<PRE><A HREF="doca3.htm#1113837"><CODE>handleEvent</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1113275">
+Invokes the handler for the specified event.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1113280">
+<PRE><A HREF="doca3.htm#1113866"><CODE>load</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1113282">
+Changes the source of a layer to the contents of the specified file, and simultaneously changes the width at which the layer's HTML contents will be wrapped.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1113287">
+<PRE><A HREF="doca3.htm#1113894"><CODE>moveAbove</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1113289">
+Stacks this layer above the layer specified in the argument, without changing either layer's horizontal or vertical position. </A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1113294">
+<PRE><A HREF="doca3.htm#1113918"><CODE>moveBelow</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1113296">
+Stacks this layer below the specified layer, without changing either layer's horizontal or vertical position. </A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1113301">
+<PRE><A HREF="doca3.htm#1113942"><CODE>moveBy</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1113303">
+Changes the layer position by applying the specified deltas, measured in pixels.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1113308">
+<PRE><A HREF="doca3.htm#1113962"><CODE>moveTo</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1113310">
+Moves the top-left corner of the window to the specified screen coordinates. </A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1113315">
+<PRE><A HREF="doca3.htm#1113999"><CODE>moveToAbsolute</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1113317">
+Changes the layer position to the specified pixel coordinates within the page (instead of the containing layer.)</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1113329">
+<PRE><A HREF="doca3.htm#1114040"><CODE>releaseEvents</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1113331">
+Sets the layer to release captured events of the specified type, sending the event to objects further along the event hierarchy.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1113340">
+<PRE><A HREF="doca3.htm#1114095"><CODE>resizeBy</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1113342">
+Resizes the layer by the specified height and width values (in pixels). </A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1113347">
+<PRE><A HREF="doca3.htm#1114116"><CODE>resizeTo</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1113349">
+Resizes the layer to have the specified height and width values (in pixels). </A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1113354">
+<PRE><A HREF="doca3.htm#1114137"><CODE>routeEvent</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1113356">
+Passes a captured event along the normal event hierarchy.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1113358">
+<H4> Note</H4>
+</A>
+
+<A NAME="1113359">
+Just as in the case of a document, if you want to define mouse click response for a layer, you must capture <A HREF="evnt14.htm#1094294"><CODE>onMouseDown</CODE></A> and <A HREF="evnt18.htm#1094469"><CODE>onMouseUp</CODE></A> events at the level of the layer and process them as you want. <P></A>
+<A NAME="1113369">
+See <A HREF="evnt.htm#1093677">"Events in Navigator&nbsp;4.0"</A> for more details about capturing events.<P></A>
+<A NAME="1113370">
+If an event occurs in a point where multiple layers overlap, the topmost layer gets the event, even if it is transparent. However, if a layer is hidden, it does not get events.<P></A>
+
+<A NAME="Head2;"></A>
+<A NAME="1113373">
+<H3> Properties</H3>
+</A>
+
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1113375">
+<H2>above</H2>
+</A>
+
+<A NAME="1113376">
+The <CODE>layer</CODE> object above this one in z-order, among all layers in the document or the enclosing window object if this layer is topmost. <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1113379">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1113384">
+<A HREF="doca3.htm#1113061"><CODE>Layer</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1113386">
+<I>Read-only</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1113388">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1113390">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1113392">
+Navigator 4.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1113394">
+<H2>background</H2>
+</A>
+
+<A NAME="1113395">
+The image to use as the background for the layer's canvas (which is the part of the layer within the clip rectangle).<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1113398">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1113403">
+<A HREF="doca3.htm#1113061"><CODE>Layer</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1113405">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1113407">
+Navigator 4.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1113408">
+<H4> Description</H4>
+</A>
+
+<A NAME="1113409">
+Each layer has a background property, whose value is an image object, whose <CODE>src</CODE> attribute is a URL that indicates the image to use to provide a tiled backdrop. The value is null if the layer has no backdrop. For example:<P></A>
+<A NAME="1113410">
+<PRE>layer.background.src = "fishbg.gif";</PRE></A>
+<A NAME="Head2Ref;"></A>
+<A NAME="1113413">
+<H2>bgColor</H2>
+</A>
+
+<A NAME="1113415">
+A string specifying the color to use as a solid background color for the layer's canvas (the part of the layer within the clip rectangle). <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1113418">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1113423">
+<A HREF="doca3.htm#1113061"><CODE>Layer</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1113425">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1113427">
+Navigator 4.0</A></P>
+
+</TABLE>
+ <P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1113428">
+<H4> Description</H4>
+</A>
+
+<A NAME="1113429">
+The <CODE>bgColor</CODE> property is expressed as a hexadecimal RGB triplet or as one of the string literals listed in the <A HREF="http://developer.netscape.com/library/documentation/communicator/jsguide4/index.htm" TARGET="_top">JavaScript Guide</A>. This property is the JavaScript reflection of the <CODE>BGCOLOR</CODE> attribute of the <CODE>BODY</CODE> tag. <P></A>
+<A NAME="1113435">
+You can set the <CODE>bgColor</CODE> property at any time.<P></A>
+<A NAME="1113436">
+If you express the color as a hexadecimal RGB triplet, you must use the format <CODE>rrggbb</CODE>. For example, the hexadecimal RGB values for salmon are <CODE>red=FA</CODE>, <CODE>green=80</CODE>, and <CODE>blue=72</CODE>, so the RGB triplet for salmon is <CODE>"FA8072"</CODE>.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1113437">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1113438">
+The following example sets the background color of the <CODE>myLayer</CODE> layer's canvas to aqua using a string literal:<P></A>
+<A NAME="1113439">
+<PRE>myLayer.bgColor="aqua"</PRE></A><A NAME="1113440">
+The following example sets the background color of the <CODE>myLayer</CODE> layer's canvas to aqua using a hexadecimal triplet:<P></A>
+<A NAME="1113441">
+<PRE>myLayer.bgColor="00FFFF"</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1113442">
+<H4> See also</H4>
+</A>
+
+<A NAME="1113446">
+<A HREF="doca3.htm#1113413"><CODE>Layer.bgColor</CODE></A><P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1113448">
+<H2>below</H2>
+</A>
+
+<A NAME="1113449">
+The <CODE>layer</CODE> object below this one in z-order, among all layers in the document or null if this layer is at the bottom. <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1113452">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1113457">
+<A HREF="doca3.htm#1113061"><CODE>Layer</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1113459">
+<I>Read-only</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1113461">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1113463">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1113465">
+Navigator 4.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1113467">
+<H2>clip.bottom</H2>
+</A>
+
+<A NAME="1113468">
+The bottom edge of the clipping rectangle (the part of the layer that is visible.) Any part of a layer that is outside the clipping rectangle is not displayed. <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1113471">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1113476">
+<A HREF="doca3.htm#1113061"><CODE>Layer</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1113478">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1113480">
+Navigator 4.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1113482">
+<H2>clip.height</H2>
+</A>
+
+<A NAME="1113483">
+The height of the clipping rectangle (the part of the layer that is visible.) Any part of a layer that is outside the clipping rectangle is not displayed. <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1113486">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1113491">
+<A HREF="doca3.htm#1113061"><CODE>Layer</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1113493">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1113495">
+Navigator 4.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1113497">
+<H2>clip.left</H2>
+</A>
+
+<A NAME="1113498">
+The left edge of the clipping rectangle (the part of the layer that is visible.) Any part of a layer that is outside the clipping rectangle is not displayed. <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1113501">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1113506">
+<A HREF="doca3.htm#1113061"><CODE>Layer</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1113508">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1113510">
+Navigator 4.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1113512">
+<H2>clip.right</H2>
+</A>
+
+<A NAME="1113513">
+The right edge of the clipping rectangle (the part of the layer that is visible.) Any part of a layer that is outside the clipping rectangle is not displayed. <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1113516">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1113521">
+<A HREF="doca3.htm#1113061"><CODE>Layer</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1113523">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1113525">
+Navigator 4.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1113527">
+<H2>clip.top</H2>
+</A>
+
+<A NAME="1113528">
+The top edge of the clipping rectangle (the part of the layer that is visible.) Any part of a layer that is outside the clipping rectangle is not displayed. <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1113531">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1113536">
+<A HREF="doca3.htm#1113061"><CODE>Layer</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1113538">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1113540">
+Navigator 4.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1113542">
+<H2>clip.width</H2>
+</A>
+
+<A NAME="1113543">
+The width of the clipping rectangle (the part of the layer that is visible.) Any part of a layer that is outside the clipping rectangle is not displayed. <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1113546">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1113551">
+<A HREF="doca3.htm#1113061"><CODE>Layer</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1113553">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1113555">
+Navigator 4.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1113582">
+<H2>document</H2>
+</A>
+
+<A NAME="1116619">
+The layer's associated document.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1116726">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1116731">
+<A HREF="doca3.htm#1113061"><CODE>Layer</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1116978">
+<I>Read-only</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1116980">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1116733">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1116735">
+Navigator 4.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1116722">
+<H4> Description</H4>
+</A>
+
+<A NAME="1116750">
+Each <CODE>layer</CODE> object contains its own <CODE>document</CODE> object. This object can be used to access the images, applets, embeds, links, anchors and layers that are contained within the layer. Methods of the <CODE>document</CODE> object can also be invoked to change the contents of the layer.<P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1116593">
+<H2>left</H2>
+</A>
+
+<A NAME="1113595">
+The horizontal position of the layer's left edge, in pixels, relative to the origin of its parent layer. <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1113585">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1113590">
+<A HREF="doca3.htm#1113061"><CODE>Layer</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1113592">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1113594">
+Navigator 4.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1113598">
+<H2>name</H2>
+</A>
+
+<A NAME="1113615">
+A string specifying the name assigned to the layer through the <CODE>ID</CODE> attribute in the <CODE>LAYER</CODE> tag. <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1113601">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1113606">
+<A HREF="doca3.htm#1113061"><CODE>Layer</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1113608">
+<I>Read-only</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1113610">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1113612">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1113614">
+Navigator 4.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1113619">
+<H2>pageX</H2>
+</A>
+
+<A NAME="1113632">
+The horizontal position of the layer, in pixels, relative to the page. <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1113622">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1113627">
+<A HREF="doca3.htm#1113061"><CODE>Layer</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1113629">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1113631">
+Navigator 4.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1113634">
+<H2>pageY</H2>
+</A>
+
+<A NAME="1113647">
+The vertical position of the layer, in pixels, relative to the page. <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1113637">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1113642">
+<A HREF="doca3.htm#1113061"><CODE>Layer</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1113644">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1113646">
+Navigator 4.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1113649">
+<H2>parentLayer</H2>
+</A>
+
+<A NAME="1113650">
+The <CODE>layer</CODE> object that contains this layer, or the enclosing <CODE>window</CODE> object if this layer is not nested in another layer. <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1113653">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1113658">
+<A HREF="doca3.htm#1113061"><CODE>Layer</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1113660">
+<I>Read-only</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1113662">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1113664">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1113666">
+Navigator 4.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1113668">
+<H2>siblingAbove</H2>
+</A>
+
+<A NAME="1113669">
+The layer object above this one in z-order, among all layers that share the same parent layer or null if the layer has no sibling above.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1113672">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1113677">
+<A HREF="doca3.htm#1113061"><CODE>Layer</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1113679">
+<I>Read-only</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1113681">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1113683">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1113685">
+Navigator 4.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1113687">
+<H2>siblingBelow</H2>
+</A>
+
+<A NAME="1113688">
+The <CODE>layer</CODE> object below this one in z-order, among all layers that share the same parent layer or null if layer is at the bottom.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1113691">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1113696">
+<A HREF="doca3.htm#1113061"><CODE>Layer</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1113698">
+<I>Read-only</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1113700">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1113702">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1113704">
+Navigator 4.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1113707">
+<H2>src</H2>
+</A>
+
+<A NAME="1113721">
+A URL string specifying the source of the layer's content. Corresponds to the <CODE>SRC</CODE> attribute.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1113711">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1113716">
+<A HREF="doca3.htm#1113061"><CODE>Layer</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1113718">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1113720">
+Navigator 4.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1113725">
+<H2>top</H2>
+</A>
+
+<A NAME="1113727">
+The <CODE>top</CODE> property is a synonym for the topmost Navigator window, which is a document window or web browser window.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1113730">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1113735">
+<A HREF="doca3.htm#1113061"><CODE>Layer</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1113737">
+<I>Read-only</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1113739">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1113741">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1113743">
+Navigator 4.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1113744">
+<H4> Description</H4>
+</A>
+
+<A NAME="1113745">
+The <CODE>top</CODE> property refers to the topmost window that contains frames or nested framesets. Use the <CODE>top</CODE> property to refer to this ancestor window.<P></A>
+<A NAME="1113746">
+The value of the <CODE>top</CODE> property is<P></A>
+<A NAME="1113747">
+<PRE>&lt;object <I><CODE>objectReference&gt;</CODE></I></PRE></A><A NAME="1113748">
+where <CODE>objectReference</CODE> is an internal reference.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1113749">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1113750">
+The statement <CODE>top.close()</CODE> closes the topmost ancestor window.<P></A>
+<A NAME="1113751">
+The statement <CODE>top.length</CODE> specifies the number of frames contained within the topmost ancestor window. When the topmost ancestor is defined as follows, <CODE>top.length</CODE> returns three:<P></A>
+<A NAME="1113752">
+<PRE>&lt;FRAMESET COLS="30%,40%,30%"&gt;<br>&lt;FRAME SRC=child1.htm NAME="childFrame1"&gt;<br>&lt;FRAME SRC=child2.htm NAME="childFrame2"&gt;<br>&lt;FRAME SRC=child3.htm NAME="childFrame3"&gt;<br>&lt;/FRAMESET&gt;</PRE></A>
+<A NAME="Head2Ref;"></A>
+<A NAME="1113754">
+<H2>visibility</H2>
+</A>
+
+<A NAME="1113767">
+Whether or not the layer is visible. <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1113757">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1113762">
+<A HREF="doca3.htm#1113061"><CODE>Layer</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1113764">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1113766">
+Navigator 4.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1113768">
+<H4> Description</H4>
+</A>
+
+<A NAME="1113769">
+A value of <CODE>show</CODE> means show the layer; <CODE>hide</CODE> means hide the layer; <CODE>inherit</CODE> means inherit the visibility of the parent layer.<P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1116877">
+<H2>zIndex</H2>
+</A>
+
+<A NAME="1117013">
+The relative z-order of this layer with respect to its siblings. <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1117146">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1117151">
+<A HREF="doca3.htm#1113061"><CODE>Layer</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1117153">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1117155">
+Navigator 4.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1117139">
+<H4> Description</H4>
+</A>
+
+<A NAME="1117140">
+Sibling layers with lower numbered z-indexes are stacked underneath this layer. The value of <CODE>zIndex</CODE> must be 0 or a positive integer.<P></A>
+
+<A NAME="Head2;"></A>
+<A NAME="1113802">
+<H3> Methods</H3>
+</A>
+
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1113804">
+<H2>captureEvents</H2>
+</A>
+
+<A NAME="1113817">
+Sets the window or document to capture all events of the specified type. <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1113807">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1113812">
+<A HREF="doca3.htm#1113061"><CODE>Layer</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1113814">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1113816">
+Navigator 4.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1113818">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1113819">
+<PRE>captureEvents(eventType)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1113820">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1113829">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1113823">
+<PRE>eventType</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1113828">
+Type of event to be captured. Available event types are listed with <A HREF="evnt1.htm#1093773"><CODE>event</CODE></A>. </A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1113830">
+<H4> Description</H4>
+</A>
+
+<A NAME="1113831">
+When a window with frames wants to capture events in pages loaded from different locations (servers), you need to use <CODE>captureEvents</CODE> in a signed script and precede it with <CODE>enableExternalCapture</CODE>. For more information and an example, see <CODE>enableExternalCapture</CODE>. <P></A>
+<A NAME="1113832">
+<CODE>captureEvents</CODE> works in tandem with <CODE>releaseEvents</CODE>, <CODE>routeEvent</CODE>, and <CODE>handleEvent</CODE>. For more information, see <A HREF="evnt.htm#1093677">"Events in Navigator&nbsp;4.0"</A>. <P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1113837">
+<H2>handleEvent</H2>
+</A>
+
+<A NAME="1113850">
+Invokes the handler for the specified event. <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1113840">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1113845">
+<A HREF="doca3.htm#1113061"><CODE>Layer</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1113847">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1113849">
+Navigator 4.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1113851">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1113852">
+<PRE>handleEvent(event)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1113853">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1113859">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1113856">
+<PRE>event</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1113858">
+Name of an event for which the specified object has an event handler.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1113860">
+<H4> Description</H4>
+</A>
+
+<A NAME="1113861">
+<CODE>handleEvent</CODE> works in tandem with <CODE>captureEvents</CODE>, <CODE>releaseEvents</CODE>, and <CODE>routeEvent</CODE>. For more information, see <A HREF="evnt.htm#1093677">"Events in Navigator&nbsp;4.0"</A>. <P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1113866">
+<H2>load</H2>
+</A>
+
+<A NAME="1113867">
+Changes the source of a layer to the contents of the specified file and simultaneously changes the width at which the layer's HTML contents are wrapped. <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1113870">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1113875">
+<A HREF="doca3.htm#1113061"><CODE>Layer</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1113877">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1113879">
+Navigator 4.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1113880">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1113881">
+<PRE>load(sourcestring, width)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1113882">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1113892">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1113885">
+<PRE>sourcestring</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1113887">
+A string indicating the external file name.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1113889">
+<PRE>width</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1113891">
+The width of the layer as a pixel value.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1113894">
+<H2>moveAbove</H2>
+</A>
+
+<A NAME="1113895">
+Stacks this layer above the layer specified in the argument, without changing either layer's horizontal or vertical position. After re-stacking, both layers will share the same parent layer. <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1113898">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1113903">
+<A HREF="doca3.htm#1113061"><CODE>Layer</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1113905">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1113907">
+Navigator 4.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1113908">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1113912">
+<PRE>moveAbove(aLayer)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1113913">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1113916">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1117592">
+<PRE>aLayer</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1117594">
+The layer above which to move the current layer.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1113918">
+<H2>moveBelow</H2>
+</A>
+
+<A NAME="1113919">
+Stacks this layer below the specified layer, without changing either layer's horizontal or vertical position. After re-stacking, both layers will share the same parent layer. <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1113922">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1113927">
+<A HREF="doca3.htm#1113061"><CODE>Layer</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1113929">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1113931">
+Navigator 4.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1113932">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1113936">
+<PRE>moveBelow(aLayer)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1117603">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1117609">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1117606">
+<PRE>aLayer</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1117608">
+The layer below which to move the current layer.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1113942">
+<H2>moveBy</H2>
+</A>
+
+<A NAME="1113955">
+Changes the layer position by applying the specified deltas, measured in pixels.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1113945">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1113950">
+<A HREF="doca3.htm#1113061"><CODE>Layer</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1113952">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1113954">
+Navigator 4.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1113956">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1113957">
+<PRE>moveBy(horizontal, vertical)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1088584">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1088594">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1114900">
+<PRE>horizontal</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1114902">
+The number of pixels by which to move the layer horizontally.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1114904">
+<PRE>vertical</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1114906">
+The number of pixels by which to move the layer vertically.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1113962">
+<H2>moveTo</H2>
+</A>
+
+<A NAME="1113975">
+Moves the top-left corner of the window to the specified screen coordinates.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1113965">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1113970">
+<A HREF="doca3.htm#1113061"><CODE>Layer</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1113972">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1113974">
+Navigator 4.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1113976">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1113977">
+<PRE>moveTo(x-coordinate, y-coordinate)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1113978">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1113988">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1113981">
+<PRE>x-coordinate </PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1113983">
+An integer representing the top edge of the window in screen coordinates.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1113985">
+<PRE>y-coordinate</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1113987">
+An integer representing the left edge of the window in screen coordinates.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1113989">
+<H4> Security</H4>
+</A>
+
+<A NAME="1113990">
+To move a window offscreen, call the <CODE>moveTo</CODE> method in a signed script. For information on security in Navigator&nbsp;4.0, see <A HREF="http://developer.netscape.com/library/documentation/communicator/jsguide4/index.htm?content=sec.htm" TARGET="_top">Chapter&nbsp;7, "JavaScript Security,"</A> in the <A HREF="http://developer.netscape.com/library/documentation/communicator/jsguide4/index.htm" TARGET="_top">JavaScript Guide</A>.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1113991">
+<H4> Description</H4>
+</A>
+
+<a name="1113992">
+Changes the layer position to the specified pixel coordinates within the 
+containing layer. For ILayers, moves the layer relative to the natural inflow 
+position of the layer.
+</blockquote>
+</a>
+
+<A NAME="Head3;"></A>
+<A NAME="1113993">
+<H4> See also</H4>
+</A>
+
+<A NAME="1113997">
+<A HREF="doca3.htm#1113942"><CODE>Layer.moveBy</CODE></A> <P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1113999">
+<H2>moveToAbsolute</H2>
+</A>
+
+<A NAME="1114000">
+Changes the layer position to the specified pixel coordinates within the page (instead of the containing layer.)<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1114003">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1114008">
+<A HREF="doca3.htm#1113061"><CODE>Layer</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1114010">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1114012">
+Navigator 4.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1114013">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1114014">
+<PRE>moveToAbsolute(x, y)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1066968">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1066978">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1066971">
+<PRE>x</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1099181">
+An integer representing the top edge of the window in pixel coordinates.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1066975">
+<PRE>y</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1117311">
+An integer representing the left edge of the window in pixel coordinates.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1117367">
+<H4> Description</H4>
+</A>
+
+<A NAME="1117388">
+This method is equivalent to setting both the <A HREF="doca3.htm#1113619"><CODE>pageX</CODE></A> and <A HREF="doca3.htm#1113634"><CODE>pageY</CODE></A> properties of the <CODE>layer</CODE> object.<P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1114040">
+<H2>releaseEvents</H2>
+</A>
+
+<A NAME="1114041">
+Sets the window or document to release captured events of the specified type, sending the event to objects further along the event hierarchy. <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1114044">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1114049">
+<A HREF="doca3.htm#1113061"><CODE>Layer</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1114051">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1114053">
+Navigator 4.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1114054">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1114055">
+<PRE>releaseEvents(eventType)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1114056">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1114062">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1114059">
+<PRE>eventType</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1114061">
+Type of event to be captured. </A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1114063">
+<H4> Description</H4>
+</A>
+
+<A NAME="1114064">
+If the original target of the event is a window, the window receives the event even if it is set to release that type of event. <CODE>releaseEvents</CODE> works in tandem with <CODE>captureEvents</CODE>, <CODE>routeEvent</CODE>, and <CODE>handleEvent</CODE>. For more information, see <A HREF="evnt.htm#1093677">"Events in Navigator&nbsp;4.0"</A>. <P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1114095">
+<H2>resizeBy</H2>
+</A>
+
+<A NAME="1114108">
+Resizes the layer by the specified height and width values (in pixels).<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1114098">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1114103">
+<A HREF="doca3.htm#1113061"><CODE>Layer</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1114105">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1114107">
+Navigator 4.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1114109">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1114110">
+<PRE>resizeBy(width, height)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1046642">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1046652">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1117473">
+<PRE>width</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1117475">
+The number of pixels by which to resize the layer horizontally.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1117477">
+<PRE>height</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1117479">
+The number of pixels by which to resize the layer vertically.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1114113">
+<H4> Description</H4>
+</A>
+
+<A NAME="1114114">
+This does not layout any HTML contained in the layer again. Instead, the layer contents may be clipped by the new boundaries of the layer. This method has the same effect as adding <CODE>width</CODE> and <CODE>height</CODE> to <CODE>clip.width</CODE> and <CODE>clip.height</CODE>.<P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1114116">
+<H2>resizeTo</H2>
+</A>
+
+<A NAME="1114129">
+Resizes the layer to have the specified height and width values (in pixels).<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1114119">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1114124">
+<A HREF="doca3.htm#1113061"><CODE>Layer</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1114126">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1114128">
+Navigator 4.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1114130">
+<H4> Description</H4>
+</A>
+
+<A NAME="1114131">
+This does not layout any HTML contained in the layer again. Instead, the layer contents may be clipped by the new boundaries of the layer.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1114132">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1114133">
+<PRE>resizeBy(width, height)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1046671">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1046681">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1117539">
+<PRE>width</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1117541">
+An integer representing the layer's width in pixels.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1117543">
+<PRE>height</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1117545">
+An integer representing the layer's height in pixels.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1117561">
+<H4> Description</H4>
+</A>
+
+<A NAME="1117562">
+This method has the same effect setting <CODE>clip.width</CODE> and <CODE>clip.height</CODE>.<P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1114137">
+<H2>routeEvent</H2>
+</A>
+
+<A NAME="1114150">
+Passes a captured event along the normal event hierarchy. <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1114140">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1114145">
+<A HREF="doca3.htm#1113061"><CODE>Layer</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1114147">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1114149">
+Navigator 4.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1114151">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1114152">
+<PRE>routeEvent(event)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1114153">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1114159">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1114156">
+<PRE>event</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1114158">
+The event to route.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1114160">
+<H4> Description</H4>
+</A>
+
+<A NAME="1114161">
+If a subobject (document or layer) is also capturing the event, the event is sent to that object. Otherwise, it is sent to its original target. <P></A>
+<A NAME="1114162">
+<CODE>routeEvent</CODE> works in tandem with <CODE>captureEvents</CODE>, <CODE>releaseEvents</CODE>, and <CODE>handleEvent</CODE>. For more information, see <A HREF="evnt.htm#1093677">"Events in Navigator&nbsp;4.0"</A>. <P></A>
+<A NAME="1120550">
+<P></A>
+
+<P><HR>
+<A HREF="contents.htm">[Contents]</A> <A HREF="doca2.htm">[Previous]</A> <A HREF="win.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<P ALIGN=right>
+
+<FONT SIZE=-2><I>Last Updated:  10/31/97  12:31:11
+</I></FONT>
+
+<HR SIZE=4>
+
+<P> <CENTER>Copyright © 1997
+<A HREF="http://home.netscape.com/misc/contact_info.html"
+TARGET=_top>Netscape Communications Corporation</A></FONT>
+</CENTER>
+<P>
+<P>
+</BODY>
+</HTML>
+

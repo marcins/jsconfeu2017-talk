@@ -1,0 +1,241 @@
+<HTML>
+<HEAD>
+<TITLE>Session Management Service
+</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A HREF="contents.htm">[Contents]</A> <A HREF="sess2.htm">[Previous]</A> <A HREF="sess4.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<HR>
+
+<A NAME="project"></A>
+<A NAME="1010916">
+<H1> project</H1>
+</A>
+<A NAME="1019713">
+Contains data for an entire application.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1032331">
+<I>Server-side object</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1032336">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1032338">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1032340">
+LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1019792">
+<H4> Created by</H4>
+</A>
+
+<A NAME="1019793">
+The JavaScript runtime engine on the server automatically creates a <CODE>project</CODE> object for each application running on the server.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010935">
+<H4> Description</H4>
+</A>
+
+<A NAME="1010936">
+The JavaScript runtime engine on the server creates a <CODE>project</CODE> object when an application starts and destroys the <CODE>project</CODE> object when the application or server stops. The typical <CODE>project</CODE> object lifetime is days or weeks.<P></A>
+<A NAME="1010937">
+Each client accessing the same application shares the same <CODE>project</CODE> object. Use the <CODE>project</CODE> object to maintain global data for an entire application. Many clients can access an application simultaneously, and the <CODE>project</CODE> object lets these clients share information.<P></A>
+<A NAME="1010938">
+The runtime engine creates a set of <CODE>project</CODE> objects for each distinct Netscape HTTPD process running on the server. Because several server HTTPD processes may be running on different port numbers, the runtime engine creates a set of <CODE>project</CODE> objects for each process.<P></A>
+<A NAME="1010939">
+You can lock the <CODE>project</CODE> object to ensure that different clients do not change its properties simultaneously. When one client locks the <CODE>project</CODE> object, other clients must wait before they can lock it. See <A HREF="sess5.htm#1011483"><CODE>Lock</CODE></A> for more information about locking the <CODE>project</CODE> object.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010943">
+<H4> Method Summary</H4>
+</A>
+
+<A NAME="1010959">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1010949">
+<PRE><A HREF="sess3.htm#1010984"><CODE>lock</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1010951">
+Obtains the lock.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1010956">
+<PRE><A HREF="sess3.htm#1011005"><CODE>unlock</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1010958">
+Releases the lock.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010962">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1010963">
+<B>Example 1.</B> This example creates the <CODE>lastID</CODE> property and assigns a value to it by incrementing an existing value.<P></A>
+<A NAME="1010964">
+<PRE>project.lastID = 1 + parseInt(project.lastID, 10)</PRE></A><A NAME="1013819">
+<B>Example 2.</B> This example increments the value of the <CODE>lastID</CODE> property and uses it to assign a value to the <CODE>customerID</CODE> property.<P></A>
+<A NAME="1013820">
+<PRE>project.lock()<br>project.lastID = 1 + parseInt(project.lastID, 10);<br>client.customerID = project.lastID;<br>project.unlock();</PRE></A><A NAME="1013821">
+In the previous example, notice that the <CODE>project</CODE> object is locked while the <CODE>customerID</CODE> property is assigned, so no other client can attempt to change the <CODE>lastID</CODE> property at the same time.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010968">
+<H4> See also</H4>
+</A>
+
+<A NAME="1010978">
+<A HREF="sess2.htm#1014188"><CODE>client</CODE></A>, <A HREF="sess1.htm#1010271"><CODE>request</CODE></A>, <A HREF="sess4.htm#1011084"><CODE>server</CODE></A> <P></A>
+
+<A NAME="Head2;"></A>
+<A NAME="1010979">
+<H3> Properties</H3>
+</A>
+
+<A NAME="1010980">
+The <CODE>project</CODE> object has no predefined properties. You create custom properties to contain project-specific data that is required by an application.<P></A>
+<A NAME="1010981">
+You can create a property for the <CODE>project</CODE> object by assigning it a name and a value. For example, you can create a <CODE>project</CODE> object property to keep track of the next available Customer ID. Any client that accesses the application without a Customer ID is sequentially assigned one, and the value of the ID is incremented for each initial access.<P></A>
+
+<A NAME="Head2;"></A>
+<A NAME="1010982">
+<H3> Methods</H3>
+</A>
+
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1010984">
+<H2>lock</H2>
+</A>
+
+<A NAME="1013791">
+Obtains the lock. If another thread has the lock, this method waits until it can get the lock.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1032363">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1032368">
+<A HREF="sess3.htm#1010916"><CODE>project</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1032370">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1032372">
+LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010986">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1010987">
+<PRE>lock()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1010988">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1019128">
+None.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010997">
+<H4> Returns</H4>
+</A>
+
+<A NAME="1010998">
+Nothing.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010999">
+<H4> Description</H4>
+</A>
+
+<A NAME="1011000">
+You can obtain a lock for an object to ensure that different clients do not access a critical section of code simultaneously. When an application locks an object, other client requests must wait before they can lock the object. <P></A>
+<A NAME="1011001">
+Note that this mechanism requires voluntary compliance by asking for the lock in the first place. <P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1034238">
+<H4> See also</H4>
+</A>
+
+<A NAME="1034243">
+<A HREF="sess5.htm#1011483"><CODE>Lock</CODE></A>, <A HREF="sess3.htm#1011005"><CODE>project.unlock</CODE></A><P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1011005">
+<H2>unlock</H2>
+</A>
+
+<A NAME="1011006">
+Releases the lock. <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1032397">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1032402">
+<A HREF="sess3.htm#1010916"><CODE>project</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1032404">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1032406">
+LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1011007">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1011008">
+<PRE>unlock()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1011009">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1011010">
+None.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1011013">
+<H4> Returns</H4>
+</A>
+
+<A NAME="1011014">
+False if it fails; otherwise, true. Failure indicates an internal JavaScript error or that you attempted to unlock a lock that you don't own. <P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1011015">
+<H4> Description</H4>
+</A>
+
+<A NAME="1011016">
+If you unlock a lock that is unlocked, the resulting behavior is undefined.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1034357">
+<H4> See also</H4>
+</A>
+
+<A NAME="1034364">
+<A HREF="sess5.htm#1011483"><CODE>Lock</CODE></A>, <A HREF="sess3.htm#1010984"><CODE>project.lock</CODE></A><P></A>
+
+<P><HR>
+<A HREF="contents.htm">[Contents]</A> <A HREF="sess2.htm">[Previous]</A> <A HREF="sess4.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<P ALIGN=right>
+
+<FONT SIZE=-2><I>Last Updated:  10/31/97  12:33:29
+</I></FONT>
+
+<HR SIZE=4>
+
+<P> <CENTER>Copyright © 1997
+<A HREF="http://home.netscape.com/misc/contact_info.html"
+TARGET=_top>Netscape Communications Corporation</A></FONT>
+</CENTER>
+<P>
+<P>
+</BODY>
+</HTML>
+
+

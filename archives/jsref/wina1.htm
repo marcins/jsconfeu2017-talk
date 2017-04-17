@@ -1,0 +1,906 @@
+<HTML>
+<HEAD>
+<TITLE>
+</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A HREF="contents.htm">[Contents]</A> <A HREF="wina.htm">[Previous]</A> <A HREF="wina2.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<HR>
+
+<A NAME="Location"></A>
+<A NAME="1012987">
+<H1> Location</H1>
+</A>
+<A NAME="1012989">
+Contains information on the current URL.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1064793">
+<I>Client-side object</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1064798">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1064800">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1065028">
+Navigator 2.0<br>Navigator 3.0: added <CODE>reload</CODE>, <CODE>replace</CODE> methods</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012990">
+<H4> Created by</H4>
+</A>
+
+<A NAME="1035613">
+<CODE>Location</CODE> objects are predefined JavaScript objects that you access through the <CODE>location</CODE> property of a <CODE>Window</CODE> object:<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013016">
+<H4> Description</H4>
+</A>
+
+<A NAME="1013017">
+The <CODE>location</CODE> object represents the complete URL associated with a given <A HREF="win1.htm#1010280"><CODE>Window</CODE></A> object. Each property of the <CODE>location</CODE> object represents a different portion of the URL. <B><EM></EM></B><P></A>
+<A NAME="1013019">
+In general, a URL has this form: <B><EM></EM></B><P></A>
+<A NAME="1013020">
+<PRE>protocol//host:port/pathname#hash?search</PRE></A><A NAME="1013021">
+For example:<P></A>
+<A NAME="1013022">
+<PRE>http://home.netscape.com/assist/extensions.html#topic1?x=7&amp;y=2</PRE></A><A NAME="1013023">
+These parts serve the following purposes:<P></A>
+<ul><P>
+<A NAME="1013024">
+<LI><CODE>protocol</CODE> represents the beginning of the URL, up to and including the first colon.</LI>
+</A><P>
+<A NAME="1013025">
+<LI><CODE>host</CODE> represents the host and domain name, or IP address, of a network host.</LI>
+</A><P>
+<A NAME="1013026">
+<LI><CODE>port</CODE> represents the communications port that the server uses for communications.</LI>
+</A><P>
+<A NAME="1013027">
+<LI><CODE>pathname</CODE> represents the URL-path portion of the URL.</LI>
+</A><P>
+<A NAME="1013028">
+<LI><CODE>hash</CODE> represents an anchor name fragment in the URL, including the hash mark (#). This property applies to HTTP URLs only.</LI>
+</A><P>
+<A NAME="1013029">
+<LI><CODE>search</CODE> represents any query information in the URL, including the question mark (?). This property applies to HTTP URLs only. The search string contains variable and value pairs; each pair is separated by an ampersand (&amp;).</LI>
+</A></ul><A NAME="1013034">
+A <CODE>Location</CODE> object has a property for each of these parts of the URL. See the individual properties for more information. A <CODE>Location</CODE> object has two other properties not shown here:<P></A>
+<ul><P>
+<A NAME="1013035">
+<LI><CODE>href</CODE> represents a complete URL.</LI>
+</A><P>
+<A NAME="1073616">
+<LI><CODE>hostname</CODE> represents the concatenation <CODE>host</CODE>:<CODE>port</CODE>.</LI>
+</A></ul><A NAME="1073617">
+If you assign a string to the <CODE>location</CODE> property of an object, JavaScript creates a <CODE>location</CODE> object and assigns that string to its <CODE>href</CODE> property. For example, the following two statements are equivalent and set the URL of the current window to the Netscape home page:<P></A>
+<A NAME="1013038">
+<PRE>window.location.href="http://home.netscape.com/"<br>window.location="http://home.netscape.com/"</PRE></A><A NAME="1013039">
+The <CODE>location</CODE> object is contained by the <CODE>window</CODE> object and is within its scope. If you refer to a <CODE>location</CODE> object without specifying a window, the <CODE>location</CODE> object represents the current location. If you refer to a <CODE>location</CODE> object and specify a window name, as in <CODE>windowReference.location</CODE>, the <CODE>location</CODE> object represents the location of the specified window.<P></A>
+<A NAME="1013040">
+In event handlers, you must specify <CODE>window.location</CODE> instead of simply using <CODE>location</CODE>. Due to the scoping of static objects in JavaScript, a call to <CODE>location</CODE> without specifying an object name is equivalent to <CODE>document.location</CODE>, which is a synonym for <CODE>document.URL</CODE>.<P></A>
+<A NAME="1013041">
+<CODE>Location</CODE> is not a property of the <CODE>document</CODE> object; its equivalent is the <CODE>document.URL</CODE> property. The <CODE>document.location</CODE> property, which is a synonym for <CODE>document.URL</CODE>, will be removed in a future release.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013043">
+<H4> How documents are loaded when location is set</H4>
+</A>
+
+<A NAME="1013045">
+When you set the <CODE>location</CODE> object or any of its properties except <CODE>hash,</CODE> whether a new document is loaded depends on which version of the browser you are running:<P></A>
+<ul><P>
+<A NAME="1013046">
+<LI>In Navigator 2.0, setting <CODE>location</CODE> does a conditional ("If-modified-since") HTTP GET operation, which returns no data from the server unless the document has been modified since the last version downloaded.</LI>
+</A><P>
+<A NAME="1073675">
+<LI>In Navigator 3.0 and later, the effect of setting <CODE>location</CODE> depends on the user's setting for comparing a document to the original over the network. The user interface option for setting this preference differs in browser versions. The user decides whether to check a document in cache every time it is accessed, once per session, or never. The document is reloaded from cache if the user sets never or once per session; the document is reloaded from the server only if the user chooses every time.</LI>
+</A></ul>
+<A NAME="Head3;"></A>
+<A NAME="1013049">
+<H4> Syntax for common URL types</H4>
+</A>
+
+<A NAME="1013050">
+When you specify a URL, you can use standard URL formats and JavaScript statements. <A HREF="wina1.htm#1013050">Table&nbsp;6.2</A> shows the syntax for specifying some of the most common types of URLs. <P><B><A NAME="1034988">
+Table 6.2&nbsp;URL syntax. &nbsp;</A></B>
+<TABLE BORDER="0">
+<TR><TH VALIGN=baseline ALIGN=left><B><A NAME="1013063">
+<B>URL type
+</B></A></B><TH VALIGN=baseline ALIGN=left><B><A NAME="1013065">
+<B>Protocol
+</B></A></B><TH VALIGN=baseline ALIGN=left><B><A NAME="1013067">
+<B>Example
+</B></A></B>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1013069">
+JavaScript code</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1013071">
+javascript:</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1013073">
+javascript:history.go(-1)</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1013075">
+Navigator source viewer</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1013077">
+view-source:</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1013079">
+<CODE>view-source:wysiwyg://0/file:/c|/temp/genhtml.html</CODE></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1013081">
+Navigator info</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1013083">
+about:</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1013085">
+about:cache</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1013087">
+World Wide Web</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1013089">
+http:</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1013091">
+<CODE>http://home.netscape.com/</CODE></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1013093">
+File</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1013095">
+file:/</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1013097">
+<CODE>file:///javascript/methods.html</CODE></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1013099">
+FTP</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1013101">
+ftp:</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1013103">
+<CODE>ftp://ftp.mine.com/home/mine</CODE></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1013105">
+MailTo</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1013107">
+mailto:</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1013109">
+mailto:info@netscape.com</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1013111">
+Usenet</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1013113">
+news:</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1013115">
+<CODE>news://news.scruznet.com/comp.lang.javascript</CODE></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1013117">
+Gopher</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1013119">
+gopher:</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1013121">
+gopher.myhost.com</A></P>
+
+</TABLE>
+<P></A>
+<A NAME="1013123">
+The <CODE>javascript:</CODE> protocol evaluates the expression after the colon (:), if there is one, and loads a page containing the string value of the expression, unless it is undefined. If the expression evaluates to undefined (by calling a void function, for example <CODE>javascript:void(0)</CODE>), no new page loads. Note that loading a new page over your script's page clears the page's variables, functions, and so on.<P></A>
+<A NAME="1013126">
+The <CODE>view-source:</CODE> protocol displays HTML code that was generated with JavaScript <B><A HREF="doc1.htm#1011184"></B><CODE>document.write</CODE><B></A></B> and <B><A HREF="doc1.htm#1011246"></B><CODE>document.writeln</CODE><B></A></B> methods. For information on printing and saving generated HTML, see <B><A HREF="doc1.htm#1011184"></B><CODE>write</CODE><B></A></B>.<P></A>
+<A NAME="1013135">
+The <CODE>about:</CODE> protocol provides information on Navigator and has the following syntax:<P></A>
+<A NAME="1073928">
+<PRE>about:<br>about:cache<br>about:plugins</PRE></A><ul><P>
+<A NAME="1013137">
+<LI><CODE>about:</CODE> by itself is the same as choosing About Communicator from the Navigator Help menu.</LI>
+</A><P>
+<A NAME="1013138">
+<LI><CODE>about:cache</CODE> displays disk-cache statistics.</LI>
+</A><P>
+<A NAME="1013139">
+<LI><CODE>about:plugins</CODE> displays information about plug-ins you have configured. This is the same as choosing About Plug-ins from the Navigator Help menu.</LI>
+</A></ul>
+<A NAME="Head3;"></A>
+<A NAME="1013140">
+<H4> Property Summary</H4>
+</A>
+
+<A NAME="1013198">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1013146">
+<PRE><A HREF="wina1.htm#1013240"><CODE>hash</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1013148">
+Specifies an anchor name in the URL.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1013153">
+<PRE><A HREF="wina1.htm#1013305"><CODE>host</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1013155">
+Specifies the host and domain name, or IP address, of a network host.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1013160">
+<PRE><A HREF="wina1.htm#1013364"><CODE>hostname</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1013162">
+Specifies the <CODE>host:port</CODE> portion of the URL.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1013167">
+<PRE><A HREF="wina1.htm#1013423"><CODE>href</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1013169">
+Specifies the entire URL.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1013174">
+<PRE><A HREF="wina1.htm#1013485"><CODE>pathname</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1013176">
+Specifies the URL-path portion of the URL.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1013181">
+<PRE><A HREF="wina1.htm#1066174"><CODE>port</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1013183">
+Specifies the communications port that the server uses.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1013188">
+<PRE><A HREF="wina1.htm#1078292"><CODE>protocol</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1013190">
+Specifies the beginning of the URL, including the colon.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1013195">
+<PRE><A HREF="wina1.htm#1013662"><CODE>search</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1013197">
+Specifies a query.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013199">
+<H4> Method Summary</H4>
+</A>
+
+<A NAME="1013215">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1013205">
+<PRE><A HREF="wina1.htm#1013725"><CODE>reload</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1013207">
+Forces a reload of the window's current document.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1013212">
+<PRE><A HREF="wina1.htm#1013767"><CODE>replace</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1013214">
+Loads the specified URL over the current history entry.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013221">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1013222">
+<B>Example 1.</B> The following two statements are equivalent and set the URL of the current window to the Netscape home page:<P></A>
+<A NAME="1013223">
+<PRE>window.location.href="http://home.netscape.com/"<br>window.location="http://home.netscape.com/"</PRE></A><A NAME="1013224">
+<B>Example 2.</B> The following statement sets the URL of a frame named <CODE>frame2</CODE> to the Sun home page:<P></A>
+<A NAME="1013225">
+<PRE>parent.frame2.location.href="http://www.sun.com/"</PRE></A><A NAME="1013229">
+See also the examples for <A HREF="doca.htm#1015687"><CODE>Anchor</CODE></A>.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013230">
+<H4> See also</H4>
+</A>
+
+<A NAME="1013237">
+<A HREF="wina2.htm#1018212"><CODE>History</CODE></A>, <A HREF="doc1.htm#1010955"><CODE>document.URL</CODE></A> <P></A>
+
+<A NAME="Head2;"></A>
+<A NAME="1013238">
+<H3> Properties</H3>
+</A>
+
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1013240">
+<H2>hash</H2>
+</A>
+
+<A NAME="1013241">
+A string beginning with a hash mark (#) that specifies an anchor name in the URL.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1065263">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1065265">
+<A HREF="wina1.htm#1012987"><CODE>Location</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1065267">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1065269">
+Navigator 2.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1082274">
+<H4> Security</H4>
+</A>
+
+<A NAME="1082275">
+Navigator&nbsp;3.0: This property is tainted by default. For information on data tainting, see <A HREF="intro.htm#1014735">"JavaScript Security"</A>.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013260">
+<H4> Description</H4>
+</A>
+
+<A NAME="1013261">
+The <CODE>hash</CODE> property specifies a portion of the URL. This property applies to HTTP URLs only.<P></A>
+<A NAME="1013262">
+You can set the <CODE>hash</CODE> property at any time, although it is safer to set the <CODE>href</CODE> property to change a location. If the hash that you specify cannot be found in the current location, you get an error.<P></A>
+<A NAME="1013263">
+Setting the <CODE>hash</CODE> property navigates to the named anchor without reloading the document. This differs from the way a document is loaded when other <CODE>location</CODE> properties are set (see <A HREF="wina1.htm#1013043">"How documents are loaded when location is set"</A>).<P></A>
+<A NAME="1013269">
+See RFC 1738 (<CODE><A HREF="http://www.cis.ohio-state.edu/htbin/rfc/rfc1738.html" TARGET="_top">http://www.cis.ohio-state.edu/htbin/rfc/rfc1738.html</A></CODE>) for complete information about the hash.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013273">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1074953">
+In the following example, the <CODE>window.open</CODE> statement creates a window called <CODE>newWindow</CODE> and loads the specified URL into it. The <CODE>document.write</CODE> statements display properties of <CODE>newWindow.location</CODE> in a window called <CODE>msgWindow</CODE>.<P></A>
+<A NAME="1074954">
+<PRE>newWindow=window.open<br>&nbsp;&nbsp;&nbsp;("http://home.netscape.com/comprod/products/navigator/<br>&nbsp;&nbsp;&nbsp;version_2.0/script/script_info/objects.html#checkbox_object")</PRE></A><A NAME="1074955">
+<PRE>msgWindow.document.write("newWindow.location.href = " +<br>&nbsp;&nbsp;&nbsp;newWindow.location.href + "&lt;P&gt;")<br>msgWindow.document.write("newWindow.location.hash = " +<br>&nbsp;&nbsp;&nbsp;newWindow.location.hash + "&lt;P&gt;")<br>msgWindow.document.close()</PRE></A><A NAME="1074956">
+The previous example displays output such as the following:<P></A>
+<A NAME="1074957">
+<PRE>newWindow.location.href =<br>&nbsp;&nbsp;&nbsp;http://home.netscape.com/comprod/products/navigator/<br>&nbsp;&nbsp;&nbsp;version_2.0/script/script_info/objects.html#checkbox_object<br>newWindow.location.hash = #checkbox_object</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1013281">
+<H4> See also</H4>
+</A>
+
+<A NAME="1013299">
+<A HREF="wina1.htm#1013305"><CODE>Location.host</CODE></A>, <A HREF="wina1.htm#1013364"><CODE>Location.hostname</CODE></A>, <A HREF="wina1.htm#1013423"><CODE>Location.href</CODE></A>, <A HREF="wina1.htm#1013485"><CODE>Location.pathname</CODE></A>, <A HREF="wina1.htm#1066174"><CODE>Location.port</CODE></A>, <A HREF="wina1.htm#1078292"><CODE>Location.protocol</CODE></A>, <A HREF="wina1.htm#1013662"><CODE>Location.search</CODE></A> <P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1013305">
+<H2>host</H2>
+</A>
+
+<A NAME="1013306">
+A string specifying the server name, subdomain, and domain name.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1065504">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1065509">
+<A HREF="wina1.htm#1012987"><CODE>Location</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1065511">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1065513">
+Navigator 2.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1082302">
+<H4> Security</H4>
+</A>
+
+<A NAME="1082303">
+Navigator&nbsp;3.0: This property is tainted by default. For information on data tainting, see <A HREF="intro.htm#1014735">"JavaScript Security"</A>.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013325">
+<H4> Description</H4>
+</A>
+
+<A NAME="1013326">
+The <CODE>host</CODE> property specifies a portion of a URL. The <CODE>host</CODE> property is a substring of the <CODE>hostname</CODE> property. The <CODE>hostname</CODE> property is the concatenation of the <CODE>host</CODE> and <CODE>port</CODE> properties, separated by a colon. When the <CODE>port</CODE> property is null, the <CODE>host</CODE> property is the same as the <CODE>hostname</CODE> property.<P></A>
+<A NAME="1013327">
+You can set the <CODE>host</CODE> property at any time, although it is safer to set the <CODE>href</CODE> property to change a location. If the host that you specify cannot be found in the current location, you get an error.<P></A>
+<A NAME="1013330">
+See Section 3.1 of RFC 1738 (<CODE><A HREF="http://www.cis.ohio-state.edu/htbin/rfc/rfc1738.html" TARGET="_top">http://www.cis.ohio-state.edu/htbin/rfc/rfc1738.html</A></CODE>) for complete information about the hostname and port.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013334">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1075647">
+In the following example, the <CODE>window.open</CODE> statement creates a window called <CODE>newWindow</CODE> and loads the specified URL into it. The <CODE>document.write</CODE> statements display properties of <CODE>newWindow.location</CODE> in a window called <CODE>msgWindow</CODE>.<P></A>
+<A NAME="1075071">
+<PRE>newWindow=window.open<br>&nbsp;&nbsp;&nbsp;("http://home.netscape.com/comprod/products/navigator/<br>&nbsp;&nbsp;&nbsp;version_2.0/script/script_info/objects.html#checkbox_object")</PRE></A><A NAME="1075072">
+<PRE>msgWindow.document.write("newWindow.location.href = " +<br>&nbsp;&nbsp;&nbsp;newWindow.location.href + "&lt;P&gt;")<br>msgWindow.document.write("newWindow.location.host = " +<br>&nbsp;&nbsp;&nbsp;newWindow.location.host + "&lt;P&gt;")<br>msgWindow.document.close()</PRE></A><A NAME="1075073">
+The previous example displays output such as the following:<P></A>
+<A NAME="1075074">
+<PRE>newWindow.location.href =<br>&nbsp;&nbsp;&nbsp;http://home.netscape.com/comprod/products/navigator/<br>&nbsp;&nbsp;&nbsp;version_2.0/script/script_info/objects.html#checkbox_object<br>newWindow.location.host = home.netscape.com</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1013339">
+<H4> See also</H4>
+</A>
+
+<A NAME="1013357">
+<A HREF="wina1.htm#1013240"><CODE>Location.hash</CODE></A>, <A HREF="wina1.htm#1013364"><CODE>Location.hostname</CODE></A>, <A HREF="wina1.htm#1013423"><CODE>Location.href</CODE></A>, <A HREF="wina1.htm#1013485"><CODE>Location.pathname</CODE></A>, <A HREF="wina1.htm#1066174"><CODE>Location.port</CODE></A>, <A HREF="wina1.htm#1078292"><CODE>Location.protocol</CODE></A>, <A HREF="wina1.htm#1013662"><CODE>Location.search</CODE></A> <P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1013364">
+<H2>hostname </H2>
+</A>
+
+<A NAME="1013365">
+A string containing the full hostname of the server, including the server name, subdomain, domain, and port number.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1065678">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1065683">
+<A HREF="wina1.htm#1012987"><CODE>Location</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1065685">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1065687">
+Navigator 2.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1082323">
+<H4> Security</H4>
+</A>
+
+<A NAME="1082324">
+Navigator&nbsp;3.0: This property is tainted by default. For information on data tainting, see <A HREF="intro.htm#1014735">"JavaScript Security"</A>.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013384">
+<H4> Description</H4>
+</A>
+
+<A NAME="1013385">
+The <CODE>hostname</CODE> property specifies a portion of a URL. The <CODE>hostname</CODE> property is the concatenation of the <CODE>host</CODE> and <CODE>port</CODE> properties, separated by a colon. When the <CODE>port</CODE> property is 80 (the default), the <CODE>host</CODE> property is the same as the <CODE>hostname</CODE> property.<P></A>
+<A NAME="1013386">
+You can set the <CODE>hostname</CODE> property at any time, although it is safer to set the <CODE>href</CODE> property to change a location. If the hostname that you specify cannot be found in the current location, you get an error.<P></A>
+<A NAME="1013389">
+See Section 3.1 of RFC 1738 (<CODE><A HREF="http://www.cis.ohio-state.edu/htbin/rfc/rfc1738.html" TARGET="_top">http://www.cis.ohio-state.edu/htbin/rfc/rfc1738.html</A></CODE>) for complete information about the hostname.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013393">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1075649">
+In the following example, the <CODE>window.open</CODE> statement creates a window called <CODE>newWindow</CODE> and loads the specified URL into it. The <CODE>document.write</CODE> statements display properties of <CODE>newWindow.location</CODE> in a window called <CODE>msgWindow</CODE>.<P></A>
+<A NAME="1075176">
+<PRE>newWindow=window.open<br>&nbsp;&nbsp;&nbsp;("http://home.netscape.com/comprod/products/navigator/<br>&nbsp;&nbsp;&nbsp;version_2.0/script/script_info/objects.html#checkbox_object")</PRE></A><A NAME="1075177">
+<PRE>msgWindow.document.write("newWindow.location.href = " +<br>&nbsp;&nbsp;&nbsp;newWindow.location.href + "&lt;P&gt;")<br>msgWindow.document.write("newWindow.location.hostName = " +<br>&nbsp;&nbsp;&nbsp;newWindow.location.hostName + "&lt;P&gt;")<br>msgWindow.document.close()</PRE></A><A NAME="1075178">
+The previous example displays output such as the following:<P></A>
+<A NAME="1075179">
+<PRE>newWindow.location.href =<br>&nbsp;&nbsp;&nbsp;http://home.netscape.com/comprod/products/navigator/<br>&nbsp;&nbsp;&nbsp;version_2.0/script/script_info/objects.html#checkbox_object<br>newWindow.location.hostName = home.netscape.com</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1013398">
+<H4> See also</H4>
+</A>
+
+<A NAME="1013417">
+<A HREF="wina1.htm#1013240"><CODE>Location.hash</CODE></A>, <A HREF="wina1.htm#1013305"><CODE>Location.host</CODE></A>, <A HREF="wina1.htm#1013423"><CODE>Location.href</CODE></A>, <A HREF="wina1.htm#1013485"><CODE>Location.pathname</CODE></A>, <A HREF="wina1.htm#1066174"><CODE>Location.port</CODE></A>, <A HREF="wina1.htm#1078292"><CODE>Location.protocol</CODE></A>, <A HREF="wina1.htm#1013662"><CODE>Location.search</CODE></A> <P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1013423">
+<H2>href</H2>
+</A>
+
+<A NAME="1013424">
+A string specifying the entire URL.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1065860">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1065865">
+<A HREF="wina1.htm#1012987"><CODE>Location</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1065867">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1065869">
+Navigator 2.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1082331">
+<H4> Security</H4>
+</A>
+
+<A NAME="1082332">
+Navigator&nbsp;3.0: This property is tainted by default. For information on data tainting, see <A HREF="intro.htm#1014735">"JavaScript Security"</A>.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013443">
+<H4> Description</H4>
+</A>
+
+<A NAME="1013444">
+The <CODE>href</CODE> property specifies the entire URL. Other <CODE>location</CODE> object properties are substrings of the <CODE>href</CODE> property. If you want to change the URL associated with a window, you should do so by changing the <CODE>href</CODE> property; this correctly updates all of the other properties.<P></A>
+<A NAME="1013445">
+You can set the <CODE>href</CODE> property at any time.<P></A>
+<A NAME="1013446">
+Omitting a property name from the <CODE>location</CODE> object is equivalent to specifying <CODE>location.href</CODE>. For example, the following two statements are equivalent and set the URL of the current window to the Netscape home page:<P></A>
+<A NAME="1013447">
+<PRE>window.location.href="http://home.netscape.com/"<br>window.location="http://home.netscape.com/"</PRE></A><A NAME="1013450">
+See RFC 1738 (<CODE><A HREF="http://www.cis.ohio-state.edu/htbin/rfc/rfc1738.html" TARGET="_top">http://www.cis.ohio-state.edu/htbin/rfc/rfc1738.html</A></CODE>) for complete information about the URL.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013454">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1013455">
+In the following example, the <CODE>window.open</CODE> statement creates a window called <CODE>newWindow</CODE> and loads the specified URL into it. The <CODE>document.write</CODE> statements display all the properties of <CODE>newWindow.location</CODE> in a window called <CODE>msgWindow</CODE>.<P></A>
+<A NAME="1013456">
+<PRE>newWindow=window.open<br>&nbsp;&nbsp;&nbsp;("http://home.netscape.com/comprod/products/navigator/<br>&nbsp;&nbsp;&nbsp;version_2.0/script/script_info/objects.html#checkbox_object")</PRE></A><A NAME="1013457">
+<PRE>msgWindow.document.write("newWindow.location.href = " +<br>&nbsp;&nbsp;&nbsp;newWindow.location.href + "&lt;P&gt;")<br>msgWindow.document.write("newWindow.location.protocol = " +<br>&nbsp;&nbsp;&nbsp;newWindow.location.protocol + "&lt;P&gt;")<br>msgWindow.document.write("newWindow.location.host = " +<br>&nbsp;&nbsp;&nbsp;newWindow.location.host + "&lt;P&gt;")<br>msgWindow.document.write("newWindow.location.hostName = " +<br>&nbsp;&nbsp;&nbsp;newWindow.location.hostName + "&lt;P&gt;")<br>msgWindow.document.write("newWindow.location.port = " +<br>&nbsp;&nbsp;&nbsp;newWindow.location.port + "&lt;P&gt;")<br>msgWindow.document.write("newWindow.location.pathname = " +<br>&nbsp;&nbsp;&nbsp;newWindow.location.pathname + "&lt;P&gt;")<br>msgWindow.document.write("newWindow.location.hash = " +<br>&nbsp;&nbsp;&nbsp;newWindow.location.hash + "&lt;P&gt;")<br>msgWindow.document.write("newWindow.location.search = " +<br>&nbsp;&nbsp;&nbsp;newWindow.location.search + "&lt;P&gt;")<br>msgWindow.document.close()</PRE></A><A NAME="1013458">
+The previous example displays output such as the following:<P></A>
+<A NAME="1013459">
+<PRE>newWindow.location.href =<br>&nbsp;&nbsp;&nbsp;http://home.netscape.com/comprod/products/navigator/<br>&nbsp;&nbsp;&nbsp;version_2.0/script/script_info/objects.html#checkbox_object<br>newWindow.location.protocol = http:<br>newWindow.location.host = home.netscape.com<br>newWindow.location.hostName = home.netscape.com<br>newWindow.location.port = <br>newWindow.location.pathname =<br>&nbsp;&nbsp;&nbsp;/comprod/products/navigator/version_2.0/script/<br>&nbsp;&nbsp;&nbsp;script_info/objects.html<br>newWindow.location.hash = #checkbox_object<br>newWindow.location.search = </PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1013460">
+<H4> See also</H4>
+</A>
+
+<A NAME="1013478">
+<A HREF="wina1.htm#1013240"><CODE>Location.hash</CODE></A>, <A HREF="wina1.htm#1013305"><CODE>Location.host</CODE></A>, <A HREF="wina1.htm#1013364"><CODE>Location.hostname</CODE></A>, <A HREF="wina1.htm#1013485"><CODE>Location.pathname</CODE></A>, <A HREF="wina1.htm#1066174"><CODE>Location.port</CODE></A>, <A HREF="wina1.htm#1078292"><CODE>Location.protocol</CODE></A>, <A HREF="wina1.htm#1013662"><CODE>Location.search</CODE></A> <P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1013485">
+<H2>pathname</H2>
+</A>
+
+<A NAME="1013486">
+A string specifying the URL-path portion of the URL.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1066028">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1066033">
+<A HREF="wina1.htm#1012987"><CODE>Location</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1066035">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1066037">
+Navigator 2.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1082343">
+<H4> Security</H4>
+</A>
+
+<A NAME="1082344">
+Navigator&nbsp;3.0: This property is tainted by default. For information on data tainting, see <A HREF="intro.htm#1014735">"JavaScript Security"</A>.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013505">
+<H4> Description</H4>
+</A>
+
+<A NAME="1013506">
+The <CODE>pathname</CODE> property specifies a portion of the URL. The pathname supplies the details of how the specified resource can be accessed.<P></A>
+<A NAME="1013507">
+You can set the <CODE>pathname</CODE> property at any time, although it is safer to set the <CODE>href</CODE> property to change a location. If the pathname that you specify cannot be found in the current location, you get an error.<P></A>
+<A NAME="1013510">
+See Section 3.1 of RFC 1738 (<CODE><A HREF="http://www.cis.ohio-state.edu/htbin/rfc/rfc1738.html" TARGET="_top">http://www.cis.ohio-state.edu/htbin/rfc/rfc1738.html</CODE></A>) for complete information about the pathname.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013514">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1075651">
+In the following example, the <CODE>window.open</CODE> statement creates a window called <CODE>newWindow</CODE> and loads the specified URL into it. The <CODE>document.write</CODE> statements display properties of <CODE>newWindow.location</CODE> in a window called <CODE>msgWindow</CODE>.<P></A>
+<A NAME="1075264">
+<PRE>newWindow=window.open<br>&nbsp;&nbsp;&nbsp;("http://home.netscape.com/comprod/products/navigator/<br>&nbsp;&nbsp;&nbsp;version_2.0/script/script_info/objects.html#checkbox_object")</PRE></A><A NAME="1075265">
+<PRE>msgWindow.document.write("newWindow.location.href = " +<br>&nbsp;&nbsp;&nbsp;newWindow.location.href + "&lt;P&gt;")<br>msgWindow.document.write("newWindow.location.pathname = " +<br>&nbsp;&nbsp;&nbsp;newWindow.location.pathname + "&lt;P&gt;")<br>msgWindow.document.close()</PRE></A><A NAME="1075266">
+The previous example displays output such as the following:<P></A>
+<A NAME="1075267">
+<PRE>newWindow.location.href =<br>&nbsp;&nbsp;&nbsp;http://home.netscape.com/comprod/products/navigator/<br>&nbsp;&nbsp;&nbsp;version_2.0/script/script_info/objects.html#checkbox_object<br>newWindow.location.pathname =<br>&nbsp;&nbsp;&nbsp;/comprod/products/navigator/version_2.0/script/<br>&nbsp;&nbsp;&nbsp;script_info/objects.html</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1013519">
+<H4> See also</H4>
+</A>
+
+<A NAME="1013538">
+<A HREF="wina1.htm#1013240"><CODE>Location.hash</CODE></A>, <A HREF="wina1.htm#1013305"><CODE>Location.host</CODE></A>, <A HREF="wina1.htm#1013364"><CODE>Location.hostname</CODE></A>, <A HREF="wina1.htm#1013423"><CODE>Location.href</CODE></A>, <A HREF="wina1.htm#1066174"><CODE>Location.port</CODE></A>, <A HREF="wina1.htm#1078292"><CODE>Location.protocol</CODE></A>, <A HREF="wina1.htm#1013662"><CODE>Location.search</CODE></A> <P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1066174">
+<H2>port </H2>
+</A>
+
+<A NAME="1066175">
+A string specifying the communications port that the server uses.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1066180">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1066185">
+<A HREF="wina1.htm#1012987"><CODE>Location</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1066187">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1066189">
+Navigator 2.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1082374">
+<H4> Security</H4>
+</A>
+
+<A NAME="1082375">
+Navigator&nbsp;3.0: This property is tainted by default. For information on data tainting, see <A HREF="intro.htm#1014735">"JavaScript Security"</A>.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013564">
+<H4> Description</H4>
+</A>
+
+<A NAME="1013565">
+The <CODE>port</CODE> property specifies a portion of the URL. The <CODE>port</CODE> property is a substring of the <CODE>hostname</CODE> property. The <CODE>hostname</CODE> property is the concatenation of the <CODE>host</CODE> and <CODE>port</CODE> properties, separated by a colon. <P></A>
+<A NAME="1013566">
+You can set the <CODE>port</CODE> property at any time, although it is safer to set the <CODE>href</CODE> property to change a location. If the port that you specify cannot be found in the current location, you get an error. If the <CODE>port</CODE> property is not specified, it defaults to 80.<P></A>
+<A NAME="1013569">
+See Section 3.1 of RFC 1738 (<CODE><A HREF="http://www.cis.ohio-state.edu/htbin/rfc/rfc1738.html" TARGET="_top">http://www.cis.ohio-state.edu/htbin/rfc/rfc1738.html</CODE></A>) for complete information about the port.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013573">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1075653">
+In the following example, the <CODE>window.open</CODE> statement creates a window called <CODE>newWindow</CODE> and loads the specified URL into it. The <CODE>document.write</CODE> statements display properties of <CODE>newWindow.location</CODE> in a window called <CODE>msgWindow</CODE>.<P></A>
+<A NAME="1075338">
+<PRE>newWindow=window.open<br>&nbsp;&nbsp;&nbsp;("http://home.netscape.com/comprod/products/navigator/<br>&nbsp;&nbsp;&nbsp;version_2.0/script/script_info/objects.html#checkbox_object")</PRE></A><A NAME="1075339">
+<PRE>msgWindow.document.write("newWindow.location.href = " +<br>&nbsp;&nbsp;&nbsp;newWindow.location.href + "&lt;P&gt;")<br>msgWindow.document.write("newWindow.location.port = " +<br>&nbsp;&nbsp;&nbsp;newWindow.location.port + "&lt;P&gt;")<br>msgWindow.document.close()</PRE></A><A NAME="1075340">
+The previous example displays output such as the following:<P></A>
+<A NAME="1078266">
+<PRE>newWindow.location.href =<br>&nbsp;&nbsp;&nbsp;http://home.netscape.com/comprod/products/navigator/<br>&nbsp;&nbsp;&nbsp;version_2.0/script/script_info/objects.html#checkbox_object<br>newWindow.location.port =</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1078267">
+<H4> See also</H4>
+</A>
+
+<A NAME="1078289">
+<A HREF="wina1.htm#1013240"><CODE>Location.hash</CODE></A>, <A HREF="wina1.htm#1013305"><CODE>Location.host</CODE></A>, <A HREF="wina1.htm#1013364"><CODE>Location.hostname</CODE></A>, <A HREF="wina1.htm#1013423"><CODE>Location.href</CODE></A>, <A HREF="wina1.htm#1013485"><CODE>Location.pathname</CODE></A>, <A HREF="wina1.htm#1078292"><CODE>Location.protocol</CODE></A>, <A HREF="wina1.htm#1013662"><CODE>Location.search</CODE></A> <P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1078292">
+<H2>protocol </H2>
+</A>
+
+<A NAME="1013604">
+A string specifying the beginning of the URL, up to and including the first colon.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1066233">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1066238">
+<A HREF="wina1.htm#1012987"><CODE>Location</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1066240">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1066242">
+Navigator 2.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1082406">
+<H4> Security</H4>
+</A>
+
+<A NAME="1082407">
+Navigator&nbsp;3.0: This property is tainted by default. For information on data tainting, see <A HREF="intro.htm#1014735">"JavaScript Security"</A>.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013623">
+<H4> Description</H4>
+</A>
+
+<A NAME="1013624">
+The <CODE>protocol</CODE> property specifies a portion of the URL. The protocol indicates the access method of the URL. For example, the value <CODE>"http:"</CODE> specifies HyperText Transfer Protocol, and the value <CODE>"javascript:"</CODE> specifies JavaScript code.<P></A>
+<A NAME="1013625">
+You can set the <CODE>protocol</CODE> property at any time, although it is safer to set the <CODE>href</CODE> property to change a location. If the protocol that you specify cannot be found in the current location, you get an error.<P></A>
+<A NAME="1013627">
+The <CODE>protocol</CODE> property represents the scheme name of the URL. See Section 2.1 of RFC 1738 (<CODE><A HREF="http://www.cis.ohio-state.edu/htbin/rfc/rfc1738.html" TARGET="_top">http://www.cis.ohio-state.edu/htbin/rfc/rfc1738.html</CODE></A>) for complete information about the protocol.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013632">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1075657">
+In the following example, the <CODE>window.open</CODE> statement creates a window called <CODE>newWindow</CODE> and loads the specified URL into it. The <CODE>document.write</CODE> statements display properties of <CODE>newWindow.location</CODE> in a window called <CODE>msgWindow</CODE>.<P></A>
+<A NAME="1075422">
+<PRE>newWindow=window.open<br>&nbsp;&nbsp;&nbsp;("http://home.netscape.com/comprod/products/navigator/<br>&nbsp;&nbsp;&nbsp;version_2.0/script/script_info/objects.html#checkbox_object")</PRE></A><A NAME="1075423">
+<PRE>msgWindow.document.write("newWindow.location.href = " +<br>&nbsp;&nbsp;&nbsp;newWindow.location.href + "&lt;P&gt;")<br>msgWindow.document.write("newWindow.location.protocol = " +<br>&nbsp;&nbsp;&nbsp;newWindow.location.protocol + "&lt;P&gt;")<br>msgWindow.document.close()</PRE></A><A NAME="1075424">
+The previous example displays output such as the following:<P></A>
+<A NAME="1075425">
+<PRE>newWindow.location.href =<br>&nbsp;&nbsp;&nbsp;http://home.netscape.com/comprod/products/navigator/<br>&nbsp;&nbsp;&nbsp;version_2.0/script/script_info/objects.html#checkbox_object<br>newWindow.location.protocol = http:</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1013637">
+<H4> See also</H4>
+</A>
+
+<A NAME="1013656">
+<A HREF="wina1.htm#1013240"><CODE>Location.hash</CODE></A>, <A HREF="wina1.htm#1013305"><CODE>Location.host</CODE></A>, <A HREF="wina1.htm#1013364"><CODE>Location.hostname</CODE></A>, <A HREF="wina1.htm#1013423"><CODE>Location.href</CODE></A>, <A HREF="wina1.htm#1013485"><CODE>Location.pathname</CODE></A>, <A HREF="wina1.htm#1066174"><CODE>Location.port</CODE></A>, <A HREF="wina1.htm#1013662"><CODE>Location.search</CODE></A> <P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1013662">
+<H2>search</H2>
+</A>
+
+<A NAME="1013663">
+A string beginning with a question mark that specifies any query information in the URL.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1066267">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1066272">
+<A HREF="wina1.htm#1012987"><CODE>Location</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1066274">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1066276">
+Navigator 2.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1082422">
+<H4> Security</H4>
+</A>
+
+<A NAME="1082423">
+Navigator&nbsp;3.0: This property is tainted by default. For information on data tainting, see <A HREF="intro.htm#1014735">"JavaScript Security"</A>.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013682">
+<H4> Description</H4>
+</A>
+
+<A NAME="1013683">
+The <CODE>search</CODE> property specifies a portion of the URL. This property applies to HTTP URLs only.<P></A>
+<A NAME="1013684">
+The <CODE>search</CODE> property contains variable and value pairs; each pair is separated by an ampersand. For example, two pairs in a search string could look as follows:<P></A>
+<A NAME="1013685">
+<PRE>?x=7&amp;y=5</PRE></A><A NAME="1013686">
+You can set the <CODE>search</CODE> property at any time, although it is safer to set the <CODE>href</CODE> property to change a location. If the search that you specify cannot be found in the current location, you get an error.<P></A>
+<A NAME="1013689">
+See Section 3.3 of RFC 1738 (<CODE><A HREF="http://www.cis.ohio-state.edu/htbin/rfc/rfc1738.htm" TARGET="_top">http://www.cis.ohio-state.edu/htbin/rfc/rfc1738.html</A></CODE>) for complete information about the search.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013693">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1075659">
+In the following example, the <CODE>window.open</CODE> statement creates a window called <CODE>newWindow</CODE> and loads the specified URL into it. The <CODE>document.write</CODE> statements display properties of <CODE>newWindow.location</CODE> in a window called <CODE>msgWindow</CODE>.<P></A>
+<A NAME="1013695">
+<PRE>newWindow=window.open<br>&nbsp;&nbsp;&nbsp;("http://guide-p.infoseek.com/WW/NS/Titles?qt=RFC+1738+&amp;col=WW")</PRE></A><A NAME="1074832">
+<PRE>msgWindow.document.write("newWindow.location.href = " +<br>&nbsp;&nbsp;&nbsp;newWindow.location.href + "&lt;P&gt;")<br>msgWindow.document.close()<br>msgWindow.document.write("newWindow.location.search = " +<br>&nbsp;&nbsp;&nbsp;newWindow.location.search + "&lt;P&gt;")<br>msgWindow.document.close()</PRE></A><A NAME="1013697">
+The previous example displays the following output:<P></A>
+<A NAME="1013698">
+<PRE>newWindow.location.href =<br>&nbsp;&nbsp;&nbsp;http://guide-p.infoseek.com/WW/NS/Titles?qt=RFC+1738+&amp;col=WW<br>newWindow.location.search = ?qt=RFC+1738+&amp;col=WW</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1013699">
+<H4> See also</H4>
+</A>
+
+<A NAME="1013717">
+<A HREF="wina1.htm#1013240"><CODE>Location.hash</CODE></A>, <A HREF="wina1.htm#1013305"><CODE>Location.host</CODE></A>, <A HREF="wina1.htm#1013364"><CODE>Location.hostname</CODE></A>, <A HREF="wina1.htm#1013423"><CODE>Location.href</CODE></A>, <A HREF="wina1.htm#1013485"><CODE>Location.pathname</CODE></A>, <A HREF="wina1.htm#1066174"><CODE>Location.port</CODE></A>, <A HREF="wina1.htm#1078292"><CODE>Location.protocol</CODE></A> <P></A>
+
+<A NAME="Head2;"></A>
+<A NAME="1013722">
+<H3> Methods</H3>
+</A>
+
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1013725">
+<H2>reload</H2>
+</A>
+
+<A NAME="1013726">
+Forces a reload of the window's current document (the document specified by the <A HREF="wina1.htm#1013423"><CODE>Location.href</CODE></A> property).<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1066337">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1066342">
+<A HREF="wina1.htm#1012987"><CODE>Location</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1066344">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1066346">
+Navigator 3.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013727">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1013728">
+<PRE>reload(forceGet)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1019466">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1019472">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1019469">
+<PRE>forceGet</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1019471">
+(Optional) If you supply <CODE>true</CODE>, forces an unconditional HTTP GET of the document from the server. This should not be used unless you have reason to believe that disk and memory caches are off or broken, or the server has a new version of the document (for example, if it is generated by a CGI on each request).</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013741">
+<H4> Description</H4>
+</A>
+
+<A NAME="1013743">
+This method uses the same policy that the browser's Reload button uses. The user interface for setting the default value of this policy varies for different browser versions.<P></A>
+<A NAME="1013744">
+By default, the <CODE>reload</CODE> method does not force a transaction with the server. However, if the user has set the preference to check every time, the method does a "conditional GET" request using an If-modified-since HTTP header, to ask the server to return the document only if its last-modified time is newer than the time the client keeps in its cache. In other words, <CODE>reload</CODE> reloads from the cache, unless the user has specified to check every time <I>and</I> the document has changed on the server since it was last loaded and saved in the cache.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013748">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1013749">
+The following example displays an image and three radio buttons. The user can click the radio buttons to choose which image is displayed. Clicking another button lets the user reload the document.<P></A>
+<A NAME="1013750">
+<PRE>&lt;SCRIPT&gt;<br>function displayImage(theImage) {<br>&nbsp;&nbsp;&nbsp;document.images[0].src=theImage<br>}<br>&lt;/SCRIPT&gt;</PRE></A><A NAME="1013751">
+<PRE>&lt;FORM NAME="imageForm"&gt;<br>&lt;B&gt;Choose an image:&lt;/B&gt;<br>&lt;BR&gt;&lt;INPUT TYPE="radio" NAME="imageChoice" VALUE="image1" CHECKED<br>&nbsp;&nbsp;&nbsp;onClick="displayImage('seaotter.gif')"&gt;Sea otter<br>&lt;BR&gt;&lt;INPUT TYPE="radio" NAME="imageChoice" VALUE="image2"<br>&nbsp;&nbsp;&nbsp;onClick="displayImage('orca.gif')"&gt;Killer whale<br>&lt;BR&gt;&lt;INPUT TYPE="radio" NAME="imageChoice" VALUE="image3"<br>&nbsp;&nbsp;&nbsp;onClick="displayImage('humpback.gif')"&gt;Humpback whale</PRE></A><A NAME="1013752">
+<PRE>&lt;BR&gt;<br>&lt;IMG NAME="marineMammal" SRC="seaotter.gif" ALIGN="left" VSPACE="10"&gt;</PRE></A><A NAME="1013753">
+<PRE>&lt;P&gt;&lt;INPUT TYPE="button" VALUE="Click here to reload"<br>&nbsp;&nbsp;&nbsp;onClick="window.location.reload()"&gt;<br>&lt;/FORM&gt;</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1013754">
+<H4> See also</H4>
+</A>
+
+<A NAME="1013764">
+<A HREF="wina1.htm#1013767"><CODE>Location.replace</CODE></A> <P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1013767">
+<H2>replace</H2>
+</A>
+
+<A NAME="1013768">
+Loads the specified URL over the current history entry.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1066392">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1066397">
+<A HREF="wina1.htm#1012987"><CODE>Location</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1066399">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1066401">
+Navigator 3.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013769">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1013770">
+<PRE>replace("URL")</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1013771">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1013777">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1013774">
+<PRE>URL</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1013776">
+Specifies the URL to load.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013783">
+<H4> Description</H4>
+</A>
+
+<A NAME="1013784">
+The <CODE>replace</CODE> method loads the specified URL over the current history entry. After calling the <CODE>replace</CODE> method, the user cannot navigate to the previous URL by using browser's Back button.<P></A>
+<A NAME="1015083">
+If your program will be run with JavaScript in Navigator 2.0, you could put the following line in a <CODE>SCRIPT</CODE> tag early in your program. This emulates <CODE>replace</CODE>, which was introduced in Navigator 3.0:<P></A>
+<A NAME="1013787">
+<PRE>if (location.replace == null)<br>&nbsp;&nbsp;&nbsp;location.replace = location.assign</PRE></A><A NAME="1013788">
+The <CODE>replace </CODE>method does not create a new entry in the history list. To create an entry in the history list while loading a URL, use the <B><A HREF="wina2.htm#1014216"></B><CODE>History.go</CODE><B></A></B> method.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013794">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1077012">
+The following example lets the user choose among several catalogs to display. The example displays two sets of radio buttons which let the user choose a season and a category, for example the Spring/Summer Clothing catalog or the Fall/Winter Home &amp; Garden catalog. When the user clicks the Go button, the <CODE>displayCatalog</CODE> function executes the <CODE>replace</CODE> method, replacing the current URL with the URL appropriate for the catalog the user has chosen. After invoking <CODE>displayCatalog</CODE>, the user cannot navigate to the previous URL (the list of catalogs) by using browser's Back button.<P></A>
+<A NAME="1077013">
+<PRE>&lt;SCRIPT&gt;<br>function displayCatalog() {<br>&nbsp;&nbsp;&nbsp;var seaName=""<br>&nbsp;&nbsp;&nbsp;var catName=""</PRE></A><A NAME="1013797">
+<PRE>&nbsp;&nbsp;&nbsp;for (var i=0; i &lt; document.catalogForm.season.length; i++) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (document.catalogForm.season[i].checked) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seaName=document.catalogForm.season[i].value<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i=document.catalogForm.season.length<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;}</PRE></A><A NAME="1013798">
+<PRE>&nbsp;&nbsp;&nbsp;for (var i in document.catalogForm.category) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (document.catalogForm.category[i].checked) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;catName=document.catalogForm.category[i].value<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i=document.catalogForm.category.length<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;fileName=seaName + catName + ".html"<br>&nbsp;&nbsp;&nbsp;location.replace(fileName)<br>}<br>&lt;/SCRIPT&gt;</PRE></A><A NAME="1013799">
+<PRE>&lt;FORM NAME="catalogForm"&gt;<br>&lt;B&gt;Which catalog do you want to see?&lt;/B&gt;</PRE></A><A NAME="1013800">
+<PRE>&lt;P&gt;&lt;B&gt;Season&lt;/B&gt;<br>&lt;BR&gt;&lt;INPUT TYPE="radio" NAME="season" VALUE="q1" CHECKED&gt;Spring/Summer<br>&lt;BR&gt;&lt;INPUT TYPE="radio" NAME="season" VALUE="q3"&gt;Fall/Winter</PRE></A><A NAME="1013801">
+<PRE>&lt;P&gt;&lt;B&gt;Category&lt;/B&gt;<br>&lt;BR&gt;&lt;INPUT TYPE="radio" NAME="category" VALUE="clo" CHECKED&gt;Clothing<br>&lt;BR&gt;&lt;INPUT TYPE="radio" NAME="category" VALUE="lin"&gt;Linens<br>&lt;BR&gt;&lt;INPUT TYPE="radio" NAME="category" VALUE="hom"&gt;Home &amp; Garden</PRE></A><A NAME="1013802">
+<PRE>&lt;P&gt;&lt;INPUT TYPE="button" VALUE="Go" onClick="displayCatalog()"&gt;<br>&lt;/FORM&gt;</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1018193">
+<H4> See also</H4>
+</A>
+
+<A NAME="1018209">
+<A HREF="wina2.htm#1018212"><CODE>History</CODE></A>, <A HREF="win1.htm#1152528"><CODE>Window.open</CODE></A>, <A HREF="wina2.htm#1014216"><CODE>History.go</CODE></A>, <A HREF="wina1.htm#1013725"><CODE>Location.reload</CODE></A> <P></A>
+
+<P><HR>
+<A HREF="contents.htm">[Contents]</A> <A HREF="wina.htm">[Previous]</A> <A HREF="wina2.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<P ALIGN=right>
+
+<FONT SIZE=-2><I>Last Updated:  10/31/97  12:31:44
+</I></FONT>
+
+<HR SIZE=4>
+
+<P> <CENTER>Copyright © 1997
+<A HREF="http://home.netscape.com/misc/contact_info.html"
+TARGET=_top>Netscape Communications Corporation</A></FONT>
+</CENTER>
+<P>
+<P>
+</BODY>
+</HTML>
+
+

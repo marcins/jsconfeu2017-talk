@@ -1,0 +1,126 @@
+<HTML>
+<HEAD>
+<TITLE>Events and Event Handlers
+</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A HREF="contents.htm">[Contents]</A> <A HREF="evnt22.htm">[Previous]</A> <A HREF="evnt24.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<HR>
+
+<A NAME="onSubmit"></A>
+<A NAME="1010835">
+<H1> onSubmit</H1>
+</A>
+<A NAME="1010836">
+Executes JavaScript code when a submit event occurs; that is, when a user submits a form. <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1046066">
+<I>Event handler for </I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1046068">
+<A HREF="form1.htm#1010276"><CODE>Form</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1046070">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1048325">
+Navigator 2.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1050059">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1050060">
+<PRE>onSubmit="handlerText"</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1050061">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1050067">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1050064">
+<PRE><CODE>handlerText</CODE></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1050066">
+JavaScript code or a call to a JavaScript function.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1094656">
+<H4> Security</H4>
+</A>
+
+<A NAME="1094657">
+Navigator&nbsp;4.0: Submitting a form to a <CODE>mailto:</CODE> or <CODE>news:</CODE> URL requires the <CODE>UniversalSendMail</CODE> privilege. For information on security in Navigator&nbsp;4.0, see <A HREF="http://developer.netscape.com/library/documentation/communicator/jsguide4/index.htm?content=sec.htm" TARGET="_top">Chapter&nbsp;7, "JavaScript Security,"</A> in the <A HREF="http://developer.netscape.com/library/documentation/communicator/jsguide4/index.htm" TARGET="_top">JavaScript Guide</A>. <P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1079211">
+<H4> Description</H4>
+</A>
+
+<A NAME="1050078">
+You can use <CODE>onSubmit</CODE> to prevent a form from being submitted; to do so, put a <CODE>return</CODE> statement that returns false in the event handler. Any other returned value lets the form submit. If you omit the <CODE>return</CODE> statement, the form is submitted.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1097888">
+<H4> Event properties used</H4>
+</A>
+
+<A NAME="1097898">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1097891">
+<PRE>type</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1103737">
+Indicates the type of event. </A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1097895">
+<PRE>target</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1097897">
+Indicates the object to which the event was originally sent. </A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1050048">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1050049">
+In the following example, <CODE>onSubmit</CODE> calls the <CODE>validate</CODE> function to evaluate the data being submitted. If the data is valid, the form is submitted; otherwise, the form is not submitted.<P></A>
+<A NAME="1010848">
+<PRE>&lt;FORM onSubmit="return validate(this)"&gt;<br>...<br>&lt;/FORM&gt;</PRE></A><A NAME="1010852">
+See also the examples for <A HREF="form1.htm#1010276"><CODE>Form</CODE></A>.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012506">
+<H4> See also</H4>
+</A>
+
+<A NAME="1012513">
+<A HREF="but1.htm#1011117"><CODE>Submit</CODE></A>, <A HREF="form1.htm#1010966"><CODE>Form.submit</CODE></A><P></A>
+<A NAME="1064253">
+For general information on event handlers, see <A HREF="evnt.htm#1010270">"General Information about Events"</A>. <P></A>
+<A NAME="1094665">
+For information about the <CODE>event</CODE> object, see <A HREF="evnt1.htm#1093773"><CODE>event</CODE></A>.<P></A>
+
+<P><HR>
+<A HREF="contents.htm">[Contents]</A> <A HREF="evnt22.htm">[Previous]</A> <A HREF="evnt24.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<P ALIGN=right>
+
+<FONT SIZE=-2><I>Last Updated:  10/31/97  16:34:02
+</I></FONT>
+
+<HR SIZE=4>
+
+<P> <CENTER>Copyright © 1997
+<A HREF="http://home.netscape.com/misc/contact_info.html"
+TARGET=_top>Netscape Communications Corporation</A></FONT>
+</CENTER>
+<P>
+<P>
+</BODY>
+</HTML>
+
+

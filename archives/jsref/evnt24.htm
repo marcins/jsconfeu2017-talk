@@ -1,0 +1,118 @@
+<HTML>
+<HEAD>
+<TITLE>Events and Event Handlers
+</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A HREF="contents.htm">[Contents]</A> <A HREF="evnt23.htm">[Previous]</A> <A HREF="lw.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<HR>
+
+<A NAME="onUnload"></A>
+<A NAME="1012516">
+<H1> onUnload</H1>
+</A>
+<A NAME="1010864">
+Executes JavaScript code when an unload event occurs; that is, when the user exits a document. <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1046086">
+<I>Event handler for </I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1046088">
+<A HREF="win1.htm#1010280"><CODE>Window</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1046090">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1048336">
+Navigator 2.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1050116">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1050117">
+<PRE>onUnload="handlerText"</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1050118">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1050124">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1050121">
+<PRE><CODE>handlerText</CODE></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1050123">
+JavaScript code or a call to a JavaScript function.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010865">
+<H4> Description</H4>
+</A>
+
+<A NAME="1050131">
+Use <CODE>onUnload</CODE> within either the <CODE>BODY</CODE> or the <CODE>FRAMESET</CODE> tag, for example, <CODE>&lt;BODY onUnload="..."&gt;</CODE>.<P></A>
+<A NAME="1010866">
+In a frameset and frame relationship, an <CODE>onUnload</CODE> event within a frame (placed in the <CODE>BODY</CODE> tag) occurs before an <CODE>onUnload</CODE> event within the frameset (placed in the <CODE>FRAMESET</CODE> tag).<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1097907">
+<H4> Event properties used</H4>
+</A>
+
+<A NAME="1097917">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1097910">
+<PRE>type</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1103740">
+Indicates the type of event. </A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1097914">
+<PRE>target</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1097916">
+Indicates the object to which the event was originally sent. </A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010874">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1010875">
+In the following example, <CODE>onUnload</CODE> calls the <CODE>cleanUp</CODE> function to perform some shutdown processing when the user exits a Web page:<P></A>
+<A NAME="1010876">
+<PRE>&lt;BODY onUnload="cleanUp()"&gt;</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1010877">
+<H4> See also</H4>
+</A>
+
+<A NAME="1010882">
+<A HREF="evnt13.htm#1010680"><CODE>onLoad</CODE></A> <P></A>
+<A NAME="1064287">
+For general information on event handlers, see <A HREF="evnt.htm#1010270">"General Information about Events"</A>. <P></A>
+<A NAME="1094671">
+For information about the <CODE>event</CODE> object, see <A HREF="evnt1.htm#1093773"><CODE>event</CODE></A>.<P></A>
+<A NAME="1005723">
+<PRE></PRE></A>
+<P><HR>
+<A HREF="contents.htm">[Contents]</A> <A HREF="evnt23.htm">[Previous]</A> <A HREF="lw.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<P ALIGN=right>
+
+<FONT SIZE=-2><I>Last Updated:  10/31/97  16:34:02
+</I></FONT>
+
+<HR SIZE=4>
+
+<P> <CENTER>Copyright © 1997
+<A HREF="http://home.netscape.com/misc/contact_info.html"
+TARGET=_top>Netscape Communications Corporation</A></FONT>
+</CENTER>
+<P>
+<P>
+</BODY>
+</HTML>
+

@@ -1,0 +1,1073 @@
+<HTML>
+<HEAD>
+<TITLE>Core&nbsp;&nbsp;&nbsp;
+</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A HREF="contents.htm">[Contents]</A> <A HREF="core.htm">[Previous]</A> <A HREF="core2.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<HR>
+
+<A NAME="Array"></A>
+<A NAME="1080770">
+<H1> Array</H1>
+</A>
+<A NAME="1080771">
+Represents an array of elements.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left COLSPAN=2 ROWSPAN=1><A NAME="1142095">
+<I>Core object</I></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1150234">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1141967">
+Navigator 3.0, LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1036828">
+<H4> Created by</H4>
+</A>
+
+<A NAME="1075007">
+The <CODE>Array</CODE> object constructor:<P></A>
+<A NAME="1010299">
+<PRE>new Array(arrayLength);<br>new Array(element0, element1, ..., element<I>N</I>);</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1010302">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1010324">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1010309">
+<PRE>arrayLength</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1010311">
+(Optional) The initial length of the array. You can access this value using the <CODE>length</CODE> property.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1010313">
+<PRE>element<I>N</I></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1010315">
+(Optional) A list of values for the array's elements. When this form is specified, the array is initialized with the specified values as its elements, and the array's <CODE>length</CODE> property is set to the number of arguments.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010327">
+<H4> Description</H4>
+</A>
+
+<A NAME="1010330">
+In Navigator&nbsp;3.0, you can specify an initial length when you create the array. The following code creates an array of five elements:<P></A>
+<A NAME="1010331">
+<PRE>billingMethod = new Array(5)</PRE></A><A NAME="1010332">
+When you create an array, all of its elements are initially null. The following code creates an array of 25 elements, then assigns values to the first three elements:<P></A>
+<A NAME="1010333">
+<PRE>musicTypes = new Array(25)<br>musicTypes[0] = "R&amp;B"<br>musicTypes[1] = "Blues"<br>musicTypes[2] = "Jazz"</PRE></A><A NAME="1194262">
+However, in Navigator&nbsp;4.0, if you specify <CODE>LANGUAGE="JavaScript1.2"</CODE> in the <CODE>&lt;SCRIPT&gt;</CODE> tag, using <CODE>new Array(1)</CODE> creates a new array with <CODE>a[0]=1</CODE>. <P></A>
+<A NAME="1194260">
+An array's length increases if you assign a value to an element higher than the current length of the array. The following code creates an array of length 0, then assigns a value to element 99. This changes the length of the array to 100.<P></A>
+<A NAME="1010336">
+<PRE>colors = new Array()<br>colors[99] = "midnightblue"</PRE></A><A NAME="1010338">
+You can construct a <I>dense</I> array of two or more elements starting with index 0 if you define initial values for all elements. A dense array is one in which each element has a value. The following code creates a dense array with three elements:<P></A>
+<A NAME="1010339">
+<PRE>myArray = new Array("Hello", myVar, 3.14159)</PRE></A><A NAME="1010341">
+In Navigator 2.0, you must index an array by its ordinal number, for example <CODE>document.forms[0]</CODE>. In Navigator 3.0 and later, you can index an array by either its ordinal number or by its name (if defined). For example, assume you define the following array:<P></A>
+<A NAME="1010342">
+<PRE>myArray = new Array("Wind","Rain","Fire")</PRE></A><A NAME="1043248">
+You can then refer to the first element of the array as <CODE>myArray[0]</CODE> or <CODE>myArray["Wind"]</CODE>.<P></A>
+<A NAME="1194376">
+In Navigator&nbsp;4.0, the result of a match between a regular expression and a string can create an array. This array has properties and elements that provide information about the match. An array is the return value of <A HREF="corea3.htm#1141105"><CODE>RegExp.exec</CODE></A>, <A HREF="corea2.htm#1026931"><CODE>String.match</CODE></A>, and <A HREF="corea2.htm#1027809"><CODE>String.replace</CODE></A>. To help explain these properties and elements, look at the following example and then refer to the table below: <P></A>
+<A NAME="1194409">
+<PRE>&lt;SCRIPT LANGUAGE="JavaScript1.2"&gt;<br>//Match one d followed by one or more b's followed by one d<br>//Remember matched b's and the following d<br>//Ignore case</PRE></A><A NAME="1194410">
+<PRE>myRe=/d(b+)(d)/i;<br>myArray = myRe.exec("cdbBdbsbz");</PRE></A><A NAME="1194411">
+<PRE>&lt;/SCRIPT&gt;</PRE></A><A NAME="1194412">
+The properties and elements returned from this match are as follows: <P><B></B>
+<TABLE BORDER="0">
+<TR><TH VALIGN=baseline ALIGN=left><B><A NAME="1194415">
+<B>Property/Element
+</B></A></B><TH VALIGN=baseline ALIGN=left><B><A NAME="1194417">
+<B>Description
+</B></A></B><TH VALIGN=baseline ALIGN=left><B><A NAME="1194419">
+<B>Example
+</B></A></B>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1194421">
+<PRE>input</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1194423">
+A read-only property that reflects the original string against which the regular expression was matched.</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1194425">
+cdbBdbsbz</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1194427">
+<PRE>index</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1194429">
+A read-only property that is the zero-based index of the match in the string.</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1194431">
+1</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1194433">
+<PRE>[0]</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1194435">
+A read-only element that specifies the last matched characters.</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1194437">
+dbBd</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1194439">
+<PRE>[1], ...[n]</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1194441">
+Read-only elements that specify the parenthesized substring matches, if included in the regular expression. The number of possible parenthesized substrings is unlimited.</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1197420">
+[1]=bB&nbsp; <br>[2]=d</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1043249">
+<H4> Property Summary&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</H4>
+</A>
+
+<A NAME="1010360">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1197432">
+<PRE>index</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1197434">
+For an array created by a regular expression match, the zero-based index of the match in the string.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1197428">
+<PRE>input</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1197430">
+For an array created by a regular expression match, reflects the original string against which the regular expression was matched.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1010350">
+<PRE><A HREF="core1.htm#1010407"><CODE>length</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1010352">
+Reflects the number of elements in an array</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1010357">
+<PRE><A HREF="core1.htm#1010483"><CODE>prototype</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1010359">
+Allows the addition of properties to an <CODE>Array</CODE> object.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010361">
+<H4> Method Summary</H4>
+</A>
+
+<A NAME="1010384">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1052710">
+<PRE><A HREF="core1.htm#1053105"><CODE>concat</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1052712">
+Joins two arrays and returns a new array. </A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1010367">
+<PRE><A HREF="core1.htm#1010543"><CODE>join</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1010369">
+Joins all elements of an array into a string.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1190302">
+<PRE><A HREF="core1.htm#1190515"><CODE>pop</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1190321">
+Removes the last element from an array and returns that element.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1190397">
+<PRE><A HREF="core1.htm#1190529"><CODE>push</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1190491">
+Adds one or more elements to the end of an array and returns that last element added.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1010374">
+<PRE><A HREF="core1.htm#1029171"><CODE>reverse</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1010376">
+Transposes the elements of an array: the first array element becomes the last and the last becomes the first.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1191385">
+<PRE><A HREF="core1.htm#1192548"><CODE>shift</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1191387">
+Removes the first element from an array and returns that element</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1055590">
+<PRE><A HREF="core1.htm#1055628"><CODE>slice</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1055592">
+Extracts a section of an array and returns a new array.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1190211">
+<PRE><A HREF="core1.htm#1143822"><CODE>splice</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1190213">
+Adds and/or removes elements from an array.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1010381">
+<PRE><A HREF="core1.htm#1189865"><CODE>sort</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1010383">
+Sorts the elements of an array.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1168122">
+<PRE><A HREF="core1.htm#1163214"><CODE>toString</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1168124">
+Returns a string representing the specified object.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1191404">
+<PRE><A HREF="core1.htm#1193923"><CODE>unshift</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1191406">
+Adds one or more elements to the front of an array and returns the new length of the array.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010389">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1127064">
+<B>Example 1.</B> The following example creates an array, <CODE>msgArray</CODE>, with a length of 0, then assigns values to <CODE>msgArray[0]</CODE> and <CODE>msgArray[99]</CODE>, changing the length of the array to 100.<P></A>
+<A NAME="1010391">
+<PRE>msgArray = new Array()<br>msgArray [0] = "Hello"<br>msgArray [99] = "world"<br>// The following statement is true,<br>// because defined msgArray [99] element.<br>if (msgArray .length == 100) <br>&nbsp;&nbsp;&nbsp;document.write("The length is 100.")</PRE></A><A NAME="1010395">
+See also examples for <A HREF="evnt1.htm#1093794"><CODE>onError</CODE></A>.<P></A>
+<A NAME="1010396">
+<B>Example 2: Two-dimensional array.</B> The following code creates a two-dimensional array and displays the results.<P></A>
+<A NAME="1010397">
+<PRE>a = new Array(4)<br>for (i=0; i &lt; 4; i++) {<br>&nbsp;&nbsp;&nbsp;a[i] = new Array(4)<br>&nbsp;&nbsp;&nbsp;for (j=0; j &lt; 4; j++) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a[i][j] = "["+i+","+j+"]"<br>&nbsp;&nbsp;&nbsp;}<br>}<br>for (i=0; i &lt; 4; i++) {<br>&nbsp;&nbsp;&nbsp;str = "Row "+i+":"<br>&nbsp;&nbsp;&nbsp;for (j=0; j &lt; 4; j++) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;str += a[i][j]<br>&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;document.write(str,"&lt;p&gt;")<br>}</PRE></A><A NAME="1010398">
+This example displays the following results:<P></A>
+<A NAME="1010399">
+<PRE>Multidimensional array test<br>Row 0:[0,0][0,1][0,2][0,3]<br>Row 1:[1,0][1,1][1,2][1,3]<br>Row 2:[2,0][2,1][2,2][2,3]<br>Row 3:[3,0][3,1][3,2][3,3]</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1010400">
+<H4> See also</H4>
+</A>
+
+<A NAME="1010404">
+<A HREF="doca1.htm#1078163"><CODE>Image</CODE></A><P></A>
+
+<A NAME="Head2;"></A>
+<A NAME="1010405">
+<H3> Properties</H3>
+</A>
+
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1197543">
+<H2>index</H2>
+</A>
+
+<A NAME="1199131">
+For an array created by a regular expression match, the zero-based index of the match in the string.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1197547">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1197552">
+<A HREF="core1.htm#1080770"><CODE>Array</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left COLSPAN=2 ROWSPAN=1><A NAME="1197554">
+<I>Static</I></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1197558">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1197560">
+Navigator 4.0, Netscape Server 3.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1197766">
+<H2>input</H2>
+</A>
+
+<A NAME="1197767">
+For an array created by a regular expression match, reflects the original string against which the regular expression was matched.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1197770">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1197775">
+<A HREF="core1.htm#1080770"><CODE>Array</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left COLSPAN=2 ROWSPAN=1><A NAME="1197777">
+<I>Static</I></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1197781">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1197783">
+Navigator 4.0, Netscape Server 3.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1010407">
+<H2>length</H2>
+</A>
+
+<A NAME="1010409">
+An integer that specifies the number of elements in an array. You can set the <CODE>length</CODE> property to truncate an array at any time. You cannot extend an array; for example, if you set length to 3 when it is currently 2, the array will still contain only 2 elements. <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1155416">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1155418">
+<A HREF="core1.htm#1080770"><CODE>Array</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1142115">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1175646">
+Navigator 3.0, LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010474">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1010475">
+In the following example, the <CODE>getChoice</CODE> function uses the <CODE>length</CODE> property to iterate over every element in the <CODE>musicType</CODE> array. <CODE>musicType</CODE> is a select element on the <CODE>musicForm</CODE> form.<P></A>
+<A NAME="1010476">
+<PRE>function getChoice() {<br>&nbsp;&nbsp;&nbsp;for (var i = 0; i &lt; document.musicForm.musicType.length; i++) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (document.musicForm.musicType.options[i].selected == true) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return document.musicForm.musicType.options[i].text<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;}<br>}</PRE></A><A NAME="1010479">
+The following example shortens the array <CODE>statesUS</CODE> to a length of 50 if the current length is greater than 50.<P></A>
+<A NAME="1010480">
+<PRE>if (statesUS.length &gt; 50) {<br>&nbsp;&nbsp;&nbsp;statesUS.length=50<br>&nbsp;&nbsp;&nbsp;alert("The U.S. has only 50 states. New length is " + statesUS.length)<br>}</PRE></A>
+<A NAME="Head2Ref;"></A>
+<A NAME="1010483">
+<H2>prototype</H2>
+</A>
+
+<A NAME="1152777">
+Represents the prototype for this class. You can use the prototype to add properties or methods to all instances of a class. For information on prototypes, see <A HREF="core4.htm#1181210"><CODE>Function.prototype</CODE></A>.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1155442">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1155447">
+<A HREF="core1.htm#1080770"><CODE>Array</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1152774">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1152776">
+Navigator 3.0, LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head2;"></A>
+<A NAME="1038492">
+<H3> Methods</H3>
+</A>
+
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1053105">
+<H2>concat</H2>
+</A>
+
+<A NAME="1053106">
+Joins two arrays and returns a new array. <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1152788">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1152790">
+<A HREF="core1.htm#1080770"><CODE>Array</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1175615">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1175684">
+Navigator 4.0, Netscape Server 3.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1053107">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1053108">
+<PRE>concat(arrayName2)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1053109">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1053110">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1053570">
+<PRE>arrayName2</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1053612">
+Name of the array to concatenate to this array. </A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1053114">
+<H4> Description</H4>
+</A>
+
+<A NAME="1053115">
+<CODE>concat</CODE> does not alter the original arrays, but returns a "one level deep" copy that contains copies of the same elements combined from the original arrays. Elements of the original arrays are copied into the new array as follows: <P></A>
+<ul><P>
+<A NAME="1053118">
+<LI>Object references (and not the actual object) -- <CODE>concat</CODE> copies object references into the new array. Both the original and new array refer to the same object. If a referenced object changes, the changes are visible to both the new and original arrays. </LI>
+</A><P>
+<A NAME="1055392">
+<LI>Strings and numbers (not <A HREF="corea2.htm#1012977"><CODE>String</CODE></A> and <A HREF="corea.htm#1012418"><CODE>Number</CODE></A> objects)-- <CODE>concat</CODE> copies strings and numbers into the new array. Changes to the string or number in one array does not affect the other arrays. </LI>
+</A></ul><A NAME="1053103">
+If a new element is added to either array, the other array is not affected. <P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1010543">
+<H2>join</H2>
+</A>
+
+<A NAME="1010545">
+Joins all elements of an array into a string.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1155499">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1152807">
+<A HREF="core1.htm#1080770"><CODE>Array</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1143762">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1175706">
+Navigator 3.0, LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010546">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1010547">
+<PRE>join(separator)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1010548">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1010554">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1010551">
+<PRE>separator</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1010553">
+Specifies a string to separate each element of the array. The separator is converted to a string if necessary. If omitted, the array elements are separated with a comma.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010560">
+<H4> Description</H4>
+</A>
+
+<A NAME="1010561">
+The string conversion of all array elements are joined into one string.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010564">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1010565">
+The following example creates an array, <CODE>a</CODE> with three elements, then joins the array three times: using the default separator, then a comma and a space, and then a plus.<P></A>
+<A NAME="1010566">
+<PRE>a = new Array("Wind","Rain","Fire")<br>document.write(a.join() +"&lt;BR&gt;")<br>document.write(a.join(", ") +"&lt;BR&gt;")<br>document.write(a.join(" + ") +"&lt;BR&gt;")</PRE></A><A NAME="1010567">
+This code produces the following output:<P></A>
+<A NAME="1010568">
+<PRE>Wind,Rain,Fire<br>Wind, Rain, Fire<br>Wind + Rain + Fire</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1010569">
+<H4> See also</H4>
+</A>
+
+<A NAME="1029168">
+<A HREF="core1.htm#1029171"><CODE>Array.reverse</CODE></A><P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1190515">
+<H2>pop</H2>
+</A>
+
+<A NAME="1190516">
+Removes the last element from an array and returns that element. This method changes the length of the array.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1190970">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1190975">
+<A HREF="core1.htm#1080770"><CODE>Array</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1190977">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1190979">
+Navigator 4.0, Netscape Server 3.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1190517">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1190518">
+<PRE>pop()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1190519">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1190520">
+None. <P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1190523">
+<H4> Example</H4>
+</A>
+
+<A NAME="1190524">
+The following code displays the <CODE>myFish</CODE> array before and after removing its last element. It also displays the removed element:<P></A>
+<A NAME="1190525">
+<PRE>myFish = ["angel", "clown", "mandarin", "surgeon"];<br>document.writeln("myFish before: " + myFish);<br>popped = myFish.pop();<br>document.writeln("myFish after: " + myFish);<br>document.writeln("popped this element: " + popped);</PRE></A><A NAME="1190526">
+This example displays the following:<P></A>
+<A NAME="1190527">
+myFish before: ["angel", "clown", "mandarin", "surgeon"]<br>myFish after: ["angel", "clown", "mandarin"]<br>popped this element: surgeon<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1191200">
+<H4> See also</H4>
+</A>
+
+<A NAME="1191201">
+<A HREF="core1.htm#1190529"><CODE>push</CODE></A>, <A HREF="core1.htm#1192548"><CODE>shift</CODE></A>, <A HREF="core1.htm#1193923"><CODE>unshift</CODE></A><P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1190529">
+<H2>push</H2>
+</A>
+
+<A NAME="1190530">
+Adds one or more elements to the end of an array and returns that last element added. This method changes the length of the array. <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1190995">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1191000">
+<A HREF="core1.htm#1080770"><CODE>Array</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1191002">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1191004">
+Navigator 4.0, Netscape Server 3.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1191229">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1191230">
+<PRE>push(elt1, ..., elt<I>N</I>)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1191231">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1190534">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1191239">
+<PRE>elt1, ..., elt<I>N</I></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1191241">
+The elements to add to the end of the array.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1200459">
+<H4> Description</H4>
+</A>
+
+<A NAME="1200468">
+The behavior of the <CODE>push</CODE> method is analogous to the push function in Perl&nbsp;4. Note that this behavior is different in Perl&nbsp;5.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1190538">
+<H4> Example</H4>
+</A>
+
+<A NAME="1190539">
+The following code displays the <CODE>myFish</CODE> array before and after adding elements to its end. It also displays the last element added:<P></A>
+<A NAME="1190540">
+<PRE>myFish = ["angel", "clown"];<br>document.writeln("myFish before: " + myFish);<br>pushed = myFish.push("drum", "lion");<br>document.writeln("myFish after: " + myFish);<br>document.writeln("pushed this element last: " + pushed);</PRE></A><A NAME="1190541">
+This example displays the following:<P></A>
+<A NAME="1190542">
+myFish before: ["angel", "clown"]<br>myFish after: ["angel", "clown", "drum", "lion"]<br>pushed this element last: lion<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1191214">
+<H4> See also</H4>
+</A>
+
+<A NAME="1191224">
+<A HREF="core1.htm#1190515"><CODE>pop</CODE></A>, <A HREF="core1.htm#1192548"><CODE>shift</CODE></A>, <A HREF="core1.htm#1193923"><CODE>unshift</CODE></A><P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1029171">
+<H2>reverse</H2>
+</A>
+
+<A NAME="1029172">
+Transposes the elements of an array: the first array element becomes the last and the last becomes the first.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1155501">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1152829">
+<A HREF="core1.htm#1080770"><CODE>Array</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1155503">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1175709">
+Navigator 3.0, LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010581">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1010582">
+<PRE>reverse()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1010583">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1010584">
+None<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010590">
+<H4> Description</H4>
+</A>
+
+<A NAME="1010591">
+The <CODE>reverse</CODE> method transposes the elements of the calling array object.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010594">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1010595">
+The following example creates an array <CODE>myArray</CODE>, containing three elements, then reverses the array.<P></A>
+<A NAME="1010596">
+<PRE>myArray = new Array("one", "two", "three")<br>myArray.reverse()</PRE></A><A NAME="1010597">
+This code changes <CODE>myArray</CODE> so that:<P></A>
+<ul><A NAME="1010598">
+<LI><CODE>myArray[0]</CODE> is <CODE>"three"</CODE></LI>
+</A><A NAME="1010599">
+<LI><CODE>myArray[1]</CODE> is <CODE>"two"</CODE></LI>
+</A><A NAME="1010600">
+<LI><CODE>myArray[2]</CODE> is <CODE>"one"</CODE></LI>
+</A></ul>
+<A NAME="Head3;"></A>
+<A NAME="1010601">
+<H4> See also</H4>
+</A>
+
+<A NAME="1010608">
+<A HREF="core1.htm#1010543"><CODE>Array.join</CODE></A>, <A HREF="core1.htm#1189865"><CODE>Array.sort</CODE></A><P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1192548">
+<H2>shift</H2>
+</A>
+
+<A NAME="1192549">
+Removes the first element from an array and returns that element. This method changes the length of the array.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1192552">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1192557">
+<A HREF="core1.htm#1080770"><CODE>Array</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1192559">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1192561">
+Navigator 4.0, Netscape Server 3.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1192562">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1192563">
+<PRE>shift()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1192564">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1192565">
+None.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1192566">
+<H4> Example</H4>
+</A>
+
+<A NAME="1192567">
+The following code displays the <CODE>myFish</CODE> array before and after removing its first element. It also displays the removed element:<P></A>
+<A NAME="1192568">
+<PRE>myFish = ["angel", "clown", "mandarin", "surgeon"];<br>document.writeln("myFish before: " + myFish);<br>shifted = myFish.shift();<br>document.writeln("myFish after: " + myFish);<br>document.writeln("Removed this element: " + shifted);</PRE></A><A NAME="1192569">
+This example displays the following:<P></A>
+<A NAME="1192570">
+myFish before: ["angel", "clown", "mandarin", "surgeon"]<br>myFish after: ["clown", "mandarin", "surgeon"]<br>Removed this element: angel<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1192571">
+<H4> See also</H4>
+</A>
+
+<A NAME="1192581">
+<A HREF="core1.htm#1190515"><CODE>pop</CODE></A>, <A HREF="core1.htm#1190529"><CODE>push</CODE></A>, <A HREF="core1.htm#1193923"><CODE>unshift</CODE></A><P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1055628">
+<H2>slice</H2>
+</A>
+
+<A NAME="1055629">
+Extracts a section of an array and returns a new array. <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1152837">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1152842">
+<A HREF="core1.htm#1080770"><CODE>Array</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1175720">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1190244">
+Navigator 4.0, Netscape Server 3.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1055630">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1055631">
+<PRE>slice(begin,end)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1055632">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1055633">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1056295">
+<PRE>begin</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1057685">
+Zero-based index at which to begin extraction.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1056299">
+<PRE>end</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1057870">
+(Optional) Zero-based index at which to end extraction:</A></P><ul><A NAME="1060858">
+<LI><CODE>slice</CODE> extracts up to but not including <CODE>end</CODE>. <CODE>slice(1,4)</CODE> extracts the second element through the fourth element (elements indexed 1, 2, and 3) </A><A NAME="1064041">
+<LI>As a negative index, <CODE>end</CODE> indicates an offset from the end of the sequence. <CODE>slice(2,-1)</CODE> extracts the third element through the second to last element in the sequence. </A><A NAME="1057876">
+<LI>If <CODE>end</CODE> is omitted, <CODE>slice</CODE> extracts to the end of the sequence. </A></ul>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1055645">
+<H4> Description</H4>
+</A>
+
+<A NAME="1055646">
+<CODE>slice</CODE> does not alter the original array, but returns a new "one level deep" copy that contains copies of the elements sliced from the original array. Elements of the original array are copied into the new array as follows: <P></A>
+<A NAME="1055649">
+Object references (and not the actual object) -- <CODE>slice</CODE> copies object references into the new array. Both the original and new array refer to the same object. If a referenced object changes, the changes are visible to both the new and original arrays. <P></A>
+<A NAME="1055653">
+Strings and numbers (not <A HREF="corea2.htm#1012977"><CODE>String</CODE></A> and <A HREF="corea.htm#1012418"><CODE>Number</CODE></A> objects)-- <CODE>slice</CODE> copies strings and numbers into the new array. Changes to the string or number in one array does not affect the other array. <P></A>
+<A NAME="1055656">
+If a new element is added to either array, the other array is not affected. <P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1055657">
+<H4> Example</H4>
+</A>
+
+<A NAME="1055658">
+In the following example, <CODE>slice</CODE> creates a new array, <CODE>newCar</CODE>, from <CODE>myCar</CODE>. Both include a reference to the object <CODE>myHonda</CODE>. When the color of <CODE>myHonda</CODE> is changed to <CODE>purple</CODE>, both arrays reflect the change. <P></A>
+<A NAME="1055661">
+<PRE>&lt;SCRIPT LANGUAGE="JavaScript1.2"&gt;</PRE></A><A NAME="1055662">
+<PRE>//Using slice, create newCar from myCar.<br>myHonda = {color:"red",wheels:4,engine:{cylinders:4,size:2.2}} <br>myCar = [myHonda, 2, "cherry condition", "purchased 1997"] <br>newCar = myCar.slice(0,2)</PRE></A><A NAME="1064900">
+<PRE>//Write the values of myCar, newCar, and the color of myHonda <br>// referenced from both arrays.<br>document.write("myCar = " + myCar + "&lt;BR&gt;")<br>document.write("newCar = " + newCar + "&lt;BR&gt;") <br>document.write("myCar[0].color = " + myCar[0].color + "&lt;BR&gt;") <br>document.write("newCar[0].color = " + newCar[0].color + "&lt;BR&gt;&lt;BR&gt;")</PRE></A><A NAME="1055672">
+<PRE>//Change the color of myHonda.<br>myHonda.color = "purple"<br>document.write("The new color of my Honda is " + myHonda.color + "&lt;BR&gt;&lt;BR&gt;")</PRE></A><A NAME="1109572">
+<PRE>//Write the color of myHonda referenced from both arrays.<br>document.write("myCar[0].color = " + myCar[0].color + "&lt;BR&gt;") <br>document.write("newCar[0].color = " + newCar[0].color + "&lt;BR&gt;")</PRE></A><A NAME="1203612">
+<PRE>&lt;/SCRIPT&gt;</PRE></A><A NAME="1203613">
+This script writes: <P></A>
+<A NAME="1203614">
+<PRE>myCar = [{color:"red", wheels:4, engine:{cylinders:4, size:2.2}}, 2,<br>&nbsp;&nbsp;&nbsp;"cherry condition", "purchased 1997"] <br>newCar = [{color:"red", wheels:4, engine:{cylinders:4, size:2.2}}, 2] <br>myCar[0].color = red newCar[0].color = red <br>The new color of my Honda is purple <br>myCar[0].color = purple <br>newCar[0].color = purple </PRE></A>
+<A NAME="Head2Ref;"></A>
+<A NAME="1143822">
+<H2>splice</H2>
+</A>
+
+<A NAME="1185615">
+Changes the content of an array, adding new elements while removing old elements.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1185619">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1185624">
+<A HREF="core1.htm#1080770"><CODE>Array</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1185626">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1185628">
+Navigator 4.0, Netscape Server 3.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1187045">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1187046">
+<PRE>splice(index, howMany, newElt1, ..., newElt<I>N</I>)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1187047">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1187053">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1187050">
+<PRE>index</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1187052">
+Index at which to start changing the array.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1187468">
+<PRE>howMany</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1187470">
+An integer indicating the number of old array elements to remove. If <CODE>howMany</CODE> is 0, no elements are removed. In this case, you should specify at least one new element.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1187479">
+<PRE>newElt1, ..., newElt<I>N</I></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1187481">
+(Optional) The elements to add to the array. If you don't specify any elements, splice simply removes elements from the array.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1187054">
+<H4> Description</H4>
+</A>
+
+<A NAME="1187673">
+If you specify a different number of elements to insert than the number you're removing, the array will have a different length at the end of the call.<P></A>
+<A NAME="1187748">
+If <CODE>howMany</CODE> is 1, this method returns the single element that it removes. If <CODE>howMany</CODE> is more than 1, the method returns an array containing the removed elements.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1187679">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1190266">
+The following script illustrate the use of <CODE>splice</CODE>:<P></A>
+<A NAME="1187766">
+<PRE>&lt;SCRIPT LANGUAGE="JavaScript1.2"&gt;</PRE></A><A NAME="1189987">
+<PRE>myFish = ["angel", "clown", "mandarin", "surgeon"];<br>document.writeln("myFish: " + myFish + "&lt;BR&gt;");</PRE></A><A NAME="1189988">
+<PRE>removed = myFish.splice(2, 0, "drum");<br>document.writeln("After adding 1: " + myFish);<br>document.writeln("removed is: " + removed + "&lt;BR&gt;");</PRE></A><A NAME="1189102">
+<PRE>removed = myFish.splice(3, 1)<br>document.writeln("After removing 1: " + myFish);<br>document.writeln("removed is: " + removed + "&lt;BR&gt;");</PRE></A><A NAME="1189136">
+<PRE>removed = myFish.splice(2, 1, "trumpet")<br>document.writeln("After replacing 1: " + myFish);<br>document.writeln("removed is: " + removed + "&lt;BR&gt;");</PRE></A><A NAME="1189138">
+<PRE>removed = myFish.splice(0, 2, "parrot", "anemone", "blue")<br>document.writeln("After replacing 2: " + myFish);<br>document.writeln("removed is: " + removed);</PRE></A><A NAME="1189189">
+<PRE>&lt;/SCRIPT&gt;</PRE></A><A NAME="1189324">
+This script displays:<P></A>
+<A NAME="1190070">
+<PRE>myFish: ["angel", "clown", "mandarin", "surgeon"]</PRE></A><A NAME="1190071">
+<PRE>After adding 1: ["angel", "clown", "drum", "mandarin", "surgeon"]<br>removed is: undefined</PRE></A><A NAME="1190073">
+<PRE>After removing 1: ["angel", "clown", "drum", "surgeon"]<br>removed is: mandarin</PRE></A><A NAME="1190075">
+<PRE>After replacing 1: ["angel", "clown", "trumpet", "surgeon"]<br>removed is: drum</PRE></A><A NAME="1190077">
+<PRE>After replacing 2: ["parrot", "anemone", "blue", "trumpet", "surgeon"]<br>removed is: ["angel", "clown"]</PRE></A>
+<A NAME="Head2Ref;"></A>
+<A NAME="1189865">
+<H2>sort</H2>
+</A>
+
+<A NAME="1143824">
+Sorts the elements of an array. <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1152856">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1152861">
+<A HREF="core1.htm#1080770"><CODE>Array</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1143837">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1175743">
+Navigator 3.0, LiveWire 1.0<br>Navigator 4.0: modified behavior.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1143825">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1010615">
+<PRE>sort(compareFunction)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1010616">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1010622">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1010619">
+<PRE>compareFunction</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1010621">
+Specifies a function that defines the sort order. If omitted, the array is sorted lexicographically (in dictionary order) according to the string conversion of each element.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010628">
+<H4> Description</H4>
+</A>
+
+<A NAME="1010629">
+If <CODE>compareFunction</CODE> is not supplied, elements are sorted by converting them to strings and comparing strings in lexicographic ("dictionary" or "telephone book," <I>not</I> numerical) order. For example, "80" comes before "9" in lexicographic order, but in a numeric sort 9 comes before 80.<P></A>
+<A NAME="1010630">
+If <CODE>compareFunction</CODE> is supplied, the array elements are sorted according to the return value of the compare function. If a and b are two elements being compared, then:<P></A>
+<ul><P>
+<A NAME="1010631">
+<LI>If <CODE>compareFunction(a, b)</CODE> is less than 0, sort <CODE>b</CODE> to a lower index than <CODE>a</CODE>.</LI>
+</A><P>
+<A NAME="1010632">
+<LI>If <CODE>compareFunction(a, b)</CODE> returns 0, leave <CODE>a</CODE> and <CODE>b</CODE> unchanged with respect to each other, but sorted with respect to all different elements.</LI>
+</A><P>
+<A NAME="1010633">
+<LI>If <CODE>compareFunction(a, b)</CODE> is greater than 0, sort <CODE>b</CODE> to a higher index than <CODE>a</CODE>.</LI>
+</A></ul><A NAME="1010634">
+So, the compare function has the following form:<P></A>
+<A NAME="1010635">
+<PRE>function compare(a, b) {<br>&nbsp;&nbsp;&nbsp;if (a is less than b by some ordering criterion)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return -1<br>&nbsp;&nbsp;&nbsp;if (a is greater than b by the ordering criterion)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return 1<br>&nbsp;&nbsp;&nbsp;// a must be equal to b<br>&nbsp;&nbsp;&nbsp;return 0<br>}</PRE></A><A NAME="1010636">
+To compare numbers instead of strings, the compare function can simply subtract b from a:<P></A>
+<A NAME="1010637">
+<PRE>function compareNumbers(a, b) {<br>&nbsp;&nbsp;&nbsp;return a - b<br>}</PRE></A><A NAME="1010638">
+JavaScript uses a stable sort: the index partial order of a and b does not change if a and b are equal. If a's index was less than b's before sorting, it will be after sorting, no matter how a and b move due to sorting.<P></A>
+<a name="1113481">
+The behavior of the <CODE>sort</CODE> method changed between Navigator&nbsp;3.0 and 
+Navigator&nbsp;4.0.
+</blockquote>
+</a>
+<A NAME="1113511">
+In Navigator&nbsp;3.0, on some platforms, the <CODE>sort</CODE> method does not work. This method works on all platforms for Navigator&nbsp;4.0.<P></A>
+<A NAME="1113471">
+In Navigator&nbsp;4.0, this method no longer converts undefined elements to null; instead it sorts them to the high end of the array. For example, assume you have this script: <P></A>
+<A NAME="1112980">
+<PRE>&lt;SCRIPT&gt;<br>a = new Array();<br>a[0] = "Ant";<br>a[5] = "Zebra";</PRE></A><A NAME="1112981">
+<PRE>function writeArray(x) {<br>&nbsp;&nbsp;&nbsp;for (i = 0; i &lt; x.length; i++) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.write(x[i]);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (i &lt; x.length-1) document.write(", ");<br>&nbsp;&nbsp;&nbsp;}<br>}</PRE></A><A NAME="1112982">
+<PRE>writeArray(a);<br>a.sort();<br>document.write("&lt;BR&gt;&lt;BR&gt;");<br>writeArray(a);<br>&lt;/SCRIPT&gt;</PRE></A><A NAME="1113587">
+In Navigator&nbsp;3.0, JavaScript prints: <P></A>
+<A NAME="1112984">
+<PRE>ant, null, null, null, null, zebra <br>ant, null, null, null, null, zebra</PRE></A><A NAME="1113589">
+In Navigator&nbsp;4.0, JavaScript prints: <P></A>
+<A NAME="1112987">
+<PRE>ant, undefined, undefined, undefined, undefined, zebra <br>ant, zebra, undefined, undefined, undefined, undefined</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1010643">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1010644">
+The following example creates four arrays and displays the original array, then the sorted arrays. The numeric arrays are sorted without, then with, a compare function.<P></A>
+<A NAME="1010645">
+<PRE>&lt;SCRIPT&gt;<br>stringArray = new Array("Blue","Humpback","Beluga")<br>numericStringArray = new Array("80","9","700")<br>numberArray = new Array(40,1,5,200)<br>mixedNumericArray = new Array("80","9","700",40,1,5,200)</PRE></A><A NAME="1010646">
+<PRE>function compareNumbers(a, b) {<br>&nbsp;&nbsp;&nbsp;return a - b<br>}</PRE></A><A NAME="1010647">
+<PRE>document.write("&lt;B&gt;stringArray:&lt;/B&gt; " + stringArray.join() +"&lt;BR&gt;")<br>document.write("&lt;B&gt;Sorted:&lt;/B&gt; " + stringArray.sort() +"&lt;P&gt;")</PRE></A><A NAME="1010648">
+<PRE>document.write("&lt;B&gt;numberArray:&lt;/B&gt; " + numberArray.join() +"&lt;BR&gt;")<br>document.write("&lt;B&gt;Sorted without a compare function:&lt;/B&gt; " + numberArray.sort() +"&lt;BR&gt;")<br>document.write("&lt;B&gt;Sorted with compareNumbers:&lt;/B&gt; " + numberArray.sort(compareNumbers) +"&lt;P&gt;")</PRE></A><A NAME="1010649">
+<PRE>document.write("&lt;B&gt;numericStringArray:&lt;/B&gt; " + numericStringArray.join() +"&lt;BR&gt;")<br>document.write("&lt;B&gt;Sorted without a compare function:&lt;/B&gt; " + numericStringArray.sort() +"&lt;BR&gt;")<br>document.write("&lt;B&gt;Sorted with compareNumbers:&lt;/B&gt; " + numericStringArray.sort(compareNumbers) +"&lt;P&gt;")</PRE></A><A NAME="1010650">
+<PRE>document.write("&lt;B&gt;mixedNumericArray:&lt;/B&gt; " + mixedNumericArray.join() +"&lt;BR&gt;")<br>document.write("&lt;B&gt;Sorted without a compare function:&lt;/B&gt; " + mixedNumericArray.sort() +"&lt;BR&gt;")<br>document.write("&lt;B&gt;Sorted with compareNumbers:&lt;/B&gt; " + mixedNumericArray.sort(compareNumbers) +"&lt;BR&gt;")<br>&lt;/SCRIPT&gt;</PRE></A><A NAME="1010651">
+This example produces the following output. As the output shows, when a compare function is used, numbers sort correctly whether they are numbers or numeric strings.<P></A>
+<A NAME="1010652">
+<PRE><B>stringArray:</B> Blue,Humpback,Beluga<br><B>Sorted:</B> Beluga,Blue,Humpback</PRE></A><A NAME="1010653">
+<PRE><B>numberArray:</B> 40,1,5,200<br><B>Sorted without a compare function:</B> 1,200,40,5<br><B>Sorted with compareNumbers:</B> 1,5,40,200</PRE></A><A NAME="1010654">
+<PRE><B>numericStringArray:</B> 80,9,700<br><B>Sorted without a compare function:</B> 700,80,9<br><B>Sorted with compareNumbers:</B> 9,80,700</PRE></A><A NAME="1010655">
+<PRE><B>mixedNumericArray:</B> 80,9,700,40,1,5,200<br><B>Sorted without a compare function:</B> 1,200,40,5,700,80,9<br><B>Sorted with compareNumbers:</B> 1,5,9,40,80,200,700</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1010656">
+<H4> See also</H4>
+</A>
+
+<A NAME="1012256">
+<A HREF="core1.htm#1010543"><CODE>Array.join</CODE></A>, <A HREF="core1.htm#1029171"><CODE>Array.reverse</CODE></A><P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1163214">
+<H2>toString</H2>
+</A>
+
+<A NAME="1163227">
+Returns a string representing the specified object.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1163217">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1163222">
+<A HREF="core1.htm#1080770"><CODE>Array</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1163224">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1175746">
+Navigator 3.0, LiveWire 1.0</A></P>
+
+</TABLE>
+ <P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1165627">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1165628">
+<PRE>toString()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1165629">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1163237">
+None.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1167177">
+<H4> Description</H4>
+</A>
+
+<A NAME="1167249">
+Every object has a <CODE>toString</CODE> method that is automatically called when it is to be represented as a text value or when an object is referred to in a string concatenation. <P></A>
+<A NAME="1167251">
+You can use <CODE>toString</CODE> within your own code to convert an object into a string, and you can create your own function to be called in place of the default <CODE>toString</CODE> method.<P></A>
+<A NAME="1167375">
+For <A HREF="core1.htm#1080770"><CODE>Array</CODE></A> objects, the built-in <CODE>toString</CODE> method joins the array and returns one string containing each array element separated by commas. For example, the following code creates an array and uses <CODE>toString</CODE> to convert the array to a string while writing output.<P></A>
+<A NAME="1167415">
+<PRE>var monthNames = new Array("Jan","Feb","Mar","Apr")<br>document.write("monthNames.toString() is " + monthNames.toString())</PRE></A><A NAME="1167416">
+The output is as follows:<P></A>
+<A NAME="1167417">
+<PRE>monthNames.toString() is Jan,Feb,Mar,Apr</PRE></A><A NAME="1167692">
+For information on defining your own <CODE>toString</CODE> method, see the <A HREF="corea1.htm#1012793"><CODE>Object.toString</CODE></A> method.<P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1193923">
+<H2>unshift</H2>
+</A>
+
+<A NAME="1193924">
+Adds one or more elements to the beginning of an array and returns the new length of the array. <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1193927">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1193932">
+<A HREF="core1.htm#1080770"><CODE>Array</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1193934">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1193936">
+Navigator 4.0, Netscape Server 3.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1193937">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1193938">
+<PRE>arrayName.unshift(elt1,..., elt<I>N</I>)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1193939">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1193945">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1193942">
+<PRE>elt1,...,elt<I>N</I></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1193944">
+The elements to add to the front of the array.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1193946">
+<H4> Example</H4>
+</A>
+
+<A NAME="1193947">
+The following code displays the <CODE>myFish</CODE> array before and after adding elements to it.<P></A>
+<A NAME="1193948">
+<PRE>myFish = ["angel", "clown"];<br>document.writeln("myFish before: " + myFish);<br>unshifted = myFish.unshift("drum", "lion");<br>document.writeln("myFish after: " + myFish);<br>document.writeln("New length: " + unshifted);</PRE></A><A NAME="1193949">
+This example displays the following:<P></A>
+<A NAME="1193950">
+myFish before: ["angel", "clown"]<br>myFish after: ["drum", "lion", "angel", "clown"]<br>New length: 4<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1193951">
+<H4> See also</H4>
+</A>
+
+<A NAME="1193961">
+<A HREF="core1.htm#1190515"><CODE>pop</CODE></A>, <A HREF="core1.htm#1190529"><CODE>push</CODE></A>, <A HREF="core1.htm#1192548"><CODE>shift</CODE></A><P></A>
+
+<P><HR>
+<A HREF="contents.htm">[Contents]</A> <A HREF="core.htm">[Previous]</A> <A HREF="core2.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<P ALIGN=right>
+
+<FONT SIZE=-2><I>Last Updated:  10/31/97  16:00:33
+</I></FONT>
+
+<HR SIZE=4>
+
+<P> <CENTER>Copyright © 1997
+<A HREF="http://home.netscape.com/misc/contact_info.html"
+TARGET=_top>Netscape Communications Corporation</A></FONT>
+</CENTER>
+<P>
+<P>
+</BODY>
+</HTML>
+
+

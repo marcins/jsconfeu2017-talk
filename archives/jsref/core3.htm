@@ -1,0 +1,1415 @@
+<HTML>
+<HEAD>
+<TITLE>Core&nbsp;&nbsp;&nbsp;
+</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A HREF="contents.htm">[Contents]</A> <A HREF="core2.htm">[Previous]</A> <A HREF="core4.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<HR>
+
+<A NAME="Date"></A>
+<A NAME="1012685">
+<H1> Date</H1>
+</A>
+<A NAME="1012687">
+Lets you work with dates and times.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left COLSPAN=2 ROWSPAN=1><A NAME="1144161">
+<I>Core object</I></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1144175">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1144454">
+Navigator 2.0, LiveWire 1.0<br>Navigator 3.0: added <CODE>prototype</CODE> property</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1076536">
+<H4> Created by</H4>
+</A>
+
+<A NAME="1076537">
+The <CODE>Date</CODE> constructor:<P></A>
+<A NAME="1012690">
+<PRE>new Date()<br>new Date("month day, year hours:minutes:seconds")<br>new Date(yr_num, mo_num, day_num)<br>new Date(yr_num, mo_num, day_num, hr_num, min_num, sec_num)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1012695">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1012713">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012702">
+<PRE>month, day, year,<br>hours, minutes,<br>seconds</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1012704">
+String values representing part of a date.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1125906">
+<PRE>yr_num, mo_num,<br>day_num, hr_num,<br>min_num, sec_num</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1126155">
+Integer values representing part of a date. As an integer value, the month is represented by 0 to 11 with 0=January and 11=December.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012716">
+<H4> Description</H4>
+</A>
+
+<A NAME="1012718">
+If you supply no arguments, the constructor creates a <CODE>Date</CODE> object for today's date and time. If you supply some arguments, but not others, the missing arguments are set to 0. If you supply any arguments, you must supply at least the year, month, and day. You can omit the hours, minutes, and seconds.<P></A>
+<A NAME="1012719">
+The way JavaScript handles dates is very similar to the way Java handles dates: both languages have many of the same date methods, and both store dates internally as the number of milliseconds since January 1, 1970 00:00:00. Dates prior to 1970 are not allowed.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012720">
+<H4> Property Summary</H4>
+</A>
+
+<A NAME="1012729">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012726">
+<PRE><A HREF="core3.htm#1012891"><CODE>prototype</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1012728">
+Allows the addition of properties to a <CODE>Date</CODE> object.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012730">
+<H4> Method Summary</H4>
+</A>
+
+<A NAME="1012879">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012736">
+<PRE><A HREF="core3.htm#1012951"><CODE>getDate</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1012738">
+Returns the day of the month for the specified date.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012743">
+<PRE><A HREF="core3.htm#1038587"><CODE>getDay</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1012745">
+Returns the day of the week for the specified date.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012750">
+<PRE><A HREF="core3.htm#1012997"><CODE>getHours</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1012752">
+Returns the hour in the specified date.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012757">
+<PRE><A HREF="core3.htm#1013022"><CODE>getMinutes</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1012759">
+Returns the minutes in the specified date.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012764">
+<PRE><A HREF="core3.htm#1013048"><CODE>getMonth</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1012766">
+Returns the month in the specified date.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012771">
+<PRE><A HREF="core3.htm#1013276"><CODE>getSeconds</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1134264">
+Returns the seconds in the specified date.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012785">
+<PRE><A HREF="core3.htm#1013113"><CODE>getTime</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1012787">
+Returns the numeric value corresponding to the time for the specified date.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012792">
+<PRE><A HREF="core3.htm#1013138"><CODE>getTimezoneOffset</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1012794">
+Returns the time-zone offset in minutes for the current locale.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012799">
+<PRE><A HREF="core3.htm#1013157"><CODE>getYear</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1012801">
+Returns the year in the specified date.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012806">
+<PRE><A HREF="core3.htm#1013188"><CODE>parse</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1012808">
+Returns the number of milliseconds in a date string since January 1, 1970, 00:00:00, local time.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012813">
+<PRE><A HREF="core3.htm#1013221"><CODE>setDate</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1012815">
+Sets the day of the month for a specified date.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012820">
+<PRE><A HREF="core3.htm#1013249"><CODE>setHours</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1012822">
+Sets the hours for a specified date.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012827">
+<PRE><A HREF="core3.htm#1013276"><CODE>setMinutes</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1012829">
+Sets the minutes for a specified date.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012834">
+<PRE><A HREF="core3.htm#1013303"><CODE>setMonth</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1012836">
+Sets the month for a specified date.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012841">
+<PRE><A HREF="core3.htm#1013330"><CODE>setSeconds</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1012843">
+Sets the seconds for a specified date.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012848">
+<PRE><A HREF="core3.htm#1013357"><CODE>setTime</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1012850">
+Sets the value of a Date object.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012855">
+<PRE><A HREF="core3.htm#1013386"><CODE>setYear</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1012857">
+Sets the year for a specified date.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012862">
+<PRE><A HREF="core3.htm#1013422"><CODE>toGMTString</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1012864">
+Converts a date to a string, using the Internet GMT conventions.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012869">
+<PRE><A HREF="core3.htm#1013449"><CODE>toLocaleString</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1012871">
+Converts a date to a string, using the current locale's conventions.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012876">
+<PRE><A HREF="core3.htm#1013477"><CODE>UTC</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1012878">
+Returns the number of milliseconds in a <CODE>Date</CODE> object since January 1, 1970, 00:00:00, Universal Coordinated Time (GMT).</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012885">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1012886">
+The following examples show several ways to assign dates:<P></A>
+<A NAME="1012887">
+<PRE>today = new Date()<br>birthday = new Date("December 17, 1995 03:24:00")<br>birthday = new Date(95,11,17)<br>birthday = new Date(95,11,17,3,24,0)</PRE></A>
+<A NAME="Head2;"></A>
+<A NAME="1012888">
+<H3> Properties</H3>
+</A>
+
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1012891">
+<H2>prototype</H2>
+</A>
+
+<A NAME="1161192">
+Represents the prototype for this class. You can use the prototype to add properties or methods to all instances of a class. For information on prototypes, see <A HREF="core4.htm#1181210"><CODE>Function.prototype</CODE></A>.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1161195">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1161200">
+<A HREF="core3.htm#1012685"><CODE>Date</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1161202">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1175759">
+Navigator 3.0, LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head2;"></A>
+<A NAME="1012948">
+<H3> Methods</H3>
+</A>
+
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1012951">
+<H2>getDate</H2>
+</A>
+
+<A NAME="1012952">
+Returns the day of the month for the specified date.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1152870">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1152875">
+<A HREF="core3.htm#1012685"><CODE>Date</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1145518">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1145520">
+Navigator 2.0, LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012953">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1012954">
+<PRE>getDate()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1012955">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1012956">
+None<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012962">
+<H4> Description</H4>
+</A>
+
+<A NAME="1012963">
+The value returned by <CODE>getDate</CODE> is an integer between 1 and 31.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012966">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1012967">
+The second statement below assigns the value 25 to the variable <CODE>day</CODE>, based on the value of the <CODE>Date</CODE> object <CODE>Xmas95</CODE>.<P></A>
+<A NAME="1012968">
+<PRE>Xmas95 = new Date("December 25, 1995 23:15:00")<br>day = Xmas95.getDate()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1038580">
+<H4> See also</H4>
+</A>
+
+<A NAME="1038584">
+<A HREF="core3.htm#1013221"><CODE>Date.setDate</CODE></A><P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1038587">
+<H2>getDay</H2>
+</A>
+
+<A NAME="1012978">
+Returns the day of the week for the specified date.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1152883">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1152888">
+<A HREF="core3.htm#1012685"><CODE>Date</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1145709">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1145711">
+Navigator 2.0, LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012979">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1012980">
+<PRE>getDay()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1012981">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1012982">
+None<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012988">
+<H4> Description</H4>
+</A>
+
+<A NAME="1012989">
+The value returned by <CODE>getDay</CODE> is an integer corresponding to the day of the week: 0 for Sunday, 1 for Monday, 2 for Tuesday, and so on.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012992">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1012993">
+The second statement below assigns the value 1 to <CODE>weekday</CODE>, based on the value of the <CODE>Date</CODE> object <CODE>Xmas95</CODE>. December 25, 1995, is a Monday.<P></A>
+<A NAME="1012994">
+<PRE>Xmas95 = new Date("December 25, 1995 23:15:00")<br>weekday = Xmas95.getDay()</PRE></A>
+<A NAME="Head2Ref;"></A>
+<A NAME="1012997">
+<H2>getHours</H2>
+</A>
+
+<A NAME="1012998">
+Returns the hour for the specified date.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1155533">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1152902">
+<A HREF="core3.htm#1012685"><CODE>Date</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1155535">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1145903">
+Navigator 2.0, LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012999">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1013000">
+<PRE>getHours()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1013001">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1013002">
+None<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013008">
+<H4> Description</H4>
+</A>
+
+<A NAME="1013009">
+The value returned by <CODE>getHours</CODE> is an integer between 0 and 23.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013012">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1013013">
+The second statement below assigns the value 23 to the variable <CODE>hours</CODE>, based on the value of the <CODE>Date</CODE> object <CODE>Xmas95</CODE>.<P></A>
+<A NAME="1013014">
+<PRE>Xmas95 = new Date("December 25, 1995 23:15:00")<br>hours = Xmas95.getHours()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1013015">
+<H4> See also</H4>
+</A>
+
+<A NAME="1013019">
+<A HREF="core3.htm#1013249"><CODE>Date.setHours</CODE></A> <P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1013022">
+<H2>getMinutes</H2>
+</A>
+
+<A NAME="1013024">
+Returns the minutes in the specified date.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1155537">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1152915">
+<A HREF="core3.htm#1012685"><CODE>Date</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1155539">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1145944">
+Navigator 2.0, LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013025">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1013026">
+<PRE>getMinutes()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1013027">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1013028">
+None<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013034">
+<H4> Description</H4>
+</A>
+
+<A NAME="1013035">
+The value returned by <CODE>getMinutes</CODE> is an integer between 0 and 59.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013038">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1013039">
+The second statement below assigns the value 15 to the variable <CODE>minutes</CODE>, based on the value of the <CODE>Date</CODE> object <CODE>Xmas95</CODE>.<P></A>
+<A NAME="1013040">
+<PRE>Xmas95 = new Date("December 25, 1995 23:15:00")<br>minutes = Xmas95.getMinutes()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1013041">
+<H4> See also</H4>
+</A>
+
+<A NAME="1013045">
+<A HREF="core3.htm#1013276"><CODE>Date.setMinutes</CODE></A> <P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1013048">
+<H2>getMonth</H2>
+</A>
+
+<A NAME="1013050">
+Returns the month in the specified date.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1155541">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1152929">
+<A HREF="core3.htm#1012685"><CODE>Date</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1155543">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1145972">
+Navigator 2.0, LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013051">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1013052">
+<PRE>getMonth()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1013053">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1013054">
+None<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013060">
+<H4> Description</H4>
+</A>
+
+<A NAME="1013061">
+The value returned by <CODE>getMonth</CODE> is an integer between 0 and 11. 0 corresponds to January, 1 to February, and so on.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1135630">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1135631">
+The second statement below assigns the value 11 to the variable <CODE>month</CODE>, based on the value of the <CODE>Date</CODE> object <CODE>Xmas95</CODE>.<P></A>
+<A NAME="1013066">
+<PRE>Xmas95 = new Date("December 25, 1995 23:15:00")<br>month = Xmas95.getMonth()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1013067">
+<H4> See also</H4>
+</A>
+
+<A NAME="1013071">
+<A HREF="core3.htm#1013303"><CODE>Date.setMonth</CODE></A><P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1013074">
+<H2>getSeconds</H2>
+</A>
+
+<A NAME="1013075">
+Returns the seconds in the current time.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1155545">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1152977">
+<A HREF="core3.htm#1012685"><CODE>Date</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1155547">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1145985">
+Navigator 2.0, LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013076">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1013077">
+<PRE>getSeconds()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1013078">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1013079">
+None<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013085">
+<H4> Description</H4>
+</A>
+
+<A NAME="1013086">
+The value returned by <CODE>getSeconds</CODE> is an integer between 0 and 59.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013089">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1013090">
+The second statement below assigns the value 30 to the variable <CODE>secs</CODE>, based on the value of the <CODE>Date</CODE> object <CODE>Xmas95</CODE>.<P></A>
+<A NAME="1013091">
+<PRE>Xmas95 = new Date("December 25, 1995 23:15:30")<br>secs = Xmas95.getSeconds()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1013092">
+<H4> See also</H4>
+</A>
+
+<A NAME="1013096">
+<A HREF="core3.htm#1013330"><CODE>Date.setSeconds</CODE></A><P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1013113">
+<H2>getTime</H2>
+</A>
+
+<A NAME="1013114">
+Returns the numeric value corresponding to the time for the specified date.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1155549">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1153084">
+<A HREF="core3.htm#1012685"><CODE>Date</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1155551">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1145999">
+Navigator 2.0, LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013115">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1013116">
+<PRE>getTime()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1013117">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1013118">
+None<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013124">
+<H4> Description</H4>
+</A>
+
+<A NAME="1013125">
+The value returned by the <CODE>getTime</CODE> method is the number of milliseconds since 1 January 1970 00:00:00. You can use this method to help assign a date and time to another <CODE>Date</CODE> object.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013128">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1013129">
+The following example assigns the date value of <CODE>theBigDay</CODE> to <CODE>sameAsBigDay</CODE>:<P></A>
+<A NAME="1013130">
+<PRE>theBigDay = new Date("July 1, 1999")<br>sameAsBigDay = new Date()<br>sameAsBigDay.setTime(theBigDay.getTime())</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1013131">
+<H4> See also</H4>
+</A>
+
+<A NAME="1174231">
+<A HREF="core3.htm#1013357"><CODE>Date.setTime</CODE></A><P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1013138">
+<H2>getTimezoneOffset</H2>
+</A>
+
+<A NAME="1013139">
+Returns the time-zone offset in minutes for the current locale.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1155553">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1153097">
+<A HREF="core3.htm#1012685"><CODE>Date</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1155555">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1146038">
+Navigator 2.0, LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013140">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1013141">
+<PRE>getTimezoneOffset()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1013142">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1013143">
+None<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013149">
+<H4> Description</H4>
+</A>
+
+<A NAME="1013150">
+The time-zone offset is the difference between local time and Greenwich Mean Time (GMT). Daylight savings time prevents this value from being a constant.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013153">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1013154">
+<PRE>x = new Date()<br>currentTimeZoneOffsetInHours = x.getTimezoneOffset()/60</PRE></A>
+<A NAME="Head2Ref;"></A>
+<A NAME="1013157">
+<H2>getYear</H2>
+</A>
+
+<A NAME="1013158">
+Returns the year in the specified date.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1155557">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1153111">
+<A HREF="core3.htm#1012685"><CODE>Date</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1155559">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1146060">
+Navigator 2.0, LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013159">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1013160">
+<PRE>getYear()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1013161">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1013162">
+None<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013168">
+<H4> Description</H4>
+</A>
+
+<A NAME="1013169">
+The <CODE>getYear</CODE> method returns either a 2-digit or 4-digit year:<P></A>
+<ul><P>
+<A NAME="1013170">
+<LI>For years between and including 1900 and 1999, the value returned by <CODE>getYear</CODE> is the year minus 1900. For example, if the year is 1976, the value returned is 76.</LI>
+</A><P>
+<A NAME="1013171">
+<LI>For years less than 1900 or greater than 1999, the value returned by <CODE>getYear</CODE> is the four-digit year. For example, if the year is 1856, the value returned is 1856. If the year is 2026, the value returned is 2026.</LI>
+</A></ul>
+<A NAME="Head3;"></A>
+<A NAME="1135640">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1135641">
+<B>Example 1.</B> The second statement assigns the value 95 to the variable <CODE>year</CODE>.<P></A>
+<A NAME="1135642">
+<PRE>Xmas = new Date("December 25, 1995 23:15:00")<br>year = Xmas.getYear()</PRE></A><A NAME="1013177">
+<B>Example 2.</B> The second statement assigns the value 2000 to the variable <CODE>year</CODE>.<P></A>
+<A NAME="1013178">
+<PRE>Xmas = new Date("December 25, 2000 23:15:00")<br>year = Xmas.getYear()</PRE></A><A NAME="1013179">
+<B>Example 3.</B> The second statement assigns the value 95 to the variable <CODE>year</CODE>, representing the year 1995.<P></A>
+<A NAME="1013180">
+<PRE>Xmas.setYear(95)<br>year = Xmas.getYear()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1013181">
+<H4> See also</H4>
+</A>
+
+<A NAME="1013185">
+<A HREF="core3.htm#1013386"><CODE>Date.setYear</CODE></A> <P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1013188">
+<H2>parse</H2>
+</A>
+
+<A NAME="1013189">
+Returns the number of milliseconds in a date string since January 1, 1970, 00:00:00, local time.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1155561">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1153207">
+<A HREF="core3.htm#1012685"><CODE>Date</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left COLSPAN=2 ROWSPAN=1><A NAME="1156826">
+<I>Static</I></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1155563">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1146117">
+Navigator 2.0, LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013190">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1013191">
+<PRE>Date.parse(dateString)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1013192">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1013199">
+:<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1013195">
+<PRE>dateString</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1013197">
+A string representing a date.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013205">
+<H4> Description</H4>
+</A>
+
+<A NAME="1013206">
+The <CODE>parse</CODE> method takes a date string (such as <CODE>"Dec 25, 1995"</CODE>) and returns the number of milliseconds since January 1, 1970, 00:00:00 (local time). This function is useful for setting date values based on string values, for example in conjunction with the <A HREF="core3.htm#1013357"><CODE>setTime</CODE></A> method and the <CODE>Date</CODE> object.<P></A>
+<A NAME="1013207">
+Given a string representing a time, <CODE>parse</CODE> returns the time value. It accepts the IETF standard date syntax: <CODE>"Mon, 25 Dec 1995 13:30:00 GMT"</CODE>. It understands the continental US time-zone abbreviations, but for general use, use a time-zone offset, for example, <CODE>"Mon, 25 Dec 1995 13:30:00 GMT+0430"</CODE> (4 hours, 30 minutes west of the Greenwich meridian). If you do not specify a time zone, the local time zone is assumed. GMT and UTC are considered equivalent. <P></A>
+<A NAME="1013208">
+Because <CODE>parse</CODE> is a static method of <CODE>Date</CODE>, you always use it as <CODE>Date.parse()</CODE>, rather than as a method of a <CODE>Date</CODE> object you created.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013211">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1013212">
+If <CODE>IPOdate</CODE> is an existing <CODE>Date</CODE> object, then you can set it to August 9, 1995 as follows:<P></A>
+<A NAME="1013213">
+<PRE>IPOdate.setTime(Date.parse("Aug 9, 1995"))</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1013214">
+<H4> See also</H4>
+</A>
+
+<A NAME="1013218">
+<A HREF="core3.htm#1013477"><CODE>Date.UTC</CODE></A> <P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1013221">
+<H2>setDate</H2>
+</A>
+
+<A NAME="1013222">
+Sets the day of the month for a specified date.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1155565">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1153291">
+<A HREF="core3.htm#1012685"><CODE>Date</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1155567">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1146164">
+Navigator 2.0, LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013223">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1127478">
+<PRE>setDate(dayValue)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1127479">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1127485">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1127482">
+<PRE>dayValue</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1127484">
+An integer from 1 to 31, representing the day of the month.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013239">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1013240">
+The second statement below changes the day for <CODE>theBigDay</CODE> to July 24 from its original value.<P></A>
+<A NAME="1013241">
+<PRE>theBigDay = new Date("July 27, 1962 23:30:00")<br>theBigDay.setDate(24)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1013242">
+<H4> See also</H4>
+</A>
+
+<A NAME="1013246">
+<A HREF="core3.htm#1012951"><CODE>Date.getDate</CODE></A><P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1013249">
+<H2>setHours</H2>
+</A>
+
+<A NAME="1013250">
+Sets the hours for a specified date.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1155593">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1153337">
+<A HREF="core3.htm#1012685"><CODE>Date</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1155595">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1147248">
+Navigator 2.0, LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013251">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1013252">
+<PRE>setHours(hoursValue)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1013253">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1013259">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1013256">
+<PRE>hoursValue</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1013258">
+An integer between 0 and 23, representing the hour.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013267">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1013268">
+<PRE>theBigDay.setHours(7)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1013269">
+<H4> See also</H4>
+</A>
+
+<A NAME="1013273">
+<A HREF="core3.htm#1012997"><CODE>Date.getHours</CODE></A> <P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1013276">
+<H2>setMinutes</H2>
+</A>
+
+<A NAME="1013277">
+Sets the minutes for a specified date.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1155613">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1153403">
+<A HREF="core3.htm#1012685"><CODE>Date</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1155615">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1147695">
+Navigator 2.0, LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013278">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1013279">
+<PRE>setMinutes(minutesValue)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1013280">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1013286">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1013283">
+<PRE>minutesValue</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1013285">
+An integer between 0 and 59, representing the minutes.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013294">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1013295">
+<PRE>theBigDay.setMinutes(45)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1013296">
+<H4> See also</H4>
+</A>
+
+<A NAME="1013300">
+<A HREF="core3.htm#1013022"><CODE>Date.getMinutes</CODE></A> <P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1013303">
+<H2>setMonth</H2>
+</A>
+
+<A NAME="1013304">
+Sets the month for a specified date.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1155633">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1153449">
+<A HREF="core3.htm#1012685"><CODE>Date</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1155635">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1147865">
+Navigator 2.0, LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013305">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1013306">
+<PRE>setMonth(monthValue)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1013307">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1013313">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1013310">
+<PRE>monthValue</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1013312">
+An integer between 0 and 11 (representing the months January through December).</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013321">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1013322">
+<PRE>theBigDay.setMonth(6)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1013323">
+<H4> See also</H4>
+</A>
+
+<A NAME="1013327">
+<A HREF="core3.htm#1013048"><CODE>Date.getMonth</CODE></A> <P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1013330">
+<H2>setSeconds</H2>
+</A>
+
+<A NAME="1013331">
+Sets the seconds for a specified date.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1155645">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1153484">
+<A HREF="core3.htm#1012685"><CODE>Date</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1155647">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1147893">
+Navigator 2.0, LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013332">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1013333">
+<PRE>setSeconds(secondsValue)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1013334">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1013340">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1013337">
+<PRE>secondsValue</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1135683">
+An integer between 0 and 59.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013348">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1013349">
+<PRE>theBigDay.setSeconds(30)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1013350">
+<H4> See also</H4>
+</A>
+
+<A NAME="1013354">
+<A HREF="core3.htm#1013276"><CODE>Date.getSeconds</CODE></A> <P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1013357">
+<H2>setTime</H2>
+</A>
+
+<A NAME="1013358">
+Sets the value of a <CODE>Date</CODE> object.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1155657">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1153519">
+<A HREF="core3.htm#1012685"><CODE>Date</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1155659">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1147907">
+Navigator 2.0, LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013359">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1013360">
+<PRE>setTime(timevalue) </PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1013361">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1013367">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1013364">
+<PRE>timevalue</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1013366">
+An integer representing the number of milliseconds since 1 January 1970 00:00:00.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013373">
+<H4> Description</H4>
+</A>
+
+<A NAME="1013374">
+Use the <CODE>setTime</CODE> method to help assign a date and time to another <CODE>Date</CODE> object.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013377">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1013378">
+<PRE>theBigDay = new Date("July 1, 1999")<br>sameAsBigDay = new Date()<br>sameAsBigDay.setTime(theBigDay.getTime())</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1013379">
+<H4> See also</H4>
+</A>
+
+<A NAME="1013383">
+<A HREF="core3.htm#1013113"><CODE>Date.getTime</CODE></A> <P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1013386">
+<H2>setYear</H2>
+</A>
+
+<A NAME="1174181">
+Sets the year for a specified date.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1174171">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1174176">
+<A HREF="core3.htm#1012685"><CODE>Date</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1174178">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1174180">
+Navigator 2.0, LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1174183">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1174184">
+<PRE>setYear(yearValue)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1013391">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1013397">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1013394">
+<PRE>yearValue</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1013396">
+An integer.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013403">
+<H4> Description</H4>
+</A>
+
+<A NAME="1013404">
+If <CODE>yearValue</CODE> is a number between 0 and 99 (inclusive), then the year for <CODE>dateObjectName</CODE> is set to 1900 + <CODE>yearValue</CODE>. Otherwise, the year for <CODE>dateObjectName</CODE> is set to <CODE>yearValue</CODE>.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013407">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1013408">
+Note that there are two ways to set years in the 20th century.<P></A>
+<A NAME="1013409">
+<B>Example 1.</B> The year is set to 1996.<P></A>
+<A NAME="1013410">
+<PRE>theBigDay.setYear(96)</PRE></A><A NAME="1013411">
+<B>Example 2.</B> The year is set to 1996.<P></A>
+<A NAME="1013412">
+<PRE>theBigDay.setYear(1996)</PRE></A><A NAME="1013413">
+<B>Example 3.</B> The year is set to 2000.<P></A>
+<A NAME="1013414">
+<PRE>theBigDay.setYear(2000)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1013415">
+<H4> See also</H4>
+</A>
+
+<A NAME="1013419">
+<A HREF="core3.htm#1013157"><CODE>Date.getYear</CODE></A> <P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1013422">
+<H2>toGMTString</H2>
+</A>
+
+<A NAME="1013423">
+Converts a date to a string, using the Internet GMT conventions.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1155673">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1153578">
+<A HREF="core3.htm#1012685"><CODE>Date</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1155675">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1147966">
+Navigator 2.0, LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013424">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1013425">
+<PRE>toGMTString()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1013426">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1013427">
+None<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013433">
+<H4> Description</H4>
+</A>
+
+<A NAME="1013434">
+The exact format of the value returned by <CODE>toGMTString</CODE> varies according to the platform.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013437">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1013438">
+In the following example, <CODE>today</CODE> is a <CODE>Date</CODE> object:<P></A>
+<A NAME="1013439">
+<PRE>today.toGMTString()</PRE></A><A NAME="1013440">
+In this example, the <CODE>toGMTString</CODE> method converts the date to GMT (UTC) using the operating system's time-zone offset and returns a string value that is similar to the following form. The exact format depends on the platform.<P></A>
+<A NAME="1013441">
+<PRE>Mon, 18 Dec 1995 17:28:35 GMT</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1013442">
+<H4> See also</H4>
+</A>
+
+<A NAME="1013446">
+<A HREF="core3.htm#1013449"><CODE>Date.toLocaleString</CODE></A> <P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1013449">
+<H2>toLocaleString</H2>
+</A>
+
+<A NAME="1013451">
+Converts a date to a string, using the current locale's conventions.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1155677">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1153592">
+<A HREF="core3.htm#1012685"><CODE>Date</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1155679">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1148643">
+Navigator 2.0, LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013452">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1013453">
+<PRE>toLocaleString()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1013454">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1013455">
+None<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013461">
+<H4> Description</H4>
+</A>
+
+<A NAME="1013462">
+If you pass a date using <CODE>toLocaleString</CODE>, be aware that different platforms assemble the string in different ways. Using methods such as <A HREF="core3.htm#1012997"><CODE>getHours</CODE></A>, <A HREF="core3.htm#1013022"><CODE>getMinutes</CODE></A>, and <A HREF="core3.htm#1013276"><CODE>getSeconds</CODE></A> gives more portable results.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013465">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1013466">
+In the following example, <CODE>today</CODE> is a <CODE>Date</CODE> object:<P></A>
+<A NAME="1013467">
+<PRE>today = new Date(95,11,18,17,28,35) //months are represented by 0 to 11<br>today.toLocaleString()</PRE></A><A NAME="1013468">
+In this example, <CODE>toLocaleString</CODE> returns a string value that is similar to the following form. The exact format depends on the platform. <P></A>
+<A NAME="1013469">
+<PRE>12/18/95 17:28:35</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1013470">
+<H4> See also</H4>
+</A>
+
+<A NAME="1013474">
+<A HREF="core3.htm#1013422"><CODE>Date.toGMTString</CODE></A> <P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1013477">
+<H2>UTC</H2>
+</A>
+
+<A NAME="1013479">
+Returns the number of milliseconds in a <CODE>Date</CODE> object since January 1, 1970, 00:00:00, Universal Coordinated Time (GMT).<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1155681">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1153639">
+<A HREF="core3.htm#1012685"><CODE>Date</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left COLSPAN=2 ROWSPAN=1><A NAME="1156861">
+<I>Static</I></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1155683">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1148750">
+Navigator 2.0, LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013480">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1013481">
+<PRE>Date.UTC(year, month, day, hrs, min, sec)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1013482">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1013508">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1013485">
+<PRE>year</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1013487">
+A year after 1900.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1013489">
+<PRE>month</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1013491">
+A month between 0 and 11.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1013493">
+<PRE>date</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1013495">
+A day of the month between 1 and 31.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1013497">
+<PRE>hrs</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1013499">
+(Optional) A number of hours between 0 and 23.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1013501">
+<PRE>min</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1013503">
+(Optional) A number of minutes between 0 and 59.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1013505">
+<PRE>sec</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1013507">
+(Optional) A number of seconds between 0 and 59.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013514">
+<H4> Description</H4>
+</A>
+
+<A NAME="1013515">
+<CODE>UTC</CODE> takes comma-delimited date parameters and returns the number of milliseconds since January 1, 1970, 00:00:00, Universal Coordinated Time (GMT).<P></A>
+<A NAME="1013516">
+Because UTC is a static method of <CODE>Date</CODE>, you always use it as <CODE>Date.UTC()</CODE>, rather than as a method of a <CODE>Date</CODE> object you created.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013519">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1013520">
+The following statement creates a <CODE>Date</CODE> object using GMT instead of local time:<P></A>
+<A NAME="1013521">
+<PRE>gmtDate = new Date(Date.UTC(96, 11, 1, 0, 0, 0))</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1013522">
+<H4> See also</H4>
+</A>
+
+<A NAME="1013526">
+<A HREF="core3.htm#1013188"><CODE>Date.parse</CODE></A> <P></A>
+
+<P><HR>
+<A HREF="contents.htm">[Contents]</A> <A HREF="core2.htm">[Previous]</A> <A HREF="core4.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<P ALIGN=right>
+
+<FONT SIZE=-2><I>Last Updated:  10/31/97  16:00:33
+</I></FONT>
+
+<HR SIZE=4>
+
+<P> <CENTER>Copyright © 1997
+<A HREF="http://home.netscape.com/misc/contact_info.html"
+TARGET=_top>Netscape Communications Corporation</A></FONT>
+</CENTER>
+<P>
+<P>
+</BODY>
+</HTML>
+
+

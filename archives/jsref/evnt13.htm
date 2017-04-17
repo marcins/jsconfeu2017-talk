@@ -1,0 +1,142 @@
+<HTML>
+<HEAD>
+<TITLE>Events and Event Handlers
+</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A HREF="contents.htm">[Contents]</A> <A HREF="evnt12.htm">[Previous]</A> <A HREF="evnt14.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<HR>
+
+<A NAME="onLoad"></A>
+<A NAME="1010680">
+<H1> onLoad</H1>
+</A>
+<A NAME="1010681">
+Executes JavaScript code when a load event occurs; that is, when the browser finishes loading a window or all frames within a <CODE>FRAMESET</CODE> tag. <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1045744">
+<I>Event handler for </I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1045746">
+<A HREF="doca1.htm#1078163"><CODE>Image</CODE></A>, <A HREF="doca3.htm#1113061"><CODE>Layer</CODE></A>, <A HREF="win1.htm#1010280"><CODE>Window</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1045748">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1047999">
+Navigator 2.0<br>Navigator 3.0: event handler of <CODE>Image</CODE></A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1049542">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1049543">
+<PRE>onLoad="handlerText"</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1049544">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1049550">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1049547">
+<PRE><CODE>handlerText</CODE></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1049549">
+JavaScript code or a call to a JavaScript function.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1049551">
+<H4> Description</H4>
+</A>
+
+<A NAME="1049379">
+Use the <CODE>onLoad</CODE> event handler within either the <CODE>BODY</CODE> or the <CODE>FRAMESET</CODE> tag, for example, &lt;<CODE>BODY onLoad="..."&gt;</CODE>.<P></A>
+<A NAME="1049380">
+In a <CODE>FRAMESET</CODE> and <CODE>FRAME</CODE> relationship, an <CODE>onLoad</CODE> event within a frame (placed in the <CODE>BODY</CODE> tag) occurs before an <CODE>onLoad</CODE> event within the <CODE>FRAMESET</CODE> (placed in the <CODE>FRAMESET</CODE> tag).<P></A>
+<A NAME="1010684">
+For images, the <CODE>onLoad</CODE> event handler indicates the script to execute when an image is displayed. Do not confuse displaying an image with loading an image. You can load several images, then display them one by one in the same <CODE>Image</CODE> object by setting the object's <CODE>src</CODE> property. If you change the image displayed in this way, <CODE>onLoad</CODE> executes every time an image is displayed, not just when the image is loaded into memory.<P></A>
+<A NAME="1010685">
+If you specify an <CODE>onLoad</CODE> event handler for an <CODE>Image</CODE> object that displays a looping GIF animation (multi-image GIF), each loop of the animation triggers the <CODE>onLoad</CODE> event, and the event handler executes once for each loop.<P></A>
+<A NAME="1010686">
+You can use the <CODE>onLoad</CODE> event handler to create a JavaScript animation by repeatedly setting the <CODE>src</CODE> property of an <CODE>Image</CODE> object. See <I><A HREF="doca1.htm#1078163"></I><CODE>Image</CODE><I></A></I> for information.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1097785">
+<H4> Event properties used</H4>
+</A>
+
+<A NAME="1097795">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1103772">
+<PRE>type</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1103774">
+Indicates the type of event. </A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1103776">
+<PRE>target</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1103778">
+Indicates the object to which the event was originally sent. </A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1103780">
+<PRE>width, height</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1103782">
+For an event over a window, but not over a layer, these represent the width and height of the window. </A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010701">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1010702">
+<B>Example 1: Display message when page loads.</B> In the following example, the onLoad event handler displays a greeting message after a Web page is loaded.<P></A>
+<A NAME="1010703">
+<PRE>&lt;BODY onLoad="window.alert("Welcome to the Brave New World home page!")&gt;</PRE></A><A NAME="1010704">
+<B>Example 2: Display alert when image loads.</B> The following example creates two <CODE>Image</CODE> objects, one with the <CODE>Image</CODE> constructor and one with the <CODE>IMG</CODE> tag. Each <CODE>Image</CODE> object has an <CODE>onLoad</CODE> event handler that calls the <CODE>displayAlert</CODE> function, which displays an alert. For the image created with the <CODE>IMG</CODE> tag, the alert displays the image name. For the image created with the <CODE>Image</CODE> constructor, the alert displays a message without the image name. This is because the onLoad handler for an object created with the <CODE>Image</CODE> constructor must be the name of a function, and it cannot specify parameters for the <CODE>displayAlert</CODE> function.<P></A>
+<A NAME="1010705">
+<PRE>&lt;SCRIPT&gt;<br>imageA = new Image(50,50)<br>imageA.onload=displayAlert<br>imageA.src="cyanball.gif"</PRE></A><A NAME="1010706">
+<PRE>function displayAlert(theImage) {<br>&nbsp;&nbsp;&nbsp;if (theImage==null) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert('An image loaded')<br>&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;else alert(theImage.name + ' has been loaded.')<br>}<br>&lt;/SCRIPT&gt;</PRE></A><A NAME="1010707">
+<PRE>&lt;IMG NAME="imageB" SRC="greenball.gif" ALIGN="top"<br>&nbsp;&nbsp;&nbsp;onLoad=displayAlert(this)&gt;&lt;BR&gt;</PRE></A><A NAME="1010708">
+<B>Example 3: Looping GIF animation.</B> The following example displays an image, <CODE>birdie.gif</CODE>, that is a looping GIF animation. The onLoad event handler for the image increments the variable <CODE>cycles</CODE>, which keeps track of the number of times the animation has looped. To see the value of <CODE>cycles</CODE>, the user clicks the button labeled Count Loops.<P></A>
+<A NAME="1010709">
+<PRE>&lt;SCRIPT&gt;<br>var cycles=0<br>&lt;/SCRIPT&gt;<br>&lt;IMG ALIGN="top" SRC="birdie.gif" BORDER=0<br>&nbsp;&nbsp;&nbsp;onLoad="++cycles"&gt;<br>&lt;INPUT TYPE="button" VALUE="Count Loops"<br>&nbsp;&nbsp;&nbsp;onClick="alert('The animation has looped ' + cycles + ' times.')"&gt;</PRE></A><A NAME="1013091">
+<B>Example 4: Change GIF animation displayed.</B> The following example uses an onLoad event handler to rotate the display of six GIF animations. Each animation is displayed in sequence in one <CODE>Image</CODE> object. When the document loads, <CODE>!anim0.html</CODE> is displayed. When that animation completes, the onLoad event handler causes the next file, <CODE>!anim1.html</CODE>, to load in place of the first file. After the last animation, <CODE>!anim5.html</CODE>, completes, the first file is again displayed. Notice that the <CODE>changeAnimation</CODE> function does not call itself after changing the <CODE>src</CODE> property of the <CODE>Image</CODE> object. This is because when the <CODE>src</CODE> property changes, the image's <CODE>onLoad</CODE> event handler is triggered and the <CODE>changeAnimation</CODE> function is called.<P></A>
+<A NAME="1010711">
+<PRE>&lt;SCRIPT&gt;<br>var whichImage=0<br>var maxImages=5</PRE></A><A NAME="1010712">
+<PRE>function changeAnimation(theImage) {<br>&nbsp;&nbsp;&nbsp;++whichImage<br>&nbsp;&nbsp;&nbsp;if (whichImage &lt;= maxImages) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var imageName="!anim" + whichImage + ".gif"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;theImage.src=imageName<br>&nbsp;&nbsp;&nbsp;} else {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;whichImage=-1<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return<br>&nbsp;&nbsp;&nbsp;}<br>}<br>&lt;/SCRIPT&gt;</PRE></A><A NAME="1010713">
+<PRE>&lt;IMG NAME="changingAnimation" SRC="!anim0.gif" BORDER=0 ALIGN="top"<br>&nbsp;&nbsp;&nbsp;onLoad="changeAnimation(this)"&gt;</PRE></A><A NAME="1010717">
+See also examples for <I><A HREF="doca1.htm#1078163"></I><CODE>Image</CODE><I></A></I>.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010718">
+<H4> See also</H4>
+</A>
+
+<A NAME="1010728">
+<A HREF="evnt2.htm#1017362"><CODE>onAbort</CODE></A>, <A HREF="evnt1.htm#1093794"><CODE>onError</CODE></A>, <A HREF="evnt24.htm#1012516"><CODE>onUnload</CODE></A> <P></A>
+<A NAME="1063750">
+For general information on event handlers, see <A HREF="evnt.htm#1010270">"General Information about Events"</A>. <P></A>
+<A NAME="1094292">
+For information about the <CODE>event</CODE> object, see <A HREF="evnt1.htm#1093773"><CODE>event</CODE></A>.<P></A>
+
+<P><HR>
+<A HREF="contents.htm">[Contents]</A> <A HREF="evnt12.htm">[Previous]</A> <A HREF="evnt14.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<P ALIGN=right>
+
+<FONT SIZE=-2><I>Last Updated:  10/31/97  16:34:02
+</I></FONT>
+
+<HR SIZE=4>
+
+<P> <CENTER>Copyright © 1997
+<A HREF="http://home.netscape.com/misc/contact_info.html"
+TARGET=_top>Netscape Communications Corporation</A></FONT>
+</CENTER>
+<P>
+<P>
+</BODY>
+</HTML>
+
+

@@ -1,0 +1,122 @@
+<HTML>
+<HEAD>
+<TITLE>Events and Event Handlers
+</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A HREF="contents.htm">[Contents]</A> <A HREF="evnt6.htm">[Previous]</A> <A HREF="evnt8.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<HR>
+
+<A NAME="onDragDrop"></A>
+<A NAME="1093975">
+<H1> onDragDrop</H1>
+</A>
+<A NAME="1093976">
+Executes JavaScript code when a DragDrop event occurs; that is, when the user drops an object onto the browser window, such as dropping a file. <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1093983">
+<I>Event handler for </I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1093988">
+<A HREF="win1.htm#1010280"><CODE>Window</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1093990">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1093992">
+Navigator 4.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1093993">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1093994">
+<PRE>onDragDrop="handlerText"</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1093995">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1094001">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1093998">
+<PRE><CODE>handlerText</CODE></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1094000">
+JavaScript code or a call to a JavaScript function.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1094002">
+<H4> Event properties used</H4>
+</A>
+
+<A NAME="1094016">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1094005">
+<PRE>type</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1103609">
+Indicates the type of event. </A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1094009">
+<PRE>target</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1094011">
+Indicates the object to which the event was originally sent. </A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1094013">
+<PRE>data</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1094015">
+Returns an Array of Strings containing the URLs of the dropped objects. </A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1103541">
+<PRE>modifiers</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1103543">
+Contains the list of modifier keys held down when the event occurred.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1102548">
+<PRE>screenX,<br>screenY</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1102550">
+Represent the cursor location at the time the event occurred.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1094017">
+<H4> Security</H4>
+</A>
+
+<A NAME="1094018">
+Getting the <CODE>data</CODE> property of the DragDrop event requires the <CODE>UniversalBrowserRead</CODE> privilege. For information on security in Navigator&nbsp;4.0, see <A HREF="http://developer.netscape.com/library/documentation/communicator/jsguide4/index.htm?content=sec.htm" TARGET="_top">Chapter&nbsp;7, "JavaScript Security,"</A> in the <A HREF="http://developer.netscape.com/library/documentation/communicator/jsguide4/index.htm" TARGET="_top">JavaScript Guide</A>. <P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1094021">
+<H4> Description</H4>
+</A>
+
+<A NAME="1094022">
+The <CODE>DragDrop</CODE> event is fired whenever a system item (file, shortcut, and so on) is dropped onto the browser window using the native system's drag and drop mechanism. The normal response for the browser is to attempt to load the item into the browser window. If the event handler for the <CODE>DragDrop</CODE> event returns true, the browser loads the item normally. If the event handler returns false, the drag and drop is canceled. <P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1094023">
+<H4> See also</H4>
+</A>
+
+<A NAME="1094027">
+For general information on event handlers, see <A HREF="evnt.htm#1010270">"General Information about Events"</A>. <P></A>
+<A NAME="1094031">
+For information about the <CODE>event</CODE> object, see <A HREF="evnt1.htm#1093773"><CODE>event</CODE></A>.<P></A>
+
+<P><HR>
+<A HREF="contents.htm">[Contents]</A> <A HREF="evnt6.htm">[Previous]</A> <A HREF="evnt8.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<P ALIGN=right>
+
+<FONT SIZE=-2><I>Last Updated:  10/31/97  16:34:02
+</I></FONT>
+
+<HR SIZE=4>
+
+<P> <CENTER>Copyright © 1997
+<A HREF="http://home.netscape.com/misc/contact_info.html"
+TARGET=_top>Netscape Communications Corporation</A></FONT>
+</CENTER>
+<P>
+<P>
+</BODY>
+</HTML>
+
+

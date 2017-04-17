@@ -1,0 +1,482 @@
+<HTML>
+<HEAD>
+<TITLE>
+</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A HREF="contents.htm">[Contents]</A> <A HREF="txt2.htm">[Previous]</A> <A HREF="but.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<HR>
+
+<A NAME="FileUpload"></A>
+<A NAME="1014071">
+<H1> FileUpload</H1>
+</A>
+<A NAME="1087976">
+A file upload element on an HTML form. A file upload element lets the user supply a file as input.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1087985">
+<I>Client-side object</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1087990">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1087992">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1087994">
+Navigator 2.0<br>Navigator 3.0: added <CODE>type</CODE> property<br>Navigator 4.0: added <CODE>handleEvent</CODE> method.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1087977">
+<H4> Created by</H4>
+</A>
+
+<A NAME="1048127">
+The HTML <CODE><A HREF="http://developer.netscape.com/library/documentation/htmlguid/index.htm?content=tags10.htm#tags:INPUT" TARGET="_top">INPUT</A></CODE> tag, with <CODE>"file"</CODE> as the value of the <CODE>TYPE</CODE> attribute. For a given form, the JavaScript runtime engine creates appropriate <CODE>FileUpload</CODE> objects and puts these objects in the <A HREF="form1.htm#1010594"><CODE>elements</CODE></A> array of the corresponding <A HREF="form1.htm#1010276"><CODE>Form</CODE></A> object. You access a <CODE>FileUpload</CODE> object by indexing this array. You can index the array either by number or, if supplied, by using the value of the <CODE>NAME</CODE> attribute.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1069604">
+<H4> Event handlers</H4>
+</A>
+
+<ul><A NAME="1069608">
+<LI><A HREF="evnt3.htm#1010414"><CODE>onBlur</CODE></A></LI>
+</A><A NAME="1069612">
+<LI><A HREF="evnt4.htm#1010483"><CODE>onChange</CODE></A></LI>
+</A><A NAME="1069616">
+<LI><A HREF="evnt9.htm#1010615"><CODE>onFocus</CODE></A></LI>
+</A></ul>
+<A NAME="Head3;"></A>
+<A NAME="1014101">
+<H4> Description</H4>
+</A>
+
+<A NAME="1014110">
+A <CODE>FileUpload</CODE> object on a form looks as follows:<P>
+<IMG SRC="fileupl.gif">
+<P></A>
+<A NAME="1014111">
+A <CODE>FileUpload</CODE> object is a form element and must be defined within a <CODE><A HREF="http://developer.netscape.com/library/documentation/htmlguid/index.htm?content=tags10.htm#tags:FORM" TARGET="_top">FORM</A></CODE> tag.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1014112">
+<H4> Property Summary</H4>
+</A>
+
+<A NAME="1014142">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1014118">
+<PRE><A HREF="txt.htm#1010499"><CODE>form</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1014120">
+Specifies the form containing the <CODE>FileUpload</CODE> object.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1014125">
+<PRE><A HREF="txt.htm#1010536"><CODE>name</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1014127">
+Reflects the <CODE>NAME</CODE> attribute.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1014132">
+<PRE><A HREF="txt.htm#1010591"><CODE>type</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1014134">
+Reflects the <CODE>TYPE</CODE> attribute.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1014139">
+<PRE><A HREF="txt.htm#1010685"><CODE>value</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1014141">
+Reflects the current value of the file upload element's field; this corresponds to the name of the file to upload. </A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1014143">
+<H4> Method Summary</H4>
+</A>
+
+<A NAME="1014166">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1014149">
+<PRE><A HREF="txt3.htm#1014443"><CODE>blur</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1014151">
+Removes focus from the object.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1014156">
+<PRE><A HREF="txt3.htm#1014509"><CODE>focus</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1014158">
+Gives focus to the object.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1014163">
+<PRE><A HREF="txt3.htm#1118772"><CODE>handleEvent</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1014165">
+Invokes the handler for the specified event. </A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1106703">
+<PRE><A HREF="txt3.htm#1106647"><CODE>select</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1106705">
+Selects the input area of the file upload field.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1014182">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1014183">
+The following example places a <CODE>FileUpload</CODE> object on a form and provides two buttons that let the user display current values of the <CODE>name</CODE> and <CODE>value</CODE> properties.<P></A>
+<A NAME="1014184">
+<PRE>&lt;FORM NAME="form1"&gt;<br>File to send: &lt;INPUT TYPE="file" NAME="myUploadObject"&gt;<br>&lt;P&gt;Get properties&lt;BR&gt;<br>&lt;INPUT TYPE="button" VALUE="name"<br>&nbsp;&nbsp;&nbsp;onClick="alert('name: ' + document.form1.myUploadObject.name)"&gt;<br>&lt;INPUT TYPE="button" VALUE="value"<br>&nbsp;&nbsp;&nbsp;onClick="alert('value: ' + document.form1.myUploadObject.value)"&gt;&lt;BR&gt;<br>&lt;/FORM&gt;</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1014185">
+<H4> See also</H4>
+</A>
+
+<A NAME="1014189">
+<A HREF="txt.htm#1023924"><CODE>Text</CODE></A><P></A>
+
+<A NAME="Head2;"></A>
+<A NAME="1014190">
+<H3> Properties</H3>
+</A>
+
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1014193">
+<H2>form</H2>
+</A>
+
+<A NAME="1014194">
+An object reference specifying the form containing the object.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1088032">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1088037">
+<A HREF="txt3.htm#1014071"><CODE>FileUpload</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1088164">
+<I>Read-only</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1088166">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1088039">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1088041">
+Navigator 2.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1014209">
+<H4> Description</H4>
+</A>
+
+<A NAME="1014210">
+Each form element has a <CODE>form</CODE> property that is a reference to the element's parent form. This property is especially useful in event handlers, where you might need to refer to another element on the current form.<P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1014230">
+<H2>name</H2>
+</A>
+
+<A NAME="1014231">
+A string specifying the name of this object.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1088276">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1088281">
+<A HREF="txt3.htm#1014071"><CODE>FileUpload</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1090359">
+<I>Read-only</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1090361">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1088283">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1088285">
+Navigator 2.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1109745">
+<H4> Security</H4>
+</A>
+
+<A NAME="1109746">
+Navigator&nbsp;3.0: This property is tainted by default. For information on data tainting, see <A HREF="intro.htm#1014735">"JavaScript Security"</A>.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1014271">
+<H4> Description</H4>
+</A>
+
+<A NAME="1014273">
+The <CODE>name</CODE> property initially reflects the value of the <CODE>NAME</CODE> attribute. The <CODE>name</CODE> property is not displayed on-screen; it is used to refer to the objects programmatically.<P></A>
+<A NAME="1092123">
+If multiple objects on the same form have the same <CODE>NAME</CODE> attribute, an array of the given name is created automatically. Each element in the array represents an individual <CODE>Form</CODE> object. Elements are indexed in source order starting at 0. For example, if two <A HREF="txt.htm#1023924"><CODE>Text</CODE></A> elements and a <A HREF="txt3.htm#1014071"><CODE>FileUpload</CODE></A> element on the same form have their <CODE>NAME</CODE> attribute set to <CODE>"myField"</CODE>, an array with the elements <CODE>myField[0]</CODE>, <CODE>myField[1]</CODE>, and <CODE>myField[2]</CODE> is created. You need to be aware of this situation in your code and know whether <CODE>myField</CODE> refers to a single element or to an array of elements.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1014282">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1014283">
+In the following example, the <CODE>valueGetter</CODE> function uses a <CODE>for</CODE> loop to iterate over the array of elements on the <CODE>valueTest</CODE> form. The <CODE>msgWindow</CODE> window displays the names of all the elements on the form:<P></A>
+<A NAME="1014284">
+<PRE>newWindow=window.open("http://home.netscape.com")</PRE></A><A NAME="1014285">
+<PRE>function valueGetter() {<br>&nbsp;&nbsp;&nbsp;var msgWindow=window.open("")<br>&nbsp;&nbsp;&nbsp;for (var i = 0; i &lt; newWindow.document.valueTest.elements.length; i++) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;msgWindow.document.write(newWindow.document.valueTest.elements[i].name + "&lt;BR&gt;")<br>&nbsp;&nbsp;&nbsp;}<br>}</PRE></A>
+<A NAME="Head2Ref;"></A>
+<A NAME="1014290">
+<H2>type</H2>
+</A>
+
+<A NAME="1014291">
+For all <CODE>FileUpload</CODE> objects, the value of the <CODE>type</CODE> property is <CODE>"file"</CODE>. This property specifies the form element's type. <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1088390">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1088395">
+<A HREF="txt3.htm#1014071"><CODE>FileUpload</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1088412">
+<I>Read-only</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1088414">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1088397">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1088399">
+Navigator 3.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1014377">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1014378">
+The following example writes the value of the <CODE>type</CODE> property for every element on a form.<P></A>
+<A NAME="1014379">
+<PRE>for (var i = 0; i &lt; document.form1.elements.length; i++) {<br>&nbsp;&nbsp;&nbsp;document.writeln("&lt;BR&gt;type is " + document.form1.elements[i].type)<br>}</PRE></A>
+<A NAME="Head2Ref;"></A>
+<A NAME="1014385">
+<H2>value</H2>
+</A>
+
+<A NAME="1109839">
+A string that reflects the <CODE>VALUE</CODE> attribute of the object.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1109825">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1109830">
+<A HREF="txt3.htm#1014071"><CODE>FileUpload</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1109832">
+<I>Read-only</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1109834">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1109836">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1109838">
+Navigator 2.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1109885">
+<H4> Security</H4>
+</A>
+
+<A NAME="1109886">
+Navigator&nbsp;3.0: This property is tainted by default. For information on data tainting, see <A HREF="intro.htm#1014735">"JavaScript Security"</A>.<P></A>
+<A NAME="1120130">
+Navigator&nbsp;4.0: Setting a file upload widget requires the UniversalFileRead privilege. For information on security in Navigator&nbsp;4.0, see <A HREF="http://developer.netscape.com/library/documentation/communicator/jsguide4/index.htm?content=sec.htm" TARGET="_top">Chapter&nbsp;7, "JavaScript Security,"</A> in the <A HREF="http://developer.netscape.com/library/documentation/communicator/jsguide4/index.htm" TARGET="_top">JavaScript Guide</A>. <P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1120133">
+<H4> Description</H4>
+</A>
+
+<A NAME="1014423">
+Use the <CODE>value</CODE> property to obtain the file name that the user typed into a <CODE>FileUpload</CODE> object.<P></A>
+
+<A NAME="Head2;"></A>
+<A NAME="1014441">
+<H3> Methods</H3>
+</A>
+
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1014443">
+<H2>blur</H2>
+</A>
+
+<A NAME="1014444">
+Removes focus from the object.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1088444">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1088449">
+<A HREF="txt3.htm#1014071"><CODE>FileUpload</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1088451">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1088453">
+Navigator 2.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1014445">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1014446">
+<PRE>blur()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1014447">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1014483">
+None<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1014499">
+<H4> See also</H4>
+</A>
+
+<A NAME="1014506">
+<A HREF="txt3.htm#1014509"><CODE>FileUpload.focus</CODE></A>, <A HREF="txt3.htm#1106647"><CODE>FileUpload.select</CODE></A><P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1014509">
+<H2>focus</H2>
+</A>
+
+<A NAME="1014510">
+Navigates to the <CODE>FileUpload</CODE> field and give it focus.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1088526">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1088531">
+<A HREF="txt3.htm#1014071"><CODE>FileUpload</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1088533">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1088535">
+Navigator 2.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1014511">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1014512">
+<PRE>focus()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1014513">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1014549">
+None<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1014567">
+<H4> See also</H4>
+</A>
+
+<A NAME="1014574">
+<A HREF="txt3.htm#1014443"><CODE>FileUpload.blur</CODE></A>, <A HREF="txt3.htm#1106647"><CODE>FileUpload.select</CODE></A><P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1118772">
+<H2>handleEvent</H2>
+</A>
+
+<A NAME="1118773">
+Invokes the handler for the specified event. <P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1118774">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1118787">
+<PRE>handleEvent(event)<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1118777">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1118782">
+<A HREF="txt3.htm#1014071"><CODE>FileUpload</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1118784">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1118786">
+Navigator 4.0</A></P>
+
+</TABLE>
+</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1118788">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1118794">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1118791">
+<PRE>event</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1118793">
+The name of an event for which the object has an event handler.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1118795">
+<H4> Description</H4>
+</A>
+
+<A NAME="1118799">
+For information on handling events, see <A HREF="evnt.htm#1010270">"General Information about Events"</A>.<P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1106647">
+<H2>select</H2>
+</A>
+
+<A NAME="1106660">
+Selects the input area of the file upload field.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1106650">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1106655">
+<A HREF="txt3.htm#1014071"><CODE>FileUpload</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1106657">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1106659">
+Navigator 2.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1106661">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1106662">
+<PRE>select()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1106663">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1106664">
+None<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1106665">
+<H4> Description</H4>
+</A>
+
+<A NAME="1106666">
+Use the <CODE>select</CODE> method to highlight the input area of a file upload field. You can use the <CODE>select</CODE> method with the <CODE>focus</CODE> method to highlight a field and position the cursor for a user response. This makes it easy for the user to replace all the text in the field.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1106670">
+<H4> See also</H4>
+</A>
+
+<A NAME="1106677">
+<A HREF="txt3.htm#1014443"><CODE>FileUpload.blur</CODE></A>, <A HREF="txt3.htm#1014509"><CODE>FileUpload.focus</CODE></A> <P></A>
+<A NAME="1005723">
+<PRE></PRE></A>
+<P><HR>
+<A HREF="contents.htm">[Contents]</A> <A HREF="txt2.htm">[Previous]</A> <A HREF="but.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<P ALIGN=right>
+
+<FONT SIZE=-2><I>Last Updated:  10/31/97  12:32:00
+</I></FONT>
+
+<HR SIZE=4>
+
+<P> <CENTER>Copyright © 1997
+<A HREF="http://home.netscape.com/misc/contact_info.html"
+TARGET=_top>Netscape Communications Corporation</A></FONT>
+</CENTER>
+<P>
+<P>
+</BODY>
+</HTML>
+

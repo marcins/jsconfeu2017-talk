@@ -1,0 +1,126 @@
+<HTML>
+<HEAD>
+<TITLE>
+</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A HREF="contents.htm">[Contents]</A> <A HREF="doc3.htm">[Previous]</A> <A HREF="doca1.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<HR>
+
+<A NAME="Anchor"></A>
+<A NAME="1015687">
+<H1> Anchor</H1>
+</A>
+<A NAME="1014426">
+A place in a document that is the target of a hypertext link.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1076116">
+<I>Client-side object</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1076118">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1076120">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1076122">
+Navigator 2.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1014427">
+<H4> Created by</H4>
+</A>
+
+<A NAME="1061919">
+Using the HTML <CODE><A HREF="http://developer.netscape.com/library/documentation/htmlguid/index.htm?content=tags7.htm#tags:A" TARGET="_top">A</A></CODE> tag or calling the <A HREF="corea2.htm#1104325"><CODE>String.anchor</CODE></A> method. The JavaScript runtime engine creates an <CODE>Anchor</CODE> object corresponding to each <CODE>A</CODE> tag in your document that supplies the <CODE>NAME</CODE> attribute. It puts these objects in an array in the <A HREF="doc1.htm#1010601"><CODE>document.anchors</CODE></A> property. You access an <CODE>Anchor</CODE> object by indexing this array.<P></A>
+<A NAME="1112978">
+To define an anchor with the <A HREF="corea2.htm#1104325"><CODE>String.anchor</CODE></A> method:<P></A>
+<A NAME="1112979">
+<PRE>theString.anchor(nameAttribute)</PRE></A><A NAME="1112992">
+<VAR>where:</VAR><P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1112982">
+<PRE>theString</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1112987">
+A <A HREF="corea2.htm#1012977"><CODE>String</CODE></A> object.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1112989">
+<PRE>nameAttribute</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1112991">
+A string.</A></P>
+
+</TABLE>
+<P></A>
+<A NAME="1044237">
+To define an anchor with the <CODE>A</CODE> tag, use standard HTML syntax. If you specify the <CODE>NAME</CODE> attribute, you can use the value of that attribute to index into the <CODE>anchors</CODE> array.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1014458">
+<H4> Description</H4>
+</A>
+
+<A NAME="1014459">
+If an <CODE>Anchor</CODE> object is also a <CODE>Link</CODE> object, the object has entries in both the <CODE>anchors</CODE> and <CODE>links</CODE> arrays.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1115029">
+<H4> Properties</H4>
+</A>
+
+<A NAME="1115030">
+None.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1115186">
+<H4> Methods</H4>
+</A>
+
+<A NAME="1115187">
+None.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1014464">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1014465">
+<B>Example 1: An anchor.</B> The following example defines an anchor for the text "Welcome to JavaScript":<P></A>
+<A NAME="1014466">
+<PRE>&lt;A NAME="javascript_intro"&gt;&lt;H2&gt;Welcome to JavaScript&lt;/H2&gt;&lt;/A&gt;</PRE></A><A NAME="1014467">
+If the preceding anchor is in a file called <CODE>intro.html</CODE>, a link in another file could define a jump to the anchor as follows:<P></A>
+<A NAME="1014468">
+<PRE>&lt;A HREF="intro.html#javascript_intro"&gt;Introduction&lt;/A&gt;</PRE></A><A NAME="1014469">
+<B>Example 2: anchors array.</B> The following example opens two windows. The first window contains a series of buttons that set <CODE>location.hash</CODE> in the second window to a specific anchor. The second window defines four anchors named "0," "1," "2," and "3." (The anchor names in the document are therefore 0, 1, 2, ... (document.anchors.length-1).) When a button is pressed in the first window, the <CODE>onClick</CODE> event handler verifies that the anchor exists before setting <CODE>window2.location.hash</CODE> to the specified anchor name.<P></A>
+<A NAME="1014470">
+<CODE>link1.html</CODE>, which defines the first window and its buttons, contains the following code:<P></A>
+<A NAME="1014471">
+<PRE>&lt;HTML&gt;<br>&lt;HEAD&gt;<br>&lt;TITLE&gt;Links and Anchors: Window 1&lt;/TITLE&gt;<br>&lt;/HEAD&gt;<br>&lt;BODY&gt;<br>&lt;SCRIPT&gt;<br>window2=open("link2.html","secondLinkWindow",<br>&nbsp;&nbsp;&nbsp;"scrollbars=yes,width=250, height=400")<br>function linkToWindow(num) {<br>&nbsp;&nbsp;&nbsp;if (window2.document.anchors.length &gt; num)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;window2.location.hash=num<br>&nbsp;&nbsp;&nbsp;else<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert("Anchor does not exist!")<br>}<br>&lt;/SCRIPT&gt;<br>&lt;B&gt;Links and Anchors&lt;/B&gt;<br>&lt;FORM&gt;<br>&lt;P&gt;Click a button to display that anchor in window #2<br>&lt;P&gt;&lt;INPUT TYPE="button" VALUE="0" NAME="link0_button"<br>&nbsp;&nbsp;&nbsp;onClick="linkToWindow(this.value)"&gt;<br>&lt;INPUT TYPE="button" VALUE="1" NAME="link0_button"<br>&nbsp;&nbsp;&nbsp;onClick="linkToWindow(this.value)"&gt;<br>&lt;INPUT TYPE="button" VALUE="2" NAME="link0_button"<br>&nbsp;&nbsp;&nbsp;onClick="linkToWindow(this.value)"&gt;<br>&lt;INPUT TYPE="button" VALUE="3" NAME="link0_button"<br>&nbsp;&nbsp;&nbsp;onClick="linkToWindow(this.value)"&gt;<br>&lt;INPUT TYPE="button" VALUE="4" NAME="link0_button"<br>&nbsp;&nbsp;&nbsp;onClick="linkToWindow(this.value)"&gt;<br>&lt;/FORM&gt;<br>&lt;/BODY&gt;<br>&lt;/HTML&gt;</PRE></A><A NAME="1014472">
+<CODE>link2.html</CODE>, which contains the anchors, contains the following code:<P></A>
+<A NAME="1014473">
+<PRE>&lt;HTML&gt;<br>&lt;HEAD&gt;<br>&lt;TITLE&gt;Links and Anchors: Window 2&lt;/TITLE&gt;<br>&lt;/HEAD&gt;<br>&lt;BODY&gt;<br>&lt;A NAME="0"&gt;&lt;B&gt;Some numbers&lt;/B&gt; (Anchor 0)&lt;/A&gt;<br>&lt;UL&gt;&lt;LI&gt;one<br>&lt;LI&gt;two<br>&lt;LI&gt;three<br>&lt;LI&gt;four&lt;/UL&gt;</PRE></A><A NAME="1014474">
+<PRE>&lt;P&gt;&lt;A NAME="1"&gt;&lt;B&gt;Some colors&lt;/B&gt; (Anchor 1)&lt;/A&gt;<br>&lt;UL&gt;&lt;LI&gt;red<br>&lt;LI&gt;orange<br>&lt;LI&gt;yellow<br>&lt;LI&gt;green&lt;/UL&gt;</PRE></A><A NAME="1014475">
+<PRE>&lt;P&gt;&lt;A NAME="2"&gt;&lt;B&gt;Some music types&lt;/B&gt; (Anchor 2)&lt;/A&gt;<br>&lt;UL&gt;&lt;LI&gt;R&amp;B<br>&lt;LI&gt;Jazz<br>&lt;LI&gt;Soul<br>&lt;LI&gt;Reggae<br>&lt;LI&gt;Rock&lt;/UL&gt;</PRE></A><A NAME="1014476">
+<PRE>&lt;P&gt;&lt;A NAME="3"&gt;&lt;B&gt;Some countries&lt;/B&gt; (Anchor 3)&lt;/A&gt;<br>&lt;UL&gt;&lt;LI&gt;Afghanistan<br>&lt;LI&gt;Brazil<br>&lt;LI&gt;Canada<br>&lt;LI&gt;Finland<br>&lt;LI&gt;India&lt;/UL&gt;<br>&lt;/BODY&gt;<br>&lt;/HTML&gt;</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1014477">
+<H4> See also</H4>
+</A>
+
+<A NAME="1014484">
+<A HREF="doc2.htm#1081434"><CODE>Link</CODE></A><P></A>
+
+<P><HR>
+<A HREF="contents.htm">[Contents]</A> <A HREF="doc3.htm">[Previous]</A> <A HREF="doca1.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<P ALIGN=right>
+
+<FONT SIZE=-2><I>Last Updated:  10/31/97  12:31:11
+</I></FONT>
+
+<HR SIZE=4>
+
+<P> <CENTER>Copyright © 1997
+<A HREF="http://home.netscape.com/misc/contact_info.html"
+TARGET=_top>Netscape Communications Corporation</A></FONT>
+</CENTER>
+<P>
+<P>
+</BODY>
+</HTML>
+

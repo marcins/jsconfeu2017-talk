@@ -1,0 +1,140 @@
+<HTML>
+<HEAD>
+<TITLE>Events and Event Handlers
+</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A HREF="contents.htm">[Contents]</A> <A HREF="evnt.htm">[Previous]</A> <A HREF="evnt2.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<HR>
+
+<A NAME="event"></A>
+<A NAME="1093773">
+<H1> event</H1>
+</A>
+<a name="1093774">
+The <CODE>event</CODE> object contains properties that describe a JavaScript event, and is 
+passed as an argument to an event handler when the event occurs.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1093777">
+<I>Client-side object</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1093779">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1093781">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1093783">
+Navigator 4.0</A></P>
+
+</TABLE>
+
+</blockquote>
+</a>
+<A NAME="1093784">
+In the case of a mouse-down event, for example, the <CODE>event</CODE> object contains the type of event (in this case MouseDown), the x and y position of the cursor at the time of the event, a number representing the mouse button used, and a field containing the modifier keys (Control, Alt, Meta, or Shift) that were depressed at the time of the event. The properties used within the <CODE>event</CODE> object vary from one type of event to another. This variation is provided in the descriptions of individual event handlers. <P></A>
+<A NAME="1093788">
+For more information, see <A HREF="evnt.htm#1010270">"General Information about Events"</A>.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1098315">
+<H4> Created by</H4>
+</A>
+
+<A NAME="1098316">
+<CODE>event</CODE> objects are created by Communicator when an event occurs. You do not create them yourself.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1093789">
+<H4> Security</H4>
+</A>
+
+<A NAME="1093790">
+Setting any property of this object requires the <CODE>UniversalBrowserWrite</CODE> privilege. In addition, getting the <CODE>data</CODE> property of the <CODE>DragDrop</CODE> event requires the <CODE>UniversalBrowserRead</CODE> privilege. For information on security in Navigator&nbsp;4.0, see <A HREF="http://developer.netscape.com/library/documentation/communicator/jsguide4/index.htm?content=sec.htm" TARGET="_top">Chapter&nbsp;7, "JavaScript Security,"</A> in the <A HREF="http://developer.netscape.com/library/documentation/communicator/jsguide4/index.htm" TARGET="_top">JavaScript Guide</A>. <P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1093793">
+<H4> Property Summary</H4>
+</A>
+
+<a name="1093794">
+Not all of these properties are relevant to each event type. To learn which 
+properties are used by an event, see the "Event object properties used" section 
+of the individual event handler. <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1093803">
+<PRE>target</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1093805">
+String representing the object to which the event was originally sent. (All events)</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1095560">
+<PRE>type </PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1095562">
+String representing the event type. (All events)</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1095481">
+<PRE>data</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1095483">
+Returns an array of strings containing the URLs of the dropped objects. Passed with the DragDrop event.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1095304">
+<PRE>height</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1095306">
+Represents the height of the window or frame. </A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1093808">
+<PRE>layerX</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1093810">
+Number specifying either the object width when passed with the resize event, or the cursor's horizontal position in pixels relative to the layer in which the event occurred. Note that <CODE>layerX</CODE> is synonymous with x.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1093813">
+<PRE>layerY</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1093815">
+Number specifying either the object height when passed with the resize event, or the cursor's vertical position in pixels relative to the layer in which the event occurred. Note that <CODE>layerY</CODE> is synonymous with y.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1095389">
+<PRE>modifiers</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1095391">
+String specifying the modifier keys associated with a mouse or key event. Modifier key values are: ALT_MASK, CONTROL_MASK, SHIFT_MASK, and META_MASK.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1093818">
+<PRE>pageX</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1093820">
+Number specifying the cursor's horizontal position in pixels, relative to the page.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1093823">
+<PRE>pageY</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1093825">
+Number specifying the cursor's vertical position in pixels relative to the page.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1093828">
+<PRE>screenX</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1093830">
+Number specifying the cursor's horizontal position in pixels, relative to the screen.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1093833">
+<PRE>screenY</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1093835">
+Number specifying the cursor's vertical position in pixels, relative to the screen.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1093838">
+<PRE>which</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1093840">
+Number specifying either the mouse button that was pressed or the ASCII value of a pressed key. For a mouse, 1 is the left button, 2 is the middle button, and 3 is the right button.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1095300">
+<PRE>width</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1095302">
+Represents the width of the window or frame. </A></P>
+
+</TABLE>
+
+</blockquote>
+</a>
+
+<A NAME="Head3;"></A>
+<A NAME="1093851">
+<H4> Example</H4>
+</A>
+
+<a name="1093852">
+The following example uses the event object to provide the type of event to the 
+alert message. 
+</blockquote>
+</a>
+<A NAME="1093853">
+<PRE>&lt;A HREF="http://home.netscape.com" onClick='alert("Link got an event: "<br>+ event.type)'&gt;Click for link event&lt;/A&gt;</PRE></A><A NAME="1093854">
+The following example uses the event object in an explicitly called event handler. <P></A>
+<A NAME="1093855">
+<PRE>&lt;SCRIPT&gt;<br>function fun1(evnt) {<br>&nbsp;&nbsp;&nbsp;alert ("Document got an event: " + evnt.type);<br>&nbsp;&nbsp;&nbsp;alert ("x position is " + evnt.layerX);<br>&nbsp;&nbsp;&nbsp;alert ("y position is " + evnt.layerY);<br>&nbsp;&nbsp;&nbsp;if (evnt.modifiers &amp; Event.ALT_MASK)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert ("Alt key was down for event.");<br>&nbsp;&nbsp;&nbsp;return true;<br>&nbsp;&nbsp;&nbsp;}<br>document.onmousedown = fun1;<br>&lt;/SCRIPT&gt;</PRE></A>
+<P><HR>
+<A HREF="contents.htm">[Contents]</A> <A HREF="evnt.htm">[Previous]</A> <A HREF="evnt2.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<P ALIGN=right>
+
+<FONT SIZE=-2><I>Last Updated:  10/31/97  16:34:02
+</I></FONT>
+
+<HR SIZE=4>
+
+<P> <CENTER>Copyright © 1997
+<A HREF="http://home.netscape.com/misc/contact_info.html"
+TARGET=_top>Netscape Communications Corporation</A></FONT>
+</CENTER>
+<P>
+<P>
+</BODY>
+</HTML>
+
+

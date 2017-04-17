@@ -1,0 +1,88 @@
+<HTML>
+<HEAD>
+<TITLE>Statements
+</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A HREF="contents.htm">[Contents]</A> <A HREF="stmt8.htm">[Previous]</A> <A HREF="stmt10.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<HR>
+
+<A NAME="function"></A>
+<A NAME="1004825">
+<H1> function</H1>
+</A>
+<A NAME="1004826">
+Declares a JavaScript function with the specified parameters. Acceptable parameters include strings, numbers, and objects.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1035950">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1035952">
+Navigator 2.0, LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1004829">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1004830">
+<PRE>function name([param] [, param] [..., param]) {<br>&nbsp;&nbsp;&nbsp;statements}</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1007886">
+<H4> Arguments</H4>
+</A>
+
+<A NAME="1007887">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012941">
+<PRE>name</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1012965">
+The function name.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012979">
+<PRE>param</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1013010">
+The name of an argument to be passed to the function. A function can have up to 255 arguments.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1008195">
+<H4> Description</H4>
+</A>
+
+<A NAME="1033974">
+To return a value, the function must have a <A HREF="stmt13.htm#1004871"><CODE>return</CODE></A> statement that specifies the value to return. You cannot nest a function statement in another statement or in itself.<P></A>
+<A NAME="1033975">
+All parameters are passed to functions, <I>by value</I>. In other words, the value is passed to the function, but if the function changes the value of the parameter, this change is not reflected globally or in the calling function.<P></A>
+<A NAME="1033976">
+In addition to defining functions as described here, you can also define <A HREF="core4.htm#1013865"><CODE>Function</CODE></A> objects.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1004831">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1004832">
+<PRE>//This function returns the total dollar amount of sales, when<br>//given the number of units sold of products a, b, and c.<br>function calc_sales(units_a, units_b, units_c) {<br>&nbsp;&nbsp;&nbsp;return units_a*79 + units_b*129 + units_c*699<br>}</PRE></A>
+<P><HR>
+<A HREF="contents.htm">[Contents]</A> <A HREF="stmt8.htm">[Previous]</A> <A HREF="stmt10.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<P ALIGN=right>
+
+<FONT SIZE=-2><I>Last Updated:  10/31/97  12:29:59
+</I></FONT>
+
+<HR SIZE=4>
+
+<P> <CENTER>Copyright © 1997
+<A HREF="http://home.netscape.com/misc/contact_info.html"
+TARGET=_top>Netscape Communications Corporation</A></FONT>
+</CENTER>
+<P>
+<P>
+</BODY>
+</HTML>
+
+

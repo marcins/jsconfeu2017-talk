@@ -1,0 +1,108 @@
+<HTML>
+<HEAD>
+<TITLE>Global Functions
+</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A HREF="contents.htm">[Contents]</A> <A HREF="glob1.htm">[Previous]</A> <A HREF="glob3.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<HR>
+
+<A NAME="addResponseHeader"></A>
+<A NAME="1034630">
+<H1> addResponseHeader</H1>
+</A>
+<A NAME="1034909">
+Adds new information to the response header sent to the client.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1035220">
+<I>Server-side function</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1035222">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1035224">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1035226">
+Netscape Server 3.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1035246">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1035311">
+<PRE>addResponseHeader(field, value)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1035312">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1035329">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1035406">
+<PRE>field</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1035408">
+A field to add to the response header.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1035410">
+<PRE>value</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1035412">
+The information to specify for that field.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1035216">
+<H4> Description</H4>
+</A>
+
+<A NAME="1035448">
+You can use the <CODE>addResponseHeader</CODE> function to add information to the header of the response you send to the client.<P></A>
+<A NAME="1036101">
+For example, if the response you send to the client uses a custom content type, you should encode this content type in the response header. The JavaScript runtime engine automatically adds the default content type (<CODE>text/html</CODE>) to the response header. If you want a custom header, you must first remove the old default content type from the header and then add the new one. If your response uses <CODE>royalairways-format</CODE> as a custom content type, you would specify it this way:<P></A>
+<A NAME="1034696">
+<PRE>deleteResponseHeader("content-type");<br>addResponseHeader("content-type","royalairways-format");</PRE></A><A NAME="1034697">
+You can use the <CODE>addResponseHeader</CODE> function to add any other information you want to the response header.<P></A>
+<a name="1034699">
+Remember that the header is sent with the first part of the response. Therefore, 
+you should call these functions early in the script on each page. In particular, 
+you should ensure that the response header is set <I>before</I> any of these happen:
+</blockquote>
+</a>
+<ul><P>
+<A NAME="1034700">
+<LI>The runtime engine generates 64KB of content for the HTML page (it automatically flushes the output buffer at this point).</LI>
+</A><P>
+<A NAME="1034702">
+<LI>You call the <A HREF="glob9.htm#1012361"><CODE>flush</CODE></A> function to clear the output buffer.</LI>
+</A><P>
+<A NAME="1034704">
+<LI>You call the <A HREF="glob16.htm#1033268"><CODE>redirect</CODE></A> function to change client requests.</LI>
+</A></ul>
+<A NAME="Head3;"></A>
+<A NAME="1036184">
+<H4> See also</H4>
+</A>
+
+<A NAME="1036197">
+<A HREF="glob6.htm#1036298"><CODE>deleteResponseHeader</CODE></A><P></A>
+
+<P><HR>
+<A HREF="contents.htm">[Contents]</A> <A HREF="glob1.htm">[Previous]</A> <A HREF="glob3.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<P ALIGN=right>
+
+<FONT SIZE=-2><I>Last Updated:  10/31/97  16:38:00
+</I></FONT>
+
+<HR SIZE=4>
+
+<P> <CENTER>Copyright © 1997
+<A HREF="http://home.netscape.com/misc/contact_info.html"
+TARGET=_top>Netscape Communications Corporation</A></FONT>
+</CENTER>
+<P>
+<P>
+</BODY>
+</HTML>
+
+

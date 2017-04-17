@@ -1,0 +1,114 @@
+<HTML>
+<HEAD>
+<TITLE>Global Functions
+</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A HREF="contents.htm">[Contents]</A> <A HREF="glob9.htm">[Previous]</A> <A HREF="glob11.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<HR>
+
+<A NAME="getOptionValue"></A>
+<A NAME="1012389">
+<H1> getOptionValue</H1>
+</A>
+<A NAME="1012390">
+Returns the text of a selected <CODE>OPTION</CODE> in a <CODE>SELECT</CODE> form element.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1032263">
+<I>Server-side function</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1032265">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1032267">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1032269">
+LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012391">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1012392">
+<PRE>getOptionValue(name, index)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1012393">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1012399">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012396">
+<PRE>name</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1012398">
+A name specified by the <CODE>NAME</CODE> attribute of the <CODE>SELECT</CODE> tag </A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1034095">
+<PRE>index</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1034222">
+ Zero-based ordinal index of the selected option. </A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012400">
+<H4> Returns</H4>
+</A>
+
+<A NAME="1012401">
+A string containing the text for the selected option, as specified by the associated <CODE>OPTION</CODE> tag. <P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012402">
+<H4> Description</H4>
+</A>
+
+<A NAME="1012403">
+The <CODE>getOptionValue</CODE> function is a top-level server-side JavaScript function not associated with any object. It corresponds to the <A HREF="choi3.htm#1110990"><CODE>Option.text</CODE></A> property available to client-side JavaScript.<P></A>
+<A NAME="1012404">
+The <CODE>SELECT</CODE> tag allows multiple values to be associated with a single form element, with the <CODE>MULTIPLE</CODE> attribute. If your application requires select lists that allow multiple selected options, you use the <CODE>getOptionValue</CODE> function to get the values of selected options in server-side JavaScript.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012407">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1012408">
+Suppose you have the following form element:<P></A>
+<A NAME="1012409">
+<PRE>&lt;SELECT NAME="what-to-wear" MULTIPLE SIZE=8&gt;<br>&nbsp;&nbsp;&nbsp;&lt;OPTION SELECTED&gt;Jeans<br>&nbsp;&nbsp;&nbsp;&lt;OPTION&gt;Wool Sweater<br>&nbsp;&nbsp;&nbsp;&lt;OPTION SELECTED&gt;Sweatshirt<br>&nbsp;&nbsp;&nbsp;&lt;OPTION SELECTED&gt;Socks<br>&nbsp;&nbsp;&nbsp;&lt;OPTION&gt;Leather Jacket<br>&nbsp;&nbsp;&nbsp;&lt;OPTION&gt;Boots<br>&nbsp;&nbsp;&nbsp;&lt;OPTION&gt;Running Shoes<br>&nbsp;&nbsp;&nbsp;&lt;OPTION&gt;Cape<br>&lt;/SELECT&gt;</PRE></A><A NAME="1012410">
+You could process the input from this select list in server-side JavaScript as follows:<P></A>
+<A NAME="1012411">
+<PRE>&lt;SERVER&gt;<br>var loopIndex = 0<br>var loopCount = getOptionValueCount("what-to-wear") // 3 by default<br>while ( loopIndex &lt; loopCount ) {<br>&nbsp;&nbsp;&nbsp;var optionValue = getOptionValue("what-to-wear",loopIndex)<br>&nbsp;&nbsp;&nbsp;write("&lt;br&gt;Item #" + loopIndex + ": " + optionValue + "\n")<br>&nbsp;&nbsp;&nbsp;loopIndex++<br>}<br>&lt;/SERVER&gt;</PRE></A><A NAME="1012412">
+If the user kept the default selections, this script would return<P></A>
+<A NAME="1012413">
+Item #1: Jeans<br>Item #3: Sweatshirt<br>Item #4: Socks<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012414">
+<H4> See also</H4>
+</A>
+
+<A NAME="1012415">
+<A HREF="glob11.htm#1012417"><CODE>getOptionValueCount</CODE></A><P></A>
+
+<P><HR>
+<A HREF="contents.htm">[Contents]</A> <A HREF="glob9.htm">[Previous]</A> <A HREF="glob11.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<P ALIGN=right>
+
+<FONT SIZE=-2><I>Last Updated:  10/31/97  16:38:00
+</I></FONT>
+
+<HR SIZE=4>
+
+<P> <CENTER>Copyright © 1997
+<A HREF="http://home.netscape.com/misc/contact_info.html"
+TARGET=_top>Netscape Communications Corporation</A></FONT>
+</CENTER>
+<P>
+<P>
+</BODY>
+</HTML>
+
+

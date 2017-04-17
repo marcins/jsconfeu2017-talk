@@ -1,0 +1,80 @@
+<HTML>
+<HEAD>
+<TITLE>Global Functions
+</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A HREF="contents.htm">[Contents]</A> <A HREF="glob19.htm">[Previous]</A> <A HREF="glob21.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<HR>
+
+<A NAME="ssjs_getClientID"></A>
+<A NAME="1040341">
+<H1> ssjs_getClientID</H1>
+</A>
+<A NAME="1038171">
+Returns the identifier for the <A HREF="sess2.htm#1014188"><CODE>client</CODE></A> object used by some of JavaScript's client-maintenance techniques. <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1038164">
+<I>Server-side function</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1038166">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1038168">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1038170">
+Netscape Server 3.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1038172">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1038173">
+<PRE>ssjs_getClientID()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1038174">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1038181">
+None.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1038461">
+<H4> Description</H4>
+</A>
+
+<A NAME="1039303">
+For some applications, you may want to store information specific to a client/application pair in the <CODE>project</CODE> or <CODE>server</CODE> objects. In these situations, you need a way to refer uniquely to the client/application pair. JavaScript provides two functions for this purpose, <A HREF="glob18.htm#1038116"><CODE>ssjs_generateClientID</CODE></A> and <CODE>ssjs_getClientID</CODE>. <P></A>
+<A NAME="1039306">
+Each time you call <A HREF="glob18.htm#1038116"><CODE>ssjs_generateClientID</CODE></A>, the runtime engine returns a new identifier. For this reason, if you use this function and want the identifier to last longer than a single client request, you need to store the identifier, possibly as a property of the <A HREF="sess2.htm#1014188"><CODE>client</CODE></A> object.<P></A>
+<A NAME="1039307">
+If you use this function and store the ID in the <CODE>client</CODE> object, you may need to be careful that an intruder cannot get access to that ID and hence to sensitive information.<P></A>
+<A NAME="1039308">
+An alternative approach is to use the <CODE>ssjs_getClientID</CODE> function. If you use one of the server-side maintenance techniques for the <CODE>client</CODE> object, the JavaScript runtime engine generates and uses a identifier to access the information for a particular client/application pair.<P></A>
+<A NAME="1039309">
+When you use these maintenance techniques, <CODE>ssjs_getClientID</CODE> returns the identifier used by the runtime engine. Every time you call this function from a particular client/application pair, you get the same identifier. Therefore, you do not need to store the identifier returned by <CODE>ssjs_getClientID</CODE>. However, if you use any of the other maintenance techniques, this function returns "undefined"; if you use those techniques you must instead use the <A HREF="glob18.htm#1038116"><CODE>ssjs_generateClientID</CODE></A> function.<P></A>
+<A NAME="1039310">
+If you need an identifier and you're using a server-side maintenance technique, you probably should use the <CODE>ssjs_getClientID</CODE> function. If you use this function, you do not need to store and track the identifier yourself; the runtime engine does it for you. However, if you use a client-side maintenance technique, you cannot use the <CODE>ssjs_getClientID</CODE> function; you must use the <A HREF="glob18.htm#1038116"><CODE>ssjs_generateClientID</CODE></A> function.<P></A>
+
+<P><HR>
+<A HREF="contents.htm">[Contents]</A> <A HREF="glob19.htm">[Previous]</A> <A HREF="glob21.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<P ALIGN=right>
+
+<FONT SIZE=-2><I>Last Updated:  10/31/97  16:38:00
+</I></FONT>
+
+<HR SIZE=4>
+
+<P> <CENTER>Copyright © 1997
+<A HREF="http://home.netscape.com/misc/contact_info.html"
+TARGET=_top>Netscape Communications Corporation</A></FONT>
+</CENTER>
+<P>
+<P>
+</BODY>
+</HTML>
+
+

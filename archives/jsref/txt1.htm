@@ -1,0 +1,633 @@
+<HTML>
+<HEAD>
+<TITLE>
+</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A HREF="contents.htm">[Contents]</A> <A HREF="txt.htm">[Previous]</A> <A HREF="txt2.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<HR>
+
+<A NAME="Textarea"></A>
+<A NAME="1010943">
+<H1> Textarea</H1>
+</A>
+<A NAME="1010944">
+A multiline input field on an HTML form. The user can use a textarea field to enter words, phrases, or numbers.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1084350">
+<I>Client-side object</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1084355">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1084357">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1084359">
+Navigator 2.0<br>Navigator 3.0: added <CODE>type</CODE> property.<br>Navigator 4.0: added <CODE>handleEvent</CODE> method.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1042225">
+<H4> Created by</H4>
+</A>
+
+<A NAME="1071650">
+The HTML <CODE><A HREF="http://developer.netscape.com/library/documentation/htmlguid/index.htm?content=tags10.htm#tags:TEXTAREA" TARGET="_top">TEXTAREA</A></CODE> tag. For a given form, the JavaScript runtime engine creates appropriate <CODE>Textarea</CODE> objects and puts these objects in the <A HREF="form1.htm#1010594"><CODE>elements</CODE></A> array of the corresponding <A HREF="form1.htm#1010276"><CODE>Form</CODE></A> object. You access a <CODE>Textarea</CODE> object by indexing this array. You can index the array either by number or, if supplied, by using the value of the <CODE>NAME</CODE> attribute.<P></A>
+<A NAME="1047375">
+To define a text area, use standard HTML syntax with the addition of JavaScript event handlers.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1069290">
+<H4> Event handlers</H4>
+</A>
+
+<ul><A NAME="1069294">
+<LI><A HREF="evnt3.htm#1010414"><CODE>onBlur</CODE></A></LI>
+</A><A NAME="1069298">
+<LI><A HREF="evnt4.htm#1010483"><CODE>onChange</CODE></A></LI>
+</A><A NAME="1069302">
+<LI><A HREF="evnt9.htm#1010615"><CODE>onFocus</CODE></A></LI>
+</A><A NAME="1118684">
+<LI><A HREF="evnt10.htm#1094045"><CODE>onKeyDown</CODE></A></LI>
+</A><A NAME="1118688">
+<LI><A HREF="evnt11.htm#1094129"><CODE>onKeyPress</CODE></A></LI>
+</A><A NAME="1118692">
+<LI><A HREF="evnt12.htm#1094213"><CODE>onKeyUp</CODE></A></LI>
+</A><A NAME="1069318">
+<LI><A HREF="evnt22.htm#1010817"><CODE>onSelect</CODE></A></LI>
+</A></ul>
+<A NAME="Head3;"></A>
+<A NAME="1010983">
+<H4> Description</H4>
+</A>
+
+<A NAME="1010991">
+A <CODE>Textarea</CODE> object on a form looks as follows:<P>
+<IMG SRC="textarea.gif">
+<P></A>
+<A NAME="1010992">
+A <CODE>Textarea</CODE> object is a form element and must be defined within a <CODE><A HREF="http://developer.netscape.com/library/documentation/htmlguid/index.htm?content=tags10.htm#tags:FORM" TARGET="_top">FORM</A></CODE> tag.<P></A>
+<A NAME="1010993">
+<CODE>Textarea</CODE> objects can be updated (redrawn) dynamically by setting the <CODE>value</CODE> property (<CODE>this.value</CODE>).<P></A>
+<A NAME="1010994">
+To begin a new line in a <CODE>Textarea</CODE> object, you can use a newline character. Although this character varies from platform to platform (Unix is <CODE>\n</CODE>, Windows is <CODE>\r</CODE>, and Macintosh is <CODE>\n</CODE>), JavaScript checks for all newline characters before setting a string-valued property and translates them as needed for the user's platform. You could also enter a newline character programmatically--one way is to test the <A HREF="brow1.htm#1010426"><CODE>navigator.appVersion</CODE></A> property to determine the current platform, then set the newline character accordingly. See <CODE><A HREF="brow1.htm#1010426">navigator.appVersion</A></CODE> for an example.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010998">
+<H4> Property Summary</H4>
+</A>
+
+<A NAME="1011035">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1011004">
+<PRE><A HREF="txt1.htm#1011121"><CODE>defaultValue</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1011006">
+Reflects the <CODE>VALUE</CODE> attribute.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1011011">
+<PRE><A HREF="txt1.htm#1011162"><CODE>form</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1011013">
+Specifies the form containing the <CODE>Textarea</CODE> object.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1011018">
+<PRE><A HREF="txt1.htm#1011199"><CODE>name</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1011020">
+Reflects the <CODE>NAME</CODE> attribute.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1011025">
+<PRE><A HREF="txt1.htm#1011257"><CODE>type</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1011027">
+Specifies that the object is a <CODE>Textarea</CODE> object.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1011032">
+<PRE><A HREF="txt1.htm#1011351"><CODE>value</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1011034">
+Reflects the current value of the <CODE>Textarea</CODE> object.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1011036">
+<H4> Method Summary</H4>
+</A>
+
+<A NAME="1011066">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1011042">
+<PRE><A HREF="txt1.htm#1011413"><CODE>blur</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1011044">
+Removes focus from the object.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1011049">
+<PRE><A HREF="txt1.htm#1099400"><CODE>focus</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1011051">
+Gives focus to the object.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1011056">
+<PRE><A HREF="txt1.htm#1118703"><CODE>handleEvent</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1011058">
+Invokes the handler for the specified event.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1011063">
+<PRE><A HREF="txt1.htm#1011568"><CODE>select</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1011065">
+Selects the input area of the object.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1011087">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1011088">
+<B>Example 1.</B> The following example creates a <CODE>Textarea</CODE> object that is six rows long and 55 columns wide. The textarea field appears immediately below the word "Description:". When the form loads, the <CODE>Textarea</CODE> object contains several lines of data, including one blank line.<P></A>
+<A NAME="1011089">
+<PRE>&lt;B&gt;Description:&lt;/B&gt;<br>&lt;BR&gt;&lt;TEXTAREA NAME="item_description" ROWS=6 COLS=55&gt;<br>Our storage ottoman provides an attractive way to<br>store lots of CDs and videos--and it's versatile<br>enough to store other things as well.</PRE></A><A NAME="1011090">
+<PRE>It can hold up to 72 CDs under the lid and 20 videos<br>in the drawer below.<br>&lt;/TEXTAREA&gt;</PRE></A><A NAME="1011091">
+<B>Example 2.</B> The following example creates a string variable containing newline characters for different platforms. When the user clicks the button, the <CODE>Textarea</CODE> object is populated with the value from the string variable. The result is three lines of text in the <CODE>Textarea</CODE> object.<P></A>
+<A NAME="1011092">
+<PRE>&lt;SCRIPT&gt;<br>myString="This is line one.\nThis is line two.\rThis is line three."<br>&lt;/SCRIPT&gt;<br>&lt;FORM NAME="form1"&gt;<br>&lt;INPUT TYPE="button" Value="Populate the textarea"<br>onClick="document.form1.textarea1.value=myString"&gt;<br>&nbsp;&nbsp;&nbsp;&lt;P&gt;<br>&lt;TEXTAREA NAME="textarea1" ROWS=6 COLS=55&gt;&lt;/TEXTAREA&gt;</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1011106">
+<H4> See also</H4>
+</A>
+
+<A NAME="1011119">
+<A HREF="form1.htm#1010276"><CODE>Form</CODE></A>, <A HREF="txt2.htm#1012091"><CODE>Password</CODE></A>, <A HREF="corea2.htm#1012977"><CODE>String</CODE></A>, <A HREF="txt.htm#1023924"><CODE>Text</CODE></A><P></A>
+
+<A NAME="Head2;"></A>
+<A NAME="1085077">
+<H3> Properties</H3>
+</A>
+
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1011121">
+<H2>defaultValue</H2>
+</A>
+
+<A NAME="1011123">
+A string indicating the default value of a <CODE>Textarea</CODE> object.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1085243">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1085248">
+<A HREF="txt1.htm#1010943"><CODE>Textarea</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1085250">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1085252">
+Navigator 2.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1110405">
+<H4> Security</H4>
+</A>
+
+<A NAME="1110406">
+Navigator&nbsp;3.0: This property is tainted by default. For information on data tainting, see <A HREF="intro.htm#1014735">"JavaScript Security"</A>.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1011146">
+<H4> Description</H4>
+</A>
+
+<A NAME="1011147">
+The initial value of <CODE>defaultValue</CODE> reflects the value specified between the <CODE>TEXTAREA</CODE> start and end tags. Setting <CODE>defaultValue</CODE> programmatically overrides the initial setting. <P></A>
+<A NAME="1011149">
+You can set the <CODE>defaultValue</CODE> property at any time. The display of the related object does not update when you set the <CODE>defaultValue</CODE> property, only when you set the <CODE>value</CODE> property.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1011152">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1011153">
+The following function evaluates the <CODE>defaultValue</CODE> property of objects on the <CODE>surfCity</CODE> form and displays the values in the <CODE>msgWindow</CODE> window:<P></A>
+<A NAME="1011154">
+<PRE>function defaultGetter() {<br>&nbsp;&nbsp;&nbsp;msgWindow=window.open("")<br>&nbsp;&nbsp;&nbsp;msgWindow.document.write("hidden.defaultValue is " +<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.surfCity.hiddenObj.defaultValue + "&lt;BR&gt;")<br>&nbsp;&nbsp;&nbsp;msgWindow.document.write("password.defaultValue is " +<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.surfCity.passwordObj.defaultValue + "&lt;BR&gt;")<br>&nbsp;&nbsp;&nbsp;msgWindow.document.write("text.defaultValue is " +<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.surfCity.textObj.defaultValue + "&lt;BR&gt;")<br>&nbsp;&nbsp;&nbsp;msgWindow.document.write("textarea.defaultValue is " +<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.surfCity.textareaObj.defaultValue + "&lt;BR&gt;")<br>&nbsp;&nbsp;&nbsp;msgWindow.document.close()<br>}</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1011155">
+<H4> See also</H4>
+</A>
+
+<A NAME="1011159">
+<A HREF="txt1.htm#1011351"><CODE>Textarea.value</CODE></A> <P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1011162">
+<H2>form</H2>
+</A>
+
+<A NAME="1011163">
+An object reference specifying the form containing this object.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1085395">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1085400">
+<A HREF="txt1.htm#1010943"><CODE>Textarea</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1090280">
+<I>Read-only</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1090282">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1085402">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1085404">
+Navigator 2.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1011178">
+<H4> Description</H4>
+</A>
+
+<A NAME="1011179">
+Each form element has a <CODE>form</CODE> property that is a reference to the element's parent form. This property is especially useful in event handlers, where you might need to refer to another element on the current form.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1011183">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1011186">
+<B>Example 1.</B> The following example shows a form with several elements. When the user clicks <CODE>button2</CODE>, the function <CODE>showElements</CODE> displays an alert dialog box containing the names of each element on the form <CODE>myForm</CODE>.<P></A>
+<A NAME="1011187">
+<PRE>function showElements(theForm) {<br>&nbsp;&nbsp;&nbsp;str = "Form Elements of form " + theForm.name + ": \n "<br>&nbsp;&nbsp;&nbsp;for (i = 0; i &lt; theForm.length; i++) <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;str += theForm.elements[i].name + "\n"<br>&nbsp;&nbsp;&nbsp;alert(str)<br>}<br>&lt;/script&gt;<br>&lt;FORM NAME="myForm"&gt;<br>Form name:&lt;INPUT TYPE="textarea" NAME="text1" VALUE="Beluga"&gt;<br>&lt;P&gt;<br>&lt;INPUT NAME="button1" TYPE="button" VALUE="Show Form Name"<br>&nbsp;&nbsp;&nbsp;onClick="this.form.text1.value=this.form.name"&gt;<br>&lt;INPUT NAME="button2" TYPE="button" VALUE="Show Form Elements"<br>&nbsp;&nbsp;&nbsp;onClick="showElements(this.form)"&gt;<br>&lt;/FORM&gt;</PRE></A><A NAME="1011188">
+The alert dialog box displays the following text:<P></A>
+<A NAME="1011189">
+<PRE>JavaScript Alert:<br>Form Elements of form myForm:<br>text1<br>button1<br>button2</PRE></A><A NAME="1011190">
+<B>Example 2.</B> The following example uses an object reference, rather than the <CODE>this</CODE> keyword, to refer to a form. The code returns a reference to <CODE>myForm</CODE>, which is a form containing <CODE>myTextareaObject</CODE>.<P></A>
+<A NAME="1011191">
+<PRE>document.myForm.myTextareaObject.form</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1011192">
+<H4> See also</H4>
+</A>
+
+<A NAME="1011196">
+<A HREF="form1.htm#1010276"><CODE>Form</CODE></A><P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1011199">
+<H2>name</H2>
+</A>
+
+<A NAME="1011201">
+A string specifying the name of this object.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1085792">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1085797">
+<A HREF="txt1.htm#1010943"><CODE>Textarea</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1085799">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1085801">
+Navigator 2.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1109788">
+<H4> Security</H4>
+</A>
+
+<A NAME="1109789">
+Navigator&nbsp;3.0: This property is tainted by default. For information on data tainting, see <A HREF="intro.htm#1014735">"JavaScript Security"</A>.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1011241">
+<H4> Description</H4>
+</A>
+
+<A NAME="1011243">
+The <CODE>name</CODE> property initially reflects the value of the <CODE>NAME</CODE> attribute. Changing the <CODE>name</CODE> property overrides this setting. The <CODE>name</CODE> property is not displayed on-screen; it is used to refer to the objects programmatically.<P></A>
+<A NAME="1092102">
+If multiple objects on the same form have the same <CODE>NAME</CODE> attribute, an array of the given name is created automatically. Each element in the array represents an individual <CODE>Form</CODE> object. Elements are indexed in source order starting at 0. For example, if two <A HREF="txt.htm#1023924"><CODE>Text</CODE></A> elements and a <A HREF="txt1.htm#1010943"><CODE>Textarea</CODE></A> element on the same form have their <CODE>NAME</CODE> attribute set to <CODE>"myField"</CODE>, an array with the elements <CODE>myField[0]</CODE>, <CODE>myField[1]</CODE>, and <CODE>myField[2]</CODE> is created. You need to be aware of this situation in your code and know whether <CODE>myField</CODE> refers to a single element or to an array of elements.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1011249">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1011250">
+In the following example, the <CODE>valueGetter</CODE> function uses a <CODE>for</CODE> loop to iterate over the array of elements on the <CODE>valueTest</CODE> form. The <CODE>msgWindow</CODE> window displays the names of all the elements on the form:<P></A>
+<A NAME="1011251">
+<PRE>newWindow=window.open("http://home.netscape.com")</PRE></A><A NAME="1011252">
+<PRE>function valueGetter() {<br>&nbsp;&nbsp;&nbsp;var msgWindow=window.open("")<br>&nbsp;&nbsp;&nbsp;for (var i = 0; i &lt; newWindow.document.valueTest.elements.length; i++) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;msgWindow.document.write(newWindow.document.valueTest.elements[i].name + "&lt;BR&gt;")<br>&nbsp;&nbsp;&nbsp;}<br>}</PRE></A>
+<A NAME="Head2Ref;"></A>
+<A NAME="1011257">
+<H2>type</H2>
+</A>
+
+<A NAME="1011258">
+For all <CODE>Textarea</CODE> objects, the value of the <CODE>type</CODE> property is <CODE>"textarea"</CODE>. This property specifies the form element's type. <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1086288">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1086293">
+<A HREF="txt1.htm#1010943"><CODE>Textarea</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1086392">
+<I>Read-only</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1086394">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1086295">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1086297">
+Navigator 3.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1011343">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1011344">
+The following example writes the value of the <CODE>type</CODE> property for every element on a form.<P></A>
+<A NAME="1011345">
+<PRE>for (var i = 0; i &lt; document.form1.elements.length; i++) {<br>&nbsp;&nbsp;&nbsp;document.writeln("&lt;BR&gt;type is " + document.form1.elements[i].type)<br>}</PRE></A>
+<A NAME="Head2Ref;"></A>
+<A NAME="1011351">
+<H2>value</H2>
+</A>
+
+<A NAME="1011352">
+A string that initially reflects the <CODE>VALUE</CODE> attribute. <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1086398">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1086403">
+<A HREF="txt1.htm#1010943"><CODE>Textarea</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1086405">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1086407">
+Navigator 2.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1110256">
+<H4> Security</H4>
+</A>
+
+<A NAME="1110257">
+Navigator&nbsp;3.0: This property is tainted by default. For information on data tainting, see <A HREF="intro.htm#1014735">"JavaScript Security"</A>.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1011387">
+<H4> Description</H4>
+</A>
+
+<A NAME="1011389">
+This string is displayed in the textarea field. The value of this property changes when a user or a program modifies the field.<P></A>
+<A NAME="1011390">
+You can set the <CODE>value</CODE> property at any time. The display of the <CODE>Textarea</CODE> object updates immediately when you set the <CODE>value</CODE> property.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1011393">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1011394">
+The following function evaluates the <CODE>value</CODE> property of a group of buttons and displays it in the <CODE>msgWindow</CODE> window:<P></A>
+<A NAME="1099023">
+<PRE>function valueGetter() {<br>&nbsp;&nbsp;&nbsp;var msgWindow=window.open("")<br>&nbsp;&nbsp;&nbsp;msgWindow.document.write("submitButton.value is " +<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.valueTest.submitButton.value + "&lt;BR&gt;")<br>&nbsp;&nbsp;&nbsp;msgWindow.document.write("resetButton.value is " +<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.valueTest.resetButton.value + "&lt;BR&gt;")<br>&nbsp;&nbsp;&nbsp;msgWindow.document.write("blurb.value is " +<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.valueTest.blurb.value + "&lt;BR&gt;")<br>&nbsp;&nbsp;&nbsp;msgWindow.document.close()<br>}</PRE></A><A NAME="1011396">
+This example displays the following:<P></A>
+<A NAME="1011397">
+<PRE>submitButton.value is Query Submit<br>resetButton.value is Reset<br>blurb.value is Tropical waters contain all sorts of cool fish, <br>such as the harlequin ghost pipefish, dragonet, and cuttlefish.<br>A cuttlefish looks much like a football wearing a tutu and a mop.</PRE></A><A NAME="1011398">
+The previous example assumes the buttons have been defined as follows:<P></A>
+<A NAME="1011399">
+<PRE>&lt;INPUT TYPE="submit" NAME="submitButton"&gt;<br>&lt;INPUT TYPE="reset" NAME="resetButton"&gt;<br>&lt;TEXTAREA NAME="blurb" rows=3 cols=60&gt;<br>Tropical waters contain all sorts of cool fish, <br>such as the harlequin ghost pipefish, dragonet, and cuttlefish.<br>A cuttlefish looks much like a football wearing a tutu and a mop.<br>&lt;/TEXTAREA&gt;</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1011406">
+<H4> See also</H4>
+</A>
+
+<A NAME="1011410">
+<A HREF="txt1.htm#1011121"><CODE>Textarea.defaultValue</CODE></A> <P></A>
+
+<A NAME="Head2;"></A>
+<A NAME="1011411">
+<H3> Methods</H3>
+</A>
+
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1011413">
+<H2>blur</H2>
+</A>
+
+<A NAME="1011415">
+Removes focus from the object.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1086502">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1086507">
+<A HREF="txt1.htm#1010943"><CODE>Textarea</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1086509">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1086511">
+Navigator 2.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1018544">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1018545">
+<PRE>blur()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1011418">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1011454">
+None<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1011464">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1011465">
+The following example removes focus from the textarea element <CODE>userText:</CODE><P></A>
+<A NAME="1011466">
+<PRE>userText.blur()</PRE></A><A NAME="1011467">
+This example assumes that the textarea is defined as<P></A>
+<A NAME="1011468">
+<PRE>&lt;TEXTAREA NAME="userText"&gt;<br>Initial text for the text area.<br>&lt;/TEXTAREA&gt;</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1011469">
+<H4> See also</H4>
+</A>
+
+<A NAME="1011476">
+<A HREF="txt1.htm#1099400"><CODE>Textarea.focus</CODE></A>, <A HREF="txt1.htm#1011568"><CODE>Textarea.select</CODE></A><P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1099400">
+<H2>focus</H2>
+</A>
+
+<A NAME="1099413">
+Navigates to the textarea field and gives it focus.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1099403">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1099408">
+<A HREF="txt1.htm#1010943"><CODE>Textarea</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1099410">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1099412">
+Navigator 2.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1099414">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1011482">
+<PRE>focus()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1011483">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1011519">
+None<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1011525">
+<H4> Description</H4>
+</A>
+
+<A NAME="1011526">
+Use the <CODE>focus</CODE> method to navigate to the textarea field and give it focus. You can then either programmatically enter a value in the field or let the user enter a value. If you use this method without the <CODE>select</CODE> method, the cursor is positioned at the beginning of the field.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1011536">
+<H4> See also</H4>
+</A>
+
+<A NAME="1011543">
+<A HREF="txt1.htm#1011413"><CODE>Textarea.blur</CODE></A>, <A HREF="txt1.htm#1011568"><CODE>Textarea.select</CODE></A><P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1106427">
+<H4> Example</H4>
+</A>
+
+<A NAME="1106458">
+See example for <A HREF="txt1.htm#1011568"><CODE>Textarea.select</CODE></A>.<P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1118703">
+<H2>handleEvent</H2>
+</A>
+
+<A NAME="1118716">
+Invokes the handler for the specified event. <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1118706">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1118711">
+<A HREF="txt1.htm#1010943"><CODE>Textarea</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1118713">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1118715">
+Navigator 4.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1118717">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1118718">
+<PRE>handleEvent(event)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1118719">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1118725">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1118722">
+<PRE>event</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1118724">
+The name of an event for which the object has an event handler.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1118726">
+<H4> Description</H4>
+</A>
+
+<A NAME="1118730">
+For information on handling events, see <A HREF="evnt.htm#1010270">"General Information about Events"</A>.<P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1011568">
+<H2>select</H2>
+</A>
+
+<A NAME="1011569">
+Selects the input area of the object.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1086706">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1086711">
+<A HREF="txt1.htm#1010943"><CODE>Textarea</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1086713">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1086715">
+Navigator 2.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1011570">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1011571">
+<PRE>select()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1031228">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1031229">
+None<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1104770">
+<H4> Description</H4>
+</A>
+
+<A NAME="1104771">
+Use the <CODE>select</CODE> method to highlight the input area of a textarea field. You can use the <CODE>select</CODE> method with the <CODE>focus</CODE> method to highlight the field and position the cursor for a user response. This makes it easy for the user to replace all the text in the field.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1104772">
+<H4> Example</H4>
+</A>
+
+<A NAME="1104974">
+The following example uses an <CODE>onClick</CODE> event handler to move the focus to a textarea field and select that field for changing:<P></A>
+<A NAME="1105703">
+<PRE>&lt;FORM NAME="myForm"&gt;<br>&lt;B&gt;Last name: &lt;/B&gt;&lt;INPUT TYPE="text" NAME="lastName" SIZE=20 VALUE="Pigman"&gt;<br>&lt;BR&gt;&lt;B&gt;First name: &lt;/B&gt;&lt;INPUT TYPE="text" NAME="firstName" SIZE=20 VALUE="Victoria"&gt;<br>&lt;BR&gt;&lt;B&gt;Description:&lt;/B&gt;<br>&lt;BR&gt;&lt;TEXTAREA NAME="desc" ROWS=3 COLS=40&gt;An avid scuba diver.&lt;/TEXTAREA&gt;<br>&lt;BR&gt;&lt;BR&gt;<br>&lt;INPUT TYPE="button" VALUE="Change description"<br>&nbsp;&nbsp;&nbsp;onClick="this.form.desc.select();this.form.desc.focus();"&gt;<br>&lt;/FORM&gt;</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1104976">
+<H4> See also</H4>
+</A>
+
+<A NAME="1104983">
+<A HREF="txt1.htm#1011413"><CODE>Textarea.blur</CODE></A>, <A HREF="txt1.htm#1099400"><CODE>Textarea.focus</CODE></A> <P></A>
+
+<P><HR>
+<A HREF="contents.htm">[Contents]</A> <A HREF="txt.htm">[Previous]</A> <A HREF="txt2.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<P ALIGN=right>
+
+<FONT SIZE=-2><I>Last Updated:  10/31/97  12:32:00
+</I></FONT>
+
+<HR SIZE=4>
+
+<P> <CENTER>Copyright © 1997
+<A HREF="http://home.netscape.com/misc/contact_info.html"
+TARGET=_top>Netscape Communications Corporation</A></FONT>
+</CENTER>
+<P>
+<P>
+</BODY>
+</HTML>
+
+

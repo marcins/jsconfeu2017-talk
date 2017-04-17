@@ -1,0 +1,100 @@
+<HTML>
+<HEAD>
+<TITLE>Global Functions
+</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A HREF="contents.htm">[Contents]</A> <A HREF="glob22.htm">[Previous]</A> <A HREF="glob24.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<HR>
+
+<A NAME="unescape"></A>
+<A NAME="1012622">
+<H1> unescape</H1>
+</A>
+<A NAME="1012624">
+Returns the ASCII string for the specified value.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1033560">
+<I>Core function</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1033562">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1033564">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1033566">
+Navigator 2.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012625">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1012626">
+<PRE>unescape(string)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1025704">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1025710">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1025707">
+<PRE>string</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1025709">
+A string containing characters in the form <CODE>"%xx"</CODE>, where <CODE>xx</CODE> is a 2-digit hexadecimal number.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1025711">
+<H4> Description</H4>
+</A>
+
+<A NAME="1012635">
+The string returned by the <CODE>unescape</CODE> function is a series of characters in the ISO-Latin-1 character set. The <CODE>unescape</CODE> function is a top-level JavaScript function not associated with any object. In server-side JavaScript, use this function to decode name/value pairs in URLs.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012638">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1012639">
+The following client-side example returns <CODE>"&amp;"</CODE>:<P></A>
+<A NAME="1012640">
+<PRE>unescape("%26")</PRE></A><A NAME="1012641">
+The following client-side example returns <CODE>"!#"</CODE>:<P></A>
+<A NAME="1012642">
+<PRE>unescape("%21%23")</PRE></A><A NAME="1012643">
+In the following server-side example, <CODE>val1</CODE> has been passed to the <CODE>request</CODE> object as a hexadecimal value. The statement assigns the decoded value of <CODE>val1</CODE> to <CODE>myValue</CODE>.<P></A>
+<A NAME="1012644">
+<PRE>myValue = unescape(request.val1)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1012645">
+<H4> See also</H4>
+</A>
+
+<A NAME="1012649">
+<A HREF="glob7.htm#1012329"><CODE>escape</CODE></A> <P></A>
+
+<P><HR>
+<A HREF="contents.htm">[Contents]</A> <A HREF="glob22.htm">[Previous]</A> <A HREF="glob24.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<P ALIGN=right>
+
+<FONT SIZE=-2><I>Last Updated:  10/31/97  16:38:00
+</I></FONT>
+
+<HR SIZE=4>
+
+<P> <CENTER>Copyright © 1997
+<A HREF="http://home.netscape.com/misc/contact_info.html"
+TARGET=_top>Netscape Communications Corporation</A></FONT>
+</CENTER>
+<P>
+<P>
+</BODY>
+</HTML>
+
+

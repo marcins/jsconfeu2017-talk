@@ -1,0 +1,503 @@
+<HTML>
+<HEAD>
+<TITLE>Core&nbsp;&nbsp;&nbsp;
+</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A HREF="contents.htm">[Contents]</A> <A HREF="core3.htm">[Previous]</A> <A HREF="core5.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<HR>
+
+<A NAME="Function"></A>
+<A NAME="1013865">
+<H1> Function</H1>
+</A>
+<A NAME="1013867">
+Specifies a string of JavaScript code to be compiled as a function.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left COLSPAN=2 ROWSPAN=1><A NAME="1148823">
+<I>Core object</I></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1148796">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1148798">
+Navigator 3.0, LiveWire 1.0<br>Navigator 4.0: added <A HREF="core4.htm#1050995"><CODE>arity</CODE></A> property.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1076603">
+<H4> Created by</H4>
+</A>
+
+<A NAME="1076604">
+The <CODE>Function</CODE> constructor:<P></A>
+<A NAME="1013870">
+<PRE>new Function (arg1, arg2, ... arg<I>N</I>, functionBody)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1013873">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1013891">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1013880">
+<PRE>arg1, arg2, ... arg<I>N</I></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1013882">
+(Optional) Names to be used by the function as formal argument names. Each must be a string that corresponds to a valid JavaScript identifier; for example <CODE>"x"</CODE> or <CODE>"theForm"</CODE>.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1093398">
+<PRE>functionBody</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1093400">
+A string containing the JavaScript statements comprising the function definition.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013894">
+<H4> Description</H4>
+</A>
+
+<A NAME="1013895">
+<CODE>Function</CODE> objects are evaluated each time they are used. This is less efficient than declaring a function and calling it within your code, because declared functions are compiled.<P></A>
+<A NAME="1013896">
+In addition to defining functions as described here, you can also use the <A HREF="stmt9.htm#1004825"><CODE>function</CODE></A> statement, as described in the <A HREF="http://developer.netscape.com/library/documentation/communicator/jsguide4/index.htm" TARGET="_top">JavaScript Guide</A>.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1181098">
+<H4> Property Summary</H4>
+</A>
+
+<A NAME="1181128">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1181104">
+<PRE><A HREF="core4.htm#1013969"><CODE>arguments</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1181106">
+An array corresponding to the arguments passed to a function.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1181111">
+<PRE><A HREF="core4.htm#1050995"><CODE>arity</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1181113">
+Indicates the number of arguments expected by the function.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1181118">
+<PRE><A HREF="core4.htm#1014031"><CODE>caller</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1181120">
+Specifies which function called the current function.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1181125">
+<PRE><A HREF="core4.htm#1181210"><CODE>prototype</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1181127">
+Allows the addition of properties to a <CODE>Function</CODE> object.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1181129">
+<H4> Method Summary</H4>
+</A>
+
+<A NAME="1181138">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1181135">
+<PRE><A HREF="core4.htm#1168220"><CODE>toString</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1181137">
+Returns a string representing the specified object.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013903">
+<H4> Specifying a variable value with a Function object</H4>
+</A>
+
+<A NAME="1013904">
+The following code assigns a function to the variable <CODE>setBGColor</CODE>. This function sets the current document's background color.<P></A>
+<A NAME="1013905">
+<PRE>var setBGColor = new Function("document.bgColor='antiquewhite'")</PRE></A><A NAME="1013906">
+To call the <CODE>Function</CODE> object, you can specify the variable name as if it were a function. The following code executes the function specified by the <CODE>setBGColor</CODE> variable:<P></A>
+<A NAME="1013907">
+<PRE>var colorChoice="antiquewhite"<br>if (colorChoice=="antiquewhite") {setBGColor()}</PRE></A><A NAME="1013908">
+You can assign the function to an event handler in either of the following ways:<P></A>
+<A NAME="1013909">
+<PRE>document.form1.colorButton.onclick=setBGColor</PRE></A><A NAME="1168662">
+<PRE>&lt;INPUT NAME="colorButton" TYPE="button"<br>&nbsp;&nbsp;&nbsp;VALUE="Change background color"<br>&nbsp;&nbsp;&nbsp;onClick="setBGColor()"&gt;</PRE></A><A NAME="1013910">
+Creating the variable <CODE>setBGColor</CODE> shown above is similar to declaring the following function:<P></A>
+<A NAME="1013911">
+<PRE>function setBGColor() {<br>&nbsp;&nbsp;&nbsp;document.bgColor='antiquewhite'<br>}</PRE></A><A NAME="1013912">
+Assigning a function to a variable is similar to declaring a function, but they have differences:<P></A>
+<ul><P>
+<A NAME="1013913">
+<LI>When you assign a function to a variable using <CODE>var setBGColor = new Function("...")</CODE>, <CODE>setBGColor</CODE> is a variable for which the current value is a reference to the function created with <CODE>new Function()</CODE>.</LI>
+</A><P>
+<A NAME="1013914">
+<LI>When you create a function using <CODE>function setBGColor() {...}</CODE>, <CODE>setBGColor</CODE> is not a variable, it is the name of a function.</LI>
+</A></ul>
+<A NAME="Head3;"></A>
+<A NAME="1013916">
+<H4> Specifying arguments in a Function object</H4>
+</A>
+
+<A NAME="1013917">
+The following code specifies a <CODE>Function</CODE> object that takes two arguments.<P></A>
+<A NAME="1013918">
+<PRE>var multFun = new Function("x", "y", "return x * y")</PRE></A><A NAME="1013919">
+The string arguments <CODE>"x"</CODE> and <CODE>"y"</CODE> are formal argument names that are used in the function body, <CODE>"return x * y"</CODE>.<P></A>
+<A NAME="1013920">
+The following code shows several ways to call the function <CODE>multFun</CODE>:<P></A>
+<A NAME="1013921">
+<PRE>var theAnswer = multFun(7,6)</PRE></A><A NAME="1013922">
+<PRE>document.write("15*2 = " + multFun(15,2))</PRE></A><A NAME="1013923">
+<PRE>&lt;INPUT NAME="operand1" TYPE="text" VALUE="5" SIZE=5&gt;<br>&lt;INPUT NAME="operand2" TYPE="text" VALUE="6" SIZE=5&gt;<br>&lt;INPUT NAME="result" TYPE="text" VALUE="" SIZE=10&gt;<br>&lt;INPUT NAME="buttonM" TYPE="button" VALUE="Multiply"<br>&nbsp;&nbsp;&nbsp;onClick="document.form1.result.value=<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;multFun(document.form1.operand1.value,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.form1.operand2.value)"&gt;</PRE></A><A NAME="1013924">
+You cannot call the function <CODE>multFun</CODE> in an object's event handler property, because event handler properties cannot take arguments. For example, you cannot call the function <CODE>multFun</CODE> by setting a button's <CODE>onclick</CODE> property as follows:<P></A>
+<A NAME="1013925">
+<PRE>document.form1.button1.onclick=multFun(5,10)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1013927">
+<H4> Specifying an event handler with a Function object</H4>
+</A>
+
+<A NAME="1013928">
+The following code assigns a function to a window's <A HREF="evnt9.htm#1010615"><CODE>onFocus</CODE></A> event handler (the event handler must be spelled in all lowercase):<P></A>
+<A NAME="1013929">
+<PRE>window.onfocus = new Function("document.bgColor='antiquewhite'")</PRE></A><A NAME="1013930">
+Once you have a reference to a function object, you can use it like a function and it will convert from an object to a function:<P></A>
+<A NAME="1013931">
+<PRE>window.onfocus()</PRE></A><A NAME="1013932">
+Event handlers do not take arguments, so you cannot declare any arguments in the <CODE>Function</CODE> constructor for an event handler.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013961">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1013962">
+<B>Example 1.</B> The following example creates <A HREF="evnt9.htm#1010615"><CODE>onFocus</CODE></A> and <A HREF="evnt3.htm#1010414"><CODE>onBlur</CODE></A> event handlers for a frame. This code exists in the same file that contains the <CODE>FRAMESET</CODE> tag. Note that this is the only way to create <A HREF="evnt9.htm#1010615"><CODE>onFocus</CODE></A> and <A HREF="evnt3.htm#1010414"><CODE>onBlur</CODE></A> event handlers for a frame, because you cannot specify the event handlers in the <CODE>FRAME</CODE> tag.<P></A>
+<A NAME="1013963">
+<PRE>frames[0].onfocus = new Function("document.bgColor='antiquewhite'")<br>frames[0].onblur = new Function("document.bgColor='lightgrey'")</PRE></A><A NAME="1013964">
+<B>Example 2.</B> You can determine whether a function exists by comparing the function name to null. In the following example, <CODE>func1</CODE> is called if the function <CODE>noFunc</CODE> does not exist; otherwise <CODE>func2</CODE> is called. Notice that the window name is needed when referring to the function name <CODE>noFunc</CODE>.<P></A>
+<A NAME="1013965">
+<PRE>if (window.noFunc == null)<br>&nbsp;&nbsp;&nbsp;func1()<br>else func2()</PRE></A>
+<A NAME="Head2;"></A>
+<A NAME="1013966">
+<H3> Properties</H3>
+</A>
+
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1013969">
+<H2>arguments</H2>
+</A>
+
+<A NAME="1013970">
+An array corresponding to the arguments passed to a function.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1155685">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1155687">
+<A HREF="core4.htm#1013865"><CODE>Function</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1148858">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1148860">
+Navigator 3.0, LiveWire 1.0<br>Navigator 4.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013995">
+<H4> Description</H4>
+</A>
+
+<A NAME="1013996">
+You can call a function with more arguments than it is formally declared to accept by using the <CODE>arguments</CODE> array. This technique is useful if a function can be passed a variable number of arguments. You can use <CODE>arguments.length</CODE> to determine the number of arguments passed to the function, and then treat each argument by using the <CODE>arguments</CODE> array.<P></A>
+<A NAME="1013997">
+The <CODE>arguments</CODE> array is available only within a function declaration. Attempting to access the <CODE>arguments</CODE> array outside a function declaration results in an error.<P></A>
+<A NAME="1181589">
+The <CODE>this</CODE> keyword does not refer to the currently executing function, so you must refer to functions and <CODE>Function</CODE> objects by name, even within the function body. In JavaScript 1.2, <CODE>arguments</CODE> includes these additional properties: <P></A>
+<ul><P>
+<A NAME="1181590">
+<LI>formal arguments--each formal argument of a function is a property of the <CODE>arguments</CODE> array. </LI>
+</A><P>
+<A NAME="1181591">
+<LI>local variables--each local variable of a function is a property of the <CODE>arguments</CODE> array. </LI>
+</A><P>
+<A NAME="1181592">
+<LI><CODE>caller</CODE>--a property whose value is the <CODE>arguments</CODE> array of the outer function. If there is no outer function, the value is undefined. </LI>
+</A><P>
+<A NAME="1181593">
+<LI><CODE>callee</CODE>--a property whose value is the function reference. </LI>
+</A></ul><A NAME="1181594">
+For example, the following script demonstrates several of the <CODE>arguments</CODE> properties:<P></A>
+<A NAME="1181595">
+<PRE>&lt;SCRIPT&gt; </PRE></A><A NAME="1181596">
+<PRE>function b(z) { <br>&nbsp;&nbsp;&nbsp;document.write(arguments.z + "&lt;BR&gt;") <br>&nbsp;&nbsp;&nbsp;document.write (arguments.caller.x + "&lt;BR&gt;") <br>&nbsp;&nbsp;&nbsp;return 99 <br>} </PRE></A><A NAME="1181597">
+<PRE>function a(x, y) { <br>&nbsp;&nbsp;&nbsp;return  b(534) <br>}</PRE></A><A NAME="1181598">
+<PRE>document.write (a(2,3) + "&lt;BR&gt;") </PRE></A><A NAME="1181599">
+<PRE>&lt;/SCRIPT&gt;</PRE></A><A NAME="1181600">
+This displays:<P></A>
+<A NAME="1181601">
+534<br>2 <br>99 <P></A>
+<A NAME="1181602">
+534 is the actual parameter to b, so it is the value of <CODE>arguments.z</CODE>.<P></A>
+<A NAME="1181603">
+2 is a's actual x parameter, so (viewed within b) it is the value of <CODE>arguments.caller.x</CODE>. <P></A>
+<A NAME="1181604">
+99 is what <CODE>a(2,3)</CODE> returns. <P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1014016">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1014017">
+This example defines a function that creates HTML lists. The only formal argument for the function is a string that is <CODE>"U"</CODE> if the list is to be unordered (bulleted), or <CODE>"O"</CODE> if the list is to be ordered (numbered). The function is defined as follows:<P></A>
+<A NAME="1014018">
+<PRE>function list(type) {<br>&nbsp;&nbsp;&nbsp;document.write("&lt;" + type + "L&gt;")<br>&nbsp;&nbsp;&nbsp;for (var i=1; i&lt;list.arguments.length; i++) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.write("&lt;LI&gt;" + list.arguments[i])<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.write("&lt;/" + type + "L&gt;")<br>&nbsp;&nbsp;&nbsp;}<br>}</PRE></A><A NAME="1014019">
+You can pass any number of arguments to this function, and it displays each argument as an item in the type of list indicated. For example, the following call to the function<P></A>
+<A NAME="1014020">
+<PRE>list("U", "One", "Two", "Three")</PRE></A><A NAME="1014021">
+results in this output:<P></A>
+<A NAME="1014022">
+<PRE>&lt;UL&gt;<br>&lt;LI&gt;One<br>&lt;LI&gt;Two<br>&lt;LI&gt;Three<br>&lt;/UL&gt;</PRE></A><A NAME="1014023">
+In server-side JavaScript, you can display the same output by calling the <A HREF="glob25.htm#1012652"><CODE>write</CODE></A> function instead of using <A HREF="doc1.htm#1011184"><CODE>document.write</CODE></A>.<P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1050995">
+<H2>arity</H2>
+</A>
+
+<A NAME="1050996">
+When the <CODE>LANGUAGE</CODE> attribute of the <CODE>SCRIPT</CODE> tag is "JavaScript1.2", this property indicates the number of arguments expected by a function. <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1155702">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1155707">
+<A HREF="core4.htm#1013865"><CODE>Function</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1155709">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1155711">
+Navigator 4.0, Netscape Server 3.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1051005">
+<H4> Description</H4>
+</A>
+
+<A NAME="1051006">
+<CODE>arity</CODE> is external to the function, and indicates how many arguments the function expects. By contrast, <A HREF="core4.htm#1013969"><CODE>arguments</CODE></A><CODE>.length</CODE> provides the number of arguments actually passed to the function.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1051010">
+<H4> Example</H4>
+</A>
+
+<A NAME="1051011">
+The following example demonstrates the use of <CODE>arity</CODE> and <A HREF="core4.htm#1013969"><CODE>arguments</CODE></A><CODE>.length</CODE>. <P></A>
+<A NAME="1051012">
+<PRE>&lt;SCRIPT LANGUAGE = "JavaScript1.2"&gt;<br>function addNumbers(x,y){ <br>&nbsp;&nbsp;&nbsp;document.write("length = " + arguments.length + "&lt;BR&gt;") <br>&nbsp;&nbsp;&nbsp;z = x + y <br>} <br>document.write("arity = " + addNumbers.arity + "&lt;BR&gt;") <br>addNumbers(3,4,5)<br>&lt;/SCRIPT&gt;</PRE></A><A NAME="1051020">
+This script writes: <P></A>
+<A NAME="1051021">
+arity = 2 <br>length = 3 <P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1014031">
+<H2>caller</H2>
+</A>
+
+<A NAME="1014032">
+Returns the name of the function that invoked the currently executing function.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1155809">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1155814">
+<A HREF="core4.htm#1013865"><CODE>Function</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1155816">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1155818">
+Navigator 3.0, LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1014052">
+<H4> Description</H4>
+</A>
+
+<A NAME="1014053">
+The <CODE>caller</CODE> property is available only within the body of a function. If used outside a function declaration, the <CODE>caller</CODE> property is null.<P></A>
+<A NAME="1014054">
+If the currently executing function was invoked by the top level of a JavaScript program, the value of <CODE>caller</CODE> is null.<P></A>
+<A NAME="1014055">
+The <CODE>this</CODE> keyword does not refer to the currently executing function, so you must refer to functions and <CODE>Function</CODE> objects by name, even within the function body.<P></A>
+<A NAME="1014056">
+The <CODE>caller</CODE> property is a reference to the calling function, so<P></A>
+<ul><P>
+<A NAME="1014057">
+<LI>If you use it in a string context, you get the result of calling <CODE>functionName.toString</CODE>. That is, the decompiled canonical source form of the function.</LI>
+</A><P>
+<A NAME="1014058">
+<LI>You can also call the calling function, if you know what arguments it might want. Thus, a called function can call its caller without knowing the name of the particular caller, provided it knows that all of its callers have the same form and fit, and that they will not call the called function again unconditionally (which would result in infinite recursion).</LI>
+</A></ul>
+<A NAME="Head3;"></A>
+<A NAME="1014061">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1014062">
+The following code checks the value of a function's <CODE>caller</CODE> property.<P></A>
+<A NAME="1014063">
+<PRE>function myFunc() {<br>&nbsp;&nbsp;&nbsp;if (myFunc.caller == null) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert("The function was called from the top!")<br>&nbsp;&nbsp;&nbsp;} else alert("This function's caller was " + myFunc.caller)<br>}</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1014064">
+<H4> See also</H4>
+</A>
+
+<A NAME="1014068">
+<A HREF="core4.htm#1013969"><CODE>Function.arguments</CODE></A><P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1181210">
+<H2>prototype</H2>
+</A>
+
+<A NAME="1181211">
+A value from which instances of a particular class are created. Every object that can be created by calling a constructor function has an associated <CODE>prototype</CODE> property.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1181214">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1181219">
+<A HREF="corea1.htm#1012725"><CODE>Object</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1181221">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1181223">
+Navigator 3.0, LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1181224">
+<H4> Description</H4>
+</A>
+
+<A NAME="1181225">
+You can add new properties or methods to an existing class by adding them to the prototype associated with the constructor function for that class. The syntax for adding a new property or method is:<P></A>
+<A NAME="1181226">
+<PRE><I>fun</I>.prototype.<I>name</I> = <I>value</I></PRE></A><A NAME="1181240">
+where<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1181229">
+<PRE>fun</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1181231">
+The name of the constructor function object you want to change.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1181233">
+<PRE>name</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1181235">
+The name of the property or method to be created.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1181237">
+<PRE>value</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1181239">
+The value initially assigned to the new property or method.</A></P>
+
+</TABLE>
+<P></A>
+<A NAME="1181241">
+If you add a new property to the prototype for an object, then all objects created with that object's constructor function will have that new property, even if the objects existed before you created the new property. For example, assume you have the following statements:<P></A>
+<A NAME="1181242">
+<PRE>var array1 = new Array();<br>var array2 = new Array(3);<br>Array.prototype.description=null;<br>array1.description="Contains some stuff"<br>array2.description="Contains other stuff"</PRE></A><A NAME="1181243">
+After you set a property for the prototype, all subsequent objects created with <CODE>Array</CODE> will have the property:<P></A>
+<A NAME="1181244">
+<PRE>anotherArray=new Array()<br>anotherArray.description="Currently empty"</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1181245">
+<H4> Example</H4>
+</A>
+
+<A NAME="1181246">
+The following example creates a method, <CODE>str_rep</CODE>, and uses the statement <CODE>String.prototype.rep = str_rep</CODE> to add the method to all <A HREF="corea2.htm#1012977"><CODE>String</CODE></A> objects. All objects created with <CODE>new String()</CODE> then have that method, even objects already created. The example then creates an alternate method and adds that to one of the <A HREF="corea2.htm#1012977"><CODE>String</CODE></A> objects using the statement <CODE>s1.rep = fake_rep</CODE>. The <CODE>str_rep</CODE> method of the remaining <A HREF="corea2.htm#1012977"><CODE>String</CODE></A> objects is not altered.<P></A>
+<A NAME="1181256">
+<PRE>var s1 = new String("a")<br>var s2 = new String("b")<br>var s3 = new String("c")</PRE></A><A NAME="1181257">
+<PRE>// Create a repeat-string-N-times method for all String objects<br>function str_rep(n) {<br>   var s = "", t = this.toString()<br>   while (--n &gt;= 0) s += t<br>   return s<br>}<br>String.prototype.rep = str_rep</PRE></A><A NAME="1181258">
+<PRE>// Display the results<br>document.write("&lt;P&gt;s1.rep(3) is " + s1.rep(3)) // "aaa"<br>document.write("&lt;BR&gt;s2.rep(5) is " + s2.rep(5)) // "bbbbb"<br>document.write("&lt;BR&gt;s3.rep(2) is " + s3.rep(2)) // "cc"</PRE></A><A NAME="1181259">
+<PRE>// Create an alternate method and assign it to only one String variable<br>function fake_rep(n) {<br>   return "repeat " + this + n + " times."<br>}</PRE></A><A NAME="1181260">
+<PRE>s1.rep = fake_rep</PRE></A><A NAME="1181261">
+<PRE>document.write("&lt;P&gt;s1.rep(1) is " + s1.rep(1)) // "repeat a 1 times."<br>document.write("&lt;BR&gt;s2.rep(4) is " + s2.rep(4)) // "bbbb"<br>document.write("&lt;BR&gt;s3.rep(6) is " + s3.rep(6)) // "cccccc"</PRE></A><A NAME="1181262">
+This example produces the following output:<P></A>
+<A NAME="1181263">
+<PRE>s1.rep(3) is aaa<br>s2.rep(5) is bbbbb<br>s3.rep(2) is cc</PRE></A><A NAME="1181264">
+<PRE>s1.rep(1) is repeat a1 times.<br>s2.rep(4) is bbbb<br>s3.rep(6) is cccccc</PRE></A><A NAME="1181268">
+The function in this example also works on <A HREF="corea2.htm#1012977"><CODE>String</CODE></A> objects not created with the <A HREF="corea2.htm#1012977"><CODE>String</CODE></A> constructor. The following code returns <CODE>"zzz"</CODE>.<P></A>
+<A NAME="1181272">
+<PRE>"z".rep(3)</PRE></A>
+<A NAME="Head2;"></A>
+<A NAME="1168196">
+<H3> Methods</H3>
+</A>
+
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1168220">
+<H2>toString</H2>
+</A>
+
+<A NAME="1168229">
+Returns a string representing the specified object.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1168223">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1168228">
+<A HREF="core4.htm#1013865"><CODE>Function</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1168570">
+<I>Implemented in </I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1175797">
+Navigator 3.0, LiveWire 1.0</A></P>
+
+</TABLE>
+ <P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1168230">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1168231">
+<PRE>toString()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1168232">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1168233">
+None.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1168234">
+<H4> Description</H4>
+</A>
+
+<A NAME="1168235">
+Every object has a <CODE>toString</CODE> method that is automatically called when it is to be represented as a text value or when an object is referred to in a string concatenation. <P></A>
+<A NAME="1168236">
+You can use <CODE>toString</CODE> within your own code to convert an object into a string, and you can create your own function to be called in place of the default <CODE>toString</CODE> method.<P></A>
+<A NAME="1168345">
+For <A HREF="core4.htm#1013865"><CODE>Function</CODE></A> objects, the built-in <CODE>toString</CODE> method decompiles the function back into the JavaScript source that defines the function. This string includes the <CODE>function</CODE> keyword, the argument list, curly braces, and function body.<P></A>
+<A NAME="1168348">
+For example, assume you have the following code that defines the <CODE>Dog</CODE> object type and creates <CODE>theDog,</CODE> an object of type <CODE>Dog</CODE>:<P></A>
+<A NAME="1168420">
+<PRE>function Dog(name,breed,color,sex) {<br>&nbsp;&nbsp;&nbsp;this.name=name<br>&nbsp;&nbsp;&nbsp;this.breed=breed<br>&nbsp;&nbsp;&nbsp;this.color=color<br>&nbsp;&nbsp;&nbsp;this.sex=sex<br>}</PRE></A><A NAME="1168421">
+<PRE>theDog = new Dog("Gabby","Lab","chocolate","girl")</PRE></A><A NAME="1168417">
+Any time <CODE>Dog</CODE> is used in a string context, JavaScript automatically calls the <CODE>toString</CODE> function, which returns the following string:<P></A>
+<A NAME="1168350">
+<BLOCKQUOTE>function Dog(name, breed, color, sex) { this.name = name; this.breed = 
+breed; this.color = color; this.sex = sex; }
+</BLOCKQUOTE></A>
+
+<A NAME="1168247">
+For information on defining your own <CODE>toString</CODE> method, see the <A HREF="corea1.htm#1012793"><CODE>Object.toString</CODE></A> method.<P></A>
+
+<P><HR>
+<A HREF="contents.htm">[Contents]</A> <A HREF="core3.htm">[Previous]</A> <A HREF="core5.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<P ALIGN=right>
+
+<FONT SIZE=-2><I>Last Updated:  10/31/97  16:00:33
+</I></FONT>
+
+<HR SIZE=4>
+
+<P> <CENTER>Copyright © 1997
+<A HREF="http://home.netscape.com/misc/contact_info.html"
+TARGET=_top>Netscape Communications Corporation</A></FONT>
+</CENTER>
+<P>
+<P>
+</BODY>
+</HTML>
+
+

@@ -1,0 +1,105 @@
+<HTML>
+<HEAD>
+<TITLE>
+</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A HREF="contents.htm">[Contents]</A> <A HREF="doca1.htm">[Previous]</A> <A HREF="doca3.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<HR>
+
+<A NAME="Applet"></A>
+<A NAME="1015224">
+<H1> Applet</H1>
+</A>
+<A NAME="1015226">
+Includes a Java applet in a web page.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1081184">
+<I>Client-side object</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1081189">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1081191">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1081193">
+Navigator 3.0:</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1015227">
+<H4> Created by</H4>
+</A>
+
+<A NAME="1095820">
+The HTML <CODE><A HREF="http://developer.netscape.com/library/documentation/htmlguid/index.htm?content=tags14.htm#tags:APPLET" TARGET="_top">APPLET</A></CODE> tag. The JavaScript runtime engine creates an <CODE>Applet</CODE> object corresponding to each applet in your document. It puts these objects in an array in the <A HREF="doc1.htm#1010607"><CODE>document.applets</CODE></A> property. You access an <CODE>Applet</CODE> object by indexing this array.<P></A>
+<A NAME="1092250">
+To define an applet, use standard HTML syntax. If you specify the <CODE>NAME</CODE> attribute, you can use the value of that attribute to index into the <CODE>applets</CODE> array. To refer to an applet in JavaScript, you must supply the <CODE>MAYSCRIPT</CODE> attribute in its definition.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1015300">
+<H4> Description</H4>
+</A>
+
+<A NAME="1015302">
+The author of an HTML page must permit an applet to access JavaScript by specifying the <CODE>MAYSCRIPT</CODE> attribute of the <CODE>APPLET</CODE> tag. This prevents an applet from accessing JavaScript on a page without the knowledge of the page author. For example, to allow the <CODE>musicPicker.class</CODE> applet access to JavaScript on your page, specify the following:<P></A>
+<A NAME="1015303">
+<PRE>&lt;APPLET CODE="musicPicker.class" WIDTH=200 HEIGHT=35<br>&nbsp;&nbsp;&nbsp;NAME="musicApp" MAYSCRIPT&gt;</PRE></A><A NAME="1015304">
+Accessing JavaScript when the <CODE>MAYSCRIPT</CODE> attribute is not specified results in an exception.<P></A>
+<A NAME="1015311">
+For more information on using applets, see the <A HREF="http://developer.netscape.com/library/documentation/communicator/jsguide4/index.htm" TARGET="_top">JavaScript Guide</A>.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1015312">
+<H4> Property Summary</H4>
+</A>
+
+<A NAME="1015313">
+All public properties of the applet are available for JavaScript access to the <CODE>Applet</CODE> object.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1015314">
+<H4> Method Summary</H4>
+</A>
+
+<A NAME="1092540">
+All public methods of the applet<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1092543">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1015321">
+The following code launches an applet called <CODE>musicApp</CODE>:<P></A>
+<A NAME="1015322">
+<PRE>&lt;APPLET CODE="musicSelect.class" WIDTH=200 HEIGHT=35<br>&nbsp;&nbsp;&nbsp;NAME="musicApp" MAYSCRIPT&gt;<br>&lt;/APPLET&gt;</PRE></A><A NAME="1015329">
+For more examples, see the <A HREF="http://developer.netscape.com/library/documentation/communicator/jsguide4/index.htm" TARGET="_top">JavaScript Guide</A>.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1015330">
+<H4> See also</H4>
+</A>
+
+<A NAME="1015337">
+<A HREF="brow2.htm#1031247"><CODE>MimeType</CODE></A>, <A HREF="brow3.htm#1010653"><CODE>Plugin</CODE></A> <P></A>
+
+<P><HR>
+<A HREF="contents.htm">[Contents]</A> <A HREF="doca1.htm">[Previous]</A> <A HREF="doca3.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<P ALIGN=right>
+
+<FONT SIZE=-2><I>Last Updated:  10/31/97  12:31:11
+</I></FONT>
+
+<HR SIZE=4>
+
+<P> <CENTER>Copyright © 1997
+<A HREF="http://home.netscape.com/misc/contact_info.html"
+TARGET=_top>Netscape Communications Corporation</A></FONT>
+</CENTER>
+<P>
+<P>
+</BODY>
+</HTML>
+
+

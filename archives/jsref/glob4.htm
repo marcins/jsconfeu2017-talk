@@ -1,0 +1,99 @@
+<HTML>
+<HEAD>
+<TITLE>Global Functions
+</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A HREF="contents.htm">[Contents]</A> <A HREF="glob3.htm">[Previous]</A> <A HREF="glob5.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<HR>
+
+<A NAME="callC"></A>
+<A NAME="1012275">
+<H1> callC</H1>
+</A>
+<A NAME="1012277">
+Calls an external function and returns the value that the external function returns.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1031391">
+<I>Server-side function</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1031393">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1031395">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1031397">
+LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012278">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1012279">
+<PRE>callC(JSFunctionName, arg1,..., arg<I>N</I>)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1012280">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1012290">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012283">
+<PRE>JSFunctionName</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1012285">
+The name of the function as it is identified with <CODE>RegisterCFunction</CODE>.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012287">
+<PRE>arg1...arg<I>N</I></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1012289">
+A comma-separated list of arguments to the external function. The arguments can be any JavaScript values: strings, numbers, or Boolean values. The number of arguments must match the number of arguments required by the external function.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012291">
+<H4> Description</H4>
+</A>
+
+<A NAME="1012292">
+The <CODE>callC</CODE> function is a top-level server-side JavaScript function that is not associated with any object.<P></A>
+<A NAME="1012293">
+The <CODE>callC</CODE> function returns the string value that the external function returns; <CODE>callC</CODE> can only return string values.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012296">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1012297">
+The following example assigns a value to the variable <CODE>isRegistered</CODE> according to whether the attempt to register the external function <CODE>echoCCallArguments</CODE> succeeds or fails. If <CODE>isRegistered</CODE> is true, the <CODE>callC</CODE> function executes.<P></A>
+<A NAME="1012298">
+<PRE>var isRegistered =<br>&nbsp;&nbsp;&nbsp;registerCFunction("echoCCallArguments",<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"c:/mypath/mystuff.dll",<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"mystuff_EchoCCallArguments")<br>if (isRegistered == true) {<br>&nbsp;&nbsp;&nbsp;var returnValue =<br>&nbsp;&nbsp;&nbsp;callC("echoCCallArguments", "first arg", 42, true, "last arg")<br>&nbsp;&nbsp;&nbsp;write(returnValue)<br>}</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1012299">
+<H4> See also</H4>
+</A>
+
+<A NAME="1012303">
+<A HREF="glob17.htm#1012586"><CODE>registerCFunction</CODE></A> <P></A>
+
+<P><HR>
+<A HREF="contents.htm">[Contents]</A> <A HREF="glob3.htm">[Previous]</A> <A HREF="glob5.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<P ALIGN=right>
+
+<FONT SIZE=-2><I>Last Updated:  10/31/97  16:38:00
+</I></FONT>
+
+<HR SIZE=4>
+
+<P> <CENTER>Copyright © 1997
+<A HREF="http://home.netscape.com/misc/contact_info.html"
+TARGET=_top>Netscape Communications Corporation</A></FONT>
+</CENTER>
+<P>
+<P>
+</BODY>
+</HTML>
+
+

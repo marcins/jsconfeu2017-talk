@@ -1,0 +1,123 @@
+<HTML>
+<HEAD>
+<TITLE>Global Functions
+</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A HREF="contents.htm">[Contents]</A> <A HREF="glob14.htm">[Previous]</A> <A HREF="glob16.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<HR>
+
+<A NAME="parseInt"></A>
+<A NAME="1012508">
+<H1> parseInt</H1>
+</A>
+<A NAME="1012509">
+Parses a string argument and returns an integer of the specified radix or base.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1032989">
+<I>Core function</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1032991">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1032993">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1032995">
+Navigator 2.0: If the first character of the string specified in parseInt(<CODE>string</CODE>) cannot be converted to a number, returns <CODE>"NaN"</CODE> on Solaris and Irix and 0 on all other platforms.</A></P><A NAME="1033119">
+Navigator 3.0, LiveWire 2.0: Returns <CODE>"NaN"</CODE> on all platforms if the first character of the string specified in parseInt(<CODE>string</CODE>) cannot be converted to a number. </A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012510">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1012511">
+<PRE>parseInt(string,radix)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1012512">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1012522">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012515">
+<PRE>string</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1012517">
+A string that represents the value you want to parse.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012519">
+<PRE>radix</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1012521">
+(Optional) An integer that represents the radix of the return value.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012523">
+<H4> Description</H4>
+</A>
+
+<A NAME="1012524">
+The <CODE>parseInt</CODE> function is a built-in JavaScript function.<P></A>
+<A NAME="1012525">
+The <CODE>parseInt</CODE> function parses its first argument, a string, and attempts to return an integer of the specified radix (base). For example, a radix of 10 indicates to convert to a decimal number, 8 octal, 16 hexadecimal, and so on. For radixes above 10, the letters of the alphabet indicate numerals greater than 9. For example, for hexadecimal numbers (base 16), A through F are used.<P></A>
+<A NAME="1012526">
+If <CODE>parseInt</CODE> encounters a character that is not a numeral in the specified radix, it ignores it and all succeeding characters and returns the integer value parsed up to that point. <CODE>parseInt</CODE> truncates numbers to integer values.<P></A>
+<A NAME="1012527">
+If the radix is not specified or is specified as 0, JavaScript assumes the following:<P></A>
+<ul><P>
+<A NAME="1012528">
+<LI>If the input <CODE>string</CODE> begins with <CODE>"0x"</CODE>, the radix is 16 (hexadecimal).</LI>
+</A><P>
+<A NAME="1012529">
+<LI>If the input <CODE>string</CODE> begins with <CODE>"0"</CODE>, the radix is eight (octal).</LI>
+</A><P>
+<A NAME="1012530">
+<LI>If the input <CODE>string</CODE> begins with any other value, the radix is 10 (decimal).</LI>
+</A></ul><A NAME="1012531">
+If the first character cannot be converted to a number, <CODE>parseInt</CODE> returns <CODE>"NaN"</CODE>.<P></A>
+<A NAME="1012532">
+For arithmetic purposes, the <CODE>"NaN"</CODE> value is not a number in any radix. You can call the <CODE>isNaN</CODE> function to determine if the result of <CODE>parseInt</CODE> is <CODE>"NaN"</CODE>. If <CODE>"NaN"</CODE> is passed on to arithmetic operations, the operation results will also be <CODE>"NaN"</CODE>.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012536">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1012537">
+The following examples all return 15:<P></A>
+<A NAME="1012538">
+<PRE>parseInt("F", 16)<br>parseInt("17", 8)<br>parseInt("15", 10)<br>parseInt(15.99, 10)<br>parseInt("FXX123", 16)<br>parseInt("1111", 2)<br>parseInt("15*3", 10)</PRE></A><A NAME="1012539">
+The following examples all return <CODE>"NaN"</CODE>:<P></A>
+<A NAME="1012540">
+<PRE>parseInt("Hello", 8)<br>parseInt("0x7", 10)<br>parseInt("FFF", 10)</PRE></A><A NAME="1012541">
+Even though the radix is specified differently, the following examples all return 17 because the input <CODE>string</CODE> begins with <CODE>"0x"</CODE>.<P></A>
+<A NAME="1012542">
+<PRE>parseInt("0x11", 16)<br>parseInt("0x11", 0)<br>parseInt("0x11")</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1012543">
+<H4> See also</H4>
+</A>
+
+<A NAME="1012553">
+<A HREF="glob12.htm#1012439"><CODE>isNaN</CODE></A>, <A HREF="glob14.htm#1032601"><CODE>parseFloat</CODE></A>, <A HREF="corea1.htm#1012908"><CODE>Object.valueOf</CODE></A> <P></A>
+
+<P><HR>
+<A HREF="contents.htm">[Contents]</A> <A HREF="glob14.htm">[Previous]</A> <A HREF="glob16.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<P ALIGN=right>
+
+<FONT SIZE=-2><I>Last Updated:  10/31/97  16:38:00
+</I></FONT>
+
+<HR SIZE=4>
+
+<P> <CENTER>Copyright © 1997
+<A HREF="http://home.netscape.com/misc/contact_info.html"
+TARGET=_top>Netscape Communications Corporation</A></FONT>
+</CENTER>
+<P>
+<P>
+</BODY>
+</HTML>
+
+

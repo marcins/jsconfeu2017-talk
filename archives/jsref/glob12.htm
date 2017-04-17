@@ -1,0 +1,97 @@
+<HTML>
+<HEAD>
+<TITLE>Global Functions
+</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A HREF="contents.htm">[Contents]</A> <A HREF="glob11.htm">[Previous]</A> <A HREF="glob13.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<HR>
+
+<A NAME="isNaN"></A>
+<A NAME="1012439">
+<H1> isNaN</H1>
+</A>
+<A NAME="1012440">
+Evaluates an argument to determine if it is not a number.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1032519">
+<I>Core function</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1032521">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1032523">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1032525">
+Navigator 2.0: Unix only<br>Navigator 3.0, LiveWire 1.0: all platforms</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012441">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1012442">
+<PRE>isNaN(testValue)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1012443">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1012449">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012446">
+<PRE>testValue</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1012448">
+The value you want to evaluate.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012450">
+<H4> Description</H4>
+</A>
+
+<A NAME="1012451">
+<CODE>isNaN</CODE> is a built-in JavaScript function. It is not a method associated with any object, but is part of the language itself.<P></A>
+<A NAME="1012452">
+On platforms that support NaN, the <CODE>parseFloat</CODE> and <CODE>parseInt</CODE> functions return <CODE>"NaN"</CODE> when they evaluate a value that is not a number. <CODE>isNaN</CODE> returns true if passed <CODE>"NaN"</CODE>, and false otherwise.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012456">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1012457">
+The following example evaluates <CODE>floatValue</CODE> to determine if it is a number and then calls a procedure accordingly:<P></A>
+<A NAME="1012458">
+<PRE>floatValue=parseFloat(toFloat)</PRE></A><A NAME="1012459">
+<PRE>if (isNaN(floatValue)) {<br>&nbsp;&nbsp;&nbsp;notFloat()<br>} else {<br>&nbsp;&nbsp;&nbsp;isFloat()<br>}</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1012460">
+<H4> See also</H4>
+</A>
+
+<A NAME="1012470">
+<A HREF="corea.htm#1012563"><CODE>Number.NaN</CODE></A>, <A HREF="glob14.htm#1032601"><CODE>parseFloat</CODE></A>, <A HREF="glob15.htm#1012508"><CODE>parseInt</CODE></A> <P></A>
+
+<P><HR>
+<A HREF="contents.htm">[Contents]</A> <A HREF="glob11.htm">[Previous]</A> <A HREF="glob13.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<P ALIGN=right>
+
+<FONT SIZE=-2><I>Last Updated:  10/31/97  16:38:00
+</I></FONT>
+
+<HR SIZE=4>
+
+<P> <CENTER>Copyright © 1997
+<A HREF="http://home.netscape.com/misc/contact_info.html"
+TARGET=_top>Netscape Communications Corporation</A></FONT>
+</CENTER>
+<P>
+<P>
+</BODY>
+</HTML>
+
+

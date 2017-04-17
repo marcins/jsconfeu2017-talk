@@ -1,0 +1,81 @@
+<HTML>
+<HEAD>
+<TITLE>Statements
+</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A HREF="contents.htm">[Contents]</A> <A HREF="stmt7.htm">[Previous]</A> <A HREF="stmt9.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<HR>
+
+<A NAME="for...in"></A>
+<A NAME="1004815">
+<H1> for...in</H1>
+</A>
+<A NAME="1004816">
+Iterates a specified variable over all the properties of an object. For each distinct property, JavaScript executes the specified statements.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1035903">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1035905">
+Navigator 2.0, LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1004817">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1004818">
+<PRE>for (variable in object) {<br>&nbsp;&nbsp;&nbsp;statements}</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1005653">
+<H4> Arguments</H4>
+</A>
+
+<A NAME="1004819">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012697">
+<PRE>variable</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1012751">
+Variable to iterate over every property.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012701">
+<PRE>object</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1012768">
+Object for which the properties are iterated.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012705">
+<PRE>statements</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1012792">
+Specifies the statements to execute for each property.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1004822">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1004823">
+The following function takes as its argument an object and the object's name. It then iterates over all the object's properties and returns a string that lists the property names and their values.<P></A>
+<A NAME="1004824">
+<PRE>function dump_props(obj, objName) {<br>&nbsp;&nbsp;&nbsp;var result = ""<br>&nbsp;&nbsp;&nbsp;for (var i in obj) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;result += objName + "." + i + " = " + obj[i] + "&lt;BR&gt;"<br>&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;result += "&lt;HR&gt;"<br>&nbsp;&nbsp;&nbsp;return result<br>}</PRE></A>
+<P><HR>
+<A HREF="contents.htm">[Contents]</A> <A HREF="stmt7.htm">[Previous]</A> <A HREF="stmt9.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<P ALIGN=right>
+
+<FONT SIZE=-2><I>Last Updated:  10/31/97  12:29:59
+</I></FONT>
+
+<HR SIZE=4>
+
+<P> <CENTER>Copyright © 1997
+<A HREF="http://home.netscape.com/misc/contact_info.html"
+TARGET=_top>Netscape Communications Corporation</A></FONT>
+</CENTER>
+<P>
+<P>
+</BODY>
+</HTML>
+
+

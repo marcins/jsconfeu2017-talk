@@ -1,0 +1,259 @@
+<HTML>
+<HEAD>
+<TITLE>Events and Event Handlers
+</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A HREF="contents.htm">[Contents]</A> <A HREF="brow3.htm">[Previous]</A> <A HREF="evnt1.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<HR>
+<A NAME="1003024">
+<P></A><CENTER><H2>Chapter 9<BR><A NAME="1011686">
+Events and Event Handlers</H2>
+</A></CENTER>
+<A NAME="1011687">
+This chapter contains the <CODE>event</CODE> object and the event handlers that are used with client-side objects in JavaScript to evoke particular actions. In addition, it contains general information about using events and event handlers.<P></A>
+<A NAME="1093670">
+<A HREF="evnt.htm#1093670">Table&nbsp;9.1</A> lists the one object in this chapter. <P><B><A NAME="1093656">
+Table 9.1&nbsp;Event-related object</A></B>
+<TABLE BORDER="2" CELLPADDING=5>
+<TR><TH VALIGN=baseline ALIGN=left><B><A NAME="1093660">
+<B>Object 
+</B></A><B><TH VALIGN=baseline ALIGN=left><B><A NAME="1093662">
+<B>Description
+</B></A><B>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1093667">
+<PRE><A HREF="evnt1.htm#1093773"><CODE>event</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1093669">
+Represents a JavaScript event. Passed to every event handler.</A></P>
+
+</TABLE>
+<P></A>
+<A NAME="1038341">
+<A HREF="evnt.htm#1038341">Table&nbsp;9.2</A> summarizes the JavaScript event handlers. <P><B><A NAME="1038489">
+Table 9.2&nbsp;Events and their corresponding event handlers.</A></B>
+<TABLE BORDER="0">
+<TR><TH VALIGN=baseline ALIGN=left><B><A NAME="1050764">
+<B>Event
+</B></A></B><TH VALIGN=baseline ALIGN=left><B><A NAME="1038508">
+<B>Event handler
+</B></A></B><TH VALIGN=baseline ALIGN=left><B><A NAME="1038510">
+<B>Event occurs when...
+</B></A></B>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1050854">
+<PRE>abort</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1038236">
+<PRE><A HREF="evnt2.htm#1017362"><CODE>onAbort</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1038238">
+The user aborts the loading of an image (for example by clicking a link or clicking the Stop button). </A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1050859">
+<PRE>blur</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1038243">
+<PRE><A HREF="evnt3.htm#1010414"><CODE>onBlur</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1038245">
+A form element loses focus or when a window or frame loses focus.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1050864">
+<PRE>change</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1038250">
+<PRE><A HREF="evnt4.htm#1010483"><CODE>onChange</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1038252">
+A select, text, or textarea field loses focus and its value has been modified. </A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1050869">
+<PRE>click</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1038257">
+<PRE><A HREF="evnt5.htm#1010516"><CODE>onClick</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1038259">
+An object on a form is clicked.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1051768">
+<PRE>dblclick</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1051773">
+<PRE><A HREF="evnt6.htm#1093910"><CODE>onDblClick</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1051775">
+The user double-clicks a form element or a link.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1051759">
+<PRE>dragdrop</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1051764">
+<PRE><A HREF="evnt7.htm#1093975"><CODE>onDragDrop</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1051766">
+The user drops an object onto the browser window, such as dropping a file on the browser window.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1050874">
+<PRE>error</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1038264">
+<PRE><A HREF="evnt1.htm#1093794"><CODE>onError</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1038266">
+The loading of a document or image causes an error.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1050879">
+<PRE>focus</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1038271">
+<PRE><A HREF="evnt9.htm#1010615"><CODE>onFocus</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1038273">
+A window, frame, or frameset receives focus or when a form element receives input focus.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1052540">
+<PRE>keydown</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1052545">
+<PRE><A HREF="evnt10.htm#1094045"><CODE>onKeyDown</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1052547">
+The user depresses a key.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1052531">
+<PRE>keypress</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1052536">
+<PRE><A HREF="evnt11.htm#1094129"><CODE>onKeyPress</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1052538">
+The user presses or holds down a key.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1052522">
+<PRE>keyup</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1052527">
+<PRE><A HREF="evnt12.htm#1094213"><CODE>onKeyUp</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1052529">
+The user releases a key.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1050884">
+<PRE>load</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1038278">
+<PRE><A HREF="evnt13.htm#1010680"><CODE>onLoad</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1038280">
+The browser finishes loading a window or all of the frames within a <CODE><A HREF="http://developer.netscape.com/library/documentation/htmlguid/index.htm?content=tags11.htm#tags:FRAMESET" TARGET="_top">FRAMESET</A> </CODE>tag.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1053234">
+<PRE>mousedown</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1053239">
+<PRE><A HREF="evnt14.htm#1094294"><CODE>onMouseDown</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1053241">
+The user depresses a mouse button. </A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1053225">
+<PRE>mousemove</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1053230">
+<PRE><A HREF="evnt15.htm#1094363"><CODE>onMouseMove</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1053232">
+The user moves the cursor. </A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1050889">
+<PRE>mouseout</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1038285">
+<PRE><A HREF="evnt16.htm#1010731"><CODE>onMouseOut</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1038287">
+The cursor leaves an area (client-side image map) or link from inside that area or link.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1050894">
+<PRE>mouseover</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1038292">
+<PRE><A HREF="evnt17.htm#1010759"><CODE>onMouseOver</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1038294">
+The cursor moves over an object or area from outside that object or area.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1050899">
+<PRE>mouseup</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1038296">
+<PRE><A HREF="evnt18.htm#1094469"><CODE>onMouseUp</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1038298">
+The user releases a mouse button.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1050904">
+<PRE>move</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1038303">
+<PRE><A HREF="evnt19.htm#1094539"><CODE>onMove</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1038305">
+The user or script moves a window or frame.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1050909">
+<PRE>reset</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1038310">
+<PRE><A HREF="evnt20.htm#1020913"><CODE>onReset</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1038312">
+The user resets a form (clicks a Reset button).</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1050914">
+<PRE>resize</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1038317">
+<PRE><A HREF="evnt21.htm#1094597"><CODE>onResize</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1038319">
+The user or script resizes a window or frame.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1050919">
+<PRE>select</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1038324">
+<PRE><A HREF="evnt22.htm#1010817"><CODE>onSelect</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1038326">
+The user selects some of the text within a text or textarea field.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1050924">
+<PRE>submit</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1038331">
+<PRE><A HREF="evnt23.htm#1010835"><CODE>onSubmit</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1038333">
+The user submits a form.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1050929">
+<PRE>unload</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1038338">
+<PRE><A HREF="evnt24.htm#1012516"><CODE>onUnload</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1038340">
+The user exits a document.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="General Information about Events"></A>
+<A NAME="1010270">
+<H2> General Information about Events</H2>
+</A>
+<A NAME="1059507">
+JavaScript applications in the browser are largely event-driven. <I>Events</I> are actions that occur usually as a result of something the user does. For example, clicking a button is an event, as is changing a text field or moving the mouse over a link. For your script to react to an event, you define <I>event handlers</I>, such as <CODE>onChange</CODE><B> </B>and<B> </B><CODE>onClick</CODE>.<P></A>
+
+<A NAME="Head2;"></A>
+<A NAME="1068287">
+<H3> Defining Event Handlers</H3>
+</A>
+
+<A NAME="1059732">
+If an event applies to an HTML tag, then you can define an event handler for it. The name of an event handler is the name of the event, preceded by <CODE>"on"</CODE>. For example, the event handler for the focus event is <CODE>onFocus</CODE>.<P></A>
+<A NAME="1059735">
+To create an event handler for an HTML tag, add an event handler attribute to the tag. Put JavaScript code in quotation marks as the attribute value. The general syntax is<P></A>
+<A NAME="1059737">
+<PRE>&lt;TAG eventHandler="JavaScript Code"&gt;</PRE></A><A NAME="1059738">
+where <CODE>TAG</CODE> is an HTML tag and <CODE>eventHandler</CODE> is the name of the event handler. For example, suppose you have created a JavaScript function called <CODE>compute</CODE>. You can cause the browser to perform this function when the user clicks a button by assigning the function call to the button's <CODE>onClick</CODE> event handler:<P></A>
+<A NAME="1059742">
+<PRE>&lt;INPUT TYPE="button" VALUE="Calculate" onClick="compute(this.form)"&gt;</PRE></A><A NAME="1059743">
+You can put any JavaScript statements inside the quotation marks following <CODE>onClick</CODE>. These statements are executed when the user clicks the button. If you want to include more than one statement, separate statements with a semicolon. <P></A>
+<A NAME="1061173">
+When you create an event handler, the corresponding JavaScript object gets a property with the name of the event handler in lower case letters. (In Navigator&nbsp;4.0, you can also use the mixed case name of the event handler for the property name.) This property allows you to access the object's event handler. For example, in the preceding example, JavaScript creates a <A HREF="but.htm#1016056"><CODE>Button</CODE></A> object with an <CODE>onclick</CODE> property whose value is <CODE>"compute(this.form)"</CODE>. <P></A>
+<A NAME="1068495">
+<A HREF="http://developer.netscape.com/library/documentation/communicator/jsguide4/index.htm?content=sec.htm" TARGET="_top">Chapter&nbsp;7, "JavaScript Security,"</A> in <A HREF="http://developer.netscape.com/library/documentation/communicator/jsguide4/index.htm" TARGET="_top">JavaScript Guide</A> contains more information about creating and using event handlers.<P></A>
+
+<A NAME="Head2;"></A>
+<A NAME="1093677">
+<H3> Events in Navigator&nbsp;4.0</H3>
+</A>
+
+<A NAME="1093681">
+In Navigator&nbsp;4.0, JavaScript includes <A HREF="evnt1.htm#1093773"><CODE>event</CODE></A> objects as well as event handlers. Each event has an <A HREF="evnt1.htm#1093773"><CODE>event</CODE></A> object associated with it. The <A HREF="evnt1.htm#1093773"><CODE>event</CODE></A> object provides information about the event, such as the type of event and the location of the cursor at the time of the event. When an event occurs, and if an event handler has been written to handle the event, the <A HREF="evnt1.htm#1093773"><CODE>event</CODE></A><I> </I>object is sent as an argument to the event handler.<P></A>
+<A NAME="1093691">
+Typically, the object on which the event occurs handles the event. For example, when the user clicks a button, it is often the button's event handler that handles the event. Sometimes you may want the <A HREF="win1.htm#1010280"><CODE>Window</CODE></A> or <A HREF="doc1.htm#1048486"><CODE>document</CODE></A> object to handle certain types of events. For example, you may want the <A HREF="doc1.htm#1048486"><CODE>document</CODE></A> object to handle all MouseDown events no matter where they occur in the document. JavaScript's event capturing model allows you to define methods that capture and handle events before they reach their intended target. <P></A>
+<A NAME="1093710">
+In addition to providing the <A HREF="evnt1.htm#1093773"><CODE>event</CODE></A> object, Navigator&nbsp;4.0 allows a <A HREF="win1.htm#1010280"><CODE>Window</CODE></A> or <A HREF="doc1.htm#1048486"><CODE>document</CODE></A> to capture and handle an event before it reaches its intended target. To accomplish this, the <A HREF="win1.htm#1010280"><CODE>Window</CODE></A>, <A HREF="doc1.htm#1048486"><CODE>document</CODE></A>, and <A HREF="doca3.htm#1113061"><CODE>Layer</CODE></A> objects have these new methods: <P></A>
+<ul><A NAME="1093720">
+<LI><CODE>captureEvents</CODE> </LI>
+</A><A NAME="1093721">
+<LI><CODE>releaseEvents</CODE> </LI>
+</A><A NAME="1093722">
+<LI><CODE>routeEvent</CODE> </LI>
+</A><A NAME="1093726">
+<LI><CODE>handleEvent</CODE> (Not a method of the <A HREF="doca3.htm#1113061"><CODE>Layer</CODE></A> object)</LI>
+</A></ul><A NAME="1093727">
+For example, suppose you want to capture all click events that occur in a window. First, you need to set up the window to capture click events: <P></A>
+<A NAME="1093728">
+<PRE>window.captureEvents(Event.CLICK);</PRE></A><A NAME="1093735">
+The argument to <A HREF="win1.htm#1187615"><CODE>Window.captureEvents</CODE></A> is a property of the <A HREF="evnt1.htm#1093773"><CODE>event</CODE></A> object and indicates the type of event to capture. To capture multiple events, the argument is a list separated by vertical slashes (|). For example: <P></A>
+<A NAME="1093736">
+<PRE>window.captureEvents(Event.CLICK | Event.MOUSEDOWN | Event.MOUSEUP)</PRE></A><A NAME="1093740">
+Next, you need to define a function that handles the event. The argument <CODE>evnt</CODE> is the <A HREF="evnt1.htm#1093773"><CODE>event</CODE></A> object for the event. <P></A>
+<A NAME="1093741">
+<PRE>function clickHandler(evnt) {<br>&nbsp;&nbsp;&nbsp;//What goes here depends on how you want to handle the event.<br>&nbsp;&nbsp;&nbsp;//This is described below.<br>}</PRE></A><A NAME="1093742">
+You have four options for handling the event: <P></A>
+<ul><P>
+<A NAME="1093743">
+<LI>Return true. In the case of a link, the link is followed and no other event handler is checked. If the event cannot be canceled, this ends the event handling for that event. </LI>
+</A><A NAME="1093744">
+<PRE>function clickHandler(evnt) { return true; }</PRE></A><P>
+<A NAME="1093745">
+<LI>Return false. In the case of a link, the link is not followed. If the event is non-cancelable, this ends the event handling for that event. </LI>
+</A><A NAME="1093746">
+<PRE>function clickHandler(evnt) { return false; }</PRE></A><P>
+<A NAME="1093747">
+<LI>Call <CODE>routeEvent</CODE>. JavaScript looks for other event handlers for the event. If another object is attempting to capture the event (such as the document), JavaScript calls its event handler. If no other object is attempting to capture the event, JavaScript looks for an event handler for the event's original target (such as a button). The <CODE>routeEvent</CODE> method returns the value returned by the event handler. The capturing object can look at this return value and decide how to proceed. </LI>
+</A><A NAME="1093748">
+<PRE>function clickHandler(evnt) {<br>   var retval = routeEvent(evnt);<br>   if (retval == false) return false;<br>   else return true;<br>}</PRE></A></P><A NAME="1093749">
+<B>Note: </B>When <CODE>routeEvent</CODE> calls an event handler, the event handler is activated. If <CODE>routeEvent</CODE> calls an event handler whose function is to display a new page, the action takes place without returning to the capturing object. <P></A><P>
+<A NAME="1093750">
+<LI>Call the <CODE>handleEvent</CODE> method of an event receiver. Any object that can register event handlers is an event receiver. This method explicitly calls the event handler of the event receiver and bypasses the capturing hierarchy. For example, if you wanted all click events to go to the first link on the page, you could use: </LI>
+</A><A NAME="1093751">
+<PRE>function clickHandler(evnt) {<br>   window.document.links[0].handleEvent(evnt);<br>}</PRE></A></P><A NAME="1093752">
+As long as the link has an <CODE>onClick</CODE> handler, the link handles any click event it receives.<P></A></ul><A NAME="1093753">
+Finally, you need to register the function as the window's event handler for that event: <P></A>
+<A NAME="1093754">
+<PRE>window.onClick = clickHandler;</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1093755">
+<H4> Important</H4>
+</A>
+
+<a name="1093756">
+If a window with frames wants to capture events in pages loaded from different 
+locations, you need to use <CODE>captureEvents</CODE> in a signed script and call 
+<A HREF="win1.htm#1187732"><CODE>Window.enableExternalCapture</CODE></A>.
+</blockquote>
+</a>
+<A NAME="1093760">
+In the following example, the window and document capture and release events: <P></A>
+<A NAME="1093761">
+<PRE>&lt;HTML&gt;<br>&lt;SCRIPT&gt;</PRE></A><A NAME="1093762">
+<PRE>function fun1(evnt) {<br>&nbsp;&nbsp;&nbsp;alert ("The window got an event of type: " + evnt.type + <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" and will call routeEvent.");<br>&nbsp;&nbsp;&nbsp;window.routeEvent(evnt);<br>&nbsp;&nbsp;&nbsp;alert ("The window returned from routeEvent.");<br>&nbsp;&nbsp;&nbsp;return true;<br>}</PRE></A><A NAME="1093763">
+<PRE>function fun2(evnt) {<br>&nbsp;&nbsp;&nbsp;alert ("The document got an event of type: " + evnt.type);<br>&nbsp;&nbsp;&nbsp;return false;<br>}</PRE></A><A NAME="1093764">
+<PRE>function setWindowCapture() {<br>&nbsp;&nbsp;&nbsp;window.captureEvents(Event.CLICK);<br>}</PRE></A><A NAME="1093765">
+<PRE>function releaseWindowCapture() {<br>&nbsp;&nbsp;&nbsp;window.releaseEvents(Event.CLICK);<br>}</PRE></A><A NAME="1093766">
+<PRE>function setDocCapture() {<br>&nbsp;&nbsp;&nbsp;document.captureEvents(Event.CLICK);<br>}</PRE></A><A NAME="1093767">
+<PRE>function releaseDocCapture() {<br>&nbsp;&nbsp;&nbsp;document.releaseEvents(Event.CLICK);</PRE></A><A NAME="1093768">
+<PRE>}</PRE></A><A NAME="1093769">
+<PRE>window.onclick=fun1;<br>document.onclick=fun2;</PRE></A><A NAME="1093770">
+<PRE>&lt;/SCRIPT&gt;<br>...<br>&lt;/HTML&gt;</PRE></A>
+<P><HR>
+<A HREF="contents.htm">[Contents]</A> <A HREF="brow3.htm">[Previous]</A> <A HREF="evnt1.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<P ALIGN=right>
+
+<FONT SIZE=-2><I>Last Updated:  10/31/97  16:34:02
+</I></FONT>
+
+<HR SIZE=4>
+
+<P> <CENTER>Copyright © 1997
+<A HREF="http://home.netscape.com/misc/contact_info.html"
+TARGET=_top>Netscape Communications Corporation</A></FONT>
+</CENTER>
+<P>
+<P>
+</BODY>
+</HTML>
+

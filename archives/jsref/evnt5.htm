@@ -1,0 +1,157 @@
+<HTML>
+<HEAD>
+<TITLE>Events and Event Handlers
+</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A HREF="contents.htm">[Contents]</A> <A HREF="evnt4.htm">[Previous]</A> <A HREF="evnt6.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<HR>
+
+<A NAME="onClick"></A>
+<A NAME="1010516">
+<H1> onClick</H1>
+</A>
+<A NAME="1021451">
+Executes JavaScript code when a click event occurs; that is, when an object on a form is clicked. (A <CODE>Click</CODE> event is a combination of the MouseDown and MouseUp events).<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1045546">
+<I>Event handler for </I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1045548">
+<A HREF="but.htm#1016056"><CODE>Button</CODE></A>, <A HREF="doc1.htm#1048486"><CODE>document</CODE></A>, <A HREF="choi1.htm#1013039"><CODE>Checkbox</CODE></A>, <A HREF="doc2.htm#1081434"><CODE>Link</CODE></A>, <A HREF="choi.htm#1011977"><CODE>Radio</CODE></A>, <A HREF="but2.htm#1012912"><CODE>Reset</CODE></A>, <A HREF="but1.htm#1011117"><CODE>Submit</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1045550">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1047874">
+Navigator 2.0<br>Navigator 3.0: added the ability to return false to cancel the action associated with a click event</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1049096">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1049097">
+<PRE>onClick="handlerText"</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1049098">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1049104">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1049101">
+<PRE><CODE>handlerText</CODE></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1049103">
+JavaScript code or a call to a JavaScript function.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1098951">
+<H4> Event properties used</H4>
+</A>
+
+<A NAME="1098977">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1098954">
+<PRE>type</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1103578">
+Indicates the type of event. </A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1098958">
+<PRE>target</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1098960">
+Indicates the object to which the event was originally sent. </A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1098962">
+When a link is clicked,<br><CODE>layerX</CODE>, <CODE>layerY</CODE>,<br><CODE>pageX</CODE>, <CODE>pageY</CODE>,<br><CODE>screenX</CODE>,<CODE> screenY</CODE></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1098964">
+Represent the cursor location at the time the event occurred. </A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1098970">
+<PRE>which</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1098972">
+Represents 1 for a left-mouse click and 3 for a right-mouse click. </A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1098974">
+<PRE>modifiers</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1098976">
+Contains the list of modifier keys held down when the event occurred. </A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1049105">
+<H4> Description</H4>
+</A>
+
+<A NAME="1010519">
+For checkboxes, links, radio buttons, reset buttons, and submit buttons, <CODE>onClick</CODE> can return false to cancel the action normally associated with a <CODE>click</CODE> event.<P></A>
+<A NAME="1010520">
+For example, the following code creates a link that, when clicked, displays a confirm dialog box. If the user clicks the link and then chooses cancel, the page specified by the link is not loaded.<P></A>
+<A NAME="1010521">
+<PRE>&lt;A HREF = "http://home.netscape.com/"<br>&nbsp;&nbsp;&nbsp;onClick="return confirm('Load Netscape home page?')"&gt;<br>Netscape&lt;/A&gt;</PRE></A><A NAME="1021605">
+If the event handler returns false, the default action of the object is canceled as follows: <P></A>
+<ul><P>
+<A NAME="1021607">
+<LI>Buttons--no default action; nothing is canceled </LI>
+</A><P>
+<A NAME="1021608">
+<LI>Radio buttons and checkboxes--nothing is set </LI>
+</A><P>
+<A NAME="1021609">
+<LI>Submit buttons--form is not submitted </LI>
+</A><P>
+<A NAME="1021610">
+<LI>Reset buttons--form is not reset </LI>
+</A><BLOCKQUOTE><A NAME="1010523"><B>Note
+ </B></A>
+<a name="1010524">
+In Navigator&nbsp;3.0, on some platforms, returning false in an <CODE>onClick</CODE> event 
+handler for a reset button has no effect. 
+</blockquote>
+</a>
+</ul>
+<A NAME="Head3;"></A>
+<A NAME="1010549">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1010550">
+<B>Example 1: Call a function when a user clicks a button.</B> Suppose you have created a JavaScript function called <CODE>compute</CODE>. You can execute the <CODE>compute</CODE> function when the user clicks a button by calling the function in the onClick event handler, as follows:<P></A>
+<A NAME="1010551">
+<PRE>&lt;INPUT TYPE="button" VALUE="Calculate" onClick="compute(this.form)"&gt;</PRE></A><A NAME="1010552">
+In the preceding example, the keyword <CODE>this</CODE> refers to the current object; in this case, the Calculate button. The construct <CODE>this.form</CODE> refers to the form containing the button.<P></A>
+<A NAME="1012907">
+For another example, suppose you have created a JavaScript function called <CODE>pickRandomURL</CODE> that lets you select a URL at random. You can use <CODE>onClick</CODE> to specify a value for the <CODE>HREF</CODE> attribute of the <CODE>A</CODE> tag dynamically, as shown in the following example:<P></A>
+<A NAME="1010554">
+<PRE>&lt;A HREF=""<br>&nbsp;&nbsp;&nbsp;onClick="this.href=pickRandomURL()"<br>&nbsp;&nbsp;&nbsp;onMouseOver="window.status='Pick a random URL'; return true"&gt;<br>Go!&lt;/A&gt;</PRE></A><A NAME="1010555">
+In the above example, <CODE>onMouseOver</CODE> specifies a custom message for the browser's status bar when the user places the mouse pointer over the Go! anchor. As this example shows, you must return true to set the <CODE>window.status</CODE> property in the <CODE>onMouseOver</CODE> event handler.<P></A>
+<A NAME="1010556">
+<B>Example 2: Cancel the checking of a checkbox.</B> The following example creates a checkbox with <CODE>onClick</CODE>. The event handler displays a confirm that warns the user that checking the checkbox purges all files. If the user chooses Cancel, <CODE>onClick</CODE> returns false and the checkbox is not checked.<P></A>
+<A NAME="1057893">
+<PRE>&lt;INPUT TYPE="checkbox" NAME="check1" VALUE="check1"<br>&nbsp;&nbsp;&nbsp;onClick="return confirm('This purges all your files. Are you sure?')"&gt; Remove files</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1063462">
+<H4> See also</H4>
+</A>
+
+<A NAME="1063465">
+For general information on event handlers, see <A HREF="evnt.htm#1010270">"General Information about Events"</A>. <P></A>
+<A NAME="1093908">
+For information about the <CODE>event</CODE> object, see <A HREF="evnt1.htm#1093773"><CODE>event</CODE></A>.<P></A>
+
+<P><HR>
+<A HREF="contents.htm">[Contents]</A> <A HREF="evnt4.htm">[Previous]</A> <A HREF="evnt6.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<P ALIGN=right>
+
+<FONT SIZE=-2><I>Last Updated:  10/31/97  16:34:02
+</I></FONT>
+
+<HR SIZE=4>
+
+<P> <CENTER>Copyright © 1997
+<A HREF="http://home.netscape.com/misc/contact_info.html"
+TARGET=_top>Netscape Communications Corporation</A></FONT>
+</CENTER>
+<P>
+<P>
+</BODY>
+</HTML>
+
+

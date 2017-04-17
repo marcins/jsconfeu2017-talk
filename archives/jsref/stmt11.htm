@@ -1,0 +1,95 @@
+<HTML>
+<HEAD>
+<TITLE>Statements
+</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A HREF="contents.htm">[Contents]</A> <A HREF="stmt10.htm">[Previous]</A> <A HREF="stmt12.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<HR>
+
+<A NAME="import"></A>
+<A NAME="1017231">
+<H1> import</H1>
+</A>
+<A NAME="1017232">
+Allows a script to import properties, functions, and objects from a signed script which has exported the information. <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1035981">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1035983">
+Navigator 4.0, Netscape Server 3.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1025746">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1025747">
+<PRE>import objectName.name1, objectName.name2, ..., objectName.nameN<br>import objectName.*</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1025749">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1017239">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1017550">
+<PRE>nameN</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1017594">
+List of properties, functions, and objects to import from the export file. </A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1017554">
+<PRE>objectName</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1017618">
+Name of the object that will receive the imported names.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1023774">
+<PRE>*</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1023871">
+imports all properties, functions, and objects from the export script. </A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1017785">
+<H4> Description</H4>
+</A>
+
+<A NAME="1024031">
+The <CODE>objectName</CODE> parameter is the name of the object that will receive the imported names. For example, if <CODE>f</CODE> and <CODE>p</CODE> have been exported, and if <CODE>obj</CODE> is an object from the importing script, then<P></A>
+<A NAME="1024117">
+<PRE>import obj.f, obj.p </PRE></A><A NAME="1024132">
+makes <CODE>f</CODE> and <CODE>p</CODE> accessible in the importing script as properties of <CODE>obj</CODE>. <P></A>
+<A NAME="1024008">
+Typically, information in a signed script is available only to scripts signed by the same principals. By exporting (using the <A HREF="stmt6.htm#1016648"><CODE>export</CODE></A> statement) properties, functions, or objects, a signed script makes this information available to any script (signed or unsigned). The receiving script uses the <CODE>import</CODE> statement to access the information. <P></A>
+<A NAME="1017250">
+The script must load the export script into a window, frame, or layer before it can import and use any exported properties, functions, and objects. <P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1017252">
+<H4> See also</H4>
+</A>
+
+<A NAME="1017253">
+<A HREF="stmt6.htm#1016648"><CODE>export</CODE></A> <P></A>
+
+<P><HR>
+<A HREF="contents.htm">[Contents]</A> <A HREF="stmt10.htm">[Previous]</A> <A HREF="stmt12.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<P ALIGN=right>
+
+<FONT SIZE=-2><I>Last Updated:  10/31/97  12:29:59
+</I></FONT>
+
+<HR SIZE=4>
+
+<P> <CENTER>Copyright © 1997
+<A HREF="http://home.netscape.com/misc/contact_info.html"
+TARGET=_top>Netscape Communications Corporation</A></FONT>
+</CENTER>
+<P>
+<P>
+</BODY>
+</HTML>
+
+

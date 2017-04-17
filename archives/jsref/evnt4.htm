@@ -1,0 +1,116 @@
+<HTML>
+<HEAD>
+<TITLE>Events and Event Handlers
+</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A HREF="contents.htm">[Contents]</A> <A HREF="evnt3.htm">[Previous]</A> <A HREF="evnt5.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<HR>
+
+<A NAME="onChange"></A>
+<A NAME="1010483">
+<H1> onChange</H1>
+</A>
+<A NAME="1010484">
+Executes JavaScript code when a change event occurs; that is, when a <CODE>Select</CODE>, <CODE>Text</CODE>, or <CODE>Textarea</CODE> field loses focus and its value has been modified. <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1045502">
+<I>Event handler for </I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1045504">
+<A HREF="txt3.htm#1014071"><CODE>FileUpload</CODE></A>, <A HREF="choi2.htm#1013973"><CODE>Select</CODE></A>, <A HREF="txt.htm#1023924"><CODE>Text</CODE></A>, <A HREF="txt1.htm#1010943"><CODE>Textarea</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1045506">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1059127">
+Navigator 2.0 event handler for <A HREF="choi2.htm#1013973"><CODE>Select</CODE></A>, <A HREF="txt.htm#1023924"><CODE>Text</CODE></A>, and <A HREF="txt1.htm#1010943"><CODE>Textarea</CODE></A><br>Navigator 3.0: added as event handler of <CODE>FileUpload</CODE></A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1048822">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1048823">
+<PRE>onChange="handlerText"</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1048824">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1048830">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1048827">
+<PRE><CODE>handlerText</CODE></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1048829">
+JavaScript code or a call to a JavaScript function.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010485">
+<H4> Description</H4>
+</A>
+
+<A NAME="1048871">
+Use <CODE>onChange</CODE> to validate data after it is modified by a user.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1097396">
+<H4> Event properties used</H4>
+</A>
+
+<A NAME="1097406">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1097399">
+<PRE>type</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1103576">
+Indicates the type of event. </A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1097403">
+<PRE>target</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1097405">
+Indicates the object to which the event was originally sent. </A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010504">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1050169">
+In the following example, <CODE>userName</CODE> is a text field. When a user changes the text and leaves the field, the onChange event handler calls the <CODE>checkValue</CODE> function to confirm that <CODE>userName</CODE> has a legal value.<P></A>
+<A NAME="1050170">
+<PRE>&lt;INPUT TYPE="text" VALUE="" NAME="userName" <br>&nbsp;&nbsp;&nbsp;onChange="checkValue(this.value)"&gt;</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1010507">
+<H4> See also</H4>
+</A>
+
+<A NAME="1010514">
+<A HREF="evnt3.htm#1010414"><CODE>onBlur</CODE></A>, <A HREF="evnt9.htm#1010615"><CODE>onFocus</CODE></A> <P></A>
+<A NAME="1063349">
+For general information on event handlers, see <A HREF="evnt.htm#1010270">"General Information about Events"</A>. <P></A>
+<A NAME="1093873">
+For information about the <CODE>event</CODE> object, see <A HREF="evnt1.htm#1093773"><CODE>event</CODE></A>.<P></A>
+
+<P><HR>
+<A HREF="contents.htm">[Contents]</A> <A HREF="evnt3.htm">[Previous]</A> <A HREF="evnt5.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<P ALIGN=right>
+
+<FONT SIZE=-2><I>Last Updated:  10/31/97  16:34:02
+</I></FONT>
+
+<HR SIZE=4>
+
+<P> <CENTER>Copyright © 1997
+<A HREF="http://home.netscape.com/misc/contact_info.html"
+TARGET=_top>Netscape Communications Corporation</A></FONT>
+</CENTER>
+<P>
+<P>
+</BODY>
+</HTML>
+
+

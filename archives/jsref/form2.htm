@@ -1,0 +1,263 @@
+<HTML>
+<HEAD>
+<TITLE>Form
+</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A HREF="contents.htm">[Contents]</A> <A HREF="form1.htm">[Previous]</A> <A HREF="txt.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<HR>
+
+<A NAME="Hidden"></A>
+<A NAME="1011262">
+<H1> Hidden</H1>
+</A>
+<A NAME="1011263">
+A <CODE>Text</CODE> object that is suppressed from form display on an HTML form. A <CODE>Hidden</CODE> object is used for passing name/value pairs when a form submits.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1041791">
+<I>Client-side object</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1041796">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1041798">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1041852">
+Navigator 2.0<br>Navigator 3.0: added <CODE>type</CODE> property</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1050749">
+<H4> Created by</H4>
+</A>
+
+<A NAME="1050752">
+The HTML <CODE><A HREF="http://developer.netscape.com/library/documentation/htmlguid/index.htm?content=tags10.htm#tags:INPUT" TARGET="_top">INPUT</A></CODE> tag, with <CODE>"hidden"</CODE> as the value of the <CODE>TYPE</CODE> attribute. For a given form, the JavaScript runtime engine creates appropriate <CODE>Hidden</CODE> objects and puts these objects in the <A HREF="form1.htm#1010594"><CODE>elements</CODE></A> array of the corresponding <A HREF="form1.htm#1010276"><CODE>Form</CODE></A> object. You access a <CODE>Hidden</CODE> object by indexing this array. You can index the array either by number or, if supplied, by using the value of the <CODE>NAME</CODE> attribute.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1011297">
+<H4> Description</H4>
+</A>
+
+<A NAME="1011298">
+A <CODE>Hidden</CODE> object is a form element and must be defined within a <CODE>FORM</CODE> tag.<P></A>
+<A NAME="1011299">
+A <CODE>Hidden</CODE> object cannot be seen or modified by an end user, but you can programmatically change the value of the object by changing its <CODE>value</CODE> property. You can use <CODE>Hidden</CODE> objects for client/server communication.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1011300">
+<H4> Property Summary</H4>
+</A>
+
+<A NAME="1011330">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1011313">
+<PRE><A HREF="form2.htm#1011408"><CODE>form</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1011315">
+Specifies the form containing the <CODE>Hidden</CODE> object.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1045094">
+<PRE><A HREF="form2.htm#1045463"><CODE>name</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1045096">
+Reflects the <CODE>NAME</CODE> attribute.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1011320">
+<PRE><A HREF="form2.htm#1011444"><CODE>type</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1011322">
+Reflects the <CODE>TYPE</CODE> attribute.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1011327">
+<PRE><A HREF="form2.htm#1011539"><CODE>value</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1011329">
+Reflects the current value of the <CODE>Hidden</CODE> object.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1011336">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1011337">
+The following example uses a <CODE>Hidden</CODE> object to store the value of the last object the user clicked. The form contains a "Display hidden value" button that the user can click to display the value of the <CODE>Hidden</CODE> object in an Alert dialog box.<P></A>
+<A NAME="1011338">
+<PRE>&lt;HTML&gt;<br>&lt;HEAD&gt;<br>&lt;TITLE&gt;Hidden object example&lt;/TITLE&gt;<br>&lt;/HEAD&gt;<br>&lt;BODY&gt;<br>&lt;B&gt;Click some of these objects, then click the "Display value" button<br>&lt;BR&gt;to see the value of the last object clicked.&lt;/B&gt;<br>&lt;FORM NAME="myForm"&gt;<br>&lt;INPUT TYPE="hidden" NAME="hiddenObject" VALUE="None"&gt;<br>&lt;P&gt;<br>&lt;INPUT TYPE="button" VALUE="Click me" NAME="button1" <br>&nbsp;&nbsp;&nbsp;onClick="document.myForm.hiddenObject.value=this.value"&gt;<br>&lt;P&gt;<br>&lt;INPUT TYPE="radio" NAME="musicChoice" VALUE="soul-and-r&amp;b"<br>&nbsp;&nbsp;&nbsp;onClick="document.myForm.hiddenObject.value=this.value"&gt; Soul and R&amp;B<br>&lt;INPUT TYPE="radio" NAME="musicChoice" VALUE="jazz"<br>&nbsp;&nbsp;&nbsp;onClick="document.myForm.hiddenObject.value=this.value"&gt; Jazz<br>&lt;INPUT TYPE="radio" NAME="musicChoice" VALUE="classical"<br>&nbsp;&nbsp;&nbsp;onClick="document.myForm.hiddenObject.value=this.value"&gt; Classical<br>&lt;P&gt;<br>&lt;SELECT NAME="music_type_single"<br>&nbsp;&nbsp;&nbsp;onFocus="document.myForm.hiddenObject.value=this.options[this.selectedIndex].text"&gt;<br>&nbsp;&nbsp;&nbsp;&lt;OPTION SELECTED&gt; Red &lt;OPTION&gt; Orange &lt;OPTION&gt; Yellow<br>&lt;/SELECT&gt;<br>&lt;P&gt;&lt;INPUT TYPE="button" VALUE="Display hidden value" NAME="button2"<br>&nbsp;&nbsp;&nbsp;onClick="alert('Last object clicked: ' + document.myForm.hiddenObject.value)"&gt;<br>&lt;/FORM&gt;<br>&lt;/BODY&gt;<br>&lt;/HTML&gt;</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1011339">
+<H4> See also</H4>
+</A>
+
+<A NAME="1011343">
+<A HREF="doc1.htm#1010655"><CODE>document.cookie</CODE></A> <P></A>
+
+<A NAME="Head2;"></A>
+<A NAME="1011344">
+<H3> Properties</H3>
+</A>
+
+
+<A NAME="Head3;"></A>
+<A NAME="1011405">
+<H4> </H4>
+</A>
+
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1011408">
+<H2>form</H2>
+</A>
+
+<A NAME="1011409">
+An object reference specifying the form containing this object.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1042021">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1042026">
+<A HREF="form2.htm#1011262"><CODE>Hidden</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1042417">
+<I>Read-only</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1042419">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1042028">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1042030">
+Navigator 2.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1011424">
+<H4> Description</H4>
+</A>
+
+<A NAME="1011425">
+Each form element has a <CODE>form</CODE> property that is a reference to the element's parent form. This property is especially useful in event handlers, where you might need to refer to another element on the current form.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1011429">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1011430">
+<B>Example 1.</B> In the following example, the form <CODE>myForm</CODE> contains a <CODE>Hidden</CODE> object and a button. When the user clicks the button, the value of the <CODE>Hidden</CODE> object is set to the form's name. The button's <CODE>onClick</CODE> event handler uses <CODE>this.form</CODE> to refer to the parent form, <CODE>myForm</CODE>.<P></A>
+<A NAME="1011431">
+<PRE>&lt;FORM NAME="myForm"&gt;<br>Form name:&lt;INPUT TYPE="hidden" NAME="h1" VALUE="Beluga"&gt;<br>&lt;P&gt;<br>&lt;INPUT NAME="button1" TYPE="button" VALUE="Store Form Name"<br>&nbsp;&nbsp;&nbsp;onClick="this.form.h1.value=this.form.name"&gt;<br>&lt;/FORM&gt;</PRE></A><A NAME="1011436">
+<B>Example 2.</B> The following example uses an object reference, rather than the <CODE>this</CODE> keyword, to refer to a form. The code returns a reference to <CODE>myForm</CODE>, which is a form containing <CODE>myHiddenObject</CODE>.<P></A>
+<A NAME="1011437">
+<PRE>document.myForm.myHiddenObject.form</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1011438">
+<H4> See also</H4>
+</A>
+
+<A NAME="1011442">
+<A HREF="form1.htm#1010276"><CODE>Form</CODE></A><P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1045463">
+<H2>name</H2>
+</A>
+
+<A NAME="1045476">
+A string specifying the name of this object.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1045466">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1045471">
+<A HREF="form2.htm#1011262"><CODE>Hidden</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1045473">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1045475">
+Navigator 2.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1045941">
+<H4> Security</H4>
+</A>
+
+<A NAME="1045942">
+Navigator&nbsp;3.0: This property is tainted by default. For information on data tainting, see <A HREF="intro.htm#1014735">"JavaScript Security"</A>.<P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1011444">
+<H2>type</H2>
+</A>
+
+<A NAME="1011445">
+For all <CODE>Hidden</CODE> objects, the value of the <CODE>type</CODE> property is <CODE>"hidden"</CODE>. This property specifies the form element's type. <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1042067">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1042072">
+<A HREF="form2.htm#1011262"><CODE>Hidden</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1042100">
+<I>Read-only</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1042102">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1042074">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1042076">
+Navigator 3.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1011531">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1011532">
+The following example writes the value of the <CODE>type</CODE> property for every element on a form.<P></A>
+<A NAME="1011533">
+<PRE>for (var i = 0; i &lt; document.myForm.elements.length; i++) {<br>&nbsp;&nbsp;&nbsp;document.writeln("&lt;BR&gt;type is " + document.myForm.elements[i].type)<br>}</PRE></A>
+<A NAME="Head2Ref;"></A>
+<A NAME="1011539">
+<H2>value</H2>
+</A>
+
+<A NAME="1011540">
+A string that reflects the <CODE>VALUE</CODE> attribute of the object.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1042113">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1042118">
+<A HREF="form2.htm#1011262"><CODE>Hidden</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1042120">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1042122">
+Navigator 2.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1045957">
+<H4> Security</H4>
+</A>
+
+<A NAME="1045958">
+Navigator&nbsp;3.0: This property is tainted by default. For information on data tainting, see <A HREF="intro.htm#1014735">"JavaScript Security"</A>.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1011581">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1011582">
+The following function evaluates the <CODE>value</CODE> property of a group of buttons and displays it in the <CODE>msgWindow</CODE> window:<P></A>
+<A NAME="1044798">
+<PRE>function valueGetter() {<br>&nbsp;&nbsp;&nbsp;var msgWindow=window.open("")<br>&nbsp;&nbsp;&nbsp;msgWindow.document.write("The submit button says " +<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.valueTest.submitButton.value + "&lt;BR&gt;")<br>&nbsp;&nbsp;&nbsp;msgWindow.document.write("The reset button says " +<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.valueTest.resetButton.value + "&lt;BR&gt;")<br>&nbsp;&nbsp;&nbsp;msgWindow.document.write("The hidden field says " +<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.valueTest.hiddenField.value + "&lt;BR&gt;")<br>&nbsp;&nbsp;&nbsp;msgWindow.document.close()<br>}</PRE></A><A NAME="1011584">
+This example displays the following values:<P></A>
+<A NAME="1011585">
+<PRE>The submit button says Query Submit<br>The reset button says Reset<br>The hidden field says pipefish are cute.</PRE></A><A NAME="1011586">
+The previous example assumes the buttons have been defined as follows:<P></A>
+<A NAME="1011587">
+<PRE>&lt;INPUT TYPE="submit" NAME="submitButton"&gt;<br>&lt;INPUT TYPE="reset" NAME="resetButton"&gt;<br>&lt;INPUT TYPE="hidden" NAME="hiddenField" VALUE="pipefish are cute."&gt;</PRE></A>
+<P><HR>
+<A HREF="contents.htm">[Contents]</A> <A HREF="form1.htm">[Previous]</A> <A HREF="txt.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<P ALIGN=right>
+
+<FONT SIZE=-2><I>Last Updated:  10/31/97  12:31:54
+</I></FONT>
+
+<HR SIZE=4>
+
+<P> <CENTER>Copyright © 1997
+<A HREF="http://home.netscape.com/misc/contact_info.html"
+TARGET=_top>Netscape Communications Corporation</A></FONT>
+</CENTER>
+<P>
+<P>
+</BODY>
+</HTML>
+

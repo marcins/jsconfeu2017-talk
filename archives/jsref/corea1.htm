@@ -1,0 +1,617 @@
+<HTML>
+<HEAD>
+<TITLE>
+</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A HREF="contents.htm">[Contents]</A> <A HREF="corea.htm">[Previous]</A> <A HREF="corea2.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<HR>
+
+<A NAME="Object"></A>
+<A NAME="1012725">
+<H1> Object</H1>
+</A>
+<A NAME="1045492">
+<CODE>Object</CODE> is the primitive JavaScript object type. All JavaScript objects are descended from <CODE>Object</CODE>. That is, all JavaScript objects have the methods defined for <CODE>Object</CODE>. <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left COLSPAN=2 ROWSPAN=1><A NAME="1113248">
+<I>Core object</I></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1113252">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1113254">
+Navigator 2.0: <CODE>toString</CODE> method<br>Navigator 3.0, LiveWire 1.0: added <CODE>eval</CODE> and <CODE>valueOf</CODE> methods; <CODE>constructor</CODE> property<br>Navigator 3.0: removed <CODE>eval</CODE> method</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1045517">
+<H4> Created by</H4>
+</A>
+
+<A NAME="1045526">
+The <CODE>Object</CODE> constructor:<P></A>
+<A NAME="1045544">
+<PRE>new Object();</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1054876">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1054877">
+None<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012726">
+<H4> Property Summary</H4>
+</A>
+
+<A NAME="1123923">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1124504">
+<PRE><A HREF="corea1.htm#1127176"><CODE>constructor</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1124506">
+Specifies the function that creates an object's prototype.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1156788">
+<PRE><A HREF="corea1.htm#1134443"><CODE>prototype</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1156790">
+Allows the addition of properties to all objects.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1123743">
+<H4> Method Summary</H4>
+</A>
+
+<A NAME="1012749">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012732">
+<PRE><A HREF="corea1.htm#1012754"><CODE>eval</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1012734">
+Evaluates a string of JavaScript code in the context of the specified object.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012739">
+<PRE><A HREF="corea1.htm#1012793"><CODE>toString</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1012741">
+Returns a string representing the specified object.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1148139">
+<PRE><A HREF="corea1.htm#1149339"><CODE>unwatch</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1148141">
+Removes a watchpoint from a property of the object.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012746">
+<PRE><A HREF="corea1.htm#1012908"><CODE>valueOf</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1012748">
+Returns the primitive value of the specified object.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1148161">
+<PRE><A HREF="corea1.htm#1144930"><CODE>watch</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1148163">
+Adds a watchpoint to a property of the object.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head2;"></A>
+<A NAME="1012750">
+<H3> Properties</H3>
+</A>
+
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1127176">
+<H2>constructor</H2>
+</A>
+
+<A NAME="1127189">
+Specifies the function that creates an object's prototype. Note that the value of this property is a reference to the function itself, not a string containing the function's name.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1127179">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1127184">
+<A HREF="corea1.htm#1012725"><CODE>Object</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1127186">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1127188">
+Navigator 3.0, LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1153801">
+<H4> Description</H4>
+</A>
+
+<A NAME="1154122">
+All objects inherit a <CODE>constructor</CODE> property from their <CODE>prototype</CODE>:<P></A>
+<A NAME="1154123">
+<PRE>o = new Object  // or o = {} in Navigator 4.0<br>o.constructor == Object<br>a = new Array   // or a = [] in Navigator 4.0<br>a.constructor == Array<br>n = new Number(3)<br>n.constructor == Number</PRE></A><A NAME="1154129">
+Even though you cannot construct most HTML objects, you can do comparisons. For example,<P></A>
+<A NAME="1154960">
+<PRE>document.constructor == Document<br>document.form3.constructor == Form</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1127190">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1127191">
+The following example creates a prototype, <CODE>Tree</CODE>, and an object of that type, <CODE>theTree</CODE>. The example then displays the <CODE>constructor</CODE> property for the object <CODE>theTree</CODE>.<P></A>
+<A NAME="1127192">
+<PRE>function Tree(name) {<br>&nbsp;&nbsp;&nbsp;this.name=name<br>}<br>theTree = new Tree("Redwood")<br>document.writeln("&lt;B&gt;theTree.constructor is&lt;/B&gt; " +<br>&nbsp;&nbsp;&nbsp;theTree.constructor + "&lt;P&gt;")</PRE></A><A NAME="1127193">
+This example displays the following output:<P></A>
+<A NAME="1127194">
+<PRE>theTree.constructor is function Tree(name) { this.name = name; }</PRE></A>
+<A NAME="Head2Ref;"></A>
+<A NAME="1134443">
+<H2>prototype</H2>
+</A>
+
+<A NAME="1134444">
+Represents the prototype for this class. You can use the prototype to add properties or methods to all instances of a class. For more information, see <A HREF="core4.htm#1181210"><CODE>Function.prototype</CODE></A>.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1134450">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1134455">
+<A HREF="corea1.htm#1012725"><CODE>Object</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1134457">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1134459">
+Navigator 3.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head2;"></A>
+<A NAME="1124654">
+<H3> Methods</H3>
+</A>
+
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1012754">
+<H2>eval</H2>
+</A>
+
+<A NAME="1012755">
+Evaluates a string of JavaScript code in the context of this object.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1100244">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1100246">
+<A HREF="corea1.htm#1012725"><CODE>Object</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1100248">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1100757">
+Navigator 3.0, LiveWire 1.0<br>Navigator 4.0, Netscape Server&nbsp;3.0: removed as method of objects; retained as global function.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012756">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1012757">
+<PRE>eval(string)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1012758">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1012768">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012765">
+<PRE>string</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1012767">
+Any string representing a JavaScript expression, statement, or sequence of statements. The expression can include variables and properties of existing objects.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012771">
+<H4> Description</H4>
+</A>
+
+<A NAME="1012772">
+The argument of the <CODE>eval</CODE> method is a string. If the string represents an expression, <CODE>eval</CODE> evaluates the expression. If the argument represents one or more JavaScript statements, <CODE>eval</CODE> performs the statements. Do not call <CODE>eval</CODE> to evaluate an arithmetic expression; JavaScript evaluates arithmetic expressions automatically.<P></A>
+<A NAME="1012773">
+If you construct an arithmetic expression as a string, you can use <CODE>eval</CODE> to evaluate it at a later time. For example, suppose you have a variable <CODE>x</CODE>. You can postpone evaluation of an expression involving <CODE>x</CODE> by assigning the string value of the expression, say <CODE>"3&nbsp;*&nbsp;x&nbsp;+&nbsp;2"</CODE>, to a variable, and then calling <CODE>eval</CODE> at a later point in your script.<P></A>
+<A NAME="1114767">
+<A HREF="glob8.htm#1029909"><CODE>eval</CODE></A> is also a global function, not associated with any object. <P></A>
+<BLOCKQUOTE><B>NOTE: </B><a name="1146628">
+In Navigator&nbsp;2.0, <CODE>eval</CODE> was a top-level function. In Navigator&nbsp;3.0 <CODE>eval</CODE> was also 
+a method of every object. The ECMA-262 standard for JavaScript made eval 
+available only as a top-level function. For this reason, in Navigator&nbsp;4.0, <CODE>eval</CODE> is 
+once again a top-level function. In Navigator&nbsp;4.02, <CODE>obj.eval(str)</CODE> is 
+equivalent in all scopes to <CODE>with(obj)eval(str)</CODE>, except of course that the 
+latter is a statement, not an expression.
+</blockquote>
+</a>
+
+<A NAME="Head3;"></A>
+<A NAME="1012777">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1012787">
+<B>Example 1.</B> The following example creates <CODE>breed</CODE> as a property of the object <CODE>myDog</CODE>, and also as a variable. The first <CODE>write</CODE> statement uses <CODE>eval('breed')</CODE> without specifying an object; the string <CODE>"breed"</CODE> is evaluated without regard to any object, and the <CODE>write</CODE> method displays <CODE>"Shepherd"</CODE>, which is the value of the <CODE>breed</CODE> variable. The second <CODE>write</CODE> statement uses <CODE>myDog.eval('breed')</CODE> which specifies the object <CODE>myDog</CODE>; the string <CODE>"breed"</CODE> is evaluated with regard to the <CODE>myDog</CODE> object, and the <CODE>write</CODE> method displays <CODE>"Lab"</CODE>, which is the value of the <CODE>breed</CODE> property of the <CODE>myDog</CODE> object.<P></A>
+<A NAME="1012788">
+<PRE>function Dog(name,breed,color) {<br>&nbsp;&nbsp;&nbsp;this.name=name<br>&nbsp;&nbsp;&nbsp;this.breed=breed<br>&nbsp;&nbsp;&nbsp;this.color=color<br>}<br>myDog = new Dog("Gabby")<br>myDog.breed="Lab"<br>var breed='Shepherd'<br>document.write("&lt;P&gt;" + eval('breed'))<br>document.write("&lt;BR&gt;" + myDog.eval('breed'))</PRE></A><A NAME="1012789">
+<B>Example 2.</B> The following example uses <CODE>eval</CODE> within a function that defines an object type, <CODE>stone</CODE>. The statement <CODE>flint = new stone("x=42")</CODE> creates the object <CODE>flint</CODE> with the properties <CODE>x</CODE>, <CODE>y</CODE>, <CODE>z</CODE>, and <CODE>z2</CODE>. The <CODE>write</CODE> statements display the values of these properties as 42, 43, 44, and 45, respectively.<P></A>
+<A NAME="1012790">
+<PRE>function stone(str) {<br>&nbsp;&nbsp;&nbsp;this.eval("this."+str)<br>&nbsp;&nbsp;&nbsp;this.eval("this.y=43")<br>&nbsp;&nbsp;&nbsp;this.z=44<br>&nbsp;&nbsp;&nbsp;this["z2"] = 45<br>}<br>flint = new stone("x=42")<br>document.write("&lt;BR&gt;flint.x is " + flint.x)<br>document.write("&lt;BR&gt;flint.y is " + flint.y)<br>document.write("&lt;BR&gt;flint.z is " + flint.z)<br>document.write("&lt;BR&gt;flint.z2 is " + flint.z2)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1116019">
+<H4> See also</H4>
+</A>
+
+<A NAME="1116022">
+<A HREF="glob8.htm#1029909"><CODE>eval</CODE></A><P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1012793">
+<H2>toString</H2>
+</A>
+
+<A NAME="1012794">
+Returns a string representing the specified object.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1090893">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1090895">
+<A HREF="corea1.htm#1012725"><CODE>Object</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1090897">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1090899">
+Navigator 2.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012795">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1012796">
+<PRE>toString()<br>toString(radix)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1012797">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1130223">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1130220">
+<PRE>radix</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1130222">
+(Optional) An integer between 2 and 16 specifying the base to use for representing numeric values.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1130231">
+<H4> Security</H4>
+</A>
+
+<A NAME="1130515">
+Navigator&nbsp;3.0: This method is tainted by default for the following objects: <A HREF="but.htm#1016056"><CODE>Button</CODE></A>, <A HREF="choi1.htm#1013039"><CODE>Checkbox</CODE></A>, <A HREF="txt3.htm#1014071"><CODE>FileUpload</CODE></A>, <A HREF="form2.htm#1011262"><CODE>Hidden</CODE></A>, <A HREF="wina2.htm#1018212"><CODE>History</CODE></A>, <A HREF="doc2.htm#1081434"><CODE>Link</CODE></A>, <A HREF="wina1.htm#1012987"><CODE>Location</CODE></A>, <A HREF="txt2.htm#1012091"><CODE>Password</CODE></A>, <A HREF="choi.htm#1011977"><CODE>Radio</CODE></A>, <A HREF="but2.htm#1012912"><CODE>Reset</CODE></A>, <A HREF="choi2.htm#1013973"><CODE>Select</CODE></A>, <A HREF="but1.htm#1011117"><CODE>Submit</CODE></A>, <A HREF="txt.htm#1023924"><CODE>Text</CODE></A>, and <A HREF="txt1.htm#1010943"><CODE>Textarea</CODE></A>. <P></A>
+<A NAME="1130726">
+For information on data tainting, see <A HREF="intro.htm#1014735">"JavaScript Security"</A>.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1130224">
+<H4> Description</H4>
+</A>
+
+<A NAME="1130225">
+Every object has a <CODE>toString</CODE> method that is automatically called when it is to be represented as a text value or when an object is referred to in a string concatenation. For example, the following examples require <CODE>theDog</CODE> to be represented as a string:<P></A>
+<A NAME="1012816">
+<PRE>document.write(theDog)<br>document.write("The dog is " + theDog)</PRE></A><A NAME="1012817">
+You can use <CODE>toString</CODE> within your own code to convert an object into a string, and you can create your own function to be called in place of the default <CODE>toString</CODE> method.<P></A>
+<A NAME="Head4;"></A>
+<A NAME="1012819">
+<H5> Built-in toString methods</H5>
+</A>
+
+<A NAME="1012820">
+Every object type has a built-in <CODE>toString</CODE> method, which JavaScript calls whenever it needs to convert an object to a string. If an object has no string value and no user-defined <CODE>toString</CODE> method, <CODE>toString</CODE> returns <CODE>"[object type]"</CODE>, where <CODE>type</CODE> is the object type or the name of the constructor function that created the object. For example, if for an <CODE>Image</CODE> object named <CODE>sealife</CODE> defined as shown below, <CODE>sealife.toString()</CODE> returns <CODE>[object Image]</CODE>.<P></A>
+<A NAME="1012821">
+<PRE>&lt;IMG NAME="sealife" SRC="images\seaotter.gif" ALIGN="left" VSPACE="10"&gt;</PRE></A><A NAME="1012822">
+Some built-in classes have special definitions for their toString methods. See the descriptions of this method for these objects:<P></A>
+<A NAME="1090955">
+<PRE><A HREF="core1.htm#1080770"><CODE>Array</CODE></A>, <A HREF="core2.htm#1012259"><CODE>Boolean</CODE></A>, <A HREF="lwa.htm#1013808"><CODE>Connection</CODE></A>, <A HREF="lw1.htm#1031336"><CODE>database</CODE></A>, <A HREF="lw2.htm#1016183"><CODE>DbPool</CODE></A>, <A HREF="core4.htm#1013865"><CODE>Function</CODE></A>, <A HREF="corea.htm#1012418"><CODE>Number</CODE></A></PRE></A><A NAME="Head4;"></A>
+<A NAME="1012846">
+<H5> User-defined toString methods</H5>
+</A>
+
+<A NAME="1012847">
+You can create a function to be called in place of the default <CODE>toString</CODE> method. The <CODE>toString</CODE> method takes no arguments and should return a string. The <CODE>toString</CODE> method you create can be any value you want, but it will be most useful if it carries information about the object.<P></A>
+<A NAME="1012848">
+The following code defines the <CODE>Dog</CODE> object type and creates <CODE>theDog,</CODE> an object of type <CODE>Dog</CODE>:<P></A>
+<A NAME="1012849">
+<PRE>function Dog(name,breed,color,sex) {<br>&nbsp;&nbsp;&nbsp;this.name=name<br>&nbsp;&nbsp;&nbsp;this.breed=breed<br>&nbsp;&nbsp;&nbsp;this.color=color<br>&nbsp;&nbsp;&nbsp;this.sex=sex<br>}</PRE></A><A NAME="1012850">
+<PRE>theDog = new Dog("Gabby","Lab","chocolate","girl")</PRE></A><A NAME="1012851">
+The following code creates <CODE>dogToString,</CODE> the function that will be used in place of the default <CODE>toString</CODE> method. This function generates a string containing each property, of the form <CODE>"property = value;"</CODE>.<P></A>
+<A NAME="1012852">
+<PRE>function dogToString() {<br>&nbsp;&nbsp;&nbsp;var ret = "Dog " + this.name + " is ["<br>&nbsp;&nbsp;&nbsp;for (var prop in this)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ret += "  " + prop + " is " + this[prop] + ";"<br>&nbsp;&nbsp;&nbsp;return ret + "]"<br>}</PRE></A><A NAME="1012853">
+The following code assigns the user-defined function to the object's <CODE>toString</CODE> method:<P></A>
+<A NAME="1012854">
+<PRE>Dog.prototype.toString = dogToString</PRE></A><A NAME="1012855">
+With the preceding code in place, any time <CODE>theDog</CODE> is used in a string context, JavaScript automatically calls the <CODE>dogToString</CODE> function, which returns the following string:<P></A>
+<A NAME="1012856">
+<BLOCKQUOTE>Dog Gabby is [ name is Gabby; breed is Lab; color is chocolate; sex is girl; 
+toString is function dogToString() { var ret = "Object " + this.name + " is ["; 
+for (var prop in this) { ret += " " + prop + " is " + this[prop] + ";"; } return ret 
++ "]"; } ;]
+</BLOCKQUOTE></A>
+
+<A NAME="1012857">
+An object's <CODE>toString</CODE> method is usually invoked by JavaScript, but you can invoke it yourself as follows:<P></A>
+<A NAME="1012858">
+<PRE>alert(theDog.toString())</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1012885">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1012886">
+<B>Example 1: The location object.</B> The following example prints the string equivalent of the current location.<P></A>
+<A NAME="1012887">
+<PRE>document.write("location.toString() is " + location.toString() + "&lt;BR&gt;")</PRE></A><A NAME="1012888">
+The output is as follows:<P></A>
+<A NAME="1012889">
+<PRE>location.toString() is file:///C|/TEMP/myprog.html</PRE></A><A NAME="1012890">
+<B>Example 2: Object with no string value.</B> Assume you have an <A HREF="doca1.htm#1078163"><CODE>Image</CODE></A> object named <CODE>sealife</CODE> defined as follows:<P></A>
+<A NAME="1012891">
+<PRE>&lt;IMG NAME="sealife" SRC="images\seaotter.gif" ALIGN="left" VSPACE="10"&gt;</PRE></A><A NAME="1012892">
+Because the <A HREF="doca1.htm#1078163"><CODE>Image</CODE></A> object itself has no special <CODE>toString</CODE> method, <CODE>sealife.toString()</CODE> returns the following:<P></A>
+<A NAME="1012893">
+<PRE>[object Image]</PRE></A><A NAME="1012894">
+<B>Example 3: The radix parameter.</B> The following example prints the string equivalents of the numbers 0 through 9 in decimal and binary.<P></A>
+<A NAME="1012895">
+<PRE>for (x = 0; x &lt; 10; x++) {<br>&nbsp;&nbsp;&nbsp;document.write("Decimal: ", x.toString(10), " Binary: ",<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x.toString(2), "&lt;BR&gt;")<br>}</PRE></A><A NAME="1012896">
+The preceding example produces the following output:<P></A>
+<A NAME="1012897">
+<PRE>Decimal: 0 Binary: 0<br>Decimal: 1 Binary: 1<br>Decimal: 2 Binary: 10<br>Decimal: 3 Binary: 11<br>Decimal: 4 Binary: 100<br>Decimal: 5 Binary: 101<br>Decimal: 6 Binary: 110<br>Decimal: 7 Binary: 111<br>Decimal: 8 Binary: 1000<br>Decimal: 9 Binary: 1001</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1012898">
+<H4> See also</H4>
+</A>
+
+<A NAME="1012905">
+<A HREF="corea1.htm#1012908"><CODE>Object.valueOf</CODE></A> <P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1149339">
+<H2>unwatch</H2>
+</A>
+
+<A NAME="1149343">
+Removes a watchpoint set with the <A HREF="corea1.htm#1144930"><CODE>watch</CODE></A> method.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1149436">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1149441">
+<A HREF="corea1.htm#1012725"><CODE>Object</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1149443">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1149445">
+Navigator 4.0, Netscape Server 3.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1149345">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1149346">
+<PRE>unwatch(prop)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1149347">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1149349">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1149691">
+<CODE>prop</CODE></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1149693">
+The name of a property of the object.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1149352">
+<H4> Description</H4>
+</A>
+
+<A NAME="1153038">
+The JavaScript debugger has functionality similar to that provided by this method, as well as other debugging options. For information on the debugger, see <EM><A HREF="http://developer.netscape.com/library/documentation/jsdebug/index.htm" TARGET="_top">Getting Started with Netscape JavaScript Debugger</A></EM>.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1149771">
+<H4> Example</H4>
+</A>
+
+<A NAME="1149356">
+See <A HREF="corea1.htm#1144930"><CODE>watch</CODE></A>.<P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1012908">
+<H2>valueOf</H2>
+</A>
+
+<A NAME="1012909">
+Returns the primitive value of the specified object.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1095421">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1095423">
+<A HREF="corea1.htm#1012725"><CODE>Object</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1095425">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1095427">
+Navigator 3.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012910">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1012911">
+<PRE>valueOf()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1012912">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1012913">
+None<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012916">
+<H4> Description</H4>
+</A>
+
+<A NAME="1012917">
+Every object has a <CODE>valueOf</CODE> method that is automatically called when it is to be represented as a primitive value. If an object has no primitive value, <CODE>valueOf</CODE> returns the object itself.<P></A>
+<A NAME="1012918">
+You can use <CODE>valueOf</CODE> within your own code to convert an object into a primitive value, and you can create your own function to be called in place of the default <CODE>valueOf</CODE> method.<P></A>
+<A NAME="1012920">
+Every object type has a built-in <CODE>valueOf</CODE> method, which JavaScript calls whenever it needs to convert an object to a primitive value.<P></A>
+<A NAME="1012921">
+You rarely need to invoke the <CODE>valueOf</CODE> method yourself. JavaScript automatically invokes it when encountering an object where a primitive value is expected.<P></A>
+<A NAME="1012922">
+<A HREF="corea1.htm#1012922">Table&nbsp;4.2</A> shows the object types for which the <CODE>valueOf</CODE> method is most useful. Most other objects have no primitive value.<P><B><A NAME="1012925">
+Table 4.2&nbsp;Use <CODE>valueOf</CODE> for these object types</A></B>
+<TABLE BORDER="0">
+<TR><TH VALIGN=baseline ALIGN=left><B><A NAME="1012929">
+<B>Object type
+</B></A></B><TH VALIGN=baseline ALIGN=left><B><A NAME="1012931">
+<B>Value returned by <B>valueOf
+</B></B></A></B>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012933">
+<CODE><A HREF="corea.htm#1012418">Number</A></CODE></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1012935">
+Primitive numeric value associated with the object.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012937">
+<CODE><A HREF="core2.htm#1012259">Boolean</A></CODE></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1012939">
+Primitive boolean value associated with the object.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012941">
+<CODE><A HREF="corea2.htm#1012977">String</A></CODE></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1012943">
+String associated with the object.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012945">
+<CODE><A HREF="core4.htm#1013865">Function</A></CODE></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1012947">
+Function reference associated with the object. For example, <CODE>typeof</CODE> <CODE>funObj</CODE> returns <CODE>"object"</CODE>, but <CODE>typeof</CODE> <CODE>funObj.valueOf()</CODE> returns <CODE>"function"</CODE>.</A></P>
+
+</TABLE>
+<P></A>
+<A NAME="1012949">
+You can create a function to be called in place of the default <CODE>valueOf</CODE> method. Your function must take no arguments.<P></A>
+<A NAME="1012950">
+Suppose you have an object type <CODE>myNumberType</CODE> and you want to create a <CODE>valueOf</CODE> method for it. The following code assigns a user-defined function to the object's <CODE>valueOf</CODE> method:<P></A>
+<A NAME="1012951">
+<PRE>myNumberType.prototype.valueOf = new Function(functionText)</PRE></A><A NAME="1012952">
+With the preceding code in place, any time an object of type <CODE>myNumberType</CODE> is used in a context where it is to be represented as a primitive value, JavaScript automatically calls the function defined in the preceding code.<P></A>
+<A NAME="1012953">
+An object's <CODE>valueOf</CODE> method is usually invoked by JavaScript, but you can invoke it yourself as follows:<P></A>
+<A NAME="1012954">
+<PRE>myNumber.valueOf()</PRE></A><BLOCKQUOTE><B>NOTE: </B><a name="1095529">
+Objects in string contexts convert via the <A HREF="corea1.htm#1012793"><CODE>toString</CODE></A> method, which is different 
+from <A HREF="corea2.htm#1012977"><CODE>String</CODE></A> objects converting to string primitives using <CODE>valueOf</CODE>. All string 
+objects have a string conversion, if only <CODE>"[object </CODE><I><CODE>type</CODE></I><CODE>]"</CODE>. But many objects 
+do not convert to number, boolean, or function.
+</blockquote>
+</a>
+
+<A NAME="Head3;"></A>
+<A NAME="1012962">
+<H4> See also</H4>
+</A>
+
+<A NAME="1012974">
+<A HREF="glob15.htm#1012508"><CODE>parseInt</CODE></A>, <A HREF="corea1.htm#1012793"><CODE>Object.toString</CODE></A><P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1144930">
+<H2>watch</H2>
+</A>
+
+<A NAME="1144931">
+Watches for a property to be assigned a value and runs a function when that occurs.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1148186">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1148191">
+<A HREF="corea1.htm#1012725"><CODE>Object</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1148193">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1148195">
+Navigator 4.0, Netscape Server 3.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1144932">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1144933">
+<PRE>watch(prop, handler)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1144934">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1144935">
+<CODE><P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1148395">
+<CODE>prop</CODE></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1148442">
+The name of a property of the object.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1148399">
+<CODE>handler</CODE></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1148516">
+A function to call.</A></P>
+
+</TABLE>
+</CODE><P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1144940">
+<H4> Description</H4>
+</A>
+
+<A NAME="1144941">
+Watches for assignment to a property named <CODE>prop</CODE> in this object, calling <CODE>handler(prop, oldval, newval)</CODE> whenever <CODE>prop</CODE> is set and storing the return value in that property. A watchpoint can filter (or nullify) the value assignment, by returning a modified <CODE>newval</CODE> (or <CODE>oldval</CODE>).<P></A>
+<A NAME="1144942">
+If you delete a property for which a watchpoint has been set, that watchpoint does not disappear. If you later recreate the property, the watchpoint is still in effect. <P></A>
+<A NAME="1144946">
+To remove a watchpoint, use the <A HREF="corea1.htm#1149339"><CODE>unwatch</CODE></A> method.<P></A>
+<A NAME="1153046">
+The JavaScript debugger has functionality similar to that provided by this method, as well as other debugging options. For information on the debugger, see <EM><A HREF="http://developer.netscape.com/library/documentation/jsdebug/index.htm" TARGET="_top">Getting Started with Netscape JavaScript Debugger</A></EM>.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1144948">
+<H4> Example</H4>
+</A>
+
+<A NAME="1144949">
+<PRE>&lt;script language="JavaScript1.2"&gt;<br>o = {p:1}<br>o.watch("p",<br>&nbsp;&nbsp;&nbsp;function (id,oldval,newval) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.writeln("o." + id + " changed from " <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+ oldval + " to " + newval)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return newval<br>&nbsp;&nbsp;&nbsp;})</PRE></A><A NAME="1144950">
+<PRE>o.p = 2<br>o.p = 3<br>delete o.p<br>o.p = 4</PRE></A><A NAME="1144951">
+<PRE>o.unwatch('p')<br>o.p = 5</PRE></A><A NAME="1144952">
+<PRE>&lt;/script&gt;</PRE></A><A NAME="1144953">
+This script displays the following:<P></A>
+<A NAME="1144954">
+o.p changed from 1 to 2<br>o.p changed from 2 to 3<br>o.p changed from 3 to 4<P></A>
+
+<P><HR>
+<A HREF="contents.htm">[Contents]</A> <A HREF="corea.htm">[Previous]</A> <A HREF="corea2.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<P ALIGN=right>
+
+<FONT SIZE=-2><I>Last Updated:  10/31/97  12:30:31
+</I></FONT>
+
+<HR SIZE=4>
+
+<P> <CENTER>Copyright © 1997
+<A HREF="http://home.netscape.com/misc/contact_info.html"
+TARGET=_top>Netscape Communications Corporation</A></FONT>
+</CENTER>
+<P>
+<P>
+</BODY>
+</HTML>
+
+

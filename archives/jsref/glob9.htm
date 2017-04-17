@@ -1,0 +1,104 @@
+<HTML>
+<HEAD>
+<TITLE>Global Functions
+</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A HREF="contents.htm">[Contents]</A> <A HREF="glob8.htm">[Previous]</A> <A HREF="glob10.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<HR>
+
+<A NAME="flush"></A>
+<A NAME="1012361">
+<H1> flush</H1>
+</A>
+<A NAME="1012362">
+Sends data from the internal buffer to the client.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1032221">
+<I>Server-side function</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1032223">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1032225">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1032227">
+LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012363">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1012364">
+<PRE>flush()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1034060">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1034061">
+None.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012365">
+<H4> Description</H4>
+</A>
+
+<A NAME="1012367">
+To improve performance, JavaScript buffers the HTML page it constructs. The <CODE>flush</CODE> function immediately sends data from the internal buffer to the client. If you do not explicitly call the <CODE>flush</CODE> function, JavaScript sends data to the client after each 64KB of content in the constructed HTML page. <P></A>
+<A NAME="1012368">
+Use the <CODE>flush</CODE> function to control when data is sent to the client. For example, call the <CODE>flush</CODE> function before an operation that creates a delay, such as a database query. If a database query retrieves a large number of rows, you can flush the buffer after retrieving a small number of rows to prevent long delays in displaying data.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012369">
+<H4> </H4>
+</A>
+
+<a name="1012370">
+Because the <CODE>flush</CODE> function updates the client's cookie file as part of the HTTP 
+header, you should perform any changes to the <CODE>client</CODE> object before flushing 
+the buffer, if you are using client cookie to maintain the <CODE>client</CODE> object. For 
+more information, see <A HREF="http://developer.netscape.com/library/documentation/enterprise/wrijsap/index.htm" TARGET="_top">Writing Server-Side JavaScript Applications.</A>
+</blockquote>
+</a>
+<A NAME="1012376">
+Do not confuse the <CODE>flush</CODE> method of the <A HREF="oth1.htm#1015167"><CODE>File</CODE></A> object with the top-level <CODE>flush</CODE> function. The <CODE>flush</CODE> function is a top-level server-side JavaScript function that is not associated with any object.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012379">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1012380">
+The following example iterates through a text file and outputs each line in the file, preceded by a line number and five spaces. The <CODE>flush</CODE> function then causes the client to display the output.<P></A>
+<A NAME="1012381">
+<PRE>while (!In.eof()) {<br>&nbsp;&nbsp;&nbsp;AscLine = In.readln();<br>&nbsp;&nbsp;&nbsp;if (!In.eof())<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;write(LPad(LineCount + ": ", 5), AscLine, "\n");<br>&nbsp;&nbsp;&nbsp;LineCount++;<br>&nbsp;&nbsp;&nbsp;flush();<br>}</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1034080">
+<H4> See also</H4>
+</A>
+
+<A NAME="1012386">
+<A HREF="glob25.htm#1012652"><CODE>write</CODE></A><P></A>
+
+<P><HR>
+<A HREF="contents.htm">[Contents]</A> <A HREF="glob8.htm">[Previous]</A> <A HREF="glob10.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<P ALIGN=right>
+
+<FONT SIZE=-2><I>Last Updated:  10/31/97  16:38:00
+</I></FONT>
+
+<HR SIZE=4>
+
+<P> <CENTER>Copyright © 1997
+<A HREF="http://home.netscape.com/misc/contact_info.html"
+TARGET=_top>Netscape Communications Corporation</A></FONT>
+</CENTER>
+<P>
+<P>
+</BODY>
+</HTML>
+
+

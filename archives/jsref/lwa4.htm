@@ -1,0 +1,258 @@
+<HTML>
+<HEAD>
+<TITLE>
+</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A HREF="contents.htm">[Contents]</A> <A HREF="lwa3.htm">[Previous]</A> <A HREF="sess.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<HR>
+
+<A NAME="blob"></A>
+<A NAME="1014045">
+<H1> blob</H1>
+</A>
+<A NAME="1014046">
+Server-side object. Provides functionality for displaying and linking to BLOb data.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1056042">
+<I>Server-side object</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1056047">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1056049">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1056051">
+LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1030334">
+<H4> Created by</H4>
+</A>
+
+<A NAME="1014047">
+You do not create a separate <CODE>blob</CODE> object. Instead, if you know that the value of a <CODE>cursor</CODE> property contains BLOb data, you use these methods to access that data: <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1014054">
+<PRE><A HREF="lwa4.htm#1014071"><CODE>blobImage</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1014056">
+Displays BLOb data stored in a database. </A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1014061">
+<PRE><A HREF="lwa4.htm#1014130"><CODE>blobLink</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1014064">
+Displays a link that references BLOb data with a link.</A></P>
+
+</TABLE>
+<P></A>
+<A NAME="1030439">
+Conversely, to store BLOb data in a database, use the <A HREF="glob3.htm#1012250"><CODE>blob</CODE></A> function.<P></A>
+
+<A NAME="Head2;"></A>
+<A NAME="1014068">
+<H3> Methods</H3>
+</A>
+
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1014071">
+<H2>blobImage</H2>
+</A>
+
+<A NAME="1014072">
+Displays BLOb data stored in a database. <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1056083">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1056085">
+<A HREF="lwa4.htm#1014045"><CODE>blob</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1056087">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1056089">
+LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1014073">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1014074">
+<PRE>cursorName.colName.blobImage (format, altText, align, widthPixels, heightPixels, borderPixels, ismap)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1014075">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1014106">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1014078">
+<PRE>format</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1014080">
+The image format. This can be GIF, JPEG, or any other MIME image format. </A></P><A NAME="1014081">
+The acceptable formats are specified in the <CODE>type=image</CODE> section of the file <CODE>$nshome\httpd-80\config\mime.types</CODE>, where <CODE>$nshome</CODE> is the directory in which you installed your server. The client browser must also be able to display the image format.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1014083">
+<PRE>altText</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1014085">
+(Optional) The value of the ALT attribute of the <CODE>image</CODE> tag. This indicates text to display if the client browser does not display images.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1014087">
+<PRE>align</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1014089">
+(Optional) The value of the <CODE>ALIGN</CODE> attribute of the <CODE>image</CODE> tag. This can be <CODE>"left"</CODE>, <CODE>"right"</CODE>, or any other value supported by the client browser.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1014091">
+<PRE>widthPixels</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1014093">
+(Optional) The width of the image in pixels.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1014095">
+<PRE>heightPixels</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1014097">
+(Optional) The height of the image in pixels.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1014099">
+<PRE>borderPixels</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1014101">
+(Optional) The size of the outline border in pixels if the image is a link. </A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1014103">
+<PRE>ismap</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1014105">
+(Optional) True if the image is a clickable map. If this parameter is true, the <CODE>image</CODE> tag has an ISMAP attribute; otherwise it does not.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1014109">
+<H4> Returns</H4>
+</A>
+
+<A NAME="1014111">
+An HTML IMG tag for the specified image type.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1014112">
+<H4> Description</H4>
+</A>
+
+<A NAME="1014113">
+Use <CODE>blobImage</CODE> to create an HTML image tag for a graphic image in a standard format such as GIF or JPEG. <P></A>
+<A NAME="1014114">
+The <CODE>blobImage</CODE> method fetches a BLOb from the database, creates a temporary file (in memory) of the specified format, and generates an HTML image tag that refers to the temporary file. The JavaScript runtime engine removes the temporary file after the page is generated and sent to the client.<P></A>
+<A NAME="1014115">
+While creating the page, the runtime engine keeps the binary data that <CODE>blobImage</CODE> fetches from the database in active memory, so requests that fetch a large amount of data can exceed dynamic memory on the server. Generally it is good practice to limit the number of rows retrieved at one time using <CODE>blobImage</CODE> to stay within the server's dynamic memory limits.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1014118">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1014119">
+<B>Example 1. </B>The following example extracts a row containing a small image and a name. It writes HTML containing the name and a link to the image:<P></A>
+<A NAME="1014120">
+<PRE>cursor = connobj.cursor("SELECT NAME, THUMB FROM FISHTBL WHERE ID=2")<br>write(cursor.name + " ")<br>write(cursor.thumb.blobImage("gif")) <br>write("&lt;BR&gt;") <br>cursor.close()</PRE></A><A NAME="1014121">
+These statements produce this HTML:<P></A>
+<A NAME="1014122">
+<PRE>Anthia &lt;IMG SRC="LIVEWIRE_TEMP11"&gt;&lt;BR&gt;</PRE></A><A NAME="1014123">
+<B>Example 2. </B>The following example creates a cursor from the <CODE>rockStarBios</CODE> table and uses <CODE>blobImage</CODE> to display an image retrieved from the <CODE>photos</CODE> column:<P></A>
+<A NAME="1014124">
+<PRE>cursor = database.cursor("SELECT * FROM rockStarBios<br>&nbsp;&nbsp;&nbsp;WHERE starID = 23")<br>while(cursor.next()) {<br>&nbsp;&nbsp;&nbsp;write(cursor.photos.blobImage("gif", "Picture", "left",<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;30, 30, 0,false))<br>}<br>cursor.close()</PRE></A><A NAME="1014125">
+This example displays an image as if it were created by the following HTML:<P></A>
+<A NAME="1014126">
+<PRE>&lt;IMG SRC="livewire_temp.gif" ALT="Picture" ALIGN=LEFT <br>&nbsp;&nbsp;&nbsp;WIDTH=30 HEIGHT=30 BORDER=0&gt;</PRE></A><A NAME="1014127">
+The <CODE>livewire_temp.gif</CODE> file in this example is the file in which the <CODE>rockStarBios</CODE> table stores the BLOb data.<P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1014130">
+<H2>blobLink</H2>
+</A>
+
+<A NAME="1014132">
+Returns a link tag that references BLOb data with a link. Creates an HTML link to the BLOb.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1056146">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1056151">
+<A HREF="lwa4.htm#1014045"><CODE>blob</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1056153">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1056155">
+LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1014133">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1014134">
+<PRE>cursorName.colName.blobLink (mimeType, linkText)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1014135">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1014145">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1014138">
+<PRE>mimeType</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1014140">
+The MIME type of the binary data. This can be image/gif or any other acceptable MIME type, as specified in the Netscape server configuration file $nshome\httpd-80\config\mime.types, where <CODE>$nshome</CODE> is the directory in which you installed your server.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1014142">
+<PRE>linkText</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1014144">
+The text to display in the link. This can be any JavaScript string expression.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1014148">
+<H4> Returns</H4>
+</A>
+
+<A NAME="1014149">
+An HTML link tag.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1014150">
+<H4> Description</H4>
+</A>
+
+<A NAME="1014152">
+Use <CODE>blobLink</CODE> if you do not want to display graphics (to reduce bandwidth requirements) or if you want to provide a link to an audio clip or other multimedia content not viewable inline.<P></A>
+<A NAME="1014153">
+The <CODE>blobLink</CODE> method fetches BLOb data from the database, creates a temporary file in memory, and generates a hypertext link to the temporary file. The JavaScript runtime engine on the server removes the temporary files that <CODE>blobLink</CODE> creates after the user clicks the link or sixty seconds after the request has been processed.<P></A>
+<A NAME="1014155">
+The runtime engine keeps the binary data that <CODE>blobLink</CODE> fetches from the database in active memory, so requests that fetch a large amount of data can exceed dynamic memory on the server. Generally it is good practice to limit the number of rows retrieved at one time using <CODE>blobLink</CODE> to stay within the server's dynamic memory limits.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1014158">
+<H4> Example</H4>
+</A>
+
+<A NAME="1014159">
+<B>Example 1.</B> The following statements extract a row containing a large image and a name. It writes HTML containing the name and a link to the image:<P></A>
+<A NAME="1014160">
+<PRE>cursor = connobj.cursor("SELECT NAME, PICTURE FROM FISHTBL WHERE ID=2")<br>write(cursor.name + " ")<br>write(cursor.picture.blobLink("image/gif", "Link" + cursor.id)) <br>write("&lt;BR&gt;") <br>cursor.close()</PRE></A><A NAME="1014161">
+These statements produce this HTML:<P></A>
+<A NAME="1014163">
+<PRE>Anthia &lt;A HREF="LIVEWIRE_TEMP2"&gt;Link2&lt;/A&gt;&lt;BR&gt;</PRE></A><A NAME="1014165">
+<B>Example 2.</B> The following example creates a cursor from the <CODE>rockStarBios</CODE> table and uses <CODE>blobLink</CODE> to create links to images retrieved from the <CODE>photos</CODE> column:<P></A>
+<A NAME="1014166">
+<PRE>write("Click a link to display an image:&lt;P&gt;")<br>cursor = database.cursor("select * from rockStarBios")<br>while(cursor.next()) {<br>&nbsp;&nbsp;&nbsp;write(cursor.photos.blobLink("image/gif", "Image " + cursor.id))<br>&nbsp;&nbsp;&nbsp;write("&lt;BR&gt;")<br>}<br>cursor.close()</PRE></A><A NAME="1014167">
+This example generates the following HTML:<P></A>
+<A NAME="1014168">
+<PRE>Click a link to display an image:&lt;P&gt;<br>&lt;A HREF="LIVEWIRE_TEMP1"&gt;Image 1&lt;/A&gt;&lt;BR&gt;<br>&lt;A HREF="LIVEWIRE_TEMP2"&gt;Image 2&lt;/A&gt;&lt;BR&gt;<br>&lt;A HREF="LIVEWIRE_TEMP3"&gt;Image 3&lt;/A&gt;&lt;BR&gt;<br>&lt;A HREF="LIVEWIRE_TEMP4"&gt;Image 4&lt;/A&gt;&lt;BR&gt;</PRE></A><A NAME="1014169">
+The <CODE>LIVEWIRE_TEMP</CODE> files in this example are temporary files created in memory by the <CODE>blobLink</CODE> method. <P></A>
+<A NAME="1012079">
+<P></A>
+<A NAME="1066427">
+<P></A>
+
+<P><HR>
+<A HREF="contents.htm">[Contents]</A> <A HREF="lwa3.htm">[Previous]</A> <A HREF="sess.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<P ALIGN=right>
+
+<FONT SIZE=-2><I>Last Updated:  10/31/97  16:36:13
+</I></FONT>
+
+<HR SIZE=4>
+
+<P> <CENTER>Copyright © 1997
+<A HREF="http://home.netscape.com/misc/contact_info.html"
+TARGET=_top>Netscape Communications Corporation</A></FONT>
+</CENTER>
+<P>
+<P>
+</BODY>
+</HTML>
+

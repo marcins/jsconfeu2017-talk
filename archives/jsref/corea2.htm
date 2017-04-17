@@ -1,0 +1,2218 @@
+<HTML>
+<HEAD>
+<TITLE>
+</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A HREF="contents.htm">[Contents]</A> <A HREF="corea1.htm">[Previous]</A> <A HREF="corea3.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<HR>
+
+<A NAME="String"></A>
+<A NAME="1012977">
+<H1> String</H1>
+</A>
+<A NAME="1012979">
+An object representing a series of characters in a string. <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left COLSPAN=2 ROWSPAN=1><A NAME="1101659">
+<I>Core object</I></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1101683">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1101706">
+Navigator 2.0: Create a <CODE>String</CODE> object only by quoting characters.<br>Navigator 3.0, LiveWire 1.0: added <CODE>String</CODE> constructor; added <CODE>prototype</CODE> property; added <A HREF="corea2.htm#1013764"><CODE>split</CODE></A> method; added ability to pass strings among scripts in different windows or frames (in previous releases, you had to add an empty string to another window's string to refer to it)<br>Navigator 4.0, Netscape Server 3.0: added <A HREF="corea2.htm#1025150"><CODE>concat</CODE></A>, <A HREF="corea2.htm#1026931"><CODE>match</CODE></A>, <A HREF="corea2.htm#1027809"><CODE>replace</CODE></A>, <A HREF="corea2.htm#1030143"><CODE>search</CODE></A>, <A HREF="corea2.htm#1033164"><CODE>slice</CODE></A>, and <A HREF="corea2.htm#1036298"><CODE>substr</CODE></A> methods.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012980">
+<H4> Created by</H4>
+</A>
+
+<A NAME="1045561">
+The <CODE>String</CODE> constructor:<P></A>
+<A NAME="1012982">
+<PRE>new String(string);</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1012985">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1013007">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1022791">
+<PRE>string</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1022793">
+Any string.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013010">
+<H4> Description</H4>
+</A>
+
+<A NAME="1013011">
+The <CODE>String</CODE> object is a built-in JavaScript object. You an treat any JavaScript string as a <CODE>String</CODE> object.<P></A>
+<A NAME="1013012">
+A string can be represented as a literal enclosed by single or double quotation marks; for example, "Netscape" or 'Netscape'.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013013">
+<H4> Property Summary</H4>
+</A>
+
+<A NAME="1013036">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1013019">
+<PRE><A HREF="corea2.htm#1013207"><CODE>length</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1013021">
+Reflects the length of the string.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1013033">
+<PRE><A HREF="corea2.htm#1013287"><CODE>prototype</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1013035">
+Allows the addition of properties to a <CODE>String</CODE> object.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013037">
+<H4> Method Summary</H4>
+</A>
+
+<A NAME="1013181">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1013043">
+<PRE><A HREF="corea2.htm#1104325"><CODE>anchor</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1013045">
+Creates an HTML anchor that is used as a hypertext target.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1013050">
+<PRE><A HREF="corea2.htm#1013386"><CODE>big</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1013052">
+Causes a string to be displayed in a big font as if it were in a <CODE>BIG</CODE> tag.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1013057">
+<PRE><A HREF="corea2.htm#1013416"><CODE>blink</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1013059">
+Causes a string to blink as if it were in a <CODE>BLINK</CODE> tag.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1013064">
+<PRE><A HREF="corea2.htm#1013449"><CODE>bold</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1013066">
+Causes a string to be displayed as if it were in a <CODE>B</CODE> tag.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1013071">
+<PRE><A HREF="corea2.htm#1013481"><CODE>charAt</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1013074">
+Returns the character at the specified index.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1023291">
+<PRE><A HREF="corea2.htm#1023311"><CODE>charCodeAt</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1023301">
+Returns a number indicating the ISO-Latin-1 codeset value of the character at the given index. </A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1025103">
+<PRE><A HREF="corea2.htm#1025150"><CODE>concat</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1025105">
+Combines the text of two strings and returns a new string.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1013079">
+<PRE><A HREF="corea2.htm#1013517"><CODE>fixed</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1013081">
+Causes a string to be displayed in fixed-pitch font as if it were in a <CODE>TT</CODE> tag.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1013086">
+<PRE><A HREF="corea2.htm#1013537"><CODE>fontcolor</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1013088">
+Causes a string to be displayed in the specified color as if it were in a <CODE>&lt;FONT COLOR=color&gt;</CODE> tag.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1013093">
+<PRE><A HREF="corea2.htm#1013572"><CODE>fontsize</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1013095">
+Causes a string to be displayed in the specified font size as if it were in a <CODE>&lt;FONT SIZE=size&gt;</CODE> tag.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1156988">
+<PRE><A HREF="corea2.htm#1157972"><CODE>fromCharCode</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1156990">
+Returns a string from the specified sequence of numbers that are</A></P><A NAME="1156991">
+ISO-Latin-1 codeset values.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1013100">
+<PRE><A HREF="corea2.htm#1013607"><CODE>indexOf</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1013102">
+Returns the index within the calling <CODE>String</CODE> object of the first occurrence of the specified value.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1013107">
+<PRE><A HREF="corea2.htm#1013657"><CODE>italics</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1013109">
+Causes a string to be italic, as if it were in an <CODE>I</CODE> tag.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1013114">
+<PRE><A HREF="corea2.htm#1013689"><CODE>lastIndexOf</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1013116">
+Returns the index within the calling <CODE>String</CODE> object of the last occurrence of the specified value. </A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1102732">
+<PRE><A HREF="corea2.htm#1104172"><CODE>link</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1102734">
+Creates an HTML hypertext link that requests another URL.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1026922">
+<PRE><A HREF="corea2.htm#1026931"><CODE>match</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1026924">
+Used to match a regular expression against a string.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1028434">
+<PRE><A HREF="corea2.htm#1027809"><CODE>replace</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1028442">
+Used to find a match between a regular expression and a string, and to replace the matched substring with a new substring.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1028686">
+<PRE><A HREF="corea2.htm#1030143"><CODE>search</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1030137">
+Executes the search for a match between a regular expression and a specified string.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1031347">
+<PRE><A HREF="corea2.htm#1033164"><CODE>slice</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1033139">
+Extracts a section of a string and returns a new string. </A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1013121">
+<PRE><A HREF="corea2.htm#1013735"><CODE>small</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1013123">
+Causes a string to be displayed in a small font, as if it were in a <CODE>SMALL</CODE> tag.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1013128">
+<PRE><A HREF="corea2.htm#1013764"><CODE>split</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1013130">
+Splits a <CODE>String</CODE> object into an array of strings by separating the string into substrings.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1013135">
+<PRE><A HREF="corea2.htm#1013806"><CODE>strike</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1013137">
+Causes a string to be displayed as struck-out text, as if it were in a <CODE>STRIKE</CODE> tag.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1013149">
+<PRE><A HREF="corea2.htm#1013864"><CODE>sub</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1013151">
+Causes a string to be displayed as a subscript, as if it were in a <CODE>SUB</CODE> tag.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1036815">
+<PRE><A HREF="corea2.htm#1036298"><CODE>substr</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1036821">
+Returns the characters in a string beginning at the specified location through the specified number of characters.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1013156">
+<PRE><A HREF="corea2.htm#1013890"><CODE>substring</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1144918">
+Returns the characters in a string between two indexes into the string.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1013163">
+<PRE><A HREF="corea2.htm#1013924"><CODE>sup</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1013165">
+Causes a string to be displayed as a superscript, as if it were in a <CODE>SUP</CODE> tag.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1013170">
+<PRE><A HREF="corea2.htm#1013950"><CODE>toLowerCase</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1013173">
+Returns the calling string value converted to lowercase.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1013178">
+<PRE><A HREF="corea2.htm#1013974"><CODE>toUpperCase</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1013180">
+Returns the calling string value converted to uppercase.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1095545">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1013188">
+<B>Example 1: String variable.</B> The following statement creates a string variable:<P></A>
+<A NAME="1013189">
+<PRE>var last_name = "Schaefer"</PRE></A><A NAME="1155877">
+<B>Example 2: String object properties.</B> The following statements evaluate to 8, <CODE>"SCHAEFER,"</CODE> and <CODE>"schaefer"</CODE>:<P></A>
+<A NAME="1155878">
+<PRE>last_name.length<br>last_name.toUpperCase()<br>last_name.toLowerCase()</PRE></A><A NAME="1013192">
+<B>Example 3: Accessing individual characters in a string.</B> You can think of a string as an array of characters. In this way, you can access the individual characters in the string by indexing that array. For example, the following code:<P></A>
+<A NAME="1155108">
+<PRE>var myString = "Hello"<br>document.write ("The first character in the string is " + myString[0])</PRE></A><A NAME="1155353">
+displays "The first character in the string is H"<P></A>
+<A NAME="1155097">
+<B>Example 4: Pass a string among scripts in different windows or frames.</B> The following code creates two string variables and opens a second window:<P></A>
+<A NAME="1013193">
+<PRE>var lastName = new String("Schaefer")<br>var firstName = new String ("Jesse")<br>empWindow=window.open('string2.html','window1','width=300,height=300')</PRE></A><A NAME="1013194">
+If the HTML source for the second window (<CODE>string2.html</CODE>) creates two string variables, <CODE>empLastName</CODE> and <CODE>empFirstName</CODE>, the following code in the first window assigns values to the second window's variables:<P></A>
+<A NAME="1013195">
+<PRE>empWindow.empFirstName=firstName<br>empWindow.empLastName=lastName</PRE></A><A NAME="1013196">
+The following code in the first window displays the values of the second window's variables:<P></A>
+<A NAME="1013197">
+<PRE>alert('empFirstName in empWindow is ' + empWindow.empFirstName)<br>alert('empLastName in empWindow is ' + empWindow.empLastName)</PRE></A>
+<A NAME="Head2;"></A>
+<A NAME="1013206">
+<H3> Properties</H3>
+</A>
+
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1013207">
+<H2>length</H2>
+</A>
+
+<A NAME="1013209">
+The length of the string.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1102189">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1102191">
+<A HREF="corea2.htm#1012977"><CODE>String</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left COLSPAN=2 ROWSPAN=1><A NAME="1109291">
+<I>Read-only</I></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1101734">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1101736">
+Navigator 2.0, LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013224">
+<H4> Description</H4>
+</A>
+
+<A NAME="1013235">
+For a null string, length is 0. <P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013238">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1013241">
+The following example displays 8 in an Alert dialog box:<P></A>
+<A NAME="1013242">
+<PRE>var x="Netscape"<br>alert("The string length is " + x.length)</PRE></A>
+<A NAME="Head2Ref;"></A>
+<A NAME="1013287">
+<H2>prototype</H2>
+</A>
+
+<A NAME="1088144">
+Represents the prototype for this class. You can use the prototype to add properties or methods to all instances of a class. For information on prototypes, see <A HREF="core4.htm#1181210"><CODE>Function.prototype</CODE></A>.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1088147">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1088152">
+<A HREF="corea2.htm#1012977"><CODE>String</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1088154">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1088156">
+Navigator 3.0, Netscape Server 3.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head2;"></A>
+<A NAME="1013346">
+<H3> Methods</H3>
+</A>
+
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1104325">
+<H2>anchor</H2>
+</A>
+
+<A NAME="1013348">
+Creates an HTML anchor that is used as a hypertext target.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1104405">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1104410">
+<A HREF="corea2.htm#1012977"><CODE>String</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1104412">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1104423">
+Navigator 2.0, LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013349">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1013350">
+<PRE>anchor(nameAttribute)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1013351">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1013361">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1013358">
+<PRE>nameAttribute</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1013360">
+A string.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013364">
+<H4> Description</H4>
+</A>
+
+<A NAME="1013365">
+Use the <CODE>anchor</CODE> method with the <A HREF="doc1.htm#1011184"><CODE>document.write</CODE></A> or <A HREF="doc1.htm#1011246"><CODE>document.writeln</CODE></A> methods to programmatically create and display an anchor in a document. Create the anchor with the <CODE>anchor</CODE> method, and then call <A HREF="doc1.htm#1011184"><CODE>write</CODE></A> or <A HREF="doc1.htm#1011246"><CODE>writeln</CODE></A> to display the anchor in a document. In server-side JavaScript, use the <A HREF="glob25.htm#1012652"><CODE>write</CODE></A> function to display the anchor.<P></A>
+<A NAME="1013366">
+In the syntax, the <CODE>text</CODE> string represents the literal text that you want the user to see. The <CODE>nameAttribute</CODE> string represents the <CODE>NAME</CODE> attribute of the <CODE>A</CODE> tag.<P></A>
+<A NAME="1013367">
+Anchors created with the <CODE>anchor</CODE> method become elements in the <A HREF="doc1.htm#1010601"><CODE>document.anchors</CODE></A> array.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013373">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1013374">
+The following example opens the <CODE>msgWindow</CODE> window and creates an anchor for the table of contents:<P></A>
+<A NAME="1013375">
+<PRE>var myString="Table of Contents"<br>msgWindow.document.writeln(myString.anchor("contents_anchor"))</PRE></A><A NAME="1013376">
+The previous example produces the same output as the following HTML:<P></A>
+<A NAME="1013377">
+<PRE>&lt;A NAME="contents_anchor"&gt;Table of Contents&lt;/A&gt;</PRE></A><A NAME="1013378">
+In server-side JavaScript, you can generate this HTML by calling the <A HREF="glob25.htm#1012652"><CODE>write</CODE></A> function instead of using <A HREF="doc1.htm#1011246"><CODE>document.writeln</CODE></A>.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013379">
+<H4> See also</H4>
+</A>
+
+<A NAME="1013383">
+<A HREF="corea2.htm#1104172"><CODE>String.link</CODE></A><P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1013386">
+<H2>big</H2>
+</A>
+
+<A NAME="1013388">
+Causes a string to be displayed in a big font as if it were in a <A HREF="../../htmlguid/index.htm?content=tags6.htm#tags:BIG" TARGET="_top"><CODE>BIG</CODE></A> tag.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1104749">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1104754">
+<A HREF="corea2.htm#1012977"><CODE>String</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1104756">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1104758">
+Navigator 2.0, LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013389">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1013390">
+<PRE>big()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1013391">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1013392">
+None<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013395">
+<H4> Description</H4>
+</A>
+
+<A NAME="1013396">
+Use the <CODE>big</CODE> method with the <A HREF="doc1.htm#1011184"><CODE>write</CODE></A> or <A HREF="doc1.htm#1011246"><CODE>writeln</CODE></A> methods to format and display a string in a document. In server-side JavaScript, use the <A HREF="glob25.htm#1012652"><CODE>write</CODE></A> function to display the string.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013399">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1013400">
+The following example uses <CODE>string</CODE> methods to change the size of a string:<P></A>
+<A NAME="1013401">
+<PRE>var worldString="Hello, world"</PRE></A><A NAME="1013402">
+<PRE>document.write(worldString.small())<br>document.write("&lt;P&gt;" + worldString.big())<br>document.write("&lt;P&gt;" + worldString.fontsize(7))</PRE></A><A NAME="1013403">
+The previous example produces the same output as the following HTML:<P></A>
+<A NAME="1013404">
+<PRE>&lt;SMALL&gt;Hello, world&lt;/SMALL&gt;<br>&lt;P&gt;&lt;BIG&gt;Hello, world&lt;/BIG&gt;<br>&lt;P&gt;&lt;FONTSIZE=7&gt;Hello, world&lt;/FONTSIZE&gt;</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1013406">
+<H4> See also</H4>
+</A>
+
+<A NAME="1013413">
+<A HREF="corea2.htm#1013572"><CODE>String.fontsize</CODE></A>, <A HREF="corea2.htm#1013735"><CODE>String.small</CODE></A> <P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1013416">
+<H2>blink</H2>
+</A>
+
+<A NAME="1013418">
+Causes a string to blink as if it were in a <A HREF="../../htmlguid/index.htm?content=tags6.htm#tags:BLINK" TARGET="_top"><CODE>BLINK</A></CODE> tag.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1105063">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1105068">
+<A HREF="corea2.htm#1012977"><CODE>String</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1105070">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1105072">
+Navigator 2.0, LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013419">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1013420">
+<PRE>blink()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1013421">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1013422">
+None<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013425">
+<H4> Description</H4>
+</A>
+
+<A NAME="1013426">
+Use the <CODE>blink</CODE> method with the <A HREF="doc1.htm#1011184"><CODE>write</CODE></A> or <A HREF="doc1.htm#1011246"><CODE>writeln</CODE></A> methods to format and display a string in a document. In server-side JavaScript, use the <A HREF="glob25.htm#1012652"><CODE>write</CODE></A> function to display the string.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013429">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1013430">
+The following example uses <CODE>string</CODE> methods to change the formatting of a string:<P></A>
+<A NAME="1013431">
+<PRE>var worldString="Hello, world"</PRE></A><A NAME="1013432">
+<PRE>document.write(worldString.blink())<br>document.write("&lt;P&gt;" + worldString.bold())<br>document.write("&lt;P&gt;" + worldString.italics())<br>document.write("&lt;P&gt;" + worldString.strike())</PRE></A><A NAME="1013433">
+The previous example produces the same output as the following HTML:<P></A>
+<A NAME="1013434">
+<PRE>&lt;BLINK&gt;Hello, world&lt;/BLINK&gt;<br>&lt;P&gt;&lt;B&gt;Hello, world&lt;/B&gt;<br>&lt;P&gt;&lt;I&gt;Hello, world&lt;/I&gt;<br>&lt;P&gt;&lt;STRIKE&gt;Hello, world&lt;/STRIKE&gt;</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1013436">
+<H4> See also</H4>
+</A>
+
+<A NAME="1013446">
+<A HREF="corea2.htm#1013449"><CODE>String.bold</CODE></A>, <A HREF="corea2.htm#1013657"><CODE>String.italics</CODE></A>, <A HREF="corea2.htm#1013806"><CODE>String.strike</CODE></A> <P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1013449">
+<H2>bold</H2>
+</A>
+
+<A NAME="1013451">
+Causes a string to be displayed as bold as if it were in a<CODE> <A HREF="../../htmlguid/index.htm?content=tags6.htm#tags:B" TARGET="_top">B</CODE></A> tag.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1105369">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1105374">
+<A HREF="corea2.htm#1012977"><CODE>String</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1105376">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1105378">
+Navigator 2.0, LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013452">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1013453">
+<PRE>bold()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1013454">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1013455">
+None<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013458">
+<H4> Description</H4>
+</A>
+
+<A NAME="1013459">
+Use the <CODE>bold</CODE> method with the <A HREF="doc1.htm#1011184"><CODE>write</CODE></A> or <A HREF="doc1.htm#1011246"><CODE>writeln</CODE></A> methods to format and display a string in a document. In server-side JavaScript, use the <A HREF="glob25.htm#1012652"><CODE>write</CODE></A> function to display the string.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013462">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1013463">
+The following example uses <CODE>string</CODE> methods to change the formatting of a string:<P></A>
+<A NAME="1013464">
+<PRE>var worldString="Hello, world" <br>document.write(worldString.blink())<br>document.write("&lt;P&gt;" + worldString.bold())<br>document.write("&lt;P&gt;" + worldString.italics())<br>document.write("&lt;P&gt;" + worldString.strike())</PRE></A><A NAME="1013465">
+The previous example produces the same output as the following HTML:<P></A>
+<A NAME="1013466">
+<PRE>&lt;BLINK&gt;Hello, world&lt;/BLINK&gt;<br>&lt;P&gt;&lt;B&gt;Hello, world&lt;/B&gt;<br>&lt;P&gt;&lt;I&gt;Hello, world&lt;/I&gt;<br>&lt;P&gt;&lt;STRIKE&gt;Hello, world&lt;/STRIKE&gt;</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1013468">
+<H4> See also</H4>
+</A>
+
+<A NAME="1013478">
+<A HREF="corea2.htm#1013416"><CODE>String.blink</CODE></A>, <A HREF="corea2.htm#1013657"><CODE>String.italics</CODE></A>, <A HREF="corea2.htm#1013806"><CODE>String.strike</CODE></A> <P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1013481">
+<H2>charAt</H2>
+</A>
+
+<A NAME="1013483">
+Returns the specified character from the string.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1105671">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1105676">
+<A HREF="corea2.htm#1012977"><CODE>String</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1105678">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1105680">
+Navigator 2.0, LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013484">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1013485">
+<PRE>charAt(index)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1013486">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1013492">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1013489">
+<PRE>index</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1013491">
+An integer between 0 and 1 less than the length of the string. </A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013495">
+<H4> Description</H4>
+</A>
+
+<A NAME="1013496">
+Characters in a string are indexed from left to right. The index of the first character is 0, and the index of the last character in a string called <CODE>stringName</CODE> is <CODE>stringName.length - 1</CODE>. If the <CODE>index</CODE> you supply is out of range, JavaScript returns an empty string.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013499">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1013500">
+The following example displays characters at different locations in the string <CODE>"Brave new world"</CODE>:<P></A>
+<A NAME="1013501">
+<PRE>var anyString="Brave new world"</PRE></A><A NAME="1120004">
+<PRE>document.writeln("The character at index 0 is " + anyString.charAt(0))<br>document.writeln("The character at index 1 is " + anyString.charAt(1))<br>document.writeln("The character at index 2 is " + anyString.charAt(2))<br>document.writeln("The character at index 3 is " + anyString.charAt(3))<br>document.writeln("The character at index 4 is " + anyString.charAt(4))</PRE></A><A NAME="1013503">
+These lines display the following:<P></A>
+<A NAME="1119482">
+The character at index 0 is B<br>The character at index 1 is r<br>The character at index 2 is a<br>The character at index 3 is v<br>The character at index 4 is e<P></A>
+<A NAME="1119467">
+In server-side JavaScript, you can display the same output by calling the <A HREF="glob25.htm#1012652"><CODE>write</CODE></A> function instead of using <A HREF="doc1.htm#1011184"><CODE>document.write</CODE></A>.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013504">
+<H4> See also</H4>
+</A>
+
+<A NAME="1013514">
+<A HREF="corea2.htm#1013607"><CODE>String.indexOf</CODE></A>, <A HREF="corea2.htm#1013689"><CODE>String.lastIndexOf</CODE></A>, <A HREF="corea2.htm#1013764"><CODE>String.split</CODE></A> <P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1023311">
+<H2>charCodeAt</H2>
+</A>
+
+<A NAME="1023312">
+Returns a number indicating the ISO-Latin-1 codeset value of the character at the given index. <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1105862">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1105867">
+<A HREF="corea2.htm#1012977"><CODE>String</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1105869">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1105871">
+Navigator 4.0, Netscape Server 3.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1023774">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1023775">
+<PRE>charCodeAt(index)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1023776">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1023318">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1024192">
+<PRE>index</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1024502">
+(Optional) An integer between 0 and 1 less than the length of the string. The default value is 0. </A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1023322">
+<H4> Description</H4>
+</A>
+
+<A NAME="1023323">
+The ISO-Latin-1 codeset ranges from 0 to 255. The first 0 to 127 are a direct match of the ASCII character set. <P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1023325">
+<H4> Example</H4>
+</A>
+
+<A NAME="1023326">
+<B></B> The following example returns 65, the ISO-Latin-1 codeset value for A. <P></A>
+<A NAME="1023309">
+<PRE>"ABC".charCodeAt(0)</PRE></A>
+<A NAME="Head2Ref;"></A>
+<A NAME="1025150">
+<H2>concat</H2>
+</A>
+
+<A NAME="1025151">
+Combines the text of two strings and returns a new string. <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1105922">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1105927">
+<A HREF="corea2.htm#1012977"><CODE>String</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1105929">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1130832">
+Navigator 4.0, Netscape Server 3.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1025409">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1025410">
+<PRE>concat(string2)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1025411">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1025155">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1025417">
+<PRE>string1</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1025561">
+The first string. </A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1025421">
+<PRE>string2</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1025696">
+The second string. </A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1025159">
+<H4> Description</H4>
+</A>
+
+<A NAME="1025160">
+<CODE>concat</CODE> combines the text from two strings and returns a new string. Changes to the text in one string do not affect the other string. <P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1025162">
+<H4> Example</H4>
+</A>
+
+<A NAME="1025163">
+The following example combines two strings into a new string. <P></A>
+<A NAME="1025164">
+<PRE>&lt;SCRIPT&gt;<br>str1="The morning is upon us. "<br>str2="The sun is bright."<br>str3=str1.concat(str2)<br>document.writeln(str1)<br>document.writeln(str2)<br>document.writeln(str3)<br>&lt;/SCRIPT&gt;</PRE></A><A NAME="1025170">
+This writes: <P></A>
+<A NAME="1119575">
+The morning is upon us. <br>The sun is bright.<br>The morning is upon us. The sun is bright.<P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1013517">
+<H2>fixed</H2>
+</A>
+
+<A NAME="1013518">
+Causes a string to be displayed in fixed-pitch font as if it were in a <A HREF="../../htmlguid/index.htm?content=tags6.htm#tags:TT" TARGET="_top"><CODE>TT</A></CODE> tag.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1106198">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1106203">
+<A HREF="corea2.htm#1012977"><CODE>String</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1106205">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1106207">
+Navigator 2.0, LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013519">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1013520">
+<PRE>fixed()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1013521">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1013522">
+None<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013525">
+<H4> Description</H4>
+</A>
+
+<A NAME="1013526">
+Use the <CODE>fixed</CODE> method with the <A HREF="doc1.htm#1011184"><CODE>write</CODE></A> or <A HREF="doc1.htm#1011246"><CODE>writeln</CODE></A> methods to format and display a string in a document. In server-side JavaScript, use the <A HREF="glob25.htm#1012652"><CODE>write</CODE></A> function to display the string.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013529">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1013530">
+The following example uses the <CODE>fixed</CODE> method to change the formatting of a string:<P></A>
+<A NAME="1013531">
+<PRE>var worldString="Hello, world"<br>document.write(worldString.fixed())</PRE></A><A NAME="1013532">
+The previous example produces the same output as the following HTML:<P></A>
+<A NAME="1013533">
+<PRE>&lt;TT&gt;Hello, world&lt;/TT&gt;</PRE></A>
+<A NAME="Head2Ref;"></A>
+<A NAME="1013537">
+<H2>fontcolor</H2>
+</A>
+
+<A NAME="1013538">
+Causes a string to be displayed in the specified color as if it were in a <CODE>&lt;<A HREF="../../htmlguid/index.htm?content=tags6.htm#tags:FONT" TARGET="_top">FONT</A> COLOR=color&gt;</CODE> tag.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1107122">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1107127">
+<A HREF="corea2.htm#1012977"><CODE>String</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1107129">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1107131">
+Navigator 2.0, LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013539">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1013540">
+<PRE>fontcolor(color)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1013541">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1013552">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1013544">
+<PRE>color</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1013546">
+A string expressing the color as a hexadecimal RGB triplet or as a string literal. String literals for color names are listed in <A HREF="http://developer.netscape.com/communicator/library/documentation/communicator/jsguide4/index.htm?content=colors.htm" TARGET="_top">Appendix&nbsp;B, "Color Values,"</A> in the <A HREF="http://developer.netscape.com/library/documentation/communicator/jsguide4/index.htm" TARGET="_top">JavaScript Guide</A>.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013555">
+<H4> Description</H4>
+</A>
+
+<A NAME="1013556">
+Use the <CODE>fontcolor</CODE> method with the <A HREF="doc1.htm#1011184"><CODE>write</CODE></A> or <A HREF="doc1.htm#1011246"><CODE>writeln</CODE></A> methods to format and display a string in a document. In server-side JavaScript, use the <A HREF="glob25.htm#1012652"><CODE>write</CODE></A> function to display the string.<P></A>
+<A NAME="1013557">
+If you express <CODE>color</CODE> as a hexadecimal RGB triplet, you must use the format <CODE>rrggbb</CODE>. For example, the hexadecimal RGB values for salmon are <CODE>red=FA</CODE>, <CODE>green=80</CODE>, and <CODE>blue=72</CODE>, so the RGB triplet for <CODE>salmon</CODE> is <CODE>"FA8072"</CODE>.<P></A>
+<A NAME="1013558">
+The <CODE>fontcolor</CODE> method overrides a value set in the <CODE>fgColor</CODE> property.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013561">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1013562">
+The following example uses the <CODE>fontcolor</CODE> method to change the color of a string:<P></A>
+<A NAME="1013563">
+<PRE>var worldString="Hello, world"</PRE></A><A NAME="1013564">
+<PRE>document.write(worldString.fontcolor("maroon") +<br>&nbsp;&nbsp;&nbsp;" is maroon in this line")<br>document.write("&lt;P&gt;" + worldString.fontcolor("salmon") +<br>&nbsp;&nbsp;&nbsp;" is salmon in this line")<br>document.write("&lt;P&gt;" + worldString.fontcolor("red") +<br>&nbsp;&nbsp;&nbsp;" is red in this line")</PRE></A><A NAME="1013565">
+<PRE>document.write("&lt;P&gt;" + worldString.fontcolor("8000") +<br>&nbsp;&nbsp;&nbsp;" is maroon in hexadecimal in this line")<br>document.write("&lt;P&gt;" + worldString.fontcolor("FA8072") +<br>&nbsp;&nbsp;&nbsp;" is salmon in hexadecimal in this line")<br>document.write("&lt;P&gt;" + worldString.fontcolor("FF00") +<br>&nbsp;&nbsp;&nbsp;" is red in hexadecimal in this line")</PRE></A><A NAME="1013566">
+The previous example produces the same output as the following HTML:<P></A>
+<A NAME="1013567">
+<PRE>&lt;FONT COLOR="maroon"&gt;Hello, world&lt;/FONT&gt; is maroon in this line<br>&lt;P&gt;&lt;FONT COLOR="salmon"&gt;Hello, world&lt;/FONT&gt; is salmon in this line<br>&lt;P&gt;&lt;FONT COLOR="red"&gt;Hello, world&lt;/FONT&gt; is red in this line</PRE></A><A NAME="1013568">
+<PRE>&lt;FONT COLOR="8000"&gt;Hello, world&lt;/FONT&gt; <br>is maroon in hexadecimal in this line<br>&lt;P&gt;&lt;FONT COLOR="FA8072"&gt;Hello, world&lt;/FONT&gt; <br>is salmon in hexadecimal in this line<br>&lt;P&gt;&lt;FONT COLOR="FF00"&gt;Hello, world&lt;/FONT&gt; <br>is red in hexadecimal in this line</PRE></A>
+<A NAME="Head2Ref;"></A>
+<A NAME="1013572">
+<H2>fontsize</H2>
+</A>
+
+<A NAME="1013573">
+Causes a string to be displayed in the specified font size as if it were in a <CODE>&lt;<A HREF="../../htmlguid/index.htm?content=tags6.htm#tags:FONT" TARGET="_top">FONT</A> SIZE=size&gt;</CODE> tag.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1107416">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1107421">
+<A HREF="corea2.htm#1012977"><CODE>String</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1107423">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1107425">
+Navigator 2.0, LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013574">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1013575">
+<PRE>fontsize(size)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1013576">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1013582">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1013579">
+<PRE>size</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1013581">
+An integer between 1 and 7, a string representing a signed integer between 1 and 7.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013585">
+<H4> Description</H4>
+</A>
+
+<A NAME="1013586">
+Use the <CODE>fontsize</CODE> method with the <A HREF="doc1.htm#1011184"><CODE>write</CODE></A> or <A HREF="doc1.htm#1011246"><CODE>writeln</CODE></A> methods to format and display a string in a document. In server-side JavaScript, use the <A HREF="glob25.htm#1012652"><CODE>write</CODE></A> function to display the string.<P></A>
+<A NAME="1013587">
+When you specify <CODE>size</CODE> as an integer, you set the size of <CODE>stringName</CODE> to one of the 7 defined sizes. When you specify <CODE>size</CODE> as a string such as <CODE>"-2"</CODE>, you adjust the font size of <CODE>stringName</CODE> relative to the size set in the <CODE>BASEFONT</CODE> tag.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013590">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1013591">
+The following example uses <CODE>string</CODE> methods to change the size of a string:<P></A>
+<A NAME="1013592">
+<PRE>var worldString="Hello, world"</PRE></A><A NAME="1013593">
+<PRE>document.write(worldString.small())<br>document.write("&lt;P&gt;" + worldString.big())<br>document.write("&lt;P&gt;" + worldString.fontsize(7))</PRE></A><A NAME="1013594">
+The previous example produces the same output as the following HTML:<P></A>
+<A NAME="1013595">
+<PRE>&lt;SMALL&gt;Hello, world&lt;/SMALL&gt;<br>&lt;P&gt;&lt;BIG&gt;Hello, world&lt;/BIG&gt;<br>&lt;P&gt;&lt;FONTSIZE=7&gt;Hello, world&lt;/FONTSIZE&gt;</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1013597">
+<H4> See also</H4>
+</A>
+
+<A NAME="1013604">
+<A HREF="corea2.htm#1013386"><CODE>String.big</CODE></A>, <A HREF="corea2.htm#1013735"><CODE>String.small</CODE></A> <P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1157972">
+<H2>fromCharCode</H2>
+</A>
+
+<A NAME="1157973">
+Returns a string created by using the specified sequence ISO-Latin-1 codeset values. <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1157976">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1157981">
+<A HREF="corea2.htm#1012977"><CODE>String</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left COLSPAN=2 ROWSPAN=1><A NAME="1157983">
+<I>Static</I></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1157987">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1157989">
+Navigator 4.0, Netscape Server 3.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1157990">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1157991">
+<PRE>fromCharCode(num1, ..., num<I>N</I>)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1157992">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1157998">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1157995">
+<PRE>num1, ..., num<I>N</I></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1157997">
+A sequence of numbers that are ISO-Latin-1 codeset values.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1157999">
+<H4> Description</H4>
+</A>
+
+<A NAME="1158000">
+This method returns a string and not a <CODE>String</CODE> object. <P></A>
+<A NAME="1158001">
+Because <CODE>fromCharCode</CODE> is a static method of <CODE>String</CODE>, you always use it as <CODE>String.fromCharCode()</CODE>, rather than as a method of a <CODE>String</CODE> object you created.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1158002">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1158003">
+<B>Example 1</B>. The following example returns the string "ABC". <P></A>
+<A NAME="1158004">
+<PRE>String.fromCharCode(65,66,67)</PRE></A><A NAME="1158005">
+<B>Example 2</B>. The <CODE>which</CODE> property of the <CODE>KeyDown</CODE>, <CODE>KeyPress</CODE>, and <CODE>KeyUp</CODE> events contains the ASCII value of the key pressed at the time the event occurred. If you want to get the actual letter, number, or symbol of the key, you can use <CODE>fromCharCode</CODE>. The following example returns the letter, number, or symbol of the KeyPress event's <CODE>which</CODE> property. <P></A>
+<A NAME="1158006">
+<PRE>String.fromCharCode(KeyPress.which)</PRE></A>
+<A NAME="Head2Ref;"></A>
+<A NAME="1013607">
+<H2>indexOf</H2>
+</A>
+
+<A NAME="1013609">
+Returns the index within the calling <CODE>String</CODE> object of the first occurrence of the specified value, starting the search at <CODE>fromIndex</CODE>, or -1 if the value is not found.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1107524">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1107529">
+<A HREF="corea2.htm#1012977"><CODE>String</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1107531">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1107533">
+Navigator 2.0, LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013610">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1013611">
+<PRE>indexOf(searchValue, fromIndex)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1013612">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1013626">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1013619">
+<PRE>searchValue</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1013621">
+A string representing the value to search for.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1013623">
+<PRE>fromIndex</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1013625">
+(Optional) The location within the calling string to start the search from. It can be any integer between 0 and 1 less than the length of the string. The default value is 0.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013629">
+<H4> Description</H4>
+</A>
+
+<A NAME="1013630">
+Characters in a string are indexed from left to right. The index of the first character is 0, and the index of the last character of a string called <CODE>stringName</CODE> is <CODE>stringName.length - 1</CODE>.<P></A>
+<A NAME="1013632">
+If <CODE>stringName</CODE> contains an empty string (<CODE>""</CODE>), <CODE>indexOf</CODE> returns an empty string.<P></A>
+<A NAME="1013633">
+The <CODE>indexOf</CODE> method is case sensitive. For example, the following expression returns -1:<P></A>
+<A NAME="1013634">
+<PRE>"Blue Whale".indexOf("blue")</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1013637">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1013638">
+<B>Example 1.</B> The following example uses <CODE>indexOf</CODE> and <CODE>lastIndexOf</CODE> to locate values in the string <CODE>"Brave new world."</CODE><P></A>
+<A NAME="1013639">
+<PRE>var anyString="Brave new world"</PRE></A><A NAME="1013640">
+<PRE>//Displays 8<br>document.write("&lt;P&gt;The index of the first w from the beginning is " +<br>&nbsp;&nbsp;&nbsp;anyString.indexOf("w"))<br>//Displays 10<br>document.write("&lt;P&gt;The index of the first w from the end is " +<br>&nbsp;&nbsp;&nbsp;anyString.lastIndexOf("w"))<br>//Displays 6<br>document.write("&lt;P&gt;The index of 'new' from the beginning is " +<br>&nbsp;&nbsp;&nbsp;anyString.indexOf("new"))<br>//Displays 6<br>document.write("&lt;P&gt;The index of 'new' from the end is " +<br>&nbsp;&nbsp;&nbsp;anyString.lastIndexOf("new"))</PRE></A><A NAME="1013642">
+<B>Example 2.</B> The following example defines two string variables. The variables contain the same string except that the second string contains uppercase letters. The first <A HREF="doc1.htm#1011246"><CODE>writeln</CODE></A> method displays 19. But because the <CODE>indexOf</CODE> method is case sensitive, the string <CODE>"cheddar"</CODE> is not found in <CODE>myCapString</CODE>, so the second <A HREF="doc1.htm#1011246"><CODE>writeln</CODE></A> method displays -1.<P></A>
+<A NAME="1013643">
+<PRE>myString="brie, pepper jack, cheddar"<br>myCapString="Brie, Pepper Jack, Cheddar"<br>document.writeln('myString.indexOf("cheddar") is ' +<br>&nbsp;&nbsp;&nbsp;myString.indexOf("cheddar"))<br>document.writeln('&lt;P&gt;myCapString.indexOf("cheddar") is ' +<br>&nbsp;&nbsp;&nbsp;myCapString.indexOf("cheddar"))</PRE></A><A NAME="1144176">
+<B>Example 3.</B> The following example sets <CODE>count</CODE> to the number of occurrences of the letter <CODE>x</CODE> in the string <CODE>str</CODE>:<P></A>
+<A NAME="1144177">
+<PRE>count = 0;<br>pos = str.indexOf("x");<br>while ( pos != -1 ) {<br>&nbsp;&nbsp;&nbsp;count++;<br>&nbsp;&nbsp;&nbsp;pos = str.indexOf("x",pos+1);<br>}</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1013644">
+<H4> See also</H4>
+</A>
+
+<A NAME="1013654">
+<A HREF="corea2.htm#1013481"><CODE>String.charAt</CODE></A>, <A HREF="corea2.htm#1013689"><CODE>String.lastIndexOf</CODE></A>, <A HREF="corea2.htm#1013764"><CODE>String.split</CODE></A> <P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1013657">
+<H2>italics</H2>
+</A>
+
+<A NAME="1013658">
+Causes a string to be italic, as if it were in an <CODE><A HREF="../../htmlguid/index.htm?content=tags6.htm#tags:I" TARGET="_top">I</CODE></A> tag.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1107558">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1107563">
+<A HREF="corea2.htm#1012977"><CODE>String</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1107565">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1107567">
+Navigator 2.0, LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013659">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1013660">
+<PRE>italics()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1013661">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1013662">
+None<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013665">
+<H4> Description</H4>
+</A>
+
+<A NAME="1013666">
+Use the <CODE>italics</CODE> method with the <A HREF="doc1.htm#1011184"><CODE>write</CODE></A> or <A HREF="doc1.htm#1011246"><CODE>writeln</CODE></A> methods to format and display a string in a document. In server-side JavaScript, use the <A HREF="glob25.htm#1012652"><CODE>write</CODE></A> function to display the string.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013669">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1013670">
+The following example uses <CODE>string</CODE> methods to change the formatting of a string:<P></A>
+<A NAME="1013671">
+<PRE>var worldString="Hello, world"</PRE></A><A NAME="1013672">
+<PRE>document.write(worldString.blink())<br>document.write("&lt;P&gt;" + worldString.bold())<br>document.write("&lt;P&gt;" + worldString.italics())<br>document.write("&lt;P&gt;" + worldString.strike())</PRE></A><A NAME="1013673">
+The previous example produces the same output as the following HTML:<P></A>
+<A NAME="1013674">
+<PRE>&lt;BLINK&gt;Hello, world&lt;/BLINK&gt;<br>&lt;P&gt;&lt;B&gt;Hello, world&lt;/B&gt;<br>&lt;P&gt;&lt;I&gt;Hello, world&lt;/I&gt;<br>&lt;P&gt;&lt;STRIKE&gt;Hello, world&lt;/STRIKE&gt;</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1013676">
+<H4> See also</H4>
+</A>
+
+<A NAME="1013686">
+<A HREF="corea2.htm#1013416"><CODE>String.blink</CODE></A>, <A HREF="corea2.htm#1013449"><CODE>String.bold</CODE></A>, <A HREF="corea2.htm#1013806"><CODE>String.strike</CODE></A> <P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1013689">
+<H2>lastIndexOf</H2>
+</A>
+
+<A NAME="1013690">
+Returns the index within the calling <CODE>String</CODE> object of the last occurrence of the specified value. The calling string is searched backward, starting at <CODE>fromIndex</CODE>, or -1 if not found.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1107602">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1107607">
+<A HREF="corea2.htm#1012977"><CODE>String</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1107609">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1107611">
+Navigator 2.0, LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013691">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1013692">
+<PRE>lastIndexOf(searchValue, fromIndex)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1013693">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1013707">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1013700">
+<PRE>searchValue</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1013702">
+A string representing the value to search for.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1013704">
+<PRE>fromIndex</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1013706">
+(Optional) The location within the calling string to start the search from. It can be any integer between 0 and 1 less than the length of the string. The default value is 1 less than the length of the string.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013710">
+<H4> Description</H4>
+</A>
+
+<A NAME="1013711">
+Characters in a string are indexed from left to right. The index of the first character is 0, and the index of the last character is <CODE>stringName</CODE>.length - 1.<P></A>
+<A NAME="1013713">
+The <CODE>lastIndexOf</CODE> method is case sensitive. For example, the following expression returns -1:<P></A>
+<A NAME="1013714">
+<PRE>"Blue Whale, Killer Whale".lastIndexOf("blue")</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1013717">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1013718">
+The following example uses <CODE>indexOf</CODE> and <CODE>lastIndexOf</CODE> to locate values in the string <CODE>"Brave new world."</CODE><P></A>
+<A NAME="1013719">
+<PRE>var anyString="Brave new world"</PRE></A><A NAME="1013720">
+<PRE>//Displays 8<br>document.write("&lt;P&gt;The index of the first w from the beginning is " +<br>&nbsp;&nbsp;&nbsp;anyString.indexOf("w"))<br>//Displays 10<br>document.write("&lt;P&gt;The index of the first w from the end is " +<br>&nbsp;&nbsp;&nbsp;anyString.lastIndexOf("w"))<br>//Displays 6<br>document.write("&lt;P&gt;The index of 'new' from the beginning is " +<br>&nbsp;&nbsp;&nbsp;anyString.indexOf("new"))<br>//Displays 6<br>document.write("&lt;P&gt;The index of 'new' from the end is " +<br>&nbsp;&nbsp;&nbsp;anyString.lastIndexOf("new"))</PRE></A><A NAME="1013721">
+In server-side JavaScript, you can display the same output by calling the <A HREF="glob25.htm#1012652"><CODE>write</CODE></A> function instead of using <A HREF="doc1.htm#1011184"><CODE>document.write</CODE></A>.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013722">
+<H4> See also</H4>
+</A>
+
+<A NAME="1013732">
+<A HREF="corea2.htm#1013481"><CODE>String.charAt</CODE></A>, <A HREF="corea2.htm#1013607"><CODE>String.indexOf</CODE></A>, <A HREF="corea2.htm#1013764"><CODE>String.split</CODE></A> <P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1104172">
+<H2>link</H2>
+</A>
+
+<A NAME="1104185">
+Creates an HTML hypertext link that requests another URL.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1104175">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1104180">
+<A HREF="corea2.htm#1012977"><CODE>String</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1104182">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1104184">
+Navigator 2.0, LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1104186">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1104187">
+<PRE>link(hrefAttribute)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1104188">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1104194">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1104191">
+<PRE>hrefAttribute</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1104193">
+Any string that specifies the <CODE>HREF</CODE> attribute of the <CODE>A</CODE> tag; it should be a valid URL (relative or absolute).</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1104195">
+<H4> Description</H4>
+</A>
+
+<A NAME="1104196">
+Use the <CODE>link</CODE> method to programmatically create a hypertext link, and then call <A HREF="doc1.htm#1011184"><CODE>write</CODE></A> or <A HREF="doc1.htm#1011246"><CODE>writeln</CODE></A> to display the link in a document. In server-side JavaScript, use the <A HREF="glob25.htm#1012652"><CODE>write</CODE></A> function to display the link.<P></A>
+<A NAME="1104197">
+Links created with the <CODE>link</CODE> method become elements in the <CODE>links</CODE> array of the <A HREF="doc1.htm#1048486"><CODE>document</CODE></A> object. See <A HREF="doc1.htm#1102127"><CODE>document.links</CODE></A>.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1104201">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1104202">
+The following example displays the word "Netscape" as a hypertext link that returns the user to the Netscape home page:<P></A>
+<A NAME="1104203">
+<PRE>var hotText="Netscape"<br>var URL="http://home.netscape.com"</PRE></A><A NAME="1104204">
+<PRE>document.write("Click to return to " + hotText.link(URL))</PRE></A><A NAME="1104205">
+The previous example produces the same output as the following HTML:<P></A>
+<A NAME="1104206">
+<PRE>Click to return to &lt;A HREF="http://home.netscape.com"&gt;Netscape&lt;/A&gt;</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1104208">
+<H4> See also</H4>
+</A>
+
+<A NAME="1104212">
+<A HREF="doca.htm#1015687"><CODE>Anchor</CODE></A><P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1026931">
+<H2>match</H2>
+</A>
+
+<A NAME="1026932">
+Used to match a regular expression against a string. <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1107636">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1107641">
+<A HREF="corea2.htm#1012977"><CODE>String</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1107643">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1107645">
+Navigator 4.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1026933">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1026934">
+<PRE>match(regexp)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1026935">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1026937">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1027254">
+<PRE>regexp</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1027313">
+Name of the regular expression. It can be a variable name or a literal. </A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1026940">
+<H4> Description</H4>
+</A>
+
+<A NAME="1026941">
+If you want to execute a global match, or a case insensitive match, include the <CODE>g</CODE> (for global) and <CODE>i</CODE> (for ignore case) flags in the regular expression. These can be included separately or together. The following two examples below show how to use these flags with <CODE>match</CODE>. <P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1026945">
+<H4> Note </H4>
+</A>
+
+<A NAME="1027396">
+If you execute a match simply to find true or false, use <A HREF="corea2.htm#1030143"><CODE>String.search</CODE></A> or the regular expression <CODE>test</CODE> method. <P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1026947">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1026948">
+<B>Example 1</B>. In the following example, <CODE>match</CODE> is used to find 'Chapter' followed by 1 or more numeric characters followed by a decimal point and numeric character 0 or more times. The regular expression includes the <CODE>i</CODE> flag so that case will be ignored. <P></A>
+<A NAME="1026952">
+<PRE>&lt;SCRIPT&gt; <br>str = "For more information, see Chapter 3.4.5.1";<br>re = /(chapter \d+(\.\d)*)/i; <br>found = str.match(re); <br>document.write(found); <br>&lt;/SCRIPT&gt;</PRE></A><A NAME="1026958">
+This returns the array containing Chapter 3.4.5.1,Chapter 3.4.5.1,.1 <P></A>
+<A NAME="1027588">
+<CODE>'Chapter 3.4.5.1'</CODE> is the first match and the first value remembered from <CODE>(Chapter \d+(\.\d)*)</CODE>. <P></A>
+<A NAME="1120664">
+<CODE>'.1'</CODE> is the second value remembered from <CODE>(\.\d)</CODE>. <P></A>
+<A NAME="1026962">
+<B>Example 2</B>. The following example demonstrates the use of the global and ignore case flags with <CODE>match</CODE>. <P></A>
+<A NAME="1026964">
+<PRE>&lt;SCRIPT&gt; <br>str = "abcDdcba"; <br>newArray = str.match(/d/gi); <br>document.write(newArray); <br>&lt;/SCRIPT&gt;</PRE></A><A NAME="1026969">
+The returned array contains D, d. <P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1027809">
+<H2>replace</H2>
+</A>
+
+<A NAME="1027810">
+Used to find a match between a regular expression and a string, and to replace the matched substring with a new substring. <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1107711">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1107716">
+<A HREF="corea2.htm#1012977"><CODE>String</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1107718">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1107720">
+Navigator 4.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1028073">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1028074">
+<PRE>replace(regexp, newSubStr)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1028075">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1027816">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1028097">
+<PRE>regexp</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1028163">
+The name of the regular expression. It can be a variable name or a literal. </A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1028101">
+<PRE>newSubStr</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1028215">
+The string to put in place of the string found with <CODE>regexp</CODE>. This string can include the <A HREF="corea3.htm#1158210"><CODE>RegExp</CODE></A> properties <A HREF="corea3.htm#1153548"><CODE>$1, ..., $9</CODE></A>, <A HREF="corea3.htm#1140242"><CODE>lastMatch</CODE></A>, <A HREF="corea3.htm#1140246"><CODE>lastParen</CODE></A>, <A HREF="corea3.htm#1140250"><CODE>leftContext</CODE></A>, and <A HREF="corea3.htm#1140254"><CODE>rightContext</CODE></A>.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1027820">
+<H4> Description</H4>
+</A>
+
+<A NAME="1027821">
+This method does not change the <CODE>String</CODE> object it is called on; it simply returns a new string.<P></A>
+<A NAME="1120686">
+If you want to execute a global search and replace, or a case insensitive search, include the <CODE>g</CODE> (for global) and <CODE>i</CODE> (for ignore case) flags in the regular expression. These can be included separately or together. The following two examples below show how to use these flags with <CODE>replace</CODE>. <P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1027825">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1027826">
+<B>Example 1</B>. In the following example, the regular expression includes the global and ignore case flags which permits <CODE>replace</CODE> to replace each occurrence of 'apples' in the string with 'oranges.' <P></A>
+<A NAME="1027829">
+<PRE>&lt;SCRIPT&gt;<br>re = /apples/gi;<br>str = "Apples are round, and apples are juicy.";<br>newstr=str.replace(re, "oranges");<br>document.write(newstr)<br>&lt;/SCRIPT&gt;</PRE></A><A NAME="1027835">
+This prints "oranges are round, and oranges are juicy." <P></A>
+<A NAME="1027836">
+<B>Example 2</B>. In the following example, the regular expression is defined in <CODE>replace</CODE> and includes the ignore case flag. <P></A>
+<A NAME="1027838">
+<PRE>&lt;SCRIPT&gt;<br>str = "Twas the night before Xmas...";<br>newstr=str.replace(/xmas/i, "Christmas");<br>document.write(newstr)<br>&lt;/SCRIPT&gt;</PRE></A><A NAME="1027843">
+This prints "Twas the night before Christmas..." <P></A>
+<A NAME="1142108">
+<B>Example 3. </B>The following script switches the words in the string. For the replacement text, the script uses the values of the <CODE>$1</CODE> and <CODE>$2</CODE> properties. <P></A>
+<A NAME="1142110">
+<PRE>&lt;SCRIPT LANGUAGE="JavaScript1.2"&gt;<br>re = /(\w+)\s(\w+)/;<br>str = "John Smith";<br>newstr = str.replace(re, "$2, $1");<br>document.write(newstr)<br>&lt;/SCRIPT&gt;</PRE></A><A NAME="1142111">
+This prints "Smith, John". <P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1030143">
+<H2>search</H2>
+</A>
+
+<A NAME="1030144">
+Executes the search for a match between a regular expression and this <CODE>String</CODE> object. <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1107883">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1107888">
+<A HREF="corea2.htm#1012977"><CODE>String</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1107890">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1107892">
+Navigator 4.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1030146">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1030147">
+<PRE>search(regexp)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1030148">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1075499">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1075496">
+<PRE>regexp</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1075498">
+Name of the regular expression. It can be a variable name or a literal. </A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1075500">
+<H4> Description</H4>
+</A>
+
+<A NAME="1075501">
+If successful, <CODE>search</CODE> returns the index of the regular expression inside the string. Otherwise, it returns -1.<P></A>
+<A NAME="1134620">
+When you want to know whether a pattern is found in a string use <CODE>search</CODE> (similar to the regular expression <CODE>test</CODE> method); for more information (but slower execution) use <A HREF="corea2.htm#1026931"><CODE>match</CODE></A> (similar to the regular expression <CODE>exec</CODE> method). <P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1030155">
+<H4> Example</H4>
+</A>
+
+<A NAME="1030156">
+The following example prints a message which depends on the success of the test. <P></A>
+<A NAME="1030157">
+<PRE>function testinput(re, str){<br>&nbsp;&nbsp;&nbsp;if (str.search(re) != -1)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;midstring = " contains ";<br>&nbsp;&nbsp;&nbsp;else <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;midstring = " does not contain ";<br>&nbsp;&nbsp;&nbsp;document.write (str + midstring + re.source);<br>}</PRE></A>
+<A NAME="Head2Ref;"></A>
+<A NAME="1033164">
+<H2>slice</H2>
+</A>
+
+<A NAME="1033165">
+Extracts a section of a string and returns a new string. <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1107958">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1107963">
+<A HREF="corea2.htm#1012977"><CODE>String</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1107965">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1107967">
+Navigator 2.0, LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1033166">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1033167">
+<PRE>slice(beginslice,endSlice)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1033168">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1033170">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1034009">
+<PRE>beginSlice</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1034590">
+The zero-based index at which to begin extraction. </A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1034013">
+<PRE>endSlice</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1120727">
+(Optional) The zero-based index at which to end extraction. If omitted, <CODE>slice</CODE> extracts to the end of the string. </A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1033181">
+<H4> Description</H4>
+</A>
+
+<A NAME="1033182">
+<CODE>slice</CODE> extracts the text from one string and returns a new string. Changes to the text in one string do not affect the other string. <P></A>
+<A NAME="1075571">
+<CODE>slice</CODE> extracts up to but not including <CODE>endSlice</CODE>. <CODE>string.slice(1,4)</CODE> extracts the second character through the fourth character (characters indexed 1, 2, and 3). <P></A>
+<A NAME="1075572">
+As a negative index, <CODE>endSlice</CODE> indicates an offset from the end of the string. <CODE>string.slice(2,-1)</CODE> extracts the third character through the second to last character in the string. <P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1033184">
+<H4> Example</H4>
+</A>
+
+<A NAME="1033185">
+The following example uses <CODE>slice</CODE> to create a new string. <P></A>
+<A NAME="1033186">
+<PRE>&lt;SCRIPT&gt;<br>str1="The morning is upon us. "<br>str2=str1.slice(3,-5)<br>document.write(str2)<br>&lt;/SCRIPT&gt;</PRE></A><A NAME="1033191">
+This writes: <P></A>
+<A NAME="1033192">
+morning is upon <P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1013735">
+<H2>small</H2>
+</A>
+
+<A NAME="1013736">
+Causes a string to be displayed in a small font, as if it were in a <A HREF="../../htmlguid/index.htm?content=tags6.htm#tags:SMALL" TARGET="_top"><CODE>SMALL</A></CODE> tag.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1108397">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1108402">
+<A HREF="corea2.htm#1012977"><CODE>String</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1108404">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1108406">
+Navigator 2.0, LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013737">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1013738">
+<PRE>small()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1013739">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1013740">
+None<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013743">
+<H4> Description</H4>
+</A>
+
+<A NAME="1013744">
+Use the <CODE>small</CODE> method with the <A HREF="doc1.htm#1011184"><CODE>write</CODE></A> or <A HREF="doc1.htm#1011246"><CODE>writeln</CODE></A> methods to format and display a string in a document. In server-side JavaScript, use the <A HREF="glob25.htm#1012652"><CODE>write</CODE></A> function to display the string.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013747">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1013748">
+The following example uses <CODE>string</CODE> methods to change the size of a string:<P></A>
+<A NAME="1013749">
+<PRE>var worldString="Hello, world"</PRE></A><A NAME="1013750">
+<PRE>document.write(worldString.small())<br>document.write("&lt;P&gt;" + worldString.big())<br>document.write("&lt;P&gt;" + worldString.fontsize(7))</PRE></A><A NAME="1013751">
+The previous example produces the same output as the following HTML:<P></A>
+<A NAME="1013752">
+<PRE>&lt;SMALL&gt;Hello, world&lt;/SMALL&gt;<br>&lt;P&gt;&lt;BIG&gt;Hello, world&lt;/BIG&gt;<br>&lt;P&gt;&lt;FONTSIZE=7&gt;Hello, world&lt;/FONTSIZE&gt;</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1013754">
+<H4> See also</H4>
+</A>
+
+<A NAME="1013761">
+<A HREF="corea2.htm#1013386"><CODE>String.big</CODE></A>, <A HREF="corea2.htm#1013572"><CODE>String.fontsize</CODE></A> <P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1013764">
+<H2>split</H2>
+</A>
+
+<A NAME="1013766">
+Splits a <CODE>String</CODE> object into an array of strings by separating the string into substrings. <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1108509">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1108514">
+<A HREF="corea2.htm#1012977"><CODE>String</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1108516">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1108518">
+Navigator 3.0, LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013767">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1013768">
+<PRE>split(separator, limit)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1013769">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1013775">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1013772">
+<PRE>separator</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1013774">
+(Optional) Specifies the character to use for separating the string. The <CODE>separator</CODE> is treated as a string. If <CODE>separator</CODE> is omitted, the array returned contains one element consisting of the entire string.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1035403">
+<PRE>limit</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1035438">
+(Optional) Integer specifying a limit on the number of splits to be found. </A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013778">
+<H4> Description</H4>
+</A>
+
+<A NAME="1013779">
+The <CODE>split</CODE> method returns the new array.<P></A>
+<A NAME="1035466">
+When found, <CODE>separator</CODE> is removed from the string and the substrings are returned in an array. If <CODE>separator</CODE> is omitted, the array contains one element consisting of the entire string. <P></A>
+<A NAME="1120858">
+In Navigator 4.0, <CODE>Split</CODE> has the following additions:<P></A>
+<ul><P>
+<A NAME="1120918">
+<LI>It can take a regular expression argument, as well as a fixed string, by which to split the object string. If <CODE>separator</CODE> is a regular expression, any included parenthesis cause submatches to be included in the returned array. </LI>
+</A><P>
+<A NAME="1120860">
+<LI>It can take a limit count so that it won't include trailing empty elements in the resulting array. <B><EM></EM></B></LI>
+</A><P>
+<A NAME="1120861">
+<LI>If you specify <CODE>LANGUAGE="JavaScript1.2"</CODE> in the <CODE>SCRIPT</CODE> tag, <CODE>string.split(" ")</CODE> splits on any run of 1 or more white space characters including spaces, tabs, line feeds, and carriage returns.</LI>
+</A></ul>
+<A NAME="Head3;"></A>
+<A NAME="1013782">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1013783">
+<B>Example 1</B>. The following example defines a function that splits a string into an array of strings using the specified separator. After splitting the string, the function displays messages indicating the original string (before the split), the separator used, the number of elements in the array, and the individual array elements.<P></A>
+<A NAME="1013784">
+<PRE>function splitString (stringToSplit,separator) {<br>&nbsp;&nbsp;&nbsp;arrayOfStrings = stringToSplit.split(separator)<br>&nbsp;&nbsp;&nbsp;document.write ('&lt;P&gt;The original string is: "' + stringToSplit + '"')<br>&nbsp;&nbsp;&nbsp;document.write ('&lt;BR&gt;The separator is: "' + separator + '"')<br>&nbsp;&nbsp;&nbsp;document.write ("&lt;BR&gt;The array has " + arrayOfStrings.length + " elements: ")</PRE></A><A NAME="1013785">
+<PRE>&nbsp;&nbsp;&nbsp;for (var i=0; i &lt; arrayOfStrings.length; i++) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.write (arrayOfStrings[i] + " / ")<br>&nbsp;&nbsp;&nbsp;}<br>}</PRE></A><A NAME="1013786">
+<PRE>var tempestString="Oh brave new world that has such people in it."<br>var monthString="Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec"</PRE></A><A NAME="1013787">
+<PRE>var space=" "<br>var comma=","</PRE></A><A NAME="1013788">
+<PRE>splitString(tempestString,space)<br>splitString(tempestString)<br>splitString(monthString,comma)</PRE></A><A NAME="1013789">
+This example produces the following output:<P></A>
+<A NAME="1013790">
+<PRE>The original string is: "Oh brave new world that has such people in it."<br>The separator is: " "<br>The array has 10 elements: Oh / brave / new / world / that / has / such / people / in / it. /</PRE></A><A NAME="1013791">
+<PRE>The original string is: "Oh brave new world that has such people in it."<br>The separator is: "undefined"<br>The array has 1 elements: Oh brave new world that has such people in it. /</PRE></A><A NAME="1035641">
+<PRE>The original string is: "Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec"<br>The separator is: ","<br>The array has 12 elements: Jan / Feb / Mar / Apr / May / Jun / Jul / Aug / Sep / Oct / Nov / Dec /</PRE></A><A NAME="1035658">
+<B>Example 2</B>. Consider the following script:<P></A>
+<A NAME="1035662">
+<PRE>&lt;SCRIPT LANGUAGE="JavaScript1.2"&gt; <br>str="She sells    seashells \nby   the\n seashore"<br>document.write(str + "&lt;BR&gt;")<br>a=str.split(" ")<br>document.write(a)<br>&lt;/SCRIPT&gt;</PRE></A><A NAME="1121024">
+Using <CODE>LANGUAGE="JavaScript1.2"</CODE>, this script produces<P></A>
+<A NAME="1121033">
+<PRE>"She", "sells", "seashells", "by", "the", "seashore"</PRE></A><A NAME="1035668">
+Without <CODE>LANGUAGE="JavaScript1.2"</CODE>, this script splits only on single space characters, producing <P></A>
+<A NAME="1035670">
+<PRE>"She", "sells", , , , "seashells", "by", , , "the", "seashore"</PRE></A><A NAME="1035671">
+<B>Example 3</B>. In the following example, <CODE>split</CODE> looks for 0 or more spaces followed by a semicolon followed by 0 or more spaces and, when found, removes the spaces from the string. <CODE>nameList</CODE> is the array returned as a result of <CODE>split</CODE>. <P></A>
+<A NAME="1035675">
+<PRE>&lt;SCRIPT&gt;<br>names = "Harry  Trump  ;Fred Barney; Helen   Rigby ;  Bill Abel ;Chris Hand ";<br>document.write (names + "&lt;BR&gt;" + "&lt;BR&gt;");<br>re = /\s*;\s*/;<br>nameList = names.split (re);<br>document.write(nameList);<br>&lt;/SCRIPT&gt;</PRE></A><A NAME="1035682">
+This prints two lines; the first line prints the original string, and the second line prints the resulting array. <P></A>
+<A NAME="1035684">
+Harry Trump ;Fred Barney; Helen Rigby ; Bill Abel ;Chris Hand <br>Harry Trump,Fred Barney,Helen Rigby,Bill Abel,Chris Hand <P></A>
+<A NAME="1156109">
+<B>Example 4</B>. In the following example, <CODE>split</CODE> looks for 0 or more spaces in a string and returns the first 3 splits that it finds.<P></A>
+<A NAME="1156257">
+<PRE>&lt;SCRIPT LANGUAGE="JavaScript1.2"&gt;<br>myVar = "  Hello World. How are you doing?    ";<br>splits = myVar.split(" ", 3);<br>document.write(splits)<br>&lt;/SCRIPT&gt;</PRE></A><A NAME="1156370">
+This script displays the following:<P></A>
+<A NAME="1156359">
+<PRE>["Hello", "World.", "How"]</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1035642">
+<H4> See also</H4>
+</A>
+
+<A NAME="1013803">
+<A HREF="corea2.htm#1013481"><CODE>String.charAt</CODE></A>, <A HREF="corea2.htm#1013607"><CODE>String.indexOf</CODE></A>, <A HREF="corea2.htm#1013689"><CODE>String.lastIndexOf</CODE></A> <P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1013806">
+<H2>strike</H2>
+</A>
+
+<A NAME="1013807">
+Causes a string to be displayed as struck-out text, as if it were in a <A HREF="../../htmlguid/index.htm?content=tags6.htm#tags:STRIKE" TARGET="_top"><CODE>STRIKE</CODE></A> tag.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1108619">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1108624">
+<A HREF="corea2.htm#1012977"><CODE>String</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1108626">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1108628">
+Navigator 2.0, LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013808">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1013809">
+<PRE>strike()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1013810">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1013811">
+None<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013814">
+<H4> Description</H4>
+</A>
+
+<A NAME="1013815">
+Use the <CODE>strike</CODE> method with the <A HREF="doc1.htm#1011184"><CODE>write</CODE></A> or <A HREF="doc1.htm#1011246"><CODE>writeln</CODE></A> methods to format and display a string in a document. In server-side JavaScript, use the <A HREF="glob25.htm#1012652"><CODE>write</CODE></A> function to display the string.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013818">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1013819">
+The following example uses <CODE>string</CODE> methods to change the formatting of a string:<P></A>
+<A NAME="1013820">
+<PRE>var worldString="Hello, world"</PRE></A><A NAME="1013821">
+<PRE>document.write(worldString.blink())<br>document.write("&lt;P&gt;" + worldString.bold())<br>document.write("&lt;P&gt;" + worldString.italics())<br>document.write("&lt;P&gt;" + worldString.strike())</PRE></A><A NAME="1013822">
+The previous example produces the same output as the following HTML:<P></A>
+<A NAME="1013823">
+<PRE>&lt;BLINK&gt;Hello, world&lt;/BLINK&gt;<br>&lt;P&gt;&lt;B&gt;Hello, world&lt;/B&gt;<br>&lt;P&gt;&lt;I&gt;Hello, world&lt;/I&gt;<br>&lt;P&gt;&lt;STRIKE&gt;Hello, world&lt;/STRIKE&gt;</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1013825">
+<H4> See also</H4>
+</A>
+
+<A NAME="1013835">
+<A HREF="corea2.htm#1013416"><CODE>String.blink</CODE></A>, <A HREF="corea2.htm#1013449"><CODE>String.bold</CODE></A>, <A HREF="corea2.htm#1013657"><CODE>String.italics</CODE></A> <P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1013864">
+<H2>sub</H2>
+</A>
+
+<A NAME="1013865">
+Causes a string to be displayed as a subscript, as if it were in a <A HREF="../../htmlguid/index.htm?content=tags6.htm#tags:SUB" TARGET="_top"><CODE>SUB</CODE></A> tag.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1108721">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1108726">
+<A HREF="corea2.htm#1012977"><CODE>String</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1108728">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1108730">
+Navigator 2.0, LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013866">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1013867">
+<PRE>sub()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1013868">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1013869">
+None<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013872">
+<H4> Description</H4>
+</A>
+
+<A NAME="1013873">
+Use the <CODE>sub</CODE> method with the <A HREF="doc1.htm#1011184"><CODE>write</CODE></A> or <A HREF="doc1.htm#1011246"><CODE>writeln</CODE></A> methods to format and display a string in a document. In server-side JavaScript, use the <A HREF="glob25.htm#1012652"><CODE>write</CODE></A> function to generate the HTML.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013876">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1013877">
+The following example uses the <CODE>sub</CODE> and <CODE>sup</CODE> methods to format a string:<P></A>
+<A NAME="1013878">
+<PRE>var superText="superscript"<br>var subText="subscript"</PRE></A><A NAME="1013879">
+<PRE>document.write("This is what a " + superText.sup() + " looks like.")<br>document.write("&lt;P&gt;This is what a " + subText.sub() + " looks like.")</PRE></A><A NAME="1013880">
+The previous example produces the same output as the following HTML:<P></A>
+<A NAME="1013881">
+<PRE>This is what a &lt;SUP&gt;superscript&lt;/SUP&gt; looks like.<br>&lt;P&gt;This is what a &lt;SUB&gt;subscript&lt;/SUB&gt; looks like.</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1013883">
+<H4> See also</H4>
+</A>
+
+<A NAME="1013887">
+<A HREF="corea2.htm#1013924"><CODE>String.sup</CODE></A> <P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1036298">
+<H2>substr</H2>
+</A>
+
+<A NAME="1036299">
+Returns the characters in a string beginning at the specified location through the specified number of characters. <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1108790">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1108795">
+<A HREF="corea2.htm#1012977"><CODE>String</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1108797">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1108799">
+Navigator 2.0, LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1036011">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1036012">
+<PRE>substr(start, length)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1036013">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1036015">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1036451">
+<PRE>start</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1036558">
+Location at which to begin extracting characters. </A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1036455">
+<PRE>length</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1036584">
+(Optional) The number of characters to extract</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1152750">
+<H4> Description</H4>
+</A>
+
+<A NAME="1152751">
+<CODE>start</CODE> is a character index. The index of the first character is 0, and the index of the last character is 1 less than the length of the string. <CODE>substr</CODE> begins extracting characters at <CODE>start</CODE> and collects <CODE>length</CODE> number of characters. <P></A>
+<A NAME="1152752">
+If <CODE>start</CODE> is positive and is the length of the string or longer, <CODE>substr</CODE> returns no characters.<P></A>
+<A NAME="1152753">
+If <CODE>start</CODE> is negative, <CODE>substr</CODE> uses it as a character index from the end of the string. If <CODE>start</CODE> is negative and <CODE>abs(start)</CODE> is larger than the length of the string, <CODE>substr</CODE> uses 0 is the start index.<P></A>
+<A NAME="1152754">
+If <CODE>length</CODE> is 0 or negative, <CODE>substr</CODE> returns no characters. If <CODE>length</CODE> is omitted, <CODE>start</CODE> extracts characters to the end of the string. <P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1152755">
+<H4> Example</H4>
+</A>
+
+<A NAME="1152756">
+Consider the following script:<P></A>
+<A NAME="1152757">
+<PRE>&lt;SCRIPT LANGUAGE="JavaScript1.2"&gt;</PRE></A><A NAME="1152758">
+<PRE>str = "abcdefghij"<br>document.writeln("(1,2): ", str.substr(1,2))<br>document.writeln("(-2,2): ", str.substr(-2,2))<br>document.writeln("(1): ", str.substr(1))<br>document.writeln("(-20, 2): ", str.substr(1,20))<br>document.writeln("(20, 2): ", str.substr(20,2))</PRE></A><A NAME="1152759">
+<PRE>&lt;/SCRIPT&gt;</PRE></A><A NAME="1152760">
+This script displays:<P></A>
+<A NAME="1152761">
+<PRE>(1,2): bc<br>(-2,2): ij<br>(1): bcdefghij<br>(-20, 2): bcdefghij<br>(20, 2): </PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1144639">
+<H4> See also</H4>
+</A>
+
+<A NAME="1144844">
+<A HREF="corea2.htm#1013890"><CODE>substring</CODE></A><P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1013890">
+<H2>substring</H2>
+</A>
+
+<A NAME="1036830">
+Returns a subset of a <CODE>String</CODE> object. <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1108838">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1108843">
+<A HREF="corea2.htm#1012977"><CODE>String</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1108845">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1108847">
+Navigator 2.0, LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013892">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1013893">
+<PRE>substring(indexA, indexB)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1013894">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1013904">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1013897">
+<PRE>indexA</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1013899">
+An integer between 0 and 1 less than the length of the string.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1013901">
+<PRE>indexB</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1121198">
+An integer between 0 and 1 less than the length of the string.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1036943">
+<H4> Description</H4>
+</A>
+
+<A NAME="1037180">
+<CODE>substring</CODE> extracts characters from <CODE>indexA</CODE> up to but not including <CODE>indexB</CODE>. In particular:<P></A>
+<ul><P>
+<A NAME="1037183">
+<LI>If <CODE>indexA</CODE> is less than 0, <CODE>indexA</CODE> is treated as if it were 0. </LI>
+</A><P>
+<A NAME="1121247">
+<LI>If <CODE>indexB</CODE> is greater than <CODE>stringName.length</CODE>, <CODE>indexB</CODE> is treated as if it were <CODE>stringName.length</CODE>. </LI>
+</A><P>
+<A NAME="1121248">
+<LI>If <CODE>indexA</CODE> equals <CODE>indexB</CODE>, <CODE>substring</CODE> returns an empty string. </LI>
+</A><P>
+<A NAME="1037614">
+<LI>If <CODE>indexB</CODE> is omitted, <CODE>indexA</CODE> extracts characters to the end of the string. </LI>
+</A></ul><A NAME="1037189">
+Using <CODE>LANGUAGE="JavaScript1.2"</CODE> in the <CODE>SCRIPT</CODE> tag, <P></A>
+<ul><P>
+<A NAME="1037190">
+<LI>If <CODE>indexA</CODE> is greater than <CODE>indexB</CODE>, JavaScript produces a runtime error (out of memory). </LI>
+</A></ul><A NAME="1037192">
+Without <CODE>LANGUAGE="JavaScript1.2"</CODE>, <P></A>
+<ul><P>
+<A NAME="1037193">
+<LI>If <CODE>indexA</CODE> is greater than <CODE>indexB</CODE>, JavaScript returns a substring beginning with <CODE>indexB</CODE> and ending with <CODE>indexA - 1</CODE>. </LI>
+</A></ul>
+<A NAME="Head3;"></A>
+<A NAME="1013914">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1013915">
+<B>Example 1.</B> The following example uses <CODE>substring</CODE> to display characters from the string <CODE>"Netscape"</CODE>:<P></A>
+<A NAME="1013916">
+<PRE>var anyString="Netscape"</PRE></A><A NAME="1013917">
+<PRE>//Displays "Net"<br>document.write(anyString.substring(0,3))<br>document.write(anyString.substring(3,0))<br>//Displays "cap"<br>document.write(anyString.substring(4,7))<br>document.write(anyString.substring(7,4))<br>//Displays "Netscap"<br>document.write(anyString.substring(0,7))<br>//Displays "Netscape"<br>document.write(anyString.substring(0,8))<br>document.write(anyString.substring(0,10))</PRE></A><A NAME="1013919">
+<B>Example 2.</B> The following example replaces a substring within a string. It will replace both individual characters and substrings. The function call at the end of the example changes the string <CODE>"Brave New World"</CODE> into <CODE>"Brave New Web"</CODE>.<P></A>
+<A NAME="1013920">
+<PRE>function replaceString(oldS,newS,fullS) {<br>// Replaces oldS with newS in the string fullS<br>&nbsp;&nbsp;&nbsp;for (var i=0; i&lt;fullS.length; i++) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (fullS.substring(i,i+oldS.length) == oldS) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fullS = fullS.substring(0,i)+newS+fullS.substring(i+oldS.length,fullS.length)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;return fullS<br>}</PRE></A><A NAME="1013921">
+<PRE>replaceString("World","Web","Brave New World")</PRE></A><A NAME="1037626">
+<B>Example 3. </B>Using <CODE>LANGUAGE="JavaScript1.2"</CODE>, the following script produces a runtime error (out of memory). <P></A>
+<A NAME="1037628">
+<PRE>&lt;SCRIPT LANGUAGE="JavaScript1.2"&gt;<br>str="Netscape"<br>document.write(str.substring(0,3);<br>document.write(str.substring(3,0);<br>&lt;/SCRIPT&gt;</PRE></A><A NAME="1037633">
+Without <CODE>LANGUAGE="JavaScript1.2"</CODE>, the above script prints <P></A>
+<A NAME="1037688">
+Net Net <P></A>
+<A NAME="1037635">
+In the second <CODE>write</CODE>, the index numbers are swapped. <P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1144906">
+<H4> See also</H4>
+</A>
+
+<A NAME="1144910">
+<A HREF="corea2.htm#1036298"><CODE>substr</CODE></A><P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1013924">
+<H2>sup</H2>
+</A>
+
+<A NAME="1013925">
+Causes a string to be displayed as a superscript, as if it were in a <A HREF="../../htmlguid/index.htm?content=tags6.htm#tags:SUP" TARGET="_top"><CODE>SUP</CODE></A> tag.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1108924">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1108929">
+<A HREF="corea2.htm#1012977"><CODE>String</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1108931">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1108933">
+Navigator 2.0, LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013926">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1013927">
+<PRE>sup()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1013928">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1013929">
+None<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013932">
+<H4> Description</H4>
+</A>
+
+<A NAME="1013933">
+Use the <CODE>sup</CODE> method with the <A HREF="doc1.htm#1011184"><CODE>write</CODE></A> or <A HREF="doc1.htm#1011246"><CODE>writeln</CODE></A> methods to format and display a string in a document. In server-side JavaScript, use the <A HREF="glob25.htm#1012652"><CODE>write</CODE></A> function to generate the HTML.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013936">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1013937">
+The following example uses the <CODE>sub</CODE> and <CODE>sup</CODE> methods to format a string:<P></A>
+<A NAME="1013938">
+<PRE>var superText="superscript"<br>var subText="subscript"</PRE></A><A NAME="1013939">
+<PRE>document.write("This is what a " + superText.sup() + " looks like.")<br>document.write("&lt;P&gt;This is what a " + subText.sub() + " looks like.")</PRE></A><A NAME="1013940">
+The previous example produces the same output as the following HTML:<P></A>
+<A NAME="1013941">
+<PRE>This is what a &lt;SUP&gt;superscript&lt;/SUP&gt; looks like.<br>&lt;P&gt;This is what a &lt;SUB&gt;subscript&lt;/SUB&gt; looks like.</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1013943">
+<H4> See also</H4>
+</A>
+
+<A NAME="1013947">
+<A HREF="corea2.htm#1013864"><CODE>String.sub</CODE></A> <P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1013950">
+<H2>toLowerCase</H2>
+</A>
+
+<A NAME="1013952">
+Returns the calling string value converted to lowercase.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1108982">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1108987">
+<A HREF="corea2.htm#1012977"><CODE>String</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1108989">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1108991">
+Navigator 2.0, LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013953">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1013954">
+<PRE>toLowerCase()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1013955">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1013956">
+None<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013959">
+<H4> Description</H4>
+</A>
+
+<A NAME="1013960">
+The <CODE>toLowerCase</CODE> method returns the value of the string converted to lowercase. <CODE>toLowerCase</CODE> does not affect the value of the string itself.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013963">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1013964">
+The following example displays the lowercase string <CODE>"alphabet"</CODE>:<P></A>
+<A NAME="1013965">
+<PRE>var upperText="ALPHABET"<br>document.write(upperText.toLowerCase())</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1013967">
+<H4> See also</H4>
+</A>
+
+<A NAME="1013971">
+<A HREF="corea2.htm#1013974"><CODE>String.toUpperCase</CODE></A> <P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1013974">
+<H2>toUpperCase</H2>
+</A>
+
+<A NAME="1013975">
+Returns the calling string value converted to uppercase.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1109032">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1109037">
+<A HREF="corea2.htm#1012977"><CODE>String</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1109039">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1109041">
+Navigator 2.0, LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013976">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1013977">
+<PRE>toUpperCase()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1013978">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1013979">
+None<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013982">
+<H4> Description</H4>
+</A>
+
+<A NAME="1013983">
+The <CODE>toUpperCase</CODE> method returns the value of the string converted to uppercase. <CODE>toUpperCase</CODE> does not affect the value of the string itself.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013986">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1013987">
+The following example displays the string <CODE>"ALPHABET"</CODE>:<P></A>
+<A NAME="1013988">
+<PRE>var lowerText="alphabet"<br>document.write(lowerText.toUpperCase())</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1013990">
+<H4> See also</H4>
+</A>
+
+<A NAME="1158208">
+<A HREF="corea2.htm#1013950"><CODE>String.toLowerCase</CODE></A> <P></A>
+
+<P><HR>
+<A HREF="contents.htm">[Contents]</A> <A HREF="corea1.htm">[Previous]</A> <A HREF="corea3.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<P ALIGN=right>
+
+<FONT SIZE=-2><I>Last Updated:  10/31/97  12:30:31
+</I></FONT>
+
+<HR SIZE=4>
+
+<P> <CENTER>Copyright © 1997
+<A HREF="http://home.netscape.com/misc/contact_info.html"
+TARGET=_top>Netscape Communications Corporation</A></FONT>
+</CENTER>
+<P>
+<P>
+</BODY>
+</HTML>
+
+

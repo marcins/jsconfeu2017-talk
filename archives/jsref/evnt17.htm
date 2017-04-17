@@ -1,0 +1,127 @@
+<HTML>
+<HEAD>
+<TITLE>Events and Event Handlers
+</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A HREF="contents.htm">[Contents]</A> <A HREF="evnt16.htm">[Previous]</A> <A HREF="evnt18.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<HR>
+
+<A NAME="onMouseOver"></A>
+<A NAME="1010759">
+<H1> onMouseOver</H1>
+</A>
+<A NAME="1010760">
+Executes JavaScript code when a MouseOver event occurs; that is, once each time the mouse pointer moves over an object or area from outside that object or area. <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1045857">
+<I>Event handler for </I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1045859">
+<A HREF="doca3.htm#1113061"><CODE>Layer</CODE></A>, <A HREF="doc2.htm#1081434"><CODE>Link</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1045861">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1048148">
+Navigator 2.0<br>Navigator 3.0: event handler of <CODE>Area</CODE></A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1049851">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1049852">
+<PRE>onMouseOver="handlerText"</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1049853">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1049859">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1049856">
+<PRE><CODE>handlerText</CODE></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1049858">
+JavaScript code or a call to a JavaScript function.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010761">
+<H4> Description</H4>
+</A>
+
+<A NAME="1049868">
+If the mouse moves from one area into another in a client-side image map, you'll get <CODE>onMouseOut</CODE> for the first area, then <CODE>onMouseOver</CODE> for the second.<P></A>
+<A NAME="1010762">
+<CODE>Area</CODE> objects that use <CODE>onMouseOver</CODE> must include the <CODE>HREF</CODE> attribute within the <CODE>AREA</CODE> tag.<P></A>
+<A NAME="1010763">
+You must return true within the event handler if you want to set the <CODE>status</CODE> or <CODE>defaultStatus</CODE> properties with <CODE>onMouseOver</CODE>.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1094447">
+<H4> Event properties used</H4>
+</A>
+
+<A NAME="1094461">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1094450">
+<PRE>type</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1103675">
+Indicates the type of event. </A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1094454">
+<PRE>target</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1094456">
+Indicates the object to which the event was originally sent. </A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1094458">
+<PRE>layerX, layerY,<br>pageX, pageY,<br>screenX, screenY</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1094460">
+Represent the cursor location at the time the <CODE>MouseOver</CODE> event occurred. </A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010773">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1010777">
+By default, the <CODE>HREF</CODE> value of an anchor displays in the status bar at the bottom of the browser when a user places the mouse pointer over the anchor. In the following example, <CODE>onMouseOver</CODE> provides the custom message "Click this if you dare."<P></A>
+<A NAME="1010778">
+<PRE>&lt;A HREF="http://home.netscape.com/"<br>&nbsp;&nbsp;&nbsp;onMouseOver="window.status='Click this if you dare!'; return true"&gt;<br>Click me&lt;/A&gt;</PRE></A><A NAME="1010782">
+See <A HREF="evnt5.htm#1010516"><CODE>onClick</CODE></A> for an example of using <CODE>onMouseOver</CODE> when the <CODE>A </CODE>tag's <CODE>HREF</CODE> attribute is set dynamically.<P></A>
+<A NAME="1010786">
+See also examples for <A HREF="doc2.htm#1081434"><CODE>Link</CODE></A>.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010787">
+<H4> See also</H4>
+</A>
+
+<A NAME="1010791">
+<A HREF="evnt16.htm#1010731"><CODE>onMouseOut</CODE></A> <P></A>
+<A NAME="1063889">
+For general information on event handlers, see <A HREF="evnt.htm#1010270">"General Information about Events"</A>. <P></A>
+<A NAME="1094467">
+For information about the <CODE>event</CODE> object, see <A HREF="evnt1.htm#1093773"><CODE>event</CODE></A>.<P></A>
+
+<P><HR>
+<A HREF="contents.htm">[Contents]</A> <A HREF="evnt16.htm">[Previous]</A> <A HREF="evnt18.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<P ALIGN=right>
+
+<FONT SIZE=-2><I>Last Updated:  10/31/97  16:34:02
+</I></FONT>
+
+<HR SIZE=4>
+
+<P> <CENTER>Copyright © 1997
+<A HREF="http://home.netscape.com/misc/contact_info.html"
+TARGET=_top>Netscape Communications Corporation</A></FONT>
+</CENTER>
+<P>
+<P>
+</BODY>
+</HTML>
+
+

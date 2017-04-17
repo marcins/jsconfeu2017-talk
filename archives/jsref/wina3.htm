@@ -1,0 +1,218 @@
+<HTML>
+<HEAD>
+<TITLE>
+</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A HREF="contents.htm">[Contents]</A> <A HREF="wina2.htm">[Previous]</A> <A HREF="form.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<HR>
+
+<A NAME="screen"></A>
+<A NAME="1090331">
+<H1> screen</H1>
+</A>
+<A NAME="1090341">
+Contains properties describing the display screen and colors.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1090334">
+<I>Client-side object</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1090336">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1090338">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1090340">
+Navigator 4.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1090342">
+<H4> Created by</H4>
+</A>
+
+<A NAME="1090343">
+The JavaScript runtime engine creates the <CODE>screen</CODE> object for you. You can access its properties automatically.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1090344">
+<H4> Description</H4>
+</A>
+
+<A NAME="1090345">
+This object contains read-only properties that allow you to get information about the user's display.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1090346">
+<H4> Property Summary</H4>
+</A>
+
+<A NAME="1090390">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1090352">
+<PRE><A HREF="wina3.htm#1090397"><CODE>availHeight</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1090354">
+Specifies the height of the screen, in pixels, minus permanent or semipermanent user interface features displayed by the operating system, such as the Taskbar on Windows.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1090359">
+<PRE><A HREF="wina3.htm#1090412"><CODE>availWidth</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1090361">
+Specifies the width of the screen, in pixels, minus permanent or semipermanent user interface features displayed by the operating system, such as the Taskbar on Windows.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1090366">
+<PRE><A HREF="wina3.htm#1090427"><CODE>colorDepth</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1090368">
+The bit depth of the color palette, if one is in use; otherwise, the value is derived from <CODE>screen.pixelDepth</CODE>.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1090373">
+<PRE><A HREF="wina3.htm#1090442"><CODE>height</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1090375">
+Display screen height.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1090380">
+<PRE><A HREF="wina3.htm#1090457"><CODE>pixelDepth</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1090382">
+Display screen color resolution (bits per pixel). </A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1090387">
+<PRE><A HREF="wina3.htm#1090472"><CODE>width</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1090389">
+Display screen width.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1090391">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1090392">
+The following function creates a string containing the current display properties:<P></A>
+<A NAME="1090393">
+<PRE>function screen_properties() {<br>&nbsp;&nbsp;&nbsp;document.examples.results.value = "("+screen.width+" x<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+screen.height+") pixels, "+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;screen.pixelDepth +" bit depth, "+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;screen.colorDepth +" bit color palette depth.";<br>} // end function screen_properties</PRE></A><A NAME="1090394">
+<PRE></PRE></A>
+<A NAME="Head2;"></A>
+<A NAME="1090395">
+<H3> Properties</H3>
+</A>
+
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1090397">
+<H2>availHeight</H2>
+</A>
+
+<A NAME="1090398">
+Specifies the height of the screen, in pixels, minus permanent or semipermanent user interface features displayed by the operating system, such as the Taskbar on Windows.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1090401">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1090406">
+<A HREF="wina3.htm#1090331"><CODE>screen</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1090408">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1090410">
+Navigator 4.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1090412">
+<H2>availWidth</H2>
+</A>
+
+<A NAME="1090413">
+Specifies the width of the screen, in pixels, minus permanent or semipermanent user interface features displayed by the operating system, such as the Taskbar on Windows.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1090416">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1090421">
+<A HREF="wina3.htm#1090331"><CODE>screen</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1090423">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1090425">
+Navigator 4.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1090427">
+<H2>colorDepth</H2>
+</A>
+
+<A NAME="1090428">
+The bit depth of the color palette in bits per pixel, if a color palette is in use. Otherwise, this property is derived from <CODE>screen.pixelDepth</CODE>. <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1090431">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1090436">
+<A HREF="wina3.htm#1090331"><CODE>screen</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1090438">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1090440">
+Navigator 4.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1090442">
+<H2>height</H2>
+</A>
+
+<A NAME="1090455">
+Display screen height, in pixels. <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1090445">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1090450">
+<A HREF="wina3.htm#1090331"><CODE>screen</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1090452">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1090454">
+Navigator 4.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1090457">
+<H2>pixelDepth</H2>
+</A>
+
+<A NAME="1090470">
+Display screen color resolution, in bits per pixel. <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1090460">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1090465">
+<A HREF="wina3.htm#1090331"><CODE>screen</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1090467">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1090469">
+Navigator 4.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1090472">
+<H2>width</H2>
+</A>
+
+<A NAME="1089299">
+Display screen width, in pixels. <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1090475">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1090480">
+<A HREF="wina3.htm#1090331"><CODE>screen</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1090482">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1090484">
+Navigator 4.0</A></P>
+
+</TABLE>
+<P></A>
+<A NAME="1094682">
+<P></A>
+
+<P><HR>
+<A HREF="contents.htm">[Contents]</A> <A HREF="wina2.htm">[Previous]</A> <A HREF="form.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<P ALIGN=right>
+
+<FONT SIZE=-2><I>Last Updated:  10/31/97  12:31:44
+</I></FONT>
+
+<HR SIZE=4>
+
+<P> <CENTER>Copyright © 1997
+<A HREF="http://home.netscape.com/misc/contact_info.html"
+TARGET=_top>Netscape Communications Corporation</A></FONT>
+</CENTER>
+<P>
+<P>
+</BODY>
+</HTML>
+

@@ -1,0 +1,1192 @@
+<HTML>
+<HEAD>
+<TITLE>
+</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A HREF="contents.htm">[Contents]</A> <A HREF="lw2.htm">[Previous]</A> <A HREF="lwa1.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<HR>
+
+<A NAME="Connection "></A>
+<A NAME="1013808">
+<H1> Connection </H1>
+</A>
+<A NAME="1012086">
+Represents a single database connection from a pool of connections.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1049615">
+<I>Server-side object</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1049620">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1049622">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1049624">
+Netscape Server 3.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1030088">
+<H4> Created by</H4>
+</A>
+
+<A NAME="1012087">
+The <A HREF="lw2.htm#1010503"><CODE>DbPool.connection</CODE></A> method. You do not call a <CODE>connection</CODE> constructor directly. Once you have a <CODE>Connection</CODE> object, you use it for your interactions with the database.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1016745">
+<H4> Description</H4>
+</A>
+
+<A NAME="1030140">
+You can use the <CODE>prototype</CODE> property of the <CODE>Connection</CODE> class to add a property to all <CODE>Connection</CODE> instances. If you do so, that addition applies to all <CODE>Connection</CODE> objects running in all applications on your server, not just in the single application that made the change. This allows you to expand the capabilities of this object for your entire server.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1058506">
+<H4> Property Summary&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</H4>
+</A>
+
+<A NAME="1058522">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1058519">
+<PRE><A HREF="lwa.htm#1058838"><CODE>prototype</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1058521">
+Allows the addition of properties to a <CODE>Connection</CODE> object.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012088">
+<H4> Method Summary</H4>
+</A>
+
+<A NAME="1012181">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012094">
+<PRE><A HREF="lwa.htm#1012187"><CODE>beginTransaction</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1012096">
+Begins a new SQL transaction.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012101">
+<PRE><A HREF="lwa.htm#1012216"><CODE>commitTransaction</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1012103">
+Commits the current transaction.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012108">
+<PRE><A HREF="lwa.htm#1012236"><CODE>connected</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1012110">
+Tests whether the database pool (and hence this connection) is connected to a database.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012115">
+<PRE><A HREF="lwa.htm#1012258"><CODE>cursor</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1012117">
+Creates a database cursor for the specified SQL <CODE>SELECT</CODE> statement.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012122">
+<PRE><A HREF="lwa.htm#1012311"><CODE>execute</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1012124">
+Performs the specified SQL statement. Use for SQL statements other than queries.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012129">
+<PRE><A HREF="lwa.htm#1012339"><CODE>majorErrorCode</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1012131">
+Major error code returned by the database server or ODBC.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012136">
+<PRE><A HREF="lwa.htm#1012499"><CODE>majorErrorMessage</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1012138">
+Major error message returned by database server or ODBC. </A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012143">
+<PRE><A HREF="lwa.htm#1012523"><CODE>minorErrorCode</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1012145">
+Secondary error code returned by database vendor library.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012150">
+<PRE><A HREF="lwa.htm#1012539"><CODE>minorErrorMessage</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1012152">
+Secondary message returned by database vendor library.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012157">
+<PRE><A HREF="lwa.htm#1012555"><CODE>release</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1012159">
+Releases the connection back to the database pool.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012164">
+<PRE><A HREF="lwa.htm#1012576"><CODE>rollbackTransaction</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1012166">
+Rolls back the current transaction.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012171">
+<PRE><A HREF="lwa.htm#1012596"><CODE>SQLTable</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1012173">
+Displays query results. Creates an HTML table for results of an <CODE>SQL</CODE> <CODE>SELECT</CODE> statement.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012178">
+<PRE><A HREF="lwa.htm#1012624"><CODE>storedProc</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1012180">
+Creates a stored-procedure object and runs the specified stored procedure.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1048229">
+<PRE><A HREF="lwa.htm#1048238"><CODE>toString</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1048231">
+Returns a string representing the specified object.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head2;"></A>
+<A NAME="1012184">
+<H3> Properties</H3>
+</A>
+
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1058838">
+<H2>prototype</H2>
+</A>
+
+<A NAME="1058839">
+Represents the prototype for this class. You can use the prototype to add properties or methods to all instances of a class. For information on prototypes, see <A HREF="core4.htm#1181210"><CODE>Function.prototype</CODE></A>.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1058845">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1058850">
+<A HREF="lwa.htm#1013808"><CODE>Connection</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1058852">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1058854">
+LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head2;"></A>
+<A NAME="1058833">
+<H3> Methods</H3>
+</A>
+
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1012187">
+<H2>beginTransaction</H2>
+</A>
+
+<A NAME="1012188">
+Begins a new SQL transaction.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1049647">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1049652">
+<A HREF="lwa.htm#1013808"><CODE>Connection</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1049654">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1049656">
+Netscape Server 3.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012189">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1012190">
+<PRE>beginTransaction()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1012191">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1012192">
+None.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012195">
+<H4> Returns</H4>
+</A>
+
+<A NAME="1012196">
+0 if the call was successful; otherwise, a nonzero status code based on any error message passed by the database. If the method returns a nonzero status code, use the associated <CODE>majorErrorCode</CODE> and <CODE>majorErrorMessage</CODE> methods to interpret the cause of the error.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012197">
+<H4> Description</H4>
+</A>
+
+<A NAME="1012198">
+All subsequent actions that modify the database are grouped with this transaction, known as the <I>current transaction</I>.<P></A>
+<A NAME="1012200">
+For the <CODE>database</CODE> object, the scope of a transaction is limited to the current request (HTML page) in the application. If the application exits the page before calling the <CODE>commitTransaction</CODE> or <CODE>rollbackTransaction</CODE> method, then the transaction is automatically either committed or rolled back, based on the setting of the <CODE>commitflag</CODE> parameter when the connection was established. This parameter is provided when you make the connection by calling <CODE>database.connect</CODE>.<P></A>
+<A NAME="1012201">
+For <CODE>Connection</CODE> objects, the scope of a transaction is limited to the lifetime of that object. If the connection is released or the pool of connections is closed before calling the <CODE>commitTransaction</CODE> or <CODE>rollbackTransaction</CODE> method, then the transaction is automatically either committed or rolled back, based on the setting of the <CODE>commitflag</CODE> parameter when the connection was established. This parameter is provided when you make the connection by calling the <CODE>connect</CODE> method or in the <CODE>DbPool</CODE> constructor.<P></A>
+<A NAME="1012202">
+If there is no current transaction (that is, if the application has not called <CODE>beginTransaction</CODE>), calls to <CODE>commitTransaction</CODE> and <CODE>rollbackTransaction</CODE> are ignored.<P></A>
+<A NAME="1012203">
+The LiveWire Database Service does not support nested transactions. If you call <CODE>beginTransaction</CODE> when a transaction is already open (that is, you've called <CODE>beginTransaction</CODE> and have yet to commit or roll back that transaction), you'll get an error message.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012206">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1012207">
+This example updates the <CODE>rentals</CODE> table within a transaction. The values of <CODE>customerID</CODE> and <CODE>videoID</CODE> are passed into the <CODE>cursor</CODE> method as properties of the <CODE>request</CODE> object. When the <CODE>videoReturn</CODE> <CODE>Cursor</CODE> object opens, the <CODE>next</CODE> method navigates to the only record in the answer set and updates the value in the <CODE>returnDate</CODE> field.<P></A>
+<A NAME="1012208">
+The variable <CODE>x</CODE> is assigned a database status code to indicate if the <CODE>updateRow</CODE> method is successful. If <CODE>updateRow</CODE> succeeds, the value of <CODE>x</CODE> is 0, and the transaction is committed; otherwise, the transaction is rolled back.<P></A>
+<A NAME="1012209">
+<PRE>// Begin a transaction<br>database.beginTransaction();</PRE></A><A NAME="1012210">
+<PRE>// Create a Date object with the value of today's date<br>today = new Date();</PRE></A><A NAME="1012211">
+<PRE>// Create a Cursor with the rented video in the answer set<br>videoReturn = database.Cursor("SELECT * FROM rentals WHERE<br>&nbsp;&nbsp;&nbsp;customerId = " + request.customerID + " AND<br>&nbsp;&nbsp;&nbsp;videoId = " + request.videoID, true);</PRE></A><A NAME="1012212">
+<PRE>// Position the pointer on the first row of the Cursor<br>// and update the row<br>videoReturn.next()<br>videoReturn.returndate = today;<br>x = videoReturn.updateRow("rentals");</PRE></A><A NAME="1012213">
+<PRE>// End the transaction by committing or rolling back<br>if (x == 0) {<br>&nbsp;&nbsp;&nbsp;database.commitTransaction() }<br>else {<br>&nbsp;&nbsp;&nbsp;database.rollbackTransaction() }</PRE></A><A NAME="1012214">
+<PRE>// Close the Cursor<br>videoReturn.close();</PRE></A>
+<A NAME="Head2Ref;"></A>
+<A NAME="1012216">
+<H2>commitTransaction</H2>
+</A>
+
+<A NAME="1012217">
+Commits the current transaction<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1049866">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1049871">
+<A HREF="lwa.htm#1013808"><CODE>Connection</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1049873">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1049875">
+Netscape Server 3.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012218">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1012219">
+<PRE>commitTransaction()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1012220">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1012221">
+None.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012224">
+<H4> Returns</H4>
+</A>
+
+<A NAME="1012225">
+0 if the call was successful; otherwise, a nonzero status code based on any error message passed by the database. If the method returns a nonzero status code, use the associated <CODE>majorErrorCode</CODE> and <CODE>majorErrorMessage</CODE> methods to interpret the cause of the error.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012226">
+<H4> Description</H4>
+</A>
+
+<A NAME="1012227">
+This method attempts to commit all actions since the last call to <CODE>beginTransaction</CODE>.<P></A>
+<A NAME="1012229">
+For the <CODE>database</CODE> object, the scope of a transaction is limited to the current request (HTML page) in the application. If the application exits the page before calling the <CODE>commitTransaction</CODE> or <CODE>rollbackTransaction</CODE> method, then the transaction is automatically either committed or rolled back, based on the setting of the <CODE>commitflag</CODE> parameter when the connection was established. This parameter is provided when you make the connection with the <CODE>database</CODE> or <CODE>DbPool</CODE> object.<P></A>
+<A NAME="1012230">
+For <CODE>Connection</CODE> objects, the scope of a transaction is limited to the lifetime of that object. If the connection is released or the pool of connections is closed before calling the <CODE>commitTransaction</CODE> or <CODE>rollbackTransaction</CODE> method, then the transaction is automatically either committed or rolled back, based on the <CODE>commitFlag</CODE> value.<P></A>
+<A NAME="1012231">
+If there is no current transaction (that is, if the application has not called <CODE>beginTransaction</CODE>), calls to <CODE>commitTransaction</CODE> and <CODE>rollbackTransaction</CODE> are ignored.<P></A>
+<A NAME="1012232">
+The LiveWire Database Service does not support nested transactions. If you call <CODE>beginTransaction</CODE> when a transaction is already open (that is, you've called <CODE>beginTransaction</CODE> and have yet to commit or roll back that transaction), you'll get an error message.<P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1012236">
+<H2>connected</H2>
+</A>
+
+<A NAME="1012237">
+Tests whether the database pool and all of its connections are connected to a database.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1049926">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1049931">
+<A HREF="lwa.htm#1013808"><CODE>Connection</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1049933">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1049935">
+Netscape Server 3.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012238">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1012239">
+<PRE>connected()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1012240">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1012241">
+None.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012244">
+<H4> Returns</H4>
+</A>
+
+<A NAME="1012245">
+True if the pool (and hence a particular connection in the pool) is currently connected to a database; otherwise, false.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012246">
+<H4> Description</H4>
+</A>
+
+<A NAME="1012247">
+The <CODE>connected</CODE> method indicates whether this object is currently connected to a database. <P></A>
+<A NAME="1012248">
+If this method returns false for a <CODE>Connection</CODE> object, you cannot use any other methods of that object. You must reconnect to the database, using the <CODE>DbPool</CODE> object, and then get a new <CODE>Connection</CODE> object. Similarly, if this method returns false for the <CODE>database</CODE> object, you must reconnect before using other methods of that object.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012251">
+<H4> Example</H4>
+</A>
+
+<A NAME="1012252">
+<B>Example 1:</B> The following code fragment checks to see if the connection is currently open. If it's not, it reconnects the pool and reassigns a new value to the <CODE>myconn</CODE> variable.<P></A>
+<A NAME="1012253">
+<PRE>if (!myconn.connected()) {<br>&nbsp;&nbsp;&nbsp;mypool.connect ("INFORMIX", "myserver", "SYSTEM", "MANAGER", "mydb", 4);<br>&nbsp;&nbsp;&nbsp;myconn = mypool.connection;<br>}</PRE></A><A NAME="1012254">
+<B>Example 2: </B>The following example uses an <CODE>if</CODE> condition to determine if an application is connected to a database server. If the application is connected, the <CODE>isConnectedRoutine</CODE> function runs; if the application is not connected, the <CODE>isNotConnected</CODE> routine runs.<P></A>
+<A NAME="1012255">
+<PRE>if(database.connected()) {<br>&nbsp;&nbsp;&nbsp;isConnectedRoutine() }<br>else {<br>&nbsp;&nbsp;&nbsp;isNotConnectedRoutine() }</PRE></A>
+<A NAME="Head2Ref;"></A>
+<A NAME="1012258">
+<H2>cursor</H2>
+</A>
+
+<A NAME="1012259">
+Creates a <CODE>Cursor</CODE> object.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1051202">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1051207">
+<A HREF="lwa.htm#1013808"><CODE>Connection</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1051209">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1051211">
+Netscape Server 3.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012260">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1012261">
+<PRE>cursor("sqlStatement",updatable)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1012262">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1012272">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012265">
+<PRE>sqlStatement</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1012267">
+A JavaScript string representing a SQL SELECT statement supported by the database server.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012269">
+<PRE>updatable</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1012271">
+(Optional) A <CODE>Boolean</CODE> parameter indicating whether or not the cursor is updatable.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012275">
+<H4> Returns</H4>
+</A>
+
+<A NAME="1012276">
+A new <CODE>Cursor</CODE> object.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012277">
+<H4> Description</H4>
+</A>
+
+<A NAME="1012278">
+The <CODE>cursor</CODE> method creates a <CODE>Cursor</CODE> object that contains the rows returned by a SQL <CODE>SELECT</CODE> statement. The <CODE>SELECT</CODE> statement is passed to the <CODE>cursor</CODE> method as the <CODE>sqlStatement</CODE> argument. If the <CODE>SELECT</CODE> statement does not return any rows, the resulting <CODE>Cursor</CODE> object has no rows. The first time you use the <CODE>next</CODE> method on the object, it returns false.<P></A>
+<A NAME="1012279">
+You can perform the following tasks with the <CODE>Cursor</CODE> object:<P></A>
+<ul><A NAME="1012280">
+<LI>Modify data in a server table.</LI>
+</A><A NAME="1012281">
+<LI>Navigate in a server table.</LI>
+</A><A NAME="1012282">
+<LI>Customize the display of the virtual table returned by a database query.</LI>
+</A><A NAME="1012283">
+<LI>Run stored procedures.</LI>
+</A></ul><A NAME="1012284">
+The <CODE>cursor</CODE> method does not automatically display the returned data. To display this data, you must create custom HTML code. This HTML code may display the rows in an HTML table, as shown in Example 3. The <CODE>SQLTable</CODE> method is an easier way to display the output of a database query, but you cannot navigate, modify data, or control the format of the output.<P></A>
+<A NAME="1012285">
+The optional parameter <CODE>updatable</CODE> specifies whether you can modify the <CODE>Cursor</CODE> object you create with the <CODE>cursor</CODE> method. To create a <CODE>Cursor</CODE> object you can modify, specify <CODE>updatable</CODE> as true. If you do not specify a value for the <CODE>updatable</CODE> parameter, it is false by default.<P></A>
+<A NAME="1012286">
+If you create an updatable <CODE>Cursor</CODE> object, the answer set returned by the <CODE>sqlStatement</CODE> parameter must be updatable. For example, the <CODE>SELECT</CODE> statement in the <CODE>sqlStatement</CODE> parameter cannot contain a <CODE>GROUP BY</CODE> clause; in addition, the query usually must retrieve key values from a table. For more information on constructing updatable queries, consult your database vendor's documentation.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1041340">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1041341">
+<B>Example 1.</B> The following example creates the updatable cursor <CODE>custs</CODE> and returns the columns <CODE>ID</CODE>, <CODE>CUST_NAME</CODE>, and <CODE>CITY</CODE> from the <CODE>customer</CODE> table:<P></A>
+<A NAME="1012291">
+<PRE>custs = database.Cursor("select id, cust_name, city from customer", true)</PRE></A><A NAME="1012292">
+<B>Example 2.</B> You can construct the SELECT statement with the string concatenation operator (+) and string variables such as <CODE>client</CODE> or <CODE>request</CODE> property values, as shown in the following example:<P></A>
+<A NAME="1012293">
+<PRE>custs = database.Cursor("select * from customer<br>&nbsp;&nbsp;&nbsp;where customerID = " + request.customerID);</PRE></A><A NAME="1012294">
+<B>Example 3.</B> The following example demonstrates how to format the answer set returned by the <CODE>cursor</CODE> method as an HTML table. This example first creates <CODE>Cursor</CODE> object named <CODE>videoSet</CODE> and then displays two columns of its data (<CODE>videoSet.title</CODE> and <CODE>videoSet.synopsis</CODE>).<P></A>
+<A NAME="1012295">
+<PRE>// Create the videoSet Cursor<br>&lt;SERVER&gt;<br>videoSet = database.cursor("select * from videos<br>&nbsp;&nbsp;&nbsp;where videos.numonhand &gt; 0 order by title");<br>&lt;/SERVER&gt;</PRE></A><A NAME="1012296">
+<PRE>// Begin creating an HTML table to contain the answer set<br>// Specify titles for the two columns in the answer set<br>&lt;TABLE BORDER&gt;<br>&lt;CAPTION&gt; Videos on Hand &lt;/CAPTION&gt;<br>&lt;TR&gt;<br>&nbsp;&nbsp;&nbsp;&lt;TH&gt;Title&lt;/TH&gt;<br>&nbsp;&nbsp;&nbsp;&lt;TH&gt;Synopsis&lt;/TH&gt;<br>&lt;/TR&gt;</PRE></A><A NAME="1012297">
+<PRE>// Use a while loop to iterate over each row in the cursor<br>&lt;SERVER&gt;<br>while(videoSet.next()) {<br>&lt;/SERVER&gt;</PRE></A><A NAME="1012298">
+<PRE>// Use write statements to display the data in both columns<br>&lt;TR&gt;<br>&nbsp;&nbsp;&nbsp;&lt;TH&gt;&lt;A HREF=\Q"rent.html?videoID="+videoSet.id\Q&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;SERVER&gt;write(videoSet.title)&lt;/SERVER&gt;&lt;/A&gt;&lt;/TH&gt;<br>&nbsp;&nbsp;&nbsp;&lt;TD&gt;&lt;SERVER&gt;write(videoSet.synopsis)&lt;/SERVER&gt;&lt;/TD&gt;<br>&lt;/TR&gt;</PRE></A><A NAME="1012299">
+<PRE>// End the while loop<br>&lt;SERVER&gt;<br>}<br>&lt;/SERVER&gt;</PRE></A><A NAME="1012300">
+<PRE>// End the HTML table<br>&lt;/TABLE&gt;</PRE></A><A NAME="1012301">
+The values in the <CODE>videoSet.title</CODE> column are displayed within the <CODE>A</CODE> tag so a user can click them as links. When a user clicks a title, the <CODE>rent.html</CODE> page opens and the column value <CODE>videoSet.id</CODE> is passed to it as the value of <CODE>request.videoID</CODE>.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012302">
+<H4> See also</H4>
+</A>
+
+<A NAME="1012309">
+<A HREF="lwa.htm#1012596"><CODE>Connection.SQLTable</CODE></A>, <A HREF="lwa.htm#1012258"><CODE>Connection.cursor</CODE></A><P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1012311">
+<H2>execute</H2>
+</A>
+
+<A NAME="1012312">
+Performs the specified SQL statement. Use for SQL statements other than queries.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1051893">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1051898">
+<A HREF="lwa.htm#1013808"><CODE>Connection</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1051900">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1051902">
+Netscape Server 3.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012313">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1012314">
+<PRE>execute (<CODE>stmt</CODE>)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1012315">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1012321">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012318">
+<PRE>stmt</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1012320">
+A string representing the SQL statement to execute.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012324">
+<H4> Returns</H4>
+</A>
+
+<A NAME="1012325">
+0 if the call was successful; otherwise, a nonzero status code based on any error message passed by the database. If the method returns a nonzero status code, use the associated <CODE>majorErrorCode</CODE> and <CODE>majorErrorMessage</CODE> methods to interpret the cause of the error.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012326">
+<H4> Description</H4>
+</A>
+
+<A NAME="1012327">
+This method enables an application to execute any data definition language (DDL) or data manipulation language (DML) SQL statement supported by the database server that does not return a Cursor, such as <CODE>CREATE</CODE>, <CODE>ALTER</CODE>, or <CODE>DROP</CODE>.<P></A>
+<A NAME="1012328">
+Each database supports a standard core of DDL and DML statements. In addition, they may each also support DDL and DML statements specific to that database vendor. You can use <CODE>execute</CODE> to call any of those statements. However, each database vendor may also provide functions you can use with the database that are not DDL or DML statements. You cannot use <CODE>execute</CODE> to call those functions. For example, you cannot call the Oracle <CODE>describe</CODE> function or the Informix <CODE>load</CODE> function from the <CODE>execute</CODE> method.<P></A>
+<A NAME="1012329">
+Although technically you can use <CODE>execute</CODE> to perform data modification (<CODE>INSERT</CODE>, <CODE>UPDATE</CODE>, and <CODE>DELETE</CODE> statements), you should instead use <CODE>Cursor</CODE> objects. This makes your application more database-independent. Cursors also provide support for binary large object (BLOb) data. <P></A>
+<A NAME="1012330">
+When using the <CODE>execute</CODE> method, your SQL statement must strictly conform to the syntax requirements of the database server. For example, some servers require each SQL statement to be terminated by a semicolon. See your server documentation for more information.<P></A>
+<A NAME="1012331">
+If you have not explicitly started a transaction, the single statement is automatically committed.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012334">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1012335">
+In the following example, the <CODE>execute</CODE> method is used to delete a customer from the <CODE>customer</CODE> table. <CODE>customer.ID</CODE> represents the unique ID of a customer that is in the <CODE>ID</CODE> column of the <CODE>customer</CODE> table. The value for <CODE>customer.ID</CODE> is passed into the <CODE>DELETE</CODE> statement as the value of the <CODE>ID</CODE> property of the <CODE>request</CODE> object. <P></A>
+<A NAME="1012336">
+<PRE>if(request.ID != null) {<br>&nbsp;&nbsp;&nbsp;database.execute("delete from customer<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;where customer.ID = " + request.ID)<br>}</PRE></A>
+<A NAME="Head2Ref;"></A>
+<A NAME="1012339">
+<H2>majorErrorCode</H2>
+</A>
+
+<A NAME="1012340">
+Major error code returned by the database server or ODBC.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1052539">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1052544">
+<A HREF="lwa.htm#1013808"><CODE>Connection</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1052546">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1052548">
+Netscape Server 3.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012341">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1012342">
+<PRE>majorErrorCode()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1012343">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1012344">
+None.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012347">
+<H4> Returns</H4>
+</A>
+
+<A NAME="1012348">
+The result returned by this method depends on the database server being used: <P></A>
+<ul><P>
+<A NAME="1012349">
+<LI>Informix: the Informix error code.</LI>
+</A><P>
+<A NAME="1012350">
+<LI>Oracle: the code as reported by Oracle Call-level Interface (OCI).</LI>
+</A><P>
+<A NAME="1012351">
+<LI>Sybase: the DB-Library error number or the SQL server message number.</LI>
+</A></ul>
+<A NAME="Head3;"></A>
+<A NAME="1012353">
+<H4> Description</H4>
+</A>
+
+<A NAME="1012354">
+SQL statements can fail for a variety of reasons, including referential integrity constraints, lack of user privileges, record or table locking in a multiuser database, and so on. When an action fails, the database server returns an error message indicating the reason for failure. The LiveWire Database Service provides two ways of getting error information: from the status code returned by various methods or from special properties containing error messages and codes.<P></A>
+<A NAME="1012355">
+Status codes are integers between 0 and 27, with 0 indicating a successful execution of the statement and other numbers indicating an error, as shown in <A HREF="lwa.htm#1012355">Table&nbsp;10.4</A>.<P><B><A NAME="1012362">
+Table 10.4&nbsp;Database status codes.</A></B>
+<TABLE BORDER="0">
+<TR><TH VALIGN=baseline ALIGN=left><B><A NAME="1012370">
+<B>Status 
+Code
+</B></A></B><TH VALIGN=baseline ALIGN=left><B><A NAME="1012372">
+<B>Explanation
+</B></A></B><TH VALIGN=baseline ALIGN=left><B><A NAME="1012374">
+<B>Status 
+Code
+</B></A></B><TH VALIGN=baseline ALIGN=left><B><A NAME="1012376">
+<B>Explanation
+</B></A></B>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012378">
+0</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1012380">
+No error</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1012382">
+14</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1012384">
+Null reference parameter</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012386">
+1</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1012388">
+Out of memory</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1012390">
+15</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1012392">
+Connection object not found</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012394">
+2</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1012396">
+Object never initialized</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1012398">
+16</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1012400">
+Required information is missing</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012402">
+3</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1012404">
+Type conversion error</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1012406">
+17</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1012408">
+Object cannot support multiple readers</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012410">
+4</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1012412">
+Database not registered</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1012414">
+18</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1012416">
+Object cannot support deletions</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012418">
+5</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1012420">
+Error reported by server</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1012422">
+19</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1012424">
+Object cannot support insertions</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012426">
+6</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1012428">
+Message from server</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1012430">
+20 </A></P><TD VALIGN=baseline ALIGN=left><A NAME="1012432">
+Object cannot support updates</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012434">
+7</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1012436">
+Error from vendor's library</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1012438">
+21</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1012440">
+Object cannot support updates</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012442">
+8</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1012444">
+Lost connection</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1012446">
+22</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1012448">
+Object cannot support indices</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012450">
+9</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1012452">
+End of fetch</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1012454">
+23</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1012456">
+Object cannot be dropped</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012458">
+10</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1012460">
+Invalid use of object</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1012462">
+24</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1012464">
+Incorrect connection supplied</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012466">
+11</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1012468">
+Column does not exist</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1012470">
+25</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1012472">
+Object cannot support privileges</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012474">
+12</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1012476">
+Invalid positioning within object (bounds error)</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1012478">
+26</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1012480">
+Object cannot support cursors</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012482">
+13</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1012484">
+Unsupported feature</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1012486">
+27</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1012488">
+Unable to open</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012491">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1012492">
+This example updates the <CODE>rentals</CODE> table within a transaction. The <CODE>updateRow</CODE> method assigns a database status code to the <CODE>statusCode</CODE> variable to indicate whether the method is successful.<P></A>
+<A NAME="1012493">
+If <CODE>updateRow</CODE> succeeds, the value of <CODE>statusCode</CODE> is 0, and the transaction is committed. If <CODE>updateRow</CODE> returns a <CODE>statusCode</CODE> value of either five or seven, the values of <CODE>majorErrorCode</CODE>, <CODE>majorErrorMessage</CODE>, <CODE>minorErrorCode</CODE>, and <CODE>minorErrorMessage</CODE> are displayed. If <CODE>statusCode</CODE> is set to any other value, the <CODE>errorRoutine</CODE> function is called.<P></A>
+<A NAME="1012494">
+<PRE>database.beginTransaction()<br>statusCode = cursor.updateRow("rentals")</PRE></A><A NAME="1012495">
+<PRE>if (statusCode == 0) {<br>&nbsp;&nbsp;&nbsp;database.commitTransaction()<br>&nbsp;&nbsp;&nbsp;}</PRE></A><A NAME="1012496">
+<PRE>if (statusCode == 5 || statusCode == 7) {<br>&nbsp;&nbsp;&nbsp;write("The operation failed to complete.&lt;BR&gt;"<br>&nbsp;&nbsp;&nbsp;write("Contact your system administrator with the following:&lt;P&gt;"<br>&nbsp;&nbsp;&nbsp;write("The value of statusCode is " + statusCode + "&lt;BR&gt;")<br>&nbsp;&nbsp;&nbsp;write("The value of majorErrorCode is " +<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;database.majorErrorCode() + "&lt;BR&gt;")<br>&nbsp;&nbsp;&nbsp;write("The value of majorErrorMessage is " +<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;database.majorErrorMessage() + "&lt;BR&gt;")<br>&nbsp;&nbsp;&nbsp;write("The value of minorErrorCode is " +<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;database.minorErrorCode() + "&lt;BR&gt;")<br>&nbsp;&nbsp;&nbsp;write("The value of minorErrorMessage is " +<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;database.minorErrorMessage() + "&lt;BR&gt;")<br>&nbsp;&nbsp;&nbsp;database.rollbackTransaction()<br>&nbsp;&nbsp;&nbsp;}</PRE></A><A NAME="1012497">
+<PRE>else {<br>&nbsp;&nbsp;&nbsp;errorRoutine()<br>&nbsp;&nbsp;&nbsp;}</PRE></A>
+<A NAME="Head2Ref;"></A>
+<A NAME="1012499">
+<H2>majorErrorMessage</H2>
+</A>
+
+<A NAME="1012500">
+Major error message returned by database server or ODBC. For server errors, this typically corresponds to the server's SQLCODE.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1052888">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1052893">
+<A HREF="lwa.htm#1013808"><CODE>Connection</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1052895">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1052897">
+Netscape Server 3.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012501">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1012502">
+<PRE>majorErrorMessage()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1012503">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1012504">
+None.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012507">
+<H4> Returns</H4>
+</A>
+
+<A NAME="1012508">
+A string describing that depends on the database server: <P></A>
+<ul><P>
+<A NAME="1012509">
+<LI>Informix: "Vendor Library Error: <I>string</I>," where <I>string</I> is the error text from Informix.</LI>
+</A><P>
+<A NAME="1012510">
+<LI>Oracle: "Server Error: <I>string</I>," where <I>string</I> is the translation of the return code supplied by Oracle.</LI>
+</A><P>
+<A NAME="1012511">
+<LI>Sybase: "Vendor Library Error: string," where string is the error text from DB-Library or "Server Error <I>string</I>," where <I>string</I> is text from the SQL server, unless the severity and message number are both 0, in which case it returns just the message text.</LI>
+</A></ul>
+<A NAME="Head3;"></A>
+<A NAME="1012513">
+<H4> Description</H4>
+</A>
+
+<A NAME="1012514">
+SQL statements can fail for a variety of reasons, including referential integrity constraints, lack of user privileges, record or table locking in a multiuser database, and so on. When an action fails, the database server returns an error message indicating the reason for failure. The LiveWire Database Service provides two ways of getting error information: from the status code returned by <CODE>connection</CODE> and <CODE>DbPool</CODE> methods or from special <CODE>connection</CODE> or <CODE>DbPool</CODE> properties containing error messages and codes.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012517">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1012521">
+See <A HREF="lwa.htm#1012339"><CODE>Connection.majorErrorCode</CODE></A>.<P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1012523">
+<H2>minorErrorCode</H2>
+</A>
+
+<A NAME="1012524">
+Secondary error code returned by database vendor library.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1053064">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1053069">
+<A HREF="lwa.htm#1013808"><CODE>Connection</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1053071">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1053073">
+Netscape Server 3.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012525">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1012526">
+<PRE>minorErrorCode()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1012527">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1012528">
+None.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012531">
+<H4> Returns</H4>
+</A>
+
+<A NAME="1012532">
+The result returned by this method depends on the database server: <P></A>
+<ul><P>
+<A NAME="1012533">
+<LI>Informix: the ISAM error code, or 0 if there is no ISAM error.</LI>
+</A><P>
+<A NAME="1012534">
+<LI>Oracle: the operating system error code as reported by OCI.</LI>
+</A><P>
+<A NAME="1012535">
+<LI>Sybase: the severity level, as reported by DB-Library or the severity level, as reported by the SQL server.</LI>
+</A></ul>
+<A NAME="Head2Ref;"></A>
+<A NAME="1012539">
+<H2>minorErrorMessage</H2>
+</A>
+
+<A NAME="1012540">
+Secondary message returned by database vendor library.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1053218">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1053223">
+<A HREF="lwa.htm#1013808"><CODE>Connection</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1053225">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1053227">
+Netscape Server 3.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012541">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1012542">
+<PRE>minorErrorMessage()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1012543">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1012544">
+None.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012547">
+<H4> Returns</H4>
+</A>
+
+<A NAME="1012548">
+The string returned by this method depends on the database server: <P></A>
+<ul><P>
+<A NAME="1012549">
+<LI>Informix: "ISAM Error: <I>string</I>," where <I>string</I> is the text of the ISAM error code from Informix, or an empty string if there is no ISAM error.</LI>
+</A><P>
+<A NAME="1012550">
+<LI>Oracle: the Oracle server name.</LI>
+</A><P>
+<A NAME="1012551">
+<LI>Sybase: the operating system error text, as reported by DB-Library or the SQL server name.</LI>
+</A></ul>
+<A NAME="Head2Ref;"></A>
+<A NAME="1012555">
+<H2>release</H2>
+</A>
+
+<A NAME="1012556">
+Releases the connection back to the database pool.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1053372">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1053377">
+<A HREF="lwa.htm#1013808"><CODE>Connection</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1053379">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1053381">
+Netscape Server 3.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012557">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1012558">
+<PRE>release()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1012559">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1012560">
+None.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012563">
+<H4> Returns</H4>
+</A>
+
+<A NAME="1012564">
+0 if the call was successful; otherwise, a nonzero status code based on any error message passed by the database. If the method returns a nonzero status code, use the associated <CODE>majorErrorCode</CODE> and <CODE>majorErrorMessage</CODE> methods to interpret the cause of the error.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012565">
+<H4> Description</H4>
+</A>
+
+<A NAME="1012566">
+Before calling the <CODE>release</CODE> method, you should close all open cursors. When you call the <CODE>release</CODE> method, the runtime engine waits until all cursors have been closed and then returns the connection to the database pool. The connection is then available to the next user.<P></A>
+<A NAME="1012567">
+If you don't call the <CODE>release</CODE> method, the connection remains unavailable until the object goes out of scope. Assuming the object has been assigned to a variable, it can go out of scope at different times:<P></A>
+<ul><P>
+<A NAME="1012568">
+<LI>If the variable is a property of the <CODE>project</CODE> object (such as <CODE>project.engconn</CODE>), then it remains in scope until the application terminates.</LI>
+</A><P>
+<A NAME="1012569">
+<LI>If it is a property of the <CODE>server</CODE> object (such as <CODE>server.engconn</CODE>), it does not go out of scope until the server goes down. You rarely want to have a connection last the lifetime of the server.</LI>
+</A><P>
+<A NAME="1012570">
+<LI>In all other cases, the variable is a property of the client request. In this situation, the variable goes out of scope when the JavaScript <CODE>finalize</CODE> method is called; that is, when control leaves the HTML page.</LI>
+</A></ul><A NAME="1012571">
+You must call the <CODE>release</CODE> method for all connections in a database pool before you can call the <CODE>DbPool</CODE> object's <CODE>disconnect</CODE> method. Otherwise, the connection is still considered in use by the runtime engine, so the disconnect waits until all connections are released.<P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1012576">
+<H2>rollbackTransaction</H2>
+</A>
+
+<A NAME="1012577">
+Rolls back the current transaction.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1053518">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1053523">
+<A HREF="lwa.htm#1013808"><CODE>Connection</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1053525">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1053527">
+Netscape Server 3.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012578">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1012579">
+<PRE>rollbackTransaction()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1012580">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1012581">
+None.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012584">
+<H4> Returns</H4>
+</A>
+
+<A NAME="1012585">
+0 if the call was successful; otherwise, a nonzero status code based on any error message passed by the database. If the method returns a nonzero status code, use the associated <CODE>majorErrorCode</CODE> and <CODE>majorErrorMessage</CODE> methods to interpret the cause of the error.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012586">
+<H4> Description</H4>
+</A>
+
+<A NAME="1012587">
+This method will undo all modifications since the last call to <CODE>beginTransaction</CODE>.<P></A>
+<A NAME="1012589">
+For the <CODE>database</CODE> object, the scope of a transaction is limited to the current request (HTML page) in the application. If the application exits the page before calling the <CODE>commitTransaction</CODE> or <CODE>rollbackTransaction</CODE> method, then the transaction is automatically either committed or rolled back, based on the setting of the <CODE>commitflag</CODE> parameter when the connection was established. This parameter is provided when you make the connection with the <CODE>database</CODE> or <CODE>DbPool</CODE> object.<P></A>
+<A NAME="1012590">
+For <CODE>Connection</CODE> objects, the scope of a transaction is limited to the lifetime of that object. If the connection is released or the pool of connections is closed before calling the <CODE>commitTransaction</CODE> or <CODE>rollbackTransaction</CODE> method, then the transaction is automatically either committed or rolled back, based on the <CODE>commitFlag</CODE> value.<P></A>
+<A NAME="1012591">
+If there is no current transaction (that is, if the application has not called <CODE>beginTransaction</CODE>), calls to <CODE>commitTransaction</CODE> and <CODE>rollbackTransaction</CODE> are ignored.<P></A>
+<A NAME="1012592">
+The LiveWire Database Service does not support nested transactions. If you call <CODE>beginTransaction</CODE> when a transaction is already open (that is, you've called <CODE>beginTransaction</CODE> and have yet to commit or roll back that transaction), you'll get an error message.<P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1012596">
+<H2>SQLTable</H2>
+</A>
+
+<A NAME="1012597">
+Displays query results. Creates an HTML table for results of an SQL SELECT statement.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1053660">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1053665">
+<A HREF="lwa.htm#1013808"><CODE>Connection</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1053667">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1053669">
+Netscape Server 3.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012598">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1012599">
+<PRE>SQLTable (stmt)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1012600">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1012606">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012603">
+<PRE>stmt</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1012605">
+A string representing an SQL SELECT statement.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012609">
+<H4> Returns</H4>
+</A>
+
+<A NAME="1012610">
+A string representing an HTML table, with each row and column in the query as a row and column of the table.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012611">
+<H4> Description</H4>
+</A>
+
+<A NAME="1012612">
+Although <CODE>SQLTable</CODE> does not give explicit control over how the output is formatted, it is the easiest way to display query results. If you want to customize the appearance of the output, use a <CODE>Cursor</CODE> object to create your own display function. <P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012613">
+<H4> Note</H4>
+</A>
+
+<A NAME="1012614">
+Every Sybase table you use with a cursor must have a unique index.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012617">
+<H4> Example</H4>
+</A>
+
+<A NAME="1012618">
+If <CODE>connobj</CODE> is a <CODE>Connection</CODE> object and <CODE>request.sql</CODE> contains an SQL query, then the following JavaScript statements display the result of the query in a table:<P></A>
+<A NAME="1012619">
+<PRE>write(request.sql)<br>connobj.SQLTable(request.sql)</PRE></A><A NAME="1012620">
+The first line simply displays the SELECT statement, and the second line displays the results of the query. This is the first part of the HTML generated by these statements:<P></A>
+<A NAME="1012621">
+<PRE>select * from videos<br>&lt;TABLE BORDER&gt;<br>&lt;TR&gt;<br>&lt;TH&gt;title&lt;/TH&gt;<br>&lt;TH&gt;id&lt;/TH&gt;<br>&lt;TH&gt;year&lt;/TH&gt;<br>&lt;TH&gt;category&lt;/TH&gt;<br>&lt;TH&gt;quantity&lt;/TH&gt;<br>&lt;TH&gt;numonhand&lt;/TH&gt;<br>&lt;TH&gt;synopsis&lt;/TH&gt;<br>&lt;/TR&gt;<br>&lt;TR&gt;<br>&lt;TD&gt;A Clockwork Orange&lt;/TD&gt;<br>&lt;TD&gt;1&lt;/TD&gt;<br>&lt;TD&gt;1975&lt;/TD&gt;<br>&lt;TD&gt;Science Fiction&lt;/TD&gt;<br>&lt;TD&gt;5&lt;/TD&gt;<br>&lt;TD&gt;3&lt;/TD&gt;<br>&lt;TD&gt; Little Alex, played by Malcolm Macdowell,<br>and his droogies stop by the Miloko bar for a <br>refreshing libation before a wild night on the town.<br>&lt;/TD&gt;<br>&lt;/TR&gt;<br>&lt;TR&gt;<br>&lt;TD&gt;Sleepless In Seattle&lt;/TD&gt;<br>...</PRE></A><A NAME="1012622">
+As this example illustrates, <CODE>SQLTable</CODE> generates an HTML table, with column headings for each column in the database table and a row in the table for each row in the database table.<P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1012624">
+<H2>storedProc</H2>
+</A>
+
+<A NAME="1012625">
+Creates a stored-procedure object and runs the specified stored procedure.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1053802">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1053807">
+<A HREF="lwa.htm#1013808"><CODE>Connection</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1053809">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1053811">
+Netscape Server 3.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012626">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1012627">
+<PRE>storedwProc (procName, inarg1, inarg2, ..., inargN)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1012628">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1012638">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012631">
+<PRE>procName</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1012633">
+A string specifying the name of the stored procedure to run.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012635">
+<PRE>inarg1, ..., inargN</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1012637">
+The input parameters to be passed to the procedure, separated by commas.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012641">
+<H4> Returns</H4>
+</A>
+
+<A NAME="1012642">
+A new <A HREF="lwa2.htm#1012947"><CODE>Stproc</CODE></A> object.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012643">
+<H4> Description</H4>
+</A>
+
+<A NAME="1012644">
+The scope of the stored-procedure object is a single page of the application. In other words, all methods to be executed for any instance of <CODE>storedProc</CODE> must be invoked on the same application page as the page on which the object is created.<P></A>
+<a name="1012645">
+When you create a stored procedure, you can specify default values for any of 
+the parameters. Then, if a parameter is not included when the stored procedure 
+is executed, the procedure uses the default value. However, when you call a 
+stored procedure from a server-side JavaScript application, you must indicate 
+that you want to use the default value by typing <CODE>"/Default/"</CODE> in place of the 
+parameter. (Remember that JavaScript is case sensitive.) For example:
+</blockquote>
+</a>
+<A NAME="1012646">
+<PRE>spObj = connobj.storedProc ("newhire", "/Default/", 3)</PRE></A>
+<A NAME="Head2Ref;"></A>
+<A NAME="1048238">
+<H2>toString</H2>
+</A>
+
+<A NAME="1048247">
+Returns a string representing the specified object.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1048241">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1048246">
+<A HREF="lwa.htm#1013808"><CODE>Connection</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1048494">
+Implemented in</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1048496">
+Netscape Server 3.0</A></P>
+
+</TABLE>
+ <P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1048248">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1048249">
+<PRE>toString()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1048250">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1048251">
+None.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1048252">
+<H4> Description</H4>
+</A>
+
+<A NAME="1048253">
+Every object has a <CODE>toString</CODE> method that is automatically called when it is to be represented as a text value or when an object is referred to in a string concatenation. <P></A>
+<A NAME="1048254">
+You can use <CODE>toString</CODE> within your own code to convert an object into a string, and you can create your own function to be called in place of the default <CODE>toString</CODE> method.<P></A>
+<A NAME="1048255">
+This method returns a string of the following format:<P></A>
+<A NAME="1048256">
+<PRE>db "name" "userName" "dbtype" "serverName"</PRE></A><A NAME="1048274">
+where<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1048259">
+<PRE>name</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1048261">
+The name of the database.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1048263">
+<PRE>userName</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1048265">
+The name of the user connected to the database.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1048267">
+<PRE>dbType</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1048269">
+One of <CODE>ORACLE</CODE>, <CODE>SYBASE</CODE>, <CODE>INFORMIX, DB2</CODE>, or <CODE>ODBC</CODE>.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1048271">
+<PRE>serverName</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1048273">
+The name of the database server.</A></P>
+
+</TABLE>
+<P></A>
+<A NAME="1048275">
+The method displays an empty string for any of attributes whose value is unknown.<P></A>
+<A NAME="1048280">
+For information on defining your own <CODE>toString</CODE> method, see the <A HREF="corea1.htm#1012793"><CODE>Object.toString</CODE></A> method.<P></A>
+
+<P><HR>
+<A HREF="contents.htm">[Contents]</A> <A HREF="lw2.htm">[Previous]</A> <A HREF="lwa1.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<P ALIGN=right>
+
+<FONT SIZE=-2><I>Last Updated:  10/31/97  16:36:13
+</I></FONT>
+
+<HR SIZE=4>
+
+<P> <CENTER>Copyright © 1997
+<A HREF="http://home.netscape.com/misc/contact_info.html"
+TARGET=_top>Netscape Communications Corporation</A></FONT>
+</CENTER>
+<P>
+<P>
+</BODY>
+</HTML>
+

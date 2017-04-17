@@ -1,0 +1,133 @@
+<HTML>
+<HEAD>
+<TITLE>Events and Event Handlers
+</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A HREF="contents.htm">[Contents]</A> <A HREF="evnt8.htm">[Previous]</A> <A HREF="evnt10.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<HR>
+
+<A NAME="onFocus"></A>
+<A NAME="1010615">
+<H1> onFocus</H1>
+</A>
+<A NAME="1010616">
+Executes JavaScript code when a focus event occurs; that is, when a window, frame, or frameset receives focus or when a form element receives input focus. <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1045698">
+<I>Event handler for </I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1046672">
+<A HREF="but.htm#1016056"><CODE>Button</CODE></A>, <A HREF="choi1.htm#1013039"><CODE>Checkbox</CODE></A>, <A HREF="txt3.htm#1014071"><CODE>FileUpload</CODE></A>, <A HREF="doca3.htm#1113061"><CODE>Layer</CODE></A>, <A HREF="txt2.htm#1012091"><CODE>Password</CODE></A>, <A HREF="choi.htm#1011977"><CODE>Radio</CODE></A>, <A HREF="but2.htm#1012912"><CODE>Reset</CODE></A>, <A HREF="choi2.htm#1013973"><CODE>Select</CODE></A>, <A HREF="but1.htm#1011117"><CODE>Submit</CODE></A>, <A HREF="txt.htm#1023924"><CODE>Text</CODE></A>, <A HREF="txt1.htm#1010943"><CODE>Textarea</CODE></A>, <A HREF="win1.htm#1010280"><CODE>Window</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1045702">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1047965">
+Navigator 2.0<br>Navigator 3.0: event handler of <A HREF="but.htm#1016056"><CODE>Button</CODE></A><CODE>, </CODE><A HREF="choi1.htm#1013039"><CODE>Checkbox</CODE></A><CODE>, </CODE><A HREF="txt3.htm#1014071"><CODE>FileUpload</CODE></A><CODE>, <A HREF="wina.htm#1079184">Frame</A>, </CODE><A HREF="txt2.htm#1012091"><CODE>Password</CODE></A><CODE>, </CODE><A HREF="choi.htm#1011977"><CODE>Radio</CODE></A><CODE>, </CODE><A HREF="but2.htm#1012912"><CODE>Reset</CODE></A><CODE>, </CODE><A HREF="but1.htm#1011117"><CODE>Submit</CODE></A><CODE>,</CODE> and <A HREF="win1.htm#1010280"><CODE>Window</CODE></A><br>Navigator 4.0: event handler of <A HREF="doca3.htm#1113061"><CODE>Layer</CODE></A></A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1049248">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1049249">
+<PRE>onFocus="handlerText"</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1049250">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1049256">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1049253">
+<PRE><CODE>handlerText</CODE></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1049255">
+JavaScript code or a call to a JavaScript function.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1049257">
+<H4> Description</H4>
+</A>
+
+<A NAME="1045674">
+The focus event can result from a <CODE>focus</CODE> method or from the user clicking the mouse on an object or window or tabbing with the keyboard. Selecting within a field results in a select event, not a focus event. <CODE>onFocus</CODE> executes JavaScript code when a focus event occurs.<P></A>
+<A NAME="1010617">
+A frame's <CODE>onFocus</CODE> event handler overrides an <CODE>onFocus</CODE> event handler in the <CODE>BODY</CODE> tag of the document loaded into frame.<P></A>
+<A NAME="1010618">
+Note that placing an alert in an <CODE>onFocus</CODE> event handler results in recurrent alerts: when you press OK to dismiss the alert, the underlying window gains focus again and produces another focus event.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010619">
+<H4> Note</H4>
+</A>
+
+<a name="1010620">
+In Navigator&nbsp;3.0, on some platforms, placing an <CODE>onFocus</CODE> event handler in a 
+<CODE>FRAMESET</CODE> tag has no effect. 
+</blockquote>
+</a>
+
+<A NAME="Head3;"></A>
+<A NAME="1097675">
+<H4> Event properties used</H4>
+</A>
+
+<A NAME="1097685">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1097678">
+<PRE>type</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1103627">
+Indicates the type of event. </A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1097682">
+<PRE>target</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1097684">
+Indicates the object to which the event was originally sent. </A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010663">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1010664">
+The following example uses an <CODE>onFocus</CODE> handler in the <CODE>valueField</CODE> <CODE>Textarea</CODE> object to call the <CODE>valueCheck</CODE> function.<P></A>
+<A NAME="1010665">
+<PRE>&lt;INPUT TYPE="textarea" VALUE="" NAME="valueField"<br>&nbsp;&nbsp;&nbsp;onFocus="valueCheck()"&gt;</PRE></A><A NAME="1010669">
+See also examples for <A HREF="evnt3.htm#1010414"><CODE>onBlur</CODE></A>.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010670">
+<H4> See also</H4>
+</A>
+
+<A NAME="1010677">
+<A HREF="evnt3.htm#1010414"><CODE>onBlur</CODE></A>, <A HREF="evnt4.htm#1010483"><CODE>onChange</CODE></A> <P></A>
+<A NAME="1063624">
+For general information on event handlers, see <A HREF="evnt.htm#1010270">"General Information about Events"</A>. <P></A>
+<A NAME="1094043">
+For information about the <CODE>event</CODE> object, see <A HREF="evnt1.htm#1093773"><CODE>event</CODE></A>.<P></A>
+
+<P><HR>
+<A HREF="contents.htm">[Contents]</A> <A HREF="evnt8.htm">[Previous]</A> <A HREF="evnt10.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<P ALIGN=right>
+
+<FONT SIZE=-2><I>Last Updated:  10/31/97  16:34:02
+</I></FONT>
+
+<HR SIZE=4>
+
+<P> <CENTER>Copyright © 1997
+<A HREF="http://home.netscape.com/misc/contact_info.html"
+TARGET=_top>Netscape Communications Corporation</A></FONT>
+</CENTER>
+<P>
+<P>
+</BODY>
+</HTML>
+
+

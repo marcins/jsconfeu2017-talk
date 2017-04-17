@@ -1,0 +1,1696 @@
+<HTML>
+<HEAD>
+<TITLE>Core&nbsp;&nbsp;&nbsp;
+</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A HREF="contents.htm">[Contents]</A> <A HREF="core4.htm">[Previous]</A> <A HREF="corea.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<HR>
+
+<A NAME="Math"></A>
+<A NAME="1014720">
+<H1> Math</H1>
+</A>
+<A NAME="1014721">
+A built-in object that has properties and methods for mathematical constants and functions. For example, the <CODE>Math</CODE> object's <A HREF="core5.htm#1015149"><CODE>PI</CODE></A> property has the value of pi.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left COLSPAN=2 ROWSPAN=1><A NAME="1148939">
+<I>Core object.</I></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1148934">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1148936">
+Navigator 2.0, LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1014736">
+<H4> Created by</H4>
+</A>
+
+<A NAME="1014737">
+The <A HREF="core5.htm#1014720"><CODE>Math</CODE></A> object is a top-level, predefined JavaScript object. You can automatically access it without using a constructor or calling a method.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1169309">
+<H4> Description</H4>
+</A>
+
+<A NAME="1169310">
+All properties and methods of <CODE>Math</CODE> are static. You refer to the constant PI as <CODE>Math.PI</CODE> and you call the sine function as <CODE>Math.sin(x)</CODE>, where <CODE>x</CODE> is the method's argument. Constants are defined with the full precision of real numbers in JavaScript. <P></A>
+<A NAME="1014740">
+It is often convenient to use the <A HREF="stmt17.htm#1004910"><CODE>with</CODE></A> statement when a section of code uses several <CODE>Math</CODE> constants and methods, so you don't have to type "Math" repeatedly. For example,<P></A>
+<A NAME="1014741">
+<PRE>with (Math) {<br>&nbsp;&nbsp;&nbsp;a = PI * r*r<br>&nbsp;&nbsp;&nbsp;y = r*sin(theta)<br>&nbsp;&nbsp;&nbsp;x = r*cos(theta)<br>}</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1014742">
+<H4> Property Summary</H4>
+</A>
+
+<A NAME="1014800">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1014748">
+<PRE><A HREF="core5.htm#1014939"><CODE>E</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1014750">
+Euler's constant and the base of natural logarithms, approximately 2.718.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1171863">
+<PRE><A HREF="core5.htm#1015025"><CODE>LN10</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1171865">
+Natural logarithm of 10, approximately 2.302.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1014755">
+<PRE><A HREF="core5.htm#1172201"><CODE>LN2</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1014757">
+Natural logarithm of 2, approximately 0.693.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1014776">
+<PRE><A HREF="core5.htm#1015108"><CODE>LOG10E</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1014778">
+Base 10 logarithm of E (approximately 0.434).</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1172797">
+<PRE><A HREF="core5.htm#1172570"><CODE>LOG2E</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1172799">
+Base 2 logarithm of E (approximately 1.442).</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1014783">
+<PRE><A HREF="core5.htm#1015149"><CODE>PI</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1014785">
+Ratio of the circumference of a circle to its diameter, approximately 3.14159.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1014790">
+<PRE><A HREF="core5.htm#1015190"><CODE>SQRT1_2</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1014792">
+Square root of 1/2; equivalently, 1 over the square root of 2, approximately 0.707.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1014797">
+<PRE><A HREF="core5.htm#1015231"><CODE>SQRT2</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1014799">
+Square root of 2, approximately 1.414.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1014801">
+<H4> Method Summary</H4>
+</A>
+
+<A NAME="1014929">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1014807">
+<PRE><A HREF="core5.htm#1015273"><CODE>abs</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1014809">
+Returns the absolute value of a number.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1014814">
+<PRE><A HREF="core5.htm#1015296"><CODE>acos</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1014816">
+Returns the arccosine (in radians) of a number.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1014821">
+<PRE><A HREF="core5.htm#1015342"><CODE>asin</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1014823">
+Returns the arcsine (in radians) of a number.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1014828">
+<PRE><A HREF="core5.htm#1174626"><CODE>atan</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1014830">
+Returns the arctangent (in radians) of a number.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1014835">
+<PRE><A HREF="core5.htm#1015434"><CODE>atan2</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1014837">
+Returns the arctangent of the quotient of its arguments. </A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1014842">
+<PRE><A HREF="core5.htm#1015485"><CODE>ceil</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1014844">
+Returns the smallest integer greater than or equal to a number.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1014849">
+<PRE><A HREF="core5.htm#1015515"><CODE>cos</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1014851">
+Returns the cosine of a number.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1014856">
+<PRE><A HREF="core5.htm#1015562"><CODE>exp</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1014858">
+Returns E<SUP>number</SUP>, where <CODE>number</CODE> is the argument, and E is Euler's constant, the base of the natural logarithms.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1014863">
+<PRE><A HREF="core5.htm#1015598"><CODE>floor</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1014865">
+Returns the largest integer less than or equal to a number.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1014870">
+<PRE><A HREF="core5.htm#1015627"><CODE>log</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1014872">
+Returns the natural logarithm (base E) of a number.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1014877">
+<PRE><A HREF="core5.htm#1015661"><CODE>max</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1014879">
+Returns the greater of two numbers.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1014884">
+<PRE><A HREF="core5.htm#1015691"><CODE>min</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1014886">
+Returns the lesser of two numbers.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1014891">
+<PRE><A HREF="core5.htm#1015720"><CODE>pow</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1014893">
+Returns <CODE>base</CODE> to the <CODE>exponent</CODE> power, that is, <CODE>base</CODE><SUP>exponent</SUP>.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1014898">
+<PRE><A HREF="core5.htm#1015755"><CODE>random</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1014900">
+Returns a pseudo-random number between 0 and 1.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1014905">
+<PRE><A HREF="core5.htm#1015771"><CODE>round</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1014907">
+Returns the value of a number rounded to the nearest integer.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1014912">
+<PRE><A HREF="core5.htm#1015799"><CODE>sin</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1014914">
+Returns the sine of a number.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1014919">
+<PRE><A HREF="core5.htm#1015845"><CODE>sqrt</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1014921">
+Returns the square root of a number.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1014926">
+<PRE><A HREF="core5.htm#1015872"><CODE>tan</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1014928">
+Returns the tangent of a number.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head2;"></A>
+<A NAME="1014936">
+<H3> Properties</H3>
+</A>
+
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1014939">
+<H2>E</H2>
+</A>
+
+<A NAME="1014941">
+Euler's constant and the base of natural logarithms, approximately 2.718.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1155903">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1155905">
+<A HREF="core5.htm#1014720"><CODE>Math</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left COLSPAN=2 ROWSPAN=1><A NAME="1156403">
+<I>Static, Read-only</I></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1148960">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1148962">
+Navigator 2.0, LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1014953">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1014954">
+The following function returns Euler's constant:<P></A>
+<A NAME="1014955">
+<PRE>function getEuler() {<br>&nbsp;&nbsp;&nbsp;return Math.E<br>}</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1184426">
+<H4> Description</H4>
+</A>
+
+<A NAME="1184431">
+Because <CODE>E</CODE> is a static property of <CODE>Math</CODE>, you always use it as <CODE>Math.E</CODE>, rather than as a property of a <CODE>Math</CODE> object you created.<P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1015025">
+<H2>LN10</H2>
+</A>
+
+<A NAME="1015027">
+The natural logarithm of 10, approximately 2.302.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1155926">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1155931">
+<A HREF="core5.htm#1014720"><CODE>Math</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left COLSPAN=2 ROWSPAN=1><A NAME="1169494">
+<I>Static, Read-only</I></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1155933">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1155935">
+Navigator 2.0, LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1015039">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1015040">
+The following function returns the natural log of 10:<P></A>
+<A NAME="1015041">
+<PRE>function getNatLog10() {<br>&nbsp;&nbsp;&nbsp;return Math.LN10<br>}</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1184762">
+<H4> Description</H4>
+</A>
+
+<A NAME="1184763">
+Because <CODE>LN10</CODE> is a static property of <CODE>Math</CODE>, you always use it as <CODE>Math.LN10</CODE>, rather than as a property of a <CODE>Math</CODE> object you created.<P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1172201">
+<H2>LN2</H2>
+</A>
+
+<A NAME="1172218">
+The natural logarithm of 2, approximately 0.693.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1172204">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1172209">
+<A HREF="core5.htm#1014720"><CODE>Math</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left COLSPAN=2 ROWSPAN=1><A NAME="1172211">
+<I>Static, Read-only</I></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1172215">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1172217">
+Navigator 2.0, LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1172219">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1172220">
+The following function returns the natural log of 2:<P></A>
+<A NAME="1172221">
+<PRE>function getNatLog2() {<br>&nbsp;&nbsp;&nbsp;return Math.LN2<br>}</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1184817">
+<H4> Description</H4>
+</A>
+
+<A NAME="1184818">
+Because <CODE>LN2</CODE> is a static property of <CODE>Math</CODE>, you always use it as <CODE>Math.LN2</CODE>, rather than as a property of a <CODE>Math</CODE> object you created.<P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1015108">
+<H2>LOG10E</H2>
+</A>
+
+<A NAME="1044017">
+The base 10 logarithm of E (approximately 0.434).<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1156006">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1156011">
+<A HREF="core5.htm#1014720"><CODE>Math</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left COLSPAN=2 ROWSPAN=1><A NAME="1169506">
+<I>Static, Read-only</I></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1156013">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1156015">
+Navigator 2.0, LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1015121">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1015122">
+The following function returns the base 10 logarithm of <CODE>E</CODE>:<P></A>
+<A NAME="1015123">
+<PRE>function getLog10e() {<br>&nbsp;&nbsp;&nbsp;return Math.LOG10E<br>}</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1184826">
+<H4> Description</H4>
+</A>
+
+<A NAME="1184827">
+Because <CODE>LOG10E</CODE> is a static property of <CODE>Math</CODE>, you always use it as <CODE>Math.LOG10E</CODE>, rather than as a property of a <CODE>Math</CODE> object you created.<P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1172570">
+<H2>LOG2E</H2>
+</A>
+
+<A NAME="1172587">
+The base 2 logarithm of E (approximately 1.442).<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1172573">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1172578">
+<A HREF="core5.htm#1014720"><CODE>Math</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left COLSPAN=2 ROWSPAN=1><A NAME="1172580">
+<I>Static, Read-only</I></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1172584">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1172586">
+Navigator 2.0, LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1172588">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1172589">
+The following function returns the base 2 logarithm of E:<P></A>
+<A NAME="1172590">
+<PRE>function getLog2e() {<br>&nbsp;&nbsp;&nbsp;return Math.LOG2E<br>}</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1184831">
+<H4> Description</H4>
+</A>
+
+<A NAME="1184832">
+Because <CODE>LOG2E</CODE> is a static property of <CODE>Math</CODE>, you always use it as <CODE>Math.LOG2E</CODE>, rather than as a property of a <CODE>Math</CODE> object you created.<P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1015149">
+<H2>PI</H2>
+</A>
+
+<A NAME="1015150">
+The ratio of the circumference of a circle to its diameter, approximately 3.14159.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1156025">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1156030">
+<A HREF="core5.htm#1014720"><CODE>Math</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left COLSPAN=2 ROWSPAN=1><A NAME="1169512">
+<I>Static, Read-only</I></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1156032">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1156034">
+Navigator 2.0, LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1015162">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1015163">
+The following function returns the value of pi:<P></A>
+<A NAME="1015164">
+<PRE>function getPi() {<br>&nbsp;&nbsp;&nbsp;return Math.PI<br>}</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1184839">
+<H4> Description</H4>
+</A>
+
+<A NAME="1184840">
+Because <CODE>PI</CODE> is a static property of <CODE>Math</CODE>, you always use it as <CODE>Math.PI</CODE>, rather than as a property of a <CODE>Math</CODE> object you created.<P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1015190">
+<H2>SQRT1_2</H2>
+</A>
+
+<A NAME="1015191">
+The square root of 1/2; equivalently, 1 over the square root of 2, approximately 0.707.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1156036">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1156041">
+<A HREF="core5.htm#1014720"><CODE>Math</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left COLSPAN=2 ROWSPAN=1><A NAME="1169514">
+<I>Static, Read-only</I></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1156043">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1156045">
+Navigator 2.0, LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1015203">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1015204">
+The following function returns 1 over the square root of 2:<P></A>
+<A NAME="1015205">
+<PRE>function getRoot1_2() {<br>&nbsp;&nbsp;&nbsp;return Math.SQRT1_2<br>}</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1184855">
+<H4> Description</H4>
+</A>
+
+<A NAME="1184856">
+Because <CODE>SQRT1_2</CODE> is a static property of <CODE>Math</CODE>, you always use it as <CODE>Math.SQRT1_2</CODE>, rather than as a property of a <CODE>Math</CODE> object you created.<P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1015231">
+<H2>SQRT2</H2>
+</A>
+
+<A NAME="1015232">
+The square root of 2, approximately 1.414.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1156059">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1156064">
+<A HREF="core5.htm#1014720"><CODE>Math</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left COLSPAN=2 ROWSPAN=1><A NAME="1169516">
+<I>Static, Read-only</I></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1156066">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1156068">
+Navigator 2.0, LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1015244">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1015245">
+The following function returns the square root of 2:<P></A>
+<A NAME="1015246">
+<PRE>function getRoot2() {<br>&nbsp;&nbsp;&nbsp;return Math.SQRT2<br>}</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1184879">
+<H4> Description</H4>
+</A>
+
+<A NAME="1184880">
+Because <CODE>SQRT2</CODE> is a static property of <CODE>Math</CODE>, you always use it as <CODE>Math.SQRT2</CODE>, rather than as a property of a <CODE>Math</CODE> object you created.<P></A>
+
+<A NAME="Head2;"></A>
+<A NAME="1015270">
+<H3> Methods</H3>
+</A>
+
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1015273">
+<H2>abs</H2>
+</A>
+
+<A NAME="1015274">
+Returns the absolute value of a number.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1153696">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1153701">
+<A HREF="core5.htm#1014720"><CODE>Math</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left COLSPAN=2 ROWSPAN=1><A NAME="1169518">
+<I>Static</I></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1149562">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1149564">
+Navigator 2.0, LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1169782">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1169783">
+<PRE>abs(x)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1169784">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1169790">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1169787">
+<PRE>x</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1169789">
+A number</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1169722">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1169723">
+The following function returns the absolute value of the variable <CODE>x</CODE>:<P></A>
+<A NAME="1169724">
+<PRE>function getAbs(x) {<br>&nbsp;&nbsp;&nbsp;return Math.abs(x)<br>}</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1184917">
+<H4> Description</H4>
+</A>
+
+<A NAME="1184918">
+Because <CODE>abs</CODE> is a static method of <CODE>Math</CODE>, you always use it as <CODE>Math.abs()</CODE>, rather than as a method of a <CODE>Math</CODE> object you created.<P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1015296">
+<H2>acos</H2>
+</A>
+
+<A NAME="1015297">
+Returns the arccosine (in radians) of a number.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1156320">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1153738">
+<A HREF="core5.htm#1014720"><CODE>Math</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left COLSPAN=2 ROWSPAN=1><A NAME="1169529">
+<I>Static</I></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1156322">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1149597">
+Navigator 2.0, LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1169825">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1169826">
+<PRE>acos(x)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1169827">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1169833">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1169830">
+<PRE>x</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1169832">
+A number</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1015312">
+<H4> Description</H4>
+</A>
+
+<A NAME="1015313">
+The <CODE>acos</CODE> method returns a numeric value between 0 and pi radians. If the value of <CODE>number</CODE> is outside this range, it returns 0.<P></A>
+<A NAME="1184947">
+Because <CODE>acos</CODE> is a static method of <CODE>Math</CODE>, you always use it as <CODE>Math.acos()</CODE>, rather than as a method of a <CODE>Math</CODE> object you created.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1015316">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1015317">
+The following function returns the arccosine of the variable <CODE>x</CODE>:<P></A>
+<A NAME="1015318">
+<PRE>function getAcos(x) {<br>&nbsp;&nbsp;&nbsp;return Math.acos(x)<br>}</PRE></A><A NAME="1015319">
+If you pass -1 to <CODE>getAcos</CODE>, it returns 3.141592653589793; if you pass 2, it returns 0 because 2 is out of range.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1015320">
+<H4> See also</H4>
+</A>
+
+<A NAME="1015339">
+<A HREF="core5.htm#1015342"><CODE>Math.asin</CODE></A>, <A HREF="core5.htm#1174626"><CODE>Math.atan</CODE></A>, <A HREF="core5.htm#1015434"><CODE>Math.atan2</CODE></A>, <A HREF="core5.htm#1015515"><CODE>Math.cos</CODE></A>, <A HREF="core5.htm#1015799"><CODE>Math.sin</CODE></A>, <A HREF="core5.htm#1015872"><CODE>Math.tan</CODE></A><P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1015342">
+<H2>asin</H2>
+</A>
+
+<A NAME="1015343">
+Returns the arcsine (in radians) of a number.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1156328">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1153758">
+<A HREF="core5.htm#1014720"><CODE>Math</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left COLSPAN=2 ROWSPAN=1><A NAME="1169541">
+<I>Static</I></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1156330">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1149624">
+Navigator 2.0, LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1169854">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1169855">
+<PRE>asin(x)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1169856">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1169862">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1169859">
+<PRE>x</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1169861">
+A number</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1015358">
+<H4> Description</H4>
+</A>
+
+<A NAME="1015359">
+The <CODE>asin</CODE> method returns a numeric value between -pi/2 and pi/2 radians. If the value of <CODE>number</CODE> is outside this range, it returns 0.<P></A>
+<A NAME="1184953">
+Because <CODE>asin</CODE> is a static method of <CODE>Math</CODE>, you always use it as <CODE>Math.asin()</CODE>, rather than as a method of a <CODE>Math</CODE> object you created.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1015362">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1015363">
+The following function returns the arcsine of the variable <CODE>x</CODE>:<P></A>
+<A NAME="1015364">
+<PRE>function getAsin(x) {<br>&nbsp;&nbsp;&nbsp;return Math.asin(x)<br>}</PRE></A><A NAME="1015365">
+If you pass <CODE>getAsin</CODE> the value 1, it returns 1.570796326794897 (pi/2); if you pass it the value 2, it returns 0 because 2 is out of range.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1174604">
+<H4> See also</H4>
+</A>
+
+<A NAME="1174623">
+<A HREF="core5.htm#1015296"><CODE>Math.acos</CODE></A>, <A HREF="core5.htm#1174626"><CODE>Math.atan</CODE></A>, <A HREF="core5.htm#1015434"><CODE>Math.atan2</CODE></A>, <A HREF="core5.htm#1015515"><CODE>Math.cos</CODE></A>, <A HREF="core5.htm#1015799"><CODE>Math.sin</CODE></A>, <A HREF="core5.htm#1015872"><CODE>Math.tan</CODE></A><P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1174626">
+<H2>atan</H2>
+</A>
+
+<A NAME="1015389">
+Returns the arctangent (in radians) of a number.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1156332">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1153797">
+<A HREF="core5.htm#1014720"><CODE>Math</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left COLSPAN=2 ROWSPAN=1><A NAME="1169549">
+<I>Static</I></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1156334">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1149670">
+Navigator 2.0, LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1169888">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1169889">
+<PRE>atan(x)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1169890">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1169896">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1169893">
+<PRE>x</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1169895">
+A number</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1015404">
+<H4> Description</H4>
+</A>
+
+<A NAME="1015405">
+The <CODE>atan</CODE> method returns a numeric value between -pi/2 and pi/2 radians.<P></A>
+<A NAME="1184996">
+Because <CODE>atan</CODE> is a static method of <CODE>Math</CODE>, you always use it as <CODE>Math.atan()</CODE>, rather than as a method of a <CODE>Math</CODE> object you created.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1015408">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1015409">
+The following function returns the arctangent of the variable <CODE>x</CODE>:<P></A>
+<A NAME="1015410">
+<PRE>function getAtan(x) {<br>&nbsp;&nbsp;&nbsp;return Math.atan(x)<br>}</PRE></A><A NAME="1015411">
+If you pass <CODE>getAtan</CODE> the value 1, it returns 0.7853981633974483; if you pass it the value .5, it returns 0.4636476090008061.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1015412">
+<H4> See also</H4>
+</A>
+
+<A NAME="1015431">
+<A HREF="core5.htm#1015296"><CODE>Math.acos</CODE></A>, <A HREF="core5.htm#1015342"><CODE>Math.asin</CODE></A>, <A HREF="core5.htm#1015434"><CODE>Math.atan2</CODE></A>, <A HREF="core5.htm#1015515"><CODE>Math.cos</CODE></A>, <A HREF="core5.htm#1015799"><CODE>Math.sin</CODE></A>, <A HREF="core5.htm#1015872"><CODE>Math.tan</CODE></A><P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1015434">
+<H2>atan2</H2>
+</A>
+
+<A NAME="1015435">
+Returns the arctangent of the quotient of its arguments.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1156336">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1153837">
+<A HREF="core5.htm#1014720"><CODE>Math</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left COLSPAN=2 ROWSPAN=1><A NAME="1169560">
+<I>Static</I></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1156338">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1149705">
+Navigator 2.0, LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1169913">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1169914">
+<PRE>atan2(y, x)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1169915">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1169921">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1169918">
+<PRE>y, x</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1169920">
+Number</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1015454">
+<H4> Description</H4>
+</A>
+
+<A NAME="1015455">
+The <CODE>atan2</CODE> method returns a numeric value between -pi and pi representing the angle theta of an (<CODE>x,y</CODE>) point. This is the counterclockwise angle, measured in radians, between the positive X axis, and the point (<CODE>x,y</CODE>). Note that the arguments to this function pass the y-coordinate first and the x-coordinate second.<P></A>
+<A NAME="1015456">
+<CODE>atan2</CODE> is passed separate <CODE>x</CODE> and <CODE>y</CODE> arguments, and <CODE>atan</CODE> is passed the ratio of those two arguments.<P></A>
+<A NAME="1185004">
+Because <CODE>atan2</CODE> is a static method of <CODE>Math</CODE>, you always use it as <CODE>Math.atan2()</CODE>, rather than as a method of a <CODE>Math</CODE> object you created.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1015459">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1015460">
+The following function returns the angle of the polar coordinate:<P></A>
+<A NAME="1015461">
+<PRE>function getAtan2(x,y) {<br>&nbsp;&nbsp;&nbsp;return Math.atan2(x,y)<br>}</PRE></A><A NAME="1015462">
+If you pass <CODE>getAtan2</CODE> the values (90,15), it returns 1.4056476493802699; if you pass it the values (15,90), it returns 0.16514867741462683.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1015463">
+<H4> See also</H4>
+</A>
+
+<A NAME="1015482">
+<A HREF="core5.htm#1015296"><CODE>Math.acos</CODE></A>, <A HREF="core5.htm#1015342"><CODE>Math.asin</CODE></A>, <A HREF="core5.htm#1174626"><CODE>Math.atan</CODE></A>, <A HREF="core5.htm#1015515"><CODE>Math.cos</CODE></A>, <A HREF="core5.htm#1015799"><CODE>Math.sin</CODE></A>, <A HREF="core5.htm#1015872"><CODE>Math.tan</CODE></A><P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1015485">
+<H2>ceil</H2>
+</A>
+
+<A NAME="1015487">
+Returns the smallest integer greater than or equal to a number.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1156340">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1153864">
+<A HREF="core5.htm#1014720"><CODE>Math</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left COLSPAN=2 ROWSPAN=1><A NAME="1169575">
+<I>Static</I></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1156342">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1149734">
+Navigator 2.0, LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1169946">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1169947">
+<PRE>ceil(x)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1169948">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1169954">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1169951">
+<PRE>x</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1169953">
+A number</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1185025">
+<H4> Description</H4>
+</A>
+
+<A NAME="1185055">
+Because <CODE>ceil</CODE> is a static method of <CODE>Math</CODE>, you always use it as <CODE>Math.ceil()</CODE>, rather than as a method of a <CODE>Math</CODE> object you created.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1015504">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1015505">
+The following function returns the ceil value of the variable <CODE>x</CODE>:<P></A>
+<A NAME="1015506">
+<PRE>function getCeil(x) {<br>&nbsp;&nbsp;&nbsp;return Math.ceil(x)<br>}</PRE></A><A NAME="1015507">
+If you pass 45.95 to <CODE>getCeil</CODE>, it returns 46; if you pass -45.95, it returns -45.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1015508">
+<H4> See also</H4>
+</A>
+
+<A NAME="1015512">
+<A HREF="core5.htm#1015598"><CODE>Math.floor</CODE></A> <P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1015515">
+<H2>cos</H2>
+</A>
+
+<A NAME="1015517">
+Returns the cosine of a number.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1156344">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1153910">
+<A HREF="core5.htm#1014720"><CODE>Math</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left COLSPAN=2 ROWSPAN=1><A NAME="1169592">
+<I>Static</I></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1156346">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1149789">
+Navigator 2.0, LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1169976">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1169977">
+<PRE>cos(x)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1169978">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1169984">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1169981">
+<PRE>x</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1169983">
+A number</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1015532">
+<H4> Description</H4>
+</A>
+
+<A NAME="1015533">
+The <CODE>cos</CODE> method returns a numeric value between -1 and 1, which represents the cosine of the angle.<P></A>
+<A NAME="1185065">
+Because <CODE>cos</CODE> is a static method of <CODE>Math</CODE>, you always use it as <CODE>Math.cos()</CODE>, rather than as a method of a <CODE>Math</CODE> object you created.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1015536">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1015537">
+The following function returns the cosine of the variable <CODE>x</CODE>:<P></A>
+<A NAME="1015538">
+<PRE>function getCos(x) {<br>&nbsp;&nbsp;&nbsp;return Math.cos(x)<br>}</PRE></A><A NAME="1015539">
+If <CODE>x</CODE> equals <CODE>Math.PI/2</CODE>, <CODE>getCos</CODE> returns 6.123031769111886e-017; if <CODE>x</CODE> equals <CODE>Math.PI</CODE>, <CODE>getCos</CODE> returns -1.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1015540">
+<H4> See also</H4>
+</A>
+
+<A NAME="1015559">
+<A HREF="core5.htm#1015296"><CODE>Math.acos</CODE></A>, <A HREF="core5.htm#1015342"><CODE>Math.asin</CODE></A>, <A HREF="core5.htm#1174626"><CODE>Math.atan</CODE></A>, <A HREF="core5.htm#1015434"><CODE>Math.atan2</CODE></A>, <A HREF="core5.htm#1015799"><CODE>Math.sin</CODE></A>, <A HREF="core5.htm#1015872"><CODE>Math.tan</CODE></A><P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1015562">
+<H2>exp</H2>
+</A>
+
+<A NAME="1015564">
+Returns E<SUP>x</SUP>, where <CODE>x</CODE> is the argument, and <CODE>E</CODE> is Euler's constant, the base of the natural logarithms.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1156348">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1153961">
+<A HREF="core5.htm#1014720"><CODE>Math</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left COLSPAN=2 ROWSPAN=1><A NAME="1169600">
+<I>Static</I></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1156350">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1149809">
+Navigator 2.0, LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1170243">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1170007">
+<PRE>exp(x)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1170008">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1170014">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1170011">
+<PRE>x</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1170013">
+A number</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1185100">
+<H4> Description</H4>
+</A>
+
+<A NAME="1185114">
+Because <CODE>exp</CODE> is a static method of <CODE>Math</CODE>, you always use it as <CODE>Math.exp()</CODE>, rather than as a method of a <CODE>Math</CODE> object you created.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1170247">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1015582">
+The following function returns the exponential value of the variable <CODE>x</CODE>:<P></A>
+<A NAME="1015583">
+<PRE>function getExp(x) {<br>&nbsp;&nbsp;&nbsp;return Math.exp(x)<br>}</PRE></A><A NAME="1015584">
+If you pass <CODE>getExp</CODE> the value 1, it returns 2.718281828459045.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1015585">
+<H4> See also</H4>
+</A>
+
+<A NAME="1015595">
+<A HREF="core5.htm#1014939"><CODE>Math.E</CODE></A>, <A HREF="core5.htm#1015627"><CODE>Math.log</CODE></A>, <A HREF="core5.htm#1015720"><CODE>Math.pow</CODE></A><P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1015598">
+<H2>floor</H2>
+</A>
+
+<A NAME="1015599">
+Returns the largest integer less than or equal to a number.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1156352">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1154013">
+<A HREF="core5.htm#1014720"><CODE>Math</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left COLSPAN=2 ROWSPAN=1><A NAME="1169607">
+<I>Static</I></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1156354">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1149822">
+Navigator 2.0, LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1170034">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1170035">
+<PRE>floor(x)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1170036">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1170042">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1170039">
+<PRE>x</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1170041">
+A number</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1185130">
+<H4> Description</H4>
+</A>
+
+<A NAME="1185131">
+Because <CODE>floor</CODE> is a static method of <CODE>Math</CODE>, you always use it as <CODE>Math.floor()</CODE>, rather than as a method of a <CODE>Math</CODE> object you created.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1015616">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1015617">
+The following function returns the floor value of the variable <CODE>x</CODE>:<P></A>
+<A NAME="1015618">
+<PRE>function getFloor(x) {<br>&nbsp;&nbsp;&nbsp;return Math.floor(x)<br>}</PRE></A><A NAME="1015619">
+If you pass 45.95 to <CODE>getFloor</CODE>, it returns 45; if you pass -45.95, it returns -46.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1015620">
+<H4> See also</H4>
+</A>
+
+<A NAME="1015624">
+<A HREF="core5.htm#1015485"><CODE>Math.ceil</CODE></A> <P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1015627">
+<H2>log</H2>
+</A>
+
+<A NAME="1015628">
+Returns the natural logarithm (base <CODE>E</CODE>) of a number.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1156356">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1154020">
+<A HREF="core5.htm#1014720"><CODE>Math</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left COLSPAN=2 ROWSPAN=1><A NAME="1169611">
+<I>Static</I></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1156358">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1149863">
+Navigator 2.0, LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1170056">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1170057">
+<PRE>log(x)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1170058">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1170064">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1170061">
+<PRE>x</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1170063">
+A number</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1015643">
+<H4> Description</H4>
+</A>
+
+<A NAME="1015644">
+If the value of <CODE>number</CODE> is outside the suggested range, the return value is always -1.797693134862316e+308.<B><EM></EM></B><P></A>
+<A NAME="1185141">
+Because <CODE>log</CODE> is a static method of <CODE>Math</CODE>, you always use it as <CODE>Math.log()</CODE>, rather than as a method of a <CODE>Math</CODE> object you created.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1015647">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1015648">
+The following function returns the natural log of the variable <CODE>x</CODE>:<P></A>
+<A NAME="1015649">
+<PRE>function getLog(x) {<br>&nbsp;&nbsp;&nbsp;return Math.log(x)<br>}</PRE></A><A NAME="1015650">
+If you pass <CODE>getLog</CODE> the value 10, it returns 2.302585092994046; if you pass it the value 0, it returns -1.797693134862316e+308 because 0 is out of range.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1015651">
+<H4> See also</H4>
+</A>
+
+<A NAME="1015658">
+<A HREF="core5.htm#1015562"><CODE>Math.exp</CODE></A>, <A HREF="core5.htm#1015720"><CODE>Math.pow</CODE></A> <P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1015661">
+<H2>max</H2>
+</A>
+
+<A NAME="1015663">
+Returns the larger of two numbers.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1156360">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1154076">
+<A HREF="core5.htm#1014720"><CODE>Math</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left COLSPAN=2 ROWSPAN=1><A NAME="1169615">
+<I>Static</I></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1156362">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1149885">
+Navigator 2.0, LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1170072">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1170073">
+<PRE>max(x,y)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1170074">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1170080">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1170077">
+<PRE>x, y</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1170079">
+Numbers.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1185181">
+<H4> Description</H4>
+</A>
+
+<A NAME="1185182">
+Because <CODE>max</CODE> is a static method of <CODE>Math</CODE>, you always use it as <CODE>Math.max()</CODE>, rather than as a method of a <CODE>Math</CODE> object you created.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1015680">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1015681">
+The following function evaluates the variables <CODE>x</CODE> and <CODE>y</CODE>:<P></A>
+<A NAME="1015682">
+<PRE>function getMax(x,y) {<br>&nbsp;&nbsp;&nbsp;return Math.max(x,y)<br>}</PRE></A><A NAME="1015683">
+If you pass <CODE>getMax</CODE> the values 10 and 20, it returns 20; if you pass it the values -10 and -20, it returns -10.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1015684">
+<H4> See also</H4>
+</A>
+
+<A NAME="1015688">
+<A HREF="core5.htm#1015691"><CODE>Math.min</CODE></A> <P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1015691">
+<H2>min</H2>
+</A>
+
+<A NAME="1015692">
+Returns the smaller of two numbers.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1156364">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1154087">
+<A HREF="core5.htm#1014720"><CODE>Math</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left COLSPAN=2 ROWSPAN=1><A NAME="1169633">
+<I>Static</I></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1156366">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1149892">
+Navigator 2.0, LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1170088">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1170089">
+<PRE>min(x,y)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1170090">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1170096">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1170093">
+<PRE>x, y</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1170095">
+Numbers.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1185191">
+<H4> Description</H4>
+</A>
+
+<A NAME="1185192">
+Because <CODE>min</CODE> is a static method of <CODE>Math</CODE>, you always use it as <CODE>Math.min()</CODE>, rather than as a method of a <CODE>Math</CODE> object you created.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1015709">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1015710">
+The following function evaluates the variables <CODE>x </CODE>and <CODE>y</CODE>:<P></A>
+<A NAME="1015711">
+<PRE>function getMin(x,y) {<br>&nbsp;&nbsp;&nbsp;return Math.min(x,y)<br>}</PRE></A><A NAME="1015712">
+If you pass <CODE>getMin</CODE> the values 10 and 20, it returns 10; if you pass it the values -10 and -20, it returns -20.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1015713">
+<H4> See also</H4>
+</A>
+
+<A NAME="1015717">
+<A HREF="core5.htm#1015661"><CODE>Math.max</CODE></A> <P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1015720">
+<H2>pow</H2>
+</A>
+
+<A NAME="1015721">
+Returns <CODE>base</CODE> to the <CODE>exponent</CODE> power, that is, <CODE>base</CODE><SUP>exponent</SUP>.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1156372">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1154150">
+<A HREF="core5.htm#1014720"><CODE>Math</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left COLSPAN=2 ROWSPAN=1><A NAME="1169648">
+<I>Static</I></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1156374">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1149969">
+Navigator 2.0, LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1170113">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1170114">
+<PRE>pow(x,y)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1170115">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1170121">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1170118">
+<PRE>base</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1170120">
+The base number</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1170140">
+<PRE>exponent</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1170142">
+The exponent to which to raise <CODE>base</CODE></A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1185201">
+<H4> Description</H4>
+</A>
+
+<A NAME="1185202">
+Because <CODE>pow</CODE> is a static method of <CODE>Math</CODE>, you always use it as <CODE>Math.pow()</CODE>, rather than as a method of a <CODE>Math</CODE> object you created.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1015742">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1015743">
+<PRE>function raisePower(x,y) {<br>&nbsp;&nbsp;&nbsp;return Math.pow(x,y)<br>}</PRE></A><A NAME="1015744">
+If <CODE>x</CODE> is 7 and <CODE>y</CODE> is 2, <CODE>raisePower</CODE> returns 49 (7 to the power of 2).<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1015745">
+<H4> See also</H4>
+</A>
+
+<A NAME="1015752">
+<A HREF="core5.htm#1015562"><CODE>Math.exp</CODE></A>, <A HREF="core5.htm#1015627"><CODE>Math.log</CODE></A> <P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1015755">
+<H2>random</H2>
+</A>
+
+<A NAME="1015756">
+Returns a pseudo-random number between 0 and 1. The random number generator is seeded from the current time, as in Java.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1156380">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1154162">
+<A HREF="core5.htm#1014720"><CODE>Math</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left COLSPAN=2 ROWSPAN=1><A NAME="1169658">
+<I>Static</I></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1156382">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1150021">
+Navigator 2.0, LiveWire 1.0: Unix only<br>Navigator 3.0, LiveWire 1.0: all platforms</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1170147">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1170148">
+<PRE>random()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1170149">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1170188">
+None.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1185214">
+<H4> Description</H4>
+</A>
+
+<A NAME="1185215">
+Because <CODE>random</CODE> is a static method of <CODE>Math</CODE>, you always use it as <CODE>Math.random()</CODE>, rather than as a method of a <CODE>Math</CODE> object you created.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1015767">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1015768">
+<PRE>//Returns a random number between 0 and 1<br>function getRandom() {<br>&nbsp;&nbsp;&nbsp;return Math.random()<br>}</PRE></A>
+<A NAME="Head2Ref;"></A>
+<A NAME="1015771">
+<H2>round</H2>
+</A>
+
+<A NAME="1170214">
+Returns the value of a number rounded to the nearest integer.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1170200">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1170205">
+<A HREF="core5.htm#1014720"><CODE>Math</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left COLSPAN=2 ROWSPAN=1><A NAME="1170207">
+<I>Static</I></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1170211">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1170213">
+Navigator 2.0, LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1170251">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1170252">
+<PRE>round(x)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1170253">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1170259">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1170256">
+<PRE>x</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1170258">
+A number</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1170215">
+<H4> Description</H4>
+</A>
+
+<A NAME="1170216">
+If the fractional portion of <CODE>number</CODE> is .5 or greater, the argument is rounded to the next highest integer. If the fractional portion of <CODE>number</CODE> is less than .5, the argument is rounded to the next lowest integer.<P></A>
+<A NAME="1185230">
+Because <CODE>round</CODE> is a static method of <CODE>Math</CODE>, you always use it as <CODE>Math.round()</CODE>, rather than as a method of a <CODE>Math</CODE> object you created.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1015791">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1015792">
+<PRE>//Displays the value 20<br>document.write("The rounded value is " + Math.round(20.49))</PRE></A><A NAME="1015793">
+<PRE>//Displays the value 21<br>document.write("&lt;P&gt;The rounded value is " + Math.round(20.5))</PRE></A><A NAME="1015794">
+<PRE>//Displays the value -20<br>document.write("&lt;P&gt;The rounded value is " + Math.round(-20.5))</PRE></A><A NAME="1015795">
+<PRE>//Displays the value -21<br>document.write("&lt;P&gt;The rounded value is " + Math.round(-20.51))</PRE></A><A NAME="1015796">
+In server-side JavaScript, you can display the same output by calling the <A HREF="glob25.htm#1012652"><CODE>write</CODE></A> function instead of using <A HREF="doc1.htm#1011184"><CODE>document.write</CODE></A>.<P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1015799">
+<H2>sin</H2>
+</A>
+
+<A NAME="1015800">
+Returns the sine of a number.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1156388">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1154189">
+<A HREF="core5.htm#1014720"><CODE>Math</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left COLSPAN=2 ROWSPAN=1><A NAME="1169671">
+<I>Static</I></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1156390">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1150119">
+Navigator 2.0, LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1170273">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1170274">
+<PRE>sin(x)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1170275">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1170281">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1170278">
+<PRE>x</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1170280">
+A number</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1015815">
+<H4> Description</H4>
+</A>
+
+<A NAME="1015816">
+The <CODE>sin</CODE> method returns a numeric value between -1 and 1, which represents the sine of the argument.<P></A>
+<A NAME="1185256">
+Because <CODE>sin</CODE> is a static method of <CODE>Math</CODE>, you always use it as <CODE>Math.sin()</CODE>, rather than as a method of a <CODE>Math</CODE> object you created.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1015819">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1015820">
+The following function returns the sine of the variable <CODE>x</CODE>:<P></A>
+<A NAME="1015821">
+<PRE>function getSine(x) {<br>&nbsp;&nbsp;&nbsp;return Math.sin(x)<br>}</PRE></A><A NAME="1015822">
+If you pass <CODE>getSine</CODE> the value <CODE>Math.PI/2</CODE>, it returns 1.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1015823">
+<H4> See also</H4>
+</A>
+
+<A NAME="1015842">
+<A HREF="core5.htm#1015296"><CODE>Math.acos</CODE></A>, <A HREF="core5.htm#1015342"><CODE>Math.asin</CODE></A>, <A HREF="core5.htm#1174626"><CODE>Math.atan</CODE></A>, <A HREF="core5.htm#1015434"><CODE>Math.atan2</CODE></A>, <A HREF="core5.htm#1015515"><CODE>Math.cos</CODE></A>, <A HREF="core5.htm#1015872"><CODE>Math.tan</CODE></A><P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1015845">
+<H2>sqrt</H2>
+</A>
+
+<A NAME="1015847">
+Returns the square root of a number.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1156392">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1154202">
+<A HREF="core5.htm#1014720"><CODE>Math</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left COLSPAN=2 ROWSPAN=1><A NAME="1169679">
+<I>Static</I></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1156394">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1150140">
+Navigator 2.0, LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1170296">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1170297">
+<PRE>sqrt(x)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1170298">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1170304">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1170301">
+<PRE>x</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1170303">
+A number</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1015862">
+<H4> Description</H4>
+</A>
+
+<A NAME="1015863">
+If the value of <CODE>number</CODE> is outside the required range, <CODE>sqrt</CODE> returns 0. <B><EM></EM></B><P></A>
+<A NAME="1185275">
+Because <CODE>sqrt</CODE> is a static method of <CODE>Math</CODE>, you always use it as <CODE>Math.sqrt()</CODE>, rather than as a method of a <CODE>Math</CODE> object you created.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1015866">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1015867">
+The following function returns the square root of the variable <CODE>x</CODE>:<P></A>
+<A NAME="1015868">
+<PRE>function getRoot(x) {<br>&nbsp;&nbsp;&nbsp;return Math.sqrt(x)<br>}</PRE></A><A NAME="1015869">
+If you pass <CODE>getRoot</CODE> the value 9, it returns 3; if you pass it the value 2, it returns 1.414213562373095.<P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1015872">
+<H2>tan</H2>
+</A>
+
+<A NAME="1015873">
+Returns the tangent of a number.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1156396">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1154216">
+<A HREF="core5.htm#1014720"><CODE>Math</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left COLSPAN=2 ROWSPAN=1><A NAME="1169683">
+<I>Static</I></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1156398">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1150164">
+Navigator 2.0, LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1170315">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1170316">
+<PRE>tan(x)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1170317">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1170323">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1170320">
+<PRE>x</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1170322">
+A number</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1015888">
+<H4> Description</H4>
+</A>
+
+<A NAME="1015889">
+The <CODE>tan</CODE> method returns a numeric value that represents the tangent of the angle.<P></A>
+<A NAME="1185293">
+Because <CODE>tan</CODE> is a static method of <CODE>Math</CODE>, you always use it as <CODE>Math.tan()</CODE>, rather than as a method of a <CODE>Math</CODE> object you created.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1015892">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1015893">
+The following function returns the tangent of the variable <CODE>x</CODE>:<P></A>
+<A NAME="1015894">
+<PRE>function getTan(x) {<br>&nbsp;&nbsp;&nbsp;return Math.tan(x)<br>}</PRE></A><A NAME="1015895">
+If you pass <CODE>Math.PI/4</CODE> to <CODE>getTan</CODE>, it returns 0.9999999999999999.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1015896">
+<H4> See also</H4>
+</A>
+
+<A NAME="1015915">
+<A HREF="core5.htm#1015296"><CODE>Math.acos</CODE></A>, <A HREF="core5.htm#1015342"><CODE>Math.asin</CODE></A>, <A HREF="core5.htm#1174626"><CODE>Math.atan</CODE></A>, <A HREF="core5.htm#1015434"><CODE>Math.atan2</CODE></A>, <A HREF="core5.htm#1015515"><CODE>Math.cos</CODE></A>, <A HREF="core5.htm#1015799"><CODE>Math.sin</CODE></A> <P></A>
+<A NAME="1005723">
+<PRE></PRE></A>
+<P><HR>
+<A HREF="contents.htm">[Contents]</A> <A HREF="core4.htm">[Previous]</A> <A HREF="corea.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<P ALIGN=right>
+
+<FONT SIZE=-2><I>Last Updated:  10/31/97  16:00:33
+</I></FONT>
+
+<HR SIZE=4>
+
+<P> <CENTER>Copyright © 1997
+<A HREF="http://home.netscape.com/misc/contact_info.html"
+TARGET=_top>Netscape Communications Corporation</A></FONT>
+</CENTER>
+<P>
+<P>
+</BODY>
+</HTML>
+

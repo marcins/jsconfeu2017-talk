@@ -1,0 +1,102 @@
+<HTML>
+<HEAD>
+<TITLE>Global Functions
+</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A HREF="contents.htm">[Contents]</A> <A HREF="glob23.htm">[Previous]</A> <A HREF="glob25.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<HR>
+
+<A NAME="untaint "></A>
+<A NAME="1040746">
+<H1> untaint </H1>
+</A>
+<A NAME="1040747">
+Removes tainting from a data element or script. <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1040832">
+<I>Core function</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1040834">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1040836">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1040838">
+Navigator 3.0; removed in Navigator 4.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1040748">
+<H4> Syntax </H4>
+</A>
+
+<A NAME="1040749">
+<PRE>untaint(dataElementName)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1040750">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1040880">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1040872">
+<PRE>dataElementName</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1040874">
+(Optional) The property, variable, function, or object to remove tainting from. If omitted, taint is removed from the script itself.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1040755">
+<H4> Description </H4>
+</A>
+
+<A NAME="1040756">
+Tainting prevents other scripts from passing information that should be secure and private, such as directory structures or user session history. JavaScript cannot pass tainted values on to any server without the end user's permission.<P></A>
+<A NAME="1040758">
+Use <CODE>untaint</CODE> to clear tainting that marks data that should not to be sent by other scripts to different servers.<P></A>
+<A NAME="1040759">
+A script can untaint only data that originated in that script (that is, only data that has the script's taint code or has the identity (null) taint code). If you use <CODE>untaint</CODE> with a data element from another server's script (or any data that you cannot untaint), <CODE>untaint</CODE> returns the data without change or error.<P></A>
+<A NAME="1040762">
+In some cases, control flow rather than data flow carries tainted information. In these cases, taint is added to the script's window. You can remove taint from the script's window by calling <CODE>untaint</CODE> with no arguments, if the window contains taint only from the current window. <P></A>
+<A NAME="1040765">
+<CODE>untaint</CODE> does not modify its argument; instead, it returns an unmarked copy of the value, or, for objects, an unmarked reference to the value.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1040767">
+<H4> Examples </H4>
+</A>
+
+<A NAME="1040768">
+The following statement removes taint from a property so that a script can send it to another server:<P></A>
+<A NAME="1040769">
+<PRE>untaintedStatus=untaint(window.defaultStatus)<br>// untaintedStatus can now be sent in a URL or form post by other<br>// scripts</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1040772">
+<H4> See also </H4>
+</A>
+
+<A NAME="1040773">
+<A HREF="brow1.htm#1041012"><CODE>navigator.taintEnabled</CODE></A>, <A HREF="glob22.htm#1040381"><CODE>taint</CODE></A><P></A>
+
+<P><HR>
+<A HREF="contents.htm">[Contents]</A> <A HREF="glob23.htm">[Previous]</A> <A HREF="glob25.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<P ALIGN=right>
+
+<FONT SIZE=-2><I>Last Updated:  10/31/97  16:38:00
+</I></FONT>
+
+<HR SIZE=4>
+
+<P> <CENTER>Copyright © 1997
+<A HREF="http://home.netscape.com/misc/contact_info.html"
+TARGET=_top>Netscape Communications Corporation</A></FONT>
+</CENTER>
+<P>
+<P>
+</BODY>
+</HTML>
+
+

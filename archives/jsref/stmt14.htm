@@ -1,0 +1,93 @@
+<HTML>
+<HEAD>
+<TITLE>Statements
+</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A HREF="contents.htm">[Contents]</A> <A HREF="stmt13.htm">[Previous]</A> <A HREF="stmt15.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<HR>
+
+<A NAME="switch "></A>
+<A NAME="1018610">
+<H1> switch </H1>
+</A>
+<A NAME="1018611">
+Allows a program to evaluate an expression and attempt to match the expression's value to a case label. <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1036079">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1036081">
+Navigator 4.0, Netscape Server 3.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1018622">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1018623">
+<PRE>switch (expression){<br>&nbsp;&nbsp;&nbsp;case label : <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;statement;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br>&nbsp;&nbsp;&nbsp;case label : <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;statement;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br>&nbsp;&nbsp;&nbsp;...<br>&nbsp;&nbsp;&nbsp;default : statement;<br>}</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1018633">
+<H4> Arguments</H4>
+</A>
+
+<A NAME="1018634">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1018958">
+<PRE>expression</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1019047">
+Value matched against label. </A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1018962">
+<PRE>label</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1019068">
+Identifier used to match against expression. </A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1019070">
+<PRE>statement</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1019089">
+Any statement. </A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1018637">
+<H4> Description</H4>
+</A>
+
+<A NAME="1034614">
+If a match is found, the program executes the associated statement. <P></A>
+<A NAME="1034615">
+The program first looks for a label matching the value of expression and then executes the associated statement. If no matching label is found, the program looks for the optional default statement, and if found, executes the associated statement. If no default statement is found, the program continues execution at the statement following the end of <CODE>switch</CODE>. <P></A>
+<A NAME="1034616">
+The optional <A HREF="stmt1.htm#1004780"><CODE>break</CODE></A> statement associated with each case label ensures that the program breaks out of switch once the matched statement is executed and continues execution at the statement following switch. If <A HREF="stmt1.htm#1004780"><CODE>break</CODE></A> is omitted, the program continues execution at the next statement in the <CODE>switch</CODE> statement. <P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1034609">
+<H4> Example</H4>
+</A>
+
+<A NAME="1018638">
+In the following example, if <CODE>expression</CODE> evaluates to "Bananas," the program matches the value with case "Bananas" and executes the associated statement. When <A HREF="stmt1.htm#1004780"><CODE>break</CODE></A> is encountered, the program breaks out of <CODE>switch</CODE> and executes the statement following <CODE>switch</CODE>. If <A HREF="stmt1.htm#1004780"><CODE>break</CODE></A> were omitted, the statement for case "Cherries" would also be executed. <P></A>
+<A NAME="1018642">
+<PRE>switch (i) {<br>&nbsp;&nbsp;&nbsp;case "Oranges" : <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.write("Oranges are $0.59 a pound.&lt;BR&gt;"); <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break; <br>&nbsp;&nbsp;&nbsp;case "Apples" : <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.write("Apples are $0.32 a pound.&lt;BR&gt;"); <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break; <br>&nbsp;&nbsp;&nbsp;case "Bananas" : <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.write("Bananas are $0.48 a pound.&lt;BR&gt;"); <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break; <br>&nbsp;&nbsp;&nbsp;case "Cherries" : <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.write("Cherries are $3.00 a pound.&lt;BR&gt;"); <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break; <br>&nbsp;&nbsp;&nbsp;default : <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.write("Sorry, we are out of " + i + ".&lt;BR&gt;"); <br>} <br>document.write("Is there anything else you'd like?&lt;BR&gt;");</PRE></A>
+<P><HR>
+<A HREF="contents.htm">[Contents]</A> <A HREF="stmt13.htm">[Previous]</A> <A HREF="stmt15.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<P ALIGN=right>
+
+<FONT SIZE=-2><I>Last Updated:  10/31/97  12:29:59
+</I></FONT>
+
+<HR SIZE=4>
+
+<P> <CENTER>Copyright © 1997
+<A HREF="http://home.netscape.com/misc/contact_info.html"
+TARGET=_top>Netscape Communications Corporation</A></FONT>
+</CENTER>
+<P>
+<P>
+</BODY>
+</HTML>
+
+

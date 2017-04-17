@@ -1,0 +1,100 @@
+<HTML>
+<HEAD>
+<TITLE>Global Functions
+</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A HREF="contents.htm">[Contents]</A> <A HREF="glob21.htm">[Previous]</A> <A HREF="glob23.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<HR>
+
+<A NAME="taint "></A>
+<A NAME="1040381">
+<H1> taint </H1>
+</A>
+<A NAME="1040382">
+Adds tainting to a data element or script. <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1040492">
+<I>Core function</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1040494">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1040496">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1040498">
+Navigator 3.0; removed in Navigator 4.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1040383">
+<H4> Syntax </H4>
+</A>
+
+<A NAME="1040384">
+<PRE>taint(dataElementName)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1040385">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1040580">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1040572">
+<PRE>dataElementName</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1040574">
+(Optional) The property, variable, function, or object to taint. If omitted, taint is added to the script itself.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1040389">
+<H4> Description </H4>
+</A>
+
+<A NAME="1040390">
+Tainting prevents other scripts from passing information that should be secure and private, such as directory structures or user session history. JavaScript cannot pass tainted values on to any server without the end user's permission.<P></A>
+<A NAME="1040392">
+Use <CODE>taint</CODE> to mark data that otherwise is not tainted.<P></A>
+<A NAME="1040393">
+In some cases, control flow rather than data flow carries tainted information. In these cases, taint is added to the script's window. You can add taint to the script's window by calling <CODE>taint</CODE> with no arguments. <P></A>
+<A NAME="1040395">
+<CODE>taint</CODE> does not modify its argument; instead, it returns a marked copy of the value, or, for objects, an unmarked reference to the value.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1040396">
+<H4> Examples </H4>
+</A>
+
+<A NAME="1040397">
+The following statement adds taint to a property so that a script cannot send it to another server without the end user's permission:<P></A>
+<A NAME="1040398">
+<PRE>taintedStatus=taint(window.defaultStatus)<br>// taintedStatus now cannot be sent in a URL or form post without<br>// the end user's permission</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1040401">
+<H4> See also </H4>
+</A>
+
+<A NAME="1040402">
+<A HREF="brow1.htm#1041012"><CODE>navigator.taintEnabled</CODE></A>, <A HREF="glob24.htm#1040746"><CODE>untaint</CODE></A><P></A>
+
+<P><HR>
+<A HREF="contents.htm">[Contents]</A> <A HREF="glob21.htm">[Previous]</A> <A HREF="glob23.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<P ALIGN=right>
+
+<FONT SIZE=-2><I>Last Updated:  10/31/97  16:38:00
+</I></FONT>
+
+<HR SIZE=4>
+
+<P> <CENTER>Copyright © 1997
+<A HREF="http://home.netscape.com/misc/contact_info.html"
+TARGET=_top>Netscape Communications Corporation</A></FONT>
+</CENTER>
+<P>
+<P>
+</BODY>
+</HTML>
+
+

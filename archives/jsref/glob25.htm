@@ -1,0 +1,102 @@
+<HTML>
+<HEAD>
+<TITLE>Global Functions
+</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A HREF="contents.htm">[Contents]</A> <A HREF="glob24.htm">[Previous]</A> <A HREF="pkg.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<HR>
+
+<A NAME="write"></A>
+<A NAME="1012652">
+<H1> write</H1>
+</A>
+<A NAME="1012653">
+Generates HTML based on an expression and sends it to the client.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1033628">
+<I>Server-side function</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1033630">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1033632">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1033634">
+LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012654">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1012655">
+<PRE>write(expression)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1012656">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1012662">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012659">
+<PRE>expression</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1012661">
+A valid JavaScript expression.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012663">
+<H4> Description</H4>
+</A>
+
+<A NAME="1012664">
+The <CODE>write</CODE> function causes server-side JavaScript to generate HTML that is sent to the client. The client interprets this generated HTML as it would static HTML. The server-side <CODE>write</CODE> function is similar to the client-side <A HREF="doc1.htm#1011184"><CODE>document.write</CODE></A> method.<P></A>
+<A NAME="1012665">
+To improve performance, the JavaScript engine on the server buffers the output to be sent to the client and sends it in large blocks of at most 64 KBytes in size. You can control when data are sent to the client by using the <CODE>flush</CODE> function.<P></A>
+<A NAME="1012666">
+The <CODE>write</CODE> function is a top-level server-side JavaScript function that is not associated with any object. Do not confuse the <A HREF="oth1.htm#1012408"><CODE>write</CODE></A> method of the <A HREF="oth1.htm#1015167"><CODE>File</CODE></A> object with the <A HREF="glob25.htm#1012652"><CODE>write</CODE></A> function. The <CODE>write</CODE> function outputs data to the client; the <CODE>write</CODE> method outputs data to a physical file on the server.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012669">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1012670">
+In the following example, the <CODE>write</CODE> function is passed a string, concatenated with a variable, concatenated with a <CODE>BR</CODE> tag:<P></A>
+<A NAME="1012671">
+<PRE>write("The operation returned " + returnValue + "&lt;BR&gt;")</PRE></A><A NAME="1012672">
+If <CODE>returnValue</CODE> is 57, this example displays the following:<P></A>
+<A NAME="1012673">
+<PRE>The operation returned 57</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1012674">
+<H4> See also</H4>
+</A>
+
+<A NAME="1012678">
+<A HREF="glob9.htm#1012361"><CODE>flush</CODE></A><P></A>
+<A NAME="1011971">
+<P></A>
+
+<P><HR>
+<A HREF="contents.htm">[Contents]</A> <A HREF="glob24.htm">[Previous]</A> <A HREF="pkg.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<P ALIGN=right>
+
+<FONT SIZE=-2><I>Last Updated:  10/31/97  16:38:00
+</I></FONT>
+
+<HR SIZE=4>
+
+<P> <CENTER>Copyright © 1997
+<A HREF="http://home.netscape.com/misc/contact_info.html"
+TARGET=_top>Netscape Communications Corporation</A></FONT>
+</CENTER>
+<P>
+<P>
+</BODY>
+</HTML>
+

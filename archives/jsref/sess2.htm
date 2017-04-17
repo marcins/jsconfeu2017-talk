@@ -1,0 +1,257 @@
+<HTML>
+<HEAD>
+<TITLE>Session Management Service
+</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A HREF="contents.htm">[Contents]</A> <A HREF="sess1.htm">[Previous]</A> <A HREF="sess3.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<HR>
+
+<A NAME="client"></A>
+<A NAME="1014188">
+<H1> client</H1>
+</A>
+<A NAME="1014189">
+Contains data specific to an individual client.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1031894">
+<I>Server-side object</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1031899">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1031905">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1031907">
+LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1019422">
+<H4> Created by</H4>
+</A>
+
+<A NAME="1019423">
+The JavaScript runtime engine on the server automatically creates a <CODE>client</CODE> object for each client/application pair.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010731">
+<H4> Description</H4>
+</A>
+
+<A NAME="1010732">
+The JavaScript runtime engine on the server constructs a <CODE>client</CODE> object for every client/application pair. A browser client connected to one application has a different <CODE>client</CODE> object than the same browser client connected to a different application. The runtime engine constructs a new <CODE>client</CODE> object each time a user accesses an application; there can be hundreds or thousands of <CODE>client</CODE> objects active at the same time. <P></A>
+<A NAME="1010733">
+You cannot use the <CODE>client</CODE> object on your application's initial page. This page is run when the application is started on the server. At this time, there is not a client request, so there is no available <CODE>client</CODE> object.<P></A>
+<A NAME="1010734">
+The runtime engine constructs and destroys the <CODE>client </CODE>object for each client request. However, at the end of a request, the runtime engine saves the names and values of the <CODE>client</CODE> object's properties so that when the same user returns to the application with a subsequent request, the runtime engine can construct a new <CODE>client</CODE> object with the saved data. Thus, conceptually you can think of the <CODE>client</CODE> object as remaining for the duration of a client's session with the application. There are several different ways to maintain <CODE>client</CODE> property values; for more information, see <A HREF="http://developer.netscape.com/library/documentation/enterprise/wrijsap/index.htm" TARGET="_top">Writing Server-Side JavaScript Applications</A>.<P></A>
+<A NAME="1010740">
+All requests by one client use the same <CODE>client</CODE> object, as long as those requests occur within the lifetime of that <CODE>client</CODE> object. By default, a <CODE>client</CODE> object persists until the associated client has been inactive for 10 minutes. You can use the <CODE>expiration</CODE> method to change this default lifetime or the <CODE>destroy</CODE> method to explicitly destroy the <CODE>client</CODE> object.<P></A>
+<A NAME="1010741">
+Use the <CODE>client</CODE> object to maintain data that is specific to an individual client. Although many clients can access an application simultaneously, the individual <CODE>client</CODE> objects keep their data separate. Each <CODE>client</CODE> object can track the progress of an individual client across multiple requests to the same application.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010742">
+<H4> Method Summary</H4>
+</A>
+
+<A NAME="1010758">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1010748">
+<PRE><A HREF="sess2.htm#1010790"><CODE>destroy</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1010750">
+Destroys a client object.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1010755">
+<PRE><A HREF="sess2.htm#1010815"><CODE>expiration</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1010757">
+Specifies the duration of a <CODE>client</CODE> object.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010761">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1010762">
+<B>Example 1.</B> This example dynamically assigns a customer ID number that is used for the lifetime of an application session. The <CODE>assignId</CODE> function creates an ID based on the user's IP address, and the <CODE>customerId</CODE> property saves the ID.<P></A>
+<A NAME="1010763">
+<PRE>&lt;SERVER&gt;client.customerId = assignId(request.ip)&lt;/SERVER&gt;</PRE></A><A NAME="1010764">
+See also the examples for the <CODE>project</CODE> object for a way to sequentially assign a customer ID.<P></A>
+<A NAME="1010765">
+<B>Example 2.</B> This example creates a <CODE>customerId</CODE> property to store a customer ID that a user enters into a form. The form is defined as follows:<P></A>
+<A NAME="1010766">
+<PRE>&lt;FORM NAME="getCustomerInfo" METHOD="post"&gt;<br>&lt;P&gt;Enter your customer ID: <br>&nbsp;&nbsp;&nbsp;&lt;INPUT TYPE="text" NAME="customerNumber"&gt;<br>&lt;/FORM&gt;</PRE></A><A NAME="1010767">
+The following code assigns the value entered in the <CODE>customerNumber</CODE> field from the temporary <CODE>request.clientNumber</CODE> to the more permanent <CODE>client.customerId</CODE>:<P></A>
+<A NAME="1010768">
+<PRE>&lt;SERVER&gt;client.customerId=request.customerNumber&lt;/SERVER&gt;</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1010769">
+<H4> See also</H4>
+</A>
+
+<A NAME="1010779">
+<A HREF="sess3.htm#1010916"><CODE>project</CODE></A>, <A HREF="sess1.htm#1010271"><CODE>request</CODE></A>, <A HREF="sess4.htm#1011084"><CODE>server</CODE></A> <P></A>
+
+<A NAME="Head2;"></A>
+<A NAME="1010780">
+<H3> Properties</H3>
+</A>
+
+<A NAME="1010781">
+The <CODE>client</CODE> object has no predefined properties. You create custom properties to contain any client-specific data that is required by an application. The runtime engine does not save <CODE>client</CODE> objects that have no property values.<P></A>
+<A NAME="1010782">
+You can create a property for the <CODE>client</CODE> object by assigning it a name and a value. For example, you can create a <CODE>client</CODE> property to store a customer ID at the beginning of an application so a user does not have to enter it with each request.<P></A>
+<A NAME="1010783">
+Because of the techniques used to maintain <CODE>client</CODE> properties across multiple client requests, there is one major restriction on <CODE>client</CODE> property values. The JavaScript runtime engine on the server converts the values of all of the <CODE>client</CODE> object's properties to strings. <P></A>
+<A NAME="1010784">
+The runtime engine cannot convert an object to a string. For this reason, you cannot assign an object as the value of a <CODE>client</CODE> property. If a client property value represents another data type, such as a number, you must convert the value from a string before using it. The core JavaScript <CODE>parseInt</CODE> and <CODE>parseFloat</CODE> functions are useful for converting to integer and floating point values.<P></A>
+
+<A NAME="Head2;"></A>
+<A NAME="1010787">
+<H3> Methods</H3>
+</A>
+
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1010790">
+<H2>destroy</H2>
+</A>
+
+<A NAME="1010791">
+Destroys a <CODE>client</CODE> object.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1032095">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1032100">
+<A HREF="sess2.htm#1014188"><CODE>client</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1032106">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1032108">
+LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010792">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1010793">
+<PRE>destroy()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1010799">
+<H4> Description</H4>
+</A>
+
+<A NAME="1010800">
+The <CODE>destroy</CODE> method explicitly destroys the <CODE>client</CODE> object that issues it and removes all properties from the <CODE>client</CODE> object. If you do not explicitly issue a <CODE>destroy</CODE> method, the JavaScript runtime engine on the server automatically destroys the <CODE>client</CODE> object when its lifetime expires. The <CODE>expiration</CODE> method sets the lifetime of a <CODE>client</CODE> object; by default, the lifetime is 10 minutes.<P></A>
+<A NAME="1010801">
+If you are using client-cookies to maintain the <CODE>client</CODE> object, <CODE>destroy</CODE> eliminates all <CODE>client</CODE> property values, but it does not affect what is stored in Navigator cookie file. Use <CODE>expiration</CODE> with an argument of 0 seconds to remove all client properties stored in the cookie file.<P></A>
+<A NAME="1010802">
+When using client URL encoding to maintain the <CODE>client</CODE> object, <CODE>destroy</CODE> removes all <CODE>client</CODE> properties after the method call. However, any links in a page before the call to <CODE>destroy</CODE> retain properties in their URLs. Therefore, you should generally call <CODE>destroy</CODE> either at the top or bottom of the page when using client URL maintenance. <P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010805">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1010806">
+The following method destroys the <CODE>client</CODE> object that calls it:<P></A>
+<A NAME="1010807">
+<PRE>&lt;server&gt;client.destroy()&lt;/server&gt;</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1010808">
+<H4> See also</H4>
+</A>
+
+<A NAME="1010812">
+<A HREF="sess2.htm#1010815"><CODE>client.expiration</CODE></A> <P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1010815">
+<H2>expiration</H2>
+</A>
+
+<A NAME="1010816">
+Specifies the duration of a <CODE>client</CODE> object.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1032291">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1032296">
+<A HREF="sess2.htm#1014188"><CODE>client</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1032298">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1032300">
+LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010817">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1010818">
+<PRE>expiration(seconds)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1010819">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1010825">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1010822">
+<PRE>seconds</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1010824">
+An integer representing the number of seconds of client inactivity before the <CODE>client</CODE> object expires.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010831">
+<H4> Description</H4>
+</A>
+
+<A NAME="1010832">
+By default, the JavaScript runtime engine on the server destroys the <CODE>client</CODE> object after the client has been inactive for 10 minutes. This default lifetime lets the runtime engine clean up <CODE>client</CODE> objects that are no longer necessary.<P></A>
+<A NAME="1010833">
+Use the <CODE>expiration</CODE> method to explicitly control the expiration of a <CODE>client</CODE> object, making it longer or shorter than the default. You must use <CODE>expiration</CODE> in each page of an application for which you want a <CODE>client</CODE> expiration other than the default. Any page that does not specify an expiration will use the default of 10 minutes.<P></A>
+<A NAME="1013741">
+Client expiration does not apply if using client URL encoding to maintain the client object. In this case, client properties are stored solely in URLs on HTML pages. The runtime engine cannot remove those properties.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010842">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1010843">
+The following example extends the amount of client inactivity before expiration to 1 hour. This code is issued when an application is first launched.<P></A>
+<A NAME="1010844">
+<PRE>&lt;SERVER&gt;client.expiration(3600)&lt;/SERVER&gt;</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1010845">
+<H4> See also</H4>
+</A>
+
+<A NAME="1010849">
+<A HREF="sess2.htm#1010790"><CODE>client.destroy</CODE></A> <P></A>
+
+<P><HR>
+<A HREF="contents.htm">[Contents]</A> <A HREF="sess1.htm">[Previous]</A> <A HREF="sess3.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<P ALIGN=right>
+
+<FONT SIZE=-2><I>Last Updated:  10/31/97  12:33:29
+</I></FONT>
+
+<HR SIZE=4>
+
+<P> <CENTER>Copyright © 1997
+<A HREF="http://home.netscape.com/misc/contact_info.html"
+TARGET=_top>Netscape Communications Corporation</A></FONT>
+</CENTER>
+<P>
+<P>
+</BODY>
+</HTML>
+
+

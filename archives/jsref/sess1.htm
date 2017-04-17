@@ -1,0 +1,518 @@
+<HTML>
+<HEAD>
+<TITLE>Session Management Service
+</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A HREF="contents.htm">[Contents]</A> <A HREF="sess.htm">[Previous]</A> <A HREF="sess2.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<HR>
+
+<A NAME="request"></A>
+<A NAME="1010271">
+<H1> request</H1>
+</A>
+<A NAME="1010272">
+Contains data specific to the current client request.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1029841">
+<I>Server-side object</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1029846">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1029848">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1029850">
+LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1019352">
+<H4> Created by</H4>
+</A>
+
+<A NAME="1019353">
+The JavaScript runtime engine on the server automatically creates a <CODE>request</CODE> object for each client request.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010289">
+<H4> Description</H4>
+</A>
+
+<A NAME="1010290">
+The JavaScript runtime engine on the server creates a <CODE>request</CODE> object each time the client makes a request of the server. The runtime engine destroys the <CODE>request</CODE> object after the server responds to the request, typically by providing the requested page.<P></A>
+<A NAME="1010291">
+The properties listed below are read-only properties that are initialized automatically when a <CODE>request</CODE> object is created. In addition to these predefined properties, you can create custom properties to store application-specific data about the current request.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010292">
+<H4> Property Summary</H4>
+</A>
+
+<A NAME="1033592">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1033599">
+<PRE><A HREF="sess1.htm#1010359"><CODE>agent</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1033601">
+Provides name and version information about the client software.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1033613">
+<PRE><A HREF="sess1.htm#1010405"><CODE>imageX</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1033615">
+The horizontal position of the mouse pointer when the user clicked the mouse over an image map.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1033620">
+<PRE><A HREF="sess1.htm#1010429"><CODE>imageY</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1033622">
+The vertical position of the mouse pointer when the user clicked the mouse over an image map.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1033627">
+<PRE><I><A HREF="sess1.htm#1010451"></I><CODE>inputName</CODE><I></A></I></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1033629">
+Represents an input element on an HTML form. (There is not a property whose name is <CODE>inputName</CODE>. Rather, each instance of <CODE>request</CODE> has properties named after each input element.)</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1034172">
+<PRE><A HREF="sess1.htm#1010477"><CODE>ip</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1034174">
+Provides the IP address of the client.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1033634">
+<PRE><A HREF="sess1.htm#1010507"><CODE>method</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1033636">
+Provides the HTTP method associated with the request.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1033641">
+<PRE><A HREF="sess1.htm#1010537"><CODE>protocol</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1033643">
+Provides the HTTP protocol level supported by the client's software.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010294">
+<H4> Method Summary</H4>
+</A>
+
+<A NAME="1010295">
+None.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010298">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1010299">
+<B>Example 1.</B> This example displays the values of the predefined properties of the <CODE>request</CODE> object. In this example, an HTML form is defined as follows:<P></A>
+<A NAME="1010300">
+<PRE>&lt;FORM METHOD="post" NAME="idForm" ACTION="hello.html"&gt;<br>&lt;P&gt;Last name:<br>&nbsp;&nbsp;&nbsp;&lt;INPUT TYPE="text" NAME="lastName" SIZE="20"&gt;<br>&lt;BR&gt;First name:<br>&nbsp;&nbsp;&nbsp;&lt;INPUT TYPE="text" NAME="firstName" SIZE="20"&gt;<br>&lt;/FORM&gt;</PRE></A><A NAME="1010301">
+The following code displays the values of the <CODE>request</CODE> object properties that are created when the form is submitted:<P></A>
+<A NAME="1010302">
+<PRE>agent = &lt;SERVER&gt;write(request.agent)&lt;/SERVER&gt;&lt;BR&gt;<br>ip = &lt;SERVER&gt;write(request.ip)&lt;/SERVER&gt;&lt;BR&gt;<br>method = &lt;SERVER&gt;write(request.method)&lt;/SERVER&gt;&lt;BR&gt;<br>protocol = &lt;SERVER&gt;write(request.protocol)&lt;/SERVER&gt;&lt;BR&gt;<br>lastName = &lt;SERVER&gt;write(request.lastName)&lt;/SERVER&gt;&lt;BR&gt;<br>firstName = &lt;SERVER&gt;write(request.firstName)&lt;/SERVER&gt;</PRE></A><A NAME="1010303">
+When it executes, this code displays information similar to the following:<P></A>
+<A NAME="1010304">
+<PRE>agent = "Mozilla/2.0 (WinNT;I)"<br>ip = "165.327.114.147"<br>method = "GET"<br>protocol = "HTTP/1.0"<br>lastName = "Schaefer"<br>firstName = "Jesse"</PRE></A><A NAME="1010305">
+<B>Example 2.</B> The following example creates the <CODE>requestDate</CODE> property and initializes it with the current date and time:<P></A>
+<A NAME="1010306">
+<PRE>request.requestDate = new Date()</PRE></A><A NAME="1010307">
+<B>Example 3.</B> When a user clicks the following link, the <CODE>info.html</CODE> page is loaded, <CODE>request.accessedFrom</CODE> is created and initialized to <CODE>"hello.html"</CODE>, and <CODE>request.formId</CODE> is created and initialized to <CODE>"047"</CODE>.<P></A>
+<A NAME="1010308">
+<PRE>Click here for<br>&lt;A HREF="info.html?accessedFrom=hello.html&amp;formId=047"&gt;<br>additional information&lt;/A&gt;.</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1010309">
+<H4> See also</H4>
+</A>
+
+<A NAME="1010319">
+<A HREF="sess2.htm#1014188"><CODE>client</CODE></A>, <A HREF="sess3.htm#1010916"><CODE>project</CODE></A>, <A HREF="sess4.htm#1011084"><CODE>server</CODE></A> <P></A>
+
+<A NAME="Head2;"></A>
+<A NAME="1010320">
+<H3> Properties</H3>
+</A>
+
+
+<A NAME="Head3;"></A>
+<A NAME="1013254">
+<H4> Custom properties</H4>
+</A>
+
+<A NAME="1010346">
+You can create a property for the <CODE>request</CODE> object by assigning it a name and a value. For example, you can create a <CODE>request</CODE> property to store the date and time that a request is received so you can enter the date into the page content. <P></A>
+<A NAME="1010347">
+You can also create <CODE>request</CODE> object properties by encoding them in a URL. When a user navigates to the URL by clicking its link, the properties are created and instantiated to values that you specify. The properties are valid on the destination page.<P></A>
+<A NAME="1010348">
+Use the following syntax to encode a <CODE>request</CODE> property in a URL:<P></A>
+<A NAME="1010349">
+<PRE>&lt;A HREF="URL?propertyName=value&amp;propertyName=value..."&gt;</PRE></A><A NAME="1010350">
+where:<P></A>
+<ul><P>
+<A NAME="1010351">
+<LI><CODE>URL</CODE> is the URL the page that will get the new <CODE>request</CODE> properties.</LI>
+</A><P>
+<A NAME="1010352">
+<LI><CODE>propertyName</CODE> is the name of the property you are creating.</LI>
+</A><P>
+<A NAME="1010353">
+<LI><CODE>value</CODE> is the initial value of the new property.</LI>
+</A></ul><A NAME="1010354">
+Use <CODE>escape</CODE> to encode non-alphanumeric values in the URL string.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010355">
+<H4> </H4>
+</A>
+
+<A NAME="1010356">
+You can also create custom properties for the <CODE>request</CODE> object.<P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1010359">
+<H2>agent</H2>
+</A>
+
+<A NAME="1010360">
+Provides name and version information about the client software.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1030038">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1030040">
+<A HREF="sess1.htm#1010271"><CODE>request</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1030806">
+<I>Read-only</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1030808">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1030042">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1030044">
+LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010368">
+<H4> Description</H4>
+</A>
+
+<A NAME="1010369">
+The <CODE>agent</CODE> property identifies the client software. Use this information to conditionally employ certain features in an application.<P></A>
+<A NAME="1010371">
+The value of the <CODE>agent</CODE> property is the same as the value of the <CODE>userAgent</CODE> property of the client-side <CODE>navigator</CODE> object. The <CODE>agent</CODE> property specifies client information in the following format:<P></A>
+<A NAME="1010372">
+<CODE>codeName</CODE>/<CODE>releaseNumber</CODE> (<CODE>platform</CODE>; <CODE>country</CODE>; <CODE>platformIdentifier</CODE>)<P></A>
+<A NAME="1010373">
+The values contained in this format are the following:<P></A>
+<ul><P>
+<A NAME="1010374">
+<LI><CODE>codeName</CODE> is the code name of the client. For example, <CODE>"Mozilla"</CODE> specifies Navigator.</LI>
+</A><P>
+<A NAME="1010375">
+<LI><CODE>releaseNumber</CODE> is the version number of the client. For example, <CODE>"2.0b4"</CODE> specifies Navigator 2.0, beta 4.</LI>
+</A><P>
+<A NAME="1010376">
+<LI><CODE>platform</CODE> is the platform upon which the client is running. For example, <CODE>"Win16"</CODE> specifies a 16-bit version of Windows, such as Windows 3.11.</LI>
+</A><P>
+<A NAME="1010377">
+<LI><CODE>country</CODE> is either <CODE>"I"</CODE> for the international release or <CODE>"U"</CODE> for the domestic U.S. release. The domestic release has a stronger encryption feature than the international release.</LI>
+</A><P>
+<A NAME="1010378">
+<LI><CODE>platformIdentifier</CODE> is an optional identifier that further specifies the platform. For example, in Navigator 1.1, <CODE>platform</CODE> is <CODE>"windows"</CODE> and <CODE>platformIdentifier</CODE> is <CODE>"32bit"</CODE>. In Navigator 2.0, both pieces of information are contained in the <CODE>platform</CODE> designation. For example, in Navigator 2.0, the previous platform is expressed as <CODE>"WinNT"</CODE>.</LI>
+</A></ul>
+<A NAME="Head3;"></A>
+<A NAME="1010381">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1010382">
+The following example displays client information for Navigator 2.0 on Windows NT:<P></A>
+<A NAME="1010383">
+<PRE>write(request.agent)<br>\\Displays "Mozilla/2.0 (WinNT;I)"</PRE></A><A NAME="1010384">
+The following example evaluates the <CODE>request.agent</CODE> property and runs the <CODE>oldBrowser</CODE> procedure for clients other than Navigator 2.0. If the browser is Navigator 2.0, the <CODE>currentBrowser</CODE> function executes.<P></A>
+<A NAME="1010385">
+<PRE>&lt;SERVER&gt;<br>var agentVar=request.agent<br>if (agentVar.indexOf("2.0")==-1)<br>&nbsp;&nbsp;&nbsp;oldBrowser()<br>else<br>&nbsp;&nbsp;&nbsp;currentBrowser()<br>&lt;/SERVER&gt;</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1010386">
+<H4> See also</H4>
+</A>
+
+<A NAME="1010399">
+<A HREF="sess1.htm#1010477"><CODE>request.ip</CODE></A>, <A HREF="sess1.htm#1010507"><CODE>request.method</CODE></A>, <A HREF="sess1.htm#1010537"><CODE>request.protocol</CODE></A><P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1010405">
+<H2>imageX</H2>
+</A>
+
+<A NAME="1010406">
+The horizontal position of the mouse pointer when the user clicked the mouse over an image map.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1030836">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1030841">
+<A HREF="sess1.htm#1010271"><CODE>request</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1030940">
+<I>Read-only</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1030942">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1030843">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1030845">
+LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010414">
+<H4> Description</H4>
+</A>
+
+<A NAME="1010415">
+The ISMAP attribute of the <CODE>IMG</CODE> tag indicates a server-based image map. When the user clicks the mouse with the pointer over an image map, the horizontal and vertical position of the pointer are returned to the server.<P></A>
+<A NAME="1010417">
+The <CODE>imageX</CODE> property returns the horizontal position of the mouse cursor when the user clicks on an image map. <P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010421">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1010422">
+Suppose you define the following image map:<P></A>
+<A NAME="1010423">
+<PRE>&lt;A HREF="mapchoice.html"&gt;<br>&lt;IMG SRC="images\map.gif" WIDTH=599 WIDTH=424 BORDER=0 ISMAP <br>ALT="SANTA CRUZ COUNTY"&gt;<br>&lt;/A&gt;</PRE></A><A NAME="1010424">
+Note the <CODE>ISMAP</CODE> attribute that makes the image a clickable map. When the user clicks the mouse on the image, the page <CODE>mapchoice.html</CODE> will have properties <CODE>request.imageX</CODE> and <CODE>request.imageY</CODE> based on the mouse cursor position where the user clicked.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010425">
+<H4> See also</H4>
+</A>
+
+<A NAME="1010426">
+<A HREF="sess1.htm#1010429"><CODE>request.imageY</CODE></A><P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1010429">
+<H2>imageY</H2>
+</A>
+
+<A NAME="1030951">
+The vertical position of the mouse pointer when the user clicked the mouse over an image map.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1030956">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1030961">
+<A HREF="sess1.htm#1010271"><CODE>request</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1030963">
+<I>Read-only</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1030965">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1030967">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1030969">
+LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010438">
+<H4> Description</H4>
+</A>
+
+<A NAME="1010439">
+The ISMAP attribute of the <CODE>IMG</CODE> tag indicates a server-based image map. When the user clicks the mouse with the pointer over an image map, the horizontal and vertical position of the pointer are returned to the server.<P></A>
+<A NAME="1010441">
+The <CODE>imageY</CODE> property returns the vertical position of the mouse cursor when the user clicks on an image map. <P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010445">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1010446">
+See example for <A HREF="sess1.htm#1010405"><CODE>imageX</CODE></A>.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010447">
+<H4> See also</H4>
+</A>
+
+<A NAME="1010448">
+<A HREF="sess1.htm#1010405"><CODE>request.imageX</CODE></A><P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1010451">
+<H2>inputName</H2>
+</A>
+
+<A NAME="1010452">
+Represents an input element on an HTML form.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1031062">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1031067">
+<A HREF="sess1.htm#1010271"><CODE>request</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1031069">
+<I>Read-only</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1031071">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1031073">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1031075">
+LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010467">
+<H4> Description</H4>
+</A>
+
+<A NAME="1010468">
+Each input element in an HTML form corresponds to a property of the <CODE>request</CODE> object. The name of each of these properties is the name of the field on the associated form. <CODE>inputName</CODE> is a variable that represents the value of the <CODE>name</CODE> property of an input field on a submitted form. By default, the value of the JavaScript <CODE>name</CODE> property is the same as the HTML <CODE>NAME</CODE> attribute.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010472">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1010473">
+The following HTML source creates the <CODE>request.lastName</CODE> and the <CODE>request.firstName </CODE>properties when <CODE>idForm</CODE> is submitted:<P></A>
+<A NAME="1010474">
+<PRE>&lt;FORM METHOD="post" NAME="idForm" ACTION="hello.html"&gt;<br>&lt;P&gt;Last name:<br>&nbsp;&nbsp;&nbsp;&lt;INPUT TYPE="text" NAME="lastName" SIZE="20"&gt;<br>&lt;BR&gt;First name:<br>&nbsp;&nbsp;&nbsp;&lt;INPUT TYPE="text" NAME="firstName" SIZE="20"&gt;<br>&lt;/FORM&gt;</PRE></A>
+<A NAME="Head2Ref;"></A>
+<A NAME="1010477">
+<H2>ip</H2>
+</A>
+
+<A NAME="1010478">
+Provides the IP address of the client.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1031150">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1031155">
+<A HREF="sess1.htm#1010271"><CODE>request</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1031157">
+<I>Read-only</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1031159">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1031161">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1031163">
+LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010486">
+<H4> Description</H4>
+</A>
+
+<A NAME="1010487">
+The IP address is a set of four numbers between 0 and 255, for example, 198.217.226.34. You can use the IP address to authorize or record access in certain situations.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010491">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1010492">
+In the following example, the <CODE>indexOf</CODE> method evaluates <CODE>request.ip</CODE> to determine if it begins with the string <CODE>"198.217.226"</CODE>. The <CODE>if</CODE> statement executes a different function depending on the result of the <CODE>indexOf</CODE> method.<P></A>
+<A NAME="1010493">
+<PRE>&lt;SERVER&gt;<br>var ipAddress=request.ip<br>if (ipAddress.indexOf("198.217.226.")==-1)<br>&nbsp;&nbsp;&nbsp;limitedAccess()<br>else<br>&nbsp;&nbsp;&nbsp;fullAccess()<br>&lt;/SERVER&gt;</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1010494">
+<H4> See also</H4>
+</A>
+
+<A NAME="1010504">
+<A HREF="sess1.htm#1010359"><CODE>request.agent</CODE></A>, <A HREF="sess1.htm#1010507"><CODE>request.method</CODE></A>, <A HREF="sess1.htm#1010537"><CODE>request.protocol</CODE></A> <P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1010507">
+<H2>method</H2>
+</A>
+
+<A NAME="1010508">
+Provides the HTTP method associated with the request.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1031384">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1031389">
+<A HREF="sess1.htm#1010271"><CODE>request</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1031391">
+<I>Read-only</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1031393">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1031395">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1031397">
+LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010516">
+<H4> Description</H4>
+</A>
+
+<A NAME="1010517">
+The value of the <CODE>method</CODE> property is the same as the value of the <CODE>method</CODE> property of the client-side <CODE>Form</CODE> object. That is, <CODE>method</CODE> reflects the <CODE>METHOD</CODE> attribute of the <CODE>FORM</CODE> tag. For HTTP 1.0, the <CODE>method</CODE> property evaluates to either <CODE>"get" </CODE>or <CODE>"post"</CODE>. Use the <CODE>method</CODE> property to determine the proper response to a request.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010521">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1010522">
+The following example executes the <CODE>postResponse</CODE> function if the <CODE>method</CODE> property evaluates to <CODE>"post"</CODE>. If <CODE>method</CODE> evaluates to anything else, it executes the <CODE>getResponse</CODE> function.<P></A>
+<A NAME="1010523">
+<PRE>&lt;SERVER&gt;<br>if (request.method=="post")<br>&nbsp;&nbsp;&nbsp;postResponse()<br>else<br>&nbsp;&nbsp;&nbsp;getResponse()<br>&lt;/SERVER&gt;</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1010524">
+<H4> See also</H4>
+</A>
+
+<A NAME="1010534">
+<A HREF="sess1.htm#1010359"><CODE>request.agent</CODE></A>, <A HREF="sess1.htm#1010477"><CODE>request.ip</CODE></A>, <A HREF="sess1.htm#1010537"><CODE>request.protocol</CODE></A> <P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1010537">
+<H2>protocol</H2>
+</A>
+
+<A NAME="1010538">
+Provides the HTTP protocol level supported by the client's software.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1031650">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1031655">
+<A HREF="sess1.htm#1010271"><CODE>request</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1031657">
+<I>Read-only</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1031659">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1031661">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1031663">
+LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010546">
+<H4> Description</H4>
+</A>
+
+<A NAME="1010547">
+For HTTP 1.0, the protocol value is <CODE>"HTTP/1.0"</CODE>. Use the <CODE>protocol</CODE> property to determine the proper response to a request.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010550">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1010551">
+In the following example, the <CODE>currentProtocol</CODE> function executes if <CODE>request.protocol</CODE> evaluates to <CODE>"HTTP/1.0"</CODE>.<P></A>
+<A NAME="1010552">
+<PRE>&lt;SERVER&gt;<br>if (request.protocol=="HTTP/1.0"<br>&nbsp;&nbsp;&nbsp;currentProtocol()<br>else<br>&nbsp;&nbsp;&nbsp;unknownProtocol()<br>&lt;/SERVER&gt;</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1010553">
+<H4> See also</H4>
+</A>
+
+<A NAME="1014185">
+<A HREF="sess1.htm#1010359"><CODE>request.agent</CODE></A>, <A HREF="sess1.htm#1010477"><CODE>request.ip</CODE></A>, <A HREF="sess1.htm#1010507"><CODE>request.method</CODE></A> <P></A>
+
+<P><HR>
+<A HREF="contents.htm">[Contents]</A> <A HREF="sess.htm">[Previous]</A> <A HREF="sess2.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<P ALIGN=right>
+
+<FONT SIZE=-2><I>Last Updated:  10/31/97  12:33:29
+</I></FONT>
+
+<HR SIZE=4>
+
+<P> <CENTER>Copyright © 1997
+<A HREF="http://home.netscape.com/misc/contact_info.html"
+TARGET=_top>Netscape Communications Corporation</A></FONT>
+</CENTER>
+<P>
+<P>
+</BODY>
+</HTML>
+
+

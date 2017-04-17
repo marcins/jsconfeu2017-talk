@@ -1,0 +1,297 @@
+<HTML>
+<HEAD>
+<TITLE>Session Management Service
+</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A HREF="contents.htm">[Contents]</A> <A HREF="sess4.htm">[Previous]</A> <A HREF="oth.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<HR>
+
+<A NAME="Lock"></A>
+<A NAME="1011483">
+<H1> Lock</H1>
+</A>
+<A NAME="1011484">
+Provides a way to lock a critical section of code.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1033180">
+<I>Server-side object</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1033185">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1033191">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1033193">
+Netscape Server 3.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1020105">
+<H4> Created by</H4>
+</A>
+
+<A NAME="1020106">
+The <CODE>Lock</CODE> constructor:<P></A>
+<A NAME="1023606">
+<PRE>Lock(); </PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1023745">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1023776">
+None.<P></A>
+<A NAME="1023610">
+Failure to construct a new <CODE>Lock</CODE> object indicates an internal JavaScript error, such as out of memory. <P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1011485">
+<H4> Method Summary</H4>
+</A>
+
+<A NAME="1011515">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1011498">
+<PRE><A HREF="sess5.htm#1011531"><CODE>lock</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1011500">
+Obtains the lock.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1034075">
+<PRE><A HREF="sess5.htm#1011567"><CODE>isValid</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1034077">
+Verifies that this <CODE>Lock</CODE> object was properly constructed.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1011505">
+<PRE><A HREF="sess5.htm#1034134"><CODE>unlock</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1011507">
+Releases the lock.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1034406">
+<H4> See also</H4>
+</A>
+
+<A NAME="1034419">
+<A HREF="sess3.htm#1010984"><CODE>project.lock</CODE></A>, <A HREF="sess3.htm#1011005"><CODE>project.unlock</CODE></A>, <A HREF="sess4.htm#1011318"><CODE>server.lock</CODE></A>, <A HREF="sess4.htm#1011339"><CODE>server.unlock</CODE></A><P></A>
+
+<A NAME="Head2;"></A>
+<A NAME="1011518">
+<H3> Methods</H3>
+</A>
+
+
+<A NAME="Head3;"></A>
+<A NAME="1011522">
+<H4> Syntax</H4>
+</A>
+
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1011531">
+<H2>lock</H2>
+</A>
+
+<A NAME="1013811">
+Obtains the lock. If someone else has the lock, this method blocks until it can get the lock, the specified timeout period has elapsed, or an error occurs.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1033217">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1033219">
+<A HREF="sess5.htm#1011483"><CODE>Lock</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1033221">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1033223">
+Netscape Server 3.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1011533">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1011534">
+<PRE>lock(timeout)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1011535">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1011541">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1011538">
+<PRE>timeout</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1011540">
+An integer indicating the number of seconds to wait for the lock. If 0, there is no timeout; that is, the method waits indefinitely to obtain the lock. The default value is 0, so if you do not specify a value, the method waits indefinitely.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1011544">
+<H4> Returns</H4>
+</A>
+
+<A NAME="1011545">
+True if it succeeds in obtaining the lock within the specified timeout. False if it did not obtain the lock.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1011546">
+<H4> Description</H4>
+</A>
+
+<A NAME="1011547">
+You can obtain a lock for an object to ensure that different clients do not access a critical section of code simultaneously. When an application locks an object, other client requests must wait before they can lock the object. <P></A>
+<A NAME="1011548">
+Note that this mechanism requires voluntary compliance by asking for the lock in the first place. <P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1034459">
+<H4> See also</H4>
+</A>
+
+<A NAME="1034472">
+<A HREF="sess5.htm#1034134"><CODE>Lock.unlock</CODE></A>, <A HREF="sess5.htm#1011567"><CODE>Lock.isValid</CODE></A>, <A HREF="sess3.htm#1010984"><CODE>project.lock</CODE></A>, <A HREF="sess4.htm#1011318"><CODE>server.lock</CODE></A><P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1011567">
+<H2>isValid</H2>
+</A>
+
+<A NAME="1011568">
+Verifies that this <CODE>Lock</CODE> object was properly constructed.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1033318">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1033323">
+<A HREF="sess5.htm#1011483"><CODE>Lock</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1033325">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1033327">
+Netscape Server 3.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1011569">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1011570">
+<PRE>isValid()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1011571">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1011572">
+None.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1011575">
+<H4> Returns</H4>
+</A>
+
+<A NAME="1011576">
+True, if this object was properly constructed; otherwise, false.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1011577">
+<H4> Description</H4>
+</A>
+
+<A NAME="1011578">
+It is very rare that your <CODE>Lock</CODE> object would not be properly constructed. This happens only if the runtime engine runs out of system resources while creating the object.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1011581">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1011582">
+This code creates a <CODE>Lock</CODE> object and verifies that nothing went wrong creating it:<P></A>
+<A NAME="1011583">
+<PRE>// construct a new Lock and save in project <br>project.ordersLock = new Lock(); <br>if (! project.ordersLock.isValid()) {<br>&nbsp;&nbsp;&nbsp;// Unable to create a Lock. Redirect to error page<br>&nbsp;&nbsp;&nbsp;...<br>}</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1034506">
+<H4> See also</H4>
+</A>
+
+<A NAME="1034519">
+<A HREF="sess5.htm#1011531"><CODE>Lock.lock</CODE></A>, <A HREF="sess5.htm#1034134"><CODE>Lock.unlock</CODE></A><P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1034134">
+<H2>unlock</H2>
+</A>
+
+<A NAME="1034147">
+Releases the lock. <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1034137">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1034142">
+<A HREF="sess5.htm#1011483"><CODE>Lock</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1034144">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1034146">
+Netscape Server 3.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1034148">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1034149">
+<PRE>unlock()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1034150">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1034151">
+None.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1034152">
+<H4> Returns</H4>
+</A>
+
+<A NAME="1034153">
+False if it fails; otherwise, true. Failure indicates an internal JavaScript error or that you attempted to unlock a lock that you don't own. <P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1034154">
+<H4> Description</H4>
+</A>
+
+<A NAME="1034155">
+If you unlock a lock that is unlocked, the resulting behavior is undefined.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1034478">
+<H4> See also</H4>
+</A>
+
+<A NAME="1034491">
+<A HREF="sess5.htm#1011531"><CODE>Lock.lock</CODE></A>, <A HREF="sess5.htm#1011567"><CODE>Lock.isValid</CODE></A>, <A HREF="sess3.htm#1011005"><CODE>project.unlock</CODE></A>, <A HREF="sess4.htm#1011339"><CODE>server.unlock</CODE></A><P></A>
+<A NAME="1005723">
+<P></A>
+
+<P><HR>
+<A HREF="contents.htm">[Contents]</A> <A HREF="sess4.htm">[Previous]</A> <A HREF="oth.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<P ALIGN=right>
+
+<FONT SIZE=-2><I>Last Updated:  10/31/97  12:33:29
+</I></FONT>
+
+<HR SIZE=4>
+
+<P> <CENTER>Copyright © 1997
+<A HREF="http://home.netscape.com/misc/contact_info.html"
+TARGET=_top>Netscape Communications Corporation</A></FONT>
+</CENTER>
+<P>
+<P>
+</BODY>
+</HTML>
+

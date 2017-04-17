@@ -1,0 +1,620 @@
+<HTML>
+<HEAD>
+<TITLE>
+</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A HREF="contents.htm">[Contents]</A> <A HREF="form2.htm">[Previous]</A> <A HREF="txt1.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<HR>
+
+<A NAME="Text"></A>
+<A NAME="1023924">
+<H1> Text</H1>
+</A>
+<A NAME="1010281">
+A text input field on an HTML form. The user can enter a word, phrase, or series of numbers in a text field.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1075953">
+<I>Client-side object</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1075958">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1075960">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1078153">
+Navigator 2.0<br>Navigator 3.0: added <CODE>type</CODE> property.<br>Navigator 4.0: added <CODE>handleEvent</CODE> method.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010282">
+<H4> Created by</H4>
+</A>
+
+<A NAME="1071068">
+The HTML <CODE><A HREF="http://developer.netscape.com/library/documentation/htmlguid/index.htm?content=tags10.htm#tags:INPUT" TARGET="_top">INPUT</A></CODE> tag, with <CODE>"text"</CODE> as the value of the <CODE>TYPE</CODE> attribute. For a given form, the JavaScript runtime engine creates appropriate <CODE>Text</CODE> objects and puts these objects in the <A HREF="form1.htm#1010594"><CODE>elements</CODE></A> array of the corresponding <A HREF="form1.htm#1010276"><CODE>Form</CODE></A> object. You access a <CODE>Text</CODE> object by indexing this array. You can index the array either by number or, if supplied, by using the value of the <CODE>NAME</CODE> attribute.<P></A>
+<A NAME="1042202">
+To define a <CODE>Text</CODE> object, use standard HTML syntax with the addition of JavaScript event handlers.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1068485">
+<H4> Event handlers</H4>
+</A>
+
+<ul><A NAME="1068489">
+<LI><A HREF="evnt3.htm#1010414"><CODE>onBlur</CODE></A></LI>
+</A><A NAME="1068493">
+<LI><A HREF="evnt4.htm#1010483"><CODE>onChange</CODE></A></LI>
+</A><A NAME="1068497">
+<LI><A HREF="evnt9.htm#1010615"><CODE>onFocus</CODE></A></LI>
+</A><A NAME="1068501">
+<LI><A HREF="evnt22.htm#1010817"><CODE>onSelect</CODE></A></LI>
+</A></ul>
+<A NAME="Head3;"></A>
+<A NAME="1010320">
+<H4> Description</H4>
+</A>
+
+<A NAME="1119949">
+A <CODE>Text</CODE> object on a form looks as follows:<P>
+<IMG SRC="text.gif">
+<P></A>
+<A NAME="1119950">
+A <CODE>Text</CODE> object is a form element and must be defined within a <CODE><A HREF="http://developer.netscape.com/library/documentation/htmlguid/index.htm?content=tags10.htm#tags:FORM" TARGET="_top">FORM</A></CODE> tag.<P></A>
+<A NAME="1119951">
+<CODE>Text</CODE> objects can be updated (redrawn) dynamically by setting the <CODE>value</CODE> property (<CODE>this.value</CODE>).<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010332">
+<H4> Property Summary</H4>
+</A>
+
+<A NAME="1010369">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1010338">
+<PRE><A HREF="txt.htm#1010457"><CODE>defaultValue</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1010340">
+Reflects the <CODE>VALUE</CODE> attribute.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1010345">
+<PRE><A HREF="txt.htm#1010499"><CODE>form</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1010347">
+Specifies the form containing the <CODE>Text</CODE> object.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1010352">
+<PRE><A HREF="txt.htm#1010536"><CODE>name</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1010354">
+Reflects the <CODE>NAME</CODE> attribute.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1010359">
+<PRE><A HREF="txt.htm#1010591"><CODE>type</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1010361">
+Reflects the <CODE>TYPE</CODE> attribute.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1010366">
+<PRE><A HREF="txt.htm#1010685"><CODE>value</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1010368">
+Reflects the current value of the <CODE>Text</CODE> object's field.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010370">
+<H4> Method Summary</H4>
+</A>
+
+<A NAME="1010400">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1010376">
+<PRE><A HREF="txt.htm#1010747"><CODE>blur</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1010378">
+Removes focus from the object.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1010383">
+<PRE><A HREF="txt.htm#1010810"><CODE>focus</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1010385">
+Gives focus to the object.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1010390">
+<PRE><A HREF="txt.htm#1118656"><CODE>handleEvent</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1010392">
+Invokes the handler for the specified event.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1010397">
+<PRE><A HREF="txt.htm#1010900"><CODE>select</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1010399">
+Selects the input area of the object.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010421">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1010422">
+<B>Example 1.</B> The following example creates a <CODE>Text</CODE> object that is 25 characters long. The text field appears immediately to the right of the words "Last name:". The text field is blank when the form loads.<P></A>
+<A NAME="1010423">
+<PRE>&lt;B&gt;Last name:&lt;/B&gt; &lt;INPUT TYPE="text" NAME="last_name" VALUE="" SIZE=25&gt;</PRE></A><A NAME="1029003">
+<B>Example 2.</B> The following example creates two <CODE>Text</CODE> objects on a form. Each object has a default value. The <CODE>city</CODE> object has an <CODE>onFocus</CODE> event handler that selects all the text in the field when the user tabs to that field. The <CODE>state</CODE> object has an <CODE>onChange</CODE> event handler that forces the value to uppercase.<P></A>
+<A NAME="1010425">
+<PRE>&lt;FORM NAME="form1"&gt;<br>&lt;BR&gt;&lt;B&gt;City: &lt;/B&gt;&lt;INPUT TYPE="text" NAME="city" VALUE="Anchorage"<br>&nbsp;&nbsp;&nbsp;SIZE="20" onFocus="this.select()"&gt;<br>&lt;B&gt;State: &lt;/B&gt;&lt;INPUT TYPE="text" NAME="state" VALUE="AK" SIZE="2"<br>&nbsp;&nbsp;&nbsp;onChange="this.value=this.value.toUpperCase()"&gt;<br>&lt;/FORM&gt;</PRE></A><A NAME="1094334">
+<B><EM></EM></B>See also the examples for the <A HREF="evnt3.htm#1010414"><CODE>onBlur</CODE></A>, <A HREF="evnt4.htm#1010483"><CODE>onChange</CODE></A>, <A HREF="evnt9.htm#1010615"><CODE>onFocus</CODE></A>, and <A HREF="evnt22.htm#1010817"><CODE>onSelect</CODE></A>.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010439">
+<H4> See also</H4>
+</A>
+
+<A NAME="1010455">
+<A HREF="txt.htm#1023924"><CODE>Text</CODE></A>, <A HREF="form1.htm#1010276"><CODE>Form</CODE></A>, <A HREF="txt2.htm#1012091"><CODE>Password</CODE></A>, <A HREF="corea2.htm#1012977"><CODE>String</CODE></A>, <A HREF="txt1.htm#1010943"><CODE>Textarea</CODE></A> <P></A>
+
+<A NAME="Head2;"></A>
+<A NAME="1078254">
+<H3> Properties</H3>
+</A>
+
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1010457">
+<H2>defaultValue</H2>
+</A>
+
+<A NAME="1010459">
+A string indicating the default value of a <CODE>Text</CODE> object.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1078501">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1078503">
+<A HREF="txt.htm#1023924"><CODE>Text</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1078505">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1078507">
+Navigator 2.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1110269">
+<H4> Security</H4>
+</A>
+
+<A NAME="1110270">
+Navigator&nbsp;3.0: This property is tainted by default. For information on data tainting, see <A HREF="intro.htm#1014735">"JavaScript Security"</A>.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010482">
+<H4> Description</H4>
+</A>
+
+<A NAME="1010483">
+The initial value of <CODE>defaultValue</CODE> reflects the value of the <CODE>VALUE</CODE> attribute. Setting <CODE>defaultValue</CODE> programmatically overrides the initial setting.<P></A>
+<A NAME="1094548">
+You can set the <CODE>defaultValue</CODE> property at any time. The display of the related object does not update when you set the <CODE>defaultValue</CODE> property, only when you set the <CODE>value</CODE> property.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010489">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1010490">
+The following function evaluates the <CODE>defaultValue</CODE> property of objects on the <CODE>surfCity</CODE> form and displays the values in the <CODE>msgWindow</CODE> window:<P></A>
+<A NAME="1010491">
+<PRE>function defaultGetter() {<br>&nbsp;&nbsp;&nbsp;msgWindow=window.open("")<br>&nbsp;&nbsp;&nbsp;msgWindow.document.write("hidden.defaultValue is " +<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.surfCity.hiddenObj.defaultValue + "&lt;BR&gt;")<br>&nbsp;&nbsp;&nbsp;msgWindow.document.write("password.defaultValue is " +<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.surfCity.passwordObj.defaultValue + "&lt;BR&gt;")<br>&nbsp;&nbsp;&nbsp;msgWindow.document.write("text.defaultValue is " +<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.surfCity.textObj.defaultValue + "&lt;BR&gt;")<br>&nbsp;&nbsp;&nbsp;msgWindow.document.write("textarea.defaultValue is " +<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.surfCity.textareaObj.defaultValue + "&lt;BR&gt;")<br>&nbsp;&nbsp;&nbsp;msgWindow.document.close()<br>}</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1010492">
+<H4> See also</H4>
+</A>
+
+<A NAME="1010496">
+<A HREF="txt.htm#1010685"><CODE>Text.value</CODE></A> <P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1010499">
+<H2>form</H2>
+</A>
+
+<A NAME="1010500">
+An object reference specifying the form containing this object.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1078676">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1078681">
+<A HREF="txt.htm#1023924"><CODE>Text</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1089320">
+<I>Read-only</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1089322">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1078683">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1078685">
+Navigator 2.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010515">
+<H4> Description</H4>
+</A>
+
+<A NAME="1010516">
+Each form element has a <CODE>form</CODE> property that is a reference to the element's parent form. This property is especially useful in event handlers, where you might need to refer to another element on the current form.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010520">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1010521">
+<B>Example 1.</B> In the following example, the form <CODE>myForm</CODE> contains a <CODE>Text</CODE> object and a button. When the user clicks the button, the value of the <CODE>Text</CODE> object is set to the form's name. The button's <CODE>onClick</CODE> event handler uses <CODE>this.form</CODE> to refer to the parent form, <CODE>myForm</CODE>.<P></A>
+<A NAME="1010522">
+<PRE>&lt;FORM NAME="myForm"&gt;<br>Form name:&lt;INPUT TYPE="text" NAME="text1" VALUE="Beluga"&gt;<br>&lt;P&gt;<br>&lt;INPUT NAME="button1" TYPE="button" VALUE="Show Form Name"<br>&nbsp;&nbsp;&nbsp;onClick="this.form.text1.value=this.form.name"&gt;<br>&lt;/FORM&gt;</PRE></A><A NAME="1059020">
+<B>Example 2.</B> The following example shows a form with several elements. When the user clicks <CODE>button2</CODE>, the function <CODE>showElements</CODE> displays an alert dialog box containing the names of each element on the form <CODE>myForm</CODE>.<P></A>
+<A NAME="1059021">
+<PRE>function showElements(theForm) {<br>&nbsp;&nbsp;&nbsp;str = "Form Elements of form " + theForm.name + ": \n "<br>&nbsp;&nbsp;&nbsp;for (i = 0; i &lt; theForm.length; i++) <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;str += theForm.elements[i].name + "\n"<br>&nbsp;&nbsp;&nbsp;alert(str)<br>}<br>&lt;/script&gt;<br>&lt;FORM NAME="myForm"&gt;<br>Form name:&lt;INPUT TYPE="text" NAME="text1" VALUE="Beluga"&gt;<br>&lt;P&gt;<br>&lt;INPUT NAME="button1" TYPE="button" VALUE="Show Form Name"<br>&nbsp;&nbsp;&nbsp;onClick="this.form.text1.value=this.form.name"&gt;<br>&lt;INPUT NAME="button2" TYPE="button" VALUE="Show Form Elements"<br>&nbsp;&nbsp;&nbsp;onClick="showElements(this.form)"&gt;<br>&lt;/FORM&gt;</PRE></A><A NAME="1010525">
+The alert dialog box displays the following text:<P></A>
+<A NAME="1010526">
+<PRE>JavaScript Alert:<br>Form Elements of form myForm:<br>text1<br>button1<br>button2</PRE></A><A NAME="1010527">
+<B>Example 3.</B> The following example uses an object reference, rather than the <CODE>this</CODE> keyword, to refer to a form. The code returns a reference to <CODE>myForm</CODE>, which is a form containing <CODE>myTextObject</CODE>.<P></A>
+<A NAME="1010528">
+<PRE>document.myForm.myTextObject.form</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1010529">
+<H4> See also</H4>
+</A>
+
+<A NAME="1010533">
+<A HREF="form1.htm#1010276"><CODE>Form</CODE></A><P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1010536">
+<H2>name</H2>
+</A>
+
+<A NAME="1010538">
+A string specifying the name of this object.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1078745">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1078750">
+<A HREF="txt.htm#1023924"><CODE>Text</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1078752">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1078754">
+Navigator 2.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1109757">
+<H4> Security</H4>
+</A>
+
+<A NAME="1109758">
+Navigator&nbsp;3.0: This property is tainted by default. For information on data tainting, see <A HREF="intro.htm#1014735">"JavaScript Security"</A>.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010575">
+<H4> Description</H4>
+</A>
+
+<A NAME="1010577">
+The <CODE>name</CODE> property initially reflects the value of the <CODE>NAME</CODE> attribute. Changing the <CODE>name</CODE> property overrides this setting. The <CODE>name</CODE> property is not displayed on-screen; it is used to refer to the objects programmatically.<P></A>
+<A NAME="1092092">
+If multiple objects on the same form have the same <CODE>NAME</CODE> attribute, an array of the given name is created automatically. Each element in the array represents an individual <CODE>Form</CODE> object. Elements are indexed in source order starting at 0. For example, if two <A HREF="txt.htm#1023924"><CODE>Text</CODE></A> elements and a <A HREF="txt1.htm#1010943"><CODE>Textarea</CODE></A> element on the same form have their <CODE>NAME</CODE> attribute set to <CODE>"myField"</CODE>, an array with the elements <CODE>myField[0]</CODE>, <CODE>myField[1]</CODE>, and <CODE>myField[2]</CODE> is created. You need to be aware of this situation in your code and know whether <CODE>myField</CODE> refers to a single element or to an array of elements.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010583">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1010584">
+In the following example, the <CODE>valueGetter</CODE> function uses a <CODE>for</CODE> loop to iterate over the array of elements on the <CODE>valueTest</CODE> form. The <CODE>msgWindow</CODE> window displays the names of all the elements on the form:<P></A>
+<A NAME="1010585">
+<PRE>newWindow=window.open("http://home.netscape.com")</PRE></A><A NAME="1010586">
+<PRE>function valueGetter() {<br>&nbsp;&nbsp;&nbsp;var msgWindow=window.open("")<br>&nbsp;&nbsp;&nbsp;for (var i = 0; i &lt; newWindow.document.valueTest.elements.length; i++) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;msgWindow.document.write(newWindow.document.valueTest.elements[i].name + "&lt;BR&gt;")<br>&nbsp;&nbsp;&nbsp;}<br>}</PRE></A>
+<A NAME="Head2Ref;"></A>
+<A NAME="1010591">
+<H2>type</H2>
+</A>
+
+<A NAME="1010592">
+For all <CODE>Text</CODE> objects, the value of the <CODE>type</CODE> property is <CODE>"text"</CODE>. This property specifies the form element's type. <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1079235">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1079240">
+<A HREF="txt.htm#1023924"><CODE>Text</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1089337">
+<I>Read-only</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1089339">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1079242">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1079244">
+Navigator 3.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010677">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1010678">
+The following example writes the value of the <CODE>type</CODE> property for every element on a form.<P></A>
+<A NAME="1010679">
+<PRE>for (var i = 0; i &lt; document.form1.elements.length; i++) {<br>&nbsp;&nbsp;&nbsp;document.writeln("&lt;BR&gt;type is " + document.form1.elements[i].type)<br>}</PRE></A>
+<A NAME="Head2Ref;"></A>
+<A NAME="1010685">
+<H2>value</H2>
+</A>
+
+<A NAME="1010686">
+A string that reflects the <CODE>VALUE</CODE> attribute of the object.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1080417">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1080422">
+<A HREF="txt.htm#1023924"><CODE>Text</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1080424">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1080426">
+Navigator 2.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1110236">
+<H4> Security</H4>
+</A>
+
+<A NAME="1110237">
+Navigator&nbsp;3.0: This property is tainted by default. For information on data tainting, see <A HREF="intro.htm#1014735">"JavaScript Security"</A>.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010721">
+<H4> Description</H4>
+</A>
+
+<A NAME="1010723">
+The <CODE>value</CODE> property is a string that initially reflects the <CODE>VALUE</CODE> attribute. This string is displayed in the text field. The value of this property changes when a user or a program modifies the field.<P></A>
+<A NAME="1010724">
+You can set the <CODE>value</CODE> property at any time. The display of the <CODE>Text</CODE> object updates immediately when you set the <CODE>value</CODE> property.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010727">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1010728">
+The following function evaluates the <CODE>value</CODE> property of a group of buttons and displays it in the <CODE>msgWindow</CODE> window:<P></A>
+<A NAME="1099126">
+<PRE>function valueGetter() {<br>&nbsp;&nbsp;&nbsp;var msgWindow=window.open("")<br>&nbsp;&nbsp;&nbsp;msgWindow.document.write("submitButton.value is " +<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.valueTest.submitButton.value + "&lt;BR&gt;")<br>&nbsp;&nbsp;&nbsp;msgWindow.document.write("resetButton.value is " +<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.valueTest.resetButton.value + "&lt;BR&gt;")<br>&nbsp;&nbsp;&nbsp;msgWindow.document.write("myText.value is " +<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.valueTest.myText.value + "&lt;BR&gt;")<br>&nbsp;&nbsp;&nbsp;msgWindow.document.close()<br>}</PRE></A><A NAME="1099185">
+This example displays the following:<P></A>
+<A NAME="1099186">
+<PRE>submitButton.value is Query Submit<br>resetButton.value is Reset<br>myText.value is Stonefish are dangerous.</PRE></A><A NAME="1010732">
+The previous example assumes the buttons have been defined as follows:<P></A>
+<A NAME="1010733">
+<PRE>&lt;INPUT TYPE="submit" NAME="submitButton"&gt;<br>&lt;INPUT TYPE="reset" NAME="resetButton"&gt;<br>&lt;INPUT TYPE="text" NAME="myText" VALUE="Stonefish are dangerous."&gt;</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1010740">
+<H4> See also</H4>
+</A>
+
+<A NAME="1010744">
+<A HREF="txt.htm#1010457"><CODE>Text.defaultValue</CODE></A> <P></A>
+
+<A NAME="Head2;"></A>
+<A NAME="1010745">
+<H3> Methods</H3>
+</A>
+
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1010747">
+<H2>blur</H2>
+</A>
+
+<A NAME="1010749">
+Removes focus from the text field.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1081212">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1081217">
+<A HREF="txt.htm#1023924"><CODE>Text</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1081219">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1081221">
+Navigator 2.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010750">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1010751">
+<PRE>blur()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1010752">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1029350">
+None<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010795">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1010796">
+The following example removes focus from the text element <CODE>userText:</CODE><P></A>
+<A NAME="1010797">
+<PRE>userText.blur()</PRE></A><A NAME="1010798">
+This example assumes that the text element is defined as<P></A>
+<A NAME="1010799">
+<PRE>&lt;INPUT TYPE="text" NAME="userText"&gt;</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1010800">
+<H4> See also</H4>
+</A>
+
+<A NAME="1010807">
+<A HREF="txt.htm#1010810"><CODE>Text.focus</CODE></A>, <A HREF="txt.htm#1010900"><CODE>Text.select</CODE></A><P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1010810">
+<H2>focus</H2>
+</A>
+
+<A NAME="1010811">
+Navigates to the text field and gives it focus.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1082018">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1082023">
+<A HREF="txt.htm#1023924"><CODE>Text</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1082025">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1082027">
+Navigator 2.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010812">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1010813">
+<PRE>focus()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1010814">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1029429">
+None<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010853">
+<H4> Description</H4>
+</A>
+
+<A NAME="1010854">
+Use the <CODE>focus</CODE> method to navigate to a text field and give it focus. You can then either programmatically enter a value in the field or let the user enter a value. If you use this method without the <CODE>select</CODE> method, the cursor is positioned at the beginning of the field.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1108670">
+<H4> Example</H4>
+</A>
+
+<A NAME="1108674">
+See example for <A HREF="txt.htm#1010900"><CODE>select</CODE></A>.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010864">
+<H4> See also</H4>
+</A>
+
+<A NAME="1010871">
+<A HREF="txt.htm#1010747"><CODE>Text.blur</CODE></A>, <A HREF="txt.htm#1010900"><CODE>Text.select</CODE></A><P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1118656">
+<H2>handleEvent</H2>
+</A>
+
+<A NAME="1118669">
+Invokes the handler for the specified event. <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1118659">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1118664">
+<A HREF="txt.htm#1023924"><CODE>Text</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1118666">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1118668">
+Navigator 4.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1118670">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1118671">
+<PRE>handleEvent(event)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1118672">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1118678">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1118675">
+<PRE>event</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1118677">
+The name of an event for which the specified object has an event handler.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1010900">
+<H2>select</H2>
+</A>
+
+<A NAME="1010901">
+Selects the input area of the text field.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1083591">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1083596">
+<A HREF="txt.htm#1023924"><CODE>Text</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1083598">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1083600">
+Navigator 2.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010902">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1010903">
+<PRE>select()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1010904">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1010918">
+None<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010924">
+<H4> Description</H4>
+</A>
+
+<A NAME="1010925">
+Use the <CODE>select</CODE> method to highlight the input area of a text field. You can use the <CODE>select</CODE> method with the <CODE>focus</CODE> method to highlight a field and position the cursor for a user response. This makes it easy for the user to replace all the text in the field.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1103749">
+<H4> Example</H4>
+</A>
+
+<A NAME="1103770">
+The following example uses an <CODE>onClick</CODE> event handler to move the focus to a text field and select that field for changing:<P></A>
+<A NAME="1104285">
+<PRE>&lt;FORM NAME="myForm"&gt;<br>&lt;B&gt;Last name: &lt;/B&gt;&lt;INPUT TYPE="text" NAME="lastName" SIZE=20 VALUE="Pigman"&gt;<br>&lt;BR&gt;&lt;B&gt;First name: &lt;/B&gt;&lt;INPUT TYPE="text" NAME="firstName" SIZE=20 VALUE="Victoria"&gt;<br>&lt;BR&gt;&lt;BR&gt;<br>&lt;INPUT TYPE="button" VALUE="Change last name"<br>&nbsp;&nbsp;&nbsp;onClick="this.form.lastName.select();this.form.lastName.focus();"&gt;<br>&lt;/FORM&gt;</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1010933">
+<H4> See also</H4>
+</A>
+
+<A NAME="1010940">
+<A HREF="txt.htm#1010747"><CODE>Text.blur</CODE></A>, <A HREF="txt.htm#1010810"><CODE>Text.focus</CODE></A> <P></A>
+
+<P><HR>
+<A HREF="contents.htm">[Contents]</A> <A HREF="form2.htm">[Previous]</A> <A HREF="txt1.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<P ALIGN=right>
+
+<FONT SIZE=-2><I>Last Updated:  10/31/97  12:32:00
+</I></FONT>
+
+<HR SIZE=4>
+
+<P> <CENTER>Copyright © 1997
+<A HREF="http://home.netscape.com/misc/contact_info.html"
+TARGET=_top>Netscape Communications Corporation</A></FONT>
+</CENTER>
+<P>
+<P>
+</BODY>
+</HTML>
+

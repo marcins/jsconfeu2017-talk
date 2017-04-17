@@ -1,0 +1,138 @@
+<HTML>
+<HEAD>
+<TITLE>Global Functions
+</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A HREF="contents.htm">[Contents]</A> <A HREF="glob18.htm">[Previous]</A> <A HREF="glob20.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<HR>
+
+<A NAME="ssjs_getCGIVariable"></A>
+<A NAME="1038307">
+<H1> ssjs_getCGIVariable</H1>
+</A>
+<A NAME="1038317">
+Returns the value of the specified environment variable set in the server process, including some CGI variables. <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1038310">
+<I>Server-side function</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1038312">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1038314">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1038316">
+Netscape Server 3.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1038318">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1038319">
+<PRE>ssjs_getCGIVariable(varName)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1038320">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1038326">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1038323">
+<PRE>varName</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1038325">
+A string containing the name of the environment variable to retrieve.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1039458">
+<H4> Description</H4>
+</A>
+
+<A NAME="1039668">
+<CODE>ssjs_getCGIVariable</CODE> lets you access the environment variables set in the server process, including the CGI variables listed in <A HREF="glob19.htm#1039668">Table&nbsp;13.2</A>. <P><B><A NAME="1039469">
+Table 13.2&nbsp;CGI variables accessible through <CODE>ssjs_getCGIVariable</CODE> &nbsp;</A></B>
+<TABLE BORDER="0">
+<TR><TH VALIGN=baseline ALIGN=left><B><A NAME="1039473">
+<B>Variable
+</B></A></B><TH VALIGN=baseline ALIGN=left><B><A NAME="1039475">
+<B>Description
+</B></A></B>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1039478">
+<PRE>AUTH_TYPE</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1039480">
+The authorization type, if the request is protected by any type of authorization. Netscape web servers support HTTP basic access authorization. Example value: <CODE>basic</CODE></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1039483">
+<PRE>HTTPS</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1039485">
+If security is active on the server, the value of this variable is <CODE>ON</CODE>; otherwise, it is <CODE>OFF</CODE>. Example value: <CODE>ON</CODE></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1039488">
+<PRE>HTTPS_KEYSIZE</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1039491">
+The number of bits in the session key used to encrypt the session, if security is on. Example value: <CODE>128</CODE></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1039494">
+<PRE>HTTPS_SECRETKEYSIZE</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1039496">
+The number of bits used to generate the server's private key. Example value: <CODE>128</CODE></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1039499">
+<PRE>PATH_INFO</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1039501">
+Path information, as sent by the browser. Example value: <CODE>/cgivars/cgivars.html</CODE></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1039504">
+<PRE>PATH_TRANSLATED</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1039506">
+The actual system-specific pathname of the path contained in <CODE>PATH_INFO</CODE>. Example value: <CODE>/usr/ns-home/myhttpd/js/samples/cgivars/cgivars.html</CODE></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1039509">
+<PRE>QUERY_STRING</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1039511">
+Information from the requesting HTML page; if "?" is present, the information in the URL that comes after the "?". Example value: <CODE>x=42</CODE></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1039514">
+<PRE>REMOTE_ADDR</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1039516">
+The IP address of the host that submitted the request. Example value: <CODE>198.93.95.47</CODE></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1039519">
+<PRE>REMOTE_HOST</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1039522">
+If DNS is turned on for the server, the name of the host that submitted the request; otherwise, its IP address. Example value: <CODE>www.netscape.com</CODE></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1039525">
+<PRE>REMOTE_USER</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1039528">
+The name of the local HTTP user of the web browser, if HTTP access authorization has been activated for this URL. Note that this is not a way to determine the user name of any person accessing your program. Example value: <CODE>ksmith</CODE></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1039531">
+<PRE>REQUEST_METHOD</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1039534">
+The HTTP method associated with the request. An application can use this to determine the proper response to a request. Example value: <CODE>GET</CODE></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1039537">
+<PRE>SCRIPT_NAME</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1039539">
+The pathname to this page, as it appears in the URL. Example value: <CODE>cgivars.html</CODE></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1039542">
+<PRE>SERVER_NAME</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1039545">
+The hostname or IP address on which the JavaScript application is running, as it appears in the URL. Example value: <CODE>piccolo.mcom.com</CODE></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1039548">
+<PRE>SERVER_PORT</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1039551">
+The TCP port on which the server is running. Example value: <CODE>2020</CODE></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1039554">
+<PRE>SERVER_PROTOCOL</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1039557">
+The HTTP protocol level supported by the client's software. Example value: <CODE>HTTP/1.0</CODE></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1039560">
+<PRE>SERVER_URL</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1039563">
+The URL that the user typed to access this server. Example value: <CODE>https://piccolo:2020</CODE></A></P>
+
+</TABLE>
+<P></A>
+<A NAME="1040349">
+If you supply an argument that isn't one of the CGI variables listed in n, the runtime engine looks for an environment variable by that name in the server environment. If found, the runtime engine returns the value; otherwise, it returns null. For example, the following code assigns the value of the standard <CODE>CLASSPATH</CODE> environment variable to the JavaScript variable <CODE>classpath</CODE>:<P></A>
+<A NAME="1040350">
+<PRE>classpath = ssjs_getCGIVariable("CLASSPATH");</PRE></A>
+<P><HR>
+<A HREF="contents.htm">[Contents]</A> <A HREF="glob18.htm">[Previous]</A> <A HREF="glob20.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<P ALIGN=right>
+
+<FONT SIZE=-2><I>Last Updated:  10/31/97  16:38:00
+</I></FONT>
+
+<HR SIZE=4>
+
+<P> <CENTER>Copyright © 1997
+<A HREF="http://home.netscape.com/misc/contact_info.html"
+TARGET=_top>Netscape Communications Corporation</A></FONT>
+</CENTER>
+<P>
+<P>
+</BODY>
+</HTML>
+
+

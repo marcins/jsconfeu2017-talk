@@ -1,0 +1,530 @@
+<HTML>
+<HEAD>
+<TITLE>
+</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A HREF="contents.htm">[Contents]</A> <A HREF="but.htm">[Previous]</A> <A HREF="but2.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<HR>
+
+<A NAME="Submit"></A>
+<A NAME="1011117">
+<H1> Submit</H1>
+</A>
+<A NAME="1011119">
+A submit button on an HTML form. A submit button causes a form to be submitted.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1054185">
+<I>Client-side object</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1054190">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1054192">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1054274">
+Navigator 2.0<br>Navigator 3.0: added <CODE>type</CODE> property; added onBlur and onFocus event handlers; added <CODE>blur</CODE> and <CODE>focus</CODE> methods<br>Navigator 4.0: added <CODE>handleEvent</CODE> method.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1029843">
+<H4> Created by</H4>
+</A>
+
+<A NAME="1029844">
+The HTML <CODE><A HREF="http://developer.netscape.com/library/documentation/htmlguid/index.htm?content=tags10.htm#tags:INPUT" TARGET="_top">INPUT</A></CODE> tag, with <CODE>"submit"</CODE> as the value of the <CODE>TYPE</CODE> attribute. For a given form, the JavaScript runtime engine creates an appropriate <CODE>Submit</CODE> object and puts it in the <A HREF="form1.htm#1010594"><CODE>elements</CODE></A> array of the corresponding <A HREF="form1.htm#1010276"><CODE>Form</CODE></A> object. You access a <CODE>Submit</CODE> object by indexing this array. You can index the array either by number or, if supplied, by using the value of the <CODE>NAME</CODE> attribute.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1048352">
+<H4> Event handlers</H4>
+</A>
+
+<ul><A NAME="1048356">
+<LI><A HREF="evnt3.htm#1010414"><CODE>onBlur</CODE></A></LI>
+</A><A NAME="1048360">
+<LI><A HREF="evnt5.htm#1010516"><CODE>onClick</CODE></A></LI>
+</A><A NAME="1048364">
+<LI><A HREF="evnt9.htm#1010615"><CODE>onFocus</CODE></A></LI>
+</A></ul>
+<A NAME="Head3;"></A>
+<A NAME="1071626">
+<H4> Security</H4>
+</A>
+
+<A NAME="1071627">
+Navigator&nbsp;4.0: Submitting a form to a <CODE>mailto:</CODE> or <CODE>news:</CODE> URL requires the <CODE>UniversalSendMail</CODE> privilege. For information on security in Navigator&nbsp;4.0, see <A HREF="http://developer.netscape.com/library/documentation/communicator/jsguide4/index.htm?content=sec.htm" TARGET="_top">Chapter&nbsp;7, "JavaScript Security,"</A> in the <A HREF="http://developer.netscape.com/library/documentation/communicator/jsguide4/index.htm" TARGET="_top">JavaScript Guide</A>. <P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1066359">
+<H4> Description</H4>
+</A>
+
+<A NAME="1011165">
+A <CODE>Submit</CODE> object on a form looks as follows:<P>
+<IMG SRC="submit.gif">
+<P></A>
+<A NAME="1011166">
+A <CODE>Submit</CODE> object is a form element and must be defined within a <CODE><A HREF="http://developer.netscape.com/library/documentation/htmlguid/index.htm?content=tags10.htm#tags:FORM" TARGET="_top">FORM</A></CODE> tag.<P></A>
+<A NAME="1011167">
+Clicking a submit button submits a form to the URL specified by the form's <CODE>action</CODE> property. This action always loads a new page into the client; it may be the same as the current page, if the action so specifies or is not specified.<P></A>
+<A NAME="1011168">
+The submit button's <CODE>onClick</CODE> event handler cannot prevent a form from being submitted; instead, use the form's <CODE>onSubmit</CODE> event handler or use the <CODE>submit</CODE> method instead of a <CODE>Submit</CODE> object. See the examples for the <CODE>Form</CODE> object.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1011170">
+<H4> Property Summary</H4>
+</A>
+
+<A NAME="1011200">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1011176">
+<PRE><A HREF="but1.htm#1011276"><CODE>form</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1011178">
+Specifies the form containing the <CODE>Submit</CODE> object.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1011183">
+<PRE><A HREF="but1.htm#1011313"><CODE>name</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1011185">
+Reflects the <CODE>NAME</CODE> attribute.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1011190">
+<PRE><A HREF="but1.htm#1011375"><CODE>type</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1011192">
+Reflects the <CODE>TYPE</CODE> attribute.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1011197">
+<PRE><A HREF="but1.htm#1011469"><CODE>value</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1011199">
+Reflects the <CODE>VALUE</CODE> attribute.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1011201">
+<H4> Method Summary</H4>
+</A>
+
+<A NAME="1011232">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1011207">
+<PRE><A HREF="but1.htm#1011531"><CODE>blur</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1011210">
+Removes focus from the submit button.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1011215">
+<PRE><A HREF="but.htm#1059781"><CODE>click</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1011217">
+Simulates a mouse-click on the submit button.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1011222">
+<PRE><A HREF="but1.htm#1011638"><CODE>focus</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1011224">
+Gives focus to the submit button.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1011229">
+<PRE><A HREF="but1.htm#1071634"><CODE>handleEvent</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1011231">
+Invokes the handler for the specified event. </A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1011249">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1011250">
+The following example creates a <CODE>Submit</CODE> object called <CODE>submitButton</CODE>. The text "Done" is displayed on the face of the button.<P></A>
+<A NAME="1011251">
+<PRE>&lt;INPUT TYPE="submit" NAME="submitButton" VALUE="Done"&gt;</PRE></A><A NAME="1011255">
+See also the examples for the <A HREF="form1.htm#1010276"><CODE>Form</CODE></A>.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1011256">
+<H4> See also</H4>
+</A>
+
+<A NAME="1011272">
+<A HREF="but.htm#1016056"><CODE>Button</CODE></A>, <A HREF="form1.htm#1010276"><CODE>Form</CODE></A>, <A HREF="but2.htm#1012912"><CODE>Reset</CODE></A>, <A HREF="form1.htm#1010966"><CODE>Form.submit</CODE></A>, <A HREF="evnt23.htm#1010835"><CODE>onSubmit</CODE></A> <P></A>
+
+<A NAME="Head2;"></A>
+<A NAME="1011273">
+<H3> Properties</H3>
+</A>
+
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1011276">
+<H2>form</H2>
+</A>
+
+<A NAME="1011277">
+An object reference specifying the form containing the submit button.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1054383">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1054385">
+<A HREF="but1.htm#1011117"><CODE>Submit</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1054436">
+<I>Read-only</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1054438">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1054387">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1054389">
+Navigator 2.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1011292">
+<H4> Description</H4>
+</A>
+
+<A NAME="1011293">
+Each form element has a <CODE>form</CODE> property that is a reference to the element's parent form. This property is especially useful in event handlers, where you might need to refer to another element on the current form.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1011297">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1011300">
+The following example shows a form with several elements. When the user clicks <CODE>button2</CODE>, the function <CODE>showElements</CODE> displays an alert dialog box containing the names of each element on the form <CODE>myForm</CODE>.<P></A>
+<A NAME="1011301">
+<PRE>&lt;SCRIPT&gt;<br>function showElements(theForm) {<br>&nbsp;&nbsp;&nbsp;str = "Form Elements of form " + theForm.name + ": \n "<br>&nbsp;&nbsp;&nbsp;for (i = 0; i &lt; theForm.length; i++) <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;str += theForm.elements[i].name + "\n"<br>&nbsp;&nbsp;&nbsp;alert(str)<br>}<br>&lt;/SCRIPT&gt;<br>&lt;FORM NAME="myForm"&gt;<br>Form name:&lt;INPUT TYPE="text" NAME="text1" VALUE="Beluga"&gt;<br>&lt;P&gt;<br>&lt;INPUT NAME="button1" TYPE="button" VALUE="Show Form Name"<br>&nbsp;&nbsp;&nbsp;onClick="this.form.text1.value=this.form.name"&gt;<br>&lt;INPUT NAME="button2" TYPE="submit" VALUE="Show Form Elements"<br>&nbsp;&nbsp;&nbsp;onClick="showElements(this.form)"&gt;<br>&lt;/FORM&gt;</PRE></A><A NAME="1011302">
+The alert dialog box displays the following text:<P></A>
+<A NAME="1011303">
+<PRE>Form Elements of form myForm:<br>text1<br>button1<br>button2</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1011306">
+<H4> See also</H4>
+</A>
+
+<A NAME="1011310">
+<A HREF="form1.htm#1010276"><CODE>Form</CODE></A><P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1011313">
+<H2>name</H2>
+</A>
+
+<A NAME="1011314">
+A string specifying the submit button's name.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1054482">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1054487">
+<A HREF="but1.htm#1011117"><CODE>Submit</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1054493">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1054495">
+Navigator 2.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1066268">
+<H4> Security</H4>
+</A>
+
+<A NAME="1066269">
+Navigator&nbsp;3.0: This property is tainted by default. For information on data tainting, see <A HREF="intro.htm#1014735">"JavaScript Security"</A>.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1011354">
+<H4> Description</H4>
+</A>
+
+<A NAME="1011356">
+The <CODE>name</CODE> property initially reflects the value of the <CODE>NAME</CODE> attribute. Changing the <CODE>name</CODE> property overrides this setting.<P></A>
+<A NAME="1011358">
+Do not confuse the <CODE>name</CODE> property with the label displayed on the <CODE>Submit</CODE> button. The <CODE>value</CODE> property specifies the label for this button. The <CODE>name</CODE> property is not displayed on the screen; it is used to refer programmatically to the button.<P></A>
+<A NAME="1057708">
+If multiple objects on the same form have the same <CODE>NAME</CODE> attribute, an array of the given name is created automatically. Each element in the array represents an individual <CODE>Form</CODE> object. Elements are indexed in source order starting at 0. For example, if two <A HREF="txt.htm#1023924"><CODE>Text</CODE></A> elements and a <A HREF="but1.htm#1011117"><CODE>Submit</CODE></A> element on the same form have their <CODE>NAME</CODE> attribute set to <CODE>"myField"</CODE>, an array with the elements <CODE>myField[0]</CODE>, <CODE>myField[1]</CODE>, and <CODE>myField[2]</CODE> is created. You need to be aware of this situation in your code and know whether <CODE>myField</CODE> refers to a single element or to an array of elements.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1011362">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1011363">
+In the following example, the <CODE>valueGetter</CODE> function uses a <CODE>for</CODE> loop to iterate over the array of elements on the <CODE>valueTest</CODE> form. The <CODE>msgWindow</CODE> window displays the names of all the elements on the form:<P></A>
+<A NAME="1011364">
+<PRE>newWindow=window.open("http://home.netscape.com")</PRE></A><A NAME="1011365">
+<PRE>function valueGetter() {<br>&nbsp;&nbsp;&nbsp;var msgWindow=window.open("")<br>&nbsp;&nbsp;&nbsp;for (var i = 0; i &lt; newWindow.document.valueTest.elements.length; i++) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;msgWindow.document.write(newWindow.document.valueTest.elements[i].name + "&lt;BR&gt;")<br>&nbsp;&nbsp;&nbsp;}<br>}</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1011369">
+<H4> See also</H4>
+</A>
+
+<A NAME="1011373">
+<A HREF="but1.htm#1011469"><CODE>Submit.value</CODE></A> <P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1011375">
+<H2>type</H2>
+</A>
+
+<A NAME="1011376">
+For all <CODE>Submit</CODE> objects, the value of the <CODE>type</CODE> property is <CODE>"submit"</CODE>. This property specifies the form element's type. <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1054552">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1054557">
+<A HREF="but1.htm#1011117"><CODE>Submit</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1056453">
+<I>Read-only</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1056455">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1054559">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1054561">
+Navigator 3.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1011461">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1011462">
+The following example writes the value of the <CODE>type</CODE> property for every element on a form.<P></A>
+<A NAME="1011463">
+<PRE>for (var i = 0; i &lt; document.form1.elements.length; i++) {<br>&nbsp;&nbsp;&nbsp;document.writeln("&lt;BR&gt;type is " + document.form1.elements[i].type)<br>}</PRE></A>
+<A NAME="Head2Ref;"></A>
+<A NAME="1011469">
+<H2>value</H2>
+</A>
+
+<A NAME="1011470">
+A string that reflects the submit button's <CODE>VALUE</CODE> attribute.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1056473">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1056478">
+<A HREF="but1.htm#1011117"><CODE>Submit</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1056484">
+<I>Read-only</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1056486">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1056480">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1056482">
+Navigator 2.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1066308">
+<H4> Security</H4>
+</A>
+
+<A NAME="1066309">
+Navigator&nbsp;3.0: This property is tainted by default. For information on data tainting, see <A HREF="intro.htm#1014735">"JavaScript Security"</A>.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1011502">
+<H4> Description</H4>
+</A>
+
+<A NAME="1011504">
+When a <CODE>VALUE</CODE> attribute is specified in HTML, the <CODE>value</CODE> property is that string and is displayed on the face of the button. When a <CODE>VALUE</CODE> attribute is not specified in HTML, the <CODE>value</CODE> property for the button is the string "Submit Query."<P></A>
+<A NAME="1011508">
+Do not confuse the <CODE>value</CODE> property with the <CODE>name</CODE> property. The <CODE>name</CODE> property is not displayed on the screen; it is used to refer programmatically to the button.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1011511">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1011512">
+The following function evaluates the <CODE>value</CODE> property of a group of buttons and displays it in the <CODE>msgWindow</CODE> window:<P></A>
+<A NAME="1011513">
+<PRE>function valueGetter() {<br>&nbsp;&nbsp;&nbsp;var msgWindow=window.open("")<br>&nbsp;&nbsp;&nbsp;msgWindow.document.write("submitButton.value is " +<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.valueTest.submitButton.value + "&lt;BR&gt;")<br>&nbsp;&nbsp;&nbsp;msgWindow.document.write("resetButton.value is " +<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.valueTest.resetButton.value + "&lt;BR&gt;")<br>&nbsp;&nbsp;&nbsp;msgWindow.document.write("helpButton.value is " +<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.valueTest.helpButton.value + "&lt;BR&gt;")<br>&nbsp;&nbsp;&nbsp;msgWindow.document.close()<br>}</PRE></A><A NAME="1011514">
+This example displays the following values:<P></A>
+<A NAME="1011515">
+<PRE>Query Submit<br>Reset<br>Help</PRE></A><A NAME="1011516">
+The previous example assumes the buttons have been defined as follows:<P></A>
+<A NAME="1011517">
+<PRE>&lt;INPUT TYPE="submit" NAME="submitButton"&gt;<br>&lt;INPUT TYPE="reset" NAME="resetButton"&gt;<br>&lt;INPUT TYPE="button" NAME="helpButton" VALUE="Help"&gt;</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1011524">
+<H4> See also</H4>
+</A>
+
+<A NAME="1011528">
+<A HREF="but1.htm#1011313"><CODE>Submit.name</CODE></A> <P></A>
+
+<A NAME="Head2;"></A>
+<A NAME="1011529">
+<H3> Methods</H3>
+</A>
+
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1011531">
+<H2>blur</H2>
+</A>
+
+<A NAME="1011533">
+Removes focus from the submit button.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1054934">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1054939">
+<A HREF="but1.htm#1011117"><CODE>Submit</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1054941">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1054943">
+Navigator 2.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1011534">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1019465">
+<PRE>blur()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1019475">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1011572">
+None<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1011588">
+<H4> See also</H4>
+</A>
+
+<A NAME="1011595">
+<A HREF="but1.htm#1011638"><CODE>Submit.focus</CODE></A><P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1011597">
+<H2>click</H2>
+</A>
+
+<A NAME="1011599">
+Simulates a mouse-click on the submit button, but does <I>not</I> trigger an object's <CODE>onClick</CODE> event handler. <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1054991">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1054996">
+<A HREF="but1.htm#1011117"><CODE>Submit</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1054998">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1055000">
+Navigator 2.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1011600">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1011601">
+<PRE>click()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1011602">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1011620">
+None<P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1011638">
+<H2>focus</H2>
+</A>
+
+<A NAME="1011639">
+Navigates to the submit button and gives it focus.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1055049">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1055054">
+<A HREF="but1.htm#1011117"><CODE>Submit</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1055056">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1055058">
+Navigator 2.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1011640">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1011641">
+<PRE>focus()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1011642">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1020389">
+None<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1011693">
+<H4> See also</H4>
+</A>
+
+<A NAME="1011700">
+<A HREF="but1.htm#1011531"><CODE>Submit.blur</CODE></A><P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1071634">
+<H2>handleEvent</H2>
+</A>
+
+<A NAME="1071647">
+Invokes the handler for the specified event. <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1071637">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1071642">
+<A HREF="but1.htm#1011117"><CODE>Submit</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1071644">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1071646">
+Navigator 4.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1071648">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1071649">
+<PRE>handleEvent(event)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1071650">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1071656">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1071653">
+<PRE>event</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1071655">
+The name of an event for which the specified object has an event handler.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1071657">
+<H4> Description</H4>
+</A>
+
+<A NAME="1071661">
+For information on handling events, see <A HREF="evnt.htm#1010270">"General Information about Events"</A>.<P></A>
+
+<P><HR>
+<A HREF="contents.htm">[Contents]</A> <A HREF="but.htm">[Previous]</A> <A HREF="but2.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<P ALIGN=right>
+
+<FONT SIZE=-2><I>Last Updated:  10/31/97  12:32:12
+</I></FONT>
+
+<HR SIZE=4>
+
+<P> <CENTER>Copyright © 1997
+<A HREF="http://home.netscape.com/misc/contact_info.html"
+TARGET=_top>Netscape Communications Corporation</A></FONT>
+</CENTER>
+<P>
+<P>
+</BODY>
+</HTML>
+
+

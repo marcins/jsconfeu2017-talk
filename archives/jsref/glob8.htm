@@ -1,0 +1,112 @@
+<HTML>
+<HEAD>
+<TITLE>Global Functions
+</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A HREF="contents.htm">[Contents]</A> <A HREF="glob7.htm">[Previous]</A> <A HREF="glob9.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<HR>
+
+<A NAME="eval"></A>
+<A NAME="1029909">
+<H1> eval</H1>
+</A>
+<A NAME="1029923">
+Evaluates a string of JavaScript code without reference to a particular object.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1029913">
+<I>Core function</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1029918">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1029920">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1029922">
+Navigator 2.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1029924">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1029925">
+<PRE>eval(string)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1029926">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1029932">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1029929">
+<PRE>string</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1029931">
+A string representing a JavaScript expression, statement, or sequence of statements. The expression can include variables and properties of existing objects.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1029933">
+<H4> Description</H4>
+</A>
+
+<A NAME="1030196">
+The argument of the <CODE>eval</CODE> function is a string. If the string represents an expression, <CODE>eval</CODE> evaluates the expression. If the argument represents one or more JavaScript statements, <CODE>eval</CODE> performs the statements. Do not call <CODE>eval</CODE> to evaluate an arithmetic expression; JavaScript evaluates arithmetic expressions automatically.<P></A>
+<A NAME="1029935">
+If you construct an arithmetic expression as a string, you can use <CODE>eval</CODE> to evaluate it at a later time. For example, suppose you have a variable <CODE>x</CODE>. You can postpone evaluation of an expression involving <CODE>x</CODE> by assigning the string value of the expression, say <CODE>"3&nbsp;*&nbsp;x&nbsp;+&nbsp;2"</CODE>, to a variable, and then calling <CODE>eval</CODE> at a later point in your script.<P></A>
+<A NAME="1030219">
+<A HREF="corea1.htm#1012754"><CODE>eval</CODE></A> is also a method of all objects. This method is described for the <A HREF="corea1.htm#1012725"><CODE>Object</CODE></A> class.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1029936">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1029937">
+The following examples display output using <CODE>document.write</CODE>. In server-side JavaScript, you can display the same output by calling the <CODE>write</CODE> function instead of using <CODE>document.write</CODE>.<P></A>
+<A NAME="1029938">
+<B>Example 1.</B> Both of the write statements below display 42. The first evaluates the string <CODE>"x + y + 1"</CODE>; the second evaluates the string <CODE>"42"</CODE>.<P></A>
+<A NAME="1029939">
+<PRE>var x = 2<br>var y = 39<br>var z = "42"<br>document.write(eval("x + y + 1"), "&lt;BR&gt;") <br>document.write(eval(z), "&lt;BR&gt;")</PRE></A><A NAME="1029940">
+<B>Example 2.</B> In the following example, the <CODE>getFieldName(n)</CODE> function returns the name of the specified form element as a string. The first statement assigns the string value of the third form element to the variable <CODE>field</CODE>. The second statement uses <CODE>eval</CODE> to display the value of the form element.<P></A>
+<A NAME="1029941">
+<PRE>var field = getFieldName(3) <br>document.write("The field named ", field, " has value of ", <br>&nbsp;&nbsp;&nbsp;eval(field + ".value"))</PRE></A><A NAME="1029942">
+<B>Example 3.</B> The following example uses <CODE>eval</CODE> to evaluate the string <CODE>str</CODE>. This string consists of JavaScript statements that open an Alert dialog box and assign <CODE>z</CODE> a value of 42 if <CODE>x</CODE> is five, and assigns 0 to <CODE>z</CODE> otherwise. When the second statement is executed, <CODE>eval</CODE> will cause these statements to be performed, and it will also evaluate the set of statements and return the value that is assigned to <CODE>z</CODE>.<P></A>
+<A NAME="1029943">
+<PRE>var str = "if (x == 5) {alert('z is 42'); z = 42;} else z = 0; "<br>document.write("&lt;P&gt;z is ", eval(str))</PRE></A><A NAME="1029944">
+<B>Example 4.</B> In the following example, the <CODE>setValue</CODE> function uses <CODE>eval</CODE> to assign the value of the variable <CODE>newValue</CODE> to the text field <CODE>textObject</CODE>:<P></A>
+<A NAME="1029945">
+<PRE>function setValue (textObject, newValue) {<br>&nbsp;&nbsp;&nbsp;eval ("document.forms[0]." + textObject + ".value") = newValue<br>}</PRE></A><A NAME="1029946">
+<B>Example 5.</B> The following example creates <CODE>breed</CODE> as a property of the object <CODE>myDog</CODE>, and also as a variable. The first write statement uses <CODE>eval('breed')</CODE> without specifying an object; the string <CODE>"breed"</CODE> is evaluated without regard to any object, and the <CODE>write</CODE> method displays <CODE>"Shepherd"</CODE>, which is the value of the <CODE>breed</CODE> variable. The second write statement uses <CODE>myDog.eval('breed')</CODE> which specifies the object <CODE>myDog</CODE>; the string <CODE>"breed"</CODE> is evaluated with regard to the <CODE>myDog</CODE> object, and the <CODE>write</CODE> method displays <CODE>"Lab"</CODE>, which is the value of the <CODE>breed</CODE> property of the <CODE>myDog</CODE> object.<P></A>
+<A NAME="1029947">
+<PRE>function Dog(name,breed,color) {<br>&nbsp;&nbsp;&nbsp;this.name=name<br>&nbsp;&nbsp;&nbsp;this.breed=breed<br>&nbsp;&nbsp;&nbsp;this.color=color<br>}<br>myDog = new Dog("Gabby")<br>myDog.breed="Lab"<br>var breed='Shepherd'<br>document.write("&lt;P&gt;" + eval('breed'))<br>document.write("&lt;BR&gt;" + myDog.eval('breed'))</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1030955">
+<H4> See also</H4>
+</A>
+
+<A NAME="1030973">
+<A HREF="corea1.htm#1012754"><CODE>Object.eval</CODE></A> method<P></A>
+
+<P><HR>
+<A HREF="contents.htm">[Contents]</A> <A HREF="glob7.htm">[Previous]</A> <A HREF="glob9.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<P ALIGN=right>
+
+<FONT SIZE=-2><I>Last Updated:  10/31/97  16:38:00
+</I></FONT>
+
+<HR SIZE=4>
+
+<P> <CENTER>Copyright © 1997
+<A HREF="http://home.netscape.com/misc/contact_info.html"
+TARGET=_top>Netscape Communications Corporation</A></FONT>
+</CENTER>
+<P>
+<P>
+</BODY>
+</HTML>
+
+

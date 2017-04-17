@@ -1,0 +1,101 @@
+<HTML>
+<HEAD>
+<TITLE>Global Functions
+</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A HREF="contents.htm">[Contents]</A> <A HREF="glob2.htm">[Previous]</A> <A HREF="glob4.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<HR>
+
+<A NAME="blob"></A>
+<A NAME="1012250">
+<H1> blob</H1>
+</A>
+<A NAME="1012251">
+Assigns BLOb data to a column in a cursor. <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1031298">
+<I>Server-side function</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1031300">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1031302">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1031304">
+LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012252">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1012253">
+<PRE>blob (path)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1012254">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1012260">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012257">
+<PRE>path</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1012259">
+A string representing the name of a file containing <CODE>BLOb</CODE> data. This string must be an absolute pathname.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012261">
+<H4> Returns</H4>
+</A>
+
+<A NAME="1012262">
+A <CODE>blob</CODE> object.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012263">
+<H4> Description</H4>
+</A>
+
+<A NAME="1012264">
+Use this function with an updatable cursor to insert or update a row containing BLOb data. To insert or update a row using SQL and the <CODE>execute</CODE> method, use the syntax supported by your database vendor.<P></A>
+<A NAME="1012265">
+On DB2, blobs are limited to 32 KBytes.<P></A>
+<A NAME="1012266">
+Remember that back slash ("\") is the escape character in JavaScript. For this reason, in NT filenames you must either use 2 backslashes or a forward slash.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012267">
+<H4> Example</H4>
+</A>
+
+<A NAME="1012268">
+The following statements update BLOb data from the specified GIF files in columns <CODE>PHOTO</CODE> and <CODE>OFFICE</CODE> of the current row of the <CODE>EMPLOYEE</CODE> table.<P></A>
+<A NAME="1012269">
+<PRE>// Create a cursor<br>cursor = database.cursor("SELECT * FROM customer WHERE<br>&nbsp;&nbsp;&nbsp;customer.ID = " + request.customerID</PRE></A><A NAME="1012270">
+<PRE>// Position the pointer on the row<br>cursor.next()</PRE></A><A NAME="1012271">
+<PRE>// Assign the blob data<br>cursor.photo = blob("c:/customer/photos/myphoto.gif")<br>cursor.office = blob("c:/customer/photos/myoffice.gif")</PRE></A><A NAME="1012272">
+<PRE>// And update the row<br>cursor.updateRow("employee") </PRE></A>
+<P><HR>
+<A HREF="contents.htm">[Contents]</A> <A HREF="glob2.htm">[Previous]</A> <A HREF="glob4.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<P ALIGN=right>
+
+<FONT SIZE=-2><I>Last Updated:  10/31/97  16:38:00
+</I></FONT>
+
+<HR SIZE=4>
+
+<P> <CENTER>Copyright © 1997
+<A HREF="http://home.netscape.com/misc/contact_info.html"
+TARGET=_top>Netscape Communications Corporation</A></FONT>
+</CENTER>
+<P>
+<P>
+</BODY>
+</HTML>
+
+

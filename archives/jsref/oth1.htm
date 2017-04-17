@@ -1,0 +1,1452 @@
+<HTML>
+<HEAD>
+<TITLE>Utilities
+</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A HREF="contents.htm">[Contents]</A> <A HREF="oth.htm">[Previous]</A> <A HREF="oth2.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<HR>
+
+<A NAME="File"></A>
+<A NAME="1015167">
+<H1> File</H1>
+</A>
+<A NAME="1015168">
+Lets an application interact with a physical file on the server.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1030958">
+<I>Server-side object</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1030963">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1030965">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1030967">
+LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1011724">
+<H4> Created by</H4>
+</A>
+
+<A NAME="1021761">
+The <CODE>File</CODE> constructor:<P></A>
+<A NAME="1021764">
+<PRE>new File("path")</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1011727">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1011741">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1011734">
+<PRE>path</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1011736">
+The path and filename in the format of the server's file system (not a URL path).</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1011744">
+<H4> Description</H4>
+</A>
+
+<A NAME="1011745">
+You can use the <CODE>File</CODE> object to write to or read from a file on the server. For security reasons, you cannot programmatically access the file system of client machines.<P></A>
+<A NAME="1011746">
+You can use the <CODE>File</CODE> object to generate persistent HTML or data files without using a database server. Information stored in a file is preserved when the server goes down.<P></A>
+<A NAME="1011747">
+Exercise caution when using the <CODE>File</CODE> object. An application can read and write files anywhere the operating system allows. If you create an application that writes to or reads from your file system, you should ensure that users cannot misuse this capability.<P></A>
+<A NAME="1011748">
+Specify the full path, including the filename, for the <CODE>path</CODE> parameter of the <CODE>File</CODE> object you want to create. The path must be an absolute path; do not use a relative path.<P></A>
+<A NAME="1011749">
+If the physical file specified in the path already exists, the JavaScript runtime engine references it when you call methods for the object. If the physical file does not exist, you can create it by calling the <CODE>open</CODE> method.<P></A>
+<A NAME="1011750">
+You can display the name and path of a physical file by calling the <CODE>write</CODE> function and passing it the name of the related <CODE>File</CODE> object.<P></A>
+<A NAME="1011751">
+A pointer indicates the current position in a file. If you open a file in the <CODE>a</CODE> or <CODE>a+</CODE> mode, the pointer is initially positioned at the end of the file; otherwise, it is initially positioned at the beginning of the file. In an empty file, the beginning and end of the file are the same. Use the <CODE>eof</CODE>, <CODE>getPosition</CODE>, and <CODE>setPosition</CODE> methods to specify and evaluate the position of the pointer. See the <CODE>open</CODE> method for a description of the modes in which you can open a file.<P></A>
+<A NAME="1016110">
+You can use the <CODE>prototype</CODE> property of the <CODE>File</CODE> object to add a property to all <CODE>File</CODE> instances. If you do so, that addition applies to all <CODE>File</CODE> objects running in all applications on your server, not just in the single application that made the change. This allows you to expand the capabilities of this object for your entire server.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1034796">
+<H4> Property Summary</H4>
+</A>
+
+<A NAME="1034802">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1034799">
+<PRE><A HREF="oth1.htm#1035477"><CODE>prototype</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1034801">
+Allows the addition of properties to a <CODE>File</CODE> object.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1011752">
+<H4> Method Summary</H4>
+</A>
+
+<A NAME="1011881">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1011758">
+<PRE><A HREF="oth1.htm#1011894"><CODE>byteToString</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1011760">
+Converts a number that represents a byte into a string.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1011765">
+<PRE><A HREF="oth1.htm#1011929"><CODE>clearError</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1011768">
+Clears the current file error status.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1011773">
+<PRE><A HREF="oth1.htm#1011957"><CODE>close</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1011775">
+Closes an open file on the server.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1011780">
+<PRE><A HREF="oth1.htm#1011984"><CODE>eof</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1011782">
+Determines whether the pointer is beyond the end of an open file.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1011787">
+<PRE><A HREF="oth1.htm#1012017"><CODE>error</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1011789">
+Returns the current error status.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1011794">
+<PRE><A HREF="oth1.htm#1012044"><CODE>exists</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1011796">
+Tests whether a file exists.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1011801">
+<PRE><A HREF="oth1.htm#1012065"><CODE>flush</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1011803">
+Writes the content of the internal buffer to a file.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1011808">
+<PRE><A HREF="oth1.htm#1012096"><CODE>getLength</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1011810">
+Returns the length of a file.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1011815">
+<PRE><A HREF="oth1.htm#1012118"><CODE>getPosition</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1011817">
+Returns the current position of the pointer in an open file.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1011822">
+<PRE><A HREF="oth1.htm#1012166"><CODE>open</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1011824">
+Opens a file on the server.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1011829">
+<PRE><A HREF="oth1.htm#1012207"><CODE>read</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1011831">
+Reads data from a file into a string.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1011836">
+<PRE><A HREF="oth1.htm#1012249"><CODE>readByte</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1011838">
+Reads the next byte from an open file and returns its numeric value.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1015413">
+<PRE><A HREF="oth1.htm#1012285"><CODE>readln</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1011845">
+Reads the current line from an open file and returns it as a string.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1011850">
+<PRE><A HREF="oth1.htm#1012321"><CODE>setPosition</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1011852">
+Positions a pointer in an open file.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1011857">
+<PRE><A HREF="oth1.htm#1012376"><CODE>stringToByte</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1011859">
+Converts the first character of a string into a number that represents a byte.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1011864">
+<PRE><A HREF="oth1.htm#1012408"><CODE>write</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1011866">
+Writes data from a string to a file on the server.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1011871">
+<PRE><A HREF="oth1.htm#1012451"><CODE>writeByte</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1011873">
+Writes a byte of data to a binary file on the server.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1011878">
+<PRE><A HREF="oth1.htm#1012490"><CODE>writeln</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1011880">
+Writes a string and a carriage return to a file on the server.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1011884">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1011885">
+<B>Example 1.</B> The following example creates the <CODE>File</CODE> object <CODE>userInfo</CODE> that refers to a physical file called <CODE>info.txt</CODE>. The <CODE>info.txt</CODE> file resides in the same directory as the application's <CODE>.web</CODE> file:<P></A>
+<A NAME="1011886">
+<PRE>userInfo = new File("info.txt")</PRE></A><A NAME="1011887">
+<B>Example 2.</B> In the following example, the <CODE>File</CODE> object refers to a physical file with an absolute path:<P></A>
+<A NAME="1011888">
+<PRE>userInfo = new File("c:\\data\\info.txt")</PRE></A><A NAME="1011889">
+<B>Example 3.</B> The following example displays the name of a <CODE>File</CODE> object onscreen.<P></A>
+<A NAME="1011890">
+<PRE>userInfo = new File("c:\\data\\info.txt")<br>write(userInfo)</PRE></A>
+<A NAME="Head2;"></A>
+<A NAME="1011891">
+<H3> Properties</H3>
+</A>
+
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1035477">
+<H2>prototype</H2>
+</A>
+
+<A NAME="1035478">
+Represents the prototype for this class. You can use the prototype to add properties or methods to all instances of a class. For information on prototypes, see <A HREF="core4.htm#1181210"><CODE>Function.prototype</CODE></A>.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1035484">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1035489">
+<A HREF="oth1.htm#1015167"><CODE>File</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1035491">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1035493">
+LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head2;"></A>
+<A NAME="1034853">
+<H3> Methods</H3>
+</A>
+
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1011894">
+<H2>byteToString</H2>
+</A>
+
+<A NAME="1011896">
+Converts a number that represents a byte into a string.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1031026">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1031028">
+<A HREF="oth1.htm#1015167"><CODE>File</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1033772">
+<I>Static</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1033774">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1031030">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1031032">
+LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1031720">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1011898">
+<PRE>byteToString(number)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1011899">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1011905">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1011902">
+<PRE>number</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1011904">
+A number that represents a byte.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1011911">
+<H4> Description</H4>
+</A>
+
+<A NAME="1011912">
+Use the <CODE>stringToByte</CODE> and <CODE>byteToString</CODE> methods to convert data between binary and ASCII formats. The <CODE>byteToString</CODE> method converts the <CODE>number</CODE> argument into a string. <P></A>
+<A NAME="1037651">
+Because <CODE>byteToString</CODE> is a static method of <CODE>File</CODE>, you always use it as <CODE>File.byteToString()</CODE>, rather than as a method of a <CODE>File</CODE> object you created.<P></A>
+<A NAME="1011913">
+If the argument you pass into the <CODE>byteToString</CODE> method is not a number, the method returns an empty string.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1011916">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1011917">
+The following example creates a copy of a text file, one character at a time. In this example, a <CODE>while</CODE> loop executes until the pointer is positioned past the end of the file. Inside the loop, the <CODE>readByte</CODE> method reads the current character from the source file, and the <CODE>byteToString</CODE> method converts it into a string; the <CODE>write</CODE> method writes it to the target file. The last <CODE>readByte</CODE> method positions the pointer past the end of the file, ending the <CODE>while</CODE> loop. See the <CODE>File</CODE> object for a description of the pointer.<P></A>
+<A NAME="1011918">
+<PRE>// Create the source File object<br>source = new File("c:\data\source.txt")</PRE></A><A NAME="1011919">
+<PRE>// If the source file opens successfully, create a target file<br>if (source.open("r")) {<br>&nbsp;&nbsp;&nbsp;target = new File("c:\data\target.txt")<br>&nbsp;&nbsp;&nbsp;target.open("w")</PRE></A><A NAME="1011920">
+<PRE>// Copy the source file to the target<br>&nbsp;&nbsp;&nbsp;while (!source.eof()) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data = File.byteToString(source.readByte())<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;target.write(data);<br>&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;source.close()<br>}<br>&nbsp;&nbsp;&nbsp;target.close()</PRE></A><A NAME="1011921">
+This example is similar to the example used for the <CODE>write</CODE> method of <CODE>File</CODE>. However, this example reads bytes from the source file and converts them to strings, instead of reading strings from the source file.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1011922">
+<H4> See also</H4>
+</A>
+
+<A NAME="1011926">
+<A HREF="oth1.htm#1012376"><CODE>File.stringToByte</CODE></A> <P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1011929">
+<H2>clearError</H2>
+</A>
+
+<A NAME="1011931">
+Clears the current file error status.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1031726">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1031731">
+<A HREF="oth1.htm#1015167"><CODE>File</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1031733">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1031735">
+LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1011932">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1011933">
+<PRE>clearError()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1011934">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1011935">
+None. <P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1011941">
+<H4> Description</H4>
+</A>
+
+<A NAME="1011942">
+The <CODE>clearError</CODE> method clears both the file error status (the value returned by the <CODE>error</CODE> method) and the value returned by the <CODE>eof</CODE> method.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1011945">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1011946">
+See the example for the <CODE>error</CODE> method.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1011947">
+<H4> See also</H4>
+</A>
+
+<A NAME="1011954">
+<A HREF="oth1.htm#1012017"><CODE>File.error</CODE></A>, <A HREF="oth1.htm#1011984"><CODE>File.eof</CODE></A> <P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1011957">
+<H2>close</H2>
+</A>
+
+<A NAME="1011958">
+Closes an open file on the server.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1031772">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1031777">
+<A HREF="oth1.htm#1015167"><CODE>File</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1031779">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1031781">
+LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1011959">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1011960">
+<PRE>close()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1011961">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1011962">
+None. <P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1011968">
+<H4> Description</H4>
+</A>
+
+<A NAME="1011969">
+When your application is finished with a file, you should close the file by calling the <CODE>close</CODE> method. If the file is not open, the <CODE>close</CODE> method fails. This method returns true if it is successful; otherwise, it returns false.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1011972">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1011973">
+See the examples for the <CODE>open</CODE> method.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1011974">
+<H4> See also</H4>
+</A>
+
+<A NAME="1011981">
+<A HREF="oth1.htm#1012166"><CODE>File.open</CODE></A>, <A HREF="glob3.htm#1012250"><CODE>blob</CODE></A> <P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1011984">
+<H2>eof</H2>
+</A>
+
+<A NAME="1011985">
+Determines whether the pointer is beyond the end of an open file.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1031828">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1031833">
+<A HREF="oth1.htm#1015167"><CODE>File</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1031835">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1031837">
+LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1011986">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1011987">
+<PRE>eof()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1011988">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1011989">
+None.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1011995">
+<H4> Description</H4>
+</A>
+
+<A NAME="1011996">
+Use the <CODE>eof</CODE> method to determine whether the position of the pointer is beyond the end of a file. See <A HREF="oth1.htm#1015167"><CODE>File</CODE></A> for a description of the pointer.<P></A>
+<A NAME="1012000">
+A call to <CODE>setPosition</CODE> resulting in a location greater than <CODE>fileObjectName.getLength</CODE> places the pointer beyond the end of the file. Because all read operations also move the pointer, a read operation that reads the last byte of data (or character) in a file positions the pointer beyond the end of the file.<P></A>
+<A NAME="1012001">
+The <CODE>eof</CODE> method returns true if the pointer is beyond the end of the file; otherwise, it returns false.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012004">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1012005">
+In this example, a <CODE>while</CODE> loop executes until the pointer is positioned past the end of the file. While the pointer is not positioned past the end of the file, the <CODE>readln</CODE> method reads the current line, and the <CODE>write</CODE> method displays it. The last <CODE>readln</CODE> method positions the pointer past the end of the file, ending the <CODE>while</CODE> loop.<P></A>
+<A NAME="1012006">
+<PRE>x = new File("c:\data\userInfo.txt")<br>if (x.open("r")) {<br>&nbsp;&nbsp;&nbsp;while (!x.eof()) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;line = x.readln()<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;write(line+"&lt;br&gt;");<br>&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;x.close();<br>}</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1012007">
+<H4> See also</H4>
+</A>
+
+<A NAME="1012014">
+<A HREF="oth1.htm#1012118"><CODE>File.getPosition</CODE></A>, <A HREF="oth1.htm#1012321"><CODE>File.setPosition</CODE></A> <P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1012017">
+<H2>error</H2>
+</A>
+
+<A NAME="1012018">
+Returns the current error status.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1031884">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1031889">
+<A HREF="oth1.htm#1015167"><CODE>File</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1031891">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1031893">
+LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012019">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1012020">
+<PRE>error()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1012021">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1012022">
+None<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012028">
+<H4> Returns</H4>
+</A>
+
+<A NAME="1012029">
+0 if there is no error.<P></A>
+<A NAME="1012030">
+-1 if the file specified in <CODE>fileObjectName</CODE> is not open<P></A>
+<A NAME="1012031">
+Otherwise, the method returns a nonzero integer indicating the error status. Specific error status codes are platform-dependent. Refer to your operating system documentation for more information.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012034">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1012035">
+The following example uses the <CODE>error</CODE> method in an <CODE>if</CODE> statement to take different actions depending on whether a call to the <CODE>open</CODE> method succeeded. After the <CODE>if</CODE> statement completes, the error status is reset with the <CODE>clearError</CODE> method.<P></A>
+<A NAME="1012036">
+<PRE>userInput = new File("c:\data\input.txt")<br>userInput.open("w")<br>if (userInput.error() == 0) {<br>&nbsp;&nbsp;&nbsp;fileIsOpen() }<br>else {<br>&nbsp;&nbsp;&nbsp;fileIsNotOpen() }<br>userInput.clearError()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1012037">
+<H4> See also</H4>
+</A>
+
+<A NAME="1012041">
+<A HREF="oth1.htm#1011929"><CODE>File.clearError</CODE></A> <P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1012044">
+<H2>exists</H2>
+</A>
+
+<A NAME="1012045">
+Tests whether a file exists.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1031958">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1031963">
+<A HREF="oth1.htm#1015167"><CODE>File</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1031965">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1031967">
+LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012046">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1012047">
+<PRE>exists()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1012048">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1012049">
+None.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012055">
+<H4> Returns</H4>
+</A>
+
+<A NAME="1012056">
+True if the file exists; otherwise, false.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012059">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1012060">
+The following example uses an <CODE>if</CODE> statement to take different actions depending on whether a physical file exists. If the file exists, the JavaScript runtime engine opens it and calls the <CODE>writeData</CODE> function. If the file does not exist, the runtime engine calls the <CODE>noFile</CODE> function.<P></A>
+<A NAME="1012061">
+<PRE>dataFile = new File("c:\data\mytest.txt")</PRE></A><A NAME="1012062">
+<PRE>if (dataFile.exists() ==true) {<br>&nbsp;&nbsp;&nbsp;dataFile.open("w")<br>&nbsp;&nbsp;&nbsp;writeData()<br>&nbsp;&nbsp;&nbsp;dataFile.close()<br>}<br>else {<br>&nbsp;&nbsp;&nbsp;noFile()<br>}</PRE></A>
+<A NAME="Head2Ref;"></A>
+<A NAME="1012065">
+<H2>flush</H2>
+</A>
+
+<A NAME="1012066">
+Writes the content of the internal buffer to a file.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1032024">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1032029">
+<A HREF="oth1.htm#1015167"><CODE>File</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1032031">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1032033">
+LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012067">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1012068">
+<PRE>flush()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1012069">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1012070">
+None.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012076">
+<H4> Description</H4>
+</A>
+
+<A NAME="1015873">
+When you write to a file with any of the <CODE>File</CODE> object methods (<CODE>write</CODE>, <CODE>writeByte</CODE>, or <CODE>writeln</CODE>), the data is buffered internally. The <CODE>flush</CODE> method writes the buffer to the physical file. The <CODE>flush</CODE> method returns true if it is successful; otherwise, it returns false.<P></A>
+<A NAME="1015874">
+Do not confuse the <A HREF="oth1.htm#1012065"><CODE>flush</CODE></A> method of the <CODE>File</CODE> object with the top-level <A HREF="glob9.htm#1012361"><CODE>flush</CODE></A> function. The <CODE>flush</CODE> function flushes a buffer of data and causes it to display in the client browser; the <CODE>flush</CODE> method flushes a buffer of data to a physical file.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012081">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1012082">
+See the <CODE>write</CODE> method for an example of the <CODE>flush</CODE> method.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012083">
+<H4> See also</H4>
+</A>
+
+<A NAME="1012093">
+<A HREF="oth1.htm#1012408"><CODE>File.write</CODE></A>, <A HREF="oth1.htm#1012451"><CODE>File.writeByte</CODE></A>, <A HREF="oth1.htm#1012490"><CODE>File.writeln</CODE></A> <P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1012096">
+<H2>getLength</H2>
+</A>
+
+<A NAME="1012097">
+Returns the length of a file.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1032192">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1032197">
+<A HREF="oth1.htm#1015167"><CODE>File</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1032199">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1032201">
+LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012098">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1012099">
+<PRE>getLength()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1012100">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1012101">
+None.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012107">
+<H4> Description</H4>
+</A>
+
+<A NAME="1012108">
+If this method is successful, it returns the number of bytes in a binary file or characters in a text file; otherwise, it returns -1.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012111">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1012112">
+The following example copies a file one character at a time. This example uses <CODE>getLength</CODE> as a counter in a <CODE>for</CODE> loop to iterate over every character in the file.<P></A>
+<A NAME="1012113">
+<PRE>// Create the source File object<br>source = new File("c:\data\source.txt")</PRE></A><A NAME="1012114">
+<PRE>// If the source file opens successfully, create a target file<br>if (source.open("r")) {<br>&nbsp;&nbsp;&nbsp;target = new File("c:\data\target.txt")<br>&nbsp;&nbsp;&nbsp;target.open("a")</PRE></A><A NAME="1012115">
+<PRE>&nbsp;&nbsp;&nbsp;// Copy the source file to the target<br>&nbsp;&nbsp;&nbsp;for (var x = 0; x &lt; source.getLength(); x++) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;source.setPosition(x)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data = source.read(1)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;target.write(data)<br>&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;source.close()<br>}<br>&nbsp;&nbsp;&nbsp;target.close()</PRE></A>
+<A NAME="Head2Ref;"></A>
+<A NAME="1012118">
+<H2>getPosition</H2>
+</A>
+
+<A NAME="1012119">
+Returns the current position of the pointer in an open file.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1032390">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1032395">
+<A HREF="oth1.htm#1015167"><CODE>File</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1032397">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1032399">
+LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012120">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1012121">
+<PRE>getPosition()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1012122">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1012123">
+None<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012129">
+<H4> Returns</H4>
+</A>
+
+<A NAME="1012130">
+-1 if there is an error.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012131">
+<H4> Description</H4>
+</A>
+
+<A NAME="1012132">
+Use the <CODE>getPosition</CODE> method to determine the position of the pointer in a file. See the <CODE>File</CODE> object for a description of the pointer. The <CODE>getPosition</CODE> method returns the current pointer position; the first byte in a file is byte 0. <P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012135">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1012136">
+The following examples refer to the file <CODE>info.txt</CODE>, which contains the string "Hello World." The length of <CODE>info.txt</CODE> is 11 bytes.<P></A>
+<A NAME="1012137">
+<B>Example 1. </B>In the following example, the first call to <CODE>getPosition</CODE> shows that the default pointer position is 0 in a file that is opened for reading. This example also shows that a call to the <CODE>read</CODE> method repositions the pointer.<P></A>
+<A NAME="1012138">
+<PRE>dataFile = new File("c:\data\info.txt")<br>dataFile.open("r")</PRE></A><A NAME="1012139">
+<PRE>write("The position is " + dataFile.getPosition() + "&lt;BR&gt;")<br>write("The next character is " + dataFile.read(1) + "&lt;BR&gt;")<br>write("The new position is " + dataFile.getPosition() + "&lt;BR&gt;")</PRE></A><A NAME="1012140">
+<PRE>dataFile.close()</PRE></A><A NAME="1012141">
+This example displays the following information:<P></A>
+<A NAME="1012142">
+<PRE>The position is 0<br>The next character is H<br>The new position is 1</PRE></A><A NAME="1012143">
+<B>Example 2.</B> This example uses <CODE>setPosition</CODE> to position the pointer one byte from the end of the eleven-byte file, resulting in a pointer position of offset 10.<P></A>
+<A NAME="1012144">
+<PRE>dataFile = new File("c:\data\info.txt")<br>dataFile.open("r")</PRE></A><A NAME="1012145">
+<PRE>dataFile.setPosition(-1,2)<br>write("The position is " + dataFile.getPosition() + "&lt;BR&gt;")<br>write("The next character is " + dataFile.read(1) + "&lt;BR&gt;")</PRE></A><A NAME="1012146">
+<PRE>dataFile.close()</PRE></A><A NAME="1012147">
+This example displays the following information:<P></A>
+<A NAME="1012148">
+<PRE>The position is 10<br>The next character is d</PRE></A><A NAME="1012149">
+<B>Example 3.</B> You can position the pointer beyond the end of the file and still evaluate <CODE>getPosition</CODE> successfully. However, a call to <CODE>eof</CODE> indicates that the pointer is beyond the end of the file.<P></A>
+<A NAME="1012150">
+<PRE>dataFile.setPosition(1,2)<br>write("The position is " + dataFile.getPosition() + "&lt;BR&gt;")<br>write("The value of eof is " + dataFile.eof() + "&lt;P&gt;")</PRE></A><A NAME="1012151">
+This example displays the following information:<P></A>
+<A NAME="1012152">
+<PRE>The position is 12<br>The value of eof is true</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1012153">
+<H4> See also</H4>
+</A>
+
+<A NAME="1012163">
+<A HREF="oth1.htm#1011984"><CODE>File.eof</CODE></A>, <A HREF="oth1.htm#1012166"><CODE>File.open</CODE></A>, <A HREF="oth1.htm#1012321"><CODE>File.setPosition</CODE></A> <P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1012166">
+<H2>open</H2>
+</A>
+
+<A NAME="1012167">
+Opens a file on the server.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1032570">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1032575">
+<A HREF="oth1.htm#1015167"><CODE>File</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1032577">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1032579">
+LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012168">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1012169">
+<PRE>open("mode")</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1012170">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1012176">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012173">
+<PRE>mode</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1012175">
+A string specifying whether to open the file to read, write, or append, according to the list below.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012182">
+<H4> Description</H4>
+</A>
+
+<A NAME="1012183">
+Use the <CODE>open</CODE> method to open a file on the server before you read from it or write to it. If the file is already open, the method fails and has no effect. The <CODE>open</CODE> method returns true if it is successful; otherwise, it returns false.<P></A>
+<A NAME="1012184">
+The <CODE>mode</CODE> parameter is a string that specifies whether to open the file to read, write, or append data. You can optionally use the <CODE>b</CODE> parameter anytime you specify the mode. If you do so, the JavaScript runtime engine on the server opens the file as a binary file. If you do not use the <CODE>b</CODE> parameter, the runtime engine opens the file as a text file. The <CODE>b</CODE> parameter is available only on Windows platforms.<P></A>
+<A NAME="1012185">
+The possible values for <CODE>mode</CODE> are as follows:<P></A>
+<ul><P>
+<A NAME="1012186">
+<LI><CODE>r[b]</CODE> opens a file for reading. If the file exists, the method succeeds and returns true; otherwise, the method fails and returns false.</LI>
+</A><P>
+<A NAME="1012187">
+<LI><CODE>w[b]</CODE> opens a file for writing. If the file does not already exist, it is created; otherwise, it is overwritten. This method always succeeds and returns true.</LI>
+</A><P>
+<A NAME="1012188">
+<LI><CODE>a[b]</CODE> opens a file for appending (writing at the end of the file). If the file does not already exist, it is created. This method always succeeds and returns true.</LI>
+</A><P>
+<A NAME="1012189">
+<LI><CODE>r+[b]</CODE> opens a file for reading and writing. If the file exists, the method succeeds and returns true; otherwise, the method fails and returns false. Reading and writing commence at the beginning of the file. When writing, characters at the beginning of the file are overwritten.</LI>
+</A><P>
+<A NAME="1012190">
+<LI><CODE>w+[b]</CODE> opens a file for reading and writing. If the file does not already exist, it is created; otherwise, it is overwritten. This method always succeeds and returns true.</LI>
+</A><P>
+<A NAME="1012191">
+<LI><CODE>a+[b]</CODE> opens a file for reading and appending. If the file does not already exist, it is created. This method always succeeds and returns true. Reading and appending commence at the end of the file.</LI>
+</A></ul><A NAME="1012192">
+When your application is finished with a file, you should close the file by calling the <CODE>close</CODE> method. <P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012195">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1012196">
+<B>Example 1.</B> The following example opens the file <CODE>info.txt</CODE> so an application can write information to it. If <CODE>info.txt</CODE> does not already exist, the <CODE>open</CODE> method creates it; otherwise, the <CODE>open</CODE> method overwrites it. The <CODE>close</CODE> method closes the file after the <CODE>writeData</CODE> function is completed.<P></A>
+<A NAME="1012197">
+<PRE>userInfo = new File("c:\data\info.txt")<br>userInfo.open("w")<br>writeData()<br>userInfo.close()</PRE></A><A NAME="1012198">
+<B>Example 2.</B> The following example opens a binary file so an application can read data from it. The application uses an <CODE>if</CODE> statement to take different actions depending on whether the <CODE>open</CODE> statement finds the specified file.<P></A>
+<A NAME="1012199">
+<PRE>entryGraphic = new File("c:\data\splash.gif")<br>if (entryGraphic.open("rb") == true) {<br>&nbsp;&nbsp;&nbsp;displayProcedure()<br>&nbsp;&nbsp;&nbsp;}<br>else {<br>&nbsp;&nbsp;&nbsp;errorProcedure()<br>&nbsp;&nbsp;&nbsp;}<br>entryGraphic.close()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1012200">
+<H4> See also</H4>
+</A>
+
+<A NAME="1012204">
+<A HREF="oth1.htm#1011957"><CODE>File.close</CODE></A> <P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1012207">
+<H2>read</H2>
+</A>
+
+<A NAME="1012208">
+Reads data from a file into a string.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1032750">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1032755">
+<A HREF="oth1.htm#1015167"><CODE>File</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1032757">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1032759">
+LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012209">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1012210">
+<PRE>read(count)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1012211">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1012217">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012214">
+<PRE>count</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1012216">
+An integer specifying the number of characters to read.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012223">
+<H4> Description</H4>
+</A>
+
+<A NAME="1012224">
+The <CODE>read</CODE> method reads the specified number of characters from a file, starting from the current position of the pointer. If you attempt to read more characters than the file contains, the method reads as many characters as possible. This method moves the pointer the number of characters specified by the <CODE>count</CODE> parameter. See the <CODE>File</CODE> object for a description of the pointer.<P></A>
+<A NAME="1012225">
+The <CODE>read</CODE> method returns the characters it reads as a string.<P></A>
+<A NAME="1012226">
+Use the <CODE>read</CODE> method to read information from a text file; use the <CODE>readByte</CODE> method to read data from a binary file. <P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012229">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1012230">
+The following example references the file <CODE>info.txt</CODE>, which contains the string "Hello World." The first <CODE>read</CODE> method starts from the beginning of the file and reads the character "H." The second <CODE>read</CODE> method starts from offset six and reads the characters "World."<P></A>
+<A NAME="1012231">
+<PRE>dataFile = new File("c:\data\info.txt")<br>dataFile.open("r")</PRE></A><A NAME="1012232">
+<PRE>write("The next character is " + dataFile.read(1) + "&lt;BR&gt;")<br>dataFile.setPosition(6)<br>write("The next five characters are " + dataFile.read(5) + "&lt;BR&gt;")</PRE></A><A NAME="1012233">
+<PRE>dataFile.close()</PRE></A><A NAME="1012234">
+This example displays the following information:<P></A>
+<A NAME="1012235">
+<PRE>The next character is H<br>The next five characters are World</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1012236">
+<H4> See also</H4>
+</A>
+
+<A NAME="1012246">
+<A HREF="oth1.htm#1012249"><CODE>File.readByte</CODE></A>, <A HREF="oth1.htm#1012285"><CODE>File.readln</CODE></A>, <A HREF="oth1.htm#1012408"><CODE>File.write</CODE></A><P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1012249">
+<H2>readByte</H2>
+</A>
+
+<A NAME="1012250">
+Reads the next byte from an open file and returns its numeric value.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1032912">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1032917">
+<A HREF="oth1.htm#1015167"><CODE>File</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1032919">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1032921">
+LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012251">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1012252">
+<PRE>readByte()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1012253">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1012254">
+None.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012260">
+<H4> Description</H4>
+</A>
+
+<A NAME="1012261">
+The <CODE>readByte</CODE> method reads the next byte from a file, starting from the current position of the pointer. This method moves the pointer one byte. See the <CODE>File</CODE> object for a description of the pointer.<P></A>
+<A NAME="1012262">
+The <CODE>readByte</CODE> method returns the byte it reads as a number. If the pointer is at the end of the file when you issue <CODE>readByte</CODE>, the method returns -1.<P></A>
+<A NAME="1012263">
+Use the <CODE>readByte</CODE> method to read information from a binary file. You can use the <CODE>readByte</CODE> method to read from a text file, but you must use the <CODE>byteToString</CODE> method to convert the value to a string. Generally it is better to use the <CODE>read</CODE> method to read information from a text file.<P></A>
+<A NAME="1012264">
+You can use the <CODE>writeByte</CODE> method to write data read by the <CODE>readByte</CODE> method to a file.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012267">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1012268">
+This example creates a copy of a binary file. In this example, a <CODE>while</CODE> loop executes until the pointer is positioned past the end of the file. While the pointer is not positioned past the end of the file, the <CODE>readByte</CODE> method reads the current byte from the source file, and the <CODE>writeByte</CODE> method writes it to the target file. The last <CODE>readByte</CODE> method positions the pointer past the end of the file, ending the <CODE>while</CODE> loop.<P></A>
+<A NAME="1012269">
+<PRE>// Create the source File object<br>source = new File("c:\data\source.gif")</PRE></A><A NAME="1012270">
+<PRE>// If the source file opens successfully, create a target file<br>if (source.open("rb")) {<br>&nbsp;&nbsp;&nbsp;target = new File("c:\data\target.gif")<br>&nbsp;&nbsp;&nbsp;target.open("wb")</PRE></A><A NAME="1012271">
+<PRE>// Copy the source file to the target<br>&nbsp;&nbsp;&nbsp;while (!source.eof()) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data = source.readByte()<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;target.writeByte(data);<br>&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;source.close();<br>}<br>target.close()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1012272">
+<H4> See also</H4>
+</A>
+
+<A NAME="1012282">
+<A HREF="oth1.htm#1012207"><CODE>File.read</CODE></A>, <A HREF="oth1.htm#1012285"><CODE>File.readln</CODE></A>, <A HREF="oth1.htm#1012451"><CODE>File.writeByte</CODE></A> <P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1012285">
+<H2>readln</H2>
+</A>
+
+<A NAME="1012286">
+Reads the current line from an open file and returns it as a string.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1033070">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1033075">
+<A HREF="oth1.htm#1015167"><CODE>File</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1033077">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1033079">
+LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012287">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1012288">
+<PRE>readln()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1012289">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1012290">
+None<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012296">
+<H4> Description</H4>
+</A>
+
+<A NAME="1012297">
+The <CODE>readln</CODE> method reads the current line of characters from a file, starting from the current position of the pointer. If you attempt to read more characters than the file contains, the method reads as many characters as possible. This method moves the pointer to the beginning of the next line. See the <CODE>File</CODE> object for a description of the pointer.<P></A>
+<A NAME="1012298">
+The <CODE>readln</CODE> method returns the characters it reads as a string.<P></A>
+<A NAME="1012299">
+The line separator characters ("<CODE>\r</CODE>" and "<CODE>\n</CODE>" on Windows platforms and "<CODE>\n</CODE>" on UNIX platforms) are not included in the string that the <CODE>readln</CODE> method returns. The <CODE>\r</CODE> character is skipped;<CODE> \n</CODE> determines the actual end of the line.<P></A>
+<A NAME="1012300">
+Use the <CODE>readln</CODE> method to read information from a text file; use the <CODE>readByte</CODE> method to read data from a binary file. You can use the <CODE>writeln</CODE> method to write data read by the <CODE>readln</CODE> method to a file.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012303">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1012307">
+See <A HREF="oth1.htm#1011984"><CODE>File.eof</CODE></A> <P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012308">
+<H4> See also</H4>
+</A>
+
+<A NAME="1012318">
+<A HREF="oth1.htm#1012207"><CODE>File.read</CODE></A>, <A HREF="oth1.htm#1012249"><CODE>File.readByte</CODE></A>, <A HREF="oth1.htm#1012490"><CODE>File.writeln</CODE></A> <P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1012321">
+<H2>setPosition</H2>
+</A>
+
+<A NAME="1012322">
+Positions a pointer in an open file.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1033234">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1033239">
+<A HREF="oth1.htm#1015167"><CODE>File</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1033241">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1033243">
+LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012323">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1012324">
+<PRE>setPosition(position, reference)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1012325">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1012335">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012328">
+<PRE>position</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1012330">
+An integer indicating where to position the pointer.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012332">
+<PRE>reference</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1012334">
+(Optional) An integer that indicates a reference point, according to the list below.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012341">
+<H4> Description</H4>
+</A>
+
+<A NAME="1012342">
+Use the <CODE>setPosition</CODE> method to reposition the pointer in a file. See the <CODE>File</CODE> object for a description of the pointer.<P></A>
+<A NAME="1012343">
+The <CODE>position</CODE> argument is a positive or negative integer that moves the pointer the specified number of bytes relative to the <CODE>reference</CODE> argument. Position 0 represents the beginning of a file. The end of a file is indicated by <CODE>fileObjectName.getLength()</CODE>.<P></A>
+<A NAME="1012344">
+The optional <CODE>reference</CODE> argument is one of the following values, indicating the reference point for <CODE>position</CODE>:<P></A>
+<ul><A NAME="1012345">
+<LI>0: relative to beginning of file.</LI>
+</A><A NAME="1012346">
+<LI>1: relative to current position.</LI>
+</A><A NAME="1012347">
+<LI>2: relative to end of file.</LI>
+</A><A NAME="1012348">
+<LI>Other (or unspecified): relative to beginning of file.</LI>
+</A></ul><A NAME="1012349">
+The <CODE>setPosition</CODE> method returns true if it is successful; otherwise, it returns false.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012352">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1012353">
+The following examples refer to the file <CODE>info.txt</CODE>, which contains the string "Hello World." The length of <CODE>info.txt</CODE> is 11 bytes. The first example moves the pointer from the beginning of the file, and the second example moves the pointer to the same location by navigating relative to the end of the file. Both examples display the following information:<P></A>
+<A NAME="1012354">
+<PRE>The position is 10<br>The next character is d</PRE></A><A NAME="1012355">
+<B>Example 1.</B> This example moves the pointer from the beginning of the file to offset 10. Because no value for <CODE>reference</CODE> is supplied, the JavaScript runtime engine assumes it is 0.<P></A>
+<A NAME="1012356">
+<PRE>dataFile = new File("c:\data\info.txt")<br>dataFile.open("r")</PRE></A><A NAME="1012357">
+<PRE>dataFile.setPosition(10)<br>write("The position is " + dataFile.getPosition() + "&lt;BR&gt;")<br>write("The next character is " + dataFile.read(1) + "&lt;P&gt;")</PRE></A><A NAME="1012358">
+<PRE>dataFile.close()</PRE></A><A NAME="1012359">
+<B>Example 2.</B> This example moves the pointer from the end of the file to offset 10.<P></A>
+<A NAME="1012360">
+<PRE>dataFile = new File("c:\data\info.txt")<br>dataFile.open("r")</PRE></A><A NAME="1012361">
+<PRE>dataFile.setPosition(-1,2)<br>write("The position is " + dataFile.getPosition() + "&lt;BR&gt;")<br>write("The next character is " + dataFile.read(1) + "&lt;P&gt;")</PRE></A><A NAME="1012362">
+<PRE>dataFile.close()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1012363">
+<H4> See also</H4>
+</A>
+
+<A NAME="1012373">
+<A HREF="oth1.htm#1011984"><CODE>File.eof</CODE></A>, <A HREF="oth1.htm#1012118"><CODE>File.getPosition</CODE></A>, <A HREF="oth1.htm#1012166"><CODE>File.open</CODE></A> <P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1012376">
+<H2>stringToByte</H2>
+</A>
+
+<A NAME="1012377">
+Converts the first character of a string into a number that represents a byte.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1033384">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1033389">
+<A HREF="oth1.htm#1015167"><CODE>File</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1033779">
+<I>Static</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1033781">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1033391">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1033393">
+LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012378">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1012379">
+<PRE>stringToByte(string)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1012380">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1012386">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012383">
+<PRE>string</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1012385">
+A JavaScript string.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012392">
+<H4> Description</H4>
+</A>
+
+<A NAME="1012393">
+Use the <CODE>stringToByte</CODE> and <CODE>byteToString</CODE> methods to convert data between binary and ASCII formats. The <CODE>stringToByte</CODE> method converts the first character of its <CODE>string</CODE> argument into a number that represents a byte. <P></A>
+<A NAME="1038341">
+Because <CODE>stringToByte</CODE> is a static method of <CODE>File</CODE>, you always use it as <CODE>File.stringToByte()</CODE>, rather than as a method of a <CODE>File</CODE> object you created.<P></A>
+<A NAME="1012394">
+If this method succeeds, it returns the numeric value of the first character of the input string; if it fails, it returns 0.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012397">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1012398">
+In the following example, the <CODE>stringToByte</CODE> method is passed "Hello" as an input argument. The method converts the first character, "H," into a numeric value representing a byte.<P></A>
+<A NAME="1012399">
+<PRE>write("The stringToByte value of Hello = " +<br>&nbsp;&nbsp;&nbsp;File.stringToByte("Hello") + "&lt;BR&gt;")<br>write("Returning that value to byteToString = " +<br>&nbsp;&nbsp;&nbsp;File.byteToString(File.stringToByte("Hello")) + "&lt;P&gt;")</PRE></A><A NAME="1012400">
+The previous example displays the following information:<P></A>
+<A NAME="1012401">
+<PRE>The stringToByte value of Hello = 72<br>Returning that value to byteToString = H</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1012402">
+<H4> See also</H4>
+</A>
+
+<A NAME="1012406">
+<A HREF="oth1.htm#1011894"><CODE>File.byteToString</CODE></A> <P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1012408">
+<H2>write</H2>
+</A>
+
+<A NAME="1012409">
+Writes data from a string to a file on the server.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1033442">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1033447">
+<A HREF="oth1.htm#1015167"><CODE>File</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1033449">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1033451">
+LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012410">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1012411">
+<PRE>write(string)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1012412">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1012418">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012415">
+<PRE>string</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1012417">
+A JavaScript string.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012424">
+<H4> Description</H4>
+</A>
+
+<A NAME="1012425">
+The <CODE>write</CODE> method writes the string specified as <CODE>string</CODE> to the file specified as <CODE>fileObjectName</CODE>. This method returns true if it is successful; otherwise, it returns false.<P></A>
+<A NAME="1012426">
+Use the <CODE>write</CODE> method to write data to a text file; use the <CODE>writeByte</CODE> method to write data to a binary file. You can use the <CODE>read</CODE> method to read data from a file to a string for use with the <CODE>write</CODE> method.<P></A>
+<A NAME="1012427">
+Do not confuse the <A HREF="oth1.htm#1012408"><CODE>write</CODE></A> method of the <A HREF="oth1.htm#1015167"><CODE>File</CODE></A> object with the <A HREF="glob25.htm#1012652"><CODE>write</CODE></A> function. The <A HREF="glob25.htm#1012652"><CODE>write</CODE></A> function outputs data to the client browser; the <A HREF="oth1.htm#1012408"><CODE>write</CODE></A> method outputs data to a physical file on the server.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012430">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1012431">
+This example creates a copy of a text file, one character at a time. In this example, a <CODE>while</CODE> loop executes until the pointer is positioned past the end of the file. While the pointer is not positioned past the end of the file, the <CODE>read</CODE> method reads the current character from the source file, and the <CODE>write</CODE> method writes it to the target file. The last <CODE>read</CODE> method positions the pointer past the end of the file, ending the <CODE>while</CODE> loop. See the <CODE>File</CODE> object for a description of the pointer.<P></A>
+<A NAME="1012432">
+<PRE>// Create the source File object<br>source = new File("c:\data\source.txt")</PRE></A><A NAME="1012433">
+<PRE>// If the source file opens successfully, create a target file<br>if (source.open("r")) {<br>&nbsp;&nbsp;&nbsp;target = new File("c:\data\target.txt")<br>&nbsp;&nbsp;&nbsp;target.open("w")</PRE></A><A NAME="1012434">
+<PRE>// Copy the source file to the target<br>&nbsp;&nbsp;&nbsp;while (!source.eof()) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data = source.read(1)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;target.write(data);<br>&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;source.close();<br>}<br>&nbsp;&nbsp;&nbsp;target.flush()<br>&nbsp;&nbsp;&nbsp;target.close()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1012435">
+<H4> See also</H4>
+</A>
+
+<A NAME="1012448">
+<A HREF="oth1.htm#1012065"><CODE>File.flush</CODE></A>, <A HREF="oth1.htm#1012207"><CODE>File.read</CODE></A>, <A HREF="oth1.htm#1012451"><CODE>File.writeByte</CODE></A>, <A HREF="oth1.htm#1012490"><CODE>File.writeln</CODE></A> <P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1012451">
+<H2>writeByte</H2>
+</A>
+
+<A NAME="1012452">
+Writes a byte of data to a binary file on the server.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1033498">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1033503">
+<A HREF="oth1.htm#1015167"><CODE>File</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1033505">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1033507">
+LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012453">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1012454">
+<PRE>writeByte(number)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1012455">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1012461">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012458">
+<PRE>number</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1012460">
+A number that specifies a byte of data.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012467">
+<H4> Description</H4>
+</A>
+
+<A NAME="1012468">
+The <CODE>writeByte</CODE> method writes a byte that is specified as <CODE>number</CODE> to a file that is specified as <CODE>fileObjectName</CODE>. This method returns true if it is successful; otherwise, it returns false.<P></A>
+<A NAME="1012469">
+Use the <CODE>writeByte</CODE> method to write data to a binary file; use the <CODE>write</CODE> method to write data to a text file. You can use the <CODE>readByte</CODE> method to read bytes of data from a file to numeric values for use with the <CODE>writeByte</CODE> method.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012472">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1012473">
+See the example for the <CODE>readByte</CODE> method.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012474">
+<H4> See also</H4>
+</A>
+
+<A NAME="1012487">
+<A HREF="oth1.htm#1012065"><CODE>File.flush</CODE></A>, <A HREF="oth1.htm#1012249"><CODE>File.readByte</CODE></A>, <A HREF="oth1.htm#1012408"><CODE>File.write</CODE></A>, <A HREF="oth1.htm#1012490"><CODE>File.writeln</CODE></A> <P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1012490">
+<H2>writeln </H2>
+</A>
+
+<A NAME="1012491">
+Writes a string and a carriage return to a file on the server.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1033541">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1033546">
+<A HREF="oth1.htm#1015167"><CODE>File</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1033548">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1033550">
+LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012492">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1012493">
+<PRE>writeln(string)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1012494">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1012500">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012497">
+<PRE>string</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1012499">
+A JavaScript string.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012506">
+<H4> Description</H4>
+</A>
+
+<A NAME="1012507">
+The <CODE>writeln</CODE> method writes the string specified as <CODE>string</CODE> to the file specified as <CODE>fileObjectName</CODE>. Each string is followed by the carriage return/line feed character "<CODE>\n</CODE>" ("<CODE>\r\n</CODE>" on Windows platforms). This method returns true if the write is successful; otherwise, it returns false.<P></A>
+<A NAME="1012508">
+Use the <CODE>writeln</CODE> method to write data to a text file; use the <CODE>writeByte</CODE> method to write data to a binary file. You can use the <CODE>readln</CODE> method to read data from a file to a string for use with the <CODE>writeln</CODE> method.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012511">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1012512">
+This example creates a copy of a text file, one line at a time. In this example, a <CODE>while</CODE> loop executes until the pointer is positioned past the end of the file. While the pointer is not positioned past the end of the file, the <CODE>readln</CODE> method reads the current line from the source file, and the <CODE>writeln</CODE> method writes it to the target file. The last <CODE>readln</CODE> method positions the pointer past the end of the file, ending the <CODE>while</CODE> loop. See the <CODE>File</CODE> object for a description of the pointer.<P></A>
+<A NAME="1012513">
+<PRE>// Create the source File object<br>source = new File("c:\data\source.txt")</PRE></A><A NAME="1012514">
+<PRE>// If the source file opens successfully, create a target file<br>if (source.open("r")) {<br>&nbsp;&nbsp;&nbsp;target = new File("c:\data\target.txt")<br>&nbsp;&nbsp;&nbsp;target.open("w")</PRE></A><A NAME="1012515">
+<PRE>// Copy the source file to the target<br>&nbsp;&nbsp;&nbsp;while (!source.eof()) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data = source.readln()<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;target.writeln(data);<br>&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;source.close();<br>}<br>&nbsp;&nbsp;&nbsp;target.close()</PRE></A><A NAME="1012516">
+Note that the <CODE>readln</CODE> method ignores the carriage return/line feed characters when it reads a line from a file. The <CODE>writeln</CODE> method appends these characters to the string that it writes.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012517">
+<H4> See also</H4>
+</A>
+
+<A NAME="1012531">
+<A HREF="oth1.htm#1012065"><CODE>File.flush</CODE></A>, <A HREF="oth1.htm#1012285"><CODE>File.readln</CODE></A>, <A HREF="oth1.htm#1012408"><CODE>File.write</CODE></A>, <A HREF="oth1.htm#1012451"><CODE>File.writeByte</CODE></A> <P></A>
+
+<P><HR>
+<A HREF="contents.htm">[Contents]</A> <A HREF="oth.htm">[Previous]</A> <A HREF="oth2.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<P ALIGN=right>
+
+<FONT SIZE=-2><I>Last Updated:  10/31/97  16:37:22
+</I></FONT>
+
+<HR SIZE=4>
+
+<P> <CENTER>Copyright © 1997
+<A HREF="http://home.netscape.com/misc/contact_info.html"
+TARGET=_top>Netscape Communications Corporation</A></FONT>
+</CENTER>
+<P>
+<P>
+</BODY>
+</HTML>
+
+

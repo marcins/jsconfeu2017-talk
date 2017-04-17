@@ -1,0 +1,444 @@
+<HTML>
+<HEAD>
+<TITLE>
+</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A HREF="contents.htm">[Contents]</A> <A HREF="core5.htm">[Previous]</A> <A HREF="corea1.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<HR>
+
+<A NAME="Number"></A>
+<A NAME="1012418">
+<H1> Number</H1>
+</A>
+<A NAME="1039106">
+Lets you work with numeric values. The <CODE>Number</CODE> object is an object wrapper for primitive numeric values.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left COLSPAN=2 ROWSPAN=1><A NAME="1096919">
+<I>Core object</I></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1096923">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1096925">
+Navigator 3.0, LiveWire 1.0<br>Navigator 4.0: modified behavior of <CODE>Number</CODE> constructor</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012420">
+<H4> Created by</H4>
+</A>
+
+<A NAME="1045345">
+The <CODE>Number</CODE> constructor:<P></A>
+<A NAME="1012422">
+<PRE>new Number(value);</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1066099">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1066100">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1066109">
+<PRE>value</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1066111">
+The numeric value of the object being created.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012438">
+<H4> Description</H4>
+</A>
+
+<A NAME="1012440">
+The primary uses for the <CODE>Number</CODE> object are:<P></A>
+<ul><P>
+<A NAME="1012441">
+<LI>To access its constant properties, which represent the largest and smallest representable numbers, positive and negative infinity, and the Not-a-Number value.</LI>
+</A><P>
+<A NAME="1012442">
+<LI>To create numeric objects that you can add properties to. Most likely, you will rarely need to create a <CODE>Number</CODE> object.</LI>
+</A></ul><A NAME="1111635">
+The properties of <CODE>Number</CODE> are properties of the class itself, not of individual <CODE>Number</CODE> objects.<P></A>
+<A NAME="1045458">
+Navigator 4.0: <CODE>Number(x)</CODE> now produces <CODE>NaN</CODE> rather than an error if <CODE>x</CODE> is a string that does not contain a well-formed numeric literal. For example, <P></A>
+<A NAME="1045459">
+<PRE>x=Number("three");</PRE></A><A NAME="1045460">
+<PRE>document.write(x + "&lt;BR&gt;");</PRE></A><A NAME="1045461">
+prints <CODE>NaN</CODE> <P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012443">
+<H4> Property Summary</H4>
+</A>
+
+<A NAME="1012487">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012449">
+<PRE><A HREF="corea.htm#1012501"><CODE>MAX_VALUE</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1012451">
+The largest representable number.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012456">
+<PRE><A HREF="corea.htm#1012532"><CODE>MIN_VALUE</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1012458">
+The smallest representable number.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012463">
+<PRE><A HREF="corea.htm#1012563"><CODE>NaN</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1012465">
+Special "not a number" value.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012470">
+<PRE><A HREF="corea.htm#1012607"><CODE>NEGATIVE_INFINITY</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1012472">
+Special infinite value; returned on overflow.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012477">
+<PRE><A HREF="corea.htm#1012637"><CODE>POSITIVE_INFINITY</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1012479">
+Special negative infinite value; returned on overflow.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012484">
+<PRE><A HREF="corea.htm#1012667"><CODE>prototype</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1012486">
+Allows the addition of properties to a <CODE>Number</CODE> object.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1093375">
+<H4> Method Summary</H4>
+</A>
+
+<A NAME="1093630">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1093657">
+<PRE><A HREF="corea1.htm#1012793"><CODE>toString</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1093659">
+Returns a string representing the specified object.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012492">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1012493">
+<B>Example 1.</B> The following example uses the <CODE>Number</CODE> object's properties to assign values to several numeric variables:<P></A>
+<A NAME="1012494">
+<PRE>biggestNum = Number.MAX_VALUE<br>smallestNum = Number.MIN_VALUE<br>infiniteNum = Number.POSITIVE_INFINITY<br>negInfiniteNum = Number.NEGATIVE_INFINITY<br>notANum = Number.NaN</PRE></A><A NAME="1012496">
+<B>Example 2.</B> The following example creates a <CODE>Number</CODE> object, <CODE>myNum</CODE>, then adds a <CODE>description</CODE> property to all <CODE>Number</CODE> objects. Then a value is assigned to the <CODE>myNum</CODE> object's <CODE>description</CODE> property.<P></A>
+<A NAME="1012497">
+<PRE>myNum = new Number(65)<br>Number.prototype.description=null<br>myNum.description="wind speed"</PRE></A>
+<A NAME="Head2;"></A>
+<A NAME="1012498">
+<H3> Properties</H3>
+</A>
+
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1012501">
+<H2>MAX_VALUE</H2>
+</A>
+
+<A NAME="1012502">
+The maximum numeric value representable in JavaScript.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1096979">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1096981">
+<A HREF="corea.htm#1012418"><CODE>Number</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left COLSPAN=2 ROWSPAN=1><A NAME="1096993">
+<I>Static, Read-only</I></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1096983">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1096985">
+Navigator 3,0, LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012507">
+<H4> Description</H4>
+</A>
+
+<A NAME="1012509">
+The <CODE>MAX_VALUE</CODE> property has a value of approximately 1.79E+308. Values larger than <CODE>MAX_VALUE</CODE> are represented as <CODE>"Infinity"</CODE>.<P></A>
+<A NAME="1137924">
+Because <CODE>MAX_VALUE</CODE> is a static property of <CODE>Number</CODE>, you always use it as <CODE>Number.MAX_VALUE</CODE>, rather than as a property of a <CODE>Number</CODE> object you created.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012513">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1012514">
+The following code multiplies two numeric values. If the result is less than or equal to <CODE>MAX_VALUE</CODE>, the <CODE>func1</CODE> function is called; otherwise, the <CODE>func2</CODE> function is called.<P></A>
+<A NAME="1012515">
+<PRE>if (num1 * num2 &lt;= Number.MAX_VALUE)<br>&nbsp;&nbsp;&nbsp;func1()<br>else<br>&nbsp;&nbsp;&nbsp;func2()</PRE></A>
+<A NAME="Head2Ref;"></A>
+<A NAME="1012532">
+<H2>MIN_VALUE</H2>
+</A>
+
+<A NAME="1012533">
+The smallest positive numeric value representable in JavaScript.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1097156">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1097161">
+<A HREF="corea.htm#1012418"><CODE>Number</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left COLSPAN=2 ROWSPAN=1><A NAME="1097163">
+<I>Static, Read-only</I></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1097167">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1097169">
+Navigator 3,0, LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012538">
+<H4> Description</H4>
+</A>
+
+<A NAME="1012539">
+The <CODE>MIN_VALUE</CODE> property is the number closest to 0, not the most negative number, that JavaScript can represent.<P></A>
+<A NAME="1012540">
+<CODE>MIN_VALUE</CODE> has a value of approximately 2.22E-308. Values smaller than <CODE>MIN_VALUE</CODE> ("underflow values") are converted to 0.<P></A>
+<A NAME="1138184">
+Because <CODE>MIN_VALUE</CODE> is a static property of <CODE>Number</CODE>, you always use it as <CODE>Number.MIN_VALUE</CODE>, rather than as a property of a <CODE>Number</CODE> object you created.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012544">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1012545">
+The following code divides two numeric values. If the result is greater than or equal to <CODE>MIN_VALUE</CODE>, the <CODE>func1</CODE> function is called; otherwise, the <CODE>func2</CODE> function is called.<P></A>
+<A NAME="1012546">
+<PRE>if (num1 / num2 &gt;= Number.MIN_VALUE)<br>&nbsp;&nbsp;&nbsp;func1()<br>else<br>&nbsp;&nbsp;&nbsp;func2()</PRE></A>
+<A NAME="Head2Ref;"></A>
+<A NAME="1012563">
+<H2>NaN</H2>
+</A>
+
+<A NAME="1012564">
+A special value representing Not-A-Number. This value is represented as the unquoted literal NaN.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1097232">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1097237">
+<A HREF="corea.htm#1012418"><CODE>Number</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1097239">
+<I> Read-only</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1097241">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1097243">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1097245">
+Navigator 3,0, LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012569">
+<H4> Description</H4>
+</A>
+
+<A NAME="1012570">
+JavaScript prints the value <CODE>Number.NaN</CODE> as <CODE>NaN</CODE>.<P></A>
+<A NAME="1012571">
+<CODE>NaN</CODE> is always unequal to any other number, including NaN itself; you cannot check for the not-a-number value by comparing to <CODE>Number.NaN</CODE>. Use the <B><A HREF="glob12.htm#1012439"></B><CODE>isNaN</CODE><B></A></B> function instead.<P></A>
+<A NAME="1012575">
+You might use the <CODE>NaN</CODE> property to indicate an error condition for a function that should return a valid number.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012579">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1012580">
+In the following example, if <CODE>month</CODE> has a value greater than 12, it is assigned NaN, and a message is displayed indicating valid values.<P></A>
+<A NAME="1012581">
+<PRE>var month = 13<br>if (month &lt; 1 || month &gt; 12) {<br>&nbsp;&nbsp;&nbsp;month = Number.NaN<br>&nbsp;&nbsp;&nbsp;alert("Month must be between 1 and 12.")<br>}</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1012582">
+<H4> See also</H4>
+</A>
+
+<A NAME="1012595">
+<A HREF="glob12.htm#1012439"><CODE>isNaN</CODE></A>, <A HREF="glob14.htm#1032601"><CODE>parseFloat</CODE></A>, <A HREF="glob15.htm#1012508"><CODE>parseInt</CODE></A> <P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1012607">
+<H2>NEGATIVE_INFINITY</H2>
+</A>
+
+<A NAME="1012608">
+A special numeric value representing negative infinity. This value is displayed as <CODE>"-Infinity"</CODE>.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1098020">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1098025">
+<A HREF="corea.htm#1012418"><CODE>Number</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left COLSPAN=2 ROWSPAN=1><A NAME="1098027">
+<I>Static, Read-only</I></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1098031">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1098033">
+Navigator 3,0, LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012613">
+<H4> Description</H4>
+</A>
+
+<A NAME="1012614">
+This value behaves mathematically like infinity; for example, anything multiplied by infinity is infinity, and anything divided by infinity is 0.<P></A>
+<A NAME="1138192">
+Because <CODE>NEGATIVE_INFINITY</CODE> is a static property of <CODE>Number</CODE>, you always use it as <CODE>Number.NEGATIVE_INFINITY</CODE>, rather than as a property of a <CODE>Number</CODE> object you created.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012618">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1012619">
+In the following example, the variable <CODE>smallNumber</CODE> is assigned a value that is smaller than the minimum value. When the <CODE>if</CODE> statement executes, <CODE>smallNumber</CODE> has the value <CODE>"-Infinity"</CODE>, so the <CODE>func1</CODE> function is called.<P></A>
+<A NAME="1012620">
+<PRE>var smallNumber = -Number.MAX_VALUE*10<br>if (smallNumber == Number.NEGATIVE_INFINITY)<br>&nbsp;&nbsp;&nbsp;func1()<br>else<br>&nbsp;&nbsp;&nbsp;func2()</PRE></A>
+<A NAME="Head2Ref;"></A>
+<A NAME="1012637">
+<H2>POSITIVE_INFINITY</H2>
+</A>
+
+<A NAME="1012638">
+A special numeric value representing infinity. This value is displayed as <CODE>"Infinity"</CODE>.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1099008">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1099013">
+<A HREF="corea.htm#1012418"><CODE>Number</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left COLSPAN=2 ROWSPAN=1><A NAME="1099015">
+<I>Static, Read-only</I></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1099019">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1099021">
+Navigator 3,0, LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012643">
+<H4> Description</H4>
+</A>
+
+<A NAME="1012644">
+This value behaves mathematically like infinity; for example, anything multiplied by infinity is infinity, and anything divided by infinity is 0.<P></A>
+<A NAME="1012645">
+JavaScript does not have a literal for Infinity.<P></A>
+<A NAME="1138199">
+Because <CODE>POSITIVE_INFINITY</CODE> is a static property of <CODE>Number</CODE>, you always use it as <CODE>Number.POSITIVE_INFINITY</CODE>, rather than as a property of a <CODE>Number</CODE> object you created.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012649">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1012650">
+In the following example, the variable <CODE>bigNumber</CODE> is assigned a value that is larger than the maximum value. When the <CODE>if</CODE> statement executes, <CODE>bigNumber</CODE> has the value <CODE>"Infinity"</CODE>, so the <CODE>func1</CODE> function is called.<P></A>
+<A NAME="1012651">
+<PRE>var bigNumber = Number.MAX_VALUE * 10<br>if (bigNumber == Number.POSITIVE_INFINITY)<br>&nbsp;&nbsp;&nbsp;func1()<br>else<br>&nbsp;&nbsp;&nbsp;func2()</PRE></A>
+<A NAME="Head2Ref;"></A>
+<A NAME="1012667">
+<H2>prototype</H2>
+</A>
+
+<A NAME="1087056">
+Represents the prototype for this class. You can use the prototype to add properties or methods to all instances of a class. For information on prototypes, see <A HREF="core4.htm#1181210"><CODE>Function.prototype</CODE></A>.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1087059">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1087064">
+<A HREF="corea.htm#1012418"><CODE>Number</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1087066">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1087068">
+Navigator 3.0, LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head2;"></A>
+<A NAME="1093717">
+<H3> Methods</H3>
+</A>
+
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1093742">
+<H2>toString</H2>
+</A>
+
+<A NAME="1093751">
+Returns a string representing the specified object.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1093745">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1093750">
+<A HREF="corea.htm#1012418"><CODE>Number</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1095254">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1095260">
+Navigator 3.0</A></P>
+
+</TABLE>
+ <P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1093752">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1093753">
+<PRE>toString()<br>toString(radix)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1093754">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1093755">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1095061">
+<PRE>radix</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1095063">
+(Optional) An integer between 2 and 16 specifying the base to use for representing numeric values.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1093756">
+<H4> Description</H4>
+</A>
+
+<A NAME="1093757">
+Every object has a <CODE>toString</CODE> method that is automatically called when it is to be represented as a text value or when an object is referred to in a string concatenation. <P></A>
+<A NAME="1093758">
+You can use <CODE>toString</CODE> within your own code to convert an object into a string, and you can create your own function to be called in place of the default <CODE>toString</CODE> method.<P></A>
+<A NAME="1095040">
+You can use <CODE>toString</CODE> on numeric values, but not on numeric literals:<P></A>
+<A NAME="1095041">
+<PRE>// The next two lines are valid<br>var howMany=10<br>document.write("howMany.toString() is " + howMany.toString() + "&lt;BR&gt;")</PRE></A><A NAME="1095042">
+<PRE>// The next line causes an error<br>document.write("45.toString() is " + 45.toString() + "&lt;BR&gt;")</PRE></A><A NAME="1093769">
+For information on defining your own <CODE>toString</CODE> method, see the <A HREF="corea1.htm#1012793"><CODE>Object.toString</CODE></A> method.<P></A>
+
+<P><HR>
+<A HREF="contents.htm">[Contents]</A> <A HREF="core5.htm">[Previous]</A> <A HREF="corea1.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<P ALIGN=right>
+
+<FONT SIZE=-2><I>Last Updated:  10/31/97  12:30:31
+</I></FONT>
+
+<HR SIZE=4>
+
+<P> <CENTER>Copyright © 1997
+<A HREF="http://home.netscape.com/misc/contact_info.html"
+TARGET=_top>Netscape Communications Corporation</A></FONT>
+</CENTER>
+<P>
+<P>
+</BODY>
+</HTML>
+

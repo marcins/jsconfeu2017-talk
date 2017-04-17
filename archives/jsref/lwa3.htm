@@ -1,0 +1,429 @@
+<HTML>
+<HEAD>
+<TITLE>
+</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A HREF="contents.htm">[Contents]</A> <A HREF="lwa2.htm">[Previous]</A> <A HREF="lwa4.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<HR>
+
+<A NAME="Resultset"></A>
+<A NAME="1013072">
+<H1> Resultset</H1>
+</A>
+<A NAME="1013073">
+Represents a virtual table created by executing a stored procedure.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1055684">
+<I>Server-side object</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1055689">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1055691">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1055693">
+Netscape Server 3.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1018756">
+<H4> Created by</H4>
+</A>
+
+<A NAME="1030291">
+The <CODE>resultSet</CODE> method of a <A HREF="lwa2.htm#1012947"><CODE>Stproc</CODE></A> object. The <CODE>Resultset</CODE> object does not have a constructor. <P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1030288">
+<H4> Description</H4>
+</A>
+
+<A NAME="1018800">
+For Sybase, Oracle, ODBC, and DB2 stored procedures, the stored-procedure object has one result set object for each <CODE>SELECT</CODE> statement executed by the stored procedure. For Informix stored procedures, the stored-procedure object always has one result set object.<P></A>
+<A NAME="1018814">
+A result set has a property for each column in the <CODE>SELECT</CODE> statement used to generate the result set. For Sybase, Oracle, and ODBC stored procedures, you can refer to these properties by the name of the column in the virtual table. For Informix and DB2 stored procedures, the columns are not named. For these databases, you must use a numeric index to refer to the column.<P></A>
+<A NAME="1018910">
+Result set objects are not valid indefinitely. In general, once a stored procedure starts, no interactions are allowed between the database client and the database server until the stored procedure has completed. In particular, there are three circumstances that cause a result set to be invalid:<P></A>
+<ol>
+<P>
+<A NAME="1018911">
+<LI>If you create a result set as part of a transaction, you must finish using the result set during that transaction. Once you either commit or rollback the transaction, you can't get any more data from a result set, and you can't get any additional result sets. For example, the following code is illegal:
+</A>
+
+<A NAME="1018912">
+<PRE>database.beginTransaction();<br>spobj = database.storedProc("getcusts");<br>resobj = spobj.resultSet();<br>database.commitTransaction();<br>/* Illegal! Result set no longer valid! */<br>col1 = resobj[0];</PRE></A><P>
+<A NAME="1018913">
+<LI>You must retrieve result set objects before you call a stored-procedure object's <CODE>returnValue</CODE> or <CODE>outParameters</CODE> methods. Once you call either of these methods, you can't get any more data from a result set, and you can't get any additional result sets. 
+</A>
+
+<A NAME="1018916">
+<PRE>spobj = database.storedProc("getcusts");<br>resobj = spobj.resultSet();<br>retval = spobj.returnValue();<br>/* Illegal! Result set no longer valid! */<br>col1 = resobj[0];</PRE></A><P>
+<A NAME="1018917">
+<LI>Similarly, you must retrieve result set objects before you call the associated <CODE>Connection</CODE> object's <CODE>cursor</CODE> or <CODE>SQLTable</CODE> method. For example, the following code is illegal:
+</A>
+
+<A NAME="1018918">
+<PRE>spobj = database.storedProc("getcusts");<br>cursobj = database.cursor("SELECT * FROM ORDERS;");<br>/* Illegal! The result set is no longer available! */<br>resobj = spobj.resultSet();<br>col1 = resobj[0];</PRE></A></ol>
+<A NAME="1018919">
+When finished with a <CODE>Resultset</CODE> object, use the <CODE>close</CODE> method to close it and release the memory it uses. If you release a connection that has an open result set, the runtime engine waits until the result set is closed before actually releasing the connection.<P></A>
+<A NAME="1018920">
+If you do not explicitly close a result set with the <CODE>close</CODE> method, the JavaScript runtime engine on the server automatically tries to close all open result sets when the associated <CODE>database</CODE> or <CODE>DbPool</CODE> object goes out of scope. This can tie up system resources unnecessarily. It can also lead to unpredictable results.<P></A>
+<A NAME="1018921">
+You can use the <CODE>prototype</CODE> property of the <CODE>Resultset</CODE> class to add a property to all <CODE>Resultset</CODE> instances. If you do so, that addition applies to all <CODE>Resultset</CODE> objects running in all applications on your server, not just in the single application that made the change. This allows you to expand the capabilities of this object for your entire server.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1058608">
+<H4> Property Summary</H4>
+</A>
+
+<A NAME="1058614">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1058611">
+<PRE><A HREF="lwa3.htm#1058708"><CODE>prototype</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1058613">
+Allows the addition of properties to a <CODE>Resultset</CODE> object.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013086">
+<H4> Method Summary</H4>
+</A>
+
+<A NAME="1013116">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1013092">
+<PRE><A HREF="lwa3.htm#1013126"><CODE>close</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1013094">
+Closes a result set object.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1013106">
+<PRE><A HREF="lwa3.htm#1013171"><CODE>columnName</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1013108">
+Returns the name of a column in the result set.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1057206">
+<PRE><A HREF="lwa3.htm#1057384"><CODE>columns</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1057208">
+Returns the number of columns in the result set.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1013113">
+<PRE><A HREF="lwa3.htm#1013194"><CODE>next</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1013115">
+Moves the current row to the next row in the result set. </A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013119">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1013120">
+Assume you have the following Oracle stored procedure:<P></A>
+<A NAME="1013121">
+<PRE>create or replace package timpack <br>as type timcurtype is ref cursor return customer%rowtype; <br>type timrentype is ref cursor return rentals%rowtype; <br>end timpack; </PRE></A><A NAME="1013122">
+<PRE>create or replace procedure timset4(timrows1 in out timpack.timcurtype, timrows in out timpack.timrentype) <br>as begin <br>open timrows for select * from rentals; <br>open timrows1 for select * from customer; <br>end timset4; </PRE></A><A NAME="1013123">
+Running this stored procedure creates two result sets you can access. In the following code fragment the <CODE>resobj1</CODE> result set has rows returned by the <CODE>timrows</CODE> ref cursor and the <CODE>resobj2</CODE> result set has the rows returned by the <CODE>timrows1</CODE> ref cursor.<P></A>
+<A NAME="1013124">
+<PRE>spobj = database.storedProc("timset4");<br>resobj1 = spobj.resultSet();<br>resobj2 = spobj.resultSet();</PRE></A>
+<A NAME="Head2;"></A>
+<A NAME="1034639">
+<H3> Properties</H3>
+</A>
+
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1058708">
+<H2>prototype</H2>
+</A>
+
+<A NAME="1058709">
+Represents the prototype for this class. You can use the prototype to add properties or methods to all instances of a class. For information on prototypes, see <A HREF="core4.htm#1181210"><CODE>Function.prototype</CODE></A>.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1058715">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1058720">
+<A HREF="lwa3.htm#1013072"><CODE>Resultset</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1058722">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1058724">
+LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head2;"></A>
+<A NAME="1058645">
+<H3> Methods</H3>
+</A>
+
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1013126">
+<H2>close</H2>
+</A>
+
+<A NAME="1013127">
+Closes the result set and frees the allocated memory.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1055715">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1055720">
+<A HREF="lwa3.htm#1013072"><CODE>Resultset</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1055722">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1055724">
+Netscape Server 3.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013128">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1013129">
+<PRE>close()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1013130">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1013131">
+None.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013134">
+<H4> Returns</H4>
+</A>
+
+<A NAME="1013135">
+0 if the call was successful; otherwise, a nonzero status code based on any error message passed by the database. If the method returns a nonzero status code, use the associated <CODE>majorErrorCode</CODE> and <CODE>majorErrorMessage</CODE> methods to interpret the cause of the error.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013136">
+<H4> Description</H4>
+</A>
+
+<A NAME="1013137">
+The <CODE>close</CODE> method closes a cursor or result set and releases the memory it uses. If you do not explicitly close a cursor or result set with the <CODE>close</CODE> method, the JavaScript runtime engine on the server automatically closes all open cursors and result sets when the corresponding <CODE>client</CODE> object goes out of scope.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013140">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1013141">
+The following example creates the <CODE>rentalSet </CODE>cursor, performs certain operations on it, and then closes it with the <CODE>close</CODE> method.<P></A>
+<A NAME="1013142">
+<PRE>// Create a Cursor object<br>rentalSet = database.cursor("SELECT * FROM rentals")</PRE></A><A NAME="1013143">
+<PRE>// Perform operations on the cursor<br>cursorOperations()</PRE></A><A NAME="1013144">
+<PRE>//Close the cursor<br>err = rentalSet.close()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1013145">
+<H4> See also</H4>
+</A>
+
+<A NAME="1013149">
+<A HREF="lwa1.htm#1012652"><CODE>Cursor</CODE></A><P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1013171">
+<H2>columnName</H2>
+</A>
+
+<A NAME="1013172">
+Returns the name of the column in the result set corresponding to the specified number.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1055901">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1055906">
+<A HREF="lwa3.htm#1013072"><CODE>Resultset</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1055908">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1055910">
+Netscape Server 3.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013173">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1013174">
+<PRE>columnName (n)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1013175">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1013181">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1013178">
+<PRE>n</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1013180">
+Zero-based integer corresponding to the column in the query. The first column in the result set is 0, the second is 1, and so on.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013184">
+<H4> Returns</H4>
+</A>
+
+<A NAME="1013185">
+The name of the column. For Informix stored procedures, this method for the <CODE>Resultset</CODE> object always returns the string "Expression".<P></A>
+<A NAME="1030018">
+If your <CODE>SELECT</CODE> statement uses a wildcard (*) to select all the columns in a table, the <CODE>columnName</CODE> method does not guarantee the order in which it assigns numbers to the columns. That is, suppose you have this statement:<P></A>
+<A NAME="1030019">
+<PRE>resSet = stObj.resultSet("select * from customer");</PRE></A><A NAME="1030062">
+If the customer table has 3 columns, ID, NAME, and CITY, you cannot tell ahead of time which of these columns corresponds to <CODE>resSet.columnName(0)</CODE>. (Of course, you are guaranteed that successive calls to <CODE>columnName</CODE> have the same result.) If the order matters to you, you can instead hard-code the column names in the select statement, as in the following statement:<P></A>
+<A NAME="1030021">
+<PRE>resSet = stObj.resultSet("select ID, NAME, CITY from customer");</PRE></A><A NAME="1030022">
+With this statement, <CODE>resSet.columnName(0)</CODE> is ID, <CODE>resSet.columnName(1)</CODE> is NAME, and <CODE>resSet.columnName(2)</CODE> is CITY.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013188">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1013189">
+The following example assigns the name of the first column in the <CODE>customerSet</CODE> cursor to the variable <CODE>header</CODE>:<P></A>
+<A NAME="1013190">
+<PRE>customerSet=database.cursor(SELECT * FROM customer ORDER BY name)<br>header = customerSet.columnName(0)</PRE></A>
+<A NAME="Head2Ref;"></A>
+<A NAME="1057384">
+<H2>columns</H2>
+</A>
+
+<A NAME="1057397">
+Returns the number of columns in the result set.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1057387">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1057392">
+<A HREF="lwa3.htm#1013072"><CODE>Resultset</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1057394">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1057396">
+Netscape Server 3.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1057398">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1057399">
+<PRE>columns()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1057400">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1057401">
+None.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1057402">
+<H4> Returns</H4>
+</A>
+
+<A NAME="1057403">
+The number of named and unnamed columns.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1057404">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1057408">
+See Example 2 of <A HREF="lwa1.htm#1012652"><CODE>Cursor</CODE></A> for an example of using the <CODE>columns</CODE> method with the <CODE>cursorColumn</CODE> array.<P></A>
+<A NAME="1057409">
+The following example returns the number of columns in the <CODE>custs</CODE> cursor:<P></A>
+<A NAME="1057410">
+<PRE>custs.columns()</PRE></A>
+<A NAME="Head2Ref;"></A>
+<A NAME="1013194">
+<H2>next </H2>
+</A>
+
+<A NAME="1013195">
+Moves the current row to the next row in the result set.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1055974">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1055979">
+<A HREF="lwa3.htm#1013072"><CODE>Resultset</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1055981">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1055983">
+Netscape Server 3.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013196">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1013197">
+<PRE>next()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1013198">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1013199">
+None.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013202">
+<H4> Returns</H4>
+</A>
+
+<A NAME="1013203">
+False if the current row is the last row; otherwise, true.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1018390">
+<H4> Description</H4>
+</A>
+
+<A NAME="1018391">
+Initially, the pointer (or current row) for a cursor or result set is positioned before the first row returned. Use the <CODE>next</CODE> method to move the pointer through the records in the cursor or result set. This method moves the pointer to the next row and returns true as long as there is another row available. When the cursor or result set has reached the last row, the method returns false. Note that if the cursor is empty, this method always returns false.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013208">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1013209">
+<B>Example 1.</B> This example uses the <CODE>next</CODE> method to navigate to the last row in a cursor. The variable <CODE>x</CODE> is initialized to true. When the pointer is in the last row of the cursor, the <CODE>next</CODE> method returns false and terminates the <CODE>while</CODE> loop.<P></A>
+<A NAME="1013210">
+<PRE>customerSet = database.cursor("select * from customer", true)</PRE></A><A NAME="1013211">
+<PRE>x = true<br>while (x) {<br>&nbsp;&nbsp;&nbsp;x = customerSet.next() }</PRE></A><A NAME="1018524">
+<B>Example 2.</B> In the following example, the <CODE>rentalSet</CODE> cursor contains columns named <CODE>videoId</CODE>, <CODE>rentalDate</CODE>, and <CODE>dueDate</CODE>. The <CODE>next</CODE> method is called in a <CODE>while</CODE> loop that iterates over every row in the cursor. When the pointer is on the last row in the cursor, the <CODE>next</CODE> method returns false and terminates the <CODE>while</CODE> loop.<P></A>
+<A NAME="1018525">
+This example displays the three columns of the cursor in an HTML table:<P></A>
+<A NAME="1018526">
+<PRE>&lt;SERVER&gt;<br>// Create a Cursor object<br>rentalSet = database.cursor("SELECT videoId, rentalDate, returnDate<br>&nbsp;&nbsp;&nbsp;FROM rentals")<br>&lt;/SERVER&gt;</PRE></A><A NAME="1018527">
+<PRE>// Create an HTML table<br>&lt;TABLE BORDER&gt;<br>&lt;TR&gt;<br>&lt;TH&gt;Video ID&lt;/TH&gt;<br>&lt;TD&gt;Rental Date&lt;/TD&gt;<br>&lt;TD&gt;Due Date&lt;/TD&gt;<br>&lt;/TR&gt;</PRE></A><A NAME="1018528">
+<PRE>&lt;SERVER&gt;<br>// Iterate through each row in the cursor<br>while (rentalSet.next()) {<br>&lt;/SERVER&gt;</PRE></A><A NAME="1018529">
+<PRE>// Display the cursor values in the HTML table<br>&nbsp;&nbsp;&nbsp;&lt;TR&gt;<br>&nbsp;&nbsp;&nbsp;&lt;TH&gt;&lt;SERVER&gt;write(rentalSet.videoId)&lt;/SERVER&gt;&lt;/TH&gt;<br>&nbsp;&nbsp;&nbsp;&lt;TD&gt;&lt;SERVER&gt;write(rentalSet.rentalDate)&lt;/SERVER&gt;&lt;/TD&gt;<br>&nbsp;&nbsp;&nbsp;&lt;TD&gt;&lt;SERVER&gt;write(rentalSet.returnDate)&lt;/SERVER&gt;&lt;/TD&gt;<br>&nbsp;&nbsp;&nbsp;&lt;/TR&gt;</PRE></A><A NAME="1018530">
+<PRE>// Terminate the while loop<br>&lt;SERVER&gt;<br>}<br>&lt;/SERVER&gt;</PRE></A><A NAME="1018531">
+<PRE>// End the table<br>&lt;/TABLE&gt;</PRE></A>
+<P><HR>
+<A HREF="contents.htm">[Contents]</A> <A HREF="lwa2.htm">[Previous]</A> <A HREF="lwa4.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<P ALIGN=right>
+
+<FONT SIZE=-2><I>Last Updated:  10/31/97  16:36:13
+</I></FONT>
+
+<HR SIZE=4>
+
+<P> <CENTER>Copyright © 1997
+<A HREF="http://home.netscape.com/misc/contact_info.html"
+TARGET=_top>Netscape Communications Corporation</A></FONT>
+</CENTER>
+<P>
+<P>
+</BODY>
+</HTML>
+
+

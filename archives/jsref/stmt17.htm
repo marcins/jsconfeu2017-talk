@@ -1,0 +1,77 @@
+<HTML>
+<HEAD>
+<TITLE>Statements
+</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A HREF="contents.htm">[Contents]</A> <A HREF="stmt16.htm">[Previous]</A> <A HREF="core.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<HR>
+
+<A NAME="with"></A>
+<A NAME="1004910">
+<H1> with</H1>
+</A>
+<A NAME="1004911">
+Establishes the default object for a set of statements. Within the set of statements, any property references that do not specify an object are assumed to be for the default object.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1036122">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1036124">
+Navigator 2.0, LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1004912">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1004913">
+<PRE>with (object){<br>&nbsp;&nbsp;&nbsp;statements<br>}</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1005677">
+<H4> Arguments</H4>
+</A>
+
+<A NAME="1004914">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1013842">
+<PRE>object</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1013969">
+Specifies the default object to use for the statements. The parentheses around object are required.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1013846">
+<PRE>statements</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1013960">
+Any block of statements.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1004916">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1004917">
+The following <CODE>with</CODE> statement specifies that the <A HREF="core5.htm#1014720"><CODE>Math</CODE></A> object is the default object. The statements following the <CODE>with</CODE> statement refer to the <A HREF="core5.htm#1015149"><CODE>PI</CODE></A> property and the <A HREF="core5.htm#1015515"><CODE>cos</CODE></A> and <A HREF="core5.htm#1015799"><CODE>sin</CODE></A> methods, without specifying an object. JavaScript assumes the <A HREF="core5.htm#1014720"><CODE>Math</CODE></A> object for these references.<P></A>
+<A NAME="1004918">
+<PRE>var a, x, y<br>var r=10<br>with (Math) {<br>&nbsp;&nbsp;&nbsp;a = PI * r * r<br>&nbsp;&nbsp;&nbsp;x = r * cos(PI)<br>&nbsp;&nbsp;&nbsp;y = r * sin(PI/2)<br>}</PRE></A>
+<P><HR>
+<A HREF="contents.htm">[Contents]</A> <A HREF="stmt16.htm">[Previous]</A> <A HREF="core.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<P ALIGN=right>
+
+<FONT SIZE=-2><I>Last Updated:  10/31/97  12:29:59
+</I></FONT>
+
+<HR SIZE=4>
+
+<P> <CENTER>Copyright © 1997
+<A HREF="http://home.netscape.com/misc/contact_info.html"
+TARGET=_top>Netscape Communications Corporation</A></FONT>
+</CENTER>
+<P>
+<P>
+</BODY>
+</HTML>
+

@@ -1,0 +1,101 @@
+<HTML>
+<HEAD>
+<TITLE>Global Functions
+</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A HREF="contents.htm">[Contents]</A> <A HREF="glob.htm">[Previous]</A> <A HREF="glob2.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<HR>
+
+<A NAME="addClient"></A>
+<A NAME="1012214">
+<H1> addClient</H1>
+</A>
+<A NAME="1012216">
+Adds <CODE>client</CODE> object property values to a dynamically generated URL or the URL used with the <CODE>redirect</CODE> function.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1031001">
+<I>Server-side function</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1031006">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1031008">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1031010">
+LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012217">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1012218">
+<PRE>addClient(URL)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1012219">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1012225">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012222">
+<PRE>URL</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1012224">
+A string representing a URL</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012226">
+<H4> Description</H4>
+</A>
+
+<A NAME="1012227">
+The <CODE>addClient</CODE> function is a top-level server-side JavaScript function not associated with any object.<P></A>
+<A NAME="1033773">
+Use <CODE>addClient</CODE> to preserve <CODE>client</CODE> object property values when you use <CODE>redirect</CODE> or generate dynamic links. This is necessary if an application uses client or server URL encoding to maintain the <CODE>client</CODE> object; it does no harm in other cases. Since the client maintenance technique can be changed after the application has been compiled, it is always safer to use <CODE>addClient</CODE>, even if you do not anticipate using a URL encoding scheme.<P></A>
+<A NAME="1033779">
+See <A HREF="http://developer.netscape.com/library/documentation/enterprise/wrijsap/index.htm" TARGET="_top">Writing Server-Side JavaScript Applications</A> for information about using URL encoding to maintain client properties.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012237">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1012238">
+In the following example, <CODE>addClient</CODE> is used with the <CODE>redirect</CODE> function to redirect a browser:<P></A>
+<A NAME="1012239">
+<PRE>redirect(addClient("mypage.html"))</PRE></A><A NAME="1012240">
+In the following example, <CODE>addClient</CODE> preserves <CODE>client</CODE> object property values when a link is dynamically generated:<P></A>
+<A NAME="1012241">
+<PRE>&lt;A HREF='addClient("page" + project.pageno + ".html")'&gt;<br>&nbsp;&nbsp;&nbsp;Jump to new page&lt;/A&gt;</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1012242">
+<H4> See also</H4>
+</A>
+
+<A NAME="1012246">
+<A HREF="glob16.htm#1033268"><CODE>redirect</CODE></A> <P></A>
+
+<P><HR>
+<A HREF="contents.htm">[Contents]</A> <A HREF="glob.htm">[Previous]</A> <A HREF="glob2.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<P ALIGN=right>
+
+<FONT SIZE=-2><I>Last Updated:  10/31/97  16:38:00
+</I></FONT>
+
+<HR SIZE=4>
+
+<P> <CENTER>Copyright © 1997
+<A HREF="http://home.netscape.com/misc/contact_info.html"
+TARGET=_top>Netscape Communications Corporation</A></FONT>
+</CENTER>
+<P>
+<P>
+</BODY>
+</HTML>
+
+

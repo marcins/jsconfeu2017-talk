@@ -1,0 +1,140 @@
+<HTML>
+<HEAD>
+<TITLE>Events and Event Handlers
+</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A HREF="contents.htm">[Contents]</A> <A HREF="evnt2.htm">[Previous]</A> <A HREF="evnt4.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<HR>
+
+<A NAME="onBlur"></A>
+<A NAME="1010414">
+<H1> onBlur</H1>
+</A>
+<A NAME="1010415">
+Executes JavaScript code when a blur event occurs; that is, when a form element loses focus or when a window or frame loses focus. <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1045479">
+<I>Event handler for </I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1045481">
+<A HREF="but.htm#1016056"><CODE>Button</CODE></A>, <A HREF="choi1.htm#1013039"><CODE>Checkbox</CODE></A>, <A HREF="txt3.htm#1014071"><CODE>FileUpload</CODE></A>, <A HREF="doca3.htm#1113061"><CODE>Layer</CODE></A>, <A HREF="txt2.htm#1012091"><CODE>Password</CODE></A>, <A HREF="choi.htm#1011977"><CODE>Radio</CODE></A>, <A HREF="but2.htm#1012912"><CODE>Reset</CODE></A>, <A HREF="choi2.htm#1013973"><CODE>Select</CODE></A>, <A HREF="but1.htm#1011117"><CODE>Submit</CODE></A>, <A HREF="txt.htm#1023924"><CODE>Text</CODE></A>, <A HREF="txt1.htm#1010943"><CODE>Textarea</CODE></A>, <A HREF="win1.htm#1010280"><CODE>Window</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1045483">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1047343">
+Navigator 2.0<br>Navigator 3.0: event handler of <A HREF="but.htm#1016056"><CODE>Button</CODE></A>, <A HREF="choi1.htm#1013039"><CODE>Checkbox</CODE></A>, <A HREF="txt3.htm#1014071"><CODE>FileUpload</CODE></A>, <A HREF="wina.htm#1079184"><CODE>Frame</CODE></A>, <A HREF="txt2.htm#1012091"><CODE>Password</CODE></A>, <A HREF="choi.htm#1011977"><CODE>Radio</CODE></A>, <A HREF="but2.htm#1012912"><CODE>Reset</CODE></A>, <A HREF="but1.htm#1011117"><CODE>Submit</CODE></A>, and <A HREF="win1.htm#1010280"><CODE>Window</CODE></A></A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1048790">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1048791">
+<PRE>onBlur="handlerText"</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1048792">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1048798">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1048795">
+<PRE><CODE>handlerText</CODE></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1048797">
+JavaScript code or a call to a JavaScript function.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1045463">
+<H4> Description</H4>
+</A>
+
+<A NAME="1048762">
+The <CODE>blur</CODE> event can result from a call to the <A HREF="win1.htm#1011213"><CODE>Window.blur</CODE></A> method or from the user clicking the mouse on another object or window or tabbing with the keyboard.<P></A>
+<A NAME="1010416">
+For windows, frames, and framesets, <CODE>onBlur</CODE> specifies JavaScript code to execute when a window loses focus.<P></A>
+<A NAME="1010417">
+A frame's <CODE>onBlur</CODE> event handler overrides an <CODE>onBlur</CODE> event handler in the <CODE>BODY</CODE> tag of the document loaded into frame.<P></A>
+<BLOCKQUOTE><A NAME="1010418"><B>Note
+ </B></A>
+<a name="1058893">
+In Navigator&nbsp;3.0, on some platforms placing an <CODE>onBlur</CODE> event handler in a 
+<CODE>FRAMESET</CODE> tag has no effect. 
+</blockquote>
+</a>
+
+<A NAME="Head3;"></A>
+<A NAME="1097352">
+<H4> Event properties used</H4>
+</A>
+
+<A NAME="1097362">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1097355">
+<PRE>type</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1103570">
+Indicates the type of event. </A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1097359">
+<PRE>target</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1097361">
+Indicates the object to which the event was originally sent. </A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010462">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1010463">
+<B>Example 1: Validate form input.</B> In the following example, <CODE>userName</CODE> is a required text field. When a user attempts to leave the field, the <CODE>onBlur</CODE> event handler calls the <CODE>required</CODE> function to confirm that <CODE>userName</CODE> has a legal value.<P></A>
+<A NAME="1010464">
+<PRE>&lt;INPUT TYPE="text" VALUE="" NAME="userName"<br>&nbsp;&nbsp;&nbsp;onBlur="required(this.value)"&gt;</PRE></A><A NAME="1010465">
+<B>Example 2: Change the background color of a window.</B> In the following example, a window's <CODE>onBlur</CODE> and <CODE>onFocus</CODE> event handlers change the window's background color depending on whether the window has focus.<P></A>
+<A NAME="1010466">
+<PRE>&lt;BODY BGCOLOR="lightgrey"<br>&nbsp;&nbsp;&nbsp;onBlur="document.bgColor='lightgrey'"<br>&nbsp;&nbsp;&nbsp;onFocus="document.bgColor='antiquewhite'"&gt;</PRE></A><A NAME="1010467">
+<B>Example 3: Change the background color of a frame.</B> The following example creates four frames. The source for each frame, <CODE>onblur2.html</CODE> has the <CODE>BODY</CODE> tag with the onBlur and <CODE>onFocus</CODE> event handlers shown in Example 1. When the document loads, all frames are light grey. When the user clicks a frame, the <CODE>onFocus</CODE> event handler changes the frame's background color to antique white. The frame that loses focus is changed to light grey. Note that the <CODE>onBlur</CODE> and <CODE>onFocus</CODE> event handlers are within the <CODE>BODY</CODE> tag, not the <CODE>FRAME</CODE> tag.<P></A>
+<A NAME="1010468">
+<PRE>&lt;FRAMESET ROWS="50%,50%" COLS="40%,60%"&gt;<br>&lt;FRAME SRC=onblur2.html NAME="frame1"&gt;<br>&lt;FRAME SRC=onblur2.html NAME="frame2"&gt;<br>&lt;FRAME SRC=onblur2.html NAME="frame3"&gt;<br>&lt;FRAME SRC=onblur2.html NAME="frame4"&gt;<br>&lt;/FRAMESET&gt;</PRE></A><A NAME="1010469">
+The following code has the same effect as the previous code, but is implemented differently. The <CODE>onFocus</CODE> and <CODE>onBlur</CODE> event handlers are associated with the frame, not the document. The <CODE>onBlur</CODE> and <CODE>onFocus</CODE> event handlers for the frame are specified by setting the <CODE>onblur</CODE> and <CODE>onfocus</CODE> properties. <P></A>
+<A NAME="1010470">
+<PRE>&lt;SCRIPT&gt;<br>function setUpHandlers() {<br>&nbsp;&nbsp;&nbsp;for (var i = 0; i &lt; frames.length; i++) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;frames[i].onfocus=new Function("document.bgColor='antiquewhite'")<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;frames[i].onblur=new Function("document.bgColor='lightgrey'")<br>&nbsp;&nbsp;&nbsp;}<br>}<br>&lt;/SCRIPT&gt;</PRE></A><A NAME="1010471">
+<PRE>&lt;FRAMESET ROWS="50%,50%" COLS="40%,60%" onLoad=setUpHandlers()&gt;<br>&lt;FRAME SRC=onblur2.html NAME="frame1"&gt;<br>&lt;FRAME SRC=onblur2.html NAME="frame2"&gt;<br>&lt;FRAME SRC=onblur2.html NAME="frame3"&gt;<br>&lt;FRAME SRC=onblur2.html NAME="frame4"&gt;<br>&lt;/FRAMESET&gt;</PRE></A><A NAME="1010472">
+<B>Example 4: Close a window.</B> In the following example, a window's <CODE>onBlur</CODE> event handler closes the window when the window loses focus.<P></A>
+<A NAME="1010473">
+<PRE>&lt;BODY onBlur="window.close()"&gt;<br>This is some text<br>&lt;/BODY&gt;</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1010474">
+<H4> See also</H4>
+</A>
+
+<A NAME="1010481">
+<A HREF="evnt4.htm#1010483"><CODE>onChange</CODE></A>, <A HREF="evnt9.htm#1010615"><CODE>onFocus</CODE></A> <P></A>
+<A NAME="1063246">
+For general information on event handlers, see <A HREF="evnt.htm#1010270">"General Information about Events"</A>. <P></A>
+<A NAME="1093867">
+For information about the <CODE>event</CODE> object, see <A HREF="evnt1.htm#1093773"><CODE>event</CODE></A>.<P></A>
+
+<P><HR>
+<A HREF="contents.htm">[Contents]</A> <A HREF="evnt2.htm">[Previous]</A> <A HREF="evnt4.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<P ALIGN=right>
+
+<FONT SIZE=-2><I>Last Updated:  10/31/97  16:34:02
+</I></FONT>
+
+<HR SIZE=4>
+
+<P> <CENTER>Copyright © 1997
+<A HREF="http://home.netscape.com/misc/contact_info.html"
+TARGET=_top>Netscape Communications Corporation</A></FONT>
+</CENTER>
+<P>
+<P>
+</BODY>
+</HTML>
+
+

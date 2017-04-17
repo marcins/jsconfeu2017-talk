@@ -1,0 +1,581 @@
+<HTML>
+<HEAD>
+<TITLE>
+</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A HREF="contents.htm">[Contents]</A> <A HREF="txt1.htm">[Previous]</A> <A HREF="txt3.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<HR>
+
+<A NAME="Password"></A>
+<A NAME="1012091">
+<H1> Password</H1>
+</A>
+<A NAME="1012092">
+A text field on an HTML form that conceals its value by displaying asterisks (*). When the user enters text into the field, asterisks (*) hide entries from view.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1086764">
+<I>Client-side object</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1086769">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1086771">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1086916">
+Navigator 2.0<br>Navigator 3.0: added <CODE>type</CODE> property; added onBlur and onFocus event handlers<br>Navigator 4.0: added <CODE>handleEvent</CODE> method.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1047785">
+<H4> Created by</H4>
+</A>
+
+<A NAME="1047803">
+The HTML <CODE><A HREF="http://developer.netscape.com/library/documentation/htmlguid/index.htm?content=tags10.htm#tags:INPUT" TARGET="_top">INPUT</A></CODE> tag, with <CODE>"password"</CODE> as the value of the <CODE>TYPE</CODE> attribute. For a given form, the JavaScript runtime engine creates appropriate <CODE>Password</CODE> objects and puts these objects in the <A HREF="form1.htm#1010594"><CODE>elements</CODE></A> array of the corresponding <A HREF="form1.htm#1010276"><CODE>Form</CODE></A> object. You access a <CODE>Password</CODE> object by indexing this array. You can index the array either by number or, if supplied, by using the value of the <CODE>NAME</CODE> attribute.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1069530">
+<H4> Event handlers</H4>
+</A>
+
+<ul><A NAME="1069534">
+<LI><A HREF="evnt3.htm#1010414"><CODE>onBlur</CODE></A></LI>
+</A><A NAME="1069538">
+<LI><A HREF="evnt9.htm#1010615"><CODE>onFocus</CODE></A></LI>
+</A></ul>
+<A NAME="Head3;"></A>
+<A NAME="1012131">
+<H4> Description</H4>
+</A>
+
+<A NAME="1012139">
+A <CODE>Password</CODE> object on a form looks as follows:<P>
+<IMG SRC="password.gif">
+<P></A>
+<A NAME="1012140">
+A <CODE>Password</CODE> object is a form element and must be defined within a<CODE> <A HREF="http://developer.netscape.com/library/documentation/htmlguid/index.htm?content=tags10.htm#tags:FORM" TARGET="_top">FORM</A></CODE> tag.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012141">
+<H4> Security</H4>
+</A>
+
+<A NAME="1111143">
+Navigator 3.0: If a user interactively modifies the value in a password field, you cannot evaluate it accurately unless data tainting is enabled. See the <A HREF="http://developer.netscape.com/library/documentation/communicator/jsguide4/index.htm" TARGET="_top">JavaScript Guide</A>.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012151">
+<H4> Property Summary</H4>
+</A>
+
+<A NAME="1012188">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012157">
+<PRE><A HREF="txt.htm#1010457"><CODE>defaultValue</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1012159">
+Reflects the <CODE>VALUE</CODE> attribute.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012164">
+<PRE><A HREF="txt2.htm#1012289"><CODE>form</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1012166">
+Specifies the form containing the <CODE>Password</CODE> object.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012171">
+<PRE><A HREF="txt.htm#1010536"><CODE>name</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1012173">
+Reflects the <CODE>NAME</CODE> attribute.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012178">
+<PRE><A HREF="txt.htm#1010591"><CODE>type</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1012180">
+Reflects the <CODE>TYPE</CODE> attribute.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012185">
+<PRE><A HREF="txt.htm#1010685"><CODE>value</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1012187">
+Reflects the current value of the <CODE>Password</CODE> object's field.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012189">
+<H4> Method Summary</H4>
+</A>
+
+<A NAME="1012219">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012195">
+<PRE><A HREF="txt.htm#1010747"><CODE>blur</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1012197">
+Removes focus from the object.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012202">
+<PRE><A HREF="txt.htm#1010810"><CODE>focus</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1012204">
+Gives focus to the object.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012209">
+<PRE><A HREF="txt.htm#1118656"><CODE>handleEvent</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1012211">
+Invokes the handler for the specified event. </A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012216">
+<PRE><A HREF="txt.htm#1010900"><CODE>select</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1012218">
+Selects the input area of the object.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012232">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1012233">
+The following example creates a <CODE>Password</CODE> object with no default value:<P></A>
+<A NAME="1012234">
+<PRE>&lt;B&gt;Password:&lt;/B&gt; <br>&lt;INPUT TYPE="password" NAME="password" VALUE="" SIZE=25&gt;</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1012235">
+<H4> See also</H4>
+</A>
+
+<A NAME="1012242">
+<A HREF="form1.htm#1010276"><CODE>Form</CODE></A>, <A HREF="txt.htm#1023924"><CODE>Text</CODE></A><P></A>
+
+<A NAME="Head2;"></A>
+<A NAME="1012243">
+<H3> Properties</H3>
+</A>
+
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1012245">
+<H2>defaultValue</H2>
+</A>
+
+<A NAME="1109987">
+A string indicating the default value of a <CODE>Password</CODE> object.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1109977">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1109982">
+<A HREF="txt2.htm#1012091"><CODE>Password</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1109984">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1109986">
+Navigator 2.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1110224">
+<H4> Security</H4>
+</A>
+
+<A NAME="1110225">
+Navigator&nbsp;3.0: This property is tainted by default. For information on data tainting, see <A HREF="intro.htm#1014735">"JavaScript Security"</A>.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1109988">
+<H4> Description</H4>
+</A>
+
+<A NAME="1109989">
+The initial value of <CODE>defaultValue </CODE>is null (for security reasons), regardless of the value of the <CODE>VALUE</CODE> attribute.<P></A>
+<A NAME="1012275">
+Setting <CODE>defaultValue</CODE> programmatically overrides the initial setting. If you programmatically set <CODE>defaultValue</CODE> for the <CODE>Password</CODE> object and then evaluate it, JavaScript returns the current value.<P></A>
+<A NAME="1012276">
+You can set the <CODE>defaultValue</CODE> property at any time. The display of the related object does not update when you set the <CODE>defaultValue</CODE> property, only when you set the <CODE>value</CODE> property.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012282">
+<H4> See also</H4>
+</A>
+
+<A NAME="1012286">
+<A HREF="txt2.htm#1028679"><CODE>Password.value</CODE></A> <P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1012289">
+<H2>form</H2>
+</A>
+
+<A NAME="1012290">
+An object reference specifying the form containing this object.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1087239">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1087244">
+<A HREF="txt2.htm#1012091"><CODE>Password</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1090314">
+<I>Read-only</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1090316">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1087246">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1087248">
+Navigator 2.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012305">
+<H4> Description</H4>
+</A>
+
+<A NAME="1012306">
+Each form element has a <CODE>form</CODE> property that is a reference to the element's parent form. This property is especially useful in event handlers, where you might need to refer to another element on the current form.<P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1012326">
+<H2>name</H2>
+</A>
+
+<A NAME="1012327">
+A string specifying the name of this object.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1087281">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1087286">
+<A HREF="txt2.htm#1012091"><CODE>Password</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1087288">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1087290">
+Navigator 2.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1109682">
+<H4> Security</H4>
+</A>
+
+<A NAME="1109683">
+Navigator&nbsp;3.0: This property is tainted by default. For information on data tainting, see <A HREF="intro.htm#1014735">"JavaScript Security"</A>.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1101166">
+<H4> Description</H4>
+</A>
+
+<A NAME="1101167">
+The <CODE>name</CODE> property initially reflects the value of the <CODE>NAME</CODE> attribute. Changing the <CODE>name</CODE> property overrides this setting. The <CODE>name</CODE> property is not displayed on-screen; it is used to refer to the objects programmatically.<P></A>
+<A NAME="1092111">
+If multiple objects on the same form have the same <CODE>NAME</CODE> attribute, an array of the given name is created automatically. Each element in the array represents an individual <CODE>Form</CODE> object. Elements are indexed in source order starting at 0. For example, if two <A HREF="txt.htm#1023924"><CODE>Text</CODE></A> elements and a <A HREF="txt2.htm#1012091"><CODE>Password</CODE></A> element on the same form have their <CODE>NAME</CODE> attribute set to <CODE>"myField"</CODE>, an array with the elements <CODE>myField[0]</CODE>, <CODE>myField[1]</CODE>, and <CODE>myField[2]</CODE> is created. You need to be aware of this situation in your code and know whether <CODE>myField</CODE> refers to a single element or to an array of elements.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012377">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1012378">
+In the following example, the <CODE>valueGetter</CODE> function uses a <CODE>for</CODE> loop to iterate over the array of elements on the <CODE>valueTest</CODE> form. The <CODE>msgWindow</CODE> window displays the names of all the elements on the form:<P></A>
+<A NAME="1012379">
+<PRE>newWindow=window.open("http://home.netscape.com")</PRE></A><A NAME="1012380">
+<PRE>function valueGetter() {<br>&nbsp;&nbsp;&nbsp;var msgWindow=window.open("")<br>&nbsp;&nbsp;&nbsp;for (var i = 0; i &lt; newWindow.document.valueTest.elements.length; i++) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;msgWindow.document.write(newWindow.document.valueTest.elements[i].name + "&lt;BR&gt;")<br>&nbsp;&nbsp;&nbsp;}<br>}</PRE></A>
+<A NAME="Head2Ref;"></A>
+<A NAME="1012389">
+<H2>type</H2>
+</A>
+
+<A NAME="1012390">
+For all <CODE>Password</CODE> objects, the value of the <CODE>type</CODE> property is <CODE>"password"</CODE>. This property specifies the form element's type. <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1087325">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1087330">
+<A HREF="txt2.htm#1012091"><CODE>Password</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1087467">
+<I>Read-only</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1087469">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1087332">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1087334">
+Navigator 3.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012475">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1012476">
+The following example writes the value of the <CODE>type</CODE> property for every element on a form.<P></A>
+<A NAME="1012477">
+<PRE>for (var i = 0; i &lt; document.form1.elements.length; i++) {<br>&nbsp;&nbsp;&nbsp;document.writeln("&lt;BR&gt;type is " + document.form1.elements[i].type)<br>}</PRE></A>
+<A NAME="Head2Ref;"></A>
+<A NAME="1028679">
+<H2>value</H2>
+</A>
+
+<A NAME="1028680">
+A string that initially reflects the <CODE>VALUE</CODE> attribute.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1087477">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1087482">
+<A HREF="txt2.htm#1012091"><CODE>Password</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1087484">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1087486">
+Navigator 2.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1110216">
+<H4> Security</H4>
+</A>
+
+<A NAME="1110217">
+Navigator&nbsp;3.0: This property is tainted by default. For information on data tainting, see <A HREF="intro.htm#1014735">"JavaScript Security"</A>. If you programmatically set the <CODE>value</CODE> property and then evaluate it, JavaScript returns the current value. If a user interactively modifies the value in the password field, you cannot evaluate it accurately unless data tainting is enabled. See the <A HREF="http://developer.netscape.com/library/documentation/communicator/jsguide4/index.htm" TARGET="_top">JavaScript Guide</A>.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012524">
+<H4> Description</H4>
+</A>
+
+<A NAME="1012526">
+This string is represented by asterisks in the <CODE>Password</CODE> object field. The value of this property changes when a user or a program modifies the field, but the value is always displayed as asterisks.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012549">
+<H4> See also</H4>
+</A>
+
+<A NAME="1012553">
+<A HREF="txt2.htm#1012245"><CODE>Password.defaultValue</CODE></A> <P></A>
+
+<A NAME="Head2;"></A>
+<A NAME="1012554">
+<H3> Methods</H3>
+</A>
+
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1012556">
+<H2>blur</H2>
+</A>
+
+<A NAME="1012557">
+Removes focus from the object.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1087517">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1087522">
+<A HREF="txt2.htm#1012091"><CODE>Password</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1087524">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1087526">
+Navigator 2.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012558">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1012559">
+<PRE>blur()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1012560">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1012596">
+None<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012603">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1012604">
+The following example removes focus from the password element <CODE>userPass:</CODE><P></A>
+<A NAME="1012605">
+<PRE>userPass.blur()</PRE></A><A NAME="1012606">
+This example assumes that the password is defined as<P></A>
+<A NAME="1012607">
+<PRE>&lt;INPUT TYPE="password" NAME="userPass"&gt;</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1012608">
+<H4> See also</H4>
+</A>
+
+<A NAME="1012615">
+<A HREF="txt2.htm#1103529"><CODE>Password.focus</CODE></A>, <A HREF="txt2.htm#1012704"><CODE>Password.select</CODE></A><P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1103529">
+<H2>focus</H2>
+</A>
+
+<A NAME="1103542">
+Gives focus to the password object.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1103532">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1103537">
+<A HREF="txt2.htm#1012091"><CODE>Password</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1103539">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1103541">
+Navigator 2.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1103543">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1012621">
+<PRE>focus()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1031798">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1031799">
+None<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012663">
+<H4> Description</H4>
+</A>
+
+<A NAME="1012664">
+Use the <CODE>focus</CODE> method to navigate to the password field and give it focus. You can then either programmatically enter a value in the field or let the user enter a value. <P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012667">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1012668">
+In the following example, the <CODE>checkPassword</CODE> function confirms that a user has entered a valid password. If the password is not valid, the <CODE>focus</CODE> method returns focus to the <CODE>Password</CODE> object and the <CODE>select</CODE> method highlights it so the user can reenter the password.<P></A>
+<A NAME="1012669">
+<PRE>function checkPassword(userPass) {<br>&nbsp;&nbsp;&nbsp;if (badPassword) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert("Please enter your password again.")<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;userPass.focus()<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;userPass.select()<br>&nbsp;&nbsp;&nbsp;}<br>}</PRE></A><A NAME="1012670">
+This example assumes that the <CODE>Password</CODE> object is defined as<P></A>
+<A NAME="1012671">
+<PRE>&lt;INPUT TYPE="password" NAME="userPass"&gt;</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1012672">
+<H4> See also</H4>
+</A>
+
+<A NAME="1012679">
+<A HREF="txt2.htm#1012556"><CODE>Password.blur</CODE></A>, <A HREF="txt2.htm#1012704"><CODE>Password.select</CODE></A><P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1118735">
+<H2>handleEvent</H2>
+</A>
+
+<A NAME="1118748">
+Invokes the handler for the specified event. <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1118738">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1118743">
+<A HREF="txt2.htm#1012091"><CODE>Password</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1118745">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1118747">
+Navigator 4.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1118749">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1118750">
+<PRE>handleEvent(event)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1118751">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1118757">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1118754">
+<PRE>event</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1118756">
+The name of an event for which the object has an event handler.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1118758">
+<H4> Description</H4>
+</A>
+
+<A NAME="1118762">
+For information on handling events, see <A HREF="evnt.htm#1010270">"General Information about Events"</A>.<P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1012704">
+<H2>select</H2>
+</A>
+
+<A NAME="1012705">
+Selects the input area of the password field.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1087918">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1087923">
+<A HREF="txt2.htm#1012091"><CODE>Password</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1087925">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1087927">
+Navigator 2.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012706">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1012707">
+<PRE>select()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1012708">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1012722">
+None<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012728">
+<H4> Description</H4>
+</A>
+
+<A NAME="1012729">
+Use the <CODE>select</CODE> method to highlight the input area of the password field. You can use the <CODE>select</CODE> method with the <CODE>focus</CODE> method to highlight a field and position the cursor for a user response.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012732">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1012733">
+In the following example, the <CODE>checkPassword</CODE> function confirms that a user has entered a valid password. If the password is not valid, the <CODE>select</CODE> method highlights the password field and the <CODE>focus</CODE> method returns focus to it so the user can reenter the password.<P></A>
+<A NAME="1012734">
+<PRE>function checkPassword(userPass) {<br>&nbsp;&nbsp;&nbsp;if (badPassword) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert("Please enter your password again.")<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;userPass.focus()<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;userPass.select()<br>&nbsp;&nbsp;&nbsp;}<br>}</PRE></A><A NAME="1012735">
+This example assumes that the password is defined as<P></A>
+<A NAME="1012736">
+<PRE>&lt;INPUT TYPE="password" NAME="userPass"&gt;</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1012737">
+<H4> See also</H4>
+</A>
+
+<A NAME="1012744">
+<A HREF="txt2.htm#1012556"><CODE>Password.blur</CODE></A>, <A HREF="txt2.htm#1103529"><CODE>Password.focus</CODE></A> <P></A>
+
+<P><HR>
+<A HREF="contents.htm">[Contents]</A> <A HREF="txt1.htm">[Previous]</A> <A HREF="txt3.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<P ALIGN=right>
+
+<FONT SIZE=-2><I>Last Updated:  10/31/97  12:32:00
+</I></FONT>
+
+<HR SIZE=4>
+
+<P> <CENTER>Copyright © 1997
+<A HREF="http://home.netscape.com/misc/contact_info.html"
+TARGET=_top>Netscape Communications Corporation</A></FONT>
+</CENTER>
+<P>
+<P>
+</BODY>
+</HTML>
+
+

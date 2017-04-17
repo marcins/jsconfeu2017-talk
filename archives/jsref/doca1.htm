@@ -1,0 +1,722 @@
+<HTML>
+<HEAD>
+<TITLE>
+</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A HREF="contents.htm">[Contents]</A> <A HREF="doca.htm">[Previous]</A> <A HREF="doca2.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<HR>
+
+<A NAME="Image "></A>
+<A NAME="1078163">
+<H1> Image </H1>
+</A>
+<A NAME="1078164">
+An image on an HTML form.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1078636">
+<I>Client-side object</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1078638">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1078640">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1078642">
+Navigator 3.0<br>Navigator 4.0: added <CODE>handleEvent</CODE> method</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1078165">
+<H4> Created by</H4>
+</A>
+
+<A NAME="1061999">
+The <CODE>Image</CODE> constructor or the <CODE><A HREF="http://developer.netscape.com/library/documentation/htmlguid/index.htm?content=tags8.htm#tags:IMG" TARGET="_top">IMG</A></CODE> tag. <P></A>
+<A NAME="1094408">
+The JavaScript runtime engine creates an <CODE>Image</CODE> object corresponding to each <CODE>IMG</CODE> tag in your document. It puts these objects in an array in the <A HREF="doc1.htm#1010842"><CODE>document.images</CODE></A> property. You access an <CODE>Image</CODE> object by indexing this array.<P></A>
+<A NAME="1090138">
+To define an image with the <CODE>IMG</CODE> tag, use standard HTML syntax with the addition of JavaScript event handlers. If specify a value for the <CODE>NAME</CODE> attribute, you can use that name when indexing the <CODE>images</CODE> array.<P></A>
+<A NAME="1094153">
+To define an image with its constructor, use the following syntax:<P></A>
+<A NAME="1093642">
+<PRE>new Image(width, height)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1093645">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1093663">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1093648">
+<PRE>width</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1093650">
+(Optional) The image width, in pixels.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1093652">
+<PRE>height</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1093654">
+(Optional) The image height, in pixels.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1092493">
+<H4> Event handlers</H4>
+</A>
+
+<ul><A NAME="1092497">
+<LI><A HREF="evnt2.htm#1017362"><CODE>onAbort</CODE></A></LI>
+</A><A NAME="1092501">
+<LI><A HREF="evnt1.htm#1093794"><CODE>onError</CODE></A></LI>
+</A><A NAME="1112998">
+<LI><A HREF="evnt10.htm#1094045"><CODE>onKeyDown</CODE></A></LI>
+</A><A NAME="1113002">
+<LI><A HREF="evnt11.htm#1094129"><CODE>onKeyPress</CODE></A></LI>
+</A><A NAME="1113006">
+<LI><A HREF="evnt12.htm#1094213"><CODE>onKeyUp</CODE></A></LI>
+</A><A NAME="1092517">
+<LI><A HREF="evnt13.htm#1010680"><CODE>onLoad</CODE></A></LI>
+</A></ul><A NAME="1095320">
+To define an event handler for an <CODE>Image</CODE> object created with the <CODE>Image</CODE> constructor, set the appropriate property of the object. For example, if you have an <CODE>Image</CODE> object named <CODE>imageName</CODE> and you want to set one of its event handlers to a function whose name is <CODE>handlerFunction</CODE>, use one of the following statements:<P></A>
+<A NAME="1095321">
+<PRE>imageName.onabort = handlerFunction<br>imageName.onerror = handlerFunction<br>imageName.onkeydown = handlerFunction<br>imageName.onkeypress = handlerFunction<br>imageName.onkeyup = handlerFunction<br>imageName.onload = handlerFunction</PRE></A><A NAME="1095515">
+<CODE>Image</CODE> objects do not have <CODE>onClick</CODE>, <CODE>onMouseOut</CODE>, and <CODE>onMouseOver</CODE> event handlers. However, if you define an <CODE>Area</CODE> object for the image or place the <CODE>IMG</CODE> tag within a <CODE>Link</CODE> object, you can use the <CODE>Area</CODE> or <CODE>Link</CODE> object's event handlers. See <A HREF="doc2.htm#1081434"><CODE>Link</CODE></A>.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1014589">
+<H4> Description</H4>
+</A>
+
+<A NAME="1014591">
+The position and size of an image in a document are set when the document is displayed in the web browser and cannot be changed using JavaScript (the <CODE>width</CODE> and <CODE>height</CODE> properties are read-only for these objects). You can change which image is displayed by setting the <CODE>src</CODE> and <CODE>lowsrc</CODE> properties. (See the descriptions of <I><A HREF="doca1.htm#1095698"></I><CODE>Image.src</CODE><I></A></I> and <I><A HREF="doca1.htm#1100753"></I><CODE>Image.lowsrc</CODE><I></A></I>.)<P></A>
+<A NAME="1014599">
+You can use JavaScript to create an animation with an <CODE>Image</CODE> object by repeatedly setting the <CODE>src</CODE> property, as shown in Example 4 below. JavaScript animation is slower than GIF animation, because with GIF animation the entire animation is in one file; with JavaScript animation, each frame is in a separate file, and each file must be loaded across the network (host contacted and data transferred).<P></A>
+<A NAME="1095029">
+The primary use for an <CODE>Image</CODE> object created with the <CODE>Image</CODE> constructor is to load an image from the network (and decode it) before it is actually needed for display. Then when you need to display the image within an existing image cell, you can set the <CODE>src</CODE> property of the displayed image to the same value as that used for the previously fetched image, as follows.<P></A>
+<A NAME="1095030">
+<PRE>myImage = new Image()<br>myImage.src = "seaotter.gif"<br>...<br>document.images[0].src = myImage.src</PRE></A><A NAME="1095031">
+The resulting image will be obtained from cache, rather than loaded over the network, assuming that sufficient time has elapsed to load and decode the entire image. You can use this technique to create smooth animations, or you could display one of several images based on form input.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1014609">
+<H4> Property Summary</H4>
+</A>
+
+<A NAME="1014681">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1014615">
+<PRE><A HREF="doca1.htm#1014769"><CODE>border</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1014617">
+Reflects the <CODE>BORDER</CODE> attribute.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1014622">
+<PRE><A HREF="doca1.htm#1014810"><CODE>complete</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1014624">
+Boolean value indicating whether the web browser has completed its attempt to load the image.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1014629">
+<PRE><A HREF="doca1.htm#1014844"><CODE>height</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1014631">
+Reflects the <CODE>HEIGHT</CODE> attribute.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1014636">
+<PRE><A HREF="doca1.htm#1014884"><CODE>hspace</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1014638">
+Reflects the <CODE>HSPACE</CODE> attribute.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1014643">
+<PRE><A HREF="doca1.htm#1100753"><CODE>lowsrc</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1014645">
+Reflects the <CODE>LOWSRC</CODE> attribute.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1014650">
+<PRE><A HREF="doca1.htm#1014961"><CODE>name</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1014652">
+Reflects the <CODE>NAME</CODE> attribute.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1014657">
+<PRE><A HREF="doca1.htm#1074187"><CODE>prototype</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1014659">
+Allows the addition of properties to an <CODE>Image</CODE> object.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1014664">
+<PRE><A HREF="doca1.htm#1095698"><CODE>src</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1014666">
+Reflects the <CODE>SRC</CODE> attribute.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1014671">
+<PRE><A HREF="doca1.htm#1015113"><CODE>vspace</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1014673">
+Reflects the <CODE>VSPACE</CODE> attribute.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1014678">
+<PRE><A HREF="doca1.htm#1015155"><CODE>width</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1014680">
+Reflects the <CODE>WIDTH</CODE> attribute.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1113009">
+<H4> Method Summary</H4>
+</A>
+
+<A NAME="1113018">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1113015">
+<PRE><A HREF="doca1.htm#1113029"><CODE>handleEvent</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1113017">
+Invokes the handler for the specified event.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1014707">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1014708">
+<B>Example 1: Create an image with the</B> <CODE>IMG</CODE><B> tag.</B> The following code defines an image using the <CODE>IMG</CODE> tag:<P></A>
+<A NAME="1014709">
+<PRE>&lt;IMG NAME="aircraft" SRC="f15e.gif" ALIGN="left" VSPACE="10"&gt;</PRE></A><A NAME="1014710">
+The following code refers to the image:<P></A>
+<A NAME="1014711">
+<PRE>document.aircraft.src='f15e.gif'</PRE></A><A NAME="1014712">
+When you refer to an image by its name, you must include the form name if the image is on a form. The following code refers to the image if it is on a form:<P></A>
+<A NAME="1014713">
+<PRE>document.myForm.aircraft.src='f15e.gif'</PRE></A><A NAME="1014714">
+<B>Example 2: Create an image with the Image constructor.</B> The following example creates an <CODE>Image</CODE> object, <CODE>myImage</CODE>, that is 70 pixels wide and 50 pixels high. If the source URL, <CODE>seaotter.gif</CODE>, does not have dimensions of 70x50 pixels, it is scaled to that size.<P></A>
+<A NAME="1014715">
+<PRE>myImage = new Image(70, 50)<br>myImage.src = "seaotter.gif"</PRE></A><A NAME="1014716">
+If you omit the width and height arguments from the <CODE>Image</CODE> constructor, <CODE>myImage</CODE> is created with dimensions equal to that of the image named in the source URL.<P></A>
+<A NAME="1014717">
+<PRE>myImage = new Image()<br>myImage.src = "seaotter.gif"</PRE></A><A NAME="1014718">
+<B>Example 3: Display an image based on form input.</B> In the following example, the user selects which image is displayed. The user orders a shirt by filling out a form. The image displayed depends on the shirt color and size that the user chooses. All possible image choices are preloaded to speed response time. When the user clicks the button to order the shirt, the <CODE>allShirts</CODE> function displays the images of all the shirts.<P></A>
+<A NAME="1014719">
+<PRE>&lt;SCRIPT&gt;<br>shirts = new Array()<br>shirts[0] = "R-S"<br>shirts[1] = "R-M"<br>shirts[2] = "R-L"<br>shirts[3] = "W-S"<br>shirts[4] = "W-M"<br>shirts[5] = "W-L"<br>shirts[6] = "B-S"<br>shirts[7] = "B-M"<br>shirts[8] = "B-L"</PRE></A><A NAME="1014720">
+<PRE>doneThis = 0<br>shirtImg = new Array()</PRE></A><A NAME="1014721">
+<PRE>// Preload shirt images<br>for(idx=0; idx &lt; 9; idx++) {<br>&nbsp;&nbsp;&nbsp;shirtImg[idx] = new Image()<br>&nbsp;&nbsp;&nbsp;shirtImg[idx].src = "shirt-" + shirts[idx] + ".gif"<br>}</PRE></A><A NAME="1014722">
+<PRE>function changeShirt(form)<br>{<br>&nbsp;&nbsp;&nbsp;shirtColor = form.color.options[form.color.selectedIndex].text<br>&nbsp;&nbsp;&nbsp;shirtSize = form.size.options[form.size.selectedIndex].text</PRE></A><A NAME="1014723">
+<PRE>&nbsp;&nbsp;&nbsp;newSrc = "shirt-" + shirtColor.charAt(0) + "-" + shirtSize.charAt(0) + ".gif"<br>&nbsp;&nbsp;&nbsp;document.shirt.src = newSrc<br>}</PRE></A><A NAME="1014724">
+<PRE>function allShirts()<br>{<br>&nbsp;&nbsp;&nbsp;document.shirt.src = shirtImg[doneThis].src<br>&nbsp;&nbsp;&nbsp;doneThis++<br>&nbsp;&nbsp;&nbsp;if(doneThis != 9)setTimeout("allShirts()", 500)<br>&nbsp;&nbsp;&nbsp;else doneThis = 0</PRE></A><A NAME="1014725">
+<PRE>&nbsp;&nbsp;&nbsp;return<br>}</PRE></A><A NAME="1014726">
+<PRE>&lt;/SCRIPT&gt;</PRE></A><A NAME="1014727">
+<PRE>&lt;FONT SIZE=+2&gt;&lt;B&gt;Netscape Polo Shirts!&lt;/FONT&gt;&lt;/B&gt;</PRE></A><A NAME="1014728">
+<PRE>&lt;TABLE CELLSPACING=20 BORDER=0&gt;<br>&lt;TR&gt;<br>&lt;TD&gt;&lt;IMG name="shirt" SRC="shirt-W-L.gif"&gt;&lt;/TD&gt;</PRE></A><A NAME="1014729">
+<PRE>&lt;TD&gt;<br>&lt;FORM&gt;<br>&lt;B&gt;Color&lt;/B&gt;<br>&lt;SELECT SIZE=3 NAME="color" onChange="changeShirt(this.form)"&gt;<br>&lt;OPTION&gt; Red<br>&lt;OPTION SELECTED&gt; White<br>&lt;OPTION&gt; Blue<br>&lt;/SELECT&gt;</PRE></A><A NAME="1014730">
+<PRE>&lt;P&gt;<br>&lt;B&gt;Size&lt;/B&gt;<br>&lt;SELECT SIZE=3 NAME="size" onChange="changeShirt(this.form)"&gt;<br>&lt;OPTION&gt; Small<br>&lt;OPTION&gt; Medium<br>&lt;OPTION SELECTED&gt; Large<br>&lt;/SELECT&gt;</PRE></A><A NAME="1014731">
+<PRE>&lt;P&gt;&lt;INPUT type="button" name="buy" value="Buy This Shirt!"<br>&nbsp;&nbsp;&nbsp;onClick="allShirts()"&gt;<br>&lt;/FORM&gt;</PRE></A><A NAME="1014732">
+<PRE>&lt;/TD&gt;<br>&lt;/TR&gt;<br>&lt;/TABLE&gt;</PRE></A><A NAME="1014733">
+<B>Example 4: JavaScript animation.</B> The following example uses JavaScript to create an animation with an <CODE>Image</CODE> object by repeatedly changing the value the <CODE>src</CODE> property. The script begins by preloading the 10 images that make up the animation (<CODE>image1.gif</CODE>, <CODE>image2.gif</CODE>, <CODE>image3.gif</CODE>, and so on). When the <CODE>Image</CODE> object is placed on the document with the <CODE>IMG</CODE> tag, <CODE>image1.gif</CODE> is displayed and the <CODE>onLoad</CODE> event handler starts the animation by calling the <CODE>animate</CODE> function. Notice that the <CODE>animate</CODE> function does not call itself after changing the <CODE>src</CODE> property of the <CODE>Image</CODE> object. This is because when the <CODE>src</CODE> property changes, the image's <CODE>onLoad</CODE> event handler is triggered and the <CODE>animate</CODE> function is called.<P></A>
+<A NAME="1014734">
+<PRE>&lt;SCRIPT&gt;<br>delay = 100<br>imageNum = 1</PRE></A><A NAME="1014735">
+<PRE>// Preload animation images<br>theImages = new Array()<br>for(i = 1; i &lt; 11; i++) {<br>&nbsp;&nbsp;&nbsp;theImages[i] = new Image()<br>&nbsp;&nbsp;&nbsp;theImages[i].src = "image" + i + ".gif"<br>}</PRE></A><A NAME="1014736">
+<PRE>function animate() {<br>&nbsp;&nbsp;&nbsp;document.animation.src = theImages[imageNum].src<br>&nbsp;&nbsp;&nbsp;imageNum++<br>&nbsp;&nbsp;&nbsp;if(imageNum &gt; 10) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;imageNum = 1<br>&nbsp;&nbsp;&nbsp;}<br>}</PRE></A><A NAME="1014737">
+<PRE>function slower() {<br>&nbsp;&nbsp;&nbsp;delay+=10<br>&nbsp;&nbsp;&nbsp;if(delay &gt; 4000) delay = 4000<br>}</PRE></A><A NAME="1014738">
+<PRE>function faster() {<br>&nbsp;&nbsp;&nbsp;delay-=10<br>&nbsp;&nbsp;&nbsp;if(delay &lt; 0) delay = 0<br>}<br>&lt;/SCRIPT&gt;</PRE></A><A NAME="1014739">
+<PRE>&lt;BODY BGCOLOR="white"&gt;</PRE></A><A NAME="1014740">
+<PRE>&lt;IMG NAME="animation" SRC="image1.gif" ALT="[Animation]"<br>&nbsp;&nbsp;&nbsp;onLoad="setTimeout('animate()', delay)"&gt;</PRE></A><A NAME="1014741">
+<PRE>&lt;FORM&gt;<br>&nbsp;&nbsp;&nbsp;&lt;INPUT TYPE="button" Value="Slower" onClick="slower()"&gt;<br>&nbsp;&nbsp;&nbsp;&lt;INPUT TYPE="button" Value="Faster" onClick="faster()"&gt;<br>&lt;/FORM&gt;<br>&lt;/BODY&gt;</PRE></A><A NAME="1014751">
+See also the examples for the <A HREF="evnt2.htm#1017362"><CODE>onAbort</CODE></A>, <A HREF="evnt1.htm#1093794"><CODE>onError</CODE></A>, and <A HREF="evnt13.htm#1010680"><CODE>onLoad</CODE></A> event handlers.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1014752">
+<H4> See also</H4>
+</A>
+
+<A NAME="1014765">
+<A HREF="doc2.htm#1081434"><CODE>Link</CODE></A>, <A HREF="evnt5.htm#1010516"><CODE>onClick</CODE></A>, <A HREF="evnt16.htm#1010731"><CODE>onMouseOut</CODE></A>, <A HREF="evnt17.htm#1010759"><CODE>onMouseOver</CODE></A> <P></A>
+
+<A NAME="Head2;"></A>
+<A NAME="1014766">
+<H3> Properties</H3>
+</A>
+
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1014769">
+<H2>border</H2>
+</A>
+
+<A NAME="1014771">
+A string specifying the width, in pixels, of an image border.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1079205">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1079207">
+<A HREF="doca1.htm#1078163"><CODE>Image</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1083812">
+<I>Read-only</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1083814">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1079209">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1079211">
+Navigator 3.0:</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1014786">
+<H4> Description</H4>
+</A>
+
+<A NAME="1014787">
+The <CODE>border</CODE> property reflects the <CODE>BORDER</CODE> attribute of the <CODE>IMG</CODE> tag. For images created with the <CODE>Image</CODE> constructor, the value of the <CODE>border</CODE> property is 0.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1014791">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1014792">
+The following function displays the value of an image's <CODE>border</CODE> property if the value is not 0.<P></A>
+<A NAME="1014793">
+<PRE>function checkBorder(theImage) {<br>&nbsp;&nbsp;&nbsp;if (theImage.border==0) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert('The image has no border!')<br>&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;else alert('The image's border is ' + theImage.border)<br>}</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1014794">
+<H4> See also</H4>
+</A>
+
+<A NAME="1014807">
+<A HREF="doca1.htm#1014844"><CODE>Image.height</CODE></A>, <A HREF="doca1.htm#1014884"><CODE>Image.hspace</CODE></A>, <A HREF="doca1.htm#1015113"><CODE>Image.vspace</CODE></A>, <A HREF="doca1.htm#1015155"><CODE>Image.width</CODE></A> <P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1014810">
+<H2>complete</H2>
+</A>
+
+<A NAME="1014811">
+A boolean value that indicates whether the web browser has completed its attempt to load an image.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1079368">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1079373">
+<A HREF="doca1.htm#1078163"><CODE>Image</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1083822">
+<I>Read-only</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1083824">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1079375">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1079377">
+Navigator 3.0:</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1014830">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1014831">
+The following example displays an image and three radio buttons. The user can click the radio buttons to choose which image is displayed. Clicking another button lets the user see the current value of the <CODE>complete</CODE> property.<P></A>
+<A NAME="1014832">
+<PRE>&lt;B&gt;Choose an image:&lt;/B&gt;<br>&lt;BR&gt;&lt;INPUT TYPE="radio" NAME="imageChoice" VALUE="image1" CHECKED<br>&nbsp;&nbsp;&nbsp;onClick="document.images[0].src='f15e.gif'"&gt;F-15 Eagle<br>&lt;BR&gt;&lt;INPUT TYPE="radio" NAME="imageChoice" VALUE="image2"<br>&nbsp;&nbsp;&nbsp;onClick="document.images[0].src='f15e2.gif'"&gt;F-15 Eagle 2<br>&lt;BR&gt;&lt;INPUT TYPE="radio" NAME="imageChoice" VALUE="image3"<br>&nbsp;&nbsp;&nbsp;onClick="document.images[0].src='ah64.gif'"&gt;AH-64 Apache</PRE></A><A NAME="1014833">
+<PRE>&lt;BR&gt;&lt;INPUT TYPE="button" VALUE="Is the image completely loaded?"<br>&nbsp;&nbsp;&nbsp;onClick="alert('The value of the complete property is '<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+ document.images[0].complete)"&gt;<br>&lt;BR&gt;<br>&lt;IMG NAME="aircraft" SRC="f15e.gif" ALIGN="left" VSPACE="10"&gt;&lt;BR&gt;</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1014834">
+<H4> See also</H4>
+</A>
+
+<A NAME="1014841">
+<A HREF="doca1.htm#1100753"><CODE>Image.lowsrc</CODE></A>, <A HREF="doca1.htm#1095698"><CODE>Image.src</CODE></A> <P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1014844">
+<H2>height</H2>
+</A>
+
+<A NAME="1014845">
+A string specifying the height of an image in pixels.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1079394">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1079399">
+<A HREF="doca1.htm#1078163"><CODE>Image</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1083835">
+<I>Read-only</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1083837">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1079401">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1079403">
+Navigator 3.0:</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1014860">
+<H4> Description</H4>
+</A>
+
+<A NAME="1014861">
+The <CODE>height</CODE> property reflects the <CODE>HEIGHT</CODE> attribute of the <CODE>IMG</CODE> tag. For images created with the <CODE>Image</CODE> constructor, the value of the <CODE>height</CODE> property is the actual, not the displayed, height of the image.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1014865">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1014866">
+The following function displays the values of an image's <CODE>height</CODE>, <CODE>width</CODE>, <CODE>hspace</CODE>, and <CODE>vspace</CODE> properties.<P></A>
+<A NAME="1014867">
+<PRE>function showImageSize(theImage) {<br>&nbsp;&nbsp;&nbsp;alert('height=' + theImage.height+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'; width=' + theImage.width +<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'; hspace=' + theImage.hspace +<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'; vspace=' + theImage.vspace)<br>}</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1014868">
+<H4> See also</H4>
+</A>
+
+<A NAME="1014881">
+<A HREF="doca1.htm#1014769"><CODE>Image.border</CODE></A>, <A HREF="doca1.htm#1014884"><CODE>Image.hspace</CODE></A>, <A HREF="doca1.htm#1015113"><CODE>Image.vspace</CODE></A>, <A HREF="doca1.htm#1015155"><CODE>Image.width</CODE></A> <P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1014884">
+<H2>hspace</H2>
+</A>
+
+<A NAME="1014885">
+A string specifying a margin in pixels between the left and right edges of an image and the surrounding text.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1079452">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1079457">
+<A HREF="doca1.htm#1078163"><CODE>Image</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1083841">
+<I>Read-only</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1083843">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1079459">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1079461">
+Navigator 3.0:</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1014900">
+<H4> Description</H4>
+</A>
+
+<A NAME="1014901">
+The <CODE>hspace</CODE> property reflects the <CODE>HSPACE</CODE> attribute of the <CODE>IMG</CODE> tag. For images created with the <CODE>Image</CODE> constructor, the value of the <CODE>hspace</CODE> property is 0.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1014905">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1014909">
+See the examples for the <A HREF="doca1.htm#1014844"><CODE>height</CODE></A> property.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1100737">
+<H4> See also</H4>
+</A>
+
+<A NAME="1100750">
+<A HREF="doca1.htm#1014769"><CODE>Image.border</CODE></A>, <A HREF="doca1.htm#1014844"><CODE>Image.height</CODE></A>, <A HREF="doca1.htm#1015113"><CODE>Image.vspace</CODE></A>, <A HREF="doca1.htm#1015155"><CODE>Image.width</CODE></A> <P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1100753">
+<H2>lowsrc</H2>
+</A>
+
+<A NAME="1014927">
+A string specifying the URL of a low-resolution version of an image to be displayed in a document.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1079510">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1079515">
+<A HREF="doca1.htm#1078163"><CODE>Image</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1079517">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1079519">
+Navigator 3.0:</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1014942">
+<H4> Description</H4>
+</A>
+
+<A NAME="1014943">
+The <CODE>lowsrc</CODE> property initially reflects the <CODE>LOWSRC</CODE> attribute of the <CODE>IMG</CODE> tag. The web browser loads the smaller image specified by <CODE>lowsrc</CODE> and then replaces it with the larger image specified by the <CODE>src</CODE> property. You can change the <CODE>lowsrc</CODE> property at any time.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1014946">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1014950">
+See the examples for the <A HREF="doca1.htm#1095698"><CODE>src</CODE></A> property.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1014951">
+<H4> See also</H4>
+</A>
+
+<A NAME="1014958">
+<A HREF="doca1.htm#1014810"><CODE>Image.complete</CODE></A>, <A HREF="doca1.htm#1095698"><CODE>Image.src</CODE></A> <P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1014961">
+<H2>name</H2>
+</A>
+
+<A NAME="1014962">
+A string specifying the name of an object.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1079918">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1079923">
+<A HREF="doca1.htm#1078163"><CODE>Image</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1083848">
+<I>Read-only</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1083850">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1079925">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1079927">
+Navigator 3.0:</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1102137">
+<H4> Security</H4>
+</A>
+
+<A NAME="1102138">
+Navigator&nbsp;3.0: This property is tainted by default. For information on data tainting, see <A HREF="intro.htm#1014735">"JavaScript Security"</A>.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1014978">
+<H4> Description</H4>
+</A>
+
+<A NAME="1014981">
+Represents the value of the <CODE>NAME</CODE> attribute. For images created with the <CODE>Image</CODE> constructor, the value of the <CODE>name</CODE> property is null.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1014986">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1014987">
+In the following example, the <CODE>valueGetter</CODE> function uses a <CODE>for</CODE> loop to iterate over the array of elements on the <CODE>valueTest</CODE> form. The <CODE>msgWindow</CODE> window displays the names of all the elements on the form:<P></A>
+<A NAME="1014988">
+<PRE>newWindow=window.open("http://home.netscape.com")</PRE></A><A NAME="1014989">
+<PRE>function valueGetter() {<br>&nbsp;&nbsp;&nbsp;var msgWindow=window.open("")<br>&nbsp;&nbsp;&nbsp;for (var i = 0; i &lt; newWindow.document.valueTest.elements.length; i++) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;msgWindow.document.write(newWindow.document.valueTest.elements[i].name + "&lt;BR&gt;")<br>&nbsp;&nbsp;&nbsp;}<br>}</PRE></A><A NAME="1044444">
+In the following example, the first statement creates a window called <CODE>netscapeWin</CODE>. The second statement displays the value <CODE>"netscapeHomePage"</CODE> in the Alert dialog box, because <CODE>"netscapeHomePage"</CODE> is the value of the <CODE>windowName</CODE> argument of <CODE>netscapeWin</CODE>.<P></A>
+<A NAME="1044445">
+<PRE>netscapeWin=window.open("http://home.netscape.com","netscapeHomePage")<br>alert(netscapeWin.name)</PRE></A>
+<A NAME="Head2Ref;"></A>
+<A NAME="1074187">
+<H2>prototype</H2>
+</A>
+
+<A NAME="1074835">
+Represents the prototype for this class. You can use the prototype to add properties or methods to all instances of a class. For more information, see <A HREF="core4.htm#1181210"><CODE>Function.prototype</CODE></A>.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1074838">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1074843">
+<A HREF="doca1.htm#1078163"><CODE>Image</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1074845">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1074847">
+Navigator 3.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1095698">
+<H2>src</H2>
+</A>
+
+<A NAME="1095711">
+A string specifying the URL of an image to be displayed in a document. <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1095701">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1095706">
+<A HREF="doca1.htm#1078163"><CODE>Image</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1095708">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1095710">
+Navigator 3.0:</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1095712">
+<H4> Description</H4>
+</A>
+
+<A NAME="1095713">
+The <CODE>src</CODE> property initially reflects the <CODE>SRC</CODE> attribute of the <CODE>IMG </CODE>tag. Setting the <CODE>src</CODE> property begins loading the new URL into the image area (and aborts the transfer of any image data that is already loading into the same area). Therefore, if you plan to alter the <CODE>lowsrc</CODE> property, you should do so before setting the <CODE>src</CODE> property. <P></A>
+<A NAME="1116071">
+If the URL in the <CODE>src</CODE> property refers to an image that is not the same size as the image cell it is loaded into, the source image is scaled to fit.<P></A>
+<A NAME="1015088">
+When you change the <CODE>src</CODE> property of a displayed image, the new image you specify is displayed in the area defined for the original image. For example, suppose an <CODE>Image</CODE> object originally displays the file <CODE>beluga.gif</CODE>:<P></A>
+<A NAME="1015089">
+<PRE>&lt;IMG NAME="myImage" SRC="beluga.gif" ALIGN="left"&gt;</PRE></A><A NAME="1015090">
+If you set <CODE>myImage.src='seaotter.gif'</CODE>, the image <CODE>seaotter.gif</CODE> is scaled to fit in the same space originally used by <CODE>beluga.gif</CODE>, even if <CODE>seaotter.gif</CODE> is not the same size as <CODE>beluga.gif</CODE>.<P></A>
+<A NAME="1015091">
+You can change the <CODE>src</CODE> property at any time.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1015094">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1015095">
+The following example displays an image and three radio buttons. The user can click the radio buttons to choose which image is displayed. Each image also uses the <CODE>lowsrc</CODE> property to display a low-resolution image.<P></A>
+<A NAME="1015096">
+<PRE>&lt;SCRIPT&gt;<br>function displayImage(lowRes,highRes) {<br>&nbsp;&nbsp;&nbsp;document.images[0].lowsrc=lowRes<br>&nbsp;&nbsp;&nbsp;document.images[0].src=highRes<br>}<br>&lt;/SCRIPT&gt;</PRE></A><A NAME="1015097">
+<PRE>&lt;FORM NAME="imageForm"&gt;<br>&lt;B&gt;Choose an image:&lt;/B&gt;<br>&lt;BR&gt;&lt;INPUT TYPE="radio" NAME="imageChoice" VALUE="image1" CHECKED<br>&nbsp;&nbsp;&nbsp;onClick="displayImage('f15el.gif','f15e.gif')"&gt;F-15 Eagle<br>&lt;BR&gt;&lt;INPUT TYPE="radio" NAME="imageChoice" VALUE="image2"<br>&nbsp;&nbsp;&nbsp;onClick="displayImage('f15e2l.gif','f15e2.gif')"&gt;F-15 Eagle 2<br>&lt;BR&gt;&lt;INPUT TYPE="radio" NAME="imageChoice" VALUE="image3"<br>&nbsp;&nbsp;&nbsp;onClick="displayImage('ah64l.gif','ah64.gif')"&gt;AH-64 Apache</PRE></A><A NAME="1015098">
+<PRE>&lt;BR&gt;<br>&lt;IMG NAME="aircraft" SRC="f15e.gif" LOWSRC="f15el.gif" ALIGN="left" VSPACE="10"&gt;&lt;BR&gt;<br>&lt;/FORM&gt;</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1015103">
+<H4> See also</H4>
+</A>
+
+<A NAME="1015110">
+<A HREF="doca1.htm#1014810"><CODE>Image.complete</CODE></A>, <A HREF="doca1.htm#1100753"><CODE>Image.lowsrc</CODE></A> <P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1015113">
+<H2>vspace</H2>
+</A>
+
+<A NAME="1015114">
+A string specifying a margin in pixels between the top and bottom edges of an image and the surrounding text.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1080513">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1080518">
+<A HREF="doca1.htm#1078163"><CODE>Image</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1083950">
+<I>Read-only</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1083952">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1080520">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1080522">
+Navigator 3.0:</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1015129">
+<H4> Description</H4>
+</A>
+
+<A NAME="1015130">
+The <CODE>vspace</CODE> property reflects the <CODE>VSPACE</CODE> attribute of the <CODE>IMG</CODE> tag. For images created with the <CODE>Image</CODE> constructor, the value of the <CODE>vspace</CODE> property is 0.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1015134">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1015138">
+See the examples for the <A HREF="doca1.htm#1014844"><CODE>height</CODE></A> property.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1015139">
+<H4> See also</H4>
+</A>
+
+<A NAME="1015152">
+<A HREF="doca1.htm#1014769"><CODE>Image.border</CODE></A>, <A HREF="doca1.htm#1014844"><CODE>Image.height</CODE></A>, <A HREF="doca1.htm#1014884"><CODE>Image.hspace</CODE></A>, <A HREF="doca1.htm#1015155"><CODE>Image.width</CODE></A> <P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1015155">
+<H2>width</H2>
+</A>
+
+<A NAME="1015156">
+A string specifying the width of an image in pixels.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1080598">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1080603">
+<A HREF="doca1.htm#1078163"><CODE>Image</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1080672">
+<I>Read-only</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1080674">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1080605">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1080607">
+Navigator 3.0:</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1015171">
+<H4> Description</H4>
+</A>
+
+<A NAME="1015172">
+The <CODE>width</CODE> property reflects the <CODE>WIDTH</CODE> attribute of the<CODE> IMG </CODE>tag. For images created with the <CODE>Image</CODE> constructor, the value of the <CODE>width</CODE> property is the actual, not the displayed, width of the image.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1015176">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1015180">
+See the examples for the <A HREF="doca1.htm#1014844"><CODE>height</CODE></A> property.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1015181">
+<H4> See also</H4>
+</A>
+
+<A NAME="1015194">
+<A HREF="doca1.htm#1014769"><CODE>Image.border</CODE></A>, <A HREF="doca1.htm#1014844"><CODE>Image.height</CODE></A>, <A HREF="doca1.htm#1014884"><CODE>Image.hspace</CODE></A>, <A HREF="doca1.htm#1015113"><CODE>Image.vspace</CODE></A> <P></A>
+
+<A NAME="Head2;"></A>
+<A NAME="1015195">
+<H3> Methods</H3>
+</A>
+
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1113029">
+<H2>handleEvent</H2>
+</A>
+
+<A NAME="1113042">
+Invokes the handler for the specified event. <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1113032">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1113037">
+<A HREF="doca1.htm#1078163"><CODE>Image</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1113039">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1113041">
+Navigator 4.0:</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1113043">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1113044">
+<PRE>handleEvent(event)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1113045">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1113051">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1113048">
+<PRE>event</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1113050">
+The name of an event for which the specified object has an event handler.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1113052">
+<H4> Description</H4>
+</A>
+
+<A NAME="1113056">
+For information on handling events, see <A HREF="evnt.htm#1010270">"General Information about Events"</A>.<P></A>
+
+<P><HR>
+<A HREF="contents.htm">[Contents]</A> <A HREF="doca.htm">[Previous]</A> <A HREF="doca2.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<P ALIGN=right>
+
+<FONT SIZE=-2><I>Last Updated:  10/31/97  12:31:11
+</I></FONT>
+
+<HR SIZE=4>
+
+<P> <CENTER>Copyright © 1997
+<A HREF="http://home.netscape.com/misc/contact_info.html"
+TARGET=_top>Netscape Communications Corporation</A></FONT>
+</CENTER>
+<P>
+<P>
+</BODY>
+</HTML>
+
+

@@ -1,0 +1,156 @@
+<HTML>
+<HEAD>
+<TITLE>Introduction
+</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A HREF="contents.htm">[Contents]</A> <A HREF="pref.htm">[Previous]</A> <A HREF="ops.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<HR>
+<A NAME="1010272">
+<P></A><CENTER><H2>Chapter 1<BR><A NAME="1010374">
+Introduction</H2>
+</A></CENTER>
+<A NAME="1010670">
+This chapter briefly introduces JavaScript, Netscape's cross-platform, object-based scripting language for client and server applications. <P></A>
+<A NAME="1012204">
+JavaScript lets you create applications that run over the Internet. Using JavaScript, you can create dynamic HTML pages that process user input and maintain persistent data using special objects, files, and relational databases. You can build applications ranging from internal corporate information management and intranet publishing to mass-market electronic transactions and commerce. Through JavaScript's LiveConnect functionality, your applications can access Java and CORBA distributed object applications.<P></A>
+<A NAME="1018548">
+Server-side and client-side JavaScript share the same core language. This core language corresponds to ECMA-262, the scripting language standardized by the European standards body, with some additions. The core language contains a set of core objects, such as the <CODE>Array</CODE> and <CODE>Date</CODE> objects. It also defines other language features such as its expressions, statements, and operators. Although server-side and client-side JavaScript use the same core functionality, in some cases they use them differently. You can download a <A HREF="http://developer.netscape.com/library/javascript/e262-pdf.pdf" TARGET="_top">PDF version</A> of the ECMA-262 specification.<P></A>
+<A NAME="1010753">
+The components of JavaScript are illustrated in <A HREF="intro.htm#1010758">Figure 1.1</A>.<P></A>
+<A NAME="1010758">
+<B>Figure 1.1&nbsp;&nbsp;&nbsp;  The JavaScript language.<P>
+<IMG SRC="lang.gif">
+ 
+</B><P></A>
+
+
+<A NAME="1010759">
+<I>Client-side JavaScript</I> (or <I>Navigator JavaScript</I>) encompasses the core language plus extras such as the predefined objects only relevant to running JavaScript in a browser. <I>Server-side JavaScript</I> encompasses the same core language plus extras such as the predefined objects and functions only relevant to running JavaScript on a server. <P></A>
+<A NAME="1010764">
+Client-side JavaScript is embedded directly in HTML pages and is interpreted by the browser completely at runtime. Because production applications frequently have greater performance demands upon them, JavaScript applications that take advantage of its server-side capabilities are compiled before they are deployed. The next two sections introduce you to how JavaScript works on the client and on the server.<P></A>
+
+<A NAME="Client-Side JavaScript"></A>
+<A NAME="1010767">
+<H2> Client-Side JavaScript</H2>
+</A>
+<A NAME="1010768">
+Web browsers such as Netscape Navigator 2.0 (and later versions) can interpret client-side JavaScript statements embedded in an HTML page. When the browser (or client) requests such a page, the server sends the full content of the document, including HTML and JavaScript statements, over the network to the client. The client reads the page from top to bottom, displaying the results of the HTML and executing JavaScript statements as it goes. This process produces the results that the user sees and is illustrated in <A HREF="intro.htm#1010777">Figure 1.2</A>. <P></A>
+<A NAME="1010777">
+<B>Figure 1.2&nbsp;&nbsp;&nbsp;  Client-side JavaScript. <P>
+<IMG SRC="csrt.gif">
+
+</B><P></A>
+
+
+<A NAME="1010781">
+Client-side JavaScript statements embedded in an HTML page can respond to user events such as mouse clicks, form input, and page navigation. For example, you can write a JavaScript function to verify that users enter valid information into a form requesting a telephone number or zip code. Without any network transmission, the embedded JavaScript on the HTML page can check the entered data and display a dialog box to the user who enters invalid data.<P></A>
+
+<A NAME="Server-Side JavaScript "></A>
+<A NAME="1010790">
+<H2> Server-Side JavaScript </H2>
+</A>
+<A NAME="1010791">
+On the server, JavaScript is also embedded in HTML pages. The server-side statements can connect to relational databases from different vendors, share information across users of an application, access the file system on the server, or communicate with other applications through LiveConnect and Java. A compiled JavaScript application can also include client-side JavaScript in addition to server-side JavaScript. <P></A>
+<A NAME="1010792">
+In contrast to pure client-side JavaScript scripts, JavaScript applications that use server-side JavaScript are compiled into bytecode executable files. These application executables are run in concert with a web server that contains the JavaScript runtime engine. For this reason, creating JavaScript applications is a two-stage process.<P></A>
+<A NAME="1010798">
+In the first stage, shown in <A HREF="intro.htm#1010803">Figure 1.3</A>, you (the developer) create HTML pages (which can contain both client-side and server-side JavaScript statements) and JavaScript files. You then compile all of those files into a single executable.<P></A>
+<A NAME="1010803">
+<B>Figure 1.3&nbsp;&nbsp;&nbsp;  Server-side JavaScript during development. <P>
+<IMG SRC="ssdev.gif">
+
+</B><P></A>
+
+
+<A NAME="1010807">
+In the second stage, shown in <A HREF="intro.htm#1010812">Figure 1.4</A>, a page in the application is requested by a client browser. The runtime engine uses the application executable to look up the source page and dynamically generate the HTML page to return. It runs any server-side JavaScript statements found on the page. The result of those statements might add new HTML or client-side JavaScript statements to the HTML page. It then sends the resulting page over the network to the Navigator client, which displays the results.<P></A>
+<A NAME="1010812">
+<B>Figure 1.4&nbsp;&nbsp;&nbsp;  Server-side JavaScript during runtime. <P>
+<IMG SRC="ssrt.gif">
+
+</B><P></A>
+
+
+<A NAME="1010813">
+In contrast to standard Common Gateway Interface (CGI) programs, all JavaScript is integrated directly into HTML pages, facilitating rapid development and easy maintenance. JavaScript's Session Management Service contains objects you can use to maintain data that persists across client requests, multiple clients, and multiple applications. JavaScript's LiveWire Database Service provides objects for database access that serve as an interface to Structured Query Language (SQL) database servers.<P></A>
+
+<A NAME="JavaScript Objects"></A>
+<A NAME="1013311">
+<H2> JavaScript Objects</H2>
+</A>
+<A NAME="1013322">
+JavaScript has predefined objects for the core language, as well as additions for client-side and server-side JavaScript. <P></A>
+<A NAME="1017810">
+JavaScript has the following core objects:<P></A>
+<A NAME="1017835">
+<A HREF="core1.htm#1080770"><CODE>Array</CODE></A>, <A HREF="core2.htm#1012259"><CODE>Boolean</CODE></A>, <A HREF="core3.htm#1012685"><CODE>Date</CODE></A>, <A HREF="core4.htm#1013865"><CODE>Function</CODE></A>, <A HREF="core5.htm#1014720"><CODE>Math</CODE></A>, <A HREF="corea.htm#1012418"><CODE>Number</CODE></A>, <A HREF="corea1.htm#1012725"><CODE>Object</CODE></A>, <A HREF="corea2.htm#1012977"><CODE>String</CODE></A><P></A>
+<A NAME="1013340">
+The additional client-side objects are as follows:<P></A>
+<A NAME="1014795">
+<A HREF="doca.htm#1015687"><CODE>Anchor</CODE></A>, <A HREF="doca2.htm#1015224"><CODE>Applet</CODE></A>, <A HREF="doc3.htm#1102595"><CODE>Area</CODE></A>, <A HREF="but.htm#1016056"><CODE>Button</CODE></A>, <A HREF="choi1.htm#1013039"><CODE>Checkbox</CODE></A>, <A HREF="doc1.htm#1048486"><CODE>document</CODE></A>, <A HREF="evnt1.htm#1093773"><CODE>event</CODE></A>, <A HREF="txt3.htm#1014071"><CODE>FileUpload</CODE></A>, <A HREF="form1.htm#1010276"><CODE>Form</CODE></A>, <A HREF="wina.htm#1079184"><CODE>Frame</CODE></A>, <A HREF="form2.htm#1011262"><CODE>Hidden</CODE></A>, <A HREF="wina2.htm#1018212"><CODE>History</CODE></A>, <A HREF="doca1.htm#1078163"><CODE>Image</CODE></A>, <A HREF="doca3.htm#1113061"><CODE>Layer</CODE></A>, <A HREF="doc2.htm#1081434"><CODE>Link</CODE></A>, <A HREF="wina1.htm#1012987"><CODE>Location</CODE></A>, <A HREF="brow2.htm#1031247"><CODE>MimeType</CODE></A>, <A HREF="brow1.htm#1010271"><CODE>navigator</CODE></A>, <A HREF="choi3.htm#1015292"><CODE>Option</CODE></A>, <A HREF="txt2.htm#1012091"><CODE>Password</CODE></A>, <A HREF="brow3.htm#1010653"><CODE>Plugin</CODE></A>, <A HREF="choi.htm#1011977"><CODE>Radio</CODE></A>, <A HREF="but2.htm#1012912"><CODE>Reset</CODE></A>, <A HREF="wina3.htm#1090331"><CODE>screen</CODE></A>, <A HREF="choi2.htm#1013973"><CODE>Select</CODE></A>, <A HREF="but1.htm#1011117"><CODE>Submit</CODE></A>, <A HREF="txt.htm#1023924"><CODE>Text</CODE></A>, <A HREF="txt1.htm#1010943"><CODE>Textarea</CODE></A>, <A HREF="win1.htm#1010280"><CODE>Window</CODE></A><P></A>
+<A NAME="1014789">
+These objects represent information relevant to working with JavaScript in a web browser. Many of these objects are related to each other by occurring as property values. For example, to access the images in a document, you use the <A HREF="doc1.htm#1010842"><CODE>document.images</CODE></A> array, each of whose elements is a <A HREF="doca1.htm#1078163"><CODE>Image</CODE></A> object. <A HREF="intro.htm#1013668">Figure 1.5</A> shows the client-side object containment hierarchy.<P></A>
+<A NAME="1013668">
+<B>Figure 1.5&nbsp;&nbsp;&nbsp; Containment relationships among client-side objects <P>
+<IMG SRC="nav_hier.gif">
+
+</B><P></A>
+
+
+<A NAME="1017862">
+The server-side objects are:<P></A>
+<A NAME="1017893">
+<A HREF="lwa4.htm#1014045"><CODE>blob</CODE></A>, <A HREF="sess2.htm#1014188"><CODE>client</CODE></A>, <A HREF="lwa.htm#1013808"><CODE>Connection</CODE></A>, <A HREF="lwa1.htm#1012652"><CODE>Cursor</CODE></A>, <A HREF="lw1.htm#1031336"><CODE>database</CODE></A>, <A HREF="lw2.htm#1016183"><CODE>DbPool</CODE></A>, <A HREF="oth1.htm#1015167"><CODE>File</CODE></A>, <A HREF="sess5.htm#1011483"><CODE>Lock</CODE></A>, <A HREF="sess3.htm#1010916"><CODE>project</CODE></A>, <A HREF="sess1.htm#1010271"><CODE>request</CODE></A>, <A HREF="lwa3.htm#1013072"><CODE>Resultset</CODE></A>, <A HREF="oth2.htm#1015194"><CODE>SendMail</CODE></A>, <A HREF="sess4.htm#1011084"><CODE>server</CODE></A>, <A HREF="lwa2.htm#1012947"><CODE>Stproc</CODE></A><P></A>
+<A NAME="1017909">
+As shown in <A HREF="intro.htm#1017920">Figure 1.6</A>, some of the additional server-side objects also have a containment hierarchy. <P></A>
+<A NAME="1017920">
+<B>Figure 1.6&nbsp;&nbsp;&nbsp;  Containment relationships among LiveWire objects <P>
+<IMG SRC="contain.gif">
+
+</B><P></A>
+
+
+
+<A NAME="JavaScript Security"></A>
+<A NAME="1014735">
+<H2> JavaScript Security</H2>
+</A>
+<A NAME="1012747">
+Navigator version 2.02 and later automatically prevents scripts on one server from accessing properties of documents on a different server. This restriction prevents scripts from fetching private information such as directory structures or user session history.<P></A>
+<A NAME="1012748">
+JavaScript for Navigator 3.0 has a feature called data tainting that retains the security restriction but provides a means of secure access to specific components on a page.<P></A>
+<ul><P>
+<A NAME="1012749">
+<LI>When data tainting is enabled, JavaScript in one window can see properties of another window, no matter what server the other window's document was loaded from. However, the author of the other window <I>taints</I> (marks) property values or other data that should be secure or private, and JavaScript cannot pass these tainted values on to any server without the user's permission.</LI>
+</A><P>
+<A NAME="1012750">
+<LI>When data tainting is disabled, a script cannot access any properties of a window on another server.</LI>
+</A></ul><A NAME="1012756">
+In Navigator&nbsp;4.0, data tainting has been removed. Instead, Navigator&nbsp;4.0 provides signed JavaScript scripts for more reliable and more flexible security.<P></A>
+<A NAME="1012898">
+For information on data tainting and on signed scripts, see <A HREF="http://developer.netscape.com/library/documentation/communicator/jsguide4/index.htm?content=sec.htm" TARGET="_top">Chapter&nbsp;7, "JavaScript Security,"</A> in the <A HREF="http://developer.netscape.com/library/documentation/communicator/jsguide4/index.htm" TARGET="_top">JavaScript Guide</A>.<P></A>
+<A NAME="1010376">
+<P></A>
+
+<P><HR>
+<A HREF="contents.htm">[Contents]</A> <A HREF="pref.htm">[Previous]</A> <A HREF="ops.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<P ALIGN=right>
+
+<FONT SIZE=-2><I>Last Updated:  10/31/97  12:29:51
+</I></FONT>
+
+<HR SIZE=4>
+
+<P> <CENTER>Copyright © 1997
+<A HREF="http://home.netscape.com/misc/contact_info.html"
+TARGET=_top>Netscape Communications Corporation</A></FONT>
+</CENTER>
+<P>
+<P>
+</BODY>
+</HTML>
+
+

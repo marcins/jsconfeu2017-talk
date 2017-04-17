@@ -1,0 +1,122 @@
+<HTML>
+<HEAD>
+<TITLE>Events and Event Handlers
+</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A HREF="contents.htm">[Contents]</A> <A HREF="evnt17.htm">[Previous]</A> <A HREF="evnt19.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<HR>
+
+<A NAME="onMouseUp"></A>
+<A NAME="1094469">
+<H1> onMouseUp</H1>
+</A>
+<A NAME="1094470">
+Executes JavaScript code when a MouseUp event occurs; that is, when the user releases a mouse button. <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1094477">
+<I>Event handler for </I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1094488">
+<A HREF="but.htm#1016056"><CODE>Button</CODE></A>, <A HREF="doc1.htm#1048486"><CODE>document</CODE></A>, <A HREF="doc2.htm#1081434"><CODE>Link</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1094490">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1094492">
+Navigator 4.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1094493">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1094494">
+<PRE>onMouseUp="handlerText"</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1094495">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1094501">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1094498">
+<PRE><CODE>handlerText</CODE></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1094500">
+JavaScript code or a call to a JavaScript function.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1094502">
+<H4> Event properties used</H4>
+</A>
+
+<A NAME="1094524">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1094505">
+<PRE>type </PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1103682">
+Indicates the type of event. </A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1094509">
+<PRE>target </PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1094511">
+Indicates the object to which the event was originally sent. </A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1094513">
+<PRE>layerX, layerY,<br>pageX, pageY,<br>screenX, screenY </PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1094515">
+Represent the cursor location at the time the <CODE>MouseUp</CODE> event occurred. </A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1094517">
+<PRE>which </PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1094519">
+Represents 1 for a left-mouse-button up and 3 for a right-mouse-button up. </A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1094521">
+<PRE>modifiers </PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1094523">
+Contains the list of modifier keys held down when the <CODE>MouseUp</CODE> event occurred. </A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1094525">
+<H4> Description</H4>
+</A>
+
+<A NAME="1094526">
+If <CODE>onMouseUp</CODE> returns false, the default action is canceled. For example, if <CODE>onMouseUp</CODE> returns false over an armed link, the link is not triggered. Also, if <CODE>MouseUp</CODE> occurs over an unarmed link (possibly due to <CODE>onMouseDown</CODE> returning false), the link is not triggered. <P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1094527">
+<H4> Note</H4>
+</A>
+
+<A NAME="1094528">
+Arming is caused by a <CODE>MouseDown</CODE> over a link. When a link is armed it changes color to represent its new state. <P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1094529">
+<H4> See also</H4>
+</A>
+
+<A NAME="1094533">
+For general information on event handlers, see <A HREF="evnt.htm#1010270">"General Information about Events"</A>. <P></A>
+<A NAME="1094537">
+For information about the <CODE>event</CODE> object, see <A HREF="evnt1.htm#1093773"><CODE>event</CODE></A>.<P></A>
+
+<P><HR>
+<A HREF="contents.htm">[Contents]</A> <A HREF="evnt17.htm">[Previous]</A> <A HREF="evnt19.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<P ALIGN=right>
+
+<FONT SIZE=-2><I>Last Updated:  10/31/97  16:34:02
+</I></FONT>
+
+<HR SIZE=4>
+
+<P> <CENTER>Copyright © 1997
+<A HREF="http://home.netscape.com/misc/contact_info.html"
+TARGET=_top>Netscape Communications Corporation</A></FONT>
+</CENTER>
+<P>
+<P>
+</BODY>
+</HTML>
+
+

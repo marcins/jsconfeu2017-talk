@@ -1,0 +1,167 @@
+<HTML>
+<HEAD>
+<TITLE>Events and Event Handlers
+</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A HREF="contents.htm">[Contents]</A> <A HREF="evnt7.htm">[Previous]</A> <A HREF="evnt9.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<HR>
+
+<A NAME="onError"></A>
+<A NAME="1063390">
+<H1> onError</H1>
+</A>
+<A NAME="1057896">
+Executes JavaScript code when an error event occurs; that is, when the loading of a document or image causes an error. <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1057903">
+<I>Event handler for </I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1057911">
+<A HREF="doca1.htm#1078163"><CODE>Image</CODE></A>, <A HREF="win1.htm#1010280"><CODE>Window</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1057913">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1057915">
+Navigator 3.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1049199">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1049200">
+<PRE>onError="handlerText"</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1049201">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1049207">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1049204">
+<PRE><CODE>handlerText</CODE></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1049206">
+JavaScript code or a call to a JavaScript function.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1049208">
+<H4> Description</H4>
+</A>
+
+<A NAME="1010561">
+An error event occurs only when a JavaScript syntax or runtime error occurs, not when a browser error occurs. For example, if you try set <CODE>window.location.href='notThere.html'</CODE> and <CODE>notThere.html</CODE> does not exist, the resulting error message is a browser error message; therefore, <CODE>onError</CODE> would not intercept that message. However, an error event <I>is</I> triggered by a bad URL within an <CODE>IMG</CODE> tag or by corrupted image data.<P></A>
+<A NAME="1010562">
+<CODE>window.onerror</CODE> applies only to errors that occur in the window containing <CODE>window.onerror</CODE>, not in other windows.<P></A>
+<A NAME="1010563">
+<CODE>onError</CODE> can be any of the following:<P></A>
+<ul><P>
+<A NAME="1010564">
+<LI>null to suppress all JavaScript error dialogs. Setting <CODE>window.onerror</CODE> to null means your users won't see JavaScript errors caused by your own code.</LI>
+</A><P>
+<A NAME="1010565">
+<LI>The name of a function that handles errors (arguments are message text, URL, and line number of the offending line). To suppress the standard JavaScript error dialog, the function must return true. See Example 3 below.</LI>
+</A><P>
+<A NAME="1010566">
+<LI>A variable or property that contains null or a valid function reference.</LI>
+</A></ul><A NAME="1010567">
+If you write an error-handling function, you have three options for reporting errors:<P></A>
+<ul><P>
+<A NAME="1010568">
+<LI>Trace errors but let the standard JavaScript dialog report them (use an error handling function that returns false or does not return a value)</LI>
+</A><P>
+<A NAME="1010569">
+<LI>Report errors yourself and disable the standard error dialog (use an error handling function that returns true)</LI>
+</A><P>
+<A NAME="1010570">
+<LI>Turn off all error reporting (set the onError event handler to null)</LI>
+</A></ul>
+<A NAME="Head3;"></A>
+<A NAME="1097600">
+<H4> Event properties used</H4>
+</A>
+
+<A NAME="1097610">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1097603">
+<PRE>type</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1103620">
+Indicates the type of event. </A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1097607">
+<PRE>target</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1097609">
+Indicates the object to which the event was originally sent. </A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010582">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1010583">
+<B>Example 1: Null event handler.</B> In the following <CODE>IMG</CODE> tag, the code <CODE>onError="null"</CODE> suppresses error messages if errors occur when the image loads.<P></A>
+<A NAME="1010584">
+<PRE>&lt;IMG NAME="imageBad1" SRC="corrupt.gif" ALIGN="left" BORDER="2"<br>&nbsp;&nbsp;&nbsp;onError="null"&gt;</PRE></A><A NAME="1010585">
+<B>Example 2: Null event handler for a window.</B> The <CODE>onError</CODE> event handler for windows cannot be expressed in HTML. Therefore, you must spell it all lowercase and set it in a <CODE>SCRIPT</CODE> tag. The following code assigns null to the <CODE>onError</CODE> handler for the entire window, not just the <CODE>Image</CODE> object. This suppresses all JavaScript error messages, including those for the <CODE>Image</CODE> object.<P></A>
+<A NAME="1010586">
+<PRE>&lt;SCRIPT&gt;<br>window.onerror=null<br>&lt;/SCRIPT&gt;<br>&lt;IMG NAME="imageBad1" SRC="corrupt.gif" ALIGN="left" BORDER="2"&gt;</PRE></A><A NAME="1010587">
+However, if the <CODE>Image</CODE> object has a custom <CODE>onError</CODE> event handler, the handler would execute if the image had an error. This is because <CODE>window.onerror=null</CODE> suppresses JavaScript error messages, not <CODE>onError</CODE> event handlers.<P></A>
+<A NAME="1010588">
+<PRE>&lt;SCRIPT&gt;<br>window.onerror=null<br>function myErrorFunc() {<br>&nbsp;&nbsp;&nbsp;alert("The image had a nasty error.")<br>}<br>&lt;/SCRIPT&gt;<br>&lt;IMG NAME="imageBad1" SRC="corrupt.gif" ALIGN="left" BORDER="2"<br>&nbsp;&nbsp;&nbsp;onError="myErrorFunc()"&gt;</PRE></A><A NAME="1010589">
+In the following example, <CODE>window.onerror=null</CODE> suppresses all error reporting. Without <CODE>onerror=null</CODE>, the code would cause a stack overflow error because of infinite recursion.<P></A>
+<A NAME="1010590">
+<PRE>&lt;SCRIPT&gt;<br>window.onerror = null;<br>function testErrorFunction() {<br>&nbsp;&nbsp;&nbsp;testErrorFunction();<br>}<br>&lt;/SCRIPT&gt;<br>&lt;BODY onload="testErrorFunction()"&gt;<br>test message<br>&lt;/BODY&gt;</PRE></A><A NAME="1010591">
+<B>Example 3: Error handling function.</B> The following example defines a function, <CODE>myOnError</CODE>, that intercepts JavaScript errors. The function uses three arrays to store the message, URL, and line number for each error. When the user clicks the Display Error Report button, the <CODE>displayErrors</CODE> function opens a window and creates an error report in that window. Note that the function returns true to suppress the standard JavaScript error dialog.<P></A>
+<A NAME="1010592">
+<PRE>&lt;SCRIPT&gt;<br>window.onerror = myOnError</PRE></A><A NAME="1010593">
+<PRE>msgArray = new Array()<br>urlArray = new Array()<br>lnoArray = new Array()</PRE></A><A NAME="1010594">
+<PRE>function myOnError(msg, url, lno) {<br>&nbsp;&nbsp;&nbsp;msgArray[msgArray.length] = msg<br>&nbsp;&nbsp;&nbsp;urlArray[urlArray.length] = url<br>&nbsp;&nbsp;&nbsp;lnoArray[lnoArray.length] = lno<br>&nbsp;&nbsp;&nbsp;return true<br>}</PRE></A><A NAME="1010595">
+<PRE>function displayErrors() {<br>&nbsp;&nbsp;&nbsp;win2=window.open('','window2','scrollbars=yes')<br>&nbsp;&nbsp;&nbsp;win2.document.writeln('&lt;B&gt;Error Report&lt;/B&gt;&lt;P&gt;')</PRE></A><A NAME="1010596">
+<PRE>&nbsp;&nbsp;&nbsp;for (var i=0; i &lt; msgArray.length; i++) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;win2.document.writeln('&lt;B&gt;Error in file:&lt;/B&gt; ' + urlArray[i] + '&lt;BR&gt;')<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;win2.document.writeln('&lt;B&gt;Line number:&lt;/B&gt; ' + lnoArray[i] + '&lt;BR&gt;')<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;win2.document.writeln('&lt;B&gt;Message:&lt;/B&gt; ' + msgArray[i] + '&lt;P&gt;')<br>&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;win2.document.close()<br>}<br>&lt;/SCRIPT&gt;</PRE></A><A NAME="1010597">
+<PRE>&lt;BODY onload="noSuchFunction()"&gt;<br>&lt;FORM&gt;<br>&lt;BR&gt;&lt;INPUT TYPE="button" VALUE="This button has a syntax error"<br>&nbsp;&nbsp;&nbsp;onClick="alert('unterminated string)"&gt;</PRE></A><A NAME="1010598">
+<PRE>&lt;P&gt;&lt;INPUT TYPE="button" VALUE="Display Error Report"<br>&nbsp;&nbsp;&nbsp;onClick="displayErrors()"&gt;<br>&lt;/FORM&gt;</PRE></A><A NAME="1010599">
+This example produces the following output:<P></A>
+<A NAME="1010600">
+<PRE><B>Error Report</B></PRE></A><A NAME="1010601">
+<PRE><B>Error in file:</B> file:///c%7C/temp/onerror.html<br><B>Line number:</B> 34<br><B>Message:</B> unterminated string literal</PRE></A><A NAME="1010602">
+<PRE><B>Error in file:</B> file:///c%7C/temp/onerror.html<br><B>Line number:</B> 34<br><B>Message:</B> missing ) after argument list</PRE></A><A NAME="1010603">
+<PRE><B>Error in file:</B> file:///c%7C/temp/onerror.html<br><B>Line number:</B> 30<br><B>Message:</B> noSuchFunction is not defined</PRE></A><A NAME="1010604">
+<B>Example 4: Event handler calls a function.</B> In the following <CODE>IMG</CODE> tag, <CODE>onError</CODE> calls the function <CODE>badImage</CODE> if errors occur when the image loads.<P></A>
+<A NAME="1010605">
+<PRE>&lt;SCRIPT&gt;<br>function badImage(theImage) {<br>&nbsp;&nbsp;&nbsp;alert('Error: ' + theImage.name + ' did not load properly.')<br>}<br>&lt;/SCRIPT&gt;<br>&lt;FORM&gt;<br>&lt;IMG NAME="imageBad2" SRC="orca.gif" ALIGN="left" BORDER="2"<br>&nbsp;&nbsp;&nbsp;onError="badImage(this)"&gt;<br>&lt;/FORM&gt;</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1010606">
+<H4> See also</H4>
+</A>
+
+<A NAME="1010613">
+<A HREF="evnt2.htm#1017362"><CODE>onAbort</CODE></A>, <A HREF="evnt13.htm#1010680"><CODE>onLoad</CODE></A> <P></A>
+<A NAME="1063514">
+For general information on event handlers, see <A HREF="evnt.htm#1010270">"General Information about Events"</A>. <P></A>
+<A NAME="1094037">
+For information about the <CODE>event</CODE> object, see <A HREF="evnt1.htm#1093773"><CODE>event</CODE></A>.<P></A>
+
+<P><HR>
+<A HREF="contents.htm">[Contents]</A> <A HREF="evnt7.htm">[Previous]</A> <A HREF="evnt9.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<P ALIGN=right>
+
+<FONT SIZE=-2><I>Last Updated:  10/31/97  16:34:02
+</I></FONT>
+
+<HR SIZE=4>
+
+<P> <CENTER>Copyright © 1997
+<A HREF="http://home.netscape.com/misc/contact_info.html"
+TARGET=_top>Netscape Communications Corporation</A></FONT>
+</CENTER>
+<P>
+<P>
+</BODY>
+</HTML>
+
+

@@ -1,0 +1,122 @@
+<HTML>
+<HEAD>
+<TITLE>Events and Event Handlers
+</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A HREF="contents.htm">[Contents]</A> <A HREF="evnt15.htm">[Previous]</A> <A HREF="evnt17.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<HR>
+
+<A NAME="onMouseOut"></A>
+<A NAME="1010731">
+<H1> onMouseOut</H1>
+</A>
+<A NAME="1019263">
+Executes JavaScript code when a MouseOut event occurs; that is, each time the mouse pointer leaves an area (client-side image map) or link from inside that area or link. <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1045838">
+<I>Event handler for </I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1045840">
+<A HREF="doca3.htm#1113061"><CODE>Layer</CODE></A>, <A HREF="doc2.htm#1081434"><CODE>Link</CODE></A> </A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1045842">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1048031">
+Navigator 3.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1049624">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1049625">
+<PRE>onMouseOut="handlerText"</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1049626">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1049632">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1049629">
+<PRE><CODE>handlerText</CODE></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1049631">
+JavaScript code or a call to a JavaScript function.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010733">
+<H4> Description</H4>
+</A>
+
+<A NAME="1049653">
+If the mouse moves from one area into another in a client-side image map, you'll get <CODE>onMouseOut</CODE> for the first area, then <CODE>onMouseOver</CODE> for the second.<P></A>
+<A NAME="1013105">
+<CODE>Area</CODE> objects that use the <CODE>onMouseOut</CODE> event handler must include the <CODE>HREF</CODE> attribute within the <CODE>AREA</CODE> tag.<P></A>
+<A NAME="1013106">
+You must return true within the event handler if you want to set the <CODE>status</CODE> or <CODE>defaultStatus</CODE> properties with <CODE>onMouseOver</CODE>.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1094424">
+<H4> Event properties used</H4>
+</A>
+
+<A NAME="1094438">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1094427">
+<PRE>type</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1103664">
+Indicates the type of event. </A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1094431">
+<PRE>target</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1094433">
+Indicates the object to which the event was originally sent. </A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1094435">
+<PRE>layerX, layerY,<br>pageX, pageY,<br>screenX, screenY</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1094437">
+Represent the cursor location at the time the <CODE>MouseOut</CODE> event occurred. </A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010747">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1010751">
+See the examples for <A HREF="doc2.htm#1081434"><CODE>Link</CODE></A>.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010752">
+<H4> See also</H4>
+</A>
+
+<A NAME="1010756">
+<A HREF="evnt17.htm#1010759"><CODE>onMouseOver</CODE></A> <P></A>
+<A NAME="1063840">
+For general information on event handlers, see <A HREF="evnt.htm#1010270">"General Information about Events"</A>. <P></A>
+<A NAME="1094444">
+For information about the <CODE>event</CODE> object, see <A HREF="evnt1.htm#1093773"><CODE>event</CODE></A>.<P></A>
+
+<P><HR>
+<A HREF="contents.htm">[Contents]</A> <A HREF="evnt15.htm">[Previous]</A> <A HREF="evnt17.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<P ALIGN=right>
+
+<FONT SIZE=-2><I>Last Updated:  10/31/97  16:34:02
+</I></FONT>
+
+<HR SIZE=4>
+
+<P> <CENTER>Copyright © 1997
+<A HREF="http://home.netscape.com/misc/contact_info.html"
+TARGET=_top>Netscape Communications Corporation</A></FONT>
+</CENTER>
+<P>
+<P>
+</BODY>
+</HTML>
+
+

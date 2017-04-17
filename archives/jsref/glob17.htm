@@ -1,0 +1,107 @@
+<HTML>
+<HEAD>
+<TITLE>Global Functions
+</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A HREF="contents.htm">[Contents]</A> <A HREF="glob16.htm">[Previous]</A> <A HREF="glob18.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<HR>
+
+<A NAME="registerCFunction"></A>
+<A NAME="1012586">
+<H1> registerCFunction</H1>
+</A>
+<A NAME="1012587">
+Registers an external function for use with a server-side JavaScript application.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1033476">
+<I>Server-side function</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1033478">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1033480">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1033482">
+LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012588">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1012589">
+<PRE>registerCFunction(JSFunctionName, libraryPath,<br>&nbsp;&nbsp;&nbsp;externalFunctionName)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1012590">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1012604">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012593">
+<PRE>JSFunctionName</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1012595">
+The name of the function as it is called in JavaScript.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012597">
+<PRE>libraryPath</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1012599">
+The full filename and path of the library, using the conventions of your operating system.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012601">
+<PRE>externalFunctionName</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1012603">
+The name of the function as it is defined in the library.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012605">
+<H4> Description</H4>
+</A>
+
+<A NAME="1034622">
+<CODE>registerCFunction</CODE> is a top-level server-side JavaScript function that is not associated with any object.<P></A>
+<A NAME="1012606">
+Use <CODE>registerCFunction</CODE> to make an external function available to a server-side JavaScript application. The function can be written in any language, but you must use C calling conventions.<P></A>
+<A NAME="1012607">
+To use an external function in a server-side JavaScript application, register the function with <CODE>registerCFunction</CODE>, and then call it with the <CODE>callC</CODE> function. Once an application registers a function, you can call the function any number of times.<P></A>
+<A NAME="1012608">
+The <CODE>registerCFunction</CODE> function returns true if the external function is registered successfully; otherwise, it returns false. For example, <CODE>registerCFunction</CODE> can return false if the JavaScript runtime engine cannot find either the library or the specified function inside the library.<P></A>
+<A NAME="1012609">
+To use a backslash (\) character as a directory separator in the <CODE>libraryPath</CODE> parameter, you must enter a double backslash (\\). The single backslash is a reserved character.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012613">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1012614">
+See the example for the <CODE>callC</CODE> function.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012615">
+<H4> See also</H4>
+</A>
+
+<A NAME="1012619">
+<A HREF="glob4.htm#1012275"><CODE>callC</CODE></A> <P></A>
+
+<P><HR>
+<A HREF="contents.htm">[Contents]</A> <A HREF="glob16.htm">[Previous]</A> <A HREF="glob18.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<P ALIGN=right>
+
+<FONT SIZE=-2><I>Last Updated:  10/31/97  16:38:00
+</I></FONT>
+
+<HR SIZE=4>
+
+<P> <CENTER>Copyright © 1997
+<A HREF="http://home.netscape.com/misc/contact_info.html"
+TARGET=_top>Netscape Communications Corporation</A></FONT>
+</CENTER>
+<P>
+<P>
+</BODY>
+</HTML>
+
+

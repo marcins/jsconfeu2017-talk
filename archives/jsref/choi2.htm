@@ -1,0 +1,551 @@
+<HTML>
+<HEAD>
+<TITLE>
+</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A HREF="contents.htm">[Contents]</A> <A HREF="choi1.htm">[Previous]</A> <A HREF="choi3.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<HR>
+
+<A NAME="Select"></A>
+<A NAME="1013973">
+<H1> Select</H1>
+</A>
+<A NAME="1013974">
+A selection list on an HTML form. The user can choose one or more items from a selection list, depending on how the list was created.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1086951">
+<I>Client-side object</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1086956">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1086958">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1087315">
+Navigator 2.0<br>Navigator 3.0: added <CODE>type</CODE> property; added the ability to add and delete options.<br>Navigator 4.0: added <CODE>handleEvent</CODE> method.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1048124">
+<H4> Created by</H4>
+</A>
+
+<A NAME="1048125">
+The HTML <CODE><A HREF="http://developer.netscape.com/library/documentation/htmlguid/index.htm?content=tags10.htm#tags:SELECT" TARGET="_top">SELECT</A></CODE> tag. For a given form, the JavaScript runtime engine creates appropriate <CODE>Select</CODE> objects for each selection list and puts these objects in the <A HREF="form1.htm#1010594"><CODE>elements</CODE></A> array of the corresponding <A HREF="form1.htm#1010276"><CODE>Form</CODE></A> object. You access a <CODE>Select</CODE> object by indexing this array. You can index the array either by number or, if supplied, by using the value of the <CODE>NAME</CODE> attribute.<P></A>
+<A NAME="1071358">
+The runtime engine also creates <A HREF="choi3.htm#1015292"><CODE>Option</CODE></A> objects for each <CODE><A HREF="http://developer.netscape.com/library/documentation/htmlguid/index.htm?content=tags10.htm#tags:OPTION" TARGET="_top">OPTION</A></CODE> tag inside the <CODE>SELECT</CODE> tag.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1071115">
+<H4> Event handlers</H4>
+</A>
+
+<ul><A NAME="1071119">
+<LI><A HREF="evnt3.htm#1010414"><CODE>onBlur</CODE></A></LI>
+</A><A NAME="1071123">
+<LI><A HREF="evnt4.htm#1010483"><CODE>onChange</CODE></A></LI>
+</A><A NAME="1071127">
+<LI><A HREF="evnt9.htm#1010615"><CODE>onFocus</CODE></A></LI>
+</A></ul>
+<A NAME="Head3;"></A>
+<A NAME="1071089">
+<H4> Description</H4>
+</A>
+
+<A NAME="1071090">
+The following figure shows a form containing two selection lists. The user can choose one item from the list on the left and can choose multiple items from the list on the right:<P>
+<IMG SRC="select.gif">
+<P></A>
+<A NAME="1014070">
+A <CODE>Select</CODE> object is a form element and must be defined within a <CODE><A HREF="http://developer.netscape.com/library/documentation/htmlguid/index.htm?content=tags10.htm#tags:FORM" TARGET="_top">FORM</A></CODE> tag.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1014113">
+<H4> Property Summary</H4>
+</A>
+
+<A NAME="1014165">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1024005">
+<PRE><A HREF="choi2.htm#1014403"><CODE>form</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1024007">
+Specifies the form containing the selection list.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1024012">
+<PRE><A HREF="choi2.htm#1014436"><CODE>length</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1024014">
+Reflects the number of options in the selection list.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1024019">
+<PRE><A HREF="choi2.htm#1014510"><CODE>name</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1024021">
+Reflects the <CODE>NAME</CODE> attribute.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1024026">
+<PRE><A HREF="choi2.htm#1014568"><CODE>options</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1024028">
+Reflects the <CODE>OPTION</CODE> tags.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1024033">
+<PRE><A HREF="choi2.htm#1014626"><CODE>selectedIndex</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1024035">
+Reflects the index of the selected option (or the first selected option, if multiple options are selected).</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1024040">
+<PRE><A HREF="choi1.htm#1013375"><CODE>type</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1024042">
+Specifies that the object is represents a selection list and whether it can have one or more selected options.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1014275">
+<H4> Method Summary</H4>
+</A>
+
+<A NAME="1014303">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1024404">
+<PRE><A HREF="choi2.htm#1014797"><CODE>blur</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1024406">
+Removes focus from the selection list.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1024418">
+<PRE><A HREF="choi2.htm#1014860"><CODE>focus</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1024420">
+Gives focus to the selection list.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1024425">
+<PRE><A HREF="choi2.htm#1124429"><CODE>handleEvent</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1024427">
+Invokes the handler for the specified event.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1014320">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1014321">
+<B>Example 1.</B> The following example displays two selection lists. In the first list, the user can select only one item; in the second list, the user can select multiple items.<P></A>
+<A NAME="1014322">
+<PRE>Choose the music type for your free CD:<br>&lt;SELECT NAME="music_type_single"&gt;<br>&nbsp;&nbsp;&nbsp;&lt;OPTION SELECTED&gt; R&amp;B<br>&nbsp;&nbsp;&nbsp;&lt;OPTION&gt; Jazz<br>&nbsp;&nbsp;&nbsp;&lt;OPTION&gt; Blues<br>&nbsp;&nbsp;&nbsp;&lt;OPTION&gt; New Age<br>&lt;/SELECT&gt;<br>&lt;P&gt;Choose the music types for your free CDs:<br>&lt;BR&gt;&lt;SELECT NAME="music_type_multi" MULTIPLE&gt;<br>&nbsp;&nbsp;&nbsp;&lt;OPTION SELECTED&gt; R&amp;B<br>&nbsp;&nbsp;&nbsp;&lt;OPTION&gt; Jazz<br>&nbsp;&nbsp;&nbsp;&lt;OPTION&gt; Blues<br>&nbsp;&nbsp;&nbsp;&lt;OPTION&gt; New Age<br>&lt;/SELECT&gt;</PRE></A><A NAME="1014323">
+<B>Example 2.</B> The following example displays two selection lists that let the user choose a month and day. These selection lists are initialized to the current date. The user can change the month and day by using the selection lists or by choosing preset dates from radio buttons. Text fields on the form display the values of the <CODE>Select</CODE> object's properties and indicate the date chosen and whether it is Cinco de Mayo.<P></A>
+<A NAME="1108589">
+<PRE>&lt;HTML&gt;<br>&lt;HEAD&gt;<br>&lt;TITLE&gt;Select object example&lt;/TITLE&gt;<br>&lt;/HEAD&gt;<br>&lt;BODY&gt;<br>&lt;SCRIPT&gt;<br>var today = new Date()<br>//---------------<br>function updatePropertyDisplay(monthObj,dayObj) {<br>&nbsp;&nbsp;&nbsp;// Get date strings<br>&nbsp;&nbsp;&nbsp;var monthInteger, dayInteger, monthString, dayString<br>&nbsp;&nbsp;&nbsp;monthInteger=monthObj.selectedIndex<br>&nbsp;&nbsp;&nbsp;dayInteger=dayObj.selectedIndex<br>&nbsp;&nbsp;&nbsp;monthString=monthObj.options[monthInteger].text<br>&nbsp;&nbsp;&nbsp;dayString=dayObj.options[dayInteger].text<br>&nbsp;&nbsp;&nbsp;// Display property values<br>&nbsp;&nbsp;&nbsp;document.selectForm.textFullDate.value=monthString + " " + dayString<br>&nbsp;&nbsp;&nbsp;document.selectForm.textMonthLength.value=monthObj.length<br>&nbsp;&nbsp;&nbsp;document.selectForm.textDayLength.value=dayObj.length<br>&nbsp;&nbsp;&nbsp;document.selectForm.textMonthName.value=monthObj.name<br>&nbsp;&nbsp;&nbsp;document.selectForm.textDayName.value=dayObj.name<br>&nbsp;&nbsp;&nbsp;document.selectForm.textMonthIndex.value=monthObj.selectedIndex<br>&nbsp;&nbsp;&nbsp;document.selectForm.textDayIndex.value=dayObj.selectedIndex<br>&nbsp;&nbsp;&nbsp;// Is it Cinco de Mayo?<br>&nbsp;&nbsp;&nbsp;if (monthObj.options[4].selected &amp;&amp; dayObj.options[4].selected)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.selectForm.textCinco.value="Yes!"<br>&nbsp;&nbsp;&nbsp;else<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.selectForm.textCinco.value="No"<br>}<br>&lt;/SCRIPT&gt;<br>&lt;!---------------&gt;<br>&lt;FORM NAME="selectForm"&gt;<br>&lt;P&gt;&lt;B&gt;Choose a month and day:&lt;/B&gt; <br>Month: &lt;SELECT NAME="monthSelection"<br>&nbsp;&nbsp;&nbsp;onChange="updatePropertyDisplay(this,document.selectForm.daySelection)"&gt;<br>&nbsp;&nbsp;&nbsp;&lt;OPTION&gt; January &lt;OPTION&gt; February &lt;OPTION&gt; March<br>&nbsp;&nbsp;&nbsp;&lt;OPTION&gt; April &lt;OPTION&gt; May &lt;OPTION&gt; June<br>&nbsp;&nbsp;&nbsp;&lt;OPTION&gt; July &lt;OPTION&gt; August &lt;OPTION&gt; September<br>&nbsp;&nbsp;&nbsp;&lt;OPTION&gt; October &lt;OPTION&gt; November &lt;OPTION&gt; December<br>&lt;/SELECT&gt;<br>Day: &lt;SELECT NAME="daySelection"<br>&nbsp;&nbsp;&nbsp;onChange="updatePropertyDisplay(document.selectForm.monthSelection,this)"&gt;<br>&nbsp;&nbsp;&nbsp;&lt;OPTION&gt; 1 &lt;OPTION&gt; 2 &lt;OPTION&gt; 3 &lt;OPTION&gt; 4 &lt;OPTION&gt; 5<br>&nbsp;&nbsp;&nbsp;&lt;OPTION&gt; 6 &lt;OPTION&gt; 7 &lt;OPTION&gt; 8 &lt;OPTION&gt; 9 &lt;OPTION&gt; 10<br>&nbsp;&nbsp;&nbsp;&lt;OPTION&gt; 11 &lt;OPTION&gt; 12 &lt;OPTION&gt; 13 &lt;OPTION&gt; 14 &lt;OPTION&gt; 15<br>&nbsp;&nbsp;&nbsp;&lt;OPTION&gt; 16 &lt;OPTION&gt; 17 &lt;OPTION&gt; 18 &lt;OPTION&gt; 19 &lt;OPTION&gt; 20<br>&nbsp;&nbsp;&nbsp;&lt;OPTION&gt; 21 &lt;OPTION&gt; 22 &lt;OPTION&gt; 23 &lt;OPTION&gt; 24 &lt;OPTION&gt; 25<br>&nbsp;&nbsp;&nbsp;&lt;OPTION&gt; 26 &lt;OPTION&gt; 27 &lt;OPTION&gt; 28 &lt;OPTION&gt; 29 &lt;OPTION&gt; 30<br>&nbsp;&nbsp;&nbsp;&lt;OPTION&gt; 31<br>&lt;/SELECT&gt;<br>&lt;P&gt;&lt;B&gt;Set the date to: &lt;/B&gt;<br>&lt;INPUT TYPE="radio" NAME="dateChoice"<br>&nbsp;&nbsp;&nbsp;onClick="<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;monthSelection.selectedIndex=0;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;daySelection.selectedIndex=0;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;updatePropertyDisplay<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.selectForm.monthSelection,document.selectForm.daySelection)"&gt;<br>&nbsp;&nbsp;&nbsp;New Year's Day<br>&lt;INPUT TYPE="radio" NAME="dateChoice"<br>&nbsp;&nbsp;&nbsp;onClick="<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;monthSelection.selectedIndex=4;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;daySelection.selectedIndex=4;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;updatePropertyDisplay<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(document.selectForm.monthSelection,document.selectForm.daySelection)"&gt;<br>&nbsp;&nbsp;&nbsp;Cinco de Mayo<br>&lt;INPUT TYPE="radio" NAME="dateChoice"<br>&nbsp;&nbsp;&nbsp;onClick="<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;monthSelection.selectedIndex=5;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;daySelection.selectedIndex=20;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;updatePropertyDisplay<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(document.selectForm.monthSelection,document.selectForm.daySelection)"&gt;<br>&nbsp;&nbsp;&nbsp;Summer Solstice<br>&lt;P&gt;&lt;B&gt;Property values:&lt;/B&gt;<br>&lt;BR&gt;Date chosen: &lt;INPUT TYPE="text" NAME="textFullDate" VALUE="" SIZE=20"&gt;<br>&lt;BR&gt;monthSelection.length&lt;INPUT TYPE="text" NAME="textMonthLength" VALUE="" SIZE=20"&gt;<br>&lt;BR&gt;daySelection.length&lt;INPUT TYPE="text" NAME="textDayLength" VALUE="" SIZE=20"&gt;<br>&lt;BR&gt;monthSelection.name&lt;INPUT TYPE="text" NAME="textMonthName" VALUE="" SIZE=20"&gt;<br>&lt;BR&gt;daySelection.name&lt;INPUT TYPE="text" NAME="textDayName" VALUE="" SIZE=20"&gt;<br>&lt;BR&gt;monthSelection.selectedIndex<br>&nbsp;&nbsp;&nbsp;&lt;INPUT TYPE="text" NAME="textMonthIndex" VALUE="" SIZE=20"&gt;<br>&lt;BR&gt;daySelection.selectedIndex&lt;INPUT TYPE="text" NAME="textDayIndex" VALUE="" SIZE=20"&gt;<br>&lt;BR&gt;Is it Cinco de Mayo? &lt;INPUT TYPE="text" NAME="textCinco" VALUE="" SIZE=20"&gt;<br>&lt;SCRIPT&gt;<br>document.selectForm.monthSelection.selectedIndex=today.getMonth()<br>document.selectForm.daySelection.selectedIndex=today.getDate()-1<br>updatePropertyDisplay(document.selectForm.monthSelection,document.selectForm.daySelection)<br>&lt;/SCRIPT&gt;<br>&lt;/FORM&gt;<br>&lt;/BODY&gt;<br>&lt;/HTML&gt;</PRE></A><A NAME="1108596">
+<B>Example 3. Add an option with the Option constructor.</B> The following example creates two <CODE>Select</CODE> objects, one with and one without the <CODE>MULTIPLE</CODE> attribute. No options are initially defined for either object. When the user clicks a button associated with the <CODE>Select</CODE> object, the <CODE>populate</CODE> function creates four options for the <CODE>Select</CODE> object and selects the first option.<P></A>
+<A NAME="1108505">
+<PRE>&lt;SCRIPT&gt;<br>function populate(inForm) {<br>&nbsp;&nbsp;&nbsp;colorArray = new Array("Red", "Blue", "Yellow", "Green")</PRE></A><A NAME="1108506">
+<PRE>&nbsp;&nbsp;&nbsp;var option0 = new Option("Red", "color_red")<br>&nbsp;&nbsp;&nbsp;var option1 = new Option("Blue", "color_blue")<br>&nbsp;&nbsp;&nbsp;var option2 = new Option("Yellow", "color_yellow")<br>&nbsp;&nbsp;&nbsp;var option3 = new Option("Green", "color_green")</PRE></A><A NAME="1108507">
+<PRE>&nbsp;&nbsp;&nbsp;for (var i=0; i &lt; 4; i++) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eval("inForm.selectTest.options[i]=option" + i)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (i==0) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;inForm.selectTest.options[i].selected=true<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;}</PRE></A><A NAME="1108508">
+<PRE>&nbsp;&nbsp;&nbsp;history.go(0)<br>}<br>&lt;/SCRIPT&gt;</PRE></A><A NAME="1108509">
+<PRE><br>&lt;H3&gt;Select Option() constructor&lt;/H3&gt;<br>&lt;FORM&gt;<br>&lt;SELECT NAME="selectTest"&gt;&lt;/SELECT&gt;&lt;P&gt;<br>&lt;INPUT TYPE="button" VALUE="Populate Select List" onClick="populate(this.form)"&gt;<br>&lt;P&gt;<br>&lt;/FORM&gt;</PRE></A><A NAME="1108510">
+<PRE>&lt;HR&gt;<br>&lt;H3&gt;Select-Multiple Option() constructor&lt;/H3&gt;<br>&lt;FORM&gt;<br>&lt;SELECT NAME="selectTest" multiple&gt;&lt;/SELECT&gt;&lt;P&gt;<br>&lt;INPUT TYPE="button" VALUE="Populate Select List" onClick="populate(this.form)"&gt;<br>&lt;/FORM&gt;</PRE></A><A NAME="1108476">
+<B>Example 4. Delete an option.</B> The following function removes an option from a <CODE>Select</CODE> object.<P></A>
+<A NAME="1014333">
+<PRE>function deleteAnItem(theList,itemNo) {<br>&nbsp;&nbsp;&nbsp;theList.options[itemNo]=null<br>&nbsp;&nbsp;&nbsp;history.go(0)<br>}</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1014338">
+<H4> See also</H4>
+</A>
+
+<A NAME="1014345">
+<A HREF="form1.htm#1010276"><CODE>Form</CODE></A>, <A HREF="choi.htm#1011977"><CODE>Radio</CODE></A> <P></A>
+
+<A NAME="Head2;"></A>
+<A NAME="1014347">
+<H3> Properties</H3>
+</A>
+
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1014403">
+<H2>form</H2>
+</A>
+
+<A NAME="1014404">
+An object reference specifying the form containing the selection list.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1087736">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1087741">
+<A HREF="choi2.htm#1013973"><CODE>Select</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1087836">
+<I>Read-only</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1087838">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1087743">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1087745">
+Navigator 2.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1014416">
+<H4> Description</H4>
+</A>
+
+<A NAME="1014417">
+Each form element has a <CODE>form</CODE> property that is a reference to the element's parent form. This property is especially useful in event handlers, where you might need to refer to another element on the current form.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1014430">
+<H4> See also</H4>
+</A>
+
+<A NAME="1014434">
+<A HREF="form1.htm#1010276"><CODE>Form</CODE></A><P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1014436">
+<H2>length</H2>
+</A>
+
+<A NAME="1014438">
+The number of options in the selection list.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1087944">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1087949">
+<A HREF="choi2.htm#1013973"><CODE>Select</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1089417">
+<I>Read-only</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1089419">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1087951">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1087953">
+Navigator 2.0</A></P>
+
+</TABLE>
+ <P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1014510">
+<H2>name</H2>
+</A>
+
+<A NAME="1119001">
+A string specifying the name of the selection list.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1088066">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1088071">
+<A HREF="choi2.htm#1013973"><CODE>Select</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1088073">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1088075">
+Navigator 2.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1118974">
+<H4> Security</H4>
+</A>
+
+<A NAME="1118975">
+Navigator&nbsp;3.0: This property is tainted by default. For information on data tainting, see <A HREF="intro.htm#1014735">"JavaScript Security"</A>.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1014548">
+<H4> Description</H4>
+</A>
+
+<A NAME="1014550">
+The <CODE>name</CODE> property initially reflects the value of the <CODE>NAME</CODE> attribute. Changing the <CODE>name</CODE> property overrides this setting. The <CODE>name</CODE> property is not displayed on the screen; it is used to refer to the list programmatically.<P></A>
+<A NAME="1091270">
+If multiple objects on the same form have the same <CODE>NAME</CODE> attribute, an array of the given name is created automatically. Each element in the array represents an individual <CODE>Form</CODE> object. Elements are indexed in source order starting at 0. For example, if two <A HREF="txt.htm#1023924"><CODE>Text</CODE></A> elements and a <A HREF="choi2.htm#1013973"><CODE>Select</CODE></A> element on the same form have their <CODE>NAME</CODE> attribute set to <CODE>"myField"</CODE>, an array with the elements <CODE>myField[0]</CODE>, <CODE>myField[1]</CODE>, and <CODE>myField[2]</CODE> is created. You need to be aware of this situation in your code and know whether <CODE>myField</CODE> refers to a single element or to an array of elements.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1014556">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1014557">
+In the following example, the <CODE>valueGetter</CODE> function uses a <CODE>for</CODE> loop to iterate over the array of elements on the <CODE>valueTest</CODE> form. The <CODE>msgWindow</CODE> window displays the names of all the elements on the form:<P></A>
+<A NAME="1014558">
+<PRE>newWindow=window.open("http://home.netscape.com")</PRE></A><A NAME="1014559">
+<PRE>function valueGetter() {<br>&nbsp;&nbsp;&nbsp;var msgWindow=window.open("")<br>&nbsp;&nbsp;&nbsp;for (var i = 0; i &lt; newWindow.document.valueTest.elements.length; i++) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;msgWindow.document.write(newWindow.document.valueTest.elements[i].name + "&lt;BR&gt;")<br>&nbsp;&nbsp;&nbsp;}<br>}</PRE></A>
+<A NAME="Head2Ref;"></A>
+<A NAME="1014568">
+<H2>options</H2>
+</A>
+
+<A NAME="1014569">
+An array corresponding to options in a <CODE>Select</CODE> object in source order.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1088181">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1088186">
+<A HREF="choi2.htm#1013973"><CODE>Select</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1110521">
+<I>Read-only</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1110523">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1088188">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1088190">
+Navigator 2.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1110083">
+<H4> Description</H4>
+</A>
+
+<A NAME="1110181">
+You can refer to the options of a <CODE>Select</CODE> object by using the <CODE>options</CODE> array. This array contains an entry for each option in a <CODE>Select</CODE> object (<CODE><A HREF="http://developer.netscape.com/library/documentation/htmlguid/index.htm?content=tags10.htm#tags:OPTION" TARGET="_top">OPTION</A></CODE> tag) in source order. For example, if a <CODE>Select</CODE> object named <CODE>musicStyle</CODE> contains three options, you can access these options as <CODE>musicStyle.options[0]</CODE>, <CODE>musicStyle.options[1]</CODE>, and <CODE>musicStyle.options[2]</CODE>.<P></A>
+<A NAME="1110183">
+To obtain the number of options in the selection list, you can use either <A HREF="choi2.htm#1014436"><CODE>Select.length</CODE></A> or the <CODE>length</CODE> property of the <CODE>options</CODE> array. For example, you can get the number of options in the <CODE>musicStyle</CODE> selection list with either of these expressions:<P></A>
+<A NAME="1110184">
+<PRE>musicStyle.length<br>musicStyle.options.length</PRE></A><A NAME="1113076">
+You can add or remove options from a selection list using this array. To add or replace an option to an existing <CODE>Select</CODE> object, you assign a new <A HREF="choi3.htm#1015292"><CODE>Option</CODE></A> object to a place in the array. For example, to create a new <A HREF="choi3.htm#1015292"><CODE>Option</CODE></A> object called <CODE>jeans</CODE> and add it to the end of the selection list named <CODE>myList</CODE>, you could use this code:<P></A>
+<A NAME="1113083">
+<PRE>jeans = new Option("Blue Jeans", "jeans", false, false);<br>myList.options[myList.length] = jeans;</PRE></A><A NAME="1113084">
+To delete an option from a <CODE>Select</CODE> object, you set the appropriate index of the <CODE>options</CODE> array to null. Removing an option compresses the options array. For example, assume that <CODE>myList</CODE> has 5 elements in it, the value of the fourth element is <CODE>"foo"</CODE>, and you execute this statement:<P></A>
+<A NAME="1113085">
+<PRE>myList.options[1] = null</PRE></A><A NAME="1113086">
+Now, <CODE>myList</CODE> has 4 elements in it and the value of the <I>third</I> element is <CODE>"foo"</CODE>. <P></A>
+<A NAME="1113216">
+After you delete an option, you must refresh the document by using <CODE>history.go(0)</CODE>. This statement must be last. When the document reloads, variables are lost if not saved in cookies or form element values.<P></A>
+<A NAME="1110187">
+You can determine which option in a selection list is currently selected by using either the <CODE>selectedIndex</CODE> property of the <CODE>options</CODE> array or of the <CODE>Select</CODE> object itself. That is, the following expressions return the same value:<P></A>
+<A NAME="1110624">
+<PRE>musicStyle.selectedIndex<br>musicStyle.options.selectedIndex</PRE></A><A NAME="1110647">
+For more information about this property, see <A HREF="choi2.htm#1014626"><CODE>Select.selectedIndex</CODE></A>.<P></A>
+<A NAME="1110685">
+For <CODE>Select</CODE> objects that can have multiple selections (that is, the <CODE>SELECT</CODE> tag has the <CODE>MULTIPLE</CODE> attribute), the <CODE>selectedIndex</CODE> property is not very useful. In this case, it returns the index of the first selection. To find all the selected options, you have to loop and test each option individually. For example, to print a list of all selected options in a selection list named <CODE>mySelect</CODE>, you could use code such as this:<P></A>
+<A NAME="1110188">
+<PRE>document.write("You've selected the following options:\n")<br>for (var i = 0; i &lt; mySelect.options.length; i++) {<br>&nbsp;&nbsp;&nbsp;if (mySelect.options[i].selected)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.write(" mySelect.options[i].text\n")<br>}</PRE></A><A NAME="1113137">
+In general, to work with individual options in a selection list, you work with the appropriate <A HREF="choi3.htm#1015292"><CODE>Option</CODE></A> object.<P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1014626">
+<H2>selectedIndex</H2>
+</A>
+
+<A NAME="1014627">
+An integer specifying the index of the selected option in a <CODE>Select</CODE> object.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1088393">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1088398">
+<A HREF="choi2.htm#1013973"><CODE>Select</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1088400">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1088402">
+Navigator 2.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1119682">
+<H4> Security</H4>
+</A>
+
+<A NAME="1119683">
+Navigator&nbsp;3.0: This property is tainted by default. For information on data tainting, see <A HREF="intro.htm#1014735">"JavaScript Security"</A>.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1014642">
+<H4> Description</H4>
+</A>
+
+<A NAME="1014643">
+Options in a <CODE>Select</CODE> object are indexed in the order in which they are defined, starting with an index of 0. You can set the <CODE>selectedIndex</CODE> property at any time. The display of the <CODE>Select</CODE> object updates immediately when you set the <CODE>selectedIndex</CODE> property. <P></A>
+<A NAME="1110694">
+If no option is selected, <CODE>selectedIndex</CODE> has a value of -1.<P></A>
+<A NAME="1014644">
+In general, the <CODE>selectedIndex</CODE> property is more useful for <CODE>Select</CODE> objects that are created without the <CODE>MULTIPLE</CODE> attribute. If you evaluate <CODE>selectedIndex</CODE> when multiple options are selected, the <CODE>selectedIndex</CODE> property specifies the index of the first option only. Setting <CODE>selectedIndex</CODE> clears any other options that are selected in the <CODE>Select</CODE> object.<P></A>
+<A NAME="1014645">
+The <A HREF="choi3.htm#1107234"><CODE>Option.selected</CODE></A> property is more useful in conjunction with <CODE>Select</CODE> objects that are created with the <CODE>MULTIPLE</CODE> attribute. With the <A HREF="choi3.htm#1107234"><CODE>Option.selected</CODE></A> property, you can evaluate every option in the <A HREF="choi2.htm#1014568"><CODE>options</CODE></A> array to determine multiple selections, and you can select individual options without clearing the selection of other options.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1014648">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1014649">
+In the following example, the <CODE>getSelectedIndex</CODE> function returns the selected index in the <CODE>musicType</CODE> <CODE>Select</CODE> object:<P></A>
+<A NAME="1014650">
+<PRE>function getSelectedIndex() {<br>&nbsp;&nbsp;&nbsp;return document.musicForm.musicType.selectedIndex<br>}</PRE></A><A NAME="1014651">
+The previous example assumes that the <CODE>Select</CODE> object is similar to the following:<P></A>
+<A NAME="1014652">
+<PRE>&lt;SELECT NAME="musicType"&gt; <br>&nbsp;&nbsp;&nbsp;&lt;OPTION SELECTED&gt; R&amp;B<br>&nbsp;&nbsp;&nbsp;&lt;OPTION&gt; Jazz<br>&nbsp;&nbsp;&nbsp;&lt;OPTION&gt; Blues<br>&nbsp;&nbsp;&nbsp;&lt;OPTION&gt; New Age<br>&lt;/SELECT&gt;</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1014653">
+<H4> See also</H4>
+</A>
+
+<A NAME="1014663">
+<A HREF="choi3.htm#1106899"><CODE>Option.defaultSelected</CODE></A>, <A HREF="choi3.htm#1107234"><CODE>Option.selected</CODE></A> <P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1014705">
+<H2>type</H2>
+</A>
+
+<A NAME="1014706">
+For all <CODE>Select</CODE> objects created with the <CODE>MULTIPLE</CODE> keyword, the value of the <CODE>type</CODE> property is <CODE>"select-multiple"</CODE>. For <CODE>Select</CODE> objects created without this keyword, the value of the <CODE>type</CODE> property is <CODE>"select-one"</CODE>. This property specifies the form element's type.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1088785">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1088790">
+<A HREF="choi2.htm#1013973"><CODE>Select</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1088875">
+<I>Read-only</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1088877">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1088792">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1088794">
+Navigator 3.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1014788">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1014789">
+The following example writes the value of the <CODE>type</CODE> property for every element on a form.<P></A>
+<A NAME="1014790">
+<PRE>for (var i = 0; i &lt; document.form1.elements.length; i++) {<br>&nbsp;&nbsp;&nbsp;document.writeln("&lt;BR&gt;type is " + document.form1.elements[i].type)<br>}</PRE></A>
+<A NAME="Head2;"></A>
+<A NAME="1014795">
+<H3> Methods</H3>
+</A>
+
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1014797">
+<H2>blur</H2>
+</A>
+
+<A NAME="1014799">
+Removes focus from the selection list.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1088889">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1088894">
+<A HREF="choi2.htm#1013973"><CODE>Select</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1088896">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1088898">
+Navigator 2.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1014800">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1014801">
+<PRE>blur()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1014802">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1014838">
+None<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1014850">
+<H4> See also</H4>
+</A>
+
+<A NAME="1014857">
+<A HREF="choi2.htm#1014860"><CODE>Select.focus</CODE></A><P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1014860">
+<H2>focus</H2>
+</A>
+
+<A NAME="1014861">
+Navigates to the selection list and gives it focus.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1088942">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1088947">
+<A HREF="choi2.htm#1013973"><CODE>Select</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1088949">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1088951">
+Navigator 2.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1014862">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1014863">
+<PRE>focus()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1014864">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1014900">
+None<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1014903">
+<H4> Description</H4>
+</A>
+
+<A NAME="1014904">
+Use the <CODE>focus</CODE> method to navigate to a selection list and give it focus. The user can then make selections from the list. <P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1014914">
+<H4> See also</H4>
+</A>
+
+<A NAME="1014921">
+<A HREF="choi2.htm#1014797"><CODE>Select.blur</CODE></A><P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1124429">
+<H2>handleEvent</H2>
+</A>
+
+<A NAME="1124442">
+Invokes the handler for the specified event. <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1124432">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1124437">
+<A HREF="choi2.htm#1013973"><CODE>Select</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1124439">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1124441">
+Navigator 4.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1124443">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1124444">
+<PRE>handleEvent(event)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1124445">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1124451">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1124448">
+<PRE>event</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1124450">
+The name of an event for which the object has an event handler.</A></P>
+
+</TABLE>
+<P></A>
+
+<P><HR>
+<A HREF="contents.htm">[Contents]</A> <A HREF="choi1.htm">[Previous]</A> <A HREF="choi3.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<P ALIGN=right>
+
+<FONT SIZE=-2><I>Last Updated:  10/31/97  12:32:20
+</I></FONT>
+
+<HR SIZE=4>
+
+<P> <CENTER>Copyright © 1997
+<A HREF="http://home.netscape.com/misc/contact_info.html"
+TARGET=_top>Netscape Communications Corporation</A></FONT>
+</CENTER>
+<P>
+<P>
+</BODY>
+</HTML>
+
+

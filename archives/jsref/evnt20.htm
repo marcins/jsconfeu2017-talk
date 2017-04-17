@@ -1,0 +1,108 @@
+<HTML>
+<HEAD>
+<TITLE>Events and Event Handlers
+</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A HREF="contents.htm">[Contents]</A> <A HREF="evnt19.htm">[Previous]</A> <A HREF="evnt21.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<HR>
+
+<A NAME="onReset"></A>
+<A NAME="1020913">
+<H1> onReset</H1>
+</A>
+<A NAME="1020914">
+Executes JavaScript code when a reset event occurs; that is, when a user resets a form (clicks a Reset button). <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1045975">
+<I>Event handler for </I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1045977">
+<A HREF="form1.htm#1010276"><CODE>Form</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1045979">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1045981">
+Navigator 3.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1049986">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1049987">
+<PRE>onReset="handlerText"</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1049988">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1049994">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1049991">
+<PRE><CODE>handlerText</CODE></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1049993">
+JavaScript code or a call to a JavaScript function.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010804">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1010805">
+The following example displays a <CODE>Text</CODE> object with the default value "CA" and a reset button. If the user types a state abbreviation in the <CODE>Text</CODE> object and then clicks the reset button, the original value of "CA" is restored. The form's onReset event handler displays a message indicating that defaults have been restored.<P></A>
+<A NAME="1010806">
+<PRE>&lt;FORM NAME="form1" onReset="alert('Defaults have been restored.')"&gt;<br>State:<br>&lt;INPUT TYPE="text" NAME="state" VALUE="CA" SIZE="2"&gt;&lt;P&gt;<br>&lt;INPUT TYPE="reset" VALUE="Clear Form" NAME="reset1"&gt;<br>&lt;/FORM&gt;</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1097845">
+<H4> Event properties used</H4>
+</A>
+
+<A NAME="1097855">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1097848">
+<PRE>type</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1103708">
+Indicates the type of event. </A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1097852">
+<PRE>target</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1097854">
+Indicates the object to which the event was originally sent. </A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010807">
+<H4> See also</H4>
+</A>
+
+<A NAME="1010814">
+<A HREF="form1.htm#1010937"><CODE>Form.reset</CODE></A>, <A HREF="but2.htm#1012912"><CODE>Reset</CODE></A><P></A>
+<A NAME="1064107">
+For general information on event handlers, see <A HREF="evnt.htm#1010270">"General Information about Events"</A>. <P></A>
+<A NAME="1094595">
+For information about the <CODE>event</CODE> object, see <A HREF="evnt1.htm#1093773"><CODE>event</CODE></A>.<P></A>
+
+<P><HR>
+<A HREF="contents.htm">[Contents]</A> <A HREF="evnt19.htm">[Previous]</A> <A HREF="evnt21.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<P ALIGN=right>
+
+<FONT SIZE=-2><I>Last Updated:  10/31/97  16:34:02
+</I></FONT>
+
+<HR SIZE=4>
+
+<P> <CENTER>Copyright © 1997
+<A HREF="http://home.netscape.com/misc/contact_info.html"
+TARGET=_top>Netscape Communications Corporation</A></FONT>
+</CENTER>
+<P>
+<P>
+</BODY>
+</HTML>
+
+

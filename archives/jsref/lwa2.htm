@@ -1,0 +1,385 @@
+<HTML>
+<HEAD>
+<TITLE>
+</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A HREF="contents.htm">[Contents]</A> <A HREF="lwa1.htm">[Previous]</A> <A HREF="lwa3.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<HR>
+
+<A NAME="Stproc"></A>
+<A NAME="1012947">
+<H1> Stproc</H1>
+</A>
+<A NAME="1018210">
+Represents a call to a database stored procedure.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1055445">
+<I>Server-side object</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1055450">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1055452">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1055454">
+Netscape Server 3.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1030265">
+<H4> Created by</H4>
+</A>
+
+<A NAME="1030266">
+The <CODE>storedProc</CODE> method of the <A HREF="lw1.htm#1031336"><CODE>database</CODE></A> object or of a <A HREF="lwa.htm#1013808"><CODE>Connection</CODE></A> object. You do not call a <CODE>Stproc</CODE> constructor.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1019037">
+<H4> Description</H4>
+</A>
+
+<A NAME="1019040">
+When finished with a <CODE>Stproc</CODE> object, use the <CODE>close</CODE> method to close it and release the memory it uses. If you release a connection that has an open stored procedure, the runtime engine waits until the stored procedure is closed before actually releasing the connection.<P></A>
+<A NAME="1018962">
+If you do not explicitly close a stored procedure with the <CODE>close</CODE> method, the JavaScript runtime engine on the server automatically tries to close all open stored procedures when the associated <CODE>database</CODE> or <CODE>Connection</CODE> object goes out of scope. This can tie up system resources unnecessarily. It can also lead to unpredictable results.<P></A>
+<A NAME="1018963">
+You can use the <CODE>prototype</CODE> property of the <CODE>Stproc</CODE> class to add a property to all <CODE>Stproc</CODE> instances. If you do so, that addition applies to all <CODE>Stproc</CODE> objects running in all applications on your server, not just in the single application that made the change. This allows you to expand the capabilities of this object for your entire server.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1058560">
+<H4> Property Summary</H4>
+</A>
+
+<A NAME="1058573">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1058570">
+<PRE><A HREF="lwa2.htm#1059893"><CODE>prototype</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1058572">
+Allows the addition of properties to a <CODE>Stproc</CODE> object.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012956">
+<H4> Method Summary</H4>
+</A>
+
+<A NAME="1012990">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012959">
+<PRE><A HREF="lwa2.htm#1029425"><CODE>close</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1012961">
+Closes a stored-procedure object.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1057107">
+<PRE><A HREF="lwa2.htm#1012997"><CODE>outParamCount</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1057109">
+Returns the number of output parameters returned by a stored procedure.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012966">
+<PRE><A HREF="lwa2.htm#1013011"><CODE>outParameters</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1012968">
+Returns the value of the specified output parameter.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012980">
+<PRE><A HREF="lwa2.htm#1013031"><CODE>resultSet</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1012982">
+Returns a new result set object.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012987">
+<PRE><A HREF="lwa2.htm#1013053"><CODE>returnValue</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1012989">
+Returns the return value for the stored procedure.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head2;"></A>
+<A NAME="1059891">
+<H3> Properties</H3>
+</A>
+
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1059893">
+<H2>prototype</H2>
+</A>
+
+<A NAME="1059894">
+Represents the prototype for this class. You can use the prototype to add properties or methods to all instances of a class. For information on prototypes, see <A HREF="core4.htm#1181210"><CODE>Function.prototype</CODE></A>.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1059900">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1059905">
+<A HREF="lwa2.htm#1012947"><CODE>Stproc</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1059907">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1059909">
+LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head2;"></A>
+<A NAME="1012993">
+<H3> Methods</H3>
+</A>
+
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1029425">
+<H2>close</H2>
+</A>
+
+<A NAME="1029426">
+Closes the stored procedure and frees the allocated memory.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1055478">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1055480">
+<A HREF="lwa2.htm#1012947"><CODE>Stproc</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1055482">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1055484">
+Netscape Server 3.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1029427">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1029428">
+<PRE>close()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1029429">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1029430">
+None.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1029436">
+<H4> Returns</H4>
+</A>
+
+<A NAME="1029437">
+0 if the call was successful; otherwise, a nonzero status code based on any error message passed by the database. If the method returns a nonzero status code, use the associated <CODE>majorErrorCode</CODE> and <CODE>majorErrorMessage</CODE> methods to interpret the cause of the error.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1029438">
+<H4> Description</H4>
+</A>
+
+<A NAME="1029439">
+The <CODE>close</CODE> method closes a stored procedure and releases the memory it uses. If you do not explicitly close a stored procedure with the <CODE>close</CODE> method, the JavaScript runtime engine on the server automatically closes it when the corresponding <CODE>client</CODE> object goes out of scope.<P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1012997">
+<H2>outParamCount</H2>
+</A>
+
+<A NAME="1012998">
+Returns the number of output parameters returned by a stored procedure.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1055507">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1055512">
+<A HREF="lwa2.htm#1012947"><CODE>Stproc</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1055514">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1055516">
+Netscape Server 3.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012999">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1013000">
+<PRE>outParamCount()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1013001">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1013002">
+None.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1018533">
+<H4> Returns</H4>
+</A>
+
+<A NAME="1018534">
+The number of output parameters for the stored procedure. Informix stored procedures do not have output parameters. Therefore for Informix, this method always returns 0. You should always call this method before calling <CODE>outParameters</CODE>, to ensure that the stored procedure has output parameters.<P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1013011">
+<H2>outParameters</H2>
+</A>
+
+<A NAME="1013012">
+Returns the value of the specified output parameter. <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1055533">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1055538">
+<A HREF="lwa2.htm#1012947"><CODE>Stproc</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1055540">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1055542">
+Netscape Server 3.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013013">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1013014">
+<PRE>outParameters (n)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1013015">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1013021">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1013018">
+<PRE>n</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1013020">
+Zero-based ordinal for the output parameter to return.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1018580">
+<H4> Returns</H4>
+</A>
+
+<A NAME="1018581">
+The value of the specified output parameter. This can be a string, number, double, or object. <P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1018689">
+<H4> Description</H4>
+</A>
+
+<A NAME="1018690">
+Do not use this method for Informix stored procedures, because they do not have output parameters.<P></A>
+<A NAME="1018691">
+You should always call the <CODE>outParamCount</CODE> method before you call this method. If <CODE>outParamCount</CODE> returns 0, the stored procedure has no output parameters. In this situation, do not call this method.<P></A>
+<A NAME="1018692">
+You must retrieve result set objects before you call this method. Once you call this method, you can't get any more data from a result set, and you can't get any additional result sets.<P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1013031">
+<H2>resultSet</H2>
+</A>
+
+<A NAME="1013032">
+Returns a new result set object.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1055579">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1055584">
+<A HREF="lwa2.htm#1012947"><CODE>Stproc</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1055586">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1055588">
+Netscape Server 3.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013033">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1013034">
+<PRE>resultSet ()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1013035">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1013036">
+None.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1018741">
+<H4> Description</H4>
+</A>
+
+<A NAME="1018742">
+Running a stored procedure can create 0 or more result sets. You access the result sets in turn by repeated calls to the <CODE>resultSet</CODE> method. See the description of the <A HREF="lwa3.htm#1013072"><CODE>Resultset</CODE></A> for restrictions on when you can use this method access the result sets for a stored procedure.<P></A>
+<A NAME="1013047">
+<PRE>spobj = connobj.storedProc("getcusts");</PRE></A><A NAME="1013048">
+<PRE>// Creates a new result set object<br>resobj = spobj.resultSet();</PRE></A>
+<A NAME="Head2Ref;"></A>
+<A NAME="1013053">
+<H2>returnValue</H2>
+</A>
+
+<A NAME="1013054">
+Returns the return value for the stored procedure.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1055633">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1055638">
+<A HREF="lwa2.htm#1012947"><CODE>Stproc</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1055640">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1055642">
+Netscape Server 3.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013055">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1013056">
+<PRE>returnValue()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1013057">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1013058">
+None.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013061">
+<H4> Returns</H4>
+</A>
+
+<A NAME="1013062">
+For Sybase, this method always returns the return value of the stored procedure.<P></A>
+<A NAME="1013063">
+For Oracle, this method returns null if the stored procedure did not return a value or the return value of the stored procedure.<P></A>
+<A NAME="1013064">
+For Informix, DB2, and ODBC, this method always returns null. <P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013065">
+<H4> Description</H4>
+</A>
+
+<A NAME="1013066">
+You must retrieve result set objects before you call this method. Once you call this method, you can't get any more data from a result set, and you can't get any additional result sets.<P></A>
+
+<P><HR>
+<A HREF="contents.htm">[Contents]</A> <A HREF="lwa1.htm">[Previous]</A> <A HREF="lwa3.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<P ALIGN=right>
+
+<FONT SIZE=-2><I>Last Updated:  10/31/97  16:36:13
+</I></FONT>
+
+<HR SIZE=4>
+
+<P> <CENTER>Copyright © 1997
+<A HREF="http://home.netscape.com/misc/contact_info.html"
+TARGET=_top>Netscape Communications Corporation</A></FONT>
+</CENTER>
+<P>
+<P>
+</BODY>
+</HTML>
+
+

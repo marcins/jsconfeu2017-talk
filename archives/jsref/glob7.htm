@@ -1,0 +1,106 @@
+<HTML>
+<HEAD>
+<TITLE>Global Functions
+</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A HREF="contents.htm">[Contents]</A> <A HREF="glob6.htm">[Previous]</A> <A HREF="glob8.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<HR>
+
+<A NAME="escape"></A>
+<A NAME="1012329">
+<H1> escape</H1>
+</A>
+<A NAME="1012330">
+Returns the hexadecimal encoding of an argument in the ISO-Latin-1 character set.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1032187">
+<I>Core function</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1032189">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1032191">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1032193">
+Navigator 2.0, LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012331">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1012332">
+<PRE>escape("string")</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1012333">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1012339">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012336">
+<PRE>string</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1012338">
+A string in the ISO-Latin-1 character set.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012344">
+<H4> Description</H4>
+</A>
+
+<A NAME="1012345">
+The <CODE>escape</CODE> function is a top-level JavaScript function that is not associated with any object. Use the <CODE>escape</CODE> and <A HREF="glob23.htm#1012622"><CODE>unescape</CODE></A> functions to add property values manually to a URL.<P></A>
+<A NAME="1049374">
+The <CODE>escape</CODE> function encodes special characters in the specified string and returns the new string. It encodes spaces, punctuation, and any other character that is not an ASCII alphanumeric character, with the exception of these characters:<P></A>
+<A NAME="1049485">
+<PRE>* @ - _ + . /</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1012349">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1012350">
+<B>Example 1.</B> The following example returns <CODE>"%26"</CODE>:<P></A>
+<A NAME="1012351">
+<PRE>escape("&amp;")</PRE></A><A NAME="1012352">
+<B>Example 2.</B> This statement<P></A>
+<A NAME="1049517">
+<PRE>escape("The_rain. In Spain, Ma'am")</PRE></A><A NAME="1049540">
+returns<P></A>
+<A NAME="1049545">
+<PRE>"The_rain.%20In%20Spain%2C%20Ma%92am":</PRE></A><A NAME="1049508">
+<B>Example 3.</B> In the following example, the value of the variable <CODE>theValue</CODE> is encoded as a hexadecimal string and passed on to the <CODE>request</CODE> object when a user clicks the link:<P></A>
+<A NAME="1012353">
+<PRE>&lt;A HREF=\Q"mypage.html?val1="+escape(theValue)\Q)&gt;Click Here&lt;/A&gt;</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1012354">
+<H4> See also</H4>
+</A>
+
+<A NAME="1012358">
+<A HREF="glob23.htm#1012622"><CODE>unescape</CODE></A> <P></A>
+
+<P><HR>
+<A HREF="contents.htm">[Contents]</A> <A HREF="glob6.htm">[Previous]</A> <A HREF="glob8.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<P ALIGN=right>
+
+<FONT SIZE=-2><I>Last Updated:  10/31/97  16:38:00
+</I></FONT>
+
+<HR SIZE=4>
+
+<P> <CENTER>Copyright © 1997
+<A HREF="http://home.netscape.com/misc/contact_info.html"
+TARGET=_top>Netscape Communications Corporation</A></FONT>
+</CENTER>
+<P>
+<P>
+</BODY>
+</HTML>
+
+

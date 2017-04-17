@@ -1,0 +1,104 @@
+<HTML>
+<HEAD>
+<TITLE>Global Functions
+</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A HREF="contents.htm">[Contents]</A> <A HREF="glob13.htm">[Previous]</A> <A HREF="glob15.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<HR>
+
+<A NAME="parseFloat"></A>
+<A NAME="1032601">
+<H1> parseFloat</H1>
+</A>
+<A NAME="1032603">
+Parses a string argument and returns a floating point number.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1032621">
+<I>Core function</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1032623">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1032625">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1032933">
+Navigator 2.0: If the first character of the string specified in parseFloat(<CODE>string</CODE>) cannot be converted to a number, returns <CODE>"NaN"</CODE> on Solaris and Irix and 0 on all other platforms.</A></P><A NAME="1032759">
+Navigator 3.0, LiveWire 1.0: Returns <CODE>"NaN"</CODE> on all platforms if the first character of the string specified in parseFloat(<CODE>string</CODE>) cannot be converted to a number. </A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1032604">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1012477">
+<PRE>parseFloat(string)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1012478">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1012484">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012481">
+<PRE>string</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1012483">
+A string that represents the value you want to parse.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012485">
+<H4> Description</H4>
+</A>
+
+<A NAME="1012486">
+The <CODE>parseFloat</CODE> function is a built-in JavaScript function.<P></A>
+<A NAME="1012487">
+<CODE>parseFloat</CODE> parses its argument, a string, and returns a floating point number. If it encounters a character other than a sign (+ or -), numeral (0-9), a decimal point, or an exponent, then it returns the value up to that point and ignores that character and all succeeding characters.<P></A>
+<A NAME="1012488">
+If the first character cannot be converted to a number, <CODE>parseFloat</CODE> returns <CODE>"NaN"</CODE>.<P></A>
+<A NAME="1012489">
+For arithmetic purposes, the <CODE>"NaN"</CODE> value is not a number in any radix. You can call the <CODE>isNaN</CODE> function to determine if the result of <CODE>parseFloat</CODE> is <CODE>"NaN"</CODE>. If <CODE>"NaN"</CODE> is passed on to arithmetic operations, the operation results will also be <CODE>"NaN"</CODE>.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012493">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1012494">
+The following examples all return 3.14:<P></A>
+<A NAME="1012495">
+<PRE>parseFloat("3.14")<br>parseFloat("314e-2")<br>parseFloat("0.0314E+2")<br>var x = "3.14"<br>parseFloat(x)</PRE></A><A NAME="1012496">
+The following example returns <CODE>"NaN"</CODE>:<P></A>
+<A NAME="1012497">
+<PRE>parseFloat("FF2")</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1012498">
+<H4> See also</H4>
+</A>
+
+<A NAME="1012505">
+<A HREF="glob12.htm#1012439"><CODE>isNaN</CODE></A>, <A HREF="glob15.htm#1012508"><CODE>parseInt</CODE></A> <P></A>
+
+<P><HR>
+<A HREF="contents.htm">[Contents]</A> <A HREF="glob13.htm">[Previous]</A> <A HREF="glob15.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<P ALIGN=right>
+
+<FONT SIZE=-2><I>Last Updated:  10/31/97  16:38:00
+</I></FONT>
+
+<HR SIZE=4>
+
+<P> <CENTER>Copyright © 1997
+<A HREF="http://home.netscape.com/misc/contact_info.html"
+TARGET=_top>Netscape Communications Corporation</A></FONT>
+</CENTER>
+<P>
+<P>
+</BODY>
+</HTML>
+
+

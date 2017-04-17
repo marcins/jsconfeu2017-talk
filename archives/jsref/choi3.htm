@@ -1,0 +1,373 @@
+<HTML>
+<HEAD>
+<TITLE>
+</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A HREF="contents.htm">[Contents]</A> <A HREF="choi2.htm">[Previous]</A> <A HREF="brow.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<HR>
+
+<A NAME="Option"></A>
+<A NAME="1015292">
+<H1> Option</H1>
+</A>
+<A NAME="1015293">
+An option in a selection list.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1089033">
+<I>Client-side object</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1089038">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1107949">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1118113">
+Navigator 2.0<br>Navigator 3.0: added <CODE>defaultSelected</CODE> property; <CODE>text</CODE> property can be changed to change the text of an option</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1053503">
+<H4> Created by</H4>
+</A>
+
+<A NAME="1053504">
+The <CODE>Option</CODE> constructor or the HTML <CODE><A HREF="http://developer.netscape.com/library/documentation/htmlguid/index.htm?content=tags10.htm#tags:OPTION" TARGET="_top">OPTION</A></CODE> tag. To create an <CODE>Option</CODE> object with its constructor:<P></A>
+<A NAME="1054132">
+<PRE>new Option(text, value, defaultSelected, selected)</PRE></A><A NAME="1113133">
+Once you've created an Option object, you can add it to a selection list using the <A HREF="choi2.htm#1014568"><CODE>Select.options</CODE></A> array.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1053509">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1053559">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1053516">
+<PRE>text</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1053518">
+(Optional) Specifies the text to display in the select list. </A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1053520">
+<PRE>value</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1053522">
+(Optional) Specifies a value that is returned to the server when the option is selected and the form is submitted. </A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1053524">
+<PRE>defaultSelected</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1053526">
+(Optional) Specifies whether the option is initially selected (true or false). </A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1053528">
+<PRE>selected</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1053530">
+(Optional) Specifies the current selection state of the option (true or false). </A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1054111">
+<H4> Property Summary</H4>
+</A>
+
+<A NAME="1054194">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1054085">
+<PRE><A HREF="choi3.htm#1106899"><CODE>defaultSelected</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1054087">
+Specifies the initial selection state of the option</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1054100">
+<PRE><A HREF="choi3.htm#1107234"><CODE>selected</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1054102">
+Specifies the current selection state of the option</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1054104">
+<PRE><A HREF="choi3.htm#1110990"><CODE>text</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1054106">
+Specifies the text for the option</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1054108">
+<PRE><A HREF="choi3.htm#1112225"><CODE>value</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1054110">
+Specifies the value that is returned to the server when the option is selected and the form is submitted</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1054136">
+<H4> Description</H4>
+</A>
+
+<A NAME="1114148">
+Usually you work with <CODE>Option</CODE> objects in the context of a selection list (a <A HREF="choi2.htm#1013973"><CODE>Select</CODE></A> object). When JavaScript creates a <A HREF="choi2.htm#1013973"><CODE>Select</CODE></A> object for each <CODE><A HREF="http://developer.netscape.com/library/documentation/htmlguid/index.htm?content=tags10.htm#tags:SELECT" TARGET="_top">SELECT</A></CODE> tag in the document, it creates <CODE>Option</CODE> objects for the <CODE><A HREF="http://developer.netscape.com/library/documentation/htmlguid/index.htm?content=tags10.htm#tags:OPTION" TARGET="_top">OPTION</A></CODE> tags inside the <CODE>SELECT</CODE> tag and puts those objects in the <A HREF="choi2.htm#1014568"><CODE>options</CODE></A> array of the <A HREF="choi2.htm#1013973"><CODE>Select</CODE></A> object. <P></A>
+<A NAME="1114222">
+In addition, you can create new options using the <CODE>Option</CODE> constructor and add those to a selection list. After you create an option and add it to the <A HREF="choi2.htm#1013973"><CODE>Select</CODE></A> object, you must refresh the document by using <CODE>history.go(0)</CODE>. This statement must be last. When the document reloads, variables are lost if not saved in cookies or form element values.<P></A>
+<A NAME="1113929">
+You can use the <A HREF="choi3.htm#1107234"><CODE>Option.selected</CODE></A> and <A HREF="choi2.htm#1014626"><CODE>Select.selectedIndex</CODE></A> properties to change the selection state of an option.<P></A>
+<ul><P>
+<A NAME="1113747">
+<LI>The <A HREF="choi2.htm#1014626"><CODE>Select.selectedIndex</CODE></A> property is an integer specifying the index of the selected option. This is most useful for <CODE>Select</CODE> objects that are created without the <CODE>MULTIPLE</CODE> attribute. The following statement sets a <CODE>Select</CODE> object's <CODE>selectedIndex</CODE> property:</LI>
+</A><A NAME="1113748">
+<BLOCKQUOTE><CODE>document.myForm.musicTypes.selectedIndex = i
+</CODE></BLOCKQUOTE></A>
+
+<P>
+<A NAME="1113752">
+<LI>The <A HREF="choi3.htm#1107234"><CODE>Option.selected</CODE></A> property is a Boolean value specifying the current selection state of the option in a <CODE>Select</CODE> object. If an option is selected, its <CODE>selected</CODE> property is true; otherwise it is false. This is more useful for <CODE>Select</CODE> objects that are created with the <CODE>MULTIPLE</CODE> attribute. The following statement sets an option's <CODE>selected</CODE> property to true:</LI>
+</A><A NAME="1113753">
+<BLOCKQUOTE><CODE>document.myForm.musicTypes.options[i].selected = true
+</CODE></BLOCKQUOTE></A>
+
+</ul><A NAME="1113758">
+To change an option's text, use is <A HREF="choi3.htm#1110990"><CODE>Option.text</CODE></A> property. For example, suppose a form has the following <CODE>Select</CODE> object:<P></A>
+<A NAME="1113759">
+<PRE>&lt;SELECT name="userChoice"&gt;<br>&nbsp;&nbsp;&nbsp;&lt;OPTION&gt;Choice 1<br>&nbsp;&nbsp;&nbsp;&lt;OPTION&gt;Choice 2<br>&nbsp;&nbsp;&nbsp;&lt;OPTION&gt;Choice 3<br>&lt;/SELECT&gt;</PRE></A><A NAME="1113760">
+You can set the text of the <CODE>i</CODE><SUP>th</SUP> item in the selection based on text entered in a text field named <CODE>whatsNew</CODE> as follows:<P></A>
+<A NAME="1113761">
+<PRE>myform.userChoice.options[i].text = myform.whatsNew.value</PRE></A><A NAME="1113762">
+You do not need to reload or refresh after changing an option's text.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1113632">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1108430">
+The following example creates two <CODE>Select</CODE> objects, one with and one without the <CODE>MULTIPLE</CODE> attribute. No options are initially defined for either object. When the user clicks a button associated with the <CODE>Select</CODE> object, the <CODE>populate</CODE> function creates four options for the <CODE>Select</CODE> object and selects the first option.<P></A>
+<A NAME="1108431">
+<PRE>&lt;SCRIPT&gt;<br>function populate(inForm) {<br>&nbsp;&nbsp;&nbsp;colorArray = new Array("Red", "Blue", "Yellow", "Green")</PRE></A><A NAME="1108432">
+<PRE>&nbsp;&nbsp;&nbsp;var option0 = new Option("Red", "color_red")<br>&nbsp;&nbsp;&nbsp;var option1 = new Option("Blue", "color_blue")<br>&nbsp;&nbsp;&nbsp;var option2 = new Option("Yellow", "color_yellow")<br>&nbsp;&nbsp;&nbsp;var option3 = new Option("Green", "color_green")</PRE></A><A NAME="1108433">
+<PRE>&nbsp;&nbsp;&nbsp;for (var i=0; i &lt; 4; i++) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eval("inForm.selectTest.options[i]=option" + i)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (i==0) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;inForm.selectTest.options[i].selected=true<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;}</PRE></A><A NAME="1108434">
+<PRE>&nbsp;&nbsp;&nbsp;history.go(0)<br>}<br>&lt;/SCRIPT&gt;</PRE></A><A NAME="1108435">
+<PRE><br>&lt;H3&gt;Select Option() constructor&lt;/H3&gt;<br>&lt;FORM&gt;<br>&lt;SELECT NAME="selectTest"&gt;&lt;/SELECT&gt;&lt;P&gt;<br>&lt;INPUT TYPE="button" VALUE="Populate Select List" onClick="populate(this.form)"&gt;<br>&lt;P&gt;<br>&lt;/FORM&gt;</PRE></A><A NAME="1113459">
+<PRE>&lt;HR&gt;<br>&lt;H3&gt;Select-Multiple Option() constructor&lt;/H3&gt;<br>&lt;FORM&gt;<br>&lt;SELECT NAME="selectTest" multiple&gt;&lt;/SELECT&gt;&lt;P&gt;<br>&lt;INPUT TYPE="button" VALUE="Populate Select List" onClick="populate(this.form)"&gt;<br>&lt;/FORM&gt;</PRE></A>
+<A NAME="Head2;"></A>
+<A NAME="1106896">
+<H3> Properties</H3>
+</A>
+
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1106899">
+<H2>defaultSelected</H2>
+</A>
+
+<A NAME="1106901">
+A Boolean value indicating the default selection state of an option in a selection list. <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1106904">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1106909">
+<A HREF="choi3.htm#1015292"><CODE>Option</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1106911">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1106913">
+Navigator 3.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1119553">
+<H4> Security</H4>
+</A>
+
+<A NAME="1119554">
+Navigator&nbsp;3.0: This property is tainted by default. For information on data tainting, see <A HREF="intro.htm#1014735">"JavaScript Security"</A>.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1106914">
+<H4> Description</H4>
+</A>
+
+<A NAME="1106915">
+If an option is selected by default, the value of the <CODE>defaultSelected</CODE> property is true; otherwise, it is false. <CODE>defaultSelected</CODE> initially reflects whether the <CODE>SELECTED</CODE> attribute is used within an <CODE>OPTION</CODE> tag; however, setting <CODE>defaultSelected</CODE> overrides the <CODE>SELECTED</CODE> attribute.<P></A>
+<A NAME="1106916">
+You can set the <CODE>defaultSelected</CODE> property at any time. The display of the corresponding <A HREF="choi2.htm#1013973"><CODE>Select</CODE></A> object does not update when you set the <CODE>defaultSelected</CODE> property of an option, only when you set the <A HREF="choi3.htm#1107234"><CODE>Option.selected</CODE></A> or <A HREF="choi2.htm#1014626"><CODE>Select.selectedIndex</CODE></A> properties.<P></A>
+<A NAME="1106917">
+A <A HREF="choi2.htm#1013973"><CODE>Select</CODE></A> object created without the <CODE>MULTIPLE</CODE> attribute can have only one option selected by default. When you set <CODE>defaultSelected</CODE> in such an object, any previous default selections, including defaults set with the <CODE>SELECTED</CODE> attribute, are cleared. If you set <CODE>defaultSelected</CODE> in a <A HREF="choi2.htm#1013973"><CODE>Select</CODE></A> object created with the <CODE>MULTIPLE</CODE> attribute, previous default selections are not affected.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1106918">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1106919">
+In the following example, the <CODE>restoreDefault</CODE> function returns the <CODE>musicType</CODE> <CODE>Select</CODE> object to its default state. The <CODE>for</CODE> loop uses the <CODE>options</CODE> array to evaluate every option in the <CODE>Select</CODE> object. The <CODE>if</CODE> statement sets the <CODE>selected</CODE> property if <CODE>defaultSelected</CODE> is true.<P></A>
+<A NAME="1106920">
+<PRE>function restoreDefault() {<br>&nbsp;&nbsp;&nbsp;for (var i = 0; i &lt; document.musicForm.musicType.length; i++) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (document.musicForm.musicType.options[i].defaultSelected == true) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.musicForm.musicType.options[i].selected=true<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;}<br>}</PRE></A><A NAME="1106921">
+The previous example assumes that the <CODE>Select</CODE> object is similar to the following:<P></A>
+<A NAME="1106922">
+<PRE>&lt;SELECT NAME="musicType"&gt; <br>&nbsp;&nbsp;&nbsp;&lt;OPTION SELECTED&gt; R&amp;B<br>&nbsp;&nbsp;&nbsp;&lt;OPTION&gt; Jazz<br>&nbsp;&nbsp;&nbsp;&lt;OPTION&gt; Blues<br>&nbsp;&nbsp;&nbsp;&lt;OPTION&gt; New Age<br>&lt;/SELECT&gt;</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1106923">
+<H4> See also</H4>
+</A>
+
+<A NAME="1106930">
+<A HREF="choi3.htm#1107234"><CODE>Option.selected</CODE></A>, <A HREF="choi2.htm#1014626"><CODE>Select.selectedIndex</CODE></A> <P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1107234">
+<H2>selected</H2>
+</A>
+
+<A NAME="1107247">
+A Boolean value indicating whether an option in a <CODE>Select</CODE> object is selected.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1107237">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1107242">
+<A HREF="choi3.htm#1015292"><CODE>Option</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1107244">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1107246">
+Navigator 2.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1119563">
+<H4> Security</H4>
+</A>
+
+<A NAME="1119564">
+Navigator&nbsp;3.0: This property is tainted by default. For information on data tainting, see <A HREF="intro.htm#1014735">"JavaScript Security"</A>.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1107248">
+<H4> Description</H4>
+</A>
+
+<A NAME="1107249">
+If an option in a <A HREF="choi2.htm#1013973"><CODE>Select</CODE></A> object is selected, the value of its <CODE>selected</CODE> property is true; otherwise, it is false. You can set the <CODE>selected</CODE> property at any time. The display of the associated <A HREF="choi2.htm#1013973"><CODE>Select</CODE></A> object updates immediately when you set the <CODE>selected</CODE> property for one of its options.<P></A>
+<A NAME="1107251">
+In general, the <A HREF="choi3.htm#1107234"><CODE>Option.selected</CODE></A> property is more useful than the <A HREF="choi2.htm#1014626"><CODE>Select.selectedIndex</CODE></A> property for <A HREF="choi2.htm#1013973"><CODE>Select</CODE></A> objects that are created with the <CODE>MULTIPLE</CODE> attribute. With the <A HREF="choi3.htm#1107234"><CODE>Option.selected</CODE></A> property, you can evaluate every option in the <A HREF="choi2.htm#1014568"><CODE>Select.options</CODE></A> array to determine multiple selections, and you can select individual options without clearing the selection of other options.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1107252">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1107256">
+See the examples for <A HREF="choi3.htm#1106899"><CODE>defaultSelected</CODE></A>.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1107257">
+<H4> See also</H4>
+</A>
+
+<A NAME="1107264">
+<A HREF="choi3.htm#1106899"><CODE>Option.defaultSelected</CODE></A>, <A HREF="choi2.htm#1014626"><CODE>Select.selectedIndex</CODE></A> <P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1110990">
+<H2>text</H2>
+</A>
+
+<A NAME="1111005">
+A string specifying the text of an option in a selection list.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1110994">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1110999">
+<A HREF="choi3.htm#1015292"><CODE>Option</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1111001">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1125540">
+Navigator 2.0<br>Navigator 3.0: The <CODE>text</CODE> property can be changed to updated the selection option. In previous releases, you could set the <CODE>text</CODE> property but the new value was not reflected in the <CODE>Select</CODE> object.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1119574">
+<H4> Security</H4>
+</A>
+
+<A NAME="1119575">
+Navigator&nbsp;3.0: This property is tainted by default. For information on data tainting, see <A HREF="intro.htm#1014735">"JavaScript Security"</A>.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1111006">
+<H4> Description</H4>
+</A>
+
+<A NAME="1111007">
+The <CODE>text</CODE> property initially reflects the text that follows an <CODE>OPTION</CODE> tag of a <CODE>SELECT</CODE> tag. You can set the <CODE>text</CODE> property at any time and the text displayed by the option in the selection list changes.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1111009">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1111010">
+<B>Example 1. </B>In the following example, the <CODE>getChoice</CODE> function returns the value of the <CODE>text</CODE> property for the selected option. The <CODE>for</CODE> loop evaluates every option in the <CODE>musicType</CODE> <CODE>Select</CODE> object. The <CODE>if</CODE> statement finds the option that is selected.<P></A>
+<A NAME="1111011">
+<PRE>function getChoice() {<br>&nbsp;&nbsp;&nbsp;for (var i = 0; i &lt; document.musicForm.musicType.length; i++) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (document.musicForm.musicType.options[i].selected == true) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return document.musicForm.musicType.options[i].text<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;return null<br>}</PRE></A><A NAME="1111012">
+The previous example assumes that the <CODE>Select</CODE> object is similar to the following:<P></A>
+<A NAME="1111013">
+<PRE>&lt;SELECT NAME="musicType"&gt;<br>&nbsp;&nbsp;&nbsp;&lt;OPTION SELECTED&gt; R&amp;B<br>&nbsp;&nbsp;&nbsp;&lt;OPTION&gt; Jazz<br>&nbsp;&nbsp;&nbsp;&lt;OPTION&gt; Blues<br>&nbsp;&nbsp;&nbsp;&lt;OPTION&gt; New Age<br>&lt;/SELECT&gt;</PRE></A><A NAME="1113912">
+<B>Example 2. </B>In the following form, the user can enter some text in the first text field and then enter a number between 0 and 2 (inclusive) in the second text field. When the user clicks the button, the text is substituted for the indicated option number and that option is selected.<P>
+<IMG SRC="selectop.gif">
+<P></A>
+<A NAME="1113916">
+The code for this example looks as follows:<P></A>
+<A NAME="1113917">
+<PRE>&lt;SCRIPT&gt;<br>function updateList(theForm, i) {<br>&nbsp;&nbsp;&nbsp;theForm.userChoice.options[i].text = theForm.whatsNew.value<br>&nbsp;&nbsp;&nbsp;theForm.userChoice.options[i].selected = true<br>}<br>&lt;/SCRIPT&gt;<br>&lt;FORM&gt;<br>&lt;SELECT name="userChoice"&gt;<br>&nbsp;&nbsp;&nbsp;&lt;OPTION&gt;Choice 1<br>&nbsp;&nbsp;&nbsp;&lt;OPTION&gt;Choice 2<br>&nbsp;&nbsp;&nbsp;&lt;OPTION&gt;Choice 3<br>&lt;/SELECT&gt;<br>&lt;BR&gt;<br>New text for the option: &lt;INPUT TYPE="text" NAME="whatsNew"&gt;<br>&lt;BR&gt;<br>Option to change (0, 1, or 2): &lt;INPUT TYPE="text" NAME="idx"&gt;<br>&lt;BR&gt;<br>&lt;INPUT TYPE="button" VALUE="Change Selection"<br>onClick="updateList(this.form, this.form.idx.value)"&gt;<br>&lt;/FORM&gt;</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1124454">
+<H4> See also</H4>
+</A>
+
+<A NAME="1124458">
+<A HREF="glob10.htm#1012389"><CODE>getOptionValue</CODE></A><P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1112225">
+<H2>value</H2>
+</A>
+
+<A NAME="1119605">
+A string that reflects the <CODE>VALUE</CODE> attribute of the option.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1119591">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1119596">
+<A HREF="choi3.htm#1015292"><CODE>Option</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1119598">
+<I>Read-only</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1119600">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1119602">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1119604">
+Navigator 2.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1119611">
+<H4> Security</H4>
+</A>
+
+<A NAME="1119612">
+Navigator&nbsp;3.0: This property is tainted by default. For information on data tainting, see <A HREF="intro.htm#1014735">"JavaScript Security"</A>.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1119606">
+<H4> Description</H4>
+</A>
+
+<A NAME="1119607">
+When a <CODE>VALUE</CODE> attribute is specified in HTML, the <CODE>value</CODE> property is a string that reflects it. When a <CODE>VALUE</CODE> attribute is not specified in HTML, the <CODE>value</CODE> property is the empty string. The <CODE>value</CODE> property is not displayed on the screen but is returned to the server if the option is selected.<P></A>
+<A NAME="1112245">
+Do not confuse the property with the selection state of the option or the text that is displayed next to it. The <A HREF="choi3.htm#1107234"><CODE>selected</CODE></A> property determines the selection state of the object, and the <A HREF="choi3.htm#1106899"><CODE>defaultSelected</CODE></A> property determines the default selection state. The text that is displayed is specified following the <CODE>OPTION</CODE> tag and corresponds to the <A HREF="choi3.htm#1110990"><CODE>text</CODE></A> property.<P></A>
+<A NAME="1112254">
+<P></A>
+<A NAME="1128977">
+<P></A>
+
+<P><HR>
+<A HREF="contents.htm">[Contents]</A> <A HREF="choi2.htm">[Previous]</A> <A HREF="brow.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<P ALIGN=right>
+
+<FONT SIZE=-2><I>Last Updated:  10/31/97  12:32:20
+</I></FONT>
+
+<HR SIZE=4>
+
+<P> <CENTER>Copyright © 1997
+<A HREF="http://home.netscape.com/misc/contact_info.html"
+TARGET=_top>Netscape Communications Corporation</A></FONT>
+</CENTER>
+<P>
+<P>
+</BODY>
+</HTML>
+

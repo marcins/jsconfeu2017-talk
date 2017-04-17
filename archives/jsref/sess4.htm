@@ -1,0 +1,417 @@
+<HTML>
+<HEAD>
+<TITLE>Session Management Service
+</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A HREF="contents.htm">[Contents]</A> <A HREF="sess3.htm">[Previous]</A> <A HREF="sess5.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<HR>
+
+<A NAME="server"></A>
+<A NAME="1011084">
+<H1> server</H1>
+</A>
+<A NAME="1011086">
+Contains global data for the entire server.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1032431">
+<I>Server-side object</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1032436">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1032438">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1032440">
+LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1019996">
+<H4> Created by</H4>
+</A>
+
+<A NAME="1019997">
+The JavaScript runtime engine on the server automatically creates a single <CODE>server</CODE> object to store information common to all JavaScript applications running on the web server.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1011103">
+<H4> Description</H4>
+</A>
+
+<A NAME="1011104">
+The JavaScript runtime engine on the server creates a <CODE>server</CODE> object when the server starts and destroys it when the server stops. Every application on a server shares the same <CODE>server</CODE> object. Use the <CODE>server</CODE> object to maintain global data for the entire server. Many applications can run on a server simultaneously, and the <CODE>server</CODE> object lets them share information.<P></A>
+<A NAME="1011105">
+The runtime engine creates a <CODE>server</CODE> object for each distinct Netscape HTTPD process running on the server.<P></A>
+<A NAME="1011106">
+The properties listed below are read-only properties that are initialized automatically when a <CODE>server</CODE> object is created. These properties provide information about the server process. In addition to these predefined properties, you can create custom properties.<P></A>
+<A NAME="1011107">
+You can lock the <CODE>server</CODE> object to ensure that different applications do not change its properties simultaneously. When one application locks the <CODE>server</CODE> object, other applications must wait before they can lock it.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1011108">
+<H4> Property Summary</H4>
+</A>
+
+<A NAME="1011138">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1011114">
+<PRE><A HREF="sess4.htm#1011177"><CODE>host</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1011116">
+String specifying the server name, subdomain, and domain name.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1011121">
+<PRE><A HREF="sess4.htm#1011212"><CODE>hostname</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1011123">
+String containing the full hostname of the server, including the server name, subdomain, domain, and port number.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1011128">
+<PRE><A HREF="sess4.htm#1011247"><CODE>port</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1011130">
+String indicating the port number used for the server.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1011135">
+<PRE><A HREF="sess4.htm#1011283"><CODE>protocol</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1011137">
+String indicating the communication protocol used by the server.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1011139">
+<H4> Method Summary</H4>
+</A>
+
+<A NAME="1011155">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1011145">
+<PRE><A HREF="sess4.htm#1011318"><CODE>lock</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1011147">
+Obtains the lock.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1011152">
+<PRE><A HREF="sess4.htm#1011339"><CODE>unlock</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1011154">
+Releases the lock. </A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1011158">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1011159">
+The following example displays the values of the predefined <CODE>server</CODE> object properties:<P></A>
+<A NAME="1011160">
+<PRE>&lt;P&gt;server.host = &lt;SERVER&gt;write(server.host);&lt;/SERVER&gt;<br>&lt;BR&gt;server.hostname = &lt;SERVER&gt;write(server.hostname);&lt;/SERVER&gt;<br>&lt;BR&gt;server.protocol = &lt;SERVER&gt;write(server.protocol);&lt;/SERVER&gt;<br>&lt;BR&gt;server.port = &lt;SERVER&gt;write(server.port);&lt;/SERVER&gt;</PRE></A><A NAME="1011161">
+The preceding code displays information such as the following:<P></A>
+<A NAME="1011162">
+<PRE>server.host = www.myWorld.com<br>server.hostname = www.myWorld.com:85<br>server.protocol = http:<br>server.port = 85</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1011163">
+<H4> See also</H4>
+</A>
+
+<A NAME="1011173">
+<A HREF="sess2.htm#1014188"><CODE>client</CODE></A>, <A HREF="sess3.htm#1010916"><CODE>project</CODE></A>, <A HREF="sess1.htm#1010271"><CODE>request</CODE></A> <P></A>
+
+<A NAME="Head2;"></A>
+<A NAME="1011174">
+<H3> Properties</H3>
+</A>
+
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1011177">
+<H2>host</H2>
+</A>
+
+<A NAME="1011178">
+A string specifying the server name, subdomain, and domain name.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1032480">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1032485">
+<A HREF="sess4.htm#1011084"><CODE>server</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1032564">
+<I>Read-only</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1032566">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1032487">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1032489">
+LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1011186">
+<H4> Description</H4>
+</A>
+
+<A NAME="1011187">
+The <CODE>host</CODE> property specifies a portion of a URL. The <CODE>host</CODE> property is a substring of the <CODE>hostname</CODE> property. The <CODE>hostname</CODE> property is the concatenation of the <CODE>host</CODE> and <CODE>port</CODE> properties, separated by a colon. When the <CODE>port</CODE> property is 80 (the default), the <CODE>host</CODE> property is the same as the <CODE>hostname</CODE> property.<P></A>
+<A NAME="1011190">
+See Section 3.1 of RFC 1738 (<CODE><A HREF="http://www.cis.ohio-state.edu/htbin/rfc/rfc1738.html" TARGET="_top">http://www.cis.ohio-state.edu/htbin/rfc/rfc1738.html</A></CODE>) for complete information about the hostname and port.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1011199">
+<H4> See also</H4>
+</A>
+
+<A NAME="1011209">
+<A HREF="sess4.htm#1011212"><CODE>server.hostname</CODE></A>, <A HREF="sess4.htm#1011247"><CODE>server.port</CODE></A>, <A HREF="sess4.htm#1011283"><CODE>server.protocol</CODE></A> <P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1011212">
+<H2>hostname </H2>
+</A>
+
+<A NAME="1011213">
+A string containing the full hostname of the server, including the server name, subdomain, domain, and port number.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1032578">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1032583">
+<A HREF="sess4.htm#1011084"><CODE>server</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1032585">
+<I>Read-only</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1032587">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1032589">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1032591">
+LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1011221">
+<H4> Description</H4>
+</A>
+
+<A NAME="1011222">
+The <CODE>hostname</CODE> property specifies a portion of a URL. The <CODE>hostname</CODE> property is the concatenation of the <CODE>host</CODE> and <CODE>port</CODE> properties, separated by a colon. When the <CODE>port</CODE> property is 80 (the default), the <CODE>host</CODE> property is the same as the <CODE>hostname</CODE> property.<P></A>
+<A NAME="1011225">
+See Section 3.1 of RFC 1738 (<CODE><A HREF="http://www.cis.ohio-state.edu/htbin/rfc/rfc1738.html" TARGET="_top">http://www.cis.ohio-state.edu/htbin/rfc/rfc1738.html</A></CODE>) for complete information about the hostname and port.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1011234">
+<H4> See also</H4>
+</A>
+
+<A NAME="1011244">
+<A HREF="sess4.htm#1011177"><CODE>server.host</CODE></A>, <A HREF="sess4.htm#1011247"><CODE>server.port</CODE></A>, <A HREF="sess4.htm#1011283"><CODE>server.protocol</CODE></A> <P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1011247">
+<H2>port</H2>
+</A>
+
+<A NAME="1011248">
+A string indicating the port number used for the server.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1032737">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1032742">
+<A HREF="sess4.htm#1011084"><CODE>server</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1032744">
+<I>Read-only</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1032746">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1032748">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1032750">
+LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1011256">
+<H4> Description</H4>
+</A>
+
+<A NAME="1011257">
+The <CODE>port</CODE> property specifies a portion of the URL. The <CODE>port</CODE> property is a substring of the <CODE>hostname</CODE> property. The <CODE>hostname</CODE> property is the concatenation of the <CODE>host</CODE> and <CODE>port</CODE> properties, separated by a colon.<P></A>
+<A NAME="1011258">
+The default value of the <CODE>port</CODE> property is 80. When the <CODE>port</CODE> property is set to the default, the values of the <CODE>host</CODE> and <CODE>hostname</CODE> properties are the same.<P></A>
+<A NAME="1011261">
+See Section 3.1 of RFC 1738 (<CODE><A HREF="http://www.cis.ohio-state.edu/htbin/rfc/rfc1738.html" TARGET="_top">http://www.cis.ohio-state.edu/htbin/rfc/rfc1738.html</CODE></A>) for complete information about the port.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1011270">
+<H4> See also</H4>
+</A>
+
+<A NAME="1011280">
+<A HREF="sess4.htm#1011177"><CODE>server.host</CODE></A>, <A HREF="sess4.htm#1011212"><CODE>server.hostname</CODE></A>, <A HREF="sess4.htm#1011283"><CODE>server.protocol</CODE></A> <P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1011283">
+<H2>protocol</H2>
+</A>
+
+<A NAME="1011284">
+A string indicating the communication protocol used by the server.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1032933">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1032938">
+<A HREF="sess4.htm#1011084"><CODE>server</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1032940">
+<I>Read-only</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1032942">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1032944">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1032946">
+LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1011292">
+<H4> Description</H4>
+</A>
+
+<A NAME="1011293">
+The <CODE>protocol</CODE> property specifies the beginning of the URL, up to and including the first colon. The protocol indicates the access method of the URL. For example, a protocol of <CODE>"http:"</CODE> specifies HyperText Transfer Protocol.<P></A>
+<A NAME="1011295">
+The <CODE>protocol</CODE> property represents the scheme name of the URL. See Section 2.1 of RFC 1738 (<CODE><A HREF="http://www.cis.ohio-state.edu/htbin/rfc/rfc1738.html" TARGET="_top">http://www.cis.ohio-state.edu/htbin/rfc/rfc1738.html</CODE></A>) for complete information about the protocol.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1011305">
+<H4> See also</H4>
+</A>
+
+<A NAME="1011315">
+<A HREF="sess4.htm#1011177"><CODE>server.host</CODE></A>, <A HREF="sess4.htm#1011212"><CODE>server.hostname</CODE></A>, <A HREF="sess4.htm#1011247"><CODE>server.port</CODE></A> <P></A>
+
+<A NAME="Head2;"></A>
+<A NAME="1011316">
+<H3> Methods</H3>
+</A>
+
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1011318">
+<H2>lock</H2>
+</A>
+
+<A NAME="1013795">
+Obtains the lock. If another thread has the lock, this method waits until it can get the lock.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1033055">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1033060">
+<A HREF="sess4.htm#1011084"><CODE>server</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1033066">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1033068">
+LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1011320">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1011321">
+<PRE>lock()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1011322">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1011328">
+None<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1011331">
+<H4> Returns</H4>
+</A>
+
+<A NAME="1011332">
+Nothing.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1011333">
+<H4> Description</H4>
+</A>
+
+<A NAME="1011334">
+You can obtain a lock for an object to ensure that different clients do not access a critical section of code simultaneously. When an application locks an object, other client requests must wait before they can lock the object. <P></A>
+<A NAME="1011335">
+Note that this mechanism requires voluntary compliance by asking for the lock in the first place. <P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1034372">
+<H4> See also</H4>
+</A>
+
+<A NAME="1034379">
+<A HREF="sess5.htm#1011483"><CODE>Lock</CODE></A>, <A HREF="sess4.htm#1011318"><CODE>server.lock</CODE></A><P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1011339">
+<H2>unlock</H2>
+</A>
+
+<A NAME="1011340">
+Releases the lock. <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1033101">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1033106">
+<A HREF="sess4.htm#1011084"><CODE>server</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1033112">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1033114">
+LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1011341">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1011342">
+<PRE>unlock()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1011343">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1011344">
+None.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1011347">
+<H4> Returns</H4>
+</A>
+
+<A NAME="1011348">
+False if it fails; otherwise, true. Failure indicates an internal JavaScript error or that you attempted to unlock a lock that you don't own. <P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1011349">
+<H4> Description</H4>
+</A>
+
+<A NAME="1011350">
+If you unlock a lock that is unlocked, the resulting behavior is undefined.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1034387">
+<H4> See also</H4>
+</A>
+
+<A NAME="1034394">
+<A HREF="sess5.htm#1011483"><CODE>Lock</CODE></A>, <A HREF="sess4.htm#1011339"><CODE>server.unlock</CODE></A><P></A>
+
+<P><HR>
+<A HREF="contents.htm">[Contents]</A> <A HREF="sess3.htm">[Previous]</A> <A HREF="sess5.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<P ALIGN=right>
+
+<FONT SIZE=-2><I>Last Updated:  10/31/97  12:33:29
+</I></FONT>
+
+<HR SIZE=4>
+
+<P> <CENTER>Copyright © 1997
+<A HREF="http://home.netscape.com/misc/contact_info.html"
+TARGET=_top>Netscape Communications Corporation</A></FONT>
+</CENTER>
+<P>
+<P>
+</BODY>
+</HTML>
+
+

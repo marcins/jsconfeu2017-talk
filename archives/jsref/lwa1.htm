@@ -1,0 +1,720 @@
+<HTML>
+<HEAD>
+<TITLE>
+</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A HREF="contents.htm">[Contents]</A> <A HREF="lwa.htm">[Previous]</A> <A HREF="lwa2.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<HR>
+
+<A NAME="Cursor "></A>
+<A NAME="1012652">
+<H1> Cursor </H1>
+</A>
+<A NAME="1016759">
+Server-side object. A <CODE>Cursor</CODE> object represents a database cursor for a specified SQL <CODE>SELECT</CODE> statement. <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1053924">
+<I>Server-side object</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1053929">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1053931">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1053933">
+LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1030144">
+<H4> Created by</H4>
+</A>
+
+<A NAME="1030157">
+The <CODE>cursor</CODE> method of a <A HREF="lwa.htm#1013808"><CODE>Connection</CODE></A> object or of the <A HREF="lw1.htm#1031336"><CODE>database</CODE></A> object. You do not call a <CODE>Cursor</CODE> constructor.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1017027">
+<H4> Description</H4>
+</A>
+
+<A NAME="1030221">
+A database query is said to return a <CODE>Cursor</CODE>. You can think of a Cursor as a virtual table, with rows and columns specified by the query. A cursor also has a notion of a <I>current row</I>, which is essentially a pointer to a row in the virtual table. When you perform operations with a Cursor, they usually affect the current row.<P></A>
+<A NAME="1012654">
+You can perform the following tasks with the <CODE>Cursor</CODE> object:<P></A>
+<ul><P>
+<A NAME="1012656">
+<LI>Modify data in a database table. </LI>
+</A><P>
+<A NAME="1012657">
+<LI>Navigate in a database table.</LI>
+</A><P>
+<A NAME="1012658">
+<LI>Customize the display of the virtual table returned by a database query.</LI>
+</A></ul><A NAME="1012659">
+You can use a <CODE>Cursor</CODE> object to customize the display of the virtual table by specifying which columns and rows to display and how to display them. The <CODE>Cursor</CODE> object does not automatically display the data returned in the virtual table. To display this data, you must create HTML code such as that shown in Example 4 for the <CODE>cursor</CODE> method.<P></A>
+<A NAME="1017450">
+A pointer indicates the current row in a Cursor. When you create a Cursor, the pointer is initially positioned before the first row of the cursor. The <CODE>next</CODE> method makes the following row in the cursor the current row. If the <CODE>SELECT</CODE> statement used in the call to the <CODE>cursor</CODE> method does not return any rows, the method still creates a <CODE>Cursor</CODE> object. However, since that object has no rows, the first time you use the <CODE>next</CODE> method on the object, it returns false. Your application should check for this condition.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012661">
+<H4> Important</H4>
+</A>
+
+<a name="1017043">
+A database cursor does not guarantee the order or positioning of its rows. For 
+example, if you have an updatable cursor and add a row to the cursor, you 
+have no way of knowing where that row appears in the cursor. 
+</blockquote>
+</a>
+<A NAME="1017044">
+When finished with a <CODE>Cursor</CODE> object, use the <CODE>close</CODE> method to close it and release the memory it uses. If you release a connection that has an open cursor, the runtime engine waits until the cursor is closed before actually releasing the connection.<P></A>
+<A NAME="1017045">
+If you do not explicitly close a cursor with the <CODE>close</CODE> method, the JavaScript runtime engine on the server automatically tries to close all open cursors when the associated <CODE>database</CODE> or <CODE>DbPool</CODE> object goes out of scope. This can tie up system resources unnecessarily. It can also lead to unpredictable results.<P></A>
+<A NAME="1017046">
+You can use the <CODE>prototype</CODE> property of the <CODE>Cursor</CODE> class to add a property to all <CODE>Cursor</CODE> instances. If you do so, that addition applies to all <CODE>Cursor</CODE> instances running in all applications on your server, not just in the single application that made the change. This allows you to expand the capabilities of this object for your entire server.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012662">
+<H4> Note</H4>
+</A>
+
+<A NAME="1012663">
+Every Sybase table you use with a cursor must have a unique index.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1056568">
+<H4> Property Summary</H4>
+</A>
+
+<A NAME="1056843">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1056848">
+<PRE><I><A HREF="lwa1.htm#1012727"></I><CODE>cursorColumn</CODE><I></A></I></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1056850">
+An array of objects corresponding to the columns in a cursor.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1058532">
+<PRE><A HREF="lwa1.htm#1059836"><CODE>prototype</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1058555">
+Allows the addition of properties to a <CODE>Cursor</CODE> object.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1056842">
+<H4> Method Summary</H4>
+</A>
+
+<A NAME="1012715">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012670">
+<PRE><A HREF="lwa1.htm#1012753"><CODE>close</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1012672">
+Closes the cursor and frees the allocated memory.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1056591">
+<PRE><A HREF="lwa1.htm#1012773"><CODE>columnName</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1056593">
+the name of the column in the cursor corresponding to the specified number.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012684">
+<PRE><A HREF="lwa1.htm#1012794"><CODE>columns</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1012686">
+Returns the number of columns in the cursor.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012691">
+<PRE><A HREF="lwa1.htm#1012816"><CODE>deleteRow</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1012693">
+Deletes the current row in the specified table.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012698">
+<PRE><A HREF="lwa1.htm#1012844"><CODE>insertRow</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1012700">
+Inserts a new row in the specified table.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012705">
+<PRE><A HREF="lwa1.htm#1012884"><CODE>next</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1012707">
+Moves the current row to the next row in the cursor.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012712">
+<PRE><A HREF="lwa1.htm#1012912"><CODE>updateRow</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1012714">
+Updates records in the current row of the specified table in the cursor.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head2;"></A>
+<A NAME="1012719">
+<H3> Properties</H3>
+</A>
+
+<A NAME="1012720">
+This section describes the properties of <CODE>cursor</CODE> objects.<P></A>
+<A NAME="1012721">
+The properties of <CODE>cursor</CODE> objects vary from instance to instance. Each <CODE>Cursor</CODE><CODE> </CODE>object has a property for each named column in the cursor. In other words, when you create a cursor, it acquires a property for each column in the virtual table, as determined by the SELECT statement.<P></A>
+<BLOCKQUOTE><B>NOTE: </B><a name="1012723">
+Unlike other properties in JavaScript, <CODE>cursor</CODE> properties corresponding to 
+column names are not case sensitive, because SQL is not case sensitive and 
+some databases are not case sensitive.
+</blockquote>
+</a>
+<A NAME="1012724">
+You can also refer to properties of a <CODE>Cursor</CODE><CODE> </CODE>object as elements of an array. The 0-index array element corresponds to the first column, the 1-index array element corresponds to the second column, and so on.<P></A>
+<A NAME="1012725">
+SELECT statements can retrieve values that are not columns in the database, such as aggregate values and SQL expressions. You can display these values by using the cursor's property array index for the value.<P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1012727">
+<H2>cursorColumn</H2>
+</A>
+
+<A NAME="1012728">
+An array of objects corresponding to the columns in a cursor.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1054031">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1054033">
+<A HREF="lwa1.htm#1012652"><CODE>Cursor</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1054035">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1054037">
+LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012732">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1012733">
+<B>Example 1: Using column titles as cursor properties. </B>The following example creates the <CODE>customerSet</CODE> <CODE>Cursor </CODE>object containing the <CODE>id</CODE>, <CODE>name</CODE>, and <CODE>city</CODE> rows from the <CODE>customer</CODE> table. The <CODE>next</CODE> method moves the pointer to the first row of the cursor. The <CODE>id</CODE>, <CODE>name</CODE>, and <CODE>city</CODE> columns become the <CODE>cursor</CODE> properties <CODE>customer.id</CODE>, <CODE>customerSet.name</CODE>, and <CODE>customerSet.city</CODE>. Because the pointer is in the first row of the cursor, the <CODE>write</CODE> method displays the values of these properties for the first row.<P></A>
+<A NAME="1012734">
+<PRE>// Create a Cursor object<br>customerSet = database.cursor("SELECT id, name, city FROM customer")</PRE></A><A NAME="1012735">
+<PRE>// Navigate to the first row<br>customerSet.next()</PRE></A><A NAME="1012736">
+<PRE>write(customerSet.id + "&lt;BR&gt;")<br>write(customerSet.name + "&lt;BR&gt;")<br>write(customerSet.city + "&lt;BR&gt;")</PRE></A><A NAME="1012737">
+<PRE>// Close the cursor<br>customerSet.close()</PRE></A><A NAME="1012738">
+This query might return a virtual table containing the following rows: <P></A>
+<A NAME="1012739">
+<PRE>1 John Smith Anytown <br>2 Fred Flintstone Bedrock <br>3 George Jetson Spacely</PRE></A><A NAME="1012740">
+<B>Example 2: Iterating with the cursor properties. </B>In this example, the <CODE>cursor</CODE> property array is used in a <CODE>for</CODE> statement to iterate over each column in the <CODE>customerSet</CODE> cursor.<P></A>
+<A NAME="1012741">
+<PRE>// Create a Cursor object<br>customerSet = database.cursor("SELECT id, name, city FROM customer")</PRE></A><A NAME="1012742">
+<PRE>// Navigate to the first row<br>customerSet.next()</PRE></A><A NAME="1012743">
+<PRE>// Start a for loop<br>for ( var i = 0; i &lt; customerSet.columns(); i++) {<br>write(customerSet[i] + "&lt;BR&gt;") }</PRE></A><A NAME="1012744">
+<PRE>// Close the cursor<br>customerSet.close()</PRE></A><A NAME="1012745">
+Because the <CODE>next</CODE> statement moves the pointer to the first row, the preceding code displays values similar to the following:<P></A>
+<A NAME="1012746">
+<PRE>1<br>John Smith<br>Anytown</PRE></A><A NAME="1012747">
+<B>Example 3. Using the cursor properties with an aggregate expression.</B> In this example, the <CODE>salarySet</CODE> cursor contains a column created by the aggregate function MAX.<P></A>
+<A NAME="1012748">
+<PRE>salarySet = database.cursor("SELECT name, MAX(salary) FROM employee")</PRE></A><A NAME="1012749">
+Because the aggregate column does not have a name, you must use the refer to it by its index number, as follows:<P></A>
+<A NAME="1012750">
+<PRE>write(salarySet[1])</PRE></A>
+<A NAME="Head2Ref;"></A>
+<A NAME="1059836">
+<H2>prototype</H2>
+</A>
+
+<A NAME="1059837">
+Represents the prototype for this class. You can use the prototype to add properties or methods to all instances of a class. For information on prototypes, see <A HREF="core4.htm#1181210"><CODE>Function.prototype</CODE></A>.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1059843">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1059848">
+<A HREF="lwa1.htm#1012652"><CODE>Cursor</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1059850">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1059852">
+LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head2;"></A>
+<A NAME="1012751">
+<H3> Methods</H3>
+</A>
+
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1012753">
+<H2>close</H2>
+</A>
+
+<A NAME="1012754">
+Closes the cursor and frees the allocated memory.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1054078">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1054083">
+<A HREF="lwa1.htm#1012652"><CODE>Cursor</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1054085">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1054087">
+LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012755">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1012756">
+<PRE>close()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1012757">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1012758">
+None.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012761">
+<H4> Returns</H4>
+</A>
+
+<A NAME="1066424">
+0 if the call was successful; otherwise, a nonzero status code based on any error message passed by the database. If the method returns a nonzero status code, use the associated <CODE>majorErrorCode</CODE> and <CODE>majorErrorMessage</CODE> methods to interpret the cause of the error.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012763">
+<H4> Description</H4>
+</A>
+
+<A NAME="1012764">
+The <CODE>close</CODE> method closes a cursor or result set and releases the memory it uses. If you do not explicitly close a cursor or result set with the <CODE>close</CODE> method, the JavaScript runtime engine on the server automatically closes all open cursors and result sets when the corresponding <CODE>client</CODE> object goes out of scope.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012767">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1012768">
+The following example creates the <CODE>rentalSet </CODE>cursor, performs certain operations on it, and then closes it with the <CODE>close</CODE> method.<P></A>
+<A NAME="1012769">
+<PRE>// Create a Cursor object<br>rentalSet = database.cursor("SELECT * FROM rentals")</PRE></A><A NAME="1012770">
+<PRE>// Perform operations on the cursor<br>cursorOperations()</PRE></A><A NAME="1012771">
+<PRE>//Close the cursor<br>err = rentalSet.close()</PRE></A>
+<A NAME="Head2Ref;"></A>
+<A NAME="1012773">
+<H2>columnName</H2>
+</A>
+
+<A NAME="1012774">
+Returns the name of the column in the cursor corresponding to the specified number.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1054426">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1054431">
+<A HREF="lwa1.htm#1012652"><CODE>Cursor</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1054433">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1054435">
+LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012775">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1012776">
+<PRE>columnName (n)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1012777">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1012783">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012780">
+<PRE>n</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1012782">
+Zero-based integer corresponding to the column in the query. The first column in the result set is 0, the second is 1, and so on.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012786">
+<H4> Returns</H4>
+</A>
+
+<A NAME="1012787">
+The name of the column. <P></A>
+<A NAME="1014768">
+The result sets for Informix and DB2 stored procedures do not have named columns. Do not use this method when connecting to those databases. In those cases you should always refer to the result set columns by the index number.<P></A>
+<A NAME="1029811">
+If your <CODE>SELECT</CODE> statement uses a wildcard (*) to select all the columns in a table, the <CODE>columnName</CODE> method does not guarantee the order in which it assigns numbers to the columns. That is, suppose you have this statement:<P></A>
+<A NAME="1029812">
+<PRE>custs = connobj.cursor ("select * from customer");</PRE></A><A NAME="1029813">
+If the customer table has 3 columns, ID, NAME, and CITY, you cannot tell ahead of time which of these columns corresponds to <CODE>custs.columnName(0)</CODE>. (Of course, you are guaranteed that successive calls to <CODE>columnName</CODE> have the same result.) If the order matters to you, you can instead hard-code the column names in the select statement, as in the following statement:<P></A>
+<A NAME="1029814">
+<PRE>custs = connobj.cursor ("select ID, NAME, CITY from customer");</PRE></A><A NAME="1029815">
+With this statement, <CODE>custs.columnName(0)</CODE> is ID, <CODE>custs.columnName(1)</CODE> is NAME, and <CODE>custs.columnName(2)</CODE> is CITY.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012790">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1012791">
+The following example assigns the name of the first column in the <CODE>customerSet</CODE> cursor to the variable <CODE>header</CODE>:<P></A>
+<A NAME="1012792">
+<PRE>customerSet=database.cursor(SELECT * FROM customer ORDER BY name)<br>header = customerSet.columnName(0)</PRE></A>
+<A NAME="Head2Ref;"></A>
+<A NAME="1012794">
+<H2>columns</H2>
+</A>
+
+<A NAME="1012795">
+Returns the number of columns in the cursor.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1054474">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1054479">
+<A HREF="lwa1.htm#1012652"><CODE>Cursor</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1054481">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1054483">
+LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012796">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1012797">
+<PRE>columns()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1012798">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1012799">
+None.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012802">
+<H4> Returns</H4>
+</A>
+
+<A NAME="1012803">
+The number of named and unnamed columns.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012806">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1012810">
+See Example 2 of <A HREF="lwa1.htm#1012652"><CODE>Cursor</CODE></A> for an example of using the <CODE>columns</CODE> method with the <CODE>cursorColumn</CODE> array.<P></A>
+<A NAME="1012811">
+The following example returns the number of columns in the <CODE>custs</CODE> cursor:<P></A>
+<A NAME="1012812">
+<PRE>custs.columns()</PRE></A>
+<A NAME="Head2Ref;"></A>
+<A NAME="1012816">
+<H2>deleteRow</H2>
+</A>
+
+<A NAME="1012817">
+Deletes the current row in the specified table.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1054518">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1054523">
+<A HREF="lwa1.htm#1012652"><CODE>Cursor</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1054525">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1054527">
+LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012818">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1012819">
+<PRE>deleteRow (table)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1012820">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1012826">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012823">
+<PRE>table</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1012825">
+A string specifying the name of the table from which to delete a row.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012829">
+<H4> Returns</H4>
+</A>
+
+<A NAME="1012830">
+0 if the call was successful; otherwise, a nonzero status code based on any error message passed by the database. If the method returns a nonzero status code, use the associated <CODE>majorErrorCode</CODE> and <CODE>majorErrorMessage</CODE> methods to interpret the cause of the error.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012831">
+<H4> Description</H4>
+</A>
+
+<A NAME="1012832">
+The <CODE>deleteRow</CODE> method uses an updatable cursor to delete the current row from the specified table. See <A HREF="lwa1.htm#1012652"><CODE>Cursor</CODE></A> for information about creating an updatable cursor.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012838">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1012839">
+In the following example, the <CODE>deleteRow</CODE> method removes a customer from the <CODE>customer</CODE> database. The <CODE>cursor</CODE> method creates the <CODE>customerSet</CODE> cursor containing a single row; the value for <CODE>customer.ID</CODE> is passed in as a <CODE>request</CODE> object property. The <CODE>next</CODE> method moves the pointer to the only row in the cursor, and the <CODE>deleteRow</CODE> method deletes the row.<P></A>
+<A NAME="1012840">
+<PRE>database.beginTransaction()<br>&nbsp;&nbsp;&nbsp;customerSet = database.cursor("select * from customer where<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;customer.ID = " + request.ID, true)<br>&nbsp;&nbsp;&nbsp;customerSet.next()<br>&nbsp;&nbsp;&nbsp;statusCode = customerSet.deleteRow("customer")<br>&nbsp;&nbsp;&nbsp;customerSet.close()<br>&nbsp;&nbsp;&nbsp;if (statusCode == 0) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;database.commitTransaction() }<br>&nbsp;&nbsp;&nbsp;else {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;database.rollbackTransaction() }</PRE></A><A NAME="1012841">
+In this example, the <CODE>deleteRow</CODE> method sets the value of <CODE>statusCode</CODE> to indicate whether <CODE>deleteRow</CODE> succeeds or fails. If <CODE>statusCode</CODE> is 0, the method has succeeded and the transaction is committed; otherwise, the transaction is rolled back.<P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1012844">
+<H2>insertRow</H2>
+</A>
+
+<A NAME="1012845">
+Inserts a new row in the specified table.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1054562">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1054567">
+<A HREF="lwa1.htm#1012652"><CODE>Cursor</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1054569">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1054571">
+LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012846">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1012847">
+<PRE>insertRow (table)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1012848">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1012854">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012851">
+<PRE>table</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1012853">
+A string specifying the name of the table in which to insert a row.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012857">
+<H4> Returns</H4>
+</A>
+
+<A NAME="1012858">
+0 if the call was successful; otherwise, a nonzero status code based on any error message passed by the database. If the method returns a nonzero status code, use the associated <CODE>majorErrorCode</CODE> and <CODE>majorErrorMessage</CODE> methods to interpret the cause of the error.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012859">
+<H4> Description</H4>
+</A>
+
+<A NAME="1012860">
+The <CODE>insertRow</CODE> method uses an updatable cursor to insert a row in the specified table. See the <CODE>cursor</CODE> method for information about creating an updatable cursor.<P></A>
+<A NAME="1012861">
+The location of the inserted row depends on the database vendor library. If you need to get at the row after calling the <CODE>insertRow</CODE> method, you must first close the existing cursor and then open a new cursor.<P></A>
+<A NAME="1012862">
+You can specify values for the row you are inserting as follows:<P></A>
+<ul><P>
+<A NAME="1012863">
+<LI>By explicitly assigning values to each column in the cursor and then calling the <CODE>insertRow</CODE> method.</LI>
+</A><P>
+<A NAME="1012864">
+<LI>By navigating to a row with the <CODE>next</CODE> method, explicitly assigning values for some columns, and then calling the <CODE>insertRow</CODE> method. Columns that are not explicitly assigned values receive values from the row to which you navigated.</LI>
+</A><P>
+<A NAME="1012865">
+<LI>By not navigating to another record and then calling the <CODE>insertRow</CODE> method. If you do not issue a <CODE>next</CODE> method, columns that are not explicitly assigned values are null.</LI>
+</A></ul><A NAME="1012866">
+The <CODE>insertRow</CODE> method inserts a null value in any table columns that do not appear in the cursor.<P></A>
+<A NAME="1012867">
+The <CODE>insertRow</CODE> method returns a status code based on a database server message to indicate whether the method completed successfully. If successful, the method returns a 0; otherwise, it returns a nonzero integer to indicate the reason it failed. See <A HREF="http://developer.netscape.com/library/documentation/enterprise/wrijsap/index.htm" TARGET="_top">Writing Server-Side JavaScript Applications<CODE></A></CODE> for an explanation of status codes.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012875">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1012876">
+In some applications, such as a video-rental application, a husband, wife, and children could all share the same account number but be listed under different names. In this example, a user has just added a name to the <CODE>accounts</CODE> table and wants to add a spouse's name to the same account.<P></A>
+<A NAME="1012877">
+<PRE>customerSet = database.cursor("select * from customer", true)</PRE></A><A NAME="1012878">
+<PRE>x=true<br>while (x) {<br>&nbsp;&nbsp;&nbsp;x = customerSet.next() }</PRE></A><A NAME="1012879">
+<PRE>customerSet.name = request.theName<br>customerSet.insertRow("accounts")<br>customerSet.close()</PRE></A><A NAME="1012880">
+In this example, the <CODE>next</CODE> method navigates to the last row in the table, which contains the most recently added account. The value of <CODE>theName</CODE> is passed in by the <CODE>request</CODE> object and assigned to the <CODE>name</CODE> column in the <CODE>customerSet</CODE> cursor. The <CODE>insertRow</CODE> method inserts a new row at the end of the table. The value of the <CODE>name</CODE> column in the new row is the value of <CODE>theName</CODE>. Because the application used the <CODE>next</CODE> method to navigate, the value of every other column in the new row is the same as the value in the previous row.<P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1012884">
+<H2>next </H2>
+</A>
+
+<A NAME="1012885">
+Moves the current row to the next row in the cursor.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1054860">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1054865">
+<A HREF="lwa1.htm#1012652"><CODE>Cursor</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1054867">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1054869">
+LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012886">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1012887">
+<PRE>next()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1012888">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1012889">
+None.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012892">
+<H4> Returns</H4>
+</A>
+
+<A NAME="1012893">
+False if the current row is the last row; otherwise, true.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1018383">
+<H4> Description</H4>
+</A>
+
+<A NAME="1018384">
+Initially, the pointer (or current row) for a cursor or result set is positioned before the first row returned. Use the <CODE>next</CODE> method to move the pointer through the records in the cursor or result set. This method moves the pointer to the next row and returns true as long as there is another row available. When the cursor or result set has reached the last row, the method returns false. Note that if the cursor is empty, this method always returns false.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012898">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1012899">
+<B>Example 1.</B> This example uses the <CODE>next</CODE> method to navigate to the last row in a cursor. The variable <CODE>x</CODE> is initialized to true. When the pointer is in the last row of the cursor, the <CODE>next</CODE> method returns false and terminates the <CODE>while</CODE> loop.<P></A>
+<A NAME="1012900">
+<PRE>customerSet = database.cursor("select * from customer", true)</PRE></A><A NAME="1012901">
+<PRE>x = true<br>while (x) {<br>&nbsp;&nbsp;&nbsp;x = customerSet.next() }</PRE></A><A NAME="1041408">
+<B>Example 2.</B> In the following example, the <CODE>rentalSet</CODE> cursor contains columns named <CODE>videoId</CODE>, <CODE>rentalDate</CODE>, and <CODE>dueDate</CODE>. The <CODE>next</CODE> method is called in a <CODE>while</CODE> loop that iterates over every row in the cursor. When the pointer is on the last row in the cursor, the <CODE>next</CODE> method returns false and terminates the <CODE>while</CODE> loop.<P></A>
+<A NAME="1018516">
+This example displays the three columns of the cursor in an HTML table:<P></A>
+<A NAME="1018517">
+<PRE>&lt;SERVER&gt;<br>// Create a Cursor object<br>rentalSet = database.cursor("SELECT videoId, rentalDate, returnDate<br>&nbsp;&nbsp;&nbsp;FROM rentals")<br>&lt;/SERVER&gt;</PRE></A><A NAME="1018518">
+<PRE>// Create an HTML table<br>&lt;TABLE BORDER&gt;<br>&lt;TR&gt;<br>&lt;TH&gt;Video ID&lt;/TH&gt;<br>&lt;TD&gt;Rental Date&lt;/TD&gt;<br>&lt;TD&gt;Due Date&lt;/TD&gt;<br>&lt;/TR&gt;</PRE></A><A NAME="1018519">
+<PRE>&lt;SERVER&gt;<br>// Iterate through each row in the cursor<br>while (rentalSet.next()) {<br>&lt;/SERVER&gt;</PRE></A><A NAME="1018520">
+<PRE>// Display the cursor values in the HTML table<br>&nbsp;&nbsp;&nbsp;&lt;TR&gt;<br>&nbsp;&nbsp;&nbsp;&lt;TH&gt;&lt;SERVER&gt;write(rentalSet.videoId)&lt;/SERVER&gt;&lt;/TH&gt;<br>&nbsp;&nbsp;&nbsp;&lt;TD&gt;&lt;SERVER&gt;write(rentalSet.rentalDate)&lt;/SERVER&gt;&lt;/TD&gt;<br>&nbsp;&nbsp;&nbsp;&lt;TD&gt;&lt;SERVER&gt;write(rentalSet.returnDate)&lt;/SERVER&gt;&lt;/TD&gt;<br>&nbsp;&nbsp;&nbsp;&lt;/TR&gt;</PRE></A><A NAME="1018521">
+<PRE>// Terminate the while loop<br>&lt;SERVER&gt;<br>}<br>&lt;/SERVER&gt;</PRE></A><A NAME="1018522">
+<PRE>// End the table<br>&lt;/TABLE&gt;</PRE></A>
+<A NAME="Head2Ref;"></A>
+<A NAME="1012912">
+<H2>updateRow</H2>
+</A>
+
+<A NAME="1012913">
+Updates records in the current row of the specified table in the cursor.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1055150">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1055155">
+<A HREF="lwa1.htm#1012652"><CODE>Cursor</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1055157">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1055159">
+LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012914">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1012915">
+<PRE>updateRow (table)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1012916">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1012922">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012919">
+<PRE>table</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1012921">
+String specifying the name of the table to update.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012925">
+<H4> Returns</H4>
+</A>
+
+<A NAME="1012926">
+0 if the call was successful; otherwise, a nonzero status code based on any error message passed by the database. If the method returns a nonzero status code, use the associated <CODE>majorErrorCode</CODE> and <CODE>majorErrorMessage</CODE> methods to interpret the cause of the error.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012927">
+<H4> Description</H4>
+</A>
+
+<A NAME="1012928">
+The <CODE>updateRow</CODE> method lets you use values in the current row of an updatable cursor to modify a table. See the <CODE>cursor</CODE> method for information about creating an updatable cursor. Before performing an <CODE>updateRow</CODE>, you must perform at least one <CODE>next</CODE> with the cursor so the current row is set to a row. <P></A>
+<A NAME="1012929">
+Assign values to columns in the current row of the cursor, and then use the <CODE>updateRow</CODE> method to update the current row of the table specified by the <CODE>table </CODE>parameter. Column values that are not explicitly assigned are not changed by the <CODE>updateRow</CODE> method.<P></A>
+<A NAME="1012930">
+The <CODE>updateRow</CODE> method returns a status code based on a database server message to indicate whether the method completed successfully. If successful, the method returns a 0; otherwise, it returns a nonzero integer to indicate the reason it failed. See <A HREF="http://developer.netscape.com/library/documentation/enterprise/wrijsap/index.htm" TARGET="_top">Writing Server-Side JavaScript Applications</A> for an explanation of the individual status codes.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012938">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1019044">
+This example uses <CODE>updateRow</CODE> to update the <CODE>returndate</CODE> column of the <CODE>rentals</CODE> table. The values of <CODE>customerID</CODE> and <CODE>videoID</CODE> are passed into the <CODE>cursor</CODE> method as properties of the <CODE>request</CODE> object. When the <CODE>videoReturn</CODE> <CODE>Cursor</CODE> object opens, the <CODE>next</CODE> method navigates to the only record returned and updates the value in the <CODE>returnDate</CODE> field.<P></A>
+<A NAME="1019046">
+<PRE>// Create a cursor containing the rented video<br>videoReturn = database.cursor("SELECT * FROM rentals WHERE<br>&nbsp;&nbsp;&nbsp;customerId = " + request.customerID + " AND<br>&nbsp;&nbsp;&nbsp;videoId = " + request.videoID, true)</PRE></A><A NAME="1019047">
+<PRE>// Position the pointer on the first row of the cursor<br>videoReturn.next()</PRE></A><A NAME="1019048">
+<PRE>// Assign today's date to the returndate column<br>videoReturn.returndate = today</PRE></A><A NAME="1019049">
+<PRE>// Update the row<br>videoReturn.updateRow("rentals")</PRE></A>
+<P><HR>
+<A HREF="contents.htm">[Contents]</A> <A HREF="lwa.htm">[Previous]</A> <A HREF="lwa2.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<P ALIGN=right>
+
+<FONT SIZE=-2><I>Last Updated:  10/31/97  16:36:13
+</I></FONT>
+
+<HR SIZE=4>
+
+<P> <CENTER>Copyright © 1997
+<A HREF="http://home.netscape.com/misc/contact_info.html"
+TARGET=_top>Netscape Communications Corporation</A></FONT>
+</CENTER>
+<P>
+<P>
+</BODY>
+</HTML>
+
+

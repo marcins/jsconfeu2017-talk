@@ -1,0 +1,1013 @@
+<HTML>
+<HEAD>
+<TITLE>LiveWire Database Service
+</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A HREF="contents.htm">[Contents]</A> <A HREF="lw1.htm">[Previous]</A> <A HREF="lwa.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<HR>
+
+<A NAME="DbPool "></A>
+<A NAME="1016183">
+<H1> DbPool </H1>
+</A>
+<A NAME="1010272">
+Represents a pool of connections to a particular database configuration.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1052675">
+<I>Server-side object</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1052680">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1052682">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1052684">
+Netscape Server 3.0</A></P>
+
+</TABLE>
+<P></A>
+<A NAME="1010273">
+To connect to a database, you first create a pool of database connections and then access individual connections as needed. For more information on the general methodology for using <CODE>DbPool</CODE> objects, see <A HREF="http://developer.netscape.com/library/documentation/enterprise/wrijsap/index.htm" TARGET="_top">Writing Server-Side JavaScript Applications</A>.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1031058">
+<H4> Created by</H4>
+</A>
+
+<A NAME="1031059">
+The <A HREF="lw2.htm#1010356"><CODE>DbPool</CODE></A> constructor.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1021899">
+<H4> Description</H4>
+</A>
+
+<A NAME="1021900">
+The lifetime of a <CODE>DbPool</CODE> object (its scope) varies. Assuming it has been assigned to a variable, a <CODE>DbPool</CODE> object can go out of scope at different times:<P></A>
+<ul><P>
+<A NAME="1021902">
+<LI>If the variable is a property of the <CODE>project</CODE> object (such as <CODE>project.engconn</CODE>), then it remains in scope until the application terminates or until you reassign the property to another value or to null.</LI>
+</A><P>
+<A NAME="1021903">
+<LI>If it is a property of the <CODE>server</CODE> object (such as <CODE>server.engconn</CODE>), it remains in scope until the server goes down or until you reassign the property to another value or to null. </LI>
+</A><P>
+<A NAME="1021904">
+<LI>In all other cases, the variable is a property of the <CODE>request</CODE> object. In this situation, the variable goes out of scope when control leaves the HTML page or you reassign the property to another value or to null.</LI>
+</A></ul><A NAME="1021905">
+It is your responsibility to release all connections and close all cursors, stored procedures, and result sets associated with a <CODE>DbPool</CODE> object before that object goes out of scope. Release connections and close the other objects as soon as you are done with them. <P></A>
+<A NAME="1021906">
+If you do not release a connection, it remains bound and is unavailable to the next user until the associated <CODE>DbPool</CODE> object goes out of scope. When you do call <CODE>release</CODE> to give up a connection, the runtime engine waits until all associated cursors, stored procedures, and result sets are closed before actually releasing the connection. Therefore, you must close those objects when you are done with them.<P></A>
+<A NAME="1021907">
+You can use the <CODE>prototype</CODE> property of the <CODE>DbPool</CODE> object to add a property to all <CODE>DbPool</CODE> instances. If you do so, that addition applies to all <CODE>DbPool</CODE> objects running in all applications on your server, not just in the single application that made the change. This allows you to expand the capabilities of this object for your entire server.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1059839">
+<H4> Property Summary&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</H4>
+</A>
+
+<A NAME="1059855">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1059852">
+<PRE><A HREF="lw2.htm#1059865"><CODE>prototype</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1059854">
+Allows the addition of properties to a <CODE>DbPool</CODE> object.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010279">
+<H4> Method Summary</H4>
+</A>
+
+<A NAME="1010351">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1010285">
+<PRE><A HREF="lw2.htm#1010356"><CODE>DbPool</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1010287">
+Creates a pool of database Connection objects and optionally connects the objects to a particular configuration of database and user.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1010292">
+<PRE><A HREF="lw2.htm#1010417"><CODE>connect</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1010294">
+Connects the pool to a particular configuration of database and user.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1010299">
+<PRE><A HREF="lw2.htm#1010481"><CODE>connected</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1010301">
+Tests whether the database pool and all of its connections are connected to a database.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1010306">
+<PRE><A HREF="lw2.htm#1010503"><CODE>connection</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1010308">
+Retrieves an available connection from the pool.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1010313">
+<PRE><A HREF="lw2.htm#1010526"><CODE>disconnect</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1010315">
+Disconnects all connections in the pool from the database.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1010320">
+<PRE><A HREF="lw2.htm#1010545"><CODE>majorErrorCode</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1010322">
+Major error code returned by the database server or ODBC.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1010327">
+<PRE><A HREF="lw2.htm#1010708"><CODE>majorErrorMessage</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1010329">
+Major error message returned by database server or ODBC. For server errors, this typically corresponds to the server's SQLCODE.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1010334">
+<PRE><A HREF="lw2.htm#1010732"><CODE>minorErrorCode</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1010336">
+Secondary error code returned by database vendor library.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1010341">
+<PRE><A HREF="lw2.htm#1010748"><CODE>minorErrorMessage</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1010343">
+Secondary message returned by database vendor library.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1010348">
+<PRE><A HREF="lw2.htm#1022943"><CODE>storedProcArgs</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1010350">
+Creates a prototype for a Sybase stored procedure.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1047411">
+<PRE><A HREF="lw2.htm#1047420"><CODE>toString</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1047413">
+Returns a string representing the specified object.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head2;"></A>
+<A NAME="1045190">
+<H3> Properties</H3>
+</A>
+
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1059865">
+<H2>prototype</H2>
+</A>
+
+<A NAME="1059866">
+Represents the prototype for this class. You can use the prototype to add properties or methods to all instances of a class. For information on prototypes, see <A HREF="core4.htm#1181210"><CODE>Function.prototype</CODE></A>.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1059872">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1059877">
+<A HREF="lw2.htm#1016183"><CODE>DbPool</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1059879">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1059881">
+LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head2;"></A>
+<A NAME="1059860">
+<H3> Methods</H3>
+</A>
+
+
+<A NAME="Head2;"></A>
+<A NAME="1010356">
+<H3> DbPool</H3>
+</A>
+
+<A NAME="1010357">
+Creates a pool of database Connection objects and optionally connects the objects to a particular configuration of database and user.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1052707">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1052709">
+<A HREF="lw2.htm#1016183"><CODE>DbPool</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1052711">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1052713">
+Netscape Server 3.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010358">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1010359">
+<PRE>new DbPool();</PRE></A><A NAME="1010360">
+<PRE>new DbPool (dbtype, serverName, username, password, databaseName);</PRE></A><A NAME="1010361">
+<PRE>new DbPool (dbtype, serverName, username, password, databaseName, maxConnections);</PRE></A><A NAME="1010362">
+<PRE>new DbPool (dbtype, serverName, username, password, databaseName, maxConnections, commitflag);</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1021916">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1010405">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1010366">
+<PRE>dbtype</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1010368">
+Database type. One of <CODE>ORACLE</CODE>, <CODE>SYBASE</CODE>, <CODE>INFORMIX</CODE>, <CODE>DB2</CODE>, or <CODE>ODBC</CODE>.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1010370">
+<PRE>serverName</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1010372">
+Name of the database server to which to connect. The server name typically is established when the database is installed and is different for different database types:</A></P><A NAME="1010373">
+DB2: Local database alias. On both NT and UNIX, this is set up by the client or the DB2 Command Line Processor.</A></P><A NAME="1010374">
+Informix: Informix server. On NT, this is specified with the setnet32 utility; on UNIX, in the sqlhosts file.</A></P><A NAME="1010375">
+Oracle: Service. On both NT and UNIX, this specified in the tnsnames.ora file. On NT, you can use the SQL*Net easy configuration to specify it. When your Oracle database server is local, specify the empty string for this argument.</A></P><A NAME="1010376">
+ODBC: Data source name. On NT, this is specified in the ODBC Administrator; on UNIX, in the .odbc.ini file. If you are using the Web Server as a user the file .odbc.ini must be in your home directory; if as a system, it must be in the root directory.</A></P><A NAME="1010377">
+Sybase: Server name (the DSQUERY parameter). On NT, this is specified with the sqledit utility; on UNIX, with the sybinit utility.</A></P><A NAME="1010378">
+If in doubt, see your database or system administrator. For ODBC, this is the name of the ODBC service as specified in Control Panel.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1010380">
+<PRE>userName</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1010382">
+Name of the user to connect to the database. Some relational database management systems (RDBMS) require that this be the same as your operating system login name; others maintain their own collections of valid user names. See your system administrator if you are in doubt.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1010384">
+<PRE>password</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1010386">
+User's password. If the database does not require a password, use an empty string ("").</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1010388">
+<PRE>databaseName</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1010390">
+Name of the database to connect to for the given <CODE>serverName</CODE>. If your database server supports the notion of multiple databases on a single server, supply the name of the database to use. If it does not, use an empty string (""). For Oracle, ODBC, and DB2, you must always use an empty string.</A></P><A NAME="1010391">
+For Oracle, specify this information in the tnsnames.ora file.</A></P><A NAME="1010392">
+For ODBC, if you want to connect to a particular database, specify the database name specified in the datasource definition.</A></P><A NAME="1010393">
+For DB2, there is no concept of a database name; the database name is always the server name (as specified with <CODE>serverName</CODE>).</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1010395">
+<PRE>maxConnections</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1021930">
+(Optional) Number of connections to be created and cached in the pool. The runtime engine attempts to create as many connections as specified with this parameter. If successful, it stores those connections for later use. If you do not supply this parameter, its value is&nbsp;1. </A></P><A NAME="1029954">
+Remember that your database client license probably specifies a maximum number of connections. Do not set this parameter to a number higher than your license allows. For Sybase, you can have at most 100 connections.</A></P><A NAME="1062631">
+If your database client library is not multithreaded, it can only support one connection at a time. In this case, your application performs as though you specified 1 for this parameter. For a current list of which database client libraries are multithreaded, see the <EM><A HREF="http://home.netscape.com/eng/server/webserver/3.0/" TARGET="_top">Enterprise Server 3.0 Release Notes</A></EM>.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1010399">
+<PRE>commitFlag</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1021048">
+(Optional) A Boolean value indicating whether to commit a pending transaction when the connection is released or the object is finalized.</A></P><A NAME="1021050">
+(If the transaction is on a single page, the object is finalized at the end of the page. If the transaction spans multiple pages, the object is finalized when the connection returns to the pool.)</A></P><A NAME="1021051">
+If this parameter is false, a pending transaction is rolled back. If this parameter is true, a pending transaction if committed. For DbPool, the default value is false; for database, the default value is true. If you specify this parameter, you must also specify the <CODE>maxConnections</CODE> parameter.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010408">
+<H4> Description</H4>
+</A>
+
+<A NAME="1010409">
+The first version of this constructor takes no parameters. It instantiates and allocates memory for a <CODE>DbPool</CODE> object. This version of the constructor creates and caches one connection. When this connection goes out of scope, pending transactions are rolled back.<P></A>
+<A NAME="1010410">
+The second version of this constructor instantiates a <CODE>DbPool</CODE> object and then calls the <CODE>connect</CODE> method to establish a database connection. This version of the constructor also creates and caches one connection. When this connection goes out of scope, pending transactions are rolled back.<P></A>
+<A NAME="1010411">
+The third version of this constructor instantiates a <CODE>DbPool</CODE> object and then calls the <CODE>connect</CODE> method to establish a database connection. In addition, it attempts to create as many connections as specified by the <CODE>maxConnections</CODE> parameter. If successful, it stores those connections for later use. If the runtime engine does not obtain the requested connections, it returns an error. When this connection goes out of scope, pending transactions are rolled back.<P></A>
+<A NAME="1010412">
+The fourth version of this constructor does everything the third version does. In addition, the <CODE>commitflag</CODE> parameter indicates what to do with pending transactions when the connection goes out of scope. If this parameter is false (the default), a pending transaction is rolled back. If this parameter is true, a pending transaction if committed.<P></A>
+<A NAME="1021944">
+To detect errors, you can use the <CODE>majorErrorCode</CODE> method.<P></A>
+<A NAME="1021964">
+If possible, your application should call this constructor and make the database connection on its initial page. Doing so prevents conflicts from multiple client requests trying to manipulate the status of the connections at once.<P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1010417">
+<H2>connect</H2>
+</A>
+
+<A NAME="1010418">
+Connects the pool to a particular configuration of database and user.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1052734">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1052739">
+<A HREF="lw2.htm#1016183"><CODE>DbPool</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1052741">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1052743">
+Netscape Server 3.0</A></P>
+
+</TABLE>
+</A></P>
+<A NAME="Head3;"></A>
+<A NAME="1010419">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1010420">
+<PRE>connect (dbtype, serverName, username, password, databaseName)</PRE></A><A NAME="1010421">
+<PRE>connect (dbtype, serverName, username, password, databaseName, maxConnections)</PRE></A><A NAME="1010422">
+<PRE>connect (dbtype, serverName, username, password, databaseName, maxConnections, commitflag)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1010423">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1010465">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1010426">
+<PRE>dbtype</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1010428">
+Database type; one of ORACLE, SYBASE, INFORMIX, DB2, or ODBC.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1010430">
+<PRE>serverName</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1010432">
+Name of the database server to which to connect. The server name typically is established when the database is installed and is different for different database types:</A></P><A NAME="1010433">
+DB2: Local database alias. On both NT and UNIX, this is set up by the client or the DB2 Command Line Processor.</A></P><A NAME="1010434">
+Informix: Informix server. On NT, this is specified with the setnet32 utility; on UNIX, in the sqlhosts file.</A></P><A NAME="1010435">
+Oracle: Service. On both NT and UNIX, this specified in the <CODE>tnsnames.ora</CODE> file. On NT, you can use the SQL*Net easy configuration to specify it. When your Oracle database server is local, specify the empty string for this argument. </A></P><A NAME="1010436">
+ODBC: Data source name. On NT, this is specified in the ODBC Administrator; on UNIX, in the .odbc.ini file. If you are using the Web Server as a user the file .odbc.ini must be in your home directory; if as a system, it must be in the root directory.</A></P><A NAME="1010437">
+Sybase: Server name (the DSQUERY parameter). On NT, this is specified with the sqledit utility; on UNIX, with the sybinit utility.</A></P><A NAME="1010438">
+If in doubt, see your database or system administrator. For ODBC, this is the name of the ODBC service as specified in Control Panel.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1010440">
+<PRE>userName</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1010442">
+Name of the user to connect to the database. Some relational database management systems (RDBMS) require that this be the same as your operating system login name; others maintain their own collections of valid user names. See your system administrator if you are in doubt.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1010444">
+<PRE>password</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1010446">
+User's password. If the database does not require a password, use an empty string ("").</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1010448">
+<PRE>databaseName</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1010450">
+Name of the database to connect to for the given <CODE>serverName</CODE>. If your database server supports the notion of multiple databases on a single server, supply the name of the database to use. If it does not, use an empty string (""). For Oracle, ODBC, and DB2, you must always use an empty string.</A></P><A NAME="1010451">
+For Oracle, specify this information in the tnsnames.ora file.</A></P><A NAME="1010452">
+For ODBC, if you want to connect to a particular database, specify the database name specified in the datasource definition.</A></P><A NAME="1010453">
+For DB2, there is no concept of a database name; the database name is always the server name (as specified with <CODE>serverName</CODE>).</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1029966">
+<PRE>maxConnections</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1029968">
+(Optional) Number of connections to be created and cached in the pool. The runtime engine attempts to create as many connections as specified with this parameter. If successful, it stores those connections for later use. If you do not supply this parameter, its value is&nbsp;1. </A></P><A NAME="1029969">
+Remember that your database client license probably specifies a maximum number of connections. Do not set this parameter to a number higher than your license allows. For Sybase, you can have at most 100 connections.</A></P><A NAME="1029970">
+If your database client library is not multithreaded, it can only support one connection at a time. In this case, your application performs as though you specified 1 for this parameter. For a current list of which database client libraries are multithreaded, see the <EM><A HREF="http://home.netscape.com/eng/server/webserver/3.0/" TARGET="_top">Enterprise Server 3.0 Release Notes</A></EM>.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1010462">
+<PRE>commitFlag</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1010464">
+(Optional) A Boolean value indicating whether to commit a pending transaction when the connection goes out of scope. If this parameter is false, a pending transaction is rolled back. If this parameter is true, a pending transaction if committed. For DbPool, the default value is false; for database, the default value is true. If you specify this parameter, you must also specify the <CODE>maxConnections</CODE> parameter.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010468">
+<H4> Returns</H4>
+</A>
+
+<A NAME="1010469">
+0 if the call was successful; otherwise, a nonzero status code based on any error message passed by the database. If the method returns a nonzero status code, use the associated <CODE>majorErrorCode</CODE> and <CODE>majorErrorMessage</CODE> methods to interpret the cause of the error.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010470">
+<H4> Description</H4>
+</A>
+
+<A NAME="1010471">
+When you call this method, the runtime engine first closes and releases any currently open connections. It then reconnects the pool with the new configuration. You should be sure that all connections have been released before calling this method. <P></A>
+<A NAME="1010472">
+The first version of this method creates and caches one connection. When this connection goes out of scope, pending transactions are rolled back.<P></A>
+<A NAME="1010473">
+The second version of this method attempts to create as many connections as specified by the <CODE>maxConnections</CODE> parameter. If successful, it stores those connections for later use. If the runtime engine does not obtain the requested connections, it returns an error. When this connection goes out of scope, pending transactions are rolled back.<P></A>
+<A NAME="1010474">
+The third version of this method does everything the second version does. In addition, the <CODE>commitflag</CODE> parameter indicates what to do with pending transactions when this connection goes out of scope. If this parameter is false (the default), a pending transaction is rolled back. If this parameter is true, a pending transaction if committed.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010477">
+<H4> Example</H4>
+</A>
+
+<A NAME="1010478">
+The following statement creates four connections to an Informix database named mydb on a server named myserver, with user name SYSTEM and password MANAGER. Pending transactions are rolled back at the end of a client request: <P></A>
+<A NAME="1010479">
+<PRE>pool.connect("INFORMIX", "myserver", "SYSTEM", "MANAGER", "mydb", 4)</PRE></A>
+<A NAME="Head2Ref;"></A>
+<A NAME="1010481">
+<H2>connected</H2>
+</A>
+
+<A NAME="1010482">
+Tests whether the database pool and all of its connections are connected to a database.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1052776">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1052781">
+<A HREF="lw2.htm#1016183"><CODE>DbPool</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1052783">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1052785">
+Netscape Server 3.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010483">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1010484">
+<PRE>connected()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1010485">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1010486">
+None.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010489">
+<H4> Returns</H4>
+</A>
+
+<A NAME="1010490">
+True if the pool (and hence a particular connection in the pool) is currently connected to a database; otherwise, false.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010491">
+<H4> Description</H4>
+</A>
+
+<A NAME="1010492">
+The <CODE>connected</CODE> method indicates whether this object is currently connected to a database. <P></A>
+<A NAME="1010493">
+If this method returns false for a <CODE>Connection</CODE> object, you cannot use any other methods of that object. You must reconnect to the database, using the <CODE>DbPool</CODE> object, and then get a new <CODE>Connection</CODE> object. Similarly, if this method returns false for the <CODE>database</CODE> object, you must reconnect before using other methods of that object.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010496">
+<H4> Example</H4>
+</A>
+
+<A NAME="1010497">
+<B>Example 1:</B> The following code fragment checks to see if the connection is currently open. If it's not, it reconnects the pool and reassigns a new value to the <CODE>myconn</CODE> variable.<P></A>
+<A NAME="1010498">
+<PRE>if (!myconn.connected()) {<br>&nbsp;&nbsp;&nbsp;mypool.connect ("INFORMIX", "myserver", "SYSTEM", "MANAGER", "mydb", 4);<br>&nbsp;&nbsp;&nbsp;myconn = mypool.connection;<br>}</PRE></A><A NAME="1010499">
+<B>Example 2: </B>The following example uses an <CODE>if</CODE> condition to determine if an application is connected to a database server. If the application is connected, the <CODE>isConnectedRoutine</CODE> function runs; if the application is not connected, the <CODE>isNotConnected</CODE> routine runs.<P></A>
+<A NAME="1010500">
+<PRE>if(database.connected()) {<br>&nbsp;&nbsp;&nbsp;isConnectedRoutine() }<br>else {<br>&nbsp;&nbsp;&nbsp;isNotConnectedRoutine() }</PRE></A>
+<A NAME="Head2Ref;"></A>
+<A NAME="1010503">
+<H2>connection </H2>
+</A>
+
+<A NAME="1010504">
+Retrieves an available connection from the pool.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1052846">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1052851">
+<A HREF="lw2.htm#1016183"><CODE>DbPool</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1052853">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1052855">
+Netscape Server 3.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010505">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1010506">
+<PRE>connection (name, timeout)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1010509">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1010519">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1010512">
+<PRE>name</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1010514">
+An arbitrary name for the connection. Primarily used for debugging.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1010516">
+<PRE>timeout</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1010518">
+The number of seconds to wait for an available connection before returning. The default is to wait indefinitely. If you specify this parameter, you must also specify the <CODE>name</CODE> parameter.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010520">
+<H4> Returns</H4>
+</A>
+
+<A NAME="1010521">
+A new <CODE>Connection</CODE> object.<P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1010526">
+<H2>disconnect</H2>
+</A>
+
+<A NAME="1010527">
+Disconnects all connections in the pool from the database.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1052908">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1052913">
+<A HREF="lw2.htm#1016183"><CODE>DbPool</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1052915">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1052917">
+Netscape Server 3.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010528">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1010529">
+<PRE>disconnect()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1010530">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1010531">
+None.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010534">
+<H4> Returns</H4>
+</A>
+
+<A NAME="1010535">
+0 if the call was successful; otherwise, a nonzero status code based on any error message passed by the database. If the method returns a nonzero status code, use the associated <CODE>majorErrorCode</CODE> and <CODE>majorErrorMessage</CODE> methods to interpret the cause of the error.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1021985">
+<H4> Description</H4>
+</A>
+
+<A NAME="1021986">
+For the <CODE>DbPool</CODE> object, before calling the <CODE>disconnect</CODE> method, you must first call the <CODE>release</CODE> method for all connections in this database pool. Otherwise, the connection is still considered in use by the system, so the disconnect waits until all connections are released.<P></A>
+<A NAME="1021987">
+After disconnecting from a database, the only methods of this object you can use are <CODE>connect</CODE> and <CODE>connected</CODE>.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010541">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1010542">
+The following example uses an <CODE>if</CODE> condition to determine if an application is connected to a database server. If the application is connected, the application calls the <CODE>disconnect</CODE> method; if the application is not connected, the <CODE>isNotConnected</CODE> routine runs.<P></A>
+<A NAME="1010543">
+<PRE>if(database.connected()) {<br>&nbsp;&nbsp;&nbsp;database.disconnect() }<br>else {<br>&nbsp;&nbsp;&nbsp;isNotConnectedRoutine() }</PRE></A>
+<A NAME="Head2Ref;"></A>
+<A NAME="1010545">
+<H2>majorErrorCode</H2>
+</A>
+
+<A NAME="1010546">
+Major error code returned by the database server or ODBC.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1053048">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1053053">
+<A HREF="lw2.htm#1016183"><CODE>DbPool</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1053055">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1053057">
+Netscape Server 3.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010547">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1010548">
+<PRE>majorErrorCode()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1010549">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1010550">
+None.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010553">
+<H4> Returns</H4>
+</A>
+
+<A NAME="1010554">
+The result returned by this method depends on the database server being used: <P></A>
+<ul><P>
+<A NAME="1010555">
+<LI>Informix: the Informix error code.</LI>
+</A><P>
+<A NAME="1010556">
+<LI>Oracle: the code as reported by Oracle Call-level Interface (OCI).</LI>
+</A><P>
+<A NAME="1010557">
+<LI>Sybase: the DB-Library error number or the SQL server message number.</LI>
+</A></ul>
+<A NAME="Head3;"></A>
+<A NAME="1010559">
+<H4> Description</H4>
+</A>
+
+<A NAME="1010560">
+SQL statements can fail for a variety of reasons, including referential integrity constraints, lack of user privileges, record or table locking in a multiuser database, and so on. When an action fails, the database server returns an error message indicating the reason for failure. The LiveWire Database Service provides two ways of getting error information: from the status code returned by various methods or from special properties containing error messages and codes.<P></A>
+<A NAME="1010561">
+Status codes are integers between 0 and 27, with 0 indicating a successful execution of the statement and other numbers indicating an error, as shown in <P><B><A NAME="1010568">
+Table 10.3&nbsp;Database status codes. &nbsp;</A></B>
+<TABLE BORDER="0">
+<TR><TH VALIGN=baseline ALIGN=left><B><A NAME="1010576">
+<B>Status 
+Code
+</B></A></B><TH VALIGN=baseline ALIGN=left><B><A NAME="1010578">
+<B>Explanation
+</B></A></B><TH VALIGN=baseline ALIGN=left><B><A NAME="1010580">
+<B>Status 
+Code
+</B></A></B><TH VALIGN=baseline ALIGN=left><B><A NAME="1010582">
+<B>Explanation
+</B></A></B>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1010584">
+0</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1010586">
+No error</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1010588">
+14</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1010590">
+Null reference parameter</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1010592">
+1</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1010594">
+Out of memory</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1010596">
+15</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1010598">
+Connection object not found</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1010600">
+2</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1010602">
+Object never initialized</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1010604">
+16</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1010606">
+Required information is missing</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1010608">
+3</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1010610">
+Type conversion error</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1010612">
+17</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1010614">
+Object cannot support multiple readers</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1010616">
+4</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1010618">
+Database not registered</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1010620">
+18</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1010622">
+Object cannot support deletions</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1010624">
+5</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1010626">
+Error reported by server</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1010628">
+19</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1010630">
+Object cannot support insertions</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1010632">
+6</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1010634">
+Message from server</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1010636">
+20 </A></P><TD VALIGN=baseline ALIGN=left><A NAME="1010638">
+Object cannot support updates</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1010640">
+7</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1010642">
+Error from vendor's library</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1010644">
+21</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1010646">
+Object cannot support updates</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1010648">
+8</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1010650">
+Lost connection</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1010652">
+22</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1010654">
+Object cannot support indices</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1010656">
+9</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1010658">
+End of fetch</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1010660">
+23</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1010662">
+Object cannot be dropped</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1010664">
+10</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1010666">
+Invalid use of object</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1010668">
+24</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1010670">
+Incorrect connection supplied</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1010672">
+11</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1010674">
+Column does not exist</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1010676">
+25</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1010678">
+Object cannot support privileges</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1010680">
+12</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1010682">
+Invalid positioning within object (bounds error)</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1010684">
+26</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1010686">
+Object cannot support cursors</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1010688">
+13</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1010690">
+Unsupported feature</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1010692">
+27</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1010694">
+Unable to open</A></P>
+
+</TABLE>
+<A HREF="lw2.htm#1010561">Table&nbsp;10.3</A>.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010700">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1010701">
+This example updates the <CODE>rentals</CODE> table within a transaction. The <CODE>updateRow</CODE> method assigns a database status code to the <CODE>statusCode</CODE> variable to indicate whether the method is successful.<P></A>
+<A NAME="1010702">
+If <CODE>updateRow</CODE> succeeds, the value of <CODE>statusCode</CODE> is 0, and the transaction is committed. If <CODE>updateRow</CODE> returns a <CODE>statusCode</CODE> value of either five or seven, the values of <CODE>majorErrorCode</CODE>, <CODE>majorErrorMessage</CODE>, <CODE>minorErrorCode</CODE>, and <CODE>minorErrorMessage</CODE> are displayed. If <CODE>statusCode</CODE> is set to any other value, the <CODE>errorRoutine</CODE> function is called.<P></A>
+<A NAME="1010703">
+<PRE>database.beginTransaction()<br>statusCode = cursor.updateRow("rentals")</PRE></A><A NAME="1010704">
+<PRE>if (statusCode == 0) {<br>&nbsp;&nbsp;&nbsp;database.commitTransaction()<br>&nbsp;&nbsp;&nbsp;}</PRE></A><A NAME="1010705">
+<PRE>if (statusCode == 5 || statusCode == 7) {<br>&nbsp;&nbsp;&nbsp;write("The operation failed to complete.&lt;BR&gt;"<br>&nbsp;&nbsp;&nbsp;write("Contact your system administrator with the following:&lt;P&gt;"<br>&nbsp;&nbsp;&nbsp;write("The value of statusCode is " + statusCode + "&lt;BR&gt;")<br>&nbsp;&nbsp;&nbsp;write("The value of majorErrorCode is " +<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;database.majorErrorCode() + "&lt;BR&gt;")<br>&nbsp;&nbsp;&nbsp;write("The value of majorErrorMessage is " +<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;database.majorErrorMessage() + "&lt;BR&gt;")<br>&nbsp;&nbsp;&nbsp;write("The value of minorErrorCode is " +<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;database.minorErrorCode() + "&lt;BR&gt;")<br>&nbsp;&nbsp;&nbsp;write("The value of minorErrorMessage is " +<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;database.minorErrorMessage() + "&lt;BR&gt;")<br>&nbsp;&nbsp;&nbsp;database.rollbackTransaction()<br>&nbsp;&nbsp;&nbsp;}</PRE></A><A NAME="1010706">
+<PRE>else {<br>&nbsp;&nbsp;&nbsp;errorRoutine()<br>&nbsp;&nbsp;&nbsp;}</PRE></A>
+<A NAME="Head2Ref;"></A>
+<A NAME="1010708">
+<H2>majorErrorMessage</H2>
+</A>
+
+<A NAME="1010709">
+Major error message returned by database server or ODBC. For server errors, this typically corresponds to the server's SQLCODE.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1053108">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1053113">
+<A HREF="lw2.htm#1016183"><CODE>DbPool</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1053115">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1053117">
+Netscape Server 3.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010710">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1010711">
+<PRE>majorErrorMessage()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1010712">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1010713">
+None.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010716">
+<H4> Returns</H4>
+</A>
+
+<A NAME="1010717">
+A string describing that depends on the database server: <P></A>
+<ul><P>
+<A NAME="1010718">
+<LI>Informix: "Vendor Library Error: <I>string</I>," where <I>string</I> is the error text from Informix.</LI>
+</A><P>
+<A NAME="1010719">
+<LI>Oracle: "Server Error: <I>string</I>," where <I>string</I> is the translation of the return code supplied by Oracle.</LI>
+</A><P>
+<A NAME="1010720">
+<LI>Sybase: "Vendor Library Error: string," where string is the error text from DB-Library or "Server Error <I>string</I>," where <I>string</I> is text from the SQL server, unless the severity and message number are both 0, in which case it returns just the message text.</LI>
+</A></ul>
+<A NAME="Head3;"></A>
+<A NAME="1010722">
+<H4> Description</H4>
+</A>
+
+<A NAME="1010723">
+SQL statements can fail for a variety of reasons, including referential integrity constraints, lack of user privileges, record or table locking in a multiuser database, and so on. When an action fails, the database server returns an error message indicating the reason for failure. The LiveWire Database Service provides two ways of getting error information: from the status code returned by <CODE>connection</CODE> and <CODE>DbPool</CODE> methods or from special <CODE>connection</CODE> or <CODE>DbPool</CODE> properties containing error messages and codes.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010726">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1010730">
+See <A HREF="lw2.htm#1010545"><CODE>DbPool.majorErrorCode</CODE></A>.<P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1010732">
+<H2>minorErrorCode</H2>
+</A>
+
+<A NAME="1010733">
+Secondary error code returned by database vendor library.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1053170">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1053175">
+<A HREF="lw2.htm#1016183"><CODE>DbPool</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1053177">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1053179">
+Netscape Server 3.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010734">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1010735">
+<PRE>minorErrorCode()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1010736">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1010737">
+None.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010740">
+<H4> Returns</H4>
+</A>
+
+<A NAME="1010741">
+The result returned by this method depends on the database server: <P></A>
+<ul><P>
+<A NAME="1010742">
+<LI>Informix: the ISAM error code, or 0 if there is no ISAM error.</LI>
+</A><P>
+<A NAME="1010743">
+<LI>Oracle: the operating system error code as reported by OCI.</LI>
+</A><P>
+<A NAME="1010744">
+<LI>Sybase: the severity level, as reported by DB-Library or the severity level, as reported by the SQL server.</LI>
+</A></ul>
+<A NAME="Head2Ref;"></A>
+<A NAME="1010748">
+<H2>minorErrorMessage</H2>
+</A>
+
+<A NAME="1010749">
+Secondary message returned by database vendor library.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1053219">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1053224">
+<A HREF="lw2.htm#1016183"><CODE>DbPool</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1053226">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1053228">
+Netscape Server 3.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010750">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1010751">
+<PRE>minorErrorMessage()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1010752">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1010753">
+None.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010756">
+<H4> Returns</H4>
+</A>
+
+<A NAME="1010757">
+The string returned by this method depends on the database server: <P></A>
+<ul><P>
+<A NAME="1010758">
+<LI>Informix: "ISAM Error: <I>string</I>," where <I>string</I> is the text of the ISAM error code from Informix, or an empty string if there is no ISAM error.</LI>
+</A><P>
+<A NAME="1010759">
+<LI>Oracle: the Oracle server name.</LI>
+</A><P>
+<A NAME="1010760">
+<LI>Sybase: the operating system error text, as reported by DB-Library or the SQL server name.</LI>
+</A></ul>
+<A NAME="Head2Ref;"></A>
+<A NAME="1022943">
+<H2>storedProcArgs</H2>
+</A>
+
+<A NAME="1022955">
+Creates a prototype for a DB2, ODBC, or Sybase stored procedure.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1053257">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1053262">
+<A HREF="lw2.htm#1016183"><CODE>DbPool</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1053264">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1053266">
+Netscape Server 3.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1022945">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1010768">
+<PRE>storedProcArgs (procName, type1, ..., typeN)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1010769">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1010779">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1010772">
+<PRE>procName</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1010774">
+The name of the procedure.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1010776">
+<PRE>type1, ..., typeN</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1010778">
+Each <CODE>typeI</CODE> is one of: <CODE>"IN"</CODE>, <CODE>"OUT"</CODE>, or <CODE>"INOUT"</CODE> Specifies the type of each parameter: input (<CODE>"IN"</CODE>), output (<CODE>"OUT"</CODE>), or both input and output (<CODE>"INOUT"</CODE>).</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010782">
+<H4> Returns</H4>
+</A>
+
+<A NAME="1010783">
+Nothing.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010784">
+<H4> Description</H4>
+</A>
+
+<A NAME="1010785">
+This method is only for Sybase stored procedures.<P></A>
+<A NAME="1010786">
+This method provides the procedure name and the parameters for that stored procedure. Sybase stored procedures can accept parameters that are only for input ("<CODE>IN</CODE>"), only for output ("<CODE>OUT</CODE>"), or for both input and output ("<CODE>INOUT</CODE>").<P></A>
+<A NAME="1010787">
+You must create one prototype for each Sybase stored procedure you use in your application. Additional prototypes for the same stored procedure are ignored.<P></A>
+<A NAME="1010788">
+You can specify an <CODE>INOUT</CODE> parameter either as an <CODE>INOUT</CODE> or as an <CODE>OUT</CODE> parameter. If you use an <CODE>INOUT</CODE> parameter of a stored procedure as an <CODE>OUT</CODE> parameter, the LiveWire Database Service implicitly passes a <CODE>NULL</CODE> value for that parameter.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010791">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1010792">
+Assume the <CODE>inoutdemo</CODE> stored procedure takes one input parameter and one input/output parameter, as follows:<P></A>
+<A NAME="1010793">
+<PRE>create procedure inoutdemo ( @inparam int, @inoutparam int output)<br>as<br>if ( @inoutparam == null)<br>@inoutparam = @inparam + 1<br>else<br>@inoutparam = @inoutparam + 1</PRE></A><A NAME="1010794">
+Assume execute the following code and then call <CODE>outParameters(0)</CODE>, the result will be 101:<P></A>
+<A NAME="1010795">
+<PRE>database.storedProcArgs("inoutdemo", "IN", "INOUT")<br>spobj= database.storedProc("inoutdemo", 6, 100);<br>answer = spobj.outParameters(0);</PRE></A><A NAME="1010796">
+The value of <CODE>answer</CODE> is 101. On the other hand, assume you execute this code:<P></A>
+<A NAME="1010797">
+<PRE>database.storedProcArgs("inoutdemo", "IN", "OUT")<br>spobj = database.storedProc("inoutdemo", 6, 100);<br>answer = spobj.outParameters(0);</PRE></A><A NAME="1010798">
+In this case, the value of <CODE>answer</CODE> is 7. <P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1047420">
+<H2>toString</H2>
+</A>
+
+<A NAME="1047429">
+Returns a string representing the specified object.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1047423">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1047428">
+<A HREF="lw2.htm#1016183"><CODE>DbPool</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1047477">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1047479">
+Netscape Server 3.0</A></P>
+
+</TABLE>
+ <P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1047430">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1047431">
+<PRE>toString()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1047432">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1047433">
+None.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1047434">
+<H4> Description</H4>
+</A>
+
+<A NAME="1047435">
+Every object has a <CODE>toString</CODE> method that is automatically called when it is to be represented as a text value or when an object is referred to in a string concatenation. <P></A>
+<A NAME="1047436">
+You can use <CODE>toString</CODE> within your own code to convert an object into a string, and you can create your own function to be called in place of the default <CODE>toString</CODE> method.<P></A>
+<A NAME="1047437">
+This method returns a string of the following format:<P></A>
+<A NAME="1047438">
+<PRE>db "name" "userName" "dbtype" "serverName"</PRE></A><A NAME="1047456">
+where<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1047441">
+<PRE>name</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1047443">
+The name of the database.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1047445">
+<PRE>userName</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1047447">
+The name of the user connected to the database.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1047449">
+<PRE>dbType</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1047451">
+One of <CODE>ORACLE</CODE>, <CODE>SYBASE</CODE>, <CODE>INFORMIX, DB2</CODE>, or <CODE>ODBC</CODE>.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1047453">
+<PRE>serverName</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1047455">
+The name of the database server.</A></P>
+
+</TABLE>
+<P></A>
+<A NAME="1047457">
+The method displays an empty string for any of attributes whose value is unknown.<P></A>
+<A NAME="1047462">
+For information on defining your own <CODE>toString</CODE> method, see the <A HREF="corea1.htm#1012793"><CODE>Object.toString</CODE></A> method.<P></A>
+<A NAME="1005723">
+<PRE></PRE></A>
+<P><HR>
+<A HREF="contents.htm">[Contents]</A> <A HREF="lw1.htm">[Previous]</A> <A HREF="lwa.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<P ALIGN=right>
+
+<FONT SIZE=-2><I>Last Updated:  10/31/97  16:35:15
+</I></FONT>
+
+<HR SIZE=4>
+
+<P> <CENTER>Copyright © 1997
+<A HREF="http://home.netscape.com/misc/contact_info.html"
+TARGET=_top>Netscape Communications Corporation</A></FONT>
+</CENTER>
+<P>
+<P>
+</BODY>
+</HTML>
+

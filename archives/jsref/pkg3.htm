@@ -1,0 +1,196 @@
+<HTML>
+<HEAD>
+<TITLE>Java packages for LiveConnect
+</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A HREF="contents.htm">[Contents]</A> <A HREF="pkg2.htm">[Previous]</A> <A HREF="refix.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<HR>
+
+<A NAME="netscape.plugin.Plugin"></A>
+<A NAME="1007555">
+<H1> netscape.plugin.Plugin</H1>
+</A>
+<A NAME="1007556">
+The public class <CODE>Plugin</CODE> extends <CODE>Object</CODE>.<P></A>
+<A NAME="1007557">
+<PRE>java.lang.Object<br>&nbsp;&nbsp;&nbsp;|<br>&nbsp;&nbsp;&nbsp;+----netscape.plugin.Plugin</PRE></A><A NAME="1007558">
+This class represents the Java reflection of a plug-in. Plug-ins that need to have Java methods associated with them should subclass this class and add new (possibly native) methods to it. This allows other Java entities (such as applets and JavaScript code) to manipulate the plug-in.<P></A>
+
+<A NAME="Head2;"></A>
+<A NAME="1007559">
+<H3> Constructors and methods</H3>
+</A>
+
+<A NAME="1007573">
+The <CODE>netscape.plugin.Plugin</CODE> class has the following constructors:<P><B><A NAME="1007562">
+Table 14.4&nbsp;Constructors for the <CODE>Plugin</CODE> class</A></B>
+<TABLE BORDER="0">
+<TR><TH VALIGN=baseline ALIGN=left><B><A NAME="1007566">
+<B>Constructor
+</B></A></B><TH VALIGN=baseline ALIGN=left><B><A NAME="1007568">
+<B>Description
+</B></A></B>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1007570">
+<PRE><A HREF="pkg3.htm#1014256"><CODE>Plugin</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1011416">
+Constructs a Plugin.</A></P>
+
+</TABLE>
+<P></A>
+<A NAME="1011717">
+The <CODE>netscape.plugin.Plugin</CODE> class has the following methods:<P><B><A NAME="1011675">
+Table 14.5&nbsp;Methods for the <CODE>Plugin</CODE> class</A></B>
+<TABLE BORDER="0">
+<TR><TH VALIGN=baseline ALIGN=left><B><A NAME="1011679">
+<B>Method
+</B></A></B><TH VALIGN=baseline ALIGN=left><B><A NAME="1011681">
+<B>Description
+</B></A></B>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1011686">
+<PRE><A HREF="pkg3.htm#1013366"><CODE>destroy</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1011688">
+Called when the plug-in is destroyed</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1011693">
+<PRE><A HREF="pkg3.htm#1013381"><CODE>getPeer</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1011695">
+Returns the native NPP object--the plug-in instance that is the native part of a Java <CODE>Plugin</CODE> object</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1011700">
+<PRE><A HREF="pkg1.htm#1013512"><CODE>getWindow</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1011702">
+Returns the JavaScript window on which the plug-in is embedded</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1011707">
+<PRE><A HREF="pkg3.htm#1013972"><CODE>init</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1011709">
+Called when the plug-in is initialized</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1011714">
+<PRE><A HREF="pkg3.htm#1013987"><CODE>isActive</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1011716">
+Determines whether the Java reflection of a plug-in still refers to an active plug-in</A></P>
+
+</TABLE>
+<P></A>
+<A NAME="1014724">
+The following sections show the declaration and usage of these constructors and methods.<P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1013366">
+<H2>destroy</H2>
+</A>
+
+<A NAME="1013367">
+Method. Called when the plug-in is destroyed. You never need to call this method directly, it is called when the plug-in is destroyed. At the point this method is called, the plug-in will still be active.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013368">
+<H4> Declaration</H4>
+</A>
+
+<A NAME="1013369">
+<PRE>public void destroy()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1013375">
+<H4> See also</H4>
+</A>
+
+<A NAME="1013379">
+<A HREF="pkg3.htm#1013972"><CODE>init</CODE></A><P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1013381">
+<H2>getPeer</H2>
+</A>
+
+<A NAME="1013382">
+Method. Returns the native NPP object--the plug-in instance that is the native part of a Java <CODE>Plugin</CODE> object. This field is set by the system, but can be read from plug-in native methods by calling:<P></A>
+<A NAME="1013383">
+<PRE>NPP npp = (NPP)netscape_plugin_Plugin_getPeer(env, thisPlugin);</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1013384">
+<H4> Declaration</H4>
+</A>
+
+<A NAME="1013385">
+<PRE>public int getPeer()</PRE></A>
+<A NAME="Head2Ref;"></A>
+<A NAME="1013564">
+<H2>getWindow</H2>
+</A>
+
+<A NAME="1013565">
+Method. Returns the JavaScript window on which the plug-in is embedded.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013649">
+<H4> Declaration</H4>
+</A>
+
+<A NAME="1013653">
+<PRE>public JSObject getWindow()</PRE></A>
+<A NAME="Head2Ref;"></A>
+<A NAME="1013972">
+<H2>init</H2>
+</A>
+
+<A NAME="1013973">
+Method. Called when the plug-in is initialized. You never need to call this method directly, it is called when the plug-in is created.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013974">
+<H4> Declaration</H4>
+</A>
+
+<A NAME="1013975">
+<PRE>public void init()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1013981">
+<H4> See also</H4>
+</A>
+
+<A NAME="1013985">
+<A HREF="pkg3.htm#1013366"><CODE>destroy</CODE></A><P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1013987">
+<H2>isActive</H2>
+</A>
+
+<A NAME="1013988">
+Method. Determines whether the Java reflection of a plug-in still refers to an active plug-in. Plug-in instances are destroyed whenever the page containing the plug-in is left, thereby causing the plug-in to no longer be active.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1013989">
+<H4> Declaration</H4>
+</A>
+
+<A NAME="1013990">
+<PRE>public boolean isActive()</PRE></A>
+<A NAME="Head2Ref;"></A>
+<A NAME="1014256">
+<H2>Plugin</H2>
+</A>
+
+<A NAME="1014257">
+Constructor. Constructs a <CODE>Plugin</CODE>.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1014258">
+<H4> Declaration</H4>
+</A>
+
+<A NAME="1014259">
+<PRE>public Plugin()</PRE></A>
+<P><HR>
+<A HREF="contents.htm">[Contents]</A> <A HREF="pkg2.htm">[Previous]</A> <A HREF="refix.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<P ALIGN=right>
+
+<FONT SIZE=-2><I>Last Updated:  10/31/97  12:34:01
+</I></FONT>
+
+<HR SIZE=4>
+
+<P> <CENTER>Copyright © 1997
+<A HREF="http://home.netscape.com/misc/contact_info.html"
+TARGET=_top>Netscape Communications Corporation</A></FONT>
+</CENTER>
+<P>
+<P>
+</BODY>
+</HTML>
+

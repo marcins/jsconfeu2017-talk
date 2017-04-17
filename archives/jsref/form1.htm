@@ -1,0 +1,659 @@
+<HTML>
+<HEAD>
+<TITLE>Form
+</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A HREF="contents.htm">[Contents]</A> <A HREF="form.htm">[Previous]</A> <A HREF="form2.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<HR>
+
+<A NAME="Form"></A>
+<A NAME="1010276">
+<H1> Form</H1>
+</A>
+<A NAME="1010278">
+Lets users input text and make choices from <CODE>Form</CODE> elements such as checkboxes, radio buttons, and selection lists. You can also use a form to post data to a server.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1039312">
+<I>Client-side object</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1039317">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1039319">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1040007">
+Navigator 2.0<br>Navigator 3.0: added <CODE>reset</CODE> method.<br>Navigator 4.0: added <CODE>handleEvent</CODE> method.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010279">
+<H4> Created by</H4>
+</A>
+
+<A NAME="1010280">
+The HTML <CODE><A HREF="http://developer.netscape.com/library/documentation/htmlguid/index.htm?content=tags10.htm#tags:FORM" TARGET="_top">FORM</A></CODE> tag. The JavaScript runtime engine creates a <CODE>Form</CODE> object for each <CODE>FORM</CODE> tag in the document. You access <CODE>FORM</CODE> objects through the <A HREF="doc1.htm#1010814"><CODE>document.forms</CODE></A> property and through named properties of that object.<P></A>
+<A NAME="1030601">
+To define a form, use standard HTML syntax with the addition of JavaScript event handlers. If you supply a value for the <CODE>NAME</CODE> attribute, you can use that value to index into the <CODE>forms</CODE> array. In addition, the associated <A HREF="doc1.htm#1048486"><CODE>document</CODE></A> object has a named property for each named form.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1037610">
+<H4> Event handlers</H4>
+</A>
+
+<ul><A NAME="1037614">
+<LI><A HREF="evnt20.htm#1020913"><CODE>onReset</CODE></A></LI>
+</A><A NAME="1037618">
+<LI><A HREF="evnt23.htm#1010835"><CODE>onSubmit</CODE></A></LI>
+</A></ul>
+<A NAME="Head3;"></A>
+<A NAME="1010322">
+<H4> Description</H4>
+</A>
+
+<A NAME="1010323">
+Each form in a document is a distinct object. You can refer to a form's elements in your code by using the element's name (from the <CODE>NAME</CODE> attribute) or the <A HREF="form1.htm#1010594"><CODE>Form.elements</CODE></A> array. The <A HREF="form1.htm#1010594"><CODE>elements</CODE></A> array contains an entry for each element (such as a <A HREF="choi1.htm#1013039"><CODE>Checkbox</CODE></A>, <A HREF="choi.htm#1011977"><CODE>Radio</CODE></A>, or <A HREF="txt.htm#1023924"><CODE>Text</CODE></A> object) in a form.<P></A>
+<A NAME="1044126">
+If multiple objects on the same form have the same <CODE>NAME</CODE> attribute, an array of the given name is created automatically. Each element in the array represents an individual <CODE>Form</CODE> object. Elements are indexed in source order starting at 0. For example, if two <A HREF="txt.htm#1023924"><CODE>Text</CODE></A> elements and a <A HREF="txt1.htm#1010943"><CODE>Textarea</CODE></A> element on the same form have their <CODE>NAME</CODE> attribute set to <CODE>"myField"</CODE>, an array with the elements <CODE>myField[0]</CODE>, <CODE>myField[1]</CODE>, and <CODE>myField[2]</CODE> is created. You need to be aware of this situation in your code and know whether <CODE>myField</CODE> refers to a single element or to an array of elements.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010339">
+<H4> Property Summary</H4>
+</A>
+
+<A NAME="1021483">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1021944">
+<PRE><A HREF="form1.htm#1010551"><CODE>action</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1021946">
+Reflects the <CODE>ACTION</CODE> attribute.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1021951">
+<PRE><A HREF="form1.htm#1010594"><CODE>elements</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1021953">
+An array reflecting all the elements in a form.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1021958">
+<PRE><A HREF="form1.htm#1010649"><CODE>encoding</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1021960">
+Reflects the <CODE>ENCTYPE</CODE> attribute.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1021965">
+<PRE><A HREF="form1.htm#1010689"><CODE>length</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1021967">
+Reflects the number of elements on a form.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1021979">
+<PRE><A HREF="form1.htm#1010822"><CODE>method</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1021981">
+Reflects the <CODE>METHOD</CODE> attribute.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1048973">
+<PRE><A HREF="form1.htm#1045383"><CODE>name</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1048975">
+Reflects the <CODE>NAME</CODE> attribute.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1021986">
+<PRE><A HREF="form1.htm#1010862"><CODE>target</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1021988">
+Reflects the <CODE>TARGET</CODE> attribute.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1020847">
+<H4> Method Summary</H4>
+</A>
+
+<A NAME="1010367">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1019631">
+<PRE><A HREF="form1.htm#1048786"><CODE>handleEvent</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1019633">
+Invokes the handler for the specified event.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1019635">
+<PRE><A HREF="form1.htm#1010937"><CODE>reset</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1019637">
+Simulates a mouse click on a reset button for the calling form.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1019639">
+<PRE><A HREF="form1.htm#1010966"><CODE>submit</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1019641">
+Submits a form.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010377">
+<H4> </H4>
+</A>
+
+
+<A NAME="Head3;"></A>
+<A NAME="1010381">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1010382">
+<B>Example 1: Named form.</B> The following example creates a form called <CODE>myForm</CODE> that contains text fields for first name and last name. The form also contains two buttons that change the names to all uppercase or all lowercase. The function <CODE>setCase</CODE> shows how to refer to the form by its name.<P></A>
+<A NAME="1010383">
+<PRE>&lt;HTML&gt;<br>&lt;HEAD&gt;<br>&lt;TITLE&gt;Form object example&lt;/TITLE&gt;<br>&lt;/HEAD&gt;<br>&lt;SCRIPT&gt;<br>function setCase (caseSpec){<br>if (caseSpec == "upper") {<br>&nbsp;&nbsp;&nbsp;document.myForm.firstName.value=document.myForm.firstName.value.toUpperCase()<br>&nbsp;&nbsp;&nbsp;document.myForm.lastName.value=document.myForm.lastName.value.toUpperCase()}<br>else {<br>&nbsp;&nbsp;&nbsp;document.myForm.firstName.value=document.myForm.firstName.value.toLowerCase()<br>&nbsp;&nbsp;&nbsp;document.myForm.lastName.value=document.myForm.lastName.value.toLowerCase()}<br>}<br>&lt;/SCRIPT&gt;</PRE></A><A NAME="1043344">
+<PRE>&lt;BODY&gt;<br>&lt;FORM NAME="myForm"&gt;<br>&lt;B&gt;First name:&lt;/B&gt;<br>&lt;INPUT TYPE="text" NAME="firstName" SIZE=20&gt;<br>&lt;BR&gt;&lt;B&gt;Last name:&lt;/B&gt;<br>&lt;INPUT TYPE="text" NAME="lastName" SIZE=20&gt;<br>&lt;P&gt;&lt;INPUT TYPE="button" VALUE="Names to uppercase" NAME="upperButton"<br>&nbsp;&nbsp;&nbsp;onClick="setCase('upper')"&gt;<br>&lt;INPUT TYPE="button" VALUE="Names to lowercase" NAME="lowerButton"<br>&nbsp;&nbsp;&nbsp;onClick="setCase('lower')"&gt;<br>&lt;/FORM&gt;<br>&lt;/BODY&gt;<br>&lt;/HTML&gt;</PRE></A><A NAME="1010384">
+<B>Example 2: forms array.</B> The <CODE>onLoad</CODE> event handler in the following example displays the name of the first form in an Alert dialog box.<P></A>
+<A NAME="1010385">
+<PRE>&lt;BODY onLoad="alert('You are looking at the ' + document.forms[0] + ' form!')"&gt;</PRE></A><A NAME="1010386">
+If the form name is <CODE>musicType</CODE>, the alert displays the following message:<P></A>
+<A NAME="1010387">
+<PRE>You are looking at the &lt;object musicType&gt; form!</PRE></A><A NAME="1010388">
+<B>Example 3: onSubmit event handler.</B> The following example shows an <CODE>onSubmit</CODE> event handler that determines whether to submit a form. The form contains one <CODE>Text</CODE> object where the user enters three characters. <CODE>onSubmit</CODE> calls a function, <CODE>checkData</CODE>, that returns true if there are 3 characters; otherwise, it returns false. Notice that the form's <CODE>onSubmit</CODE> event handler, not the submit button's <CODE>onClick</CODE> event handler, calls the <CODE>checkData</CODE> function.  Also, <CODE>onSubmit</CODE> contains a <CODE>return</CODE> statement that returns the value obtained with the function <CODE>call</CODE>. <P></A>
+<A NAME="1010389">
+<PRE>&lt;HTML&gt;<br>&lt;HEAD&gt;<br>&lt;TITLE&gt;Form object/onSubmit event handler example&lt;/TITLE&gt;<br>&lt;TITLE&gt;Form object example&lt;/TITLE&gt;<br>&lt;/HEAD&gt;<br>&lt;SCRIPT&gt;<br>var dataOK=false<br>function checkData (){<br>if (document.myForm.threeChar.value.length == 3) {<br>&nbsp;&nbsp;&nbsp;return true}<br>&nbsp;&nbsp;&nbsp;else {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert("Enter exactly three characters. " + document.myForm.threeChar.value +<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" is not valid.")<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return false}<br>}<br>&lt;/SCRIPT&gt;<br>&lt;BODY&gt;<br>&lt;FORM NAME="myForm" onSubmit="return checkData()"&gt;<br>&lt;B&gt;Enter 3 characters:&lt;/B&gt;<br>&lt;INPUT TYPE="text" NAME="threeChar" SIZE=3&gt;<br>&lt;P&gt;&lt;INPUT TYPE="submit" VALUE="Done" NAME="submit1"<br>&nbsp;&nbsp;&nbsp;onClick="document.myForm.threeChar.value=document.myForm.threeChar.value.toUpperCase()"&gt;<br>&lt;/FORM&gt;<br>&lt;/BODY&gt;<br>&lt;/HTML&gt;</PRE></A><A NAME="1010390">
+<B>Example 4: submit method.</B> The following example is similar to the previous one, except it submits the form using the <CODE>submit</CODE> method instead of a <CODE>Submit</CODE> object. The form's <CODE>onSubmit</CODE> event handler does not prevent the form from being submitted. The form uses a button's <CODE>onClick</CODE> event handler to call the <CODE>checkData</CODE> function. If the value is valid, the <CODE>checkData</CODE> function submits the form by calling the form's <CODE>submit</CODE> method.<P></A>
+<A NAME="1010391">
+<PRE>&lt;HTML&gt;<br>&lt;HEAD&gt;<br>&lt;TITLE&gt;Form object/submit method example&lt;/TITLE&gt;<br>&lt;/HEAD&gt;<br>&lt;SCRIPT&gt;<br>var dataOK=false<br>function checkData (){<br>if (document.myForm.threeChar.value.length == 3) {<br>&nbsp;&nbsp;&nbsp;document.myForm.submit()}<br>&nbsp;&nbsp;&nbsp;else {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert("Enter exactly three characters. " + document.myForm.threeChar.value +<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" is not valid.")<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return false}<br>}<br>&lt;/SCRIPT&gt;<br>&lt;BODY&gt;<br>&lt;FORM NAME="myForm" onSubmit="alert('Form is being submitted.')"&gt;<br>&lt;B&gt;Enter 3 characters:&lt;/B&gt;<br>&lt;INPUT TYPE="text" NAME="threeChar" SIZE=3&gt;<br>&lt;P&gt;&lt;INPUT TYPE="button" VALUE="Done" NAME="button1"<br>&nbsp;&nbsp;&nbsp;onClick="checkData()"&gt;<br>&lt;/FORM&gt;<br>&lt;/BODY&gt;<br>&lt;/HTML&gt;</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1010392">
+<H4> See also</H4>
+</A>
+
+<A NAME="1010408">
+<A HREF="but.htm#1016056"><CODE>Button</CODE></A>, <A HREF="choi1.htm#1013039"><CODE>Checkbox</CODE></A>, <A HREF="txt3.htm#1014071"><CODE>FileUpload</CODE></A>, <A HREF="form2.htm#1011262"><CODE>Hidden</CODE></A>, <A HREF="txt2.htm#1012091"><CODE>Password</CODE></A>, <A HREF="choi.htm#1011977"><CODE>Radio</CODE></A>, <A HREF="but2.htm#1012912"><CODE>Reset</CODE></A>, <A HREF="choi2.htm#1013973"><CODE>Select</CODE></A>, <A HREF="but1.htm#1011117"><CODE>Submit</CODE></A>, <A HREF="txt.htm#1023924"><CODE>Text</CODE></A>, <A HREF="txt1.htm#1010943"><CODE>Textarea</CODE></A>.<P></A>
+
+<A NAME="Head2;"></A>
+<A NAME="1010548">
+<H3> Properties</H3>
+</A>
+
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1010551">
+<H2>action</H2>
+</A>
+
+<A NAME="1040055">
+A string specifying a destination URL for form data that is submitted <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1040386">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1040388">
+<A HREF="form1.htm#1010276"><CODE>Form</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1040390">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1040392">
+Navigator 2.0</A></P>
+
+</TABLE>
+</A></P>
+<A NAME="Head3;"></A>
+<A NAME="1045949">
+<H4> Security</H4>
+</A>
+
+<A NAME="1045950">
+Navigator&nbsp;3.0: This property is tainted by default. For information on data tainting, see <A HREF="intro.htm#1014735">"JavaScript Security"</A>.<P></A>
+<A NAME="1048779">
+Navigator&nbsp;4.0: Submitting a form to a <CODE>mailto:</CODE> or <CODE>news:</CODE> URL requires the <CODE>UniversalSendMail</CODE> privilege. For information on security in Navigator&nbsp;4.0, see <A HREF="http://developer.netscape.com/library/documentation/communicator/jsguide4/index.htm?content=sec.htm" TARGET="_top">Chapter&nbsp;7, "JavaScript Security,"</A> in the <A HREF="http://developer.netscape.com/library/documentation/communicator/jsguide4/index.htm" TARGET="_top">JavaScript Guide</A>. <P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010567">
+<H4> Description</H4>
+</A>
+
+<A NAME="1010568">
+The <CODE>action</CODE> property is a reflection of the <CODE>ACTION</CODE> attribute of the <CODE>FORM</CODE> tag. Each section of a URL contains different information. See <A HREF="wina1.htm#1012987"><CODE>Location</CODE></A> for a description of the URL components.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010575">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1010576">
+The following example sets the <CODE>action</CODE> property of the <CODE>musicForm</CODE> form to the value of the variable <CODE>urlName:</CODE><P></A>
+<A NAME="1010577">
+<PRE>document.musicForm.action=urlName</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1010578">
+<H4> See also</H4>
+</A>
+
+<A NAME="1010591">
+<A HREF="form1.htm#1010649"><CODE>Form.encoding</CODE></A>, <A HREF="form1.htm#1010822"><CODE>Form.method</CODE></A>, <A HREF="form1.htm#1010862"><CODE>Form.target</CODE></A><P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1010594">
+<H2>elements</H2>
+</A>
+
+<A NAME="1010595">
+An array of objects corresponding to form elements (such as <CODE>checkbox</CODE>, <CODE>radio</CODE>, and <CODE>Text</CODE> objects) in source order.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1040643">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1040648">
+<A HREF="form1.htm#1010276"><CODE>Form</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1042394">
+<I>Read-only</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1042396">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1040650">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1040652">
+Navigator 2.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010614">
+<H4> Description</H4>
+</A>
+
+<A NAME="1010615">
+You can refer to a form's elements in your code by using the <CODE>elements</CODE> array. This array contains an entry for each object (<A HREF="but.htm#1016056"><CODE>Button</CODE></A>, <A HREF="choi1.htm#1013039"><CODE>Checkbox</CODE></A>, <A HREF="txt3.htm#1014071"><CODE>FileUpload</CODE></A>, <A HREF="form2.htm#1011262"><CODE>Hidden</CODE></A>, <A HREF="txt2.htm#1012091"><CODE>Password</CODE></A>, <A HREF="choi.htm#1011977"><CODE>Radio</CODE></A>, <A HREF="but2.htm#1012912"><CODE>Reset</CODE></A>, <A HREF="choi2.htm#1013973"><CODE>Select</CODE></A>, <A HREF="but1.htm#1011117"><CODE>Submit</CODE></A>, <A HREF="txt.htm#1023924"><CODE>Text</CODE></A>, or <A HREF="txt1.htm#1010943"><CODE>Textarea</CODE></A> object) in a form in source order. Each radio button in a <CODE>Radio</CODE> object appears as a separate element in the <CODE>elements</CODE> array. For example, if a form called <CODE>myForm</CODE> has a text field and two checkboxes, you can refer to these elements <CODE>myForm.elements[0]</CODE>, <CODE>myForm.elements[1]</CODE>, and <CODE>myForm.elements[2]</CODE>.<P></A>
+<A NAME="1010616">
+Although you can also refer to a form's elements by using the element's name (from the <CODE>NAME</CODE> attribute), the <CODE>elements</CODE> array provides a way to refer to <CODE>Form</CODE> objects programmatically without using their names. For example, if the first object on the <CODE>userInfo</CODE> form is the <CODE>userName</CODE> <CODE>Text</CODE> object, you can evaluate it in either of the following ways:<P></A>
+<A NAME="1010617">
+<PRE>userInfo.userName.value<br>userInfo.elements[0].value</PRE></A><A NAME="1043468">
+The value of each element in the <CODE>elements</CODE> array is the full HTML statement for the object.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010637">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1010641">
+See the examples for <A HREF="wina.htm#1079184"><CODE>Frame</CODE></A>.<P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1010649">
+<H2>encoding</H2>
+</A>
+
+<A NAME="1010651">
+A string specifying the MIME encoding of the form.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1040724">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1040729">
+<A HREF="form1.htm#1010276"><CODE>Form</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1040731">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1040733">
+Navigator 2.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010666">
+<H4> Description</H4>
+</A>
+
+<A NAME="1010667">
+The <CODE>encoding</CODE> property initially reflects the <CODE>ENCTYPE</CODE> attribute of the <CODE>FORM</CODE> tag; however, setting <CODE>encoding</CODE> overrides the <CODE>ENCTYPE</CODE> attribute.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010671">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1010672">
+The following function returns the value of the <CODE>encoding</CODE> property of <CODE>musicForm</CODE>:<P></A>
+<A NAME="1010673">
+<PRE>function getEncoding() {<br>&nbsp;&nbsp;&nbsp;return document.musicForm.encoding<br>}</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1010674">
+<H4> See also</H4>
+</A>
+
+<A NAME="1010687">
+<A HREF="form1.htm#1010551"><CODE>Form.action</CODE></A>, <A HREF="form1.htm#1010822"><CODE>Form.method</CODE></A>, <A HREF="form1.htm#1010862"><CODE>Form.target</CODE></A><P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1010689">
+<H2>length</H2>
+</A>
+
+<A NAME="1043896">
+The number of elements in the form.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1043882">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1043887">
+<A HREF="form1.htm#1010276"><CODE>Form</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1043889">
+<I>Read-only</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1043891">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1043893">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1043895">
+Navigator 2.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1043933">
+<H4> Description</H4>
+</A>
+
+<A NAME="1043944">
+The <CODE>form.length</CODE> property tells you how many elements are in the form. You can get the same information using <CODE>form.elements.length</CODE>. <P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1010822">
+<H2>method</H2>
+</A>
+
+<A NAME="1010823">
+A string specifying how form field input information is sent to the server.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1041160">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1041165">
+<A HREF="form1.htm#1010276"><CODE>Form</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1041167">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1041169">
+Navigator 2.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010838">
+<H4> Description</H4>
+</A>
+
+<A NAME="1010839">
+The <CODE>method</CODE> property is a reflection of the <CODE>METHOD</CODE> attribute of the <CODE>FORM</CODE> tag. The <CODE>method</CODE> property should evaluate to either <CODE>"get"</CODE> or <CODE>"post"</CODE>.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010843">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1010844">
+The following function returns the value of the <CODE>musicForm</CODE> <CODE>method</CODE> property:<P></A>
+<A NAME="1010845">
+<PRE>function getMethod() {<br>&nbsp;&nbsp;&nbsp;return document.musicForm.method<br>}</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1010846">
+<H4> See also</H4>
+</A>
+
+<A NAME="1010859">
+<A HREF="form1.htm#1010551"><CODE>Form.action</CODE></A>, <A HREF="form1.htm#1010649"><CODE>Form.encoding</CODE></A>, <A HREF="form1.htm#1010862"><CODE>Form.target</CODE></A><P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1045383">
+<H2>name</H2>
+</A>
+
+<A NAME="1045397">
+A string specifying the name of the form.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1045387">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1045392">
+<A HREF="form1.htm#1010276"><CODE>Form</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1045394">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1045396">
+Navigator 2.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1045929">
+<H4> Security</H4>
+</A>
+
+<A NAME="1045930">
+Navigator&nbsp;3.0: This property is tainted by default. For information on data tainting, see <A HREF="intro.htm#1014735">"JavaScript Security"</A>.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1045398">
+<H4> Description</H4>
+</A>
+
+<A NAME="1045399">
+The <CODE>name</CODE> property initially reflects the value of the <CODE>NAME</CODE> attribute. Changing the <CODE>name</CODE> property overrides this setting.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1045400">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1045401">
+In the following example, the <CODE>valueGetter</CODE> function uses a <CODE>for</CODE> loop to iterate over the array of elements on the <CODE>valueTest</CODE> form. The <CODE>msgWindow</CODE> window displays the names of all the elements on the form:<P></A>
+<A NAME="1045402">
+<PRE>newWindow=window.open("http://home.netscape.com")</PRE></A><A NAME="1045403">
+<PRE>function valueGetter() {<br>&nbsp;&nbsp;&nbsp;var msgWindow=window.open("")<br>&nbsp;&nbsp;&nbsp;for (var i = 0; i &lt; newWindow.document.valueTest.elements.length; i++) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;msgWindow.document.write(newWindow.document.valueTest.elements[i].name + "&lt;BR&gt;")<br>&nbsp;&nbsp;&nbsp;}<br>}</PRE></A>
+<A NAME="Head2Ref;"></A>
+<A NAME="1010862">
+<H2>target</H2>
+</A>
+
+<A NAME="1010863">
+A string specifying the name of the window that responses go to after a form has been submitted.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1041325">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1041330">
+<A HREF="form1.htm#1010276"><CODE>Form</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1041332">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1041334">
+Navigator 2.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010886">
+<H4> Description</H4>
+</A>
+
+<A NAME="1010887">
+The <CODE>target</CODE> property initially reflects the <CODE>TARGET</CODE> attribute of the<CODE> A</CODE>, <CODE>AREA</CODE>, and <CODE>FORM</CODE> tags; however, setting <CODE>target</CODE> overrides these attributes.<P></A>
+<A NAME="1010888">
+You can set <CODE>target</CODE> using a string, if the string represents a window name. The <CODE>target</CODE> property cannot be assigned the value of a JavaScript expression or variable.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010892">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1010893">
+The following example specifies that responses to the <CODE>musicInfo</CODE> form are displayed in the <CODE>msgWindow</CODE> window:<P></A>
+<A NAME="1010894">
+<PRE>document.musicInfo.target="msgWindow"</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1010895">
+<H4> See also</H4>
+</A>
+
+<A NAME="1010908">
+<A HREF="form1.htm#1010551"><CODE>Form.action</CODE></A>, <A HREF="form1.htm#1010649"><CODE>Form.encoding</CODE></A>, <A HREF="form1.htm#1010822"><CODE>Form.method</CODE></A><P></A>
+
+<A NAME="Head2;"></A>
+<A NAME="1010909">
+<H3> Methods</H3>
+</A>
+
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1048786">
+<H2>handleEvent</H2>
+</A>
+
+<A NAME="1048799">
+Invokes the handler for the specified event. <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1048789">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1048794">
+<A HREF="form1.htm#1010276"><CODE>Form</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1048796">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1048798">
+Navigator 4.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1048800">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1048801">
+<PRE>handleEvent(event)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1048802">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1048808">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1048805">
+<PRE>event</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1048807">
+The name of an event for which the specified object has an event handler.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1048809">
+<H4> Description</H4>
+</A>
+
+<A NAME="1048813">
+For information on handling events, see <A HREF="evnt.htm#1010270">"General Information about Events"</A>.<P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1010937">
+<H2>reset</H2>
+</A>
+
+<A NAME="1010938">
+Simulates a mouse click on a reset button for the calling form.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1041607">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1041612">
+<A HREF="form1.htm#1010276"><CODE>Form</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1041614">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1041616">
+Navigator 3.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010939">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1010940">
+<PRE>reset()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1010941">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1010942">
+None<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010948">
+<H4> Description</H4>
+</A>
+
+<A NAME="1010949">
+The <CODE>reset</CODE> method restores a form element's default values. A reset button does not need to be defined for the form.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010952">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1010953">
+The following example displays a <CODE>Text</CODE> object in which the user is to type "CA" or "AZ". The <CODE>Text</CODE> object's <CODE>onChange</CODE> event handler calls a function that executes the form's <CODE>reset</CODE> method if the user provides incorrect input. When the <CODE>reset</CODE> method executes, defaults are restored and the form's <CODE>onReset</CODE> event handler displays a message.<P></A>
+<A NAME="1010954">
+<PRE>&lt;SCRIPT&gt;<br>function verifyInput(textObject) {<br>&nbsp;&nbsp;&nbsp;if (textObject.value == 'CA' || textObject.value == 'AZ') {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert('Nice input')<br>&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;else { document.myForm.reset() }<br>}<br>&lt;/SCRIPT&gt;</PRE></A><A NAME="1010955">
+<PRE>&lt;FORM NAME="myForm" onReset="alert('Please enter CA or AZ.')"&gt;<br>Enter CA or AZ:<br>&lt;INPUT TYPE="text" NAME="state" SIZE="2" onChange=verifyInput(this)&gt;&lt;P&gt;<br>&lt;/FORM&gt;</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1010956">
+<H4> See also</H4>
+</A>
+
+<A NAME="1010963">
+<A HREF="evnt20.htm#1020913"><CODE>onReset</CODE></A>, <A HREF="but2.htm#1012912"><CODE>Reset</CODE></A><P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1010966">
+<H2>submit</H2>
+</A>
+
+<A NAME="1010967">
+Submits a form.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1041723">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1041728">
+<A HREF="form1.htm#1010276"><CODE>Form</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1041730">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1041732">
+Navigator 2.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010968">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1010969">
+<PRE>submit()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1010970">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1010971">
+None<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010977">
+<H4> Security</H4>
+</A>
+
+<A NAME="1046506">
+Navigator&nbsp;3.0: The <CODE>submit</CODE> method fails without notice if the form's <CODE>action</CODE> is a <CODE>mailto:</CODE>, <CODE>news:</CODE>, or <CODE>snews:</CODE> URL. Users can submit forms with such URLs by clicking a submit button, but a confirming dialog will tell them that they are about to give away private or sensitive information. <P></A>
+<A NAME="1048816">
+Navigator&nbsp;4.0: Submitting a form to a <CODE>mailto:</CODE> or <CODE>news:</CODE> URL requires the <CODE>UniversalSendMail</CODE> privilege. For information on security in Navigator&nbsp;4.0, see <A HREF="http://developer.netscape.com/library/documentation/communicator/jsguide4/index.htm?content=sec.htm" TARGET="_top">Chapter&nbsp;7, "JavaScript Security,"</A> in the <A HREF="http://developer.netscape.com/library/documentation/communicator/jsguide4/index.htm" TARGET="_top">JavaScript Guide</A>. <P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1046420">
+<H4> Description</H4>
+</A>
+
+<A NAME="1010978">
+The <CODE>submit</CODE> method submits the specified form. It performs the same action as a submit button.<P></A>
+<A NAME="1010979">
+Use the submit method to send data back to an HTTP server. The <CODE>submit</CODE> method returns the data using either "get" or "post," as specified in <A HREF="form1.htm#1010822"><CODE>Form.method</CODE></A>.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010986">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1010987">
+The following example submits a form called <CODE>musicChoice</CODE>:<P></A>
+<A NAME="1010988">
+<PRE>document.musicChoice.submit()</PRE></A><A NAME="1010989">
+If <CODE>musicChoice</CODE> is the first form created, you also can submit it as follows:<P></A>
+<A NAME="1010990">
+<PRE>document.forms[0].submit()</PRE></A><A NAME="1010994">
+See also the example for <A HREF="form1.htm#1010276"><CODE>Form</CODE></A>.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010995">
+<H4> See also</H4>
+</A>
+
+<A NAME="1011002">
+<A HREF="but1.htm#1011117"><CODE>Submit</CODE></A>, <A HREF="evnt23.htm#1010835"><CODE>onSubmit</CODE></A> <P></A>
+
+<P><HR>
+<A HREF="contents.htm">[Contents]</A> <A HREF="form.htm">[Previous]</A> <A HREF="form2.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<P ALIGN=right>
+
+<FONT SIZE=-2><I>Last Updated:  10/31/97  12:31:54
+</I></FONT>
+
+<HR SIZE=4>
+
+<P> <CENTER>Copyright © 1997
+<A HREF="http://home.netscape.com/misc/contact_info.html"
+TARGET=_top>Netscape Communications Corporation</A></FONT>
+</CENTER>
+<P>
+<P>
+</BODY>
+</HTML>
+
+

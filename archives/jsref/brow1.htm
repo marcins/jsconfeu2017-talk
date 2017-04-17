@@ -1,0 +1,680 @@
+<HTML>
+<HEAD>
+<TITLE>Browser
+</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A HREF="contents.htm">[Contents]</A> <A HREF="brow.htm">[Previous]</A> <A HREF="brow2.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<HR>
+
+<A NAME="navigator"></A>
+<A NAME="1010271">
+<H1> navigator</H1>
+</A>
+<A NAME="1010272">
+Contains information about the version of Navigator in use.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1033092">
+<I>Client-side object</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1033097">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1033099">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1033188">
+Navigator 2.0<br>Navigator 3.0: added <CODE>mimeTypes</CODE> and <CODE>plugins</CODE> properties; added <CODE>javaEnabled</CODE> and <A HREF="brow1.htm#1041012"><CODE>taintEnabled</CODE></A> methods.<br>Navigator 4.0: added <CODE>language</CODE> and <CODE>platform</CODE> properties; added <A HREF="brow1.htm#1048028"><CODE>preference</CODE></A> method.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1025372">
+<H4> Created by</H4>
+</A>
+
+<A NAME="1025389">
+The JavaScript runtime engine on the client automatically creates the <CODE>navigator</CODE> object. <P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010289">
+<H4> Description</H4>
+</A>
+
+<A NAME="1039115">
+Use the <CODE>navigator</CODE> object to determine which version of the Navigator your users have, what MIME types the user's Navigator can handle, and what plug-ins the user has installed. All of the properties of the <CODE>navigator</CODE> object are read-only. <P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1039116">
+<H4> Property Summary</H4>
+</A>
+
+<A NAME="1010335">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1010297">
+<PRE><A HREF="brow1.htm#1010356"><CODE>appCodeName</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1010299">
+Specifies the code name of the browser.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1010304">
+<PRE><A HREF="brow1.htm#1010391"><CODE>appName</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1010306">
+Specifies the name of the browser.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1010311">
+<PRE><A HREF="brow1.htm#1010426"><CODE>appVersion</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1010313">
+Specifies version information for the Navigator.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1014746">
+<PRE><A HREF="brow1.htm#1047977"><CODE>language</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1014748">
+Indicates the translation of the Navigator being used.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1010318">
+<PRE><A HREF="brow1.htm#1010466"><CODE>mimeTypes</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1010320">
+An array of all MIME types supported by the client.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1010325">
+<PRE><A HREF="brow1.htm#1048001"><CODE>platform</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1015594">
+Indicates the machine type for which the Navigator was compiled. </A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1015584">
+<PRE><A HREF="brow1.htm#1013016"><CODE>plugins</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1015586">
+An array of all plug-ins currently installed on the client.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1010332">
+<PRE><A HREF="brow1.htm#1040488"><CODE>userAgent</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1010334">
+Specifies the user-agent header.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010336">
+<H4> Method Summary</H4>
+</A>
+
+<A NAME="1010345">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1010342">
+<PRE><A HREF="brow1.htm#1010516"><CODE>javaEnabled</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1010344">
+Tests whether Java is enabled.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1043168">
+<PRE><A HREF="brow1.htm#1039726"><CODE>plugins.refresh</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1043170">
+Makes newly installed plug-ins available and optionally reloads open documents that contain plug-ins.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1016031">
+<PRE><A HREF="brow1.htm#1048028"><CODE>preference</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1016042">
+Allows a signed script to get and set certain Navigator preferences. </A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1041005">
+<PRE><A HREF="brow1.htm#1041012"><CODE>taintEnabled</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1041007">
+Specifies whether data tainting is enabled.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head2;"></A>
+<A NAME="1010353">
+<H3> Properties</H3>
+</A>
+
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1010356">
+<H2>appCodeName</H2>
+</A>
+
+<A NAME="1010358">
+A string specifying the code name of the browser.  <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1033837">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1033839">
+<A HREF="brow1.htm#1010271"><CODE>navigator</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1034313">
+<I>Read-only</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1034315">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1033758">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1033760">
+Navigator 2.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010370">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1010371">
+The following example displays the value of the <CODE>appCodeName</CODE> property:<P></A>
+<A NAME="1010372">
+<PRE>document.write("The value of navigator.appCodeName is " +<br>&nbsp;&nbsp;&nbsp;navigator.appCodeName)</PRE></A><A NAME="1010373">
+For Navigator 2.0 and 3.0, this displays the following:<P></A>
+<A NAME="1010374">
+<PRE>The value of navigator.appCodeName is Mozilla</PRE></A>
+<A NAME="Head2Ref;"></A>
+<A NAME="1010391">
+<H2>appName</H2>
+</A>
+
+<A NAME="1010393">
+A string specifying the name of the browser.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1034333">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1034338">
+<A HREF="brow1.htm#1010271"><CODE>navigator</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1034340">
+<I>Read-only</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1034342">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1034344">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1034346">
+Navigator 2.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010405">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1010406">
+The following example displays the value of the <CODE>appName</CODE> property:<P></A>
+<A NAME="1010407">
+<PRE>document.write("The value of navigator.appName is " +<br>&nbsp;&nbsp;&nbsp;navigator.appName)</PRE></A><A NAME="1010408">
+For Navigator 2.0 and 3.0, this displays the following:<P></A>
+<A NAME="1010409">
+<PRE>The value of navigator.appName is Netscape</PRE></A>
+<A NAME="Head2Ref;"></A>
+<A NAME="1010426">
+<H2>appVersion</H2>
+</A>
+
+<A NAME="1010427">
+A string specifying version information for the Navigator.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1034595">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1034600">
+<A HREF="brow1.htm#1010271"><CODE>navigator</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1034602">
+<I>Read-only</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1034604">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1034606">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1034608">
+Navigator 2.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010435">
+<H4> Description</H4>
+</A>
+
+<A NAME="1010436">
+The <CODE>appVersion</CODE> property specifies version information in the following format:<P></A>
+<A NAME="1010437">
+<CODE>releaseNumber</CODE> (<CODE>platform</CODE>; <CODE>country</CODE>)<P></A>
+<A NAME="1010438">
+The values contained in this format are the following:<P></A>
+<ul><P>
+<A NAME="1010439">
+<LI><CODE>releaseNumber</CODE> is the version number of the Navigator. For example, <CODE>"2.0b4"</CODE> specifies Navigator 2.0, beta 4.</LI>
+</A><P>
+<A NAME="1010440">
+<LI><CODE>platform</CODE> is the platform upon which the Navigator is running. For example, <CODE>"Win16"</CODE> specifies a 16-bit version of Windows such as Windows 3.1.</LI>
+</A><P>
+<A NAME="1010441">
+<LI><CODE>country</CODE> is either <CODE>"I"</CODE> for the international release, or <CODE>"U"</CODE> for the domestic U.S. release. The domestic release has a stronger encryption feature than the international release.</LI>
+</A></ul>
+<A NAME="Head3;"></A>
+<A NAME="1010445">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1010446">
+<B>Example 1.</B> The following example displays version information for the Navigator:<P></A>
+<A NAME="1010447">
+<PRE>document.write("The value of navigator.appVersion is " +<br>&nbsp;&nbsp;&nbsp;navigator.appVersion)</PRE></A><A NAME="1010448">
+For Navigator 2.0 on Windows 95, this displays the following:<P></A>
+<A NAME="1010449">
+<PRE>The value of navigator.appVersion is 2.0 (Win95, I)</PRE></A><A NAME="1010450">
+For Navigator 3.0 on Windows NT, this displays the following:<P></A>
+<A NAME="1010451">
+<PRE>The value of navigator.appVersion is 3.0 (WinNT, I)</PRE></A><A NAME="1010452">
+<B>Example 2.</B> The following example populates a <CODE>Textarea</CODE> object with newline characters separating each line. Because the newline character varies from platform to platform, the example tests the <CODE>appVersion</CODE> property to determine whether the user is running Windows (<CODE>appVersion</CODE> contains <CODE>"Win"</CODE> for all versions of Windows). If the user is running Windows, the newline character is set to \r\n; otherwise, it's set to \n, which is the newline character for Unix and Macintosh. <B><EM></EM></B><P></A>
+<A NAME="1010453">
+<PRE>&lt;SCRIPT&gt;<br>var newline=null<br>function populate(textareaObject){<br>&nbsp;&nbsp;&nbsp;if (navigator.appVersion.lastIndexOf('Win') != -1)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;newline="\r\n"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else newline="\n"<br>&nbsp;&nbsp;&nbsp;textareaObject.value="line 1" + newline + "line 2" + newline <br>&nbsp;&nbsp;&nbsp;+ "line 3"<br>}<br>&lt;/SCRIPT&gt;<br>&lt;FORM NAME="form1"&gt;<br>&lt;BR&gt;&lt;TEXTAREA NAME="testLines" ROWS=8 COLS=55&gt;&lt;/TEXTAREA&gt;<br>&lt;P&gt;&lt;INPUT TYPE="button" VALUE="Populate the Textarea object"<br>&nbsp;&nbsp;&nbsp;onClick="populate(document.form1.testLines)"&gt;<br>&lt;/TEXTAREA&gt;<br>&lt;/FORM&gt;</PRE></A>
+<A NAME="Head2Ref;"></A>
+<A NAME="1047977">
+<H2>language</H2>
+</A>
+
+<A NAME="1047994">
+Indicates the translation of the Navigator being used. <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1047980">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1047985">
+<A HREF="brow1.htm#1010271"><CODE>navigator</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1047987">
+<I>Read-only</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1047989">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1047991">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1047993">
+Navigator 4.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1047995">
+<H4> Description</H4>
+</A>
+
+<A NAME="1047996">
+The value for language is usually a 2-letter code, such as "en" and occasionally a five-character code to indicate a language subtype, such as "zh_CN". <P></A>
+<A NAME="1047997">
+Use this property to determine the language of the Navigator client software being used. For example you might want to display translated text for the user. <P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1010466">
+<H2>mimeTypes</H2>
+</A>
+
+<A NAME="1010470">
+An array of all MIME types supported by the client. <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1034740">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1034745">
+<A HREF="brow1.htm#1010271"><CODE>navigator</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1034747">
+<I>Read-only</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1034749">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1034751">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1034753">
+Navigator 3.0</A></P>
+
+</TABLE>
+<P></A>
+<A NAME="1012694">
+The <CODE>mimeTypes</CODE> array contains an entry for each MIME type supported by the client (either internally, via helper applications, or by plug-ins). For example, if a client supports three MIME types, these MIME types are reflected as <CODE>navigator.mimeTypes[0]</CODE>, <CODE>navigator.mimeTypes[1]</CODE>, and <CODE>navigator.mimeTypes[2]</CODE>.<P></A>
+<A NAME="1012358">
+Each element of the <CODE>mimeTypes</CODE> array is a <A HREF="brow2.htm#1031247"><CODE>MimeType</CODE></A> object. <P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1039315">
+<H4> See also</H4>
+</A>
+
+<A NAME="1039457">
+<A HREF="brow2.htm#1031247"><CODE>MimeType</CODE></A><P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1048001">
+<H2>platform</H2>
+</A>
+
+<A NAME="1048018">
+Indicates the machine type for which the Navigator was compiled. <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1048004">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1048009">
+<A HREF="brow1.htm#1010271"><CODE>navigator</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1048011">
+<I>Read-only</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1048013">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1048015">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1048017">
+Navigator 4.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1048019">
+<H4> Description</H4>
+</A>
+
+<A NAME="1048020">
+Platform values are Win32, Win16, Mac68k, MacPPC and various Unix. <P></A>
+<A NAME="1048021">
+The machine type the Navigator was compiled for may differ from the actual machine type due to version differences, emulators, or other reasons. <P></A>
+<A NAME="1048022">
+If you use SmartUpdate to download software to a user's machine, you can use this property to ensure that the trigger downloads the appropriate JAR files. The triggering page checks the Navigator version before checking the platform property. For information on using SmartUpdate, see <A HREF="http://developer.netscape.com/library/documentation/communicator/jarman/index.htm" TARGET="_top"><EM>Using JAR Installation Manager for SmartUpdate</EM></A><A HREF="#1049135"></A>.<P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1013016">
+<H2>plugins</H2>
+</A>
+
+<A NAME="1013020">
+An array of all plug-ins currently installed on the client. <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1034989">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1034994">
+<A HREF="brow1.htm#1010271"><CODE>navigator</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1034996">
+<I>Read-only</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1034998">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1035000">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1035002">
+Navigator 3.0</A></P>
+
+</TABLE>
+<P></A>
+<A NAME="1013096">
+You can refer to the <CODE>Plugin</CODE> objects installed on the client by using this array. Each element of the <CODE>plugins</CODE> array is a <CODE>Plugin</CODE> object. For example, if three plug-ins are installed on the client, these plug-ins are reflected as <CODE>navigator.plugins[0]</CODE>, <CODE>navigator.plugins[1]</CODE>, and <CODE>navigator.plugins[2]</CODE>.<P></A>
+<A NAME="1013097">
+To use the <CODE>plugins</CODE> array:<P></A>
+<A NAME="1013098">
+<PRE>1. navigator.plugins[index]<br>2. navigator.plugins[index][mimeTypeIndex]</PRE></A><A NAME="1013099">
+<CODE>index</CODE> is an integer representing a plug-in installed on the client or a string containing the name of a <CODE>Plugin</CODE> object (from the <CODE>name</CODE> property). The first form returns the <A HREF="brow3.htm#1010653"><CODE>Plugin</CODE></A> object stored at the specified location in the plugins array. The second form returns the <A HREF="brow2.htm#1031247"><CODE>MimeType</CODE></A> object at the specified index in that <A HREF="brow3.htm#1010653"><CODE>Plugin</CODE></A> object.<P></A>
+<A NAME="1013100">
+To obtain the number of plug-ins installed on the client, use the <CODE>length</CODE> property: <CODE>navigator.plugins.length</CODE>.<P></A>
+<A NAME="HeadRunIn;"></A>
+<A NAME="1039726">
+<B> plugins.refresh: </B>
+</A><A NAME="1043046">
+The <CODE>plugins</CODE> array has its own method, <CODE>refresh</CODE>. This method makes newly installed plug-ins available, updates related arrays such as the <CODE>plugins</CODE> array, and optionally reloads open documents that contain plug-ins. You call this method with one of the following statements:<P></A>
+<A NAME="1039772">
+<PRE>navigator.plugins.refresh(true)<br>navigator.plugins.refresh(false)</PRE></A><A NAME="1040301">
+If you supply true, <CODE>refresh</CODE> refreshes the <CODE>plugins</CODE> array to make newly installed plug-ins available and reloads all open documents that contain embedded objects (<CODE><A HREF="http://developer.netscape.com/library/documentation/htmlguid/index.htm?content=tags14.htm#tags:EMBED" TARGET="_top">EMBED</A></CODE> tag). If you supply false, it refreshes the <CODE>plugins</CODE> array, but does not reload open documents.<P></A>
+<A NAME="1039786">
+When the user installs a plug-in, that plug-in is not available until <CODE>refresh</CODE> is called or the user closes and restarts Navigator.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1039787">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1039788">
+The following code refreshes arrays and reloads open documents containing embedded objects:<P></A>
+<A NAME="1039789">
+<PRE>navigator.plugins.refresh(true)</PRE></A><A NAME="1040485">
+See also the examples for the <A HREF="brow3.htm#1010653"><CODE>Plugin</CODE></A> object.<P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1040488">
+<H2>userAgent</H2>
+</A>
+
+<A NAME="1040489">
+A string representing the value of the user-agent header sent in the HTTP protocol from client to server.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1040492">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1040497">
+<A HREF="brow1.htm#1010271"><CODE>navigator</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1040499">
+<I>Read-only</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1040501">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1040503">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1040505">
+Navigator 2.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010488">
+<H4> Description</H4>
+</A>
+
+<A NAME="1010489">
+Servers use the value sent in the user-agent header to identify the client.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010493">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1010494">
+The following example displays <CODE>userAgent</CODE> information for the Navigator:<P></A>
+<A NAME="1010495">
+<PRE>document.write("The value of navigator.userAgent is " +<br>&nbsp;&nbsp;&nbsp;navigator.userAgent)</PRE></A><A NAME="1010496">
+For Navigator 2.0, this displays the following:<P></A>
+<A NAME="1010497">
+<PRE>The value of navigator.userAgent is Mozilla/2.0 (Win16; I)</PRE></A>
+<A NAME="Head2;"></A>
+<A NAME="1010513">
+<H3> Methods</H3>
+</A>
+
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1010516">
+<H2>javaEnabled</H2>
+</A>
+
+<A NAME="1010517">
+Tests whether Java is enabled.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1035490">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1035495">
+<A HREF="brow1.htm#1010271"><CODE>navigator</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1035701">
+<I>Static</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1035703">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1035501">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1035503">
+Navigator 3.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010518">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1010519">
+<PRE>javaEnabled()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1010520">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1035895">
+None.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010525">
+<H4> Description</H4>
+</A>
+
+<A NAME="1010526">
+<CODE>javaEnabled</CODE> returns true if Java is enabled; otherwise, false. The user can enable or disable Java by through user preferences.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010529">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1010530">
+The following code executes <CODE>function1</CODE> if Java is enabled; otherwise, it executes <CODE>function2</CODE>.<P></A>
+<A NAME="1010531">
+<PRE>if (navigator.javaEnabled()) {<br>&nbsp;&nbsp;&nbsp;function1()<br>}<br>else function2()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1010532">
+<H4> See also</H4>
+</A>
+
+<A NAME="1010542">
+<A HREF="brow1.htm#1010356"><CODE>navigator.appCodeName</CODE></A>, <A HREF="brow1.htm#1010391"><CODE>navigator.appName</CODE></A>, <A HREF="brow1.htm#1040488"><CODE>navigator.userAgent</CODE></A> <P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1048028">
+<H2>preference</H2>
+</A>
+
+<A NAME="1048045">
+Allows a signed script to get and set certain Navigator preferences. <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1048031">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1048036">
+<A HREF="brow1.htm#1010271"><CODE>navigator</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1048038">
+<I>Static</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1048040">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1048042">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1048044">
+Navigator 4.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1048046">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1048047">
+<PRE>preference(prefName)<br>preference(prefName, setValue)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1048048">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1048058">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1048051">
+<PRE>prefName</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1048053">
+A string representing the name of the preference you want to get or set. Allowed preferences are listed below.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1048055">
+<PRE>setValue</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1048057">
+The value you want to assign to the preference. This can be a string, number, or Boolean. </A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1048059">
+<H4> Description</H4>
+</A>
+
+<A NAME="1048576">
+This method returns the value of the preference. If you use the method to set the value, it returns the new value.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1048569">
+<H4> Security</H4>
+</A>
+
+<A NAME="1048060">
+Reading a preference with the <CODE>preference</CODE> method requires the <CODE>UniversalPreferencesRead</CODE> privilege. Setting a preference with this method requires the <CODE>UniversalPreferencesWrite</CODE> privilege. <P></A>
+<A NAME="1048063">
+For information on security in Navigator&nbsp;4.0, see <A HREF="http://developer.netscape.com/library/documentation/communicator/jsguide4/index.htm?content=sec.htm" TARGET="_top">Chapter&nbsp;7, "JavaScript Security,"</A> in the <A HREF="http://developer.netscape.com/library/documentation/communicator/jsguide4/index.htm" TARGET="_top">JavaScript Guide</A>.<P></A>
+<A NAME="1048138">
+With permission, you can get and set the preferences shown in <A HREF="brow1.htm#1048138">Table&nbsp;8.2</A>. <P><B><A NAME="1048073">
+Table 8.2&nbsp;Preferences. &nbsp;</A></B>
+<TABLE BORDER="0">
+<TR><TH VALIGN=baseline ALIGN=left><B><A NAME="1048079">
+<B>To do this...
+</B></A></B><TH VALIGN=baseline ALIGN=left><B><A NAME="1048081">
+<B>Set this preference...
+</B></A></B><TH VALIGN=baseline ALIGN=left><B><A NAME="1048083">
+<B>To...
+</B></A></B>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1048085">
+Automatically load images</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1048087">
+<PRE>general.always_load_images</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1048089">
+true or false</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1048091">
+Enable Java</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1048093">
+<PRE>security.enable_java</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1048095">
+true or false</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1048097">
+Enable JavaScript</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1048099">
+<PRE>javascript.enabled</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1048101">
+true or false</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1048103">
+Enable style sheets</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1048105">
+<PRE>browser.enable_style_sheets</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1048107">
+true or false</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1048109">
+Enable SmartUpdate</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1048111">
+<PRE>autoupdate.enabled</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1048113">
+true or false</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1048115">
+Accept all cookies</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1048117">
+<PRE>network.cookie.cookieBehavior</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1048119">
+0</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1048121">
+Accept only cookies that get sent back to the originating server</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1048123">
+<PRE>network.cookie.cookieBehavior</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1048125">
+1</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1048127">
+Disable cookies</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1048129">
+<PRE>network.cookie.cookieBehavior</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1048131">
+2</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1048133">
+Warn before accepting cookie</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1048135">
+<PRE>network.cookie.warnAboutCookies</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1048137">
+true or false</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1041012">
+<H2>taintEnabled </H2>
+</A>
+
+<A NAME="1041013">
+Specifies whether data tainting is enabled. <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1041089">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1041094">
+<A HREF="brow1.htm#1010271"><CODE>navigator</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1041096">
+<I>Static</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1041098">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1041100">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1041102">
+Navigator 3.0; removed in Navigator 4.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1041014">
+<H4> Syntax </H4>
+</A>
+
+<A NAME="1041015">
+<PRE>navigator.taintEnabled()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1041020">
+<H4> Description </H4>
+</A>
+
+<A NAME="1041021">
+Tainting prevents other scripts from passing information that should be secure and private, such as directory structures or user session history. JavaScript cannot pass tainted values on to any server without the end user's permission.<P></A>
+<A NAME="1041023">
+Use <CODE>taintEnabled</CODE> to determine if data tainting is enabled. <CODE>taintEnabled</CODE> returns true if data tainting is enabled, false otherwise. The user enables or disables data tainting by using the environment variable <CODE>NS_ENABLE_TAINT</CODE>.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1041025">
+<H4> Examples </H4>
+</A>
+
+<A NAME="1041026">
+The following code executes function1 if data tainting is enabled; otherwise it executes function2.<P></A>
+<A NAME="1041027">
+<PRE>if (navigator.taintEnabled()) {<br>&nbsp;&nbsp;&nbsp;function1()<br>&nbsp;&nbsp;&nbsp;}<br>else function2()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1048141">
+<H4> See also </H4>
+</A>
+
+<A NAME="1048148">
+<A HREF="glob22.htm#1040381"><CODE>taint</CODE></A>, <A HREF="glob24.htm#1040746"><CODE>untaint</CODE></A><P></A>
+
+<P><HR>
+<A HREF="contents.htm">[Contents]</A> <A HREF="brow.htm">[Previous]</A> <A HREF="brow2.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<P ALIGN=right>
+
+<FONT SIZE=-2><I>Last Updated:  10/31/97  12:32:33
+</I></FONT>
+
+<HR SIZE=4>
+
+<P> <CENTER>Copyright © 1997
+<A HREF="http://home.netscape.com/misc/contact_info.html"
+TARGET=_top>Netscape Communications Corporation</A></FONT>
+</CENTER>
+<P>
+<P>
+</BODY>
+</HTML>
+
+

@@ -1,0 +1,199 @@
+<HTML>
+<HEAD>
+<TITLE>Core&nbsp;&nbsp;&nbsp;
+</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A HREF="contents.htm">[Contents]</A> <A HREF="core1.htm">[Previous]</A> <A HREF="core3.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<HR>
+
+<A NAME="Boolean"></A>
+<A NAME="1012259">
+<H1> Boolean</H1>
+</A>
+<A NAME="1075223">
+The <CODE>Boolean</CODE> object is an object wrapper for a boolean value.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1143855">
+<I>Core object</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1143857">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1143859">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1143861">
+Navigator 3.0, LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1075224">
+<H4> Created by</H4>
+</A>
+
+<A NAME="1075225">
+The <CODE>Boolean</CODE> constructor:<P></A>
+<A NAME="1075226">
+<PRE>new Boolean(value)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1010839">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1010853">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1010846">
+<PRE>value</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1010848">
+The initial value of the <CODE>Boolean</CODE> object. The value is converted to a <CODE>boolean</CODE> value, if necessary. If value is omitted or is 0, null, false, or the empty string (<CODE>""</CODE>), the object has an initial value of false. All other values, including the string <CODE>"false"</CODE>, create an object with an initial value of true.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010856">
+<H4> Description</H4>
+</A>
+
+<A NAME="1010858">
+Use a <CODE>Boolean</CODE> object when you need to convert a non-boolean value to a boolean value. You can use the <CODE>Boolean</CODE> object any place JavaScript expects a primitive boolean value. JavaScript returns the primitive value of the <CODE>Boolean</CODE> object by automatically invoking the <A HREF="corea1.htm#1012908"><CODE>valueOf</CODE></A> method.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1168075">
+<H4> Property Summary</H4>
+</A>
+
+<A NAME="1168084">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1168081">
+<PRE><A HREF="core2.htm#1010881"><CODE>prototype</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1168083">
+Defines a property that is shared by all Boolean objects.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1168104">
+<H4> Method Summary</H4>
+</A>
+
+<A NAME="1168113">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1168110">
+<PRE><A HREF="core2.htm#1167772"><CODE>toString</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1168112">
+Returns a string representing the specified object.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1010873">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1010874">
+The following examples create <CODE>Boolean</CODE> objects with an initial value of false:<P></A>
+<A NAME="1010875">
+<PRE>bNoParam = new Boolean()<br>bZero = new Boolean(0)<br>bNull = new Boolean(null)<br>bEmptyString = new Boolean("")<br>bfalse = new Boolean(false)</PRE></A><A NAME="1010876">
+The following examples create <CODE>Boolean</CODE> objects with an initial value of true:<P></A>
+<A NAME="1010877">
+<PRE>btrue = new Boolean(true)<br>btrueString = new Boolean("true")<br>bfalseString = new Boolean("false")<br>bSuLin = new Boolean("Su Lin")</PRE></A>
+<A NAME="Head2;"></A>
+<A NAME="1010878">
+<H3> Properties</H3>
+</A>
+
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1010881">
+<H2>prototype</H2>
+</A>
+
+<A NAME="1160523">
+Represents the prototype for this class. You can use the prototype to add properties or methods to all instances of a class. For information on prototypes, see <A HREF="core4.htm#1181210"><CODE>Function.prototype</CODE></A>.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1160526">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1160531">
+<A HREF="core2.htm#1012259"><CODE>Boolean</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1160533">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1175750">
+Navigator 3.0, LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head2;"></A>
+<A NAME="1167958">
+<H3> Methods</H3>
+</A>
+
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1167772">
+<H2>toString</H2>
+</A>
+
+<A NAME="1167785">
+Returns a string representing the specified object.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1167775">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1167780">
+<A HREF="core2.htm#1012259"><CODE>Boolean</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1167782">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1175753">
+Navigator 3.0, LiveWire 1.0</A></P>
+
+</TABLE>
+ <P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1167786">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1167787">
+<PRE>toString()</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1167788">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1167789">
+None.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1167790">
+<H4> Description</H4>
+</A>
+
+<A NAME="1167791">
+Every object has a <CODE>toString</CODE> method that is automatically called when it is to be represented as a text value or when an object is referred to in a string concatenation. <P></A>
+<A NAME="1167792">
+You can use <CODE>toString</CODE> within your own code to convert an object into a string, and you can create your own function to be called in place of the default <CODE>toString</CODE> method.<P></A>
+<A NAME="1168053">
+For <A HREF="core2.htm#1012259"><CODE>Boolean</CODE></A> objects and values, the built-in <CODE>toString</CODE> method returns <CODE>"true"</CODE> or <CODE>"false"</CODE> depending on the value of the boolean object. In the following code, <CODE>flag.toString</CODE> returns <CODE>"true"</CODE>.<P></A>
+<A NAME="1168054">
+<PRE>flag = new Boolean(true)<br>document.write("flag.toString() is " + flag.toString() + "&lt;BR&gt;")</PRE></A><A NAME="1167803">
+For information on defining your own <CODE>toString</CODE> method, see the <A HREF="corea1.htm#1012793"><CODE>Object.toString</CODE></A> method.<P></A>
+
+<P><HR>
+<A HREF="contents.htm">[Contents]</A> <A HREF="core1.htm">[Previous]</A> <A HREF="core3.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<P ALIGN=right>
+
+<FONT SIZE=-2><I>Last Updated:  10/31/97  16:00:33
+</I></FONT>
+
+<HR SIZE=4>
+
+<P> <CENTER>Copyright © 1997
+<A HREF="http://home.netscape.com/misc/contact_info.html"
+TARGET=_top>Netscape Communications Corporation</A></FONT>
+</CENTER>
+<P>
+<P>
+</BODY>
+</HTML>
+
+

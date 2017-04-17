@@ -1,0 +1,103 @@
+<HTML>
+<HEAD>
+<TITLE>Global Functions
+</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A HREF="contents.htm">[Contents]</A> <A HREF="glob15.htm">[Previous]</A> <A HREF="glob17.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<HR>
+
+<A NAME="redirect"></A>
+<A NAME="1033268">
+<H1> redirect</H1>
+</A>
+<A NAME="1033269">
+Redirects the client to the specified URL.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1033346">
+<I>Server-side function</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1033348">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1033350">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1033353">
+LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1033270">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1012559">
+<PRE>redirect(location)</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1012560">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1012566">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1012563">
+<PRE>location</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1012565">
+The URL to which you want to redirect the client.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012567">
+<H4> Description</H4>
+</A>
+
+<A NAME="1012568">
+The <CODE>redirect</CODE> function is a top-level server-side JavaScript function that is not associated with any object.<P></A>
+<A NAME="1012569">
+The <CODE>redirect</CODE> function redirects the client browser to the URL specified by the <CODE>location</CODE> parameter. The value of <CODE>location</CODE> can be relative or absolute.<P></A>
+<A NAME="1012570">
+When the client encounters a <CODE>redirect</CODE> function, it loads the specified page immediately and discards the current page. The client does not execute or load any HTML or script statements in the page following the <CODE>redirect</CODE> function.<P></A>
+<A NAME="1012571">
+You can use the <CODE>addClient</CODE> function to preserve <CODE>client</CODE> object property values. See <CODE>addClient</CODE> for more information.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1012574">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1012575">
+The following example uses the <CODE>redirect</CODE> function to redirect a client browser:<P></A>
+<A NAME="1012576">
+<PRE>redirect("http://www.royalairways.com/lw/apps/newhome.html")</PRE></A><A NAME="1012577">
+The page displayed by the <CODE>newhome.html</CODE> link could contain content such as the following:<P></A>
+<A NAME="1012578">
+<PRE>&lt;H1&gt;New location&lt;/H1&gt;<br>The URL you tried to access has been moved to:&lt;BR&gt;<br>&lt;LI&gt;&lt;A HREF=http://www.royalairways.com/lw/apps/index.html&gt;<br>&nbsp;&nbsp;&nbsp;http://www.royalairways.com/lw/apps/index.html&lt;/A&gt;<br>&lt;P&gt;This notice will remain until 12/31/97.</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1012579">
+<H4> See also</H4>
+</A>
+
+<A NAME="1012583">
+<A HREF="glob1.htm#1012214"><CODE>addClient</CODE></A> <P></A>
+
+<P><HR>
+<A HREF="contents.htm">[Contents]</A> <A HREF="glob15.htm">[Previous]</A> <A HREF="glob17.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<P ALIGN=right>
+
+<FONT SIZE=-2><I>Last Updated:  10/31/97  16:38:00
+</I></FONT>
+
+<HR SIZE=4>
+
+<P> <CENTER>Copyright © 1997
+<A HREF="http://home.netscape.com/misc/contact_info.html"
+TARGET=_top>Netscape Communications Corporation</A></FONT>
+</CENTER>
+<P>
+<P>
+</BODY>
+</HTML>
+
+

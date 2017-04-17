@@ -1,0 +1,116 @@
+<HTML>
+<HEAD>
+<TITLE>Events and Event Handlers
+</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A HREF="contents.htm">[Contents]</A> <A HREF="evnt9.htm">[Previous]</A> <A HREF="evnt11.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<HR>
+
+<A NAME="onKeyDown"></A>
+<A NAME="1094045">
+<H1> onKeyDown</H1>
+</A>
+<A NAME="1094071">
+Executes JavaScript code when a KeyDown event occurs; that is, when the user depresses a key. <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1094052">
+<I>Event handler for </I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1094066">
+<A HREF="doc1.htm#1048486"><CODE>document</CODE></A>, <A HREF="doca1.htm#1078163"><CODE>Image</CODE></A>, <A HREF="doc2.htm#1081434"><CODE>Link</CODE></A>, <A HREF="txt1.htm#1010943"><CODE>Textarea</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1094068">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1094070">
+Navigator 4.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1094072">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1094073">
+<PRE>onKeyDown="handlerText"</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1094074">
+<H4> Parameters</H4>
+</A>
+
+<A NAME="1094080">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1094077">
+<PRE><CODE>handlerText</CODE></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1094079">
+JavaScript code or a call to a JavaScript function.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1094081">
+<H4> Event properties used</H4>
+</A>
+
+<A NAME="1094109">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1094084">
+<PRE>type</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1103630">
+Indicates the type of event. </A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1094088">
+<PRE>target</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1094090">
+Indicates the object to which the event was originally sent. </A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1094092">
+<PRE>layerX, layerY,<br>pageX, pageY,<br>screenX, screenY</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1094094">
+For an event over a window, these represent the cursor location at the time the event occurred. For an event over a form, they represent the position of the form element.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1094096">
+<PRE>which</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1094098">
+Represents the ASCII value of the key pressed. To get the actual letter, number, or symbol of the pressed key, use the <A HREF="corea2.htm#1157972"><CODE>String.fromCharCode</CODE></A> method. To set this property when the ASCII value is unknown, use the <A HREF="corea2.htm#1023311"><CODE>String.charCodeAt</CODE></A> method. </A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1094106">
+<PRE>modifiers</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1094108">
+Contains the list of modifier keys held down when the event occurred.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1094110">
+<H4> Description</H4>
+</A>
+
+<A NAME="1094111">
+A <CODE>KeyDown</CODE> event always occurs before a <CODE>KeyPress</CODE> event. If <CODE>onKeyDown</CODE> returns false, no <CODE>KeyPress</CODE> events occur. This prevents <CODE>KeyPress</CODE> events occurring due to the user holding down a key. <P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1094112">
+<H4> See also </H4>
+</A>
+
+<A NAME="1094119">
+<A HREF="evnt11.htm#1094129"><CODE>onKeyPress</CODE></A>, <A HREF="evnt12.htm#1094213"><CODE>onKeyUp</CODE></A> <P></A>
+<A NAME="1094123">
+For general information on event handlers, see <A HREF="evnt.htm#1010270">"General Information about Events"</A>. <P></A>
+<A NAME="1094127">
+For information about the <CODE>event</CODE> object, see <A HREF="evnt1.htm#1093773"><CODE>event</CODE></A>.<P></A>
+
+<P><HR>
+<A HREF="contents.htm">[Contents]</A> <A HREF="evnt9.htm">[Previous]</A> <A HREF="evnt11.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<P ALIGN=right>
+
+<FONT SIZE=-2><I>Last Updated:  10/31/97  16:34:02
+</I></FONT>
+
+<HR SIZE=4>
+
+<P> <CENTER>Copyright © 1997
+<A HREF="http://home.netscape.com/misc/contact_info.html"
+TARGET=_top>Netscape Communications Corporation</A></FONT>
+</CENTER>
+<P>
+<P>
+</BODY>
+</HTML>
+
+

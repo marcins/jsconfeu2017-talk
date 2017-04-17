@@ -1,0 +1,322 @@
+<HTML>
+<HEAD>
+<TITLE>Browser
+</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A HREF="contents.htm">[Contents]</A> <A HREF="brow1.htm">[Previous]</A> <A HREF="brow3.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<HR>
+
+<A NAME="MimeType"></A>
+<A NAME="1031247">
+<H1> MimeType</H1>
+</A>
+<A NAME="1031257">
+A MIME type (Multipart Internet Mail Extension) supported by the client.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1031250">
+<I>Client-side object</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1031252">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1031254">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1031256">
+Navigator 3.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1031258">
+<H4> Created by</H4>
+</A>
+
+<A NAME="1031259">
+You do not create <CODE>MimeType</CODE> objects yourself. These objects are predefined JavaScript objects that you access through the <CODE>mimeTypes</CODE> array of the <A HREF="brow1.htm#1010271"><CODE>navigator</CODE></A> or <A HREF="brow3.htm#1010653"><CODE>Plugin</CODE></A> object:<P></A>
+<A NAME="1031266">
+<PRE>navigator.mimeTypes[index]</PRE></A><A NAME="1038367">
+where <CODE>index</CODE> is either an integer representing a MIME type supported by the client or a string containing the type of a <CODE>MimeType</CODE> object (from the <A HREF="brow2.htm#1031466"><CODE>MimeType.type</CODE></A> property).<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1031274">
+<H4> Description</H4>
+</A>
+
+<A NAME="1031275">
+Each <CODE>MimeType</CODE> object is an element in a <CODE>mimeTypes</CODE> array. The <CODE>mimeTypes</CODE> array is a property of both <A HREF="brow1.htm#1010271"><CODE>navigator</CODE></A> and <A HREF="brow3.htm#1010653"><CODE>Plugin</CODE></A> objects. For example, the following table summarizes the values for displaying JPEG images:<P><B></B>
+<TABLE BORDER="0">
+<TR><TH VALIGN=baseline ALIGN=left><B><A NAME="1031288">
+<B>Expression
+</B></A></B><TH VALIGN=baseline ALIGN=left><B><A NAME="1031290">
+<B>Value
+</B></A></B>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1031292">
+<CODE>navigator.mimeTypes["image/jpeg"].type</CODE></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1031294">
+<CODE>image/jpeg</CODE></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1031296">
+<CODE>navigator.mimeTypes["image/jpeg"].description</CODE></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1031298">
+<CODE>JPEG Image</CODE></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1031300">
+<CODE>navigator.mimeTypes["image/jpeg"].suffixes</CODE></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1031302">
+<CODE>jpeg, jpg, jpe, jfif, pjpeg, pjp</CODE></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1031304">
+<CODE>navigator.mimeTypes["image/jpeg"].enabledPlugins</CODE></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1031306">
+<CODE>null</CODE></A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1031307">
+<H4> Property Summary</H4>
+</A>
+
+<A NAME="1031330">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1041300">
+<PRE><A HREF="brow2.htm#1041347"><CODE>description</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1041302">
+A description of the MIME type.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1031313">
+<PRE><A HREF="brow2.htm#1041455"><CODE>enabledPlugin</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1031315">
+Reference to the <CODE>Plugin</CODE> object configured for the MIME type.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1031327">
+<PRE><A HREF="brow2.htm#1049027"><CODE>suffixes</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1031329">
+A string listing possible filename extensions for the MIME type, for example <CODE>"mpeg, mpg, mpe, mpv, vbs, mpegv"</CODE>.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1043140">
+<PRE><A HREF="brow2.htm#1031466"><CODE>type</CODE></A></PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1043142">
+The name of the MIME type, for example <CODE>"video/mpeg"</CODE> or <CODE>"audio/x-wav"</CODE>.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1031333">
+<H4> Methods</H4>
+</A>
+
+<A NAME="1048973">
+None.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1048965">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1031334">
+The following code displays the <CODE>type</CODE>, <CODE>description</CODE>, <CODE>suffixes</CODE>, and <CODE>enabledPlugin</CODE> properties for each <CODE>MimeType</CODE> object on a client:<P></A>
+<A NAME="1031335">
+<PRE>document.writeln("&lt;TABLE BORDER=1&gt;&lt;TR VALIGN=TOP&gt;",<br>&nbsp;&nbsp;&nbsp;"&lt;TH ALIGN=left&gt;i",<br>&nbsp;&nbsp;&nbsp;"&lt;TH ALIGN=left&gt;type",<br>&nbsp;&nbsp;&nbsp;"&lt;TH ALIGN=left&gt;description",<br>&nbsp;&nbsp;&nbsp;"&lt;TH ALIGN=left&gt;suffixes",<br>&nbsp;&nbsp;&nbsp;"&lt;TH ALIGN=left&gt;enabledPlugin.name&lt;/TR&gt;")<br>for (i=0; i &lt; navigator.mimeTypes.length; i++) {<br>&nbsp;&nbsp;&nbsp;document.writeln("&lt;TR VALIGN=TOP&gt;&lt;TD&gt;",i,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"&lt;TD&gt;",navigator.mimeTypes[i].type,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"&lt;TD&gt;",navigator.mimeTypes[i].description,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"&lt;TD&gt;",navigator.mimeTypes[i].suffixes)<br>&nbsp;&nbsp;&nbsp;if (navigator.mimeTypes[i].enabledPlugin==null) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.writeln(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"&lt;TD&gt;None",<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"&lt;/TR&gt;")<br>&nbsp;&nbsp;&nbsp;} else {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.writeln(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"&lt;TD&gt;",navigator.mimeTypes[i].enabledPlugin.name,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"&lt;/TR&gt;")<br>&nbsp;&nbsp;&nbsp;}<br>}<br>document.writeln("&lt;/TABLE&gt;")</PRE></A><A NAME="1031417">
+The preceding example displays output similar to the following:<P><B></B>
+<TABLE BORDER="0">
+<TR><TH VALIGN=baseline ALIGN=left><B><A NAME="1031338">
+<B>i
+</B></A></B><TH VALIGN=baseline ALIGN=left><B><A NAME="1031340">
+<B> type
+</B></A></B><TH VALIGN=baseline ALIGN=left><B><A NAME="1031342">
+<B> description
+</B></A></B><TH VALIGN=baseline ALIGN=left><B><A NAME="1031344">
+<B> suffixes
+</B></A></B><TH VALIGN=baseline ALIGN=left><B><A NAME="1031346">
+<B> enabledPlugin.name
+</B></A></B>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1031348">
+ 0</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1031350">
+ audio/aiff</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1031352">
+ AIFF </A></P><TD VALIGN=baseline ALIGN=left><A NAME="1031354">
+ aif, aiff</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1031356">
+ LiveAudio</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1031358">
+ 1</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1031360">
+ audio/wav</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1031362">
+ WAV </A></P><TD VALIGN=baseline ALIGN=left><A NAME="1031364">
+ wav</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1031366">
+ LiveAudio</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1031368">
+ 2</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1031370">
+ audio/x-midi</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1031372">
+ MIDI </A></P><TD VALIGN=baseline ALIGN=left><A NAME="1031374">
+ mid, midi</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1031376">
+ LiveAudio</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1031378">
+ 3</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1031380">
+ audio/midi</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1031382">
+ MIDI </A></P><TD VALIGN=baseline ALIGN=left><A NAME="1031384">
+ mid, midi</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1031386">
+ LiveAudio</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1031388">
+ 4</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1031390">
+ video/msvideo</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1031392">
+ Video for Windows </A></P><TD VALIGN=baseline ALIGN=left><A NAME="1031394">
+ avi</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1031396">
+NPAVI32 Dynamic Link Library</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1031398">
+ 5</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1031400">
+ *</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1031402">
+ Netscape Default Plugin </A></P><TD VALIGN=baseline ALIGN=left><A NAME="1031404">
+ </A></P><TD VALIGN=baseline ALIGN=left><A NAME="1031406">
+Netscape Default Plugin</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1031408">
+6</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1031410">
+ zz-application/zz-winassoc-TGZ</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1031412">
+</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1031414">
+TGZ</A></P><TD VALIGN=baseline ALIGN=left><A NAME="1031416">
+ None</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1031418">
+<H4> See also</H4>
+</A>
+
+<A NAME="1031422">
+<A HREF="brow1.htm#1010271"><CODE>navigator</CODE></A>, <A HREF="brow1.htm#1010466"><CODE>navigator.mimeTypes</CODE></A>, <A HREF="brow3.htm#1010653"><CODE>Plugin</CODE></A><P></A>
+
+<A NAME="Head2;"></A>
+<A NAME="1031423">
+<H3> Properties</H3>
+</A>
+
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1041347">
+<H2>description</H2>
+</A>
+
+<A NAME="1041352">
+A human-readable description of the data type described by the MIME type object. <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1041355">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1041360">
+<A HREF="brow2.htm#1031247"><CODE>MimeType</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1041362">
+<I>Read-only</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1041364">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1041366">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1041368">
+Navigator 3.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1041455">
+<H2>enabledPlugin</H2>
+</A>
+
+<A NAME="1031428">
+The <A HREF="brow3.htm#1010653"><CODE>Plugin</CODE></A> object for the plug-in that is configured for the specified MIME type If the MIME type does not have a plug-in configured, <CODE>enabledPlugin</CODE> is null. <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1031431">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1031436">
+<A HREF="brow2.htm#1031247"><CODE>MimeType</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1031438">
+<I>Read-only</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1031440">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1031442">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1031444">
+Navigator 3.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1031446">
+<H4> Description</H4>
+</A>
+
+<A NAME="1031447">
+Use the <CODE>enabledPlugin</CODE> property to determine which plug-in is configured for a specific MIME type. Each plug-in may support multiple MIME types, and each MIME type could potentially be supported by multiple plug-ins. However, only one plug-in can be configured for a MIME type. (On Macintosh and Unix, the user can configure the handler for each MIME type; on Windows, the handler is determined at browser start-up time.)<P></A>
+<A NAME="1031448">
+The <CODE>enabledPlugin</CODE> property is a reference to a <CODE>Plugin</CODE> object that represents the plug-in that is configured for the specified MIME type. <P></A>
+<A NAME="1048863">
+You might need to know which plug-in is configured for a MIME type, for example, to dynamically emit an <CODE><A HREF="http://developer.netscape.com/library/documentation/htmlguid/index.htm?content=tags14.htm#tags:EMBED" TARGET="_top">EMBED</A></CODE> tag on the page if the user has a plug-in configured for the MIME type.<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1031450">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1031451">
+The following example determines whether the Shockwave plug-in is installed. If it is, a movie is displayed.<P></A>
+<A NAME="1031452">
+<PRE>// Can we display Shockwave movies?<br>mimetype = navigator.mimeTypes["application/x-director"]<br>if (mimetype) {<br>&nbsp;&nbsp;&nbsp;// Yes, so can we display with a plug-in?<br>&nbsp;&nbsp;&nbsp;plugin = mimetype.enabledPlugin<br>&nbsp;&nbsp;&nbsp;if (plugin)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Yes, so show the data in-line<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.writeln("Here\'s a movie: &lt;EMBED SRC=mymovie.dir HEIGHT=100 WIDTH=100&gt;")<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// No, so provide a link to the data<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.writeln("&lt;A HREF='mymovie.dir'&gt;Click here&lt;/A&gt; to see a movie.")<br>&nbsp;&nbsp;&nbsp;} else {<br>&nbsp;&nbsp;&nbsp;// No, so tell them so<br>&nbsp;&nbsp;&nbsp;document.writeln("Sorry, can't show you this cool movie.")<br>}</PRE></A>
+<A NAME="Head2Ref;"></A>
+<A NAME="1049027">
+<H2>suffixes</H2>
+</A>
+
+<A NAME="1049028">
+A string listing possible file suffixes (also known as filename extensions) for the MIME type.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1049031">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1049036">
+<A HREF="brow2.htm#1031247"><CODE>MimeType</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1049038">
+<I>Read-only</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1049040">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1049042">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1049044">
+Navigator 3.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1049045">
+<H4> Description</H4>
+</A>
+
+<A NAME="1049046">
+The <CODE>suffixes</CODE> property is a string consisting of each valid suffix (typically three letters long) separated by commas. For example, the suffixes for the <CODE>"audio/x-midi"</CODE> MIME type are <CODE>"mid, midi"</CODE>.<P></A>
+
+<A NAME="Head2Ref;"></A>
+<A NAME="1031466">
+<H2>type</H2>
+</A>
+
+<A NAME="1038854">
+A string specifying the name of the MIME type. This string distinguishes the MIME type from all others; for example <CODE>"video/mpeg"</CODE> or <CODE>"audio/x-wav"</CODE>. <P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1031470">
+<I>Property of </I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1031475">
+<A HREF="brow2.htm#1031247"><CODE>MimeType</CODE></A></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1031477">
+<I>Read-only</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1031479">
+</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1031481">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1031483">
+Navigator 3.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1031484">
+<H4> Property of</H4>
+</A>
+
+<A NAME="1031488">
+<A HREF="brow2.htm#1031247"><CODE>MimeType</CODE></A><P></A>
+
+<P><HR>
+<A HREF="contents.htm">[Contents]</A> <A HREF="brow1.htm">[Previous]</A> <A HREF="brow3.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<P ALIGN=right>
+
+<FONT SIZE=-2><I>Last Updated:  10/31/97  12:32:33
+</I></FONT>
+
+<HR SIZE=4>
+
+<P> <CENTER>Copyright © 1997
+<A HREF="http://home.netscape.com/misc/contact_info.html"
+TARGET=_top>Netscape Communications Corporation</A></FONT>
+</CENTER>
+<P>
+<P>
+</BODY>
+</HTML>
+
+

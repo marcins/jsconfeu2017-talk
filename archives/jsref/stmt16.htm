@@ -1,0 +1,91 @@
+<HTML>
+<HEAD>
+<TITLE>Statements
+</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A HREF="contents.htm">[Contents]</A> <A HREF="stmt15.htm">[Previous]</A> <A HREF="stmt17.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<HR>
+
+<A NAME="while"></A>
+<A NAME="1004896">
+<H1> while</H1>
+</A>
+<A NAME="1004897">
+Creates a loop that evaluates an expression, and if it is true, executes a block of statements. The loop then repeats, as long as the specified condition is true.<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1036115">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><A NAME="1036117">
+Navigator 2.0, LiveWire 1.0</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1004898">
+<H4> Syntax</H4>
+</A>
+
+<A NAME="1004899">
+<PRE>while (condition) {<br>&nbsp;&nbsp;&nbsp;statements<br>}</PRE></A>
+<A NAME="Head3;"></A>
+<A NAME="1005673">
+<H4> Arguments</H4>
+</A>
+
+<A NAME="1011211">
+<P><B></B>
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1013633">
+<PRE>condition</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1013672">
+Evaluated before each pass through the loop. If this condition evaluates to true, the statements in the succeeding block are performed. When <CODE>condition</CODE> evaluates to false, execution continues with the statement following <CODE>statements</CODE>.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><A NAME="1013637">
+<PRE>statements</PRE></A><TD VALIGN=baseline ALIGN=left><A NAME="1013701">
+Block of statements that are executed as long as the condition evaluates to true. Although not required, it is good practice to indent these statements from the beginning of the statement.</A></P>
+
+</TABLE>
+<P></A>
+
+<A NAME="Head3;"></A>
+<A NAME="1004902">
+<H4> Examples</H4>
+</A>
+
+<A NAME="1004903">
+The following <CODE>while</CODE> loop iterates as long as <CODE>n</CODE> is less than three.<P></A>
+<A NAME="1004904">
+<PRE>n = 0<br>x = 0<br>while(n &lt; 3) {<br>&nbsp;&nbsp;&nbsp;n ++<br>&nbsp;&nbsp;&nbsp;x += n<br>}</PRE></A><A NAME="1004905">
+Each iteration, the loop increments <CODE>n</CODE> and adds it to <CODE>x</CODE>. Therefore, <CODE>x</CODE> and <CODE>n</CODE> take on the following values:<P></A>
+<ul><P>
+<A NAME="1004906">
+<LI>After the first pass: n = 1 and x = 1</LI>
+</A><P>
+<A NAME="1004907">
+<LI>After the second pass: n = 2 and x = 3</LI>
+</A><P>
+<A NAME="1004908">
+<LI>After the third pass: n = 3 and x = 6</LI>
+</A></ul><A NAME="1004909">
+After completing the third pass, the condition <CODE>n &lt; 3</CODE> is no longer true, so the loop terminates.<P></A>
+
+<P><HR>
+<A HREF="contents.htm">[Contents]</A> <A HREF="stmt15.htm">[Previous]</A> <A HREF="stmt17.htm">[Next]</A> <A HREF="refix.htm">[Index]</A>
+<P ALIGN=right>
+
+<FONT SIZE=-2><I>Last Updated:  10/31/97  12:29:59
+</I></FONT>
+
+<HR SIZE=4>
+
+<P> <CENTER>Copyright © 1997
+<A HREF="http://home.netscape.com/misc/contact_info.html"
+TARGET=_top>Netscape Communications Corporation</A></FONT>
+</CENTER>
+<P>
+<P>
+</BODY>
+</HTML>
+
+
