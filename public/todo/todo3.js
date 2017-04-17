@@ -21,7 +21,7 @@
         this.NEW_ITEM_HEIGHT = 80;
         var _this = this;
         setTimeout(function () {
-            parent.write('<layer id=newitemlayer>new item layer</layer>');
+            parent.write('<layer id=newitemlayer></layer>');
         });
     }
 
@@ -36,6 +36,10 @@
     TODO.NewItem.prototype.setPos = function (x, y) {
         this.layer.left = x;
         this.layer.top = y;
+    }
+
+    TODO.NewItem.prototype.focus = function () {
+        this.layer.document.forms[0].todolabel.focus();
     }
 
     TODO.NewItem.prototype.render = function (props) {
@@ -95,7 +99,7 @@
     }
 
     TODO.TodoList.prototype.render = function (props) {
-        var content = ["<table width=550 class=todocontent cellpadding=0 cellspacing=0 border=0 bgcolor=#ffffff>"];
+        var content = ["<form><table width=550 class=todocontent cellpadding=0 cellspacing=0 border=0 bgcolor=#ffffff>"];
         var filtered = this.getFilteredItems(props);
         for (var i = 0; i < filtered.length; i++) {
             var todo = filtered[i];
@@ -107,15 +111,15 @@
             content.push("<tr><td colspan=5 valign=center height=50>" +
                     "<table class=todoitem cellpadding=0 cellspacing=0 border=0><tr>" +
                         "<td width=20>&nbsp;</td>" +
-                        "<td width=25 height=50 valign=center class=todocheck><form>" +
+                        "<td width=25 height=50 valign='center' class=todocheck>" +
                         "<input type=checkbox name='todo-" + todo.id + "' " + (todo.complete ? 'checked' : '') +" onclick=" + this.globalName + ".check(" + todo.id + ")>" +
-                        "</form></td>" +
+                        "</td>" +
                         "<td valign=center class=" + (todo.complete ? ' todolabel-complete' : 'todolabel') +">" + todo.label + "</td>" +
                     "</tr></table>" +
                 "</td></tr>" +
                 "<tr><td height=1 bgcolor=cccccc></td></tr>");
         }
-        content.push("</table>");
+        content.push("</table></form>");
         c = content.join("\n");
         this.layer.document.write(c);
         this.layer.document.close();
@@ -246,6 +250,7 @@
         });
         this.render();
         field.value = '';
+        field.focus();
         return false;
     }
 

@@ -54,5 +54,16 @@ h1.content-title {
     font-family: Arial, sans-serif;
 }
 
-.slide-content li {
+.diagram {
+    font-size: 24px;
+    font-family: Arial, sans-serif;
+}
+
+.diagram code {
+    font-family: monospace;
+    font-size: 16px;
+}
+
+.diagram-part {
+    margin: 5px 0;
 }

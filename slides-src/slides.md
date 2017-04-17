@@ -421,15 +421,72 @@ hint: todo
 
 # Todo List: Netscape 4 Edition
 
-[foo](/todo/todo2.html)
+[foo](/todo/todo3.html)
 ---
 template: body
 hint: implementation
 
 # Layer implementation
 
-TODO WRITE THIS
+<table border=1 cellpadding=10 cellspacing=1 width=800>
+                <tr>
+                    <td class="diagram">
+                        Main page
 
+                        <table border=1 cellpadding=10 cellspacing=1 class="diagram-part" width=800>
+                        <tr>
+                            <td  class="diagram">
+                                Layer: App
+
+                                <pre>```
+var state = {
+    todos: []
+};
+
+function render() {
+    this.todoList.render(state);
+}
+```</pre>
+
+                                <br>
+                                <table border=1 cellpadding=10 cellspacing=1 class="diagram-part" width=400>
+                                    <tr>
+                                        <td  class="diagram">
+                                            Layer: Input
+                                        </td>
+                                    </tr>
+                                </table>
+                                <table border=1 cellpadding=10 cellspacing=1 class="diagram-part" width=400>
+                                    <tr>
+                                        <td  class="diagram">
+                                            Layer: TODO List
+
+<pre>```
+function render(state) {
+    this.layer.document.write('<table>...');
+    for (var i = 0, l = state.todos.length; i < l; i++) {
+        var todo = state.todos[i];
+        this.layer.document.write('...' + todo.label + '...');
+    }
+    this.layer.document.close();
+}
+```</pre>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <table border=1 cellpadding=10 cellspacing=1 class="diagram-part" width=400>
+                                    <tr>
+                                        <td  class="diagram">
+                                            Layer: Footer
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                    </td>
+                </tr>
+            </table>
 ---
 template: chapter
 hint: challenges
