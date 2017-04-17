@@ -3,19 +3,15 @@
   <title>todo</title>
 </head>
 <script>
-// function onCheck(id) {
-//     document.forms[0].submit();
-// }
-// function test() {
-//     document.forms[0]['todo-3'].checked = true;
-//     document.forms[0].submit();
-// }
+function rerender() {
+    frames[1].history.go(0);
+}
 
 function click(id) {
     for (var i = 0; i < state.numTodos; i++) {
         if (state.todos[i].id == id) {
             state.todos[i].complete = !state.todos[i].complete;
-            frames[1].history.go(0);
+            rerender();
             return;
         }
     }
@@ -26,7 +22,7 @@ function addTodo(text) {
     state.nextId++;
     state.todos[state.numTodos] = makeTodo(nextId, text, false);
     state.numTodos++;
-    frames[1].history.go(0);
+    rerender();
 }
 
 function clearCompleted() {
@@ -40,12 +36,12 @@ function clearCompleted() {
     }
     state.todos = newTodos;
     state.numTodos = newNum;
-    frames[1].history.go(0);
+    rerender();
 }
 
 function filter(newFilter) {
     state.filter = newFilter;
-    frames[1].history.go(0);
+    rerender();
 }
 
 function makeTodo(id, label, complete) {

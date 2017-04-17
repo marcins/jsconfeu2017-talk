@@ -8,6 +8,11 @@
         {{#unless title }}
             {{#if hint }}{{ hint }}{{/if}}
         {{/unless}}
+        {{#unless isUnique }}
+            {{#unless indexTitle }}
+                {{#if hint }} ({{ hint }}){{/if}}
+            {{/unless}}
+        {{/unless}}
     </a></li>
 {{/each}}
 </ul>

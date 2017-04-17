@@ -64,6 +64,11 @@ hint: validation
 > Without any network transmission, an HTML page with embedded JavaScript can interpret the entered text and alert the user with a message dialog if the input is invalid.
 
 Netscape 2.0 JavaScript documentation
+---
+template: image
+hint: JAVAscript
+
+![JAVAscript](/images/javascript-coffee.gif)
 
 ---
 template: body
@@ -118,14 +123,6 @@ hint: todo
 <center>![todomvc](/images/todomvc.gif)</center>
 
 ---
-template: reference
-hint: face
-
-# Fun Fact
-
-> The `face` attribute for the `font` tag wasn't a part of the HTML3.2 spec
-
----
 layout: frame
 template: frame
 noTitle: true
@@ -134,6 +131,24 @@ hint: todo!
 # Todo List: Netscape 2 Edition
 
 [foo](/todo/todo1.html)
+
+---
+template: code
+hint: frameset
+
+# Frameset
+
+```html
+<html>
+<head>
+  <title>Frameset Example</title>
+</head>
+<FRAMESET rows="75,*">
+    <FRAME src="todo1-title.html" scrolling=no>
+    <FRAME name=content src="todo1-content.html" scrolling=no>
+</FRAMESET>
+</html>
+```
 
 ---
 template: body
@@ -198,7 +213,7 @@ function setName(newName) {
 ```
 <script>document.write('Hello, ' + parent.state.name + '!');</script>
 <form>
-    <input name=cb type=checkbox value=1 onclick=parent.state.setName('foo)>
+    <input name=cb type=checkbox value=1 onclick=parent.state.setName('foo')>
 </form>
 ```
                         </pre></p>
@@ -223,6 +238,12 @@ hint: error
 <script>const add = x => y => x + y;</script>
 
 ---
+template: image
+hint: manyerrors
+
+![many errors](/images/jserrors.gif)
+
+---
 template: reference
 hint: console
 
@@ -231,12 +252,27 @@ hint: console
 > There was a Java console, but no JavaScript console.
 
 ---
+template: reference
+hint: pseudoconsole
+
+# Fun Fact
+
+> There was a ['hidden' JavaScript type-in](javascript:)
+
+---
 template: body
 hint: alert
 
-# Challenge 1b: Debugging
+# Challenge 1: Debugging
 
 <script>setTimeout("alert('got here!');", 500)</script>
+---
+template: body
+hint: viewsource
+
+# Challenge 1: Debugging
+
+<center>![view source](/images/view-source-nn2.gif)<center>
 
 ---
 template: code
@@ -307,9 +343,27 @@ EXAMPLE OF EVENT HANDLER THAT DOESN'T WORK HERE
 
 ---
 template: body
+hint: styling
+
+# Challenge 4: Styling
+
+* no CSS
+* `<font>`
+* colours
+
+---
+template: reference
+hint: face
+
+# Fun Fact
+
+> The `face` attribute for the `font` tag wasn't a part of the HTML3.2 spec
+
+---
+template: body
 hint: quirks
 
-# Challenge 4: Other fun quirks
+# Challenge 5: Other fun quirks
 
 * form elements won't render without a `form`
 * `frameset`s won't render with one `frame`
@@ -327,7 +381,7 @@ hint: corruption
 template: reference
 hint: this
 
-# Fun fact
+# Fun Fact
 
 > `this` was simpler: "In general, in a method `this` refers to the calling object."
 
@@ -338,6 +392,18 @@ hint: NN3
 # Netscape 3
 
 <!-- NETSCAPE 4 BELOW THIS POINT -->
+---
+hint: NN4
+alias: NN4
+template: chapter
+
+# Netscape 4
+
+---
+template: image
+
+![DHTML](/images/dhtml-guide.jpg)
+
 ---
 template: body
 hint: NN4
@@ -357,7 +423,16 @@ hint: todo
 
 [foo](/todo/todo2.html)
 ---
+template: body
+hint: implementation
+
+# Layer implementation
+
+TODO WRITE THIS
+
+---
 template: chapter
+hint: challenges
 
 # Challenges: Netscape 4
 ---
