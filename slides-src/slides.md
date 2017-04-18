@@ -584,34 +584,21 @@ hint: marketshare
 # IE / Netscape market share
 
 <center>![graph](/images/browser-share.gif)</center>
-
----
-template: chapter
-hint: ie5
-
-# IE Dev Experience
-
 ---
 template: body
-hint: ie5debug
+hint: iefirsts
 
-# Debugging
+# Things IE did first or better
 
-<center>![ie debug](/images/ie-debugging.gif)</center>
-
----
-template: body
-hint: ie5source
-
-# View source
-
-<center>![IE View Source](/images/ie-view-source.gif)</center>
+* Access to all document elements (`document.all`)
+* Rewrite element contents (`elem.innerHTML`)
+* Event bubbling vs event capture
 
 ---
 template: code
 hint: getelem
 
-# Cross-browser "DOM"
+# Cross-browser element access
 
 ```js
 function getElement(id) {
@@ -625,14 +612,33 @@ function getElement(id) {
 }
 ```
 ---
-template: body
+template: code
+hint: events
+
+# Cross-browser events
+
+```js
+function addEventListener(elem, handler) {
+    if (elem.attachEvent) {
+        elem.attachEvent('on' + eventName, fn);
+    } else if (elem.addEventListener) {
+        elem.addEventListneer(eventName, fn);
+    } else {
+        // Netscape 4 not supported with this approach
+    }
+}
+
+function onClick(event) {
+    if (window.event) {
+        event = window.event;
+    }
+}
+```
+---
+template: chapter
 hint: wrapup
 
-# Wrap up...
-
-* web development in the 90s (and early 2000s) was challenging!
-* dev tooling now is fantastic, and always getting better
-* imagine where we'll be in another 20 years!
+# Wrapping up...
 
 ---
 template: title

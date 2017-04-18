@@ -158,3 +158,26 @@ window.onkeypress = function (event) {
 template: chapter
 
 # Challenge 4: Layer Limitations
+
+---
+
+template: chapter
+hint: ie5
+
+# IE Dev Experience
+
+---
+template: body
+hint: ie5debug
+
+# Debugging
+
+<center>![ie debug](/images/ie-debugging.gif)</center>
+
+---
+template: body
+hint: ie5source
+
+# View source
+
+<center>![IE View Source](/images/ie-view-source.gif)</center>
