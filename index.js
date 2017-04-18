@@ -20,6 +20,7 @@ app.use(express.static('public', {
   }
 }));
 
+app.get('/', (req, res) => res.redirect('/slides'));
 app.use('/slides', slides);
 app.use('/todo', todo);
 

@@ -349,6 +349,7 @@ hint: styling
 # Challenge 4: Styling
 
 * no CSS
+* `<table>` for layout
 * `<font>`
 * colours
 
@@ -374,13 +375,14 @@ hint: quirks
 template: body
 hint: corruption
 
-# Challenge 4b: Memory corruption bug
+# Challenge 5: Memory corruption bug
 
 <center>![corrupt](/images/memory-corruption.gif)</center>
 
 ---
 template: reference
 hint: this
+hide: true
 
 # Fun Fact
 
@@ -402,6 +404,7 @@ template: chapter
 
 ---
 template: image
+hint: dhtml
 
 ![DHTML](/images/dhtml-guide.jpg)
 
@@ -430,39 +433,80 @@ hint: implementation
 # Layer implementation
 
 <table border=1 cellpadding=10 cellspacing=1 width=800>
+    <tr>
+        <td class="diagram">
+            <span>Main page</span>
+
+            <table border=1 cellpadding=10 cellspacing=1 class="diagram-part" width=800>
                 <tr>
-                    <td class="diagram">
-                        Main page
+                    <td  class="diagram">
+                        Layer: App
+<table border=1 cellpadding=10 cellspacing=1 class="diagram-part" width=400>
+                            <tr>
+                                <td  class="diagram">
+                                    Layer: Input
+                                </td>
+                            </tr>
+                        </table>
+                        <table border=1 cellpadding=10 cellspacing=1 class="diagram-part" width=400>
+                            <tr>
+                                <td  class="diagram">
+                                    Layer: TODO List
+                                </td>
+                            </tr>
+                        </table>
+                        <table border=1 cellpadding=10 cellspacing=1 class="diagram-part" width=400>
+                            <tr>
+                                <td  class="diagram">
+                                    Layer: Footer
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+---
+template: body
+hint: implementation
 
-                        <table border=1 cellpadding=10 cellspacing=1 class="diagram-part" width=800>
-                        <tr>
-                            <td  class="diagram">
-                                Layer: App
+# Layer implementation
 
-                                <pre>```
-var state = {
-    todos: []
-};
+<table border=1 cellpadding=10 cellspacing=1 width=800>
+    <tr>
+        <td class="diagram">
+            <span>Main page</span>
+
+            <table border=1 cellpadding=10 cellspacing=1 class="diagram-part" width=800>
+                <tr>
+                    <td  class="diagram">
+                        Layer: App
+
+<pre>
+```
+var state = { todos: [] };
 
 function render() {
     this.todoList.render(state);
 }
-```</pre>
+```
+</pre>
+<table border=1 cellpadding=10 cellspacing=1 class="diagram-part" width=400>
+                            <tr>
+                                <td  class="diagram">
+                                    Layer: Input
+                                </td>
+                            </tr>
+                        </table>
+                        <table border=1 cellpadding=10 cellspacing=1 class="diagram-part" width=400>
+                            <tr>
+                                <td  class="diagram">
+                                    Layer: TODO List
 
-                                <br>
-                                <table border=1 cellpadding=10 cellspacing=1 class="diagram-part" width=400>
-                                    <tr>
-                                        <td  class="diagram">
-                                            Layer: Input
-                                        </td>
-                                    </tr>
-                                </table>
-                                <table border=1 cellpadding=10 cellspacing=1 class="diagram-part" width=400>
-                                    <tr>
-                                        <td  class="diagram">
-                                            Layer: TODO List
-
-<pre>```
+<pre>
+```
 function render(state) {
     this.layer.document.write('<table>...');
     for (var i = 0, l = state.todos.length; i < l; i++) {
@@ -471,23 +515,24 @@ function render(state) {
     }
     this.layer.document.close();
 }
-```</pre>
-                                        </td>
-                                    </tr>
-                                </table>
-                                <table border=1 cellpadding=10 cellspacing=1 class="diagram-part" width=400>
-                                    <tr>
-                                        <td  class="diagram">
-                                            Layer: Footer
-                                        </td>
-                                    </tr>
-                                </table>
-                            </td>
-                        </tr>
-                    </table>
+```
+</pre>
+                                </td>
+                            </tr>
+                        </table>
+                        <table border=1 cellpadding=10 cellspacing=1 class="diagram-part" width=400>
+                            <tr>
+                                <td  class="diagram">
+                                    Layer: Footer
+                                </td>
+                            </tr>
+                        </table>
                     </td>
                 </tr>
             </table>
+        </td>
+    </tr>
+</table>
 ---
 template: chapter
 hint: challenges
@@ -516,6 +561,7 @@ hint: console
 ---
 template: body
 hint: consolewindow
+hide: true
 
 # JavaScript console
 
@@ -568,6 +614,7 @@ hint: layers
 
 # Challenge 4: Layers
 
+* **always** absolutely positioned
 * each layer is a separate document
 * hard to debug positioning, other attributes
 
