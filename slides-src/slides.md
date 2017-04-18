@@ -254,6 +254,7 @@ hint: console
 ---
 template: reference
 hint: pseudoconsole
+hide: true
 
 # Fun Fact
 
