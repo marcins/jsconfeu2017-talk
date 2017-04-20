@@ -54,14 +54,26 @@ h1.content-title {
     font-family: Arial, sans-serif;
 }
 
+.diagram-main {
+    background-color: #091E42;
+}
+
 .diagram {
     font-size: 24px;
     font-family: Arial, sans-serif;
+    color: #ffffff;
+}
+
+.diagram strong { color: #FFAB00; }
+
+.diagram pre {
+    margin: -10px;
 }
 
 .diagram code {
+    display: block;
     font-family: monospace;
-    font-size: 16px;
+    font-size: 24px;
 }
 
 .diagram-part {

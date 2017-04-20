@@ -34,6 +34,7 @@ hint: fist
 ---
 template: image
 hint: flyout
+width: 1200
 
 ![Flyout Navigation](/images/flyout.gif)
 
@@ -159,18 +160,18 @@ hint: pseudo
 <table border=1 cellpadding=5 cellspacing=1 valign=top width=800>
     <tr>
         <td valign=top align=left>
-            <strong>FRAMESET</strong>
+            <h2>FRAMESET</h2>
 
             <p><pre><font size="5">State lives here
             </pre></p>
 
             <table border=1 cellpadding=10 cellspacing=1 valign=top width=750 height=350>
                 <tr>
-                    <td valign=top><strong>TITLE</strong></td>
+                    <td valign=top><h2>TITLE</h2></td>
                 </tr>
                 <tr>
                     <td valign=top align=left>
-                        <strong>CONTENT</strong>
+                        <h2>CONTENT</h2>
                         <p><pre><font size=5>View lives here
                         </pre></p>
                     </td>
@@ -181,16 +182,16 @@ hint: pseudo
 </table>
 ---
 template: body
+highlightCode: true
+highlightTheme: solarized-light
 
 # Pseudo dynamic apps
 
 <table border=1 cellpadding=5 cellspacing=1 valign=top width=800>
     <tr>
         <td valign=top align=left>
-            <strong>FRAMESET</strong>
-
-            <p><pre><font size="5">
-```
+            <h2>FRAMESET</h2>
+            <pre><font size="6"><strong>```
 var state = new Object();
 state.name = 'world';
 
@@ -198,25 +199,22 @@ function setName(newName) {
     state.name = newName;
     document.frames[1].history.go(0);
 }
-```
-            </pre></p>
+```</pre>
 
             <table border=1 cellpadding=10 cellspacing=1 valign=top width=750 height=350>
                 <tr>
-                    <td valign=top><strong>TITLE</strong></td>
+                    <td valign=top><h2>TITLE</h2></td>
                 </tr>
                 <tr>
                     <td valign=top align=left>
-                        <strong>CONTENT</strong>
+                        <h2>CONTENT</h2>
 
-                        <p><pre><font size=5>
-```
+                        <font size=6><strong><pre>```
 <script>document.write('Hello, ' + parent.state.name + '!');</script>
 <form>
     <input name=cb type=checkbox value=1 onclick=parent.setName('foo')>
 </form>
-```
-                        </pre></p>
+```</pre>
                     </td>
                 </tr>
             </table>
@@ -432,33 +430,33 @@ hint: implementation
 
 # Layer implementation
 
-<table border=1 cellpadding=10 cellspacing=1 width=800>
+<table border=1 cellpadding=10 cellspacing=1 width=800 class="diagram-main">
     <tr>
         <td class="diagram">
-            <span>Main page</span>
+            <strong>Main page</strong>
 
             <table border=1 cellpadding=10 cellspacing=1 class="diagram-part" width=800>
                 <tr>
                     <td  class="diagram">
-                        Layer: App
+                        <strong>Layer: App</strong>
 <table border=1 cellpadding=10 cellspacing=1 class="diagram-part" width=400>
                             <tr>
                                 <td  class="diagram">
-                                    Layer: Input
+                                    <strong>Layer: Input</strong>
                                 </td>
                             </tr>
                         </table>
                         <table border=1 cellpadding=10 cellspacing=1 class="diagram-part" width=400>
                             <tr>
                                 <td  class="diagram">
-                                    Layer: TODO List
+                                    <strong>Layer: TODO List</strong>
                                 </td>
                             </tr>
                         </table>
                         <table border=1 cellpadding=10 cellspacing=1 class="diagram-part" width=400>
                             <tr>
                                 <td  class="diagram">
-                                    Layer: Footer
+                                    <strong>Layer: Footer</strong>
                                 </td>
                             </tr>
                         </table>
@@ -470,48 +468,46 @@ hint: implementation
 </table>
 ---
 template: body
+highlightCode: true
 hint: implementation
 
 # Layer implementation
 
-<table border=1 cellpadding=10 cellspacing=1 width=800>
+<table border=1 cellpadding=10 cellspacing=1 width=800 class="diagram-main">
     <tr>
         <td class="diagram">
-            <span>Main page</span>
+            <strong>Main page</strong>
 
             <table border=1 cellpadding=10 cellspacing=1 class="diagram-part" width=800>
                 <tr>
                     <td  class="diagram">
-                        Layer: App
+                        <strong>Layer: App</strong>
 
 <pre>
 ```
 var state = { todos: [] };
 
-function render() {
-    this.todoList.render(state);
-}
+function render() { this.todoList.render(state); }
 ```
 </pre>
 <table border=1 cellpadding=10 cellspacing=1 class="diagram-part" width=400>
                             <tr>
                                 <td  class="diagram">
-                                    Layer: Input
+                                    <strong>Layer: Input</strong>
                                 </td>
                             </tr>
                         </table>
                         <table border=1 cellpadding=10 cellspacing=1 class="diagram-part" width=400>
                             <tr>
                                 <td  class="diagram">
-                                    Layer: TODO List
+                                    <strong>Layer: TODO List</strong>
 
 <pre>
 ```
 function render(state) {
     this.layer.document.write('<table>...');
-    for (var i = 0, l = state.todos.length; i < l; i++) {
-        var todo = state.todos[i];
-        this.layer.document.write('...' + todo.label + '...');
+    for (var i = 0, len = state.todos.length; i < len; i++) {
+        this.layer.document.write('...' + state.todo[i].label + '...');
     }
     this.layer.document.close();
 }
@@ -523,7 +519,7 @@ function render(state) {
                         <table border=1 cellpadding=10 cellspacing=1 class="diagram-part" width=400>
                             <tr>
                                 <td  class="diagram">
-                                    Layer: Footer
+                                    <strong>Layer: Footer</strong>
                                 </td>
                             </tr>
                         </table>
