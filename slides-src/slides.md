@@ -54,6 +54,13 @@ hint: js1
 > JavaScript is a compact, object-based scripting language for developing client and server Internet applications.
 
 Netscape 2.0 JavaScript documentation
+---
+template: reference
+hint: livewire
+
+# Fun Fact
+
+> Netscape Enterprise Server had server-side Javascript in 1995 as part of "LiveWire"
 
 ---
 template: reference
@@ -80,42 +87,6 @@ hint: src
 > The `src` attribute of the `script` tag was not supported in Netscape 2.0 - all scripts had to be inline.
 
 ---
-template: reference
-hint: write
-
-> JavaScript in Navigator generates its results from the top of the page down. Once something has been formatted, you can't change it without reloading the page.
-
-Netscape 2.0 JavaScript documentation
-
----
-template: code
-hint: objects
-
-# Navigator Object Hierarchy
-
-```text
-navigator
-
-window
-  |
-  +--parent, frames, self, top
-  |
-  +--location
-  |
-  +--history
-  |
-  +--document
-       |
-       +--forms
-       |    |
-       |  elements (text fields, textarea, checkbox, password
-       |            radio, select, button, submit, reset)
-       +--links
-       |
-       +--anchors
-```
-
----
 template: body
 hint: todo
 
@@ -132,6 +103,14 @@ hint: todo!
 # Todo List: Netscape 2 Edition
 
 [foo](/todo/todo1.html)
+
+---
+template: reference
+hint: write
+
+> JavaScript in Navigator generates its results from the top of the page down. Once something has been formatted, you can't change it without reloading the page.
+
+Netscape 2.0 JavaScript documentation
 
 ---
 template: code
@@ -322,10 +301,37 @@ setTimeout("alert('it fired!')", 500);
 ```
 
 ---
+template: code
+hint: objects
+
+# Challenge 3: Object Model
+
+```text
+navigator
+
+window
+  |
+  +--parent, frames, self, top
+  |
+  +--location
+  |
+  +--history
+  |
+  +--document
+       |
+       +--forms
+       |    |
+       |  elements (text fields, textarea, checkbox, password
+       |            radio, select, button, submit, reset)
+       +--links
+       |
+       +--anchors
+```
+---
 template: body
 hint: events
 
-# Challenge 3: Event handling
+# Challenge 4: Event handling
 
 * no `addEventListener` - that's five years away
 * limited event handlers
@@ -344,7 +350,7 @@ hint: events
 template: body
 hint: styling
 
-# Challenge 4: Styling
+# Challenge 5: Styling
 
 * no CSS
 * `<table>` for layout
@@ -363,7 +369,7 @@ hint: face
 template: body
 hint: quirks
 
-# Challenge 5: Other fun quirks
+# Challenge 6: Other fun quirks
 
 * form elements won't render without a `form`
 * `frameset`s won't render with one `frame`
@@ -373,7 +379,7 @@ hint: quirks
 template: body
 hint: corruption
 
-# Challenge 5: Memory corruption bug
+# Challenge 6: Memory corruption bug
 
 <center>![corrupt](/images/memory-corruption.gif)</center>
 
@@ -590,7 +596,7 @@ hint: css
 template: code
 hint: capture
 
-# Challenge 3: Events
+# Challenge 3: "Global" events
 
 ```js
 var _this = this;
@@ -643,6 +649,7 @@ hint: iefirsts
 ---
 template: code
 hint: getelem
+hide: true
 
 # Cross-browser element access
 
@@ -660,6 +667,7 @@ function getElement(id) {
 ---
 template: code
 hint: events
+hide: true
 
 # Cross-browser events
 
