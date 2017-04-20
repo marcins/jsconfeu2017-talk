@@ -213,7 +213,7 @@ function setName(newName) {
 ```
 <script>document.write('Hello, ' + parent.state.name + '!');</script>
 <form>
-    <input name=cb type=checkbox value=1 onclick=parent.state.setName('foo')>
+    <input name=cb type=checkbox value=1 onclick=parent.setName('foo')>
 </form>
 ```
                         </pre></p>
@@ -410,7 +410,7 @@ hint: dhtml
 
 ---
 template: body
-hint: NN4
+hint: layer
 
 # Netscape 4
 
@@ -570,6 +570,7 @@ hide: true
 ---
 template: body
 hint: source
+hide: true
 
 # View source
 
@@ -622,6 +623,7 @@ hint: layers
 template: image
 theme: dark
 hint: wars
+timing: 5-6 mintues from here
 
 ![browserwars](/images/browserwars.jpg)
 
