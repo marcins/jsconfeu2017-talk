@@ -584,7 +584,7 @@ hide: true
 template: body
 hint: css
 
-# Challenge 2: CSS === "CSS"
+# Challenge 2: CSS !== CSS
 
 <ul>
 <li>one name per `class` attribute</li>
@@ -640,11 +640,12 @@ hint: marketshare
 template: body
 hint: iefirsts
 
-# Things IE did first or better
+# Things IE did first or "better"
 
 * Access to all document elements (`document.all`)
 * Rewrite element contents (`elem.innerHTML`)
 * Event bubbling vs event capture
+* XMLHTTP
 
 ---
 template: code
