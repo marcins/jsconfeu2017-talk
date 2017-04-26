@@ -338,7 +338,7 @@ hint: events
 
 ```
 // OK
-<a href="https://atlassian.com" onMouseOver="doSomething();">
+<a href="https://atlassian.com" onMouseOver="doSomething();">Atlassian</a>
 ```
 
 ```
