@@ -423,9 +423,8 @@ hint: layer
 <layer id="fireworks"></layer>
 </td></tr></table>
 
-<script language="JavaScript1.2" src="/todo/fireworks.js">
-// Add some confetti here :D
-</script>
+<script language="JavaScript1.2">window.START_DELAY = 1000;</script>
+<script language="JavaScript1.2" src="/todo/fireworks.js"></script>
 ---
 layout: frame
 template: frame

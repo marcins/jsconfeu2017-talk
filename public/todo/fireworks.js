@@ -1,7 +1,8 @@
 var G = 9.54;
 
 (function (Fireworks) {
-    var Emitter = function (id, origins) {
+    var Emitter = function (id, origins, opts) {
+        var o = opts || {};
         this.id = id;
         this.origins = origins;
 
@@ -17,10 +18,11 @@ var G = 9.54;
             document.layers[this.id].height = this.size.h;
         }
 
-        this.maxParticles = 20;
+        this.maxParticles = opts.max || 20;
         this.particles = [];
         this.writeBuffer = [];
         this.count = 0;
+        this.emitting = true;
     }
 
     Emitter.prototype.write = function (particle) {
@@ -70,6 +72,9 @@ var G = 9.54;
             if (el) {
                 document.getElementById(this.id).removeChild(el);
             }
+        } else {
+            // write dummy content to force document to be cleared when last particles are removed
+            this.writeBuffer.push('<p></p>');
         }
     }
 
@@ -98,27 +103,29 @@ var G = 9.54;
 
     Emitter.prototype.step = function () {
         var i;
-        if (this.particles.length < this.maxParticles) {
+        var newParticles = [];
+        if (this.emitting && this.particles.length < this.maxParticles) {
             var newCount = this.maxParticles - this.particles.length;
             for (i = 0; i < newCount; i++) {
                 var origin = this.origins[this.count % this.origins.length];
-                this.particles.push({
+                var particle = {
                     id: this.id + (this.count++),
-                    x: origin.x,
+                    x: origin.x - ((Math.random() * 10) * origin.direction),
                     y: origin.y + ((Math.random() * 40) - 20),
-                    vx: (10 + (Math.random() * 10)) * origin.direction,
+                    vx: ((Math.random() * 20)) * origin.direction,
                     vy: -20 + (Math.random() * 10),
                     c: randomColor()
-                });
+                };
+                newParticles.push(particle);
+                this.write(particle);
             }
         }
 
-        var newParticles = [];
         for(i = 0; i < this.particles.length; i++) {
             var particle = this.particles[i];
             particle.x = Math.floor(particle.x + particle.vx);
             particle.y = Math.floor(particle.y + particle.vy);
-            particle.vy = Math.floor(particle.vy + 1);
+            particle.vy = particle.vy + 1;
 
             if (particle.y < this.size.h &&
                 particle.x <= this.size.w &&
@@ -131,8 +138,16 @@ var G = 9.54;
         }
 
         this.particles = newParticles;
-
         this.flush();
+
+        if (!this.emitting && this.particles.length === 0 && this.finalizer) {
+            this.finalizer();
+        }
+    }
+
+    Emitter.prototype.stop = function (finalizer) {
+        this.emitting = false;
+        this.finalizer = finalizer;
     }
 
     Fireworks.init = function(emitter) {
@@ -152,9 +167,11 @@ setTimeout(function () {
     var emitter = new Fireworks.Emitter("fireworks", [
         { x: 0, y: 300, direction: 1 },
         { x: document.width || document.body.scrollWidth, y: 300, direction: -1 },
-    ]);
+    ], { max: 100 });
     var stop = Fireworks.init(emitter);
     setTimeout(function () {
-        stop();
-    }, 1000);
-});
+        emitter.stop(function () {
+            stop();
+        });
+    }, 5000);
+}, window.START_DELAY || 0);
