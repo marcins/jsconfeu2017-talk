@@ -416,6 +416,7 @@ hint: dhtml
 ---
 template: body
 hint: layer
+stylesheet: /fireworks.css
 
 # Netscape 4
 
@@ -425,7 +426,7 @@ hint: layer
 </td></tr></table>
 
 <script language="JavaScript1.2">window.START_DELAY = 1000;</script>
-<script language="JavaScript1.2" src="/todo/fireworks.js"></script>
+<script language="JavaScript1.2" src="/fireworks.js"></script>
 ---
 layout: frame
 template: frame
