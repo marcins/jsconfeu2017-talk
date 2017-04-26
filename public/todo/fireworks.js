@@ -1,11 +1,9 @@
 var G = 9.54;
 
 (function (Fireworks) {
-    var Emitter = function (id, x, y, direction) {
+    var Emitter = function (id, origins) {
         this.id = id;
-        this.x = x;
-        this.y = y;
-        this.direction = direction;
+        this.origins = origins;
 
         this.size = {
             h: document.height || document.body.scrollHeight,
@@ -19,7 +17,7 @@ var G = 9.54;
             document.layers[this.id].height = this.size.h;
         }
 
-        this.maxParticles = 10;
+        this.maxParticles = 20;
         this.particles = [];
         this.writeBuffer = [];
         this.count = 0;
@@ -81,6 +79,10 @@ var G = 9.54;
             return;
         }
 
+        if (!document.layers.debug) {
+            return;
+        }
+
         document.layers.debug.document.write(msg);
         document.layers.debug.document.close();
 
@@ -99,11 +101,12 @@ var G = 9.54;
         if (this.particles.length < this.maxParticles) {
             var newCount = this.maxParticles - this.particles.length;
             for (i = 0; i < newCount; i++) {
+                var origin = this.origins[this.count % this.origins.length];
                 this.particles.push({
                     id: this.id + (this.count++),
-                    x: this.x,
-                    y: this.y + ((Math.random() * 40) - 20),
-                    vx: (10 + (Math.random() * 10)) * this.direction,
+                    x: origin.x,
+                    y: origin.y + ((Math.random() * 40) - 20),
+                    vx: (10 + (Math.random() * 10)) * origin.direction,
                     vy: -20 + (Math.random() * 10),
                     c: randomColor()
                 });
@@ -118,7 +121,7 @@ var G = 9.54;
             particle.vy = Math.floor(particle.vy + 1);
 
             if (particle.y < this.size.h &&
-                particle.x < this.size.w &&
+                particle.x <= this.size.w &&
                 particle.x >= 0) {
                 newParticles.push(particle);
                 this.write(particle);
@@ -128,29 +131,30 @@ var G = 9.54;
         }
 
         this.particles = newParticles;
-        this.flush();
 
+        this.flush();
     }
 
-    Fireworks.init = function(id, x, y, direction) {
-        var emitter = new Emitter(id, x, y, direction);
-
+    Fireworks.init = function(emitter) {
         var timer = setInterval(function () {
-            emitter.step()
+            emitter.step();
         }, 16);
-
-        emitter.step();
 
         return function () {
             clearInterval(timer);
         }
     }
 
+    Fireworks.Emitter = Emitter;
 })(window.Fireworks = window.Fireworks || {});
 
-var stop = Fireworks.init("fireworks-left", 0, 300, 1);
-var stop2 = Fireworks.init("fireworks-right", document.width || document.body.scrollWidth, 300, -1);
 setTimeout(function () {
-    stop();
-    stop2();
-}, 1000);
+    var emitter = new Fireworks.Emitter("fireworks", [
+        { x: 0, y: 300, direction: 1 },
+        { x: document.width || document.body.scrollWidth, y: 300, direction: -1 },
+    ]);
+    var stop = Fireworks.init(emitter);
+    setTimeout(function () {
+        stop();
+    }, 1000);
+});

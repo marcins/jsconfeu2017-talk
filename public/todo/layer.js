@@ -8,6 +8,7 @@ if (typeof Object.create !== 'function') {
 
 function Layer(name) {
     this.name = name;
+    this.children = [];
 }
 
 Layer.prototype.bindLayer = function (parent) {
@@ -30,9 +31,13 @@ Layer.prototype.setPos = function (x, y) {
     this.layer.top = y;
 }
 
-Layer.prototype.render = function (props) {
+Layer.prototype.render = function (props) {    
     this.layer.document.write('Rendered ' + this.name);
     this.layer.document.close();
+}
+
+Layer.prototype.addChild = function (child) {
+    this.children.push(child);
 }
 
 // HACK!
@@ -74,6 +79,9 @@ setTimeout(function () {
         item.render();
     });
 })
+
+
+
 
 // function Other(name) {
 //     Layer.apply(this, arguments);

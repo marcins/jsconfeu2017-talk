@@ -418,8 +418,12 @@ hint: layer
 
 # Netscape 4
 
-<center><pre style="font-size:128px;"><code>&lt;LAYER&gt;</code></pre></center>
-<script language="JavaScript1.2">
+<table height=600 width="100%"><tr><td>
+<center><pre style="font-size:128px;font-weight: bold;"><code>&lt;LAYER&gt;</code></pre></center>
+<layer id="fireworks"></layer>
+</td></tr></table>
+
+<script language="JavaScript1.2" src="/todo/fireworks.js">
 // Add some confetti here :D
 </script>
 ---
