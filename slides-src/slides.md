@@ -338,7 +338,7 @@ hint: events
 
 ```
 // OK
-<input type="checkbox" name="todo-1" value="1" onclick="onTodoChecked(1)">
+<a href="https://atlassian.com" onMouseOver="doSomething();">
 ```
 
 ```
@@ -368,6 +368,7 @@ hint: face
 ---
 template: body
 hint: quirks
+hide: true
 
 # Challenge 6: Other fun quirks
 
@@ -561,6 +562,15 @@ hint: console
 
 <table width=100% height=100%><tr><td valign=center align=center height=600>
 ![Image](/images/error-console.gif)
+</td></tr></table>
+---
+template: body
+hint: console-log
+
+# JavaScript console
+
+<table width=100% height=100%><tr><td valign=center align=center height=600>
+![Image](/images/error-console-log.gif)
 </td></tr></table>
 
 ---
