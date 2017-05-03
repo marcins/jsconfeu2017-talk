@@ -191,7 +191,8 @@ function setName(newName) {
                         <font size=6><strong><pre>```
 <script>document.write('Hello, ' + parent.state.name + '!');</script>
 <form>
-    <input name=cb type=checkbox value=1 onclick=parent.setName('foo')>
+    <input name=cb type=button value=1 value='Change name'
+        onclick="parent.setName('foo'); return false">
 </form>
 ```</pre>
                     </td>
@@ -303,6 +304,7 @@ setTimeout("alert('it fired!')", 500);
 ---
 template: code
 hint: objects
+fontSize: +3
 
 # Challenge 3: Object Model
 
@@ -425,7 +427,7 @@ stylesheet: /fireworks.css
 <layer id="fireworks"></layer>
 </td></tr></table>
 
-<script language="JavaScript1.2">window.START_DELAY = 1000;</script>
+<script language="JavaScript1.2">window.START_DELAY = 500;</script>
 <script language="JavaScript1.2" src="/fireworks.js"></script>
 ---
 layout: frame

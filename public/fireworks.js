@@ -227,5 +227,5 @@ setTimeout(function () {
         emitter.stop(function () {
             stop();
         });
-    }, 5000);
+    }, 1000);
 }, window.START_DELAY || 0);
