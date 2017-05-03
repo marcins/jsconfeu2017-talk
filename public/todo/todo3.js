@@ -231,6 +231,8 @@
 
             setTimeout(function () {
                 _this.render();
+                // HACK
+                document.layers[_this.layerName].document.forms[0].todolabel.focus();
             });
         });
     }

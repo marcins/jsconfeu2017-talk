@@ -2,9 +2,23 @@
 <html>
 <head>
   <title>{{slideNum}} of {{slideTotal}} | {{{presentationTitle}}}</title>
+    <script language="JavaScript1.2">
+    window.captureEvents(Event.KEYPRESS);
+    window.onkeypress = function (event) {
+      if (event.which === 47) { // forward-slash
+        window.location.href = window.frames['nav'].document.links[2].href;
+      } else if (event.which === 46) {
+        window.location.href = window.frames['nav'].document.links[0].href;
+      } else if (event.which === 13) {
+        return window.routeEvent(event);
+      }
+
+    }
+    </script>
+
 </head>
 <frameset rows="*,50" frameborder=0>
     <frame src={{slideContentUrl}} scrolling=no>
-    <frame src={{slideNavigationUrl}} scrolling=no>
+    <frame name=nav src={{slideNavigationUrl}} scrolling=no>
 </frameset>
 </html>
