@@ -12,7 +12,7 @@ module.exports = function($, data) {
                 const rawCode = $(this).text();
                 // '<table bgcolor=000000 cellpadding=0 cellspacing=0><tr><td class=diagram><pre>' +
                 // + '</pre></td></tr></table>'
-                return highlight(rawCode, 'javascript', _.get(data, 'highlightTheme')).replace(/&apos;/g, "'") ;
+                return highlight(rawCode, 'javascript', _.get(data, 'highlightTheme'), _.get(data, 'highlightFontSize')).replace(/&apos;/g, "'") ;
             });
     }
 

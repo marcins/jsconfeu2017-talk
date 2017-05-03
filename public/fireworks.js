@@ -221,7 +221,7 @@ setTimeout(function () {
     var emitter = new Fireworks.Emitter("fireworks", [
         { x: 0, y: 300, direction: 1 },
         { x: document.width || document.body.scrollWidth, y: 300, direction: -1 },
-    ], { max: 100 });
+    ], { max: 50 });
     var stop = Fireworks.init(emitter);
     setTimeout(function () {
         emitter.stop(function () {

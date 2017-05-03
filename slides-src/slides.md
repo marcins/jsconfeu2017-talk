@@ -115,6 +115,7 @@ Netscape 2.0 JavaScript documentation
 ---
 template: code
 hint: frameset
+fontSize: +3
 
 # Frameset
 
@@ -141,7 +142,7 @@ hint: pseudo
         <td valign=top align=left>
             <h2>FRAMESET</h2>
 
-            <p><pre><font size="5">State lives here
+            <p><pre><font size="6"><strong>State lives here</strong>
             </pre></p>
 
             <table border=1 cellpadding=10 cellspacing=1 valign=top width=750 height=350>
@@ -151,7 +152,7 @@ hint: pseudo
                 <tr>
                     <td valign=top align=left>
                         <h2>CONTENT</h2>
-                        <p><pre><font size=5>View lives here
+                        <p><pre><font size=6><strong>View lives here</strong>
                         </pre></p>
                     </td>
                 </tr>
@@ -163,6 +164,44 @@ hint: pseudo
 template: body
 highlightCode: true
 highlightTheme: solarized-light
+highlightFontSize: 6
+
+# Pseudo dynamic apps
+
+<table border=1 cellpadding=5 cellspacing=1 valign=top width=800>
+    <tr>
+        <td valign=top align=left>
+            <h2>FRAMESET</h2>
+            <pre><font size="6"><strong>```
+var state = new Object();
+state.name = 'world';
+```</pre>
+
+            <table border=1 cellpadding=10 cellspacing=1 valign=top width=750 height=350>
+                <tr>
+                    <td valign=top><h2>TITLE</h2></td>
+                </tr>
+                <tr>
+                    <td valign=top align=left>
+                        <h2>CONTENT</h2>
+
+                        <font size=6><strong><pre>```
+<script>document.write('Hello, ' + parent.state.name + '!');</script>
+<form>
+    <input name=cb type=button value=1 value='Change name'>
+</form>
+```</pre>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+---
+template: body
+highlightCode: true
+highlightTheme: solarized-light
+highlightFontSize: 6
 
 # Pseudo dynamic apps
 
@@ -549,9 +588,40 @@ hint: challenges
 # Challenges: Netscape 4
 ---
 template: body
+hint: layers
+
+# Challenge 1: Layers
+
+* **always** absolutely positioned
+* each layer is a separate document
+* hard to debug positioning, other attributes
+
+---
+template: code
+hint: layer-api
+
+# Challenge 1: Layers (API)
+
+```js
+// Getting a layer's document
+var doc = document.layers.myLayer.document;
+
+// layer attributes
+document.layers.myLayer.left = 100;
+
+// relative positioning
+document.layers.myLayer.moveBy(10, 10);
+
+// accessing nested layers
+document.layers.myLayer.document.layers
+    .child.document.layers[0].visibility = "hide";
+
+```
+---
+template: body
 hint: debugging
 
-# Challenge 1: Debugging
+# Challenge 2: Debugging
 
 <table width=100% height=100%><tr><td valign=center align=center height=600>
 ![Image](/images/error-trigger.gif)
@@ -600,7 +670,7 @@ hide: true
 template: body
 hint: css
 
-# Challenge 2: CSS !== CSS
+# Challenge 3: CSS !== CSS
 
 <ul>
 <li>one name per `class` attribute</li>
@@ -612,7 +682,7 @@ hint: css
 template: code
 hint: capture
 
-# Challenge 3: "Global" events
+# Challenge 4: Global events
 
 ```js
 var _this = this;
@@ -626,17 +696,6 @@ window.onkeypress = function (event) {
     return true;
 }
 ```
-
----
-template: body
-hint: layers
-
-# Challenge 4: Layers
-
-* **always** absolutely positioned
-* each layer is a separate document
-* hard to debug positioning, other attributes
-
 ---
 template: image
 theme: dark
