@@ -1,5 +1,5 @@
-module.exports = function($) {
-    return { 
-        theme: 'dark',
+module.exports = function($, data) {
+    return {
+        theme: data.theme || 'dark',
     };
 }

@@ -43,6 +43,11 @@ template: image
 hint: NN2
 
 ![Netscape Navigator 2.0](/images/nn2.gif)
+---
+template: image
+hint: JAVAscript
+
+![JAVAscript](/images/javascript-coffee.gif)
 
 ---
 template: reference
@@ -73,10 +78,17 @@ hint: validation
 
 Netscape 2.0 JavaScript documentation
 ---
-template: image
-hint: JAVAscript
+template: body
+hint: todo
 
-![JAVAscript](/images/javascript-coffee.gif)
+# TodoMVC
+
+<center>![todomvc](/images/todomvc.gif)</center>
+---
+template: chapter
+hint: early-challenge
+
+# Early challenges...
 
 ---
 template: reference
@@ -85,14 +97,13 @@ hint: src
 # Fun Fact
 
 > The `src` attribute of the `script` tag was not supported in Netscape 2.0 - all scripts had to be inline.
-
 ---
-template: body
-hint: todo
+template: reference
+hint: write
 
-# TodoMVC
+> JavaScript in Navigator generates its results from the top of the page down. Once something has been formatted, you can't change it without reloading the page.
 
-<center>![todomvc](/images/todomvc.gif)</center>
+Netscape 2.0 JavaScript documentation
 
 ---
 layout: frame
@@ -103,14 +114,6 @@ hint: todo!
 # Todo List: Netscape 2 Edition
 
 [foo](/todo/todo1.html)
-
----
-template: reference
-hint: write
-
-> JavaScript in Navigator generates its results from the top of the page down. Once something has been formatted, you can't change it without reloading the page.
-
-Netscape 2.0 JavaScript documentation
 
 ---
 template: code
@@ -302,10 +305,16 @@ hint: shorthand
 ```js
 var state = new Object();
 state.todos = new Object();
+
 state.todos[0] = new Object();
 state.todos[0].label = 'Prepare talk';
-state.todos[0].complete = false;
-state.todos.length = 1;
+state.todos[0].complete = true;
+
+state.todos[1] = new Object();
+state.todos[1].label = 'Fly to Europe';
+state.todos[1].complete = true;
+
+state.todos.length = 2;
 ```
 ---
 template: reference
@@ -598,24 +607,37 @@ hint: layers
 
 ---
 template: code
-hint: layer-api
+hint: layer-api-doc
 
-# Challenge 1: Layers (API)
+# Layers API
 
 ```js
 // Getting a layer's document
 var doc = document.layers.myLayer.document;
+```
+---
+template: code
+hint: layer-api-attr
 
+# Layers API
+
+```js
 // layer attributes
 document.layers.myLayer.left = 100;
 
 // relative positioning
 document.layers.myLayer.moveBy(10, 10);
+```
+---
+template: code
+hint: layer-api-nest
 
+# Layers API
+
+```js
 // accessing nested layers
 document.layers.myLayer.document.layers
     .child.document.layers[0].visibility = "hide";
-
 ```
 ---
 template: body
@@ -637,8 +659,32 @@ hint: console
 ![Image](/images/error-console.gif)
 </td></tr></table>
 ---
+template: code
+hint: console-window
+
+# Typein limitations
+
+```text
+> window
+
+[object Window]
+```
+---
+template: code
+hint: console-window
+
+# Typein limitations
+
+```text
+> window.location
+
+javascript:?window
+```
+
+---
 template: body
 hint: console-log
+hide: true
 
 # JavaScript console
 
@@ -701,12 +747,14 @@ template: image
 theme: dark
 hint: wars
 timing: 5-6 mintues from here
+hide: true
 
 ![browserwars](/images/browserwars.jpg)
 
 ---
 template: body
 hint: marketshare
+hide: true
 
 # IE / Netscape market share
 
@@ -714,6 +762,7 @@ hint: marketshare
 ---
 template: body
 hint: iefirsts
+hide: true
 
 # Things IE did first or "better"
 
@@ -768,7 +817,7 @@ function onClick(event) {
 template: chapter
 hint: wrapup
 
-# Wrapping up...
+# What have we learned?
 
 ---
 template: title
