@@ -52,7 +52,7 @@ hint: JAVAscript
 ---
 template: reference
 theme: light
-hint: js1
+hint: js1-desc
 
 # JavaScript 1.0
 
@@ -133,6 +133,14 @@ fontSize: +3
 </FRAMESET>
 </html>
 ```
+
+---
+layout: frame
+template: frame
+hint: ns2-docs
+noTitle: true
+
+[foo](/docsample/index.html)
 
 ---
 template: body
@@ -402,10 +410,9 @@ hint: styling
 
 # Challenge 5: Styling
 
-* no CSS
 * `<table>` for layout
-* `<font>`
 * colours
+* `<font>`
 
 ---
 template: reference
@@ -471,11 +478,23 @@ stylesheet: /fireworks.css
 # Netscape 4
 
 <table height=600 width="100%"><tr><td>
-<center><pre style="font-size:128px;font-weight: bold;"><code>&lt;LAYER&gt;</code></pre></center>
+<center><pre style="font-weight: bold;"><code style="font-size:128px;">&lt;LAYER&gt;</code></pre></center>
 <layer id="fireworks"></layer>
 </td></tr></table>
 
-<script language="JavaScript1.2">window.START_DELAY = 500;</script>
+<EMBED SRC="/tada.wav"
+       NAME="tada"
+       AUTOSTART=TRUE
+       LOOP=false
+       MASTERSOUND
+       HIDDEN=true>
+
+<script language="JavaScript1.2">
+window.START_DELAY = 500;
+//setTimeout(function () {
+     document.tada.play();
+//}, 500);
+</script>
 <script language="JavaScript1.2" src="/fireworks.js"></script>
 ---
 layout: frame
@@ -711,24 +730,12 @@ hide: true
 <table width=100% height=100%><tr><td valign=center align=center height=600>
 ![Image](/images/view-source.gif)
 </td></tr></table>
-
----
-template: body
-hint: css
-
-# Challenge 3: CSS !== CSS
-
-<ul>
-<li>one name per `class` attribute</li>
-<li>buggy / missing inheritance</li>
-<li style="padding: 20px 0">buggy styles</li>
-</ul>
-
 ---
 template: code
 hint: capture
+hide: true
 
-# Challenge 4: Global events
+# Challenge 3: Global events
 
 ```js
 var _this = this;
@@ -742,6 +749,18 @@ window.onkeypress = function (event) {
     return true;
 }
 ```
+---
+template: body
+hint: css
+
+# Challenge 3: CSS !== CSS
+
+<ul>
+<li>one name per `class` attribute</li>
+<li>buggy / missing inheritance</li>
+<li style="padding: 20px 0">buggy styles</li>
+</ul>
+
 ---
 template: image
 theme: dark
@@ -819,6 +838,14 @@ hint: wrapup
 
 # What have we learned?
 
+---
+layout: frame
+template: frame
+hint: todo-finale
+
+#
+
+[foo](/todo/todo3-finale.html)
 ---
 template: title
 hint: thanks
