@@ -108,16 +108,20 @@
                 continue;
             }
 
+            var checkFn = this.globalName + ".check(" + todo.id + ")";
             content.push("<tr><td colspan=5 valign=center height=50>" +
                     "<table class=todoitem cellpadding=0 cellspacing=0 border=0><tr>" +
                         "<td width=20>&nbsp;</td>" +
                         "<td width=25 height=50 valign='center' class=todocheck>" +
-                        "<input type=checkbox name='todo-" + todo.id + "' " + (todo.complete ? 'checked' : '') +" onclick=" + this.globalName + ".check(" + todo.id + ")>" +
+                        "<input type=checkbox name='todo-" + todo.id + "' " + (todo.complete ? 'checked' : '') +" onclick=" + checkFn + ">" +
                         "</td>" +
-                        "<td valign=center class=" + (todo.complete ? ' todolabel-complete' : 'todolabel') +">" + todo.label + "</td>" +
+                        "<td valign=center class=" + (todo.complete ? ' todolabel-complete' : 'todolabel') +">" +
+                            "<a href='#' onclick='" + checkFn + ";return false;' class='todolink'>" + todo.label + "</a>" +
+                        "</td>" +
                     "</tr></table>" +
                 "</td></tr>" +
                 "<tr><td height=1 bgcolor=cccccc></td></tr>");
+
         }
         content.push("</table></form>");
         c = content.join("\n");
