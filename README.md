@@ -4,6 +4,12 @@
 
 This is the code behind my talk at [JSConfEU 2017](https://2017.jsconf.eu/), ["What's new in Netscape Navigator 2.0"](https://www.youtube.com/watch?v=Z-nXRZkge2U).
 
+## Demo
+
+Try out the legacy app in Netscape 3 on MacOS System 7 in [this demo on OldWeb.today](https://oldweb.today/?browser=ns3-mac#http://upleveled-todomvc-legacy-modern.netlify.app/legacy/)
+
+https://user-images.githubusercontent.com/1935696/125088905-28f59500-e0ce-11eb-8e3d-0cac368b9885.mp4
+
 ## How it works
 
 The talk was presented using Netscape 2.0 (and 4.0) running in a Windows 98 VM in Virtual Box. I won't cover how to set one of those up here.
